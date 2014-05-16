@@ -123,7 +123,7 @@
 							</div>
 							<!--banner end-->
 							<div class="bannerText container">
-									<h1>I'm Louw Swart</h1>
+									<h1>Louw Swart</h1>
 									<h2>ex-flight attendant turned programmer</h2>
 							</div>
 							<!--menu start-->
@@ -168,11 +168,11 @@
 									<div class="row">
 											<div class=" col-xs-12 col-sm-12 col-md-7 col-lg-7">
 													<h3>Louw Swart</h3>
-													<h4 class="subHeading">Java Developer and Software Engineer - Wellington</h4>
+													<h4 class="subHeading">Senior Java Developer, Wellington</h4>
 													<p>I am a Java Developer with nearly 6 years commercial experience, of which roughly the past 3 years have been in agile environments, designing, coding, testing and supporting
 															applications across a variety of technologies.</p>
 													<p>I have a strong sense of responsibility am always driven to deliver on or ahead of deadlines. I am equally comfortable performing front and back end roles.</p>
-													<a href="https://googledrive.com/host/0B_R9wuoI1jl-Q1BHa1k0c1JPd0E/CVLouwSwart_120514.pdf" target="_blank" class="bntDownload">Download CV</a>
+													<a href="#contact" target="_blank" class="bntDownload">Request PDF CV</a>
 											</div>
 											<div class=" col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1 col-lg-offset-1 proPic">
 													<img src="http://distilleryimage10.ak.instagram.com/7988b574cbe711e2ac3122000a1fb77a_7.jpg" alt="" class="img-circle topmar" width="295" height="295">
@@ -251,7 +251,7 @@
 									<div class="row workDetails">
 											<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
 													<div class="workYear">
-															Jan 2013 -<br/>Apr 2014
+															Jan 2013 <i class="fa fa-chevron-circle-right"></i><br/>Apr 2014
 													</div>
 											</div>
 											<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
@@ -270,7 +270,7 @@
 									<div class="row workDetails">
 											<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
 													<div class="workYear">
-															Jul 2011 -<br />Dec 2012
+															Jul 2011 <i class="fa fa-chevron-circle-right"></i><br />Dec 2012
 													</div>
 											</div>
 											<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
@@ -278,7 +278,7 @@
 													<div class="exCon">
 															<h4>Rockwell Automation <a href="http://nz.rockwellautomation.com" target="_blank" class="link"><i class="fa fa-link "></i></a></h4>
 															<h5>Software Developer</h5>
-															<p>Worked as a Software Developer at the New Zealand campus of Rockwell Automation. Functioned within an agile team developing user interface elements as well as web-services and back end integration for a performance management platform used in a variety of industries worldwide. This multi-tier application was deployed in a web environment (Tomcat & JBoss), on the Java EE technology stack.</p>
+															<p>Worked as a Software Developer at the New Zealand campus of Rockwell Automation. Functioned within an agile team developing user interface elements as well as web-services and back end integration for a performance management platform used in a variety of industries worldwide. This multi-tier application was deployed in a web environment (Tomcat &amp; JBoss), on the Java EE technology stack.</p>
 															<p>The development environment was Java, utilizing third-party technologies such as GWT, to deliver a rich user experience.</p>
 															<p><b><i>Accomplishments</i></b></p>
 															<p>Was involved in a major overhaul of the UI for the PPM System, which, amongst other tasks, involved implementing of a WYSIWYG editor inside GWT. Worked with great minds in New Zealand and teams in the US and China to re-build the data collection component.</p>
@@ -288,7 +288,7 @@
 									<div class="row workDetails">
 											<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
 													<div class="workYear">
-															Nov 2008 -<br />Apr 2011
+															Nov 2008 <i class="fa fa-chevron-circle-right"></i><br />Apr 2011
 													</div>
 											</div>
 											<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
@@ -306,7 +306,7 @@
 									<div class="row workDetails">
                       <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
                           <div class="workYear">
-                              Feb 2008 -<br />Oct 2008
+                              Feb 2008 <i class="fa fa-chevron-circle-right"></i><br />Oct 2008
                           </div>
                       </div>
                       <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
@@ -321,7 +321,7 @@
                   <div class="row workDetails">
                       <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
                           <div class="workYear">
-                              Dec 1997 -<br />Jan 2006
+                              Dec 1997 <i class="fa fa-chevron-circle-right"></i><br />Jan 2006
                           </div>
                       </div>
                       <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
@@ -329,6 +329,7 @@
                           <div class="exCon">
                               <h4>Flight Attendant</h4>
                               <h5>South African Airways</h5>
+                              <p class="saa"><i class="fa fa-plane"></i></p>
                           </div>
                       </div>
                   </div>
@@ -344,7 +345,7 @@
 									</div>
 									<div class="row workDetails">
 											<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-													<div class="workYear">2006 / 2007</div>
+													<div class="workYear">2006 <i class="fa fa-chevron-circle-right"></i> 2007</div>
 											</div>
 											<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 													<div class="arrowpart"></div>
@@ -357,7 +358,7 @@
                                  Processing and Logic concepts;<br />
                                  Program Design;<br />
                                  Software Engineering;<br />
-                                 Relational Database & Modelling Design;<br />
+                                 Relational Database &amp; Modelling Design;<br />
                                  SQL Server 2000;<br />
                                  Linux Administration;<br />
                                </p>
@@ -372,7 +373,7 @@
 							<div class="container topCon">
 									<div class="heading">
 											<h2>Get In Touch</h2>
-											<p>Please feel free to contact me to have a chat</p>
+											<p>contact me to have a chat</p>
 									</div>
 							</div>
 					</section>
@@ -388,7 +389,7 @@
 													<i class="fa fa-mobile fa-lg"></i> +64 22 031 3927
 											</p>
 											<p>
-													<i class="fa fa-envelope-o "></i> <a href="mailto:louw77@gmail.com">louw77@gmail.com</a>
+													<i class="fa fa-link"></i> <a href="http://ouq77.flavors.me">Flavors.me</a>
 											</p>
 									</div>
 									<!--contact info end-->
@@ -412,12 +413,11 @@
 					<section class="footer" id="footer">
 							<div class="container">
 									<ul>
-											<li><a href="#"><i class="fa fa-twitter fa-2x"></i></a></li>
-											<li><a href="#"><i class="fa fa-facebook fa-2x"></i></a></li>
-											<li><a href="#"><i class="fa fa-linkedin fa-2x"></i></a></li>
-											<li><a href="#"><i class="fa fa-pinterest fa-2x"></i></a></li>
-											<li><a href="#"><i class="fa fa-dribbble fa-2x"></i></a></li>
-											<li><a href="#"><i class="fa fa-rss fa-2x"></i></a></li>
+											<li><a href="http://nz.linkedin.com/in/louwswart/" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a></li>
+											<li><a href="http://github.com/ouq77" target="_blank"><i class="fa fa-github fa-2x"></i></a></li>
+											<li><a href="http://plus.google.com/u/0/+LouwSwart/about" target="_blank"><i class="fa fa-google-plus fa-2x"></i></a></li>
+											<li><a href="http://instagram.com/ouq77" target="_blank"><i class="fa fa-instagram fa-2x"></i></a></li>
+											<li><a href="http://www.facebook.com/ouq77" target="_blank"><i class="fa fa-facebook fa-2x"></i></a></li>
 									</ul>
 							</div>
 					</section>
@@ -482,8 +482,8 @@
 			<!--for portfoli filter jquary-->
 			<script src="js/jquery.isotope.js" type="text/javascript"></script>
 			<!--for portfoli lightbox -->
-			<link type="text/css" rel="stylesheet" id="theme" href="css/jquery-ui-1.8.16.custom.css">
-			<link type="text/css" rel="stylesheet" href="css/lightbox.min.css">
+			<link type="text/css" rel="stylesheet" id="theme" href="css/jquery-ui-1.8.16.custom.css" />
+			<link type="text/css" rel="stylesheet" href="css/lightbox.min.css" />
 			<script type="text/javascript" src="js/jquery.ui.widget.min.js"></script>
 			<script type="text/javascript" src="js/jquery.ui.rlightbox.js"></script>
 			<!--for skill chat jquary-->
