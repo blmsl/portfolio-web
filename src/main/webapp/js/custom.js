@@ -31,52 +31,14 @@
 				columns : 2
 			}
 		});
-
 	});
 
 	// for banner height js
-	var windowWidth = $(window).width();
-	var windowHeight = $(window).height();
-	$('.banner').css({
-		'width' : windowWidth,
-		'height' : windowHeight - "60"
-	});
-
-	// for portfolio filter jquery
-	$(window).load(function() {
-		var $container = $('.portfolioContainer');
-		$container.isotope({
-			filter : '*',
-			animationOptions : {
-				duration : 750,
-				easing : 'linear',
-				queue : false
-			}
-		});
-
-		$('.portfolioFilter a').click(function() {
-			$('.portfolioFilter .current').removeClass('current');
-			$(this).addClass('current');
-
-			var selector = $(this).attr('data-filter');
-			$container.isotope({
-				filter : selector,
-				animationOptions : {
-					duration : 750,
-					easing : 'linear',
-					queue : false
-				}
-			});
-			return false;
-		});
-	});
-
-	// for portfolio lightbox jquery
-	jQuery(function($) {
-		// run rlightbox
-		$(".lb").rlightbox();
-		$(".lb_title-overwritten").rlightbox({
-			overwriteTitle : true
+	setBannerSize();
+	
+	$(document).ready(function(e) {
+		$(window).on('resize', function(){
+			setBannerSize();
 		});
 	});
 
@@ -125,3 +87,12 @@
 	});
 
 }(jQuery));
+
+function setBannerSize() {
+	var windowWidth = $(window).width();
+	var windowHeight = $(window).height();
+	$('.banner').css({
+		'width' : windowWidth,
+		'height' : windowHeight - "60"
+	});
+}

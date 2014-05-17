@@ -8,7 +8,7 @@
  * Copyright 2012, Codrops
  * http://www.codrops.com
  */
-;( function( jQuery, window, undefined ) {
+;( function( $, window, undefined ) {
 	
 	'use strict';
 
@@ -21,16 +21,16 @@
 	* Copyright 2011 @louis_remi
 	* Licensed under the MIT license.
 	*/
-	var jQueryevent = jQuery.event,
-	jQueryspecial,
+	var $event = $.event,
+	$special,
 	resizeTimeout;
 
-	jQueryspecial = jQueryevent.special.debouncedresize = {
+	$special = $event.special.debouncedresize = {
 		setup: function() {
-			jQuery( this ).on( "resize", jQueryspecial.handler );
+			$( this ).on( "resize", $special.handler );
 		},
 		teardown: function() {
-			jQuery( this ).off( "resize", jQueryspecial.handler );
+			$( this ).off( "resize", $special.handler );
 		},
 		handler: function( event, execAsap ) {
 			// Save the context
@@ -39,7 +39,7 @@
 				dispatch = function() {
 					// set correct event type
 					event.type = "debouncedresize";
-					jQueryevent.dispatch.apply( context, args );
+					$event.dispatch.apply( context, args );
 				};
 
 			if ( resizeTimeout ) {
@@ -48,7 +48,7 @@
 
 			execAsap ?
 				dispatch() :
-				resizeTimeout = setTimeout( dispatch, jQueryspecial.threshold );
+				resizeTimeout = setTimeout( dispatch, $special.threshold );
 		},
 		threshold: 100
 	};
@@ -95,16 +95,16 @@
 	}
 
 	// global
-	var jQuerywindow = jQuery( window ),
+	var $window = $( window ),
 		Modernizr = window.Modernizr;
 
-	jQuery.GridRotator = function( options, element ) {
+	$.GridRotator = function( options, element ) {
 		
-		this.jQueryel = jQuery( element );
+		this.$el = $( element );
 		if( Modernizr.backgroundsize ) {
 
 			var self = this;
-			this.jQueryel.addClass( 'ri-grid-loading' );
+			this.$el.addClass( 'ri-grid-loading' );
 			this._init( options );
 
 		}
@@ -112,11 +112,11 @@
 	};
 
 	// the options
-	jQuery.GridRotator.defaults = {
+	$.GridRotator.defaults = {
 		// number of rows
-		rows : 2,
+		rows : 4,
 		// number of columns 
-		columns : 4,
+		columns : 10,
 		w1024 : { rows : 3, columns : 8 },
 		w768 : {rows : 3,columns : 7 },
 		w480 : {rows : 3,columns : 5 },
@@ -153,15 +153,20 @@
 		// if true the items will switch when hovered
 		onhover : false,
 		// ids of elements that shouldn't change
-		nochange : []
+		nochange : [],
+		// callback function when drawn
+		onDraw : function(){},
+		// Height to Width Ratio (Height/Width). A 0.5 ratio would be used for an image that is twice as large as it's height. Default is 1 (square images).
+		heightToWidthRatio : 1,
+		subImg : false
 	};
 
-	jQuery.GridRotator.prototype = {
+	$.GridRotator.prototype = {
 
 		_init : function( options ) {
 			
 			// options
-			this.options = jQuery.extend( true, {}, jQuery.GridRotator.defaults, options );
+			this.options = $.extend( true, {}, $.GridRotator.defaults, options );
 			// cache some elements + variables
 			this._config();
 
@@ -204,7 +209,7 @@
 
 			this.animType = this.options.animType;
 
-			if( this.animType !== 'random' && !this.supportTransforms3D && jQuery.inArray( this.animType, this.animTypes ) === -1 && this.animType !== 'showHide' ) {
+			if( this.animType !== 'random' && !this.supportTransforms3D && $.inArray( this.animType, this.animTypes ) === -1 && this.animType !== 'showHide' ) {
 
 				// fallback to 'fadeInOut' if user sets a type which is not supported
 				this.animType = 'fadeInOut';
@@ -214,32 +219,47 @@
 			this.animTypesTotal	= this.animTypes.length;
 
 			// the <ul> where the items are placed
-			this.jQuerylist = this.jQueryel.children( 'ul' );
+			this.$list = this.$el.children( 'ul' );
 			// remove images and add background-image to anchors
 			// preload the images before
 			var loaded = 0,
-				jQueryimgs = this.jQuerylist.find( 'img' ),
-				count = jQueryimgs.length;
+				subbed = 0,
+				$imgs = this.$list.find( 'img' ),
+				count = $imgs.length,
+				subColors = ["#D92727", "#FFE433", "#0DB8B5"];
 
-			jQueryimgs.each( function() {
 
-				var jQueryimg = jQuery( this ), src = jQueryimg.attr( 'src' );
+			// Check if the substitute image is available
+			if( self.options.subImg ) {
 
-				jQuery( '<img/>' ).load( function() {
+				$( '<img/>' ).error( function() {
+
+					self.options.subImg = false;
+
+				} ).attr('src', self.options.subImg);
+
+			}
+
+			$imgs.each( function() {
+
+				var $img = $( this ), src = $img.attr( 'src' );
+
+				$( '<img/>' ).load( function() {
 
 					++loaded;
-					jQueryimg.parent().css( 'background-image', 'url(' + src + ')' );
+					$img.parent().css( 'background-image', 'url(' + src + ')' );
 
-					if( loaded === count ) {
+					/*This conditional block should be moved out to remove redundancy =)*/
+					if( loaded + subbed === count ) {
 
-						jQueryimgs.remove();
-						self.jQueryel.removeClass( 'ri-grid-loading' );
+						$imgs.remove();
+						self.$el.removeClass( 'ri-grid-loading' );
 						// the items
-						self.jQueryitems = self.jQuerylist.children( 'li' );
+						self.$items = self.$list.children( 'li' );
 						// make a copy of the items
-						self.jQueryitemsCache = self.jQueryitems.clone();
+						self.$itemsCache = self.$items.clone();
 						// total number of items
-						self.itemsTotal = self.jQueryitems.length;
+						self.itemsTotal = self.$items.length;
 						// the items that will be out of the grid
 						// actually the item's child (anchor element)
 						self.outItems= [];
@@ -253,9 +273,56 @@
 
 					}
 
-				} ).attr( 'src', src )
+				} ).attr( 'src', src );
+
+				// If something is wrong with the image…
+				$( '<img/>' ).error( function() {
+					
+					++subbed;
+					
+					// Are there any substitute images?
+					if( self.options.subImg ) {
+
+						$img.parent().css( 'background-image', 'url(' + self.options.subImg + ')' );
+
+					}
+					
+					else {
+
+						var color = Math.floor(Math.random() * 3)
+						$img.parent().css( 'background', subColors[color] );
+
+					}
+
+					/*This conditional block should be moved out to remove redundancy =)*/
+					if( loaded + subbed === count ) {
+
+						$imgs.remove();
+						self.$el.removeClass( 'ri-grid-loading' );
+						// the items
+						self.$items = self.$list.children( 'li' );
+						// make a copy of the items
+						self.$itemsCache = self.$items.clone();
+						// total number of items
+						self.itemsTotal = self.$items.length;
+						// the items that will be out of the grid
+						// actually the item's child (anchor element)
+						self.outItems= [];
+						self._layout( function() {
+							self._initEvents();
+						} );
+						// replace [options.step] items after [options.interval] time
+						// the items that go out are randomly chosen, while the ones that get in
+						// follow a "First In First Out" logic
+						self._start();
+
+					}
+
+				}	).attr( 'src', src );
+
+				
 				 
-			} );
+			} );			
 
 		},
 		_layout : function( callback ) {
@@ -266,22 +333,22 @@
 			this._setGridDim();
 
 			// reset
-			this.jQuerylist.empty();
-			this.jQueryitems = this.jQueryitemsCache.clone().appendTo( this.jQuerylist );
+			this.$list.empty();
+			this.$items = this.$itemsCache.clone().appendTo( this.$list );
 			
-			var jQueryoutItems = this.jQueryitems.filter( ':gt(' + ( this.showTotal - 1 ) + ')' ),
-				jQueryoutAItems = jQueryoutItems.children( 'a' );
+			var $outItems = this.$items.filter( ':gt(' + ( this.showTotal - 1 ) + ')' ),
+				$outAItems = $outItems.children( 'a' );
 
 			this.outItems.length = 0;
 
-			jQueryoutAItems.each( function( i ) {
-				self.outItems.push( jQuery( this ) );
+			$outAItems.each( function( i ) {
+				self.outItems.push( $( this ) );
 			} );
 
-			jQueryoutItems.remove();
+			$outItems.remove();
 
 				// container's width
-			var containerWidth = ( document.defaultView ) ? parseInt( document.defaultView.getComputedStyle( this.jQueryel.get( 0 ), null ).width ) : this.jQueryel.width(),
+			var containerWidth = ( document.defaultView ) ? parseInt( document.defaultView.getComputedStyle( this.$el.get( 0 ), null ).width ) : this.$el.width(),
 				// item's width
 				itemWidth = Math.floor( containerWidth / this.columns ),
 				// calculate gap
@@ -292,15 +359,15 @@
 				for( var j = 0; j < this.columns; ++j ) {
 
 					var idx = this.columns * i + j,
-						jQueryitem = this.jQueryitems.eq( idx );
+						$item = this.$items.eq( idx );
 
-					jQueryitem.css( {
+					$item.css( {
 						width : j < Math.floor( gapWidth ) ? itemWidth + 1 : itemWidth,
-						height : itemWidth
+						height : Math.floor( itemWidth * this.options.heightToWidthRatio )
 					} );
 
-					if( jQuery.inArray( idx, this.options.nochange ) !== -1 ) {
-						jQueryitem.addClass( 'ri-nochange' ).data( 'nochange', true );
+					if( $.inArray( idx, this.options.nochange ) !== -1 ) {
+						$item.addClass( 'ri-nochange' ).data( 'nochange', true );
 					}
 
 				}
@@ -309,7 +376,7 @@
 
 			if( this.options.preventClick ) {
 
-				this.jQueryitems.children().css( 'cursor', 'default' ).on( 'click.gridrotator', false );
+				this.$items.children().css( 'cursor', 'default' ).on( 'click.gridrotator', false );
 
 			}
 
@@ -317,12 +384,14 @@
 				callback.call();
 			}
 
+			this.options.onDraw.call(this);
+
 		},
 		// set the grid rows and columns
 		_setGridDim	 : function() {
 
 			// container's width
-			var c_w = this.jQueryel.width();
+			var c_w = this.$el.width();
 
 			// we will choose the number of rows/columns according to the container's width and the values set in the plugin options 
 			switch( true ) {
@@ -342,7 +411,7 @@
 
 			var self = this;
 
-			jQuerywindow.on( 'debouncedresize.gridrotator', function() {
+			$window.on( 'debouncedresize.gridrotator', function() {
 				self._layout();
 			} );
 
@@ -361,17 +430,17 @@
 
 			if( !Modernizr.touch && this.options.onhover ) {
 				
-				self.jQueryitems.on( 'mouseenter.gridrotator', function() {
+				self.$items.on( 'mouseenter.gridrotator', function() {
 
-					var jQueryitem = jQuery( this );
-					if( !jQueryitem.data( 'active' ) && !jQueryitem.data( 'hovered' ) && !jQueryitem.data( 'nochange' ) ) {
-						jQueryitem.data( 'hovered', true );
-						self._replace( jQueryitem );
+					var $item = $( this );
+					if( !$item.data( 'active' ) && !$item.data( 'hovered' ) && !$item.data( 'nochange' ) ) {
+						$item.data( 'hovered', true );
+						self._replace( $item );
 					}
 
 				} ).on( 'mouseleave.gridrotator', function() {
 
-					jQuery( this ).data( 'hovered', false );
+					$( this ).data( 'hovered', false );
 
 				} );
 
@@ -398,7 +467,7 @@
 
 		},
 		// get css properties for the transition effect
-		_getAnimProperties : function( jQueryout ) {
+		_getAnimProperties : function( $out ) {
 
 			var startInProp = {}, startOutProp = {}, endInProp = {}, endOutProp = {},
 				animType = this._getAnimType(), speed, delay = 0;
@@ -418,30 +487,30 @@
 
 				case 'slideLeft' :
 					
-					startInProp.left = jQueryout.width();
+					startInProp.left = $out.width();
 					endInProp.left = 0;
-					endOutProp.left = -jQueryout.width();
+					endOutProp.left = -$out.width();
 					break;
 
 				case 'slideRight' :
 					
-					startInProp.left = -jQueryout.width();
+					startInProp.left = -$out.width();
 					endInProp.left = 0;
-					endOutProp.left = jQueryout.width();
+					endOutProp.left = $out.width();
 					break;
 
 				case 'slideTop' :
 					
-					startInProp.top = jQueryout.height();
+					startInProp.top = $out.height();
 					endInProp.top = 0;
-					endOutProp.top = -jQueryout.height();
+					endOutProp.top = -$out.height();
 					break;
 
 				case 'slideBottom' :
 					
-					startInProp.top = -jQueryout.height();
+					startInProp.top = -$out.height();
 					endInProp.top = 0;
-					endOutProp.top = jQueryout.height();
+					endOutProp.top = $out.height();
 					break;
 
 				case 'rotateLeft' :
@@ -574,11 +643,11 @@
 				for( var i = 0; i < nmbOut; ++i ) {
 
 					// element to go out
-					var jQueryout = self.jQueryitems.eq( randArr[ i ] );
+					var $out = self.$items.eq( randArr[ i ] );
 
 					// if element is active, which means it is currently animating,
 					// then we need to get different positions.. 
-					if( jQueryout.data( 'active' ) || jQueryout.data( 'nochange' ) ) {
+					if( $out.data( 'active' ) || $out.data( 'nochange' ) ) {
 
 						// one of the items is active, call again..
 						self._showNext( 1 );
@@ -586,7 +655,7 @@
 
 					}
 
-					self._replace( jQueryout );
+					self._replace( $out );
 
 				}
 
@@ -596,55 +665,55 @@
 			}, time || Math.max( Math.abs( this.options.interval ) , 300 ) );
 
 		},
-		_replace : function( jQueryout ) {
+		_replace : function( $out ) {
 
-			jQueryout.data( 'active', true );
+			$out.data( 'active', true );
 
 			var self = this,
-				jQueryoutA = jQueryout.children( 'a:last' ),
+				$outA = $out.children( 'a:last' ),
 				newElProp = {
-					width : jQueryoutA.width(),
-					height : jQueryoutA.height()
+					width : $outA.width(),
+					height : $outA.height()
 				};
 
 			// element stays active
-			jQueryout.data( 'active', true );
+			$out.data( 'active', true );
 
 			// get the element (anchor) that will go in (first one inserted in this.outItems)
-			var jQueryinA = this.outItems.shift();
+			var $inA = this.outItems.shift();
 
 			// save element that went out
-			this.outItems.push( jQueryoutA.clone().css( 'transition', 'none' ) );
+			this.outItems.push( $outA.clone().css( 'transition', 'none' ) );
 			
 			// prepend in element
-			jQueryinA.css( newElProp ).prependTo( jQueryout );
+			$inA.css( newElProp ).prependTo( $out );
 
-			var animProp = this._getAnimProperties( jQueryoutA );
+			var animProp = this._getAnimProperties( $outA );
 
-			jQueryinA.css( animProp.startInProp );
-			jQueryoutA.css( animProp.startOutProp );
+			$inA.css( animProp.startInProp );
+			$outA.css( animProp.startOutProp );
 			
-			this._setTransition( jQueryinA, 'all', animProp.animSpeed, animProp.delay, this.options.animEasingIn );
-			this._setTransition( jQueryoutA, 'all', animProp.animSpeed, 0, this.options.animEasingOut );
+			this._setTransition( $inA, 'all', animProp.animSpeed, animProp.delay, this.options.animEasingIn );
+			this._setTransition( $outA, 'all', animProp.animSpeed, 0, this.options.animEasingOut );
 
-			this._applyTransition( jQueryinA, animProp.endInProp, animProp.animSpeed, function() {
+			this._applyTransition( $inA, animProp.endInProp, animProp.animSpeed, function() {
 
-				var jQueryel = jQuery( this ),
+				var $el = $( this ),
 					t = animProp.animSpeed === self.options.animSpeed && isEmpty( animProp.endInProp ) ? animProp.animSpeed : 0;
 					
 				setTimeout( function() {
 					
 					if( self.supportTransitions ) {
-						jQueryel.off( self.transEndEventName );
+						$el.off( self.transEndEventName );
 					}
 					
-					jQueryel.next().remove();
-					jQueryel.parent().data( 'active', false );
+					$el.next().remove();
+					$el.parent().data( 'active', false );
 
 				}, t );
 
 			}, animProp.animSpeed === 0 || isEmpty( animProp.endInProp ) );
-			this._applyTransition( jQueryoutA, animProp.endOutProp, animProp.animSpeed );
+			this._applyTransition( $outA, animProp.endOutProp, animProp.animSpeed );
 
 		},
 		_getRandom : function( cnt, limit ) {
@@ -669,7 +738,7 @@
 
 			var self = this;
 			setTimeout( function() {
-				jQuery.fn.applyStyle = self.supportTransitions ? jQuery.fn.css : jQuery.fn.animate;
+				$.fn.applyStyle = self.supportTransitions ? $.fn.css : $.fn.animate;
 
 				if( fncomplete && self.supportTransitions ) {
 
@@ -683,7 +752,7 @@
 
 				fncomplete = fncomplete || function() { return false; };
 
-				el.stop().applyStyle( styleCSS, jQuery.extend( true, [], { duration : speed + 'ms', complete : fncomplete } ) );
+				el.stop().applyStyle( styleCSS, $.extend( true, [], { duration : speed + 'ms', complete : fncomplete } ) );
 			}, 25 );
 
 		}
@@ -700,9 +769,9 @@
 
 	};
 	
-	jQuery.fn.gridrotator = function( options ) {
+	$.fn.gridrotator = function( options ) {
 
-		var instance = jQuery.data( this, 'gridrotator' );
+		var instance = $.data( this, 'gridrotator' );
 		
 		if ( typeof options === 'string' ) {
 			
@@ -718,7 +787,7 @@
 				
 				}
 				
-				if ( !jQuery.isFunction( instance[options] ) || options.charAt(0) === "_" ) {
+				if ( !$.isFunction( instance[options] ) || options.charAt(0) === "_" ) {
 
 					logError( "no such method '" + options + "' for gridrotator instance" );
 					return;
@@ -741,7 +810,7 @@
 				}
 				else {
 
-					instance = jQuery.data( this, 'gridrotator', new jQuery.GridRotator( options, this ) );
+					instance = $.data( this, 'gridrotator', new $.GridRotator( options, this ) );
 				
 				}
 

@@ -32,7 +32,7 @@
 				<div class="banner row" id="banner">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 noPadd">
 						<!--slider start-->
-						<div id="ri-grid" class="ri-grid ri-grid-size-2">
+						<div id="ri-grid" class="ri-grid-loading ri-grid ri-grid-size-2">
 							<img class="ri-loading-image" src="images/loading.gif" />
 							<ul class="cb-slideshow">
 								<li><a href="#"><img src="http://photos-f.ak.instagram.com/hphotos-ak-prn/926765_510754485696301_801178436_n.jpg" /></a></li>
@@ -263,7 +263,7 @@
 						<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 							<div class="arrowpart"></div>
 							<div class="exCon">
-								<h4>Rockwell Automation <a href="http://nz.rockwellautomation.com" target="_blank" class="link"><i class="fa fa-link"></i></a></h4>
+								<h4>Rockwell <a href="http://nz.rockwellautomation.com" target="_blank" class="link"><i class="fa fa-link"></i></a></h4>
 								<h5>Software Developer</h5>
 								<p>Worked as a Software Developer at the New Zealand campus of Rockwell Automation. Functioned within an <b>agile team</b> developing <b>user interface</b> elements as well as <b>web-services</b> and <b>back end integration</b> for a performance management platform used in a variety of industries worldwide. This <b>multi-tier application</b> was deployed in a web environment (<b>Tomcat</b> &amp; <b>JBoss</b>), on the <b>Java EE technology stack</b>.</p>
 								<p>The development environment was <b>Java</b>, utilizing third-party technologies such as <b>GWT</b>, to deliver a rich user experience.</p>
@@ -444,13 +444,9 @@
 			
 		});
 		</script>
-		<!--for portfoli filter jquary-->
+		<!--for portfolio filter jquery-->
 		<script src="js/jquery.isotope.js" type="text/javascript"></script>
 		<!--for portfoli lightbox -->
-		<link type="text/css" rel="stylesheet" id="theme" href="css/jquery-ui-1.8.16.custom.css" />
-		<link type="text/css" rel="stylesheet" href="css/lightbox.min.css" />
-		<script type="text/javascript" src="js/jquery.ui.widget.min.js"></script>
-		<script type="text/javascript" src="js/jquery.ui.rlightbox.js"></script>
 		<!--for skill chat jquary-->
 		<script src="js/jquery.easing.min.js"></script>
 		<script src="js/jquery.easypiechart.js"></script>
