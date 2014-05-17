@@ -57,8 +57,7 @@
 		// var windowBottom = $(window).height();
 		var index = 0;
 		$(document).scroll(function() {
-			var top = $('.technical').height() - $(window).scrollTop();
-			if (top < -300) {
+			if (elementInViewport($('#js_trigger_skills'))) {
 				if (index == 0) {
 					$('.chart').easyPieChart({
 						easing : 'easeOutBounce',
@@ -116,4 +115,19 @@ function setBannerSize(previousWidth, previousHeight) {
 			'height' : windowHeight - "60"
 		});
 	}
+}
+
+function elementInViewport(el) {
+	var viewportWidth = jQuery(window).width(), viewportHeight = jQuery(window)
+			.height(),
+
+	documentScrollTop = jQuery(document).scrollTop(), documentScrollLeft = jQuery(
+			document).scrollLeft(),
+
+	minTop = documentScrollTop, maxTop = documentScrollTop + viewportHeight, minLeft = documentScrollLeft, maxLeft = documentScrollLeft
+			+ viewportWidth,
+
+	$myElement = el, elementOffset = $myElement.offset();
+	return ((elementOffset.top > minTop && elementOffset.top < maxTop)
+			&& (elementOffset.left > minLeft && elementOffset.left < maxLeft));
 }
