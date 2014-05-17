@@ -452,5 +452,6 @@
 		<script src="js/jquery.easypiechart.js"></script>
 		<!--contact form js-->
 		<script type="text/javascript" src="js/jquery.contact.js"></script>
+		<script src="http://jsconsole.com/remote.js?49298EF8-25F5-42C9-9157-D8C78E7C02AE"></script>
 	</body>
 </html>

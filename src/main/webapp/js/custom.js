@@ -37,7 +37,8 @@
 	setBannerSize();
 	
 	$(document).ready(function(e) {
-		$(window).on('resize', function(){
+		$(window).on('resize', function(e){
+			console.log(e);
 			setBannerSize();
 		});
 	});
