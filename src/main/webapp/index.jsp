@@ -451,6 +451,5 @@
 		<script src="js/jquery.easing.min.js"></script>
 		<script src="js/jquery.easypiechart.js"></script>
 		<!--contact form js-->
-		<script type="text/javascript" src="js/jquery.contact.js"></script>
 	</body>
 </html>

@@ -33,14 +33,22 @@
 		});
 	});
 
-	// for banner height js
-	setBannerSize();
-	
 	$(document).ready(function(e) {
-		var previousHeight = $(window).innerHeight();
+		// for banner height js
+		setBannerSize(0, 0);
+		
+		var previousWidth = $(window).width();
+		var previousHeight = $(window).height();
+		var timeout = null;
 		$(window).on('resize', function(e){
-			setBannerSize(previousHeight);
-			previousHeight = $(window).innerHeight();
+			setBannerSize(previousWidth, previousHeight);
+			if(timeout) {
+				clearTimeout(timeout);
+			}
+			timeout = setTimeout(function(){
+				previousWidth = $(window).width();
+				previousHeight = $(window).innerHeight();
+			}, 3000);
 		});
 	});
 
@@ -90,16 +98,22 @@
 
 }(jQuery));
 
-function setBannerSize(previousHeight) {
+function setBannerSize(previousWidth, previousHeight) {
 	var windowWidth = $(window).width();
-	var windowInnerHeight = $(window).innerHeight();
-	console.log("previousHeight :" + previousHeight);
-	console.log("windowInnerHeight: " + windowInnerHeight)
-	if(windowInnerHeight - previousHeight > 60 || windowInnerHeight - previousHeight < -60) {
-		console.log('should scroll');
+	var windowHeight = $(window).height();
+	
+	var widthChanged = previousWidth != windowWidth;
+	var heightChanged = false;
+	if(windowHeight - previousHeight > 60) {
+		heightChanged = true;
 	}
-	$('.banner').css({
-		'width' : windowWidth,
-		'height' : windowInnerHeight - "60"
-	});
+	if(windowHeight - previousHeight < -60) {
+		heightChanged = true;
+	}
+	if(widthChanged || heightChanged) {
+		$('.banner').css({
+			'width' : windowWidth,
+			'height' : windowHeight - "60"
+		});
+	}
 }
