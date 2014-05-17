@@ -90,9 +90,9 @@
 
 function setBannerSize() {
 	var windowWidth = $(window).width();
-	var windowHeight = $(window).height();
+	var windowInnerHeight = $(window).innerHeight();
 	$('.banner').css({
 		'width' : windowWidth,
-		'height' : windowHeight - "60"
+		'height' : windowInnerHeight - "60"
 	});
 }
