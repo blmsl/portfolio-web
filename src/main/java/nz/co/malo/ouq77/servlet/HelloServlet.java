@@ -1,4 +1,4 @@
-package servlet;
+package nz.co.malo.ouq77.servlet;
 
 import java.io.IOException;
 

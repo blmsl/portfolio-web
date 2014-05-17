@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>nz.kiwi.malo</groupId>
+	<groupId>nz.co.malo</groupId>
 	<artifactId>ouq77</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Louw Swart - Profolio</name>
@@ -62,7 +62,7 @@
 					<assembleDirectory>target</assembleDirectory>
 					<programs>
 						<program>
-							<mainClass>launch.Main</mainClass>
+							<mainClass>nz.co.malo.ouq77.launch.Main</mainClass>
 							<name>webapp</name>
 						</program>
 					</programs>
