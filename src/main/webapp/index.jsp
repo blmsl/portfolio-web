@@ -246,7 +246,7 @@
 						<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 							<div class="arrowpart"></div>
 							<div class="exCon">
-								<h4>EROAD <a href="http://www.eroad.co.nz" target="_blank" class="link"><i class="fa fa-link "></i></a></h4>
+								<h4>EROAD <a href="http://www.eroad.co.nz" target="_blank" class="link"><i class="fa fa-link"></i></a></h4>
 								<h5>Senior Java Developer</h5>
 								<p>Employed as a Java Developer at EROAD, New Zealand's leading transport technology and services company. Worked in an <b>agile environment</b> developing and unit testing existing and new enhancements, which involved user interface, web-services and back end integration for EROAD's Cloud Based SaaS application.</p>
 								<p>The development environment was <b>Java</b>, and frameworks and technologies include <b>Spring MVC</b>, <b>JSP</b>, <b>JQuery</b>, <b>RESTful</b> and <b>JAX-WS/JAXB</b> web-services using <b>SOAP</b>, <b>Hibernate</b> and <b>PostgreSQL</b>.</p>
@@ -263,7 +263,7 @@
 						<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 							<div class="arrowpart"></div>
 							<div class="exCon">
-								<h4>Rockwell Automation <a href="http://nz.rockwellautomation.com" target="_blank" class="link"><i class="fa fa-link "></i></a></h4>
+								<h4>Rockwell Automation <a href="http://nz.rockwellautomation.com" target="_blank" class="link"><i class="fa fa-link"></i></a></h4>
 								<h5>Software Developer</h5>
 								<p>Worked as a Software Developer at the New Zealand campus of Rockwell Automation. Functioned within an <b>agile team</b> developing <b>user interface</b> elements as well as <b>web-services</b> and <b>back end integration</b> for a performance management platform used in a variety of industries worldwide. This <b>multi-tier application</b> was deployed in a web environment (<b>Tomcat</b> &amp; <b>JBoss</b>), on the <b>Java EE technology stack</b>.</p>
 								<p>The development environment was <b>Java</b>, utilizing third-party technologies such as <b>GWT</b>, to deliver a rich user experience.</p>
@@ -279,7 +279,7 @@
 						<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 							<div class="arrowpart"></div>
 							<div class="exCon">
-								<h4>Quirk <a href="http://www.quirk.biz" target="_blank" class="link"><i class="fa fa-link "></i></a></h4>
+								<h4>Quirk <a href="http://www.quirk.biz" target="_blank" class="link"><i class="fa fa-link"></i></a></h4>
 								<h5>Software Engineer</h5>
 								<p>Worked as a Software Engineer at the Cape Town office of Quirk developing <b>Java</b> (<b>Java EE</b>) <b>web based applications</b> to client specifications within specified deadlines. Projects included <b>SEO optimised websites</b> and <b>mobile websites</b>, <b>custom built CMS</b> solutions, <b>Facebook Applications</b>, integrations with <b>Twitter</b> and other <b>3rd party APIs</b>, <b>RSS Feeds</b> (both generating and parsing). The development environment was <b>Java</b>, utilising the <b>MVC WebWork</b> framework and <b>Freemarker Templating</b> engine, backed by <b>Spring</b>, <b>MySQL</b> and <b>Hibernate</b>.</p>
 								<p>Maintained and supported existing applications. Interfaced with clients regularly for presentations and training. Compiled client facing documentation where required. Performed on-call server monitoring duties.</p>
@@ -308,9 +308,9 @@
 						<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 							<div class="arrowpart"></div>
 							<div class="exCon">
-								<h4>Flight Attendant</h4>
-								<h5>South African Airways</h5>
-								<p><i class="fa fa-plane fa-2x"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-globe fa-2x"></i></p>
+								<h4>South African Airways</h4>
+								<h5>Flight Attendant</h5>
+								<p><br /><i class="fa fa-plane fa-2x"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-globe fa-2x"></i></p>
 							</div>
 						</div>
 					</div>
@@ -326,7 +326,7 @@
 					</div>
 					<div class="row workDetails">
 						<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-						  <div class="workYear">2006 <i class="fa fa-chevron-circle-right"></i> 2007</div>
+						  <div class="workYear">2006 <i class="fa fa-chevron-circle-right"></i><br />2007</div>
 						</div>
 						<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 							<div class="arrowpart"></div>
