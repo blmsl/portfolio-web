@@ -37,10 +37,10 @@
 	setBannerSize();
 	
 	$(document).ready(function(e) {
+		var previousHeight = $(window).innerHeight();
 		$(window).on('resize', function(e){
-			console.log("e.target: " + e.target);
-			console.log("e.target.id: " + e.target.id);
-			setBannerSize();
+			setBannerSize(previousHeight);
+			previousHeight = $(window).innerHeight();
 		});
 	});
 
@@ -90,9 +90,14 @@
 
 }(jQuery));
 
-function setBannerSize() {
+function setBannerSize(previousHeight) {
 	var windowWidth = $(window).width();
 	var windowInnerHeight = $(window).innerHeight();
+	console.log("previousHeight :" + previousHeight);
+	console.log("windowInnerHeight: " + windowInnerHeight)
+	if(windowInnerHeight - previousHeight > 60 || windowInnerHeight - previousHeight < -60) {
+		console.log('should scroll');
+	}
 	$('.banner').css({
 		'width' : windowWidth,
 		'height' : windowInnerHeight - "60"
