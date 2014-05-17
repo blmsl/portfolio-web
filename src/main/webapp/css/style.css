@@ -664,6 +664,12 @@ header {
 .exCon h5 {
 	color: #474d5d;
 }
+
+h5.subHeading {
+  font-weight: 500;
+  font-size: 15px;
+  padding-bottom: 6px;	
+}
 /*----------------------------------------------------
  9.	Education Style
 ------------------------------------------------------*/
