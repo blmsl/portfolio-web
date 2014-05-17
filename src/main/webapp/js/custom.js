@@ -41,11 +41,11 @@
 		var previousHeight = $(window).height();
 		var timeout = null;
 		$(window).on('resize', function(e){
+			setBannerSize(previousWidth, previousHeight);
 			if(timeout) {
 				clearTimeout(timeout);
 			}
 			timeout = setTimeout(function(){
-				setBannerSize(previousWidth, previousHeight);
 				previousWidth = $(window).width();
 				previousHeight = $(window).innerHeight();
 			}, 500);
