@@ -291,7 +291,7 @@
 						<h4>Contact details</h4>
 						<p><i class="fa fa-map-marker fa-lg"></i> Eastbourne, Lower Hutt, Wellington, NZ</p>
 						<p><i class="fa fa-mobile fa-lg"></i> +64 22 031 3927</p>
-						<p><i class="fa fa-link"></i> <a href="http://ouq77.flavors.me">Flavors.me</a></p>
+						<p><i class="fa fa-link"></i> <a href="http://ouq77.flavors.me" target="_blank">Flavors.me</a></p>
 					</div>
 					<!--contact info end-->
 					<!--contact form start-->
