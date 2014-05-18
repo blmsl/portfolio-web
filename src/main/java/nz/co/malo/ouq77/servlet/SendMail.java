@@ -4,13 +4,14 @@ import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.util.Properties;
 
+import javax.mail.Address;
 import javax.mail.Authenticator;
 import javax.mail.Message;
+import javax.mail.Message.RecipientType;
 import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
-import javax.mail.Message.RecipientType;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
@@ -33,8 +34,8 @@ public class SendMail extends HttpServlet {
 	private static final String JAVA_MAIL_EMAIL = "JAVA_MAIL_EMAIL";
 	private static final String JAVA_MAIL_PASSWORD = "JAVA_MAIL_PASSWORD";
 	private static final String SUBJECT = "Message from %s | ouq77.horokuapp.com";
-	private static final String CONTENT = "You have been contacted by %s. Their additional message is as follows:\n\n%s";
-	private static final String CONTENT_COPY = "I've received your message.\n\nHere is a copy of what you sent:\n\n%s\n%s\n%s";
+	private static final String CONTENT = "You have been contacted by %s (%s). Their additional message is as follows:\n\n%s";
+	private static final String CONTENT_COPY = "Thank you for getting in touch - I've received your message.\n\nHere is a copy of what you sent:\n\n%s (%s)\n\n%s";
 	private static final String SPAM = "<<div class=\"error_message\">Spam filter has been triggered.</div>";
 	private static final String NAME_REQUIRED = "<div class=\"error_message\">Please enter your name.</div>";
 	private static final String EMAIL_REQUIRED = "<div class=\"error_message\">Please enter a valid email address.</div>";
@@ -128,9 +129,10 @@ public class SendMail extends HttpServlet {
 		// Send my copy
 		try {
 			simpleMessage.setFrom(fromAddress);
+			simpleMessage.setReplyTo(new Address[] { fromAddress });
 			simpleMessage.setRecipient(RecipientType.TO, toAddress);
 			simpleMessage.setSubject(String.format(SUBJECT, fromName));
-			simpleMessage.setText(String.format(CONTENT, fromName, comments));
+			simpleMessage.setText(String.format(CONTENT, fromName, fromEmail, comments));
 			Transport.send(simpleMessage);
 		} catch (final MessagingException e) {
 			// Heroku logging
