@@ -30,8 +30,8 @@ import com.sun.mail.util.MailSSLSocketFactory;
 public class SendMail extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-	private static final String JAVA_MAIL_EMAIL = "$JAVA_MAIL_EMAIL";
-	private static final String JAVA_MAIL_PASSWORD = "$JAVA_MAIL_PASSWORD";
+	private static final String JAVA_MAIL_EMAIL = "JAVA_MAIL_EMAIL";
+	private static final String JAVA_MAIL_PASSWORD = "JAVA_MAIL_PASSWORD";
 	private static final String SUBJECT = "Message from %s | ouq77.horokuapp.com";
 	private static final String CONTENT = "You have been contacted by %s. Their additional message is as follows:\n\n%s";
 	private static final String CONTENT_COPY = "I've received your message.\n\nHere is a copy of what you sent:\n\n%s\n%s\n%s";
@@ -77,6 +77,10 @@ public class SendMail extends HttpServlet {
 			try {
 				responseBuilder.append(send(name, email, comments));
 			} catch (final GeneralSecurityException e) {
+				// Heroku logging
+				System.err.println(e);
+				responseBuilder.append(ERROR);
+			} catch (final Exception e) {
 				// Heroku logging
 				System.err.println(e);
 				responseBuilder.append(ERROR);
