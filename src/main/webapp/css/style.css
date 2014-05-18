@@ -1108,7 +1108,7 @@ ul.portfolioContainer li:hover span.hoverBox .linKed {
 }
 
 .footer .container {
-	padding: 40px 0;
+	padding: 40px 0 15px 0;
 }
 
 .footer ul {
@@ -1151,7 +1151,6 @@ ul.portfolioContainer li:hover span.hoverBox .linKed {
 .footer-info {
 	text-align: center;
 	padding-top: 15px;
-  padding-bottom: 15px;
 }
 
 .footer-info p {
