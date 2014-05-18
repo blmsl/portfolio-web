@@ -363,11 +363,12 @@
 					<div class="col-xs-12 col-sm-9 col-md-8 col-lg-8 conForm">
 						<h4>Send a message</h4>
 						<div id="message"></div>
-						<form method="post" action="php/contact.php" name="cform" id="cform">
+						<form method="post" action="" name="cform" id="cform">
 							<input name="name" id="name" type="text" class="col-xs-12 col-sm-6 col-md-6 col-lg-6" placeholder="Your name..." /> <input name="email" id="email" type="email" class=" col-xs-12 col-sm-6 col-md-6 col-lg-6 noMarr" placeholder="Your email..." />
 							<textarea name="comments" id="comments" cols="" rows="" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" placeholder="Your message..."></textarea>
+							<input type="hidden" name="heuning" id="heuning" />
 							<input type="submit" id="submit" name="send" class="submitBnt" value="Send message" />
-							<div id="simple-msg"></div>
+							<div id="message"></div>
 						</form>
 					</div>
 					<!--contact form end-->
@@ -451,5 +452,6 @@
 		<script src="js/jquery.easing.min.js"></script>
 		<script src="js/jquery.easypiechart.js"></script>
 		<!--contact form js-->
+		<script type="text/javascript" src="js/jquery.contact.js"></script>
 	</body>
 </html>
