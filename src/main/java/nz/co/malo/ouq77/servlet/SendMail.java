@@ -1,6 +1,7 @@
 package nz.co.malo.ouq77.servlet;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.security.GeneralSecurityException;
 import java.util.Properties;
 
@@ -12,7 +13,6 @@ import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
-import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.servlet.ServletException;
@@ -31,6 +31,7 @@ import com.sun.mail.util.MailSSLSocketFactory;
 public class SendMail extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
+	private static final String LOUW_SWART = "Louw Swart";
 	private static final String JAVA_MAIL_EMAIL = "JAVA_MAIL_EMAIL";
 	private static final String JAVA_MAIL_PASSWORD = "JAVA_MAIL_PASSWORD";
 	private static final String SUBJECT = "Message from %s | ouq77.horokuapp.com";
@@ -120,10 +121,12 @@ public class SendMail extends HttpServlet {
 		InternetAddress fromAddress = null;
 		InternetAddress toAddress = null;
 		try {
-			fromAddress = new InternetAddress(fromEmail);
-			toAddress = new InternetAddress(System.getenv(JAVA_MAIL_EMAIL));
-		} catch (AddressException e) {
-			e.printStackTrace();
+			fromAddress = new InternetAddress(fromEmail, fromName);
+			toAddress = new InternetAddress(System.getenv(JAVA_MAIL_EMAIL), LOUW_SWART);
+		} catch (final UnsupportedEncodingException e) {
+			// Heroku logging
+			System.err.println(e);
+			return ERROR;
 		}
 
 		// Send my copy
@@ -144,7 +147,7 @@ public class SendMail extends HttpServlet {
 		try {
 			simpleMessage.setFrom(toAddress);
 			simpleMessage.setRecipient(RecipientType.TO, fromAddress);
-			simpleMessage.setSubject(String.format(SUBJECT, "Louw Swart"));
+			simpleMessage.setSubject(String.format(SUBJECT, LOUW_SWART));
 			simpleMessage.setText(String.format(CONTENT_COPY, fromName, fromEmail, comments));
 			Transport.send(simpleMessage);
 		} catch (final MessagingException e) {
