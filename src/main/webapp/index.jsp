@@ -94,10 +94,10 @@
 						<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
 							<h3>Louw Swart</h3>
 							<h4 class="subHeading">Senior Java Developer, Wellington</h4>
-							<p>I am a Java Developer with nearly <b>6 years commercial experience</b>, of which roughly the past <b>3 years</b> have been in <b>agile environments</b>, designing, coding, testing and supporting applications across a <b>variety of technologies</b>.</p>
-							<p>I have a strong <b>sense of responsibility</b> and am always driven to <b>deliver on or ahead of deadlines</b>. I am equally comfortable performing <b>front and back end</b> roles.</p>
+							<p>I am a Java Developer with nearly <b>6 years commercial experience</b>, of which roughly the past <b>3 years</b> have been in <b>agile environments</b>, designing, coding, testing and supporting applications across a <b>variety of technologies</b> and <b>platforms</b>.</p>
+							<p>I have a strong <b>sense of responsibility</b> and am always driven to <b>deliver on or ahead of deadlines</b>. <b>Front end</b> or <b>back end</b>, I'm equally comfortable performing either or both.</p>
 							<h4 class="subHeading">Hobbies and Interests</h4>
-							<p>Photography, Android, travel and plane spotting - not necessarily in that order.</p>
+							<p><i class="fa fa-camera-retro"></i> Photography, <i class="fa fa-android"></i> Android, <i class="fa fa-road"></i> travel and <i class="fa fa-plane"></i> plane spotting - not necessarily in that order.</p>
 							<a href="#contact" target="_blank" class="bntDownload">Request CV &amp; References</a>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1 col-lg-offset-1 proPic">
@@ -177,11 +177,12 @@
 							<div class="exCon">
 								<h4>EROAD <a href="http://www.eroad.co.nz" target="_blank" class="link"><i class="fa fa-link"></i></a></h4>
 								<h5>Senior Java Developer</h5>
-								<p>Employed as a Java Developer at EROAD, New Zealand's leading transport technology and services company. Worked in an <b>agile environment</b> developing and unit testing existing and new enhancements, which involved user interface, web-services and back end integration for EROAD's Cloud Based SaaS application.</p>
-								<p>The development environment was <b>Java</b>, and frameworks and technologies include <b>Spring MVC</b>, <b>JSP</b>, <b>JQuery</b>, <b>RESTful</b> and <b>JAX-WS/JAXB</b> web-services using <b>SOAP</b>, <b>Hibernate</b> and <b>PostgreSQL</b>.</p>
+								<h5 class="subHeading"><i>Auckland, New Zealand</i></h5>
+								<p>Employed as a Java Developer at EROAD, New Zealand's leading transport technology and services company. Worked in an <b>agile environment</b> developing and unit testing existing and new enhancements, which involved user <b>interface</b>, <b>web-services</b> and <b>back end integration</b> for EROAD's <b>Cloud Based SaaS application</b>.</p>
+								<p>The development environment was <b>Java</b>, and frameworks and technologies included <b>Spring MVC</b>, <b>JSP</b>, <b>JQuery</b>, <b>RESTful</b> web-services over <b>HTTP</b>, <b>JAX-WS/JAXB</b> web-services over <b>SOAP</b>, <b>Hibernate</b> and <b>PostgreSQL</b>.</p>
 								<p>Mainly functioned within the Tax and Localisation team, which included the <b>GIS</b> and mapping layer.</p>
-								<h5 class="subHeading">Accomplishments</h5>
-								<p>Worked alongside the Hardware team on the implementation of a <b>RESTful</b> JSON communication protocol over HTTP for the 2nd Generation On-board Units.</p>
+								<h6>Accomplishments</h6>
+								<p>Worked alongside the Hardware team on the implementation of a <b>RESTful JSON</b> communication protocol over HTTP for the 2nd Generation On-board Units.</p>
 							</div>
 						</div>
 					</div>
@@ -194,10 +195,11 @@
 							<div class="exCon">
 								<h4>Rockwell <a href="http://nz.rockwellautomation.com" target="_blank" class="link"><i class="fa fa-link"></i></a></h4>
 								<h5>Software Developer</h5>
+								<h5 class="subHeading"><i>Hamilton, New Zealand</i></h5>
 								<p>Worked as a Software Developer at the New Zealand campus of Rockwell Automation. Functioned within an <b>agile team</b> developing <b>user interface</b> elements as well as <b>web-services</b> and <b>back end integration</b> for a performance management platform used in a variety of industries worldwide. This <b>multi-tier application</b> was deployed in a web environment (<b>Tomcat</b> &amp; <b>JBoss</b>), on the <b>Java EE technology stack</b>.</p>
 								<p>The development environment was <b>Java</b>, utilizing third-party technologies such as <b>GWT</b>, to deliver a rich user experience.</p>
-								<h5 class="subHeading">Accomplishments</h5>
-								<p>Was involved in a major overhaul of the UI for the PPM System, which, amongst other tasks, involved implementing of a <b>WYSIWYG editor</b> inside GWT. Worked in my team in New Zealand and teams in the US and China to re-build the data collection component.</p>
+								<h6>Accomplishments</h6>
+								<p>Was involved in a major overhaul of the UI for the PPM System, which, amongst other tasks, involved implementing of a <b>WYSIWYG editor</b> inside GWT. Worked with my team in New Zealand alongside teams in the US and China to re-build the data collection component.</p>
 							</div>
 						</div>
 					</div>
@@ -210,9 +212,10 @@
 							<div class="exCon">
 								<h4>Quirk <a href="http://www.quirk.biz" target="_blank" class="link"><i class="fa fa-link"></i></a></h4>
 								<h5>Software Engineer</h5>
+								<h5 class="subHeading"><i>Cape Town, South Africa</i></h5>
 								<p>Worked as a Software Engineer at the Cape Town office of Quirk developing <b>Java</b> (<b>Java EE</b>) <b>web based applications</b> to client specifications within specified deadlines. Projects included <b>SEO optimised websites</b> and <b>mobile websites</b>, <b>custom built CMS</b> solutions, <b>Facebook Applications</b>, integrations with <b>Twitter</b> and other <b>3rd party APIs</b>, <b>RSS Feeds</b> (both generating and parsing). The development environment was <b>Java</b>, utilising the <b>MVC WebWork</b> framework and <b>Freemarker Templating</b> engine, backed by <b>Spring</b>, <b>MySQL</b> and <b>Hibernate</b>.</p>
 								<p>Maintained and supported existing applications. Interfaced with clients regularly for presentations and training. Compiled client facing documentation where required. Performed on-call server monitoring duties.</p>
-								<h5 class="subHeading">Accomplishments</h5>
+								<h6>Accomplishments</h6>
 								<p>Integrated an open source <b>mobile framework</b> (WURFL) into the Quirk software stack enabling development of mobile client solutions. Converted <b>Google's server-side JSP tracking</b> code to fit into the Quirk stack and WebWork framework. Developed a <b>live tracking solution</b> of a colleague's mountain bike race via <b>GPS</b>, Vodacom API and <b>Google Maps API</b>.</p>
 							</div>
 						</div>
@@ -226,6 +229,7 @@
 							<div class="exCon">
 								<h4>Cellsmart</h4>
 								<h5>Java Developer</h5>
+								<h5 class="subHeading"><i>Cape Town, South Africa</i></h5>
 								<p>Developed <b>Java ME</b> applications for <b>embedded systems</b>. Was also involved with the server-side software and mobile sites to support the download and installation thereof. Maintained existing software.</p>
 							</div>
 						</div>
@@ -239,7 +243,8 @@
 							<div class="exCon">
 								<h4>South African Airways</h4>
 								<h5>Flight Attendant</h5>
-								<p><br /><i class="fa fa-plane fa-2x"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-globe fa-2x"></i></p>
+								<h5 class="subHeading"><i>Cape Town &amp; Johannesburg, South Africa</i></h5>
+								<p><br /><i class="fa fa-globe fa-2x"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-plane fa-2x"></i></p>
 							</div>
 						</div>
 					</div>
@@ -262,6 +267,7 @@
 							<div class="exCon">
 								<h4>CTI  <a href="http://www.cti.co.za" target="_blank" class="link"><i class="fa fa-link"></i></a></h4>
 								<h5>Comprehensive Programming</h5>
+								<h5 class="subHeading"><i>Cape Town, South Africa</i></h5>
 								<p>Java SE/EE;<br />Linux Red Hat;<br />Processing and Logic concepts;<br />Program Design;<br />Software Engineering;<br />Relational Database &amp; Modelling Design;<br />SQL Server 2000;<br />Linux Administration;</p>
 							</div>
 						</div>
@@ -315,8 +321,8 @@
 						<li><a href="http://www.facebook.com/ouq77" target="_blank"><i class="fa fa-facebook fa-2x"></i></a></li>
 					</ul>
 					<div class="footer-info">
-            <p><i class="fa fa-info"></i> Basic Java app (JSP, Servlet, Javascript, AJAX), developed using and hosted on the <i><a href="http://heroku.com" target="_blank">heroku.com</a></i> cloud platform. HTML Template by <i><a href="http://themeforest.net/user/themeelite" target="_blank">themeelite</a></i>.</p>
-            <p>&copy; <%= yearDf.format(new Date()) %></p>
+            <p><i class="fa fa-info"></i> Basic Java app (JSP, Servlet, Javascript, AJAX), developed using and hosted on the <i><a href="http://heroku.com" target="_blank">heroku.com</a></i> cloud platform.</p>
+            <p>&copy; <%= yearDf.format(new Date()) %>. HTML Template by <i><a href="http://themeforest.net/user/themeelite" target="_blank">themeelite</a></i>.</p>
           </div>
 				</div>
 			</section>

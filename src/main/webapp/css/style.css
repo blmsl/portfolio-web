@@ -124,6 +124,12 @@ h4 {
 	margin: 0px;
 }
 
+h4.subHeading {
+	font-weight: 600;
+	font-size: 18px;
+	padding-bottom: 22px;
+}
+
 h5 {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
@@ -133,10 +139,21 @@ h5 {
 	margin: 0px;
 }
 
-h4.subHeading {
-	font-weight: 600;
-	font-size: 18px;
-	padding-bottom: 22px;
+h5.subHeading {
+	font-weight: 500;
+	font-size: 12px;
+	padding-bottom: 20px;
+	line-height: 18px;
+	margin-top: -4px;
+}
+
+h6 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 500;
+	line-height: 20px;
+	font-size: 15px;
+	margin: 0px;
+	padding-bottom: 6px;
 }
 
 .heading {
@@ -663,15 +680,10 @@ header {
 	padding-bottom: 3px;
 }
 
-.exCon h5 {
+.exCon h5,.exCon h6 {
 	color: #474d5d;
 }
 
-h5.subHeading {
-  font-weight: 500;
-  font-size: 15px;
-  padding-bottom: 6px;	
-}
 /*----------------------------------------------------
  9.	Education Style
 ------------------------------------------------------*/
