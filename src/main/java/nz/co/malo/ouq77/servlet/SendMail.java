@@ -128,7 +128,7 @@ public class SendMail extends HttpServlet {
 			System.err.println(e);
 			return ERROR;
 		}
-
+		
 		// Send my copy
 		try {
 			simpleMessage.setFrom(fromAddress);

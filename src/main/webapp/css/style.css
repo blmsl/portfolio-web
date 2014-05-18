@@ -367,6 +367,7 @@ header {
 .navbar-toggle {
 	margin-top: 14px;
 }
+
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
 .navbar-wrapper {
 	margin-top: 0px;
@@ -1147,6 +1148,15 @@ ul.portfolioContainer li:hover span.hoverBox .linKed {
 	line-height: 42px !important;
 }
 
+.footer-info {
+	text-align: center;
+	padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.footer-info p {
+	padding-bottom: 5px;
+}
 /*---------------------------------------------------------------------------------
  13. Responsive style
 -------------------------------------------------------------------------------*/
@@ -1274,7 +1284,7 @@ ul.portfolioContainer li:hover span.hoverBox .linKed {
 @media screen and (max-width: 480px) {
 	.navbar.navbar-inverse.navbar-static-top a {
 		line-height: 17px;
-		padding-top: 11px;
+		padding-top: 20px;
 		padding-bottom: 11px;
 	}
 }

@@ -69,7 +69,6 @@ jQuery(function($) {
 					function bottomView(i) {
 						contentView = $('#' + content[i] + '').height() * .4;
 						testView = contentTop[i] - contentView;
-						// console.log(varscroll);
 						if (varscroll > testView) {
 							$('.' + itemClass).removeClass(itemHover);
 							$('.' + itemClass + ':eq(' + i + ')').addClass(itemHover);
