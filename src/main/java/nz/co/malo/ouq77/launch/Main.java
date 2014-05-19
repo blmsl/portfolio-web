@@ -28,10 +28,10 @@ public class Main {
 		c.setProperty("noCompressionUserAgents", "gozilla, traviata");
 		c.setProperty("compressableMimeType", "text/html,text/xml, text/css, application/json, application/javascript");
 
+		// Heroku logging
+		System.out.println("configuring app with basedir: " + new File("./" + WEB_APPLICATION_DIR_LOCATION).getAbsolutePath());
 		final Context ctx = tomcat.addWebapp("/", new File(WEB_APPLICATION_DIR_LOCATION).getAbsolutePath());
 		ctx.addParameter(ANDROID_APP_URL, System.getenv(ANDROID_APP_URL));
-
-		System.out.println("configuring app with basedir: " + new File("./" + WEB_APPLICATION_DIR_LOCATION).getAbsolutePath());
 
 		tomcat.start();
 		tomcat.getServer().await();

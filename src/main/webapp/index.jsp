@@ -1,6 +1,12 @@
-<%@page import="java.text.SimpleDateFormat"%>
-<%@page import="java.util.Date"%>
-<%!final SimpleDateFormat yearDf = new SimpleDateFormat ("yyyy");%>
+<%@taglib prefix="compress" uri="http://htmlcompressor.googlecode.com/taglib/compressor"%><compress:html 
+  enabled="true" 
+  preserveLineBreaks="false" 
+  removeMultiSpaces="true"
+  removeComments="true"
+  compressJavaScript="true" 
+  jsCompressor="closure"
+  closureOptLevel="advanced">
+<%@page import="java.text.SimpleDateFormat"%><%@page import="java.util.Date"%><%!final SimpleDateFormat yearDf = new SimpleDateFormat ("yyyy");%>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="en"> <![endif]-->
 <!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="en"> <![endif]-->
@@ -330,3 +336,4 @@
     <%@include file="include/scripts.jsp"%>
 	</body>
 </html>
+</compress:html>
