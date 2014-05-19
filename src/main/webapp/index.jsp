@@ -1,5 +1,6 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%!
    final SimpleDateFormat yearDf = new SimpleDateFormat ("yyyy");
 %>
@@ -9,12 +10,14 @@
 <!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="en"> <![endif]-->
 <!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="en"> <![endif]-->
 <!--[if gt IE 9]><!-->
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" itemscope itemtype="http://schema.org/Article">
 <!--<![endif]-->
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>Louw Swart | Personal Portfolio</title>
+    <meta name="description" content="On-line Portfolio and CV for Louw Swart - Java Developer based in Wellington, New Zealand" />
+		<%@include file="include/social_media.jsp"%>
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!--main style-->
@@ -40,7 +43,7 @@
 						<div id="ri-grid" class="ri-grid-loading ri-grid ri-grid-size-2">
 							<img class="ri-loading-image" src="images/loading.gif" />
 							<ul class="cb-slideshow">
-                <%@ include file="include/banner_images.jsp" %>
+                <%@include file="include/banner_images.jsp"%>
 							</ul>
 						</div>
 						<!--slider end-->
@@ -323,13 +326,13 @@
 					<div class="footer-info">
             <p><i class="fa fa-info"></i> Basic Java Web app (JSP, Servlet, Javascript, AJAX)</p>
             <p>Hosted on the <i><a href="http://heroku.com" target="_blank">heroku.com</a></i> cloud platform</p>
-            <p>&copy; <%= yearDf.format(new Date()) %> &ndash; HTML Template by <i><a href="http://themeforest.net/user/themeelite" target="_blank">themeelite</a></i></p>
+            <p>&copy; <%=yearDf.format(new Date())%> &ndash; HTML Template by <i><a href="http://themeforest.net/user/themeelite" target="_blank">themeelite</a></i></p>
           </div>
 				</div>
 			</section>
 			<!--footer end-->
 		</div>
 		<!--wrapper end-->
-    <%@ include file="include/scripts.jsp" %>
+    <%@include file="include/scripts.jsp"%>
 	</body>
 </html>
