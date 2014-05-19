@@ -3,6 +3,7 @@ package nz.co.malo.ouq77.launch;
 import java.io.File;
 
 import org.apache.catalina.Context;
+import org.apache.catalina.connector.Connector;
 import org.apache.catalina.startup.Tomcat;
 
 public class Main {
@@ -21,6 +22,12 @@ public class Main {
 						: "8080";
 
 		tomcat.setPort(Integer.valueOf(webPort));
+		final Connector c = tomcat.getConnector();
+		c.setProperty("compression", "on");
+		c.setProperty("compressionMinSize", "1024");
+		c.setProperty("noCompressionUserAgents", "gozilla, traviata");
+		c.setProperty("compressableMimeType", "text/html,text/xml, text/css, application/json, application/javascript");
+
 		final Context ctx = tomcat.addWebapp("/", new File(WEB_APPLICATION_DIR_LOCATION).getAbsolutePath());
 		ctx.addParameter(ANDROID_APP_URL, System.getenv(ANDROID_APP_URL));
 
