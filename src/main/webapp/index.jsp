@@ -101,7 +101,7 @@
 							<p><i class="fa fa-camera-retro"></i> Photography, <i class="fa fa-android"></i> Android, <i class="fa fa-road"></i> travel and <i class="fa fa-plane"></i> plane spotting - not necessarily in that order.</p>
 							<a href="#contact" target="_blank" class="btnDownload">Request CV &amp; References</a>
 							&nbsp;&nbsp;&nbsp;
-							<a href="${initParam['ANDROID_APP_URL']}" target="_blank" class="btnDownload">Download for&nbsp;&nbsp;&nbsp;<i class="fa fa-android fa-1_4x"></i>&nbsp;&nbsp;&nbsp;as APK</a>
+							<a href="${initParam['ANDROID_APP_URL']}" target="_blank" class="btnDownload" title="Download and install this file on your Android running 4.03 or newer">Download for&nbsp;&nbsp;&nbsp;<i class="fa fa-android fa-1_4x"></i>&nbsp;&nbsp;&nbsp;as APK</a>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1 col-lg-offset-1 proPic">
 						  <img src="${pageContext.request.contextPath}/images/profile.jpg" alt="" class="img-circle topmar" width="295" height="295" />
@@ -317,11 +317,11 @@
 			<section class="footer" id="footer">
 				<div class="container">
 					<ul>
-						<li><a href="http://nz.linkedin.com/in/louwswart/" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a></li>
-						<li><a href="http://github.com/ouq77" target="_blank"><i class="fa fa-github fa-2x"></i></a></li>
-						<li><a href="http://plus.google.com/u/0/+LouwSwart/about" target="_blank"><i class="fa fa-google-plus fa-2x"></i></a></li>
-						<li><a href="http://instagram.com/ouq77" target="_blank"><i class="fa fa-instagram fa-2x"></i></a></li>
-						<li><a href="http://www.facebook.com/ouq77" target="_blank"><i class="fa fa-facebook fa-2x"></i></a></li>
+						<li><a href="http://nz.linkedin.com/in/louwswart/" target="_blank" title="See my LinkedIn here"><i class="fa fa-linkedin fa-2x"></i></a></li>
+						<li><a href="http://github.com/ouq77" target="_blank" title="See examples of my code here"><i class="fa fa-github fa-2x"></i></a></li>
+						<li><a href="http://plus.google.com/u/0/+LouwSwart/about" target="_blank" title="See my Google+ here"><i class="fa fa-google-plus fa-2x"></i></a></li>
+						<li><a href="http://instagram.com/ouq77" target="_blank" title="See my Instagram here"><i class="fa fa-instagram fa-2x"></i></a></li>
+						<li><a href="http://www.facebook.com/ouq77" target="_blank" title="See my Facebook here"><i class="fa fa-facebook fa-2x"></i></a></li>
 					</ul>
 					<div class="footer-info">
             <p><i class="fa fa-info"></i> Basic Java Web app (JSP, Servlet, Javascript, AJAX)</p>
