@@ -27,7 +27,7 @@ import org.apache.commons.validator.routines.EmailValidator;
 
 import com.sun.mail.util.MailSSLSocketFactory;
 
-@WebServlet(name = "SendMail", urlPatterns = { "/send" })
+@WebServlet(name = "sendMail", urlPatterns = { "/send" })
 public class SendMail extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;

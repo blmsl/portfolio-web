@@ -483,16 +483,17 @@ header {
 	margin-top: -62px !important;
 }
 
-.bntDownload {
+.btnDownload {
 	font-size: 16px;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 700;
 	background: #474d5d;
 	padding: 16px 22px;
 	display: inline-block;
+	margin-bottom: 15px;
 }
 
-.bntDownload:hover {
+.btnDownload:hover {
 	background: #373d4c;
 	color: #CCCCCC;
 	text-decoration: none;
@@ -1321,7 +1322,7 @@ ul.portfolioContainer li:hover span.hoverBox .linKed {
 	ul.portfolioContainer li.col-xs-6 {
 		width: 100%;
 	}
-	.bntDownload {
+	.btnDownload {
 		font-size: 13px;
 		padding: 16px 14px;
 	}

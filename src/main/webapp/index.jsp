@@ -1,9 +1,6 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%!
-   final SimpleDateFormat yearDf = new SimpleDateFormat ("yyyy");
-%>
+<%!final SimpleDateFormat yearDf = new SimpleDateFormat ("yyyy");%>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="en"> <![endif]-->
 <!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="en"> <![endif]-->
@@ -18,18 +15,13 @@
 		<title>Louw Swart | Personal Portfolio</title>
     <meta name="description" content="On-line Portfolio and CV for Louw Swart - Java Developer based in Wellington, New Zealand" />
 		<%@include file="include/social_media.jsp"%>
-		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="${pageContext.request.contextPath}/favicon.ico" type="image/x-icon" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<!--main style-->
-		<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
-		<!--google font style-->
+		<!--minified styles -->
+		<link rel="stylesheet" type="text/css" media="screen" href="${pageContext.request.contextPath}/css/style.min.css">
+		<!--google font style -->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300' rel='stylesheet' type='text/css'>
-		<!--font-family: 'Open Sans', sans-serif;-->
-		<!-- font css style-->
-		<link rel="stylesheet" href="css/font-awesome.css">
-		<!--for slider style-->
-		<noscript><link rel="stylesheet" type="text/css" href="css/fallback.css" /></noscript>
+		<noscript><link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/fallback.css" /></noscript>
 		<!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="css/fallback.css" /><![endif]-->
 	</head>
 	<body>
@@ -41,7 +33,7 @@
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 noPadd">
 						<!--slider start-->
 						<div id="ri-grid" class="ri-grid-loading ri-grid ri-grid-size-2">
-							<img class="ri-loading-image" src="images/loading.gif" />
+							<img class="ri-loading-image" src="${pageContext.request.contextPath}/images/loading.gif" />
 							<ul class="cb-slideshow">
                 <%@include file="include/banner_images.jsp"%>
 							</ul>
@@ -101,7 +93,9 @@
 							<p>I have a strong <b>sense of responsibility</b> and am always driven to <b>deliver on or ahead of deadlines</b>. <b>Front end</b> or <b>back end</b>, I'm equally comfortable performing either or both.</p>
 							<h4 class="subHeading">Hobbies and Interests</h4>
 							<p><i class="fa fa-camera-retro"></i> Photography, <i class="fa fa-android"></i> Android, <i class="fa fa-road"></i> travel and <i class="fa fa-plane"></i> plane spotting - not necessarily in that order.</p>
-							<a href="#contact" target="_blank" class="bntDownload">Request CV &amp; References</a>
+							<a href="#contact" target="_blank" class="btnDownload">Request CV &amp; References</a>
+							&nbsp;&nbsp;&nbsp;
+							<a href="${initParam['ANDROID_APP_URL']}" target="_blank" class="btnDownload">Download for&nbsp;&nbsp;&nbsp;<i class="fa fa-android fa-1_4x"></i>&nbsp;&nbsp;&nbsp;as APK</a>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1 col-lg-offset-1 proPic">
 						  <img src="http://distilleryimage10.ak.instagram.com/7988b574cbe711e2ac3122000a1fb77a_7.jpg" alt="" class="img-circle topmar" width="295" height="295" />
