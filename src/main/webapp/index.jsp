@@ -321,8 +321,9 @@
 						<li><a href="http://www.facebook.com/ouq77" target="_blank"><i class="fa fa-facebook fa-2x"></i></a></li>
 					</ul>
 					<div class="footer-info">
-            <p><i class="fa fa-info"></i> Basic Java app (JSP, Servlet, Javascript, AJAX), developed using and hosted on the <i><a href="http://heroku.com" target="_blank">heroku.com</a></i> cloud platform.</p>
-            <p>&copy; <%= yearDf.format(new Date()) %>. HTML Template by <i><a href="http://themeforest.net/user/themeelite" target="_blank">themeelite</a></i>.</p>
+            <p><i class="fa fa-info"></i> Basic Java Web app (JSP, Servlet, Javascript, AJAX)</p>
+            <p>Developed and hosted on the <i><a href="http://heroku.com" target="_blank">heroku.com</a></i> cloud platform</p>
+            <p>&copy; <%= yearDf.format(new Date()) %> &dash; HTML Template by <i><a href="http://themeforest.net/user/themeelite" target="_blank">themeelite</a></i></p>
           </div>
 				</div>
 			</section>
