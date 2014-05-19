@@ -11,6 +11,7 @@ public class Main {
 	private static final String WEB_PORT_SYS_ENV = "PORT";
 	private static final String WEB_APPLICATION_DIR_LOCATION = "target/ouq77.herokuapp.com";
 	private static final String ANDROID_APP_URL = "ANDROID_APP_URL";
+	private static final String INSTAGRAM_IMAGE_FOLDER = "INSTAGRAM_IMAGE_FOLDER";
 
 	public static void main(final String[] args) throws Exception {
 
@@ -32,6 +33,7 @@ public class Main {
 		System.out.println("configuring app with basedir: " + new File("./" + WEB_APPLICATION_DIR_LOCATION).getAbsolutePath());
 		final Context ctx = tomcat.addWebapp("/", new File(WEB_APPLICATION_DIR_LOCATION).getAbsolutePath());
 		ctx.addParameter(ANDROID_APP_URL, System.getenv(ANDROID_APP_URL));
+		ctx.addParameter(INSTAGRAM_IMAGE_FOLDER, System.getenv(INSTAGRAM_IMAGE_FOLDER));
 
 		tomcat.start();
 		tomcat.getServer().await();
