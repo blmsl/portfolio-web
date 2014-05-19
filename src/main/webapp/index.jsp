@@ -104,7 +104,7 @@
 							<a href="${initParam['ANDROID_APP_URL']}" target="_blank" class="btnDownload">Download for&nbsp;&nbsp;&nbsp;<i class="fa fa-android fa-1_4x"></i>&nbsp;&nbsp;&nbsp;as APK</a>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1 col-lg-offset-1 proPic">
-						  <img src="http://distilleryimage10.ak.instagram.com/7988b574cbe711e2ac3122000a1fb77a_7.jpg" alt="" class="img-circle topmar" width="295" height="295" />
+						  <img src="${pageContext.request.contextPath}/images/profile.jpg" alt="" class="img-circle topmar" width="295" height="295" />
 						</div>
 					</div>
 				</div>
