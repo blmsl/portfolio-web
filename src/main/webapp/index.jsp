@@ -5,7 +5,7 @@
   removeComments="true"
   compressJavaScript="true" 
   jsCompressor="closure"
-  closureOptLevel="advanced">
+  closureOptLevel="whitespace">
 <%@page import="java.text.SimpleDateFormat"%><%@page import="java.util.Date"%><%!final SimpleDateFormat yearDf = new SimpleDateFormat ("yyyy");%>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="en"> <![endif]-->
