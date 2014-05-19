@@ -5,23 +5,53 @@
 	version="2.5">
 
 	<filter>
-		<filter-name>httpCacheTwoDays</filter-name>
+		<filter-name>httpCacheSevenDays</filter-name>
 		<filter-class>nz.co.malo.ouq77.filter.HttpCacheFilter</filter-class>
 		<init-param>
-			<param-name>Cache-Control</param-name>
-			<param-value>max-age=172800, public</param-value>
+			<param-name>Expires</param-name>
+			<param-value>7</param-value>
 		</init-param>
 	</filter>
 
 	<filter-mapping>
-		<filter-name>httpCacheTwoDays</filter-name>
+		<filter-name>httpCacheSevenDays</filter-name>
 		<url-pattern>*.js</url-pattern>
 		<url-pattern>*.css</url-pattern>
-		<url-pattern>*.gif</url-pattern>
-		<url-pattern>*.png</url-pattern>
-		<url-pattern>*.ico</url-pattern>
-		<url-pattern>*.jpg</url-pattern>
-		<url-pattern>*.jpeg</url-pattern>
 	</filter-mapping>
+	
+	<filter>
+    <filter-name>httpCacheFourteenDays</filter-name>
+    <filter-class>nz.co.malo.ouq77.filter.HttpCacheFilter</filter-class>
+    <init-param>
+      <param-name>Expires</param-name>
+      <param-value>14</param-value>
+    </init-param>
+  </filter>
 
+  <filter-mapping>
+    <filter-name>httpCacheFourteenDays</filter-name>
+    <url-pattern>*.gif</url-pattern>
+    <url-pattern>*.png</url-pattern>
+    <url-pattern>*.jpg</url-pattern>
+    <url-pattern>*.jpeg</url-pattern>
+  </filter-mapping>
+
+  <filter>
+    <filter-name>httpCacheThreeSixFiveDays</filter-name>
+    <filter-class>nz.co.malo.ouq77.filter.HttpCacheFilter</filter-class>
+    <init-param>
+      <param-name>Expires</param-name>
+      <param-value>365</param-value>
+    </init-param>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>httpCacheThreeSixFiveDays</filter-name>
+    <url-pattern>*.gif</url-pattern>
+    <url-pattern>*.png</url-pattern>
+    <url-pattern>*.ico</url-pattern>
+    <url-pattern>*.jpg</url-pattern>
+    <url-pattern>*.jpeg</url-pattern>
+  </filter-mapping>
+  
 </web-app>

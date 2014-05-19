@@ -12,24 +12,21 @@ import javax.servlet.http.HttpServletResponse;
 
 public class HttpCacheFilter implements Filter {
 
-	private final static String HEADER_CACHE_CONTROL = "Cache-Control";
-	private final static String HEADER_PRAGMA = "Pragma";
 	private final static String HEADER_EXPIRES = "Expires";
 
-	private String cacheLifeTimeInstruction = null;
+	private int cacheExpiresInstructionDays;
 
 	@Override
 	public void init(final FilterConfig fc) throws ServletException {
-		cacheLifeTimeInstruction = fc.getInitParameter(HEADER_CACHE_CONTROL);
+		cacheExpiresInstructionDays = Integer.valueOf(fc.getInitParameter(HEADER_EXPIRES));
 	}
 
 	@Override
 	public void doFilter(final ServletRequest req, final ServletResponse resp, final FilterChain chain) throws IOException, ServletException {
-		if (null != cacheLifeTimeInstruction) {
+		if (cacheExpiresInstructionDays > 0) {
+			System.out.println(cacheExpiresInstructionDays);
 			final HttpServletResponse httpResp = (HttpServletResponse) resp;
-			httpResp.setHeader(HEADER_CACHE_CONTROL, cacheLifeTimeInstruction);
-			httpResp.setHeader(HEADER_PRAGMA, null);
-			final int CACHE_DURATION_IN_SECOND = 60 * 60 * 24 * 5; // 5 days
+			final int CACHE_DURATION_IN_SECOND = 60 * 60 * 24 * cacheExpiresInstructionDays;
 			final long CACHE_DURATION_IN_MS = CACHE_DURATION_IN_SECOND * 1000;
 			long now = System.currentTimeMillis();
 			httpResp.setDateHeader(HEADER_EXPIRES, now + CACHE_DURATION_IN_MS);
@@ -41,6 +38,5 @@ public class HttpCacheFilter implements Filter {
 
 	@Override
 	public void destroy() {
-		cacheLifeTimeInstruction = null;
 	}
 }
