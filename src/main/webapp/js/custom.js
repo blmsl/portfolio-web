@@ -6,10 +6,11 @@
 			rows : 4,
 			columns : 8,
 			animType : 'fadeInOut',
-			animSpeed : 1000,
-			interval : 600,
-			step : 1,
-
+			animSpeed : 1500,
+			interval : 1500,
+			step : 'random',
+			maxStep : 2,
+			preventClick : true,
 			w1024 : {
 				rows : 5,
 				columns : 6
@@ -100,7 +101,7 @@
 function setBannerSize(previousWidth, previousHeight) {
 	var windowWidth = $(window).width();
 	var windowHeight = $(window).height();
-	
+
 	var widthChanged = previousWidth != windowWidth;
 	var heightChanged = false;
 	if(windowHeight - previousHeight > 60) {
