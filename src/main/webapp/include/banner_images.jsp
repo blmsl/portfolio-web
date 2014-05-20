@@ -14,5 +14,6 @@ while (randomFilenames.size() < 50) {
 }
 %>
 <% for (final Integer randomFilename : randomFilenames) { %>
-<li><a href="#"><img src="${initParam['INSTAGRAM_IMAGE_FOLDER']}/<%= randomFilename %>.jpg" alt="<%= randomFilenames.size() %>" /></a></li>
+<%--<li><a href="#"><img src="${initParam['INSTAGRAM_IMAGE_FOLDER']}/<%= randomFilename %>.jpg" /></a></li>--%>
+<li><a href="#"><img src="${pageContext.request.contextPath}/<%= randomFilename %>.jpg" /></a></li>
 <%}%>
