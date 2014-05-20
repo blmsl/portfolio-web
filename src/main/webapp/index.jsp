@@ -29,6 +29,16 @@
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300' rel='stylesheet' type='text/css'>
 		<noscript><link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/fallback.css" /></noscript>
 		<!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="css/fallback.css" /><![endif]-->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-43529041-2', 'ouq77.herokuapp.com');
+      ga('require', 'linkid', 'linkid.js');
+      ga('send', 'pageview');
+    </script>
 	</head>
 	<body>
 		<!--wrapper start-->
@@ -99,9 +109,9 @@
 							<p>I have a strong <b>sense of responsibility</b> and am always driven to <b>deliver on or ahead of deadlines</b>. <b>Front end</b> or <b>back end</b>, I'm equally comfortable performing either or both.</p>
 							<h4 class="subHeading">Hobbies and Interests</h4>
 							<p><i class="fa fa-camera-retro"></i> Photography, <i class="fa fa-android"></i> Android, <i class="fa fa-road"></i> travel and <i class="fa fa-plane"></i> plane spotting - not necessarily in that order.</p>
-							<a href="#contact" target="_blank" class="btnDownload">Request CV &amp; References</a>
+							<a id="cv_request" href="#contact" target="_blank" class="btnDownload">Request CV &amp; References</a>
 							&nbsp;&nbsp;&nbsp;
-							<a href="${initParam['ANDROID_APP_URL']}" target="_blank" class="btnDownload" title="Download and install this file on your Android running 4.03 or newer">Download for&nbsp;&nbsp;&nbsp;<i class="fa fa-android fa-1_4x"></i>&nbsp;&nbsp;&nbsp;as APK</a>
+							<a id="droid_download" href="${initParam['ANDROID_APP_URL']}" target="_blank" class="btnDownload" title="Download and install this file on your Android running 4.03 or newer">Download for&nbsp;&nbsp;&nbsp;<i class="fa fa-android fa-1_4x"></i>&nbsp;&nbsp;&nbsp;as APK</a>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1 col-lg-offset-1 proPic">
 						  <img src="${pageContext.request.contextPath}/images/profile.jpg" alt="" class="img-circle topmar" width="295" height="295" />
