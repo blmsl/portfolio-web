@@ -23,12 +23,12 @@
           $(".navbar-collapse").addClass("collapse");
         });
 
-        $(".navbar-toggle").click(function() {
-            $(".navbar-collapse").removeClass("hideClass");
-        });
-
         $(".navbar.navbar-inverse.navbar-static-top a").click(function() {
           $(".navbar-collapse").removeClass("in");
+        });
+
+        $(".navbar-toggle").click(function() {
+        	$(".navbar-collapse").removeClass("hideClass");
         });
       });
     });
