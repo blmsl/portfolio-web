@@ -222,14 +222,18 @@
 						</div>
 						<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 							<div class="arrowpart"></div>
-							<div class="exCon">
+							<div class="exCon" id="quirk">
 								<h4>Quirk <a href="http://www.quirk.biz" target="_blank" class="link"><i class="fa fa-link"></i></a></h4>
 								<h5>Software Engineer</h5>
 								<h5 class="subHeading"><i>Cape Town, South Africa</i></h5>
 								<p>Worked as a Software Engineer at the Cape Town office of Quirk developing <b>Java</b> (<b>Java EE</b>) <b>web based applications</b> to client specifications within specified deadlines. Projects included <b>SEO optimised websites</b> and <b>mobile websites</b>, <b>custom built CMS</b> solutions, <b>Facebook Applications</b>, integrations with <b>Twitter</b> and other <b>3rd party APIs</b>, <b>RSS Feeds</b> (both generating and parsing). The development environment was <b>Java</b>, utilising the <b>MVC WebWork</b> framework and <b>Freemarker Templating</b> engine, backed by <b>Spring</b>, <b>MySQL</b> and <b>Hibernate</b>.</p>
 								<p>Maintained and supported existing applications. Interfaced with clients regularly for presentations and training. Compiled client facing documentation where required. Performed on-call server monitoring duties.</p>
 								<h6>Accomplishments</h6>
-								<p>Integrated an open source <b>mobile framework</b> (WURFL) into the Quirk software stack enabling development of mobile client solutions. Converted <b>Google's server-side JSP tracking</b> code to fit into the Quirk stack and WebWork framework. Developed a <b>live tracking solution</b> of a colleague's mountain bike race via <b>GPS</b>, Vodacom API and <b>Google Maps API</b>.</p>
+								<p>Integrated an open source <b>mobile framework</b> (WURFL) into the Quirk software stack enabling development of mobile client solutions. Converted <b>Google's server-side JSP tracking</b> code to fit into the Quirk stack and WebWork framework.</p>
+								<p>Developed a <b>live tracking solution</b> of a colleague's mountain bike race via <b>GPS</b>, Vodacom API and <b>Google Maps API</b>.</p>
+                <div class="vid-container">
+								  <iframe width="xxx" height="xxx" src="//www.youtube.com/embed/34Tb79-2ekc" frameborder="0"></iframe>
+								</div>
 							</div>
 						</div>
 					</div>

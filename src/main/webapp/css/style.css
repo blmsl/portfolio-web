@@ -1172,6 +1172,24 @@ ul.portfolioContainer li:hover span.hoverBox .linKed {
 /*---------------------------------------------------------------------------------
  13. Responsive style
 -------------------------------------------------------------------------------*/
+/* Youtube Reflexive */
+.vid-container {
+    position: relative;
+    padding-bottom: 50%;
+    padding-top: 35px; height: 0; overflow: hidden;
+    margin-bottom: 18px;
+}
+
+.vid-container iframe,
+.vid-container object,
+.vid-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 @media screen and (min-width: 1200px) {
 	.workYear {
 		width: 140px;
