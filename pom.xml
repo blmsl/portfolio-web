@@ -134,6 +134,7 @@
 								<jsSourceFile>jquery.easing.min.js</jsSourceFile>
 								<jsSourceFile>jquery.easypiechart.js</jsSourceFile>
 								<jsSourceFile>jquery.contact.js</jsSourceFile>
+								<jsSourceFile>stickUpInit.js</jsSourceFile>
 							</jsSourceFiles>
 							<jsEngine>CLOSURE</jsEngine>
 						</configuration>

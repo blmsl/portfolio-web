@@ -51,11 +51,8 @@
 				previousHeight = $(window).innerHeight();
 			}, 500);
 		});
-	});
 
-	// for skill chat jquery
-	$(document).ready(function(e) {
-		// var windowBottom = $(window).height();
+		// for skill chat jquery
 		var index = 0;
 		$(document).scroll(function() {
 			if (elementInViewport($('#js_trigger_skills'))) {

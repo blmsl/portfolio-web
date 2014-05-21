@@ -3,6 +3,7 @@
   preserveLineBreaks="false" 
   removeMultiSpaces="true"
   removeComments="true"
+  removeQuotes="true"
   compressJavaScript="true" 
   jsCompressor="closure"
   closureOptLevel="whitespace">
@@ -17,17 +18,17 @@
 <!--<![endif]-->
 	<head>
 		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<title>Louw Swart | Personal Portfolio</title>
     <meta name="description" content="On-line Portfolio and CV for Louw Swart - Java Developer based in Wellington, New Zealand" />
 		<%@include file="include/social_media.jsp"%>
 		<link rel="shortcut icon" href="${pageContext.request.contextPath}/favicon.ico" type="image/x-icon" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<!--minified styles -->
-		<link rel="stylesheet" type="text/css" media="screen" href="${pageContext.request.contextPath}/css/style.min.css">
+		<link href="${pageContext.request.contextPath}/css/style.min.css" rel="stylesheet" type="text/css" media="screen" />
 		<!--google font style -->
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300' rel='stylesheet' type='text/css'>
-		<noscript><link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/fallback.css" /></noscript>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300' rel='stylesheet' type='text/css' />
+		<noscript><link href="${pageContext.request.contextPath}/css/fallback.css" rel="stylesheet" type="text/css" /></noscript>
 		<!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="css/fallback.css" /><![endif]-->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -347,7 +348,10 @@
 			<!--footer end-->
 		</div>
 		<!--wrapper end-->
-    <%@include file="include/scripts.jsp"%>
+    <!--minified js -->
+    <script src="${pageContext.request.contextPath}/js/script.min.js"></script>
 	</body>
 </html>
 </compress:html>
+
+<%@include file="include/ascii.jsp"%>

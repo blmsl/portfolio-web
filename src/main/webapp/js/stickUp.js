@@ -94,7 +94,7 @@ jQuery(function($) {
 					'margin-top' : stickyHeight + stickyMarginB + currentMarginT + 'px'
 				}, 10);
 				$('.stuckMenu').css("position", "fixed");
-				$('.isStuck').css({ 
+				$('.isStuck').css({
 					top : '0px'
 				}, 10);
 			};
