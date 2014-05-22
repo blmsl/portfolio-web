@@ -33,18 +33,18 @@ public class Main {
 	public static void main(final String[] args) throws Exception {
 
 		final Level level = StringUtils.isNotEmpty(System.getenv(LOGGER_LEVEL)) ? Level.parse(System.getenv(LOGGER_LEVEL)) : DEFAULT_LEVEL;
-		final Logger logger = Logger.getLogger("");
-		logger.setLevel(level);
-		final Handler[] handlers = logger.getHandlers();
-		Handler handler = (handlers.length == 1 && handlers[0] instanceof ConsoleHandler) ? handlers[0] : new ConsoleHandler();
-		handler.setFormatter(new SimpleFormatter());
-		handler.setLevel(level);
-		handler.setEncoding("UTF-8");
-		logger.addHandler(handler);
+		if (!level.getName().endsWith(DEFAULT_LEVEL.getName())) {
+			final Logger logger = Logger.getLogger("");
+			logger.setLevel(level);
+			final Handler[] handlers = logger.getHandlers();
+			Handler handler = (handlers.length == 1 && handlers[0] instanceof ConsoleHandler) ? handlers[0] : new ConsoleHandler();
+			handler.setFormatter(new SimpleFormatter());
+			handler.setLevel(level);
+			handler.setEncoding("UTF-8");
+			logger.addHandler(handler);
+		}
 
 		final Tomcat tomcat = new Tomcat();
-		// The port that we should run on can be set into an environment variable
-		// Look for that variable and default to 8080 if it isn't there.
 		final String webPort = System.getenv(WEB_PORT_SYS_ENV) != null && !System.getenv(WEB_PORT_SYS_ENV).isEmpty() ? System.getenv(WEB_PORT_SYS_ENV) : "8080";
 
 		tomcat.setPort(Integer.valueOf(webPort));
