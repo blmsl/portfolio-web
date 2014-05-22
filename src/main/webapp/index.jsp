@@ -31,14 +31,15 @@
 		<noscript><link href="${pageContext.request.contextPath}/css/fallback.css" rel="stylesheet" type="text/css" /></noscript>
 		<!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="css/fallback.css" /><![endif]-->
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    
-      ga('create', 'UA-43529041-2', 'ouq77.herokuapp.com');
-      ga('require', 'linkid', 'linkid.js');
-      ga('send', 'pageview');
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-43529041-2']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
     </script>
 	</head>
 	<body>
@@ -78,12 +79,12 @@
 										</div>
 										<div class="navbar-collapse collapse">
 											<ul class="nav navbar-nav">
-												<li class="menuItem active"><a href="#wrapper">Home</a></li>
-												<li class="menuItem"><a href="#aboutme">About</a></li>
-												<li class="menuItem"><a href="#technical">Skills</a></li>
-												<li class="menuItem"><a href="#exprience">Experience</a></li>
-												<li class="menuItem"><a href="#education">Education</a></li>
-												<li class="menuItem"><a href="#contact">Contact</a></li>
+												<li class="menuItem active"><a href="#wrapper" class="trackView">Home</a></li>
+												<li class="menuItem"><a href="#aboutme" class="trackView">About</a></li>
+												<li class="menuItem"><a href="#technical" class="trackView">Skills</a></li>
+												<li class="menuItem"><a href="#exprience" class="trackView">Experience</a></li>
+												<li class="menuItem"><a href="#education" class="trackView">Education</a></li>
+												<li class="menuItem"><a href="#contact" class="trackView">Contact</a></li>
 											</ul>
 										</div>
 									</div>
@@ -110,9 +111,9 @@
 							<p>I have a strong <b>sense of responsibility</b> and am always driven to <b>deliver on or ahead of deadlines</b>. <b>Front end</b> or <b>back end</b>, I'm equally comfortable performing either or both.</p>
 							<h4 class="subHeading">Hobbies and Interests</h4>
 							<p><i class="fa fa-camera-retro"></i> Photography, <i class="fa fa-android"></i> Android, <i class="fa fa-road"></i> travel and <i class="fa fa-plane"></i> plane spotting - not necessarily in that order.</p>
-							<a id="cv_request" href="#contact" target="_blank" class="btnDownload">Request CV &amp; References</a>
+							<a id="cv_request" href="#contact" target="_blank" class="btnDownload trackView">Request CV &amp; References</a>
 							&nbsp;&nbsp;&nbsp;
-							<a id="droid_download" href="${initParam['ANDROID_APP_URL']}" target="_blank" class="btnDownload" title="Download and install this file on your Android running 4.03 or newer">Download for&nbsp;&nbsp;&nbsp;<i class="fa fa-android fa-1_4x"></i>&nbsp;&nbsp;&nbsp;as APK</a>
+							<a id="droid_download" href="${initParam['ANDROID_APP_URL']}" target="_blank" class="btnDownload trackView" title="Download and install this file on your Android running 4.03 or newer">Download for&nbsp;&nbsp;&nbsp;<i class="fa fa-android fa-1_4x"></i>&nbsp;&nbsp;&nbsp;as APK</a>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1 col-lg-offset-1 proPic">
 						  <img src="${pageContext.request.contextPath}/images/profile.jpg" alt="" class="img-circle topmar" width="295" height="295" />
@@ -189,7 +190,7 @@
 						<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 							<div class="arrowpart"></div>
 							<div class="exCon">
-								<h4>EROAD <a href="http://www.eroad.co.nz" target="_blank" class="link"><i class="fa fa-link"></i></a></h4>
+								<h4>EROAD <a href="http://www.eroad.co.nz" target="_blank" class="link trackView"><i class="fa fa-link"></i></a></h4>
 								<h5>Senior Java Developer</h5>
 								<h5 class="subHeading"><i>Auckland, New Zealand</i></h5>
 								<p>Employed as a Java Developer at EROAD, New Zealand's leading transport technology and services company. Worked in an <b>agile environment</b> developing and unit testing existing and new enhancements, which involved user <b>interface</b>, <b>web-services</b> and <b>back end integration</b> for EROAD's <b>Cloud Based SaaS application</b>.</p>
@@ -207,7 +208,7 @@
 						<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 							<div class="arrowpart"></div>
 							<div class="exCon">
-								<h4>Rockwell <a href="http://nz.rockwellautomation.com" target="_blank" class="link"><i class="fa fa-link"></i></a></h4>
+								<h4>Rockwell <a href="http://nz.rockwellautomation.com" target="_blank" class="link trackView"><i class="fa fa-link"></i></a></h4>
 								<h5>Software Developer</h5>
 								<h5 class="subHeading"><i>Hamilton, New Zealand</i></h5>
 								<p>Worked as a Software Developer at the New Zealand campus of Rockwell Automation. Functioned within an <b>agile team</b> developing <b>user interface</b> elements as well as <b>web-services</b> and <b>back end integration</b> for a performance management platform used in a variety of industries worldwide. This <b>multi-tier application</b> was deployed in a web environment (<b>Tomcat</b> &amp; <b>JBoss</b>), on the <b>Java EE technology stack</b>.</p>
@@ -224,7 +225,7 @@
 						<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 							<div class="arrowpart"></div>
 							<div class="exCon" id="quirk">
-								<h4>Quirk <a href="http://www.quirk.biz" target="_blank" class="link"><i class="fa fa-link"></i></a></h4>
+								<h4>Quirk <a href="http://www.quirk.biz" target="_blank" class="link trackView"><i class="fa fa-link"></i></a></h4>
 								<h5>Software Engineer</h5>
 								<h5 class="subHeading"><i>Cape Town, South Africa</i></h5>
 								<p>Worked as a Software Engineer at the Cape Town office of Quirk developing <b>Java</b> (<b>Java EE</b>) <b>web based applications</b> to client specifications within specified deadlines. Projects included <b>SEO optimised websites</b> and <b>mobile websites</b>, <b>custom built CMS</b> solutions, <b>Facebook Applications</b>, integrations with <b>Twitter</b> and other <b>3rd party APIs</b>, <b>RSS Feeds</b> (both generating and parsing). The development environment was <b>Java</b>, utilising the <b>MVC WebWork</b> framework and <b>Freemarker Templating</b> engine, backed by <b>Spring</b>, <b>MySQL</b> and <b>Hibernate</b>.</p>
@@ -283,7 +284,7 @@
 						<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 							<div class="arrowpart"></div>
 							<div class="exCon">
-								<h4>CTI  <a href="http://www.cti.co.za" target="_blank" class="link"><i class="fa fa-link"></i></a></h4>
+								<h4>CTI  <a href="http://www.cti.co.za" target="_blank" class="link trackView"><i class="fa fa-link"></i></a></h4>
 								<h5>Comprehensive Programming</h5>
 								<h5 class="subHeading"><i>Cape Town, South Africa</i></h5>
 								<p>Java SE/EE;<br />Linux Red Hat;<br />Processing and Logic concepts;<br />Program Design;<br />Software Engineering;<br />Relational Database &amp; Modelling Design;<br />SQL Server 2000;<br />Linux Administration;</p>
@@ -309,7 +310,7 @@
 						<h4>Contact details</h4>
 						<p><i class="fa fa-map-marker fa-lg"></i> Eastbourne, Lower Hutt, Wellington, NZ</p>
 						<p><i class="fa fa-mobile fa-lg"></i> +64 22 031 3927</p>
-						<p><i class="fa fa-link"></i> <a href="http://ouq77.flavors.me" target="_blank">Flavors.me</a></p>
+						<p><i class="fa fa-link"></i> <a href="http://ouq77.flavors.me" target="_blank" class="trackView">Flavors.me</a></p>
 					</div>
 					<!--contact info end-->
 					<!--contact form start-->
@@ -331,16 +332,16 @@
 			<section class="footer" id="footer">
 				<div class="container">
 					<ul>
-						<li><a href="http://nz.linkedin.com/in/louwswart/" target="_blank" title="See my LinkedIn here"><i class="fa fa-linkedin fa-2x"></i></a></li>
-						<li><a href="http://github.com/ouq77" target="_blank" title="See examples of my code here"><i class="fa fa-github fa-2x"></i></a></li>
-						<li><a href="http://plus.google.com/u/0/+LouwSwart/about" target="_blank" title="See my Google+ here"><i class="fa fa-google-plus fa-2x"></i></a></li>
-						<li><a href="http://instagram.com/ouq77" target="_blank" title="See my Instagram here"><i class="fa fa-instagram fa-2x"></i></a></li>
-						<li><a href="http://www.facebook.com/ouq77" target="_blank" title="See my Facebook here"><i class="fa fa-facebook fa-2x"></i></a></li>
+						<li><a href="http://nz.linkedin.com/in/louwswart/" target="_blank" title="See my LinkedIn here" class="trackView"><i class="fa fa-linkedin fa-2x"></i></a></li>
+						<li><a href="http://github.com/ouq77" target="_blank" title="See examples of my code here" class="trackView"><i class="fa fa-github fa-2x"></i></a></li>
+						<li><a href="http://plus.google.com/u/0/+LouwSwart/about" target="_blank" title="See my Google+ here" class="trackView"><i class="fa fa-google-plus fa-2x"></i></a></li>
+						<li><a href="http://instagram.com/ouq77" target="_blank" title="See my Instagram here" class="trackView"><i class="fa fa-instagram fa-2x"></i></a></li>
+						<li><a href="http://www.facebook.com/ouq77" target="_blank" title="See my Facebook here" class="trackView"><i class="fa fa-facebook fa-2x"></i></a></li>
 					</ul>
 					<div class="footer-info">
             <p><i class="fa fa-info"></i> Basic Java Web app (JSP, Servlet, Javascript, AJAX)</p>
-            <p>Hosted on the <i><a href="http://heroku.com" target="_blank">heroku.com</a></i> cloud platform</p>
-            <p>&copy; <%=yearDf.format(new Date())%> &ndash; HTML Template by <i><a href="http://themeforest.net/user/themeelite" target="_blank">themeelite</a></i></p>
+            <p>Hosted on the <i><a href="http://heroku.com" target="_blank" class="trackView">heroku.com</a></i> cloud platform</p>
+            <p>&copy; <%=yearDf.format(new Date())%> &ndash; HTML Template by <i><a href="http://themeforest.net/user/themeelite" target="_blank" class="trackView">themeelite</a></i></p>
           </div>
 				</div>
 			</section>
@@ -349,6 +350,15 @@
 		<!--wrapper end-->
     <!--minified js -->
     <script src="${pageContext.request.contextPath}/js/script.min.js?v=${initParam['CACHE_VERSION']}"></script>
+    <script type="text/javascript">
+	    $(document).ready(function(){
+		    $('.trackView').click(function() {
+		      if(_gaq){
+		        _gaq.push(['_trackEvent', 'link_click', $(this).attr('href')]);
+		      }
+		    });
+	    });
+    </script>
 	</body>
 </html>
 </compress:html>

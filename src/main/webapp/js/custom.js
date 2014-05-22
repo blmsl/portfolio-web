@@ -116,16 +116,9 @@ function setBannerSize(previousWidth, previousHeight) {
 }
 
 function elementInViewport(el) {
-	var viewportWidth = jQuery(window).width(), viewportHeight = jQuery(window)
-			.height(),
-
-	documentScrollTop = jQuery(document).scrollTop(), documentScrollLeft = jQuery(
-			document).scrollLeft(),
-
-	minTop = documentScrollTop, maxTop = documentScrollTop + viewportHeight, minLeft = documentScrollLeft, maxLeft = documentScrollLeft
-			+ viewportWidth,
-
+	var viewportWidth = jQuery(window).width(), viewportHeight = jQuery(window).height(),
+	documentScrollTop = jQuery(document).scrollTop(), documentScrollLeft = jQuery(document).scrollLeft(),
+	minTop = documentScrollTop, maxTop = documentScrollTop + viewportHeight, minLeft = documentScrollLeft, maxLeft = documentScrollLeft + viewportWidth,
 	$myElement = el, elementOffset = $myElement.offset();
-	return ((elementOffset.top > minTop && elementOffset.top < maxTop)
-			&& (elementOffset.left > minLeft && elementOffset.left < maxLeft));
+	return ((elementOffset.top > minTop && elementOffset.top < maxTop) && (elementOffset.left > minLeft && elementOffset.left < maxLeft));
 }
