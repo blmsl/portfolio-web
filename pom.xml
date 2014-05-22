@@ -17,10 +17,12 @@
 		<maven-surefire-plugin.version>2.17</maven-surefire-plugin.version>
 		<maven-resources-plugin.version>2.6</maven-resources-plugin.version>
 		<minify-maven-plugin.version>1.7.2</minify-maven-plugin.version>
-		<appassembler-maven-plugin.version>1.1.1</appassembler-maven-plugin.version>
+		<appassembler-maven-plugin.version>1.8</appassembler-maven-plugin.version>
 		<source.target.version>1.7</source.target.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<skipTests>true</skipTests>
+		<build.timestamp>${maven.build.timestamp}</build.timestamp>
+		<maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ssXXX</maven.build.timestamp.format>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -42,16 +44,19 @@
 			<groupId>org.apache.tomcat</groupId>
 			<artifactId>tomcat-jasper</artifactId>
 			<version>${tomcat.version}</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.tomcat</groupId>
 			<artifactId>tomcat-jasper-el</artifactId>
 			<version>${tomcat.version}</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.tomcat</groupId>
 			<artifactId>tomcat-jsp-api</artifactId>
 			<version>${tomcat.version}</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.sun.mail</groupId>
@@ -72,26 +77,18 @@
 			<groupId>com.googlecode.htmlcompressor</groupId>
 			<artifactId>htmlcompressor</artifactId>
 			<version>${htmlcompressor.version}</version>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.google.javascript</groupId>
 			<artifactId>closure-compiler</artifactId>
 			<version>${closure-compiler.version}</version>
+			<scope>compile</scope>
 		</dependency>
 	</dependencies>
 	<build>
 		<finalName>ouq77.herokuapp.com</finalName>
 		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>${maven-compiler-plugin.version}</version>
-				<inherited>true</inherited>
-				<configuration>
-					<source>${source.target.version}</source>
-					<target>${source.target.version}</target>
-				</configuration>
-			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
@@ -106,7 +103,7 @@
 				<version>${maven-resources-plugin.version}</version>
 				<executions>
 					<execution>
-						<id>copy-resources</id>
+						<id>copy-web-app-resources</id>
 						<phase>validate</phase>
 						<goals>
 							<goal>copy-resources</goal>
@@ -123,6 +120,22 @@
 										<exclude>css/font-awesome.css</exclude>
 										<exclude>css/layout.css</exclude>
 									</excludes>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+					<execution>
+						<id>copy-resources</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/target/classes</outputDirectory>
+							<resources>
+								<resource>
+									<directory>src/main/resources</directory>
+									<filtering>true</filtering>
 								</resource>
 							</resources>
 						</configuration>
@@ -166,6 +179,16 @@
 				</executions>
 			</plugin>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<inherited>true</inherited>
+				<configuration>
+					<source>${source.target.version}</source>
+					<target>${source.target.version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>appassembler-maven-plugin</artifactId>
 				<version>${appassembler-maven-plugin.version}</version>
@@ -174,7 +197,7 @@
 					<programs>
 						<program>
 							<mainClass>nz.co.malo.ouq77.launch.Main</mainClass>
-							<name>webapp</name>
+							<id>webapp</id>
 						</program>
 					</programs>
 				</configuration>

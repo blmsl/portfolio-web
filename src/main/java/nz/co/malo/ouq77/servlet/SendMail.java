@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.security.GeneralSecurityException;
 import java.util.Properties;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.mail.Address;
 import javax.mail.Authenticator;
@@ -31,85 +33,85 @@ import com.sun.mail.util.MailSSLSocketFactory;
 public class SendMail extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
+	private static final Pattern ILLEGAL_CHARS_PATTERN = Pattern.compile("[<>^|%()&+]");
+	private static final Pattern URL_PATTERN = Pattern.compile("http[s]?");
+	private static final String INPUT_HONEY_POT = "heuning";
+	private static final String INPUT_NAME = "name";
+	private static final String INPUT_EMAIL = "email";
+	private static final String INPUT_MESSAGE = "message";
+	private static final String HEROKU_APP_DOMAIN = "ouq77.horokuapp.com";
 	private static final String LOUW_SWART = "Louw Swart";
 	private static final String JAVA_MAIL_EMAIL = "JAVA_MAIL_EMAIL";
 	private static final String JAVA_MAIL_PASSWORD = "JAVA_MAIL_PASSWORD";
-	private static final String SUBJECT = "Message from %s | ouq77.horokuapp.com";
+	private static final String SUBJECT = "Message from %s | " + HEROKU_APP_DOMAIN;
 	private static final String CONTENT = "You have been contacted by %s (%s). Their additional message is as follows:\n\n%s";
 	private static final String CONTENT_COPY = "Thank you for getting in touch - I've received your message.\n\nHere is a copy of what you sent:\n\n%s (%s)\n\n%s";
-	private static final String SPAM = "<<div class=\"error_message\">Spam filter has been triggered.</div>";
-	private static final String NAME_REQUIRED = "<div class=\"error_message\">Please enter your name.</div>";
-	private static final String EMAIL_REQUIRED = "<div class=\"error_message\">Please enter a valid email address.</div>";
-	private static final String EMAIL_INVALID = "<div class=\"error_message\">You have entered an invalid e-mail address. Please try again.</div>";
-	private static final String MESSAGE_REQUIRED = "<div class=\"error_message\">Please enter your message.</div>";
-	private static final String SUCCESS = "<div id=\"success_page\"><h3>Email Sent Successfully.</h3><p>Thank you <strong>%s</strong>, your message has been sent.</p></div></fieldset>";
-	private static final String ERROR = "<div class=\"error_message\">Something unexpected happend. Please try again late...</div>";
+	private static final String MESSAGE_DIV = "<div class=\"%s\">%s</div>";
+	private static final String ERROR_CLASS = "error_message";
+	private static final String SUCCESS_CLASS = "success_message";
+	private static final String BR = "<br/>";
+	private static final String SPAM = "Spam filter has been triggered";
+	private static final String FIELD_REQUIRED = "Please enter your ";
+	private static final String EMAIL_INVALID = "You have entered an invalid email";
+	private static final String CONTAINS_ILLEGAL_CHARS = " contains one or more illegal characters: <i>< > ^ | \" ' % ; ) ( & + -</i>";
+	private static final String CONTAINS_URL = " does not allow URLs";
+	private static final String UNKNOWN_ERROR = "Something unexpected happend - please try again later...";
+	private static final String SUCCESS = "<h3>Email Sent Successfully.</h3><p>Thank you <strong>%s</strong>, your message has been sent.</p>";
 
 	@Override
 	protected void doPost(final HttpServletRequest req, final HttpServletResponse resp) throws ServletException, IOException {
-		final String heuning = req.getParameter("heuning");
-		final String name = req.getParameter("name");
-		final String email = req.getParameter("email");
-		final String comments = req.getParameter("comments");
+		final String heuning = req.getParameter(INPUT_HONEY_POT);
+		final String name = req.getParameter(INPUT_NAME);
+		final String email = req.getParameter(INPUT_EMAIL);
+		final String message = req.getParameter(INPUT_MESSAGE);
 
 		final StringBuilder responseBuilder = new StringBuilder();
 		if (StringUtils.isNotEmpty(heuning)) {
 			responseBuilder.append(SPAM);
 		}
 
-		if (responseBuilder.length() == 0) {
-			if (StringUtils.isEmpty(name)) {
-				responseBuilder.append(NAME_REQUIRED);
-			}
-		}
-		if (responseBuilder.length() == 0) {
-			if (StringUtils.isEmpty(email)) {
-				responseBuilder.append(EMAIL_REQUIRED);
-			} else if (!EmailValidator.getInstance().isValid(email)) {
-				responseBuilder.append(EMAIL_INVALID);
-			}
-		}
-		if (responseBuilder.length() == 0) {
-			if (StringUtils.isEmpty(comments)) {
-				responseBuilder.append(MESSAGE_REQUIRED);
-			}
-		}
+		validateInput(responseBuilder, INPUT_NAME, name);
+		validateInput(responseBuilder, INPUT_EMAIL, email);
+		validateInput(responseBuilder, INPUT_MESSAGE, message);
 
 		if (responseBuilder.length() == 0) {
 			try {
-				responseBuilder.append(send(name, email, comments));
+				responseBuilder.append(send(name, email, message));
 			} catch (final GeneralSecurityException e) {
 				// Heroku logging
 				System.err.println(e);
-				responseBuilder.append(ERROR);
+				responseBuilder.append(UNKNOWN_ERROR);
 			} catch (final Exception e) {
 				// Heroku logging
 				System.err.println(e);
-				responseBuilder.append(ERROR);
+				responseBuilder.append(UNKNOWN_ERROR);
 			}
 		}
 
+		final String response = String.format(MESSAGE_DIV, responseBuilder.toString().equals(String.format(SUCCESS, name)) ? SUCCESS_CLASS : ERROR_CLASS, responseBuilder.toString());
+
 		resp.setContentType("text/html");
 		final ServletOutputStream out = resp.getOutputStream();
-		out.write(responseBuilder.toString().getBytes());
+		out.write(response.getBytes());
 		out.flush();
 		out.close();
 	}
 
-	private String send(final String fromName, final String fromEmail, final String comments) throws GeneralSecurityException {
+	private String send(final String fromName, final String fromEmail, final String message) throws GeneralSecurityException {
 
 		final Properties props = new Properties();
 		props.put("mail.smtp.host", "smtp.gmail.com");
 		props.put("mail.smtp.port", "465");
 
 		final MailSSLSocketFactory sf = new MailSSLSocketFactory();
-		sf.setTrustedHosts(new String[] { "localhost", "ouq77.horokuapp.com" });
+		sf.setTrustedHosts(new String[] { "localhost", HEROKU_APP_DOMAIN });
 		props.put("mail.smtp.ssl.socketFactory", sf);
 
 		props.put("mail.smtp.ssl.enable", "true");
 		props.put("mail.smtp.auth", "true");
 
 		final Authenticator auth = new Authenticator() {
+			@Override
 			public PasswordAuthentication getPasswordAuthentication() {
 				return new PasswordAuthentication(System.getenv(JAVA_MAIL_EMAIL), System.getenv(JAVA_MAIL_PASSWORD));
 			}
@@ -126,21 +128,21 @@ public class SendMail extends HttpServlet {
 		} catch (final UnsupportedEncodingException e) {
 			// Heroku logging
 			System.err.println(e);
-			return ERROR;
+			return UNKNOWN_ERROR;
 		}
-		
+
 		// Send my copy
 		try {
 			simpleMessage.setFrom(fromAddress);
 			simpleMessage.setReplyTo(new Address[] { fromAddress });
 			simpleMessage.setRecipient(RecipientType.TO, toAddress);
 			simpleMessage.setSubject(String.format(SUBJECT, fromName));
-			simpleMessage.setText(String.format(CONTENT, fromName, fromEmail, comments));
+			simpleMessage.setText(String.format(CONTENT, fromName, fromEmail, message));
 			Transport.send(simpleMessage);
 		} catch (final MessagingException e) {
 			// Heroku logging
 			System.err.println(e);
-			return ERROR;
+			return UNKNOWN_ERROR;
 		}
 
 		// Send user copy
@@ -148,14 +150,46 @@ public class SendMail extends HttpServlet {
 			simpleMessage.setFrom(toAddress);
 			simpleMessage.setRecipient(RecipientType.TO, fromAddress);
 			simpleMessage.setSubject(String.format(SUBJECT, LOUW_SWART));
-			simpleMessage.setText(String.format(CONTENT_COPY, fromName, fromEmail, comments));
+			simpleMessage.setText(String.format(CONTENT_COPY, fromName, fromEmail, message));
 			Transport.send(simpleMessage);
 		} catch (final MessagingException e) {
 			// Heroku logging
 			System.err.println(e);
-			return ERROR;
+			return UNKNOWN_ERROR;
 		}
 
 		return String.format(SUCCESS, fromName);
+	}
+
+	private void validateInput(final StringBuilder responseBuilder, final String field, final String input) {
+		if (responseBuilder.length() != 0) {
+			responseBuilder.append(BR);
+		}
+
+		if (StringUtils.isEmpty(input)) {
+			responseBuilder.append(FIELD_REQUIRED).append(field);
+		} else {
+			if (INPUT_NAME.equals(field) || INPUT_MESSAGE.equals(field)) {
+				if (invalidInput(input)) {
+					responseBuilder.append(StringUtils.capitalize(field)).append(CONTAINS_ILLEGAL_CHARS);
+				} else if (containsUrl(input)) {
+					responseBuilder.append(StringUtils.capitalize(field)).append(CONTAINS_URL);
+				}
+			}
+
+			if (INPUT_EMAIL.equals(field) && !EmailValidator.getInstance().isValid(input)) {
+				responseBuilder.append(EMAIL_INVALID);
+			}
+		}
+	}
+
+	private boolean invalidInput(final String input) {
+		final Matcher matcher = ILLEGAL_CHARS_PATTERN.matcher(input);
+		return matcher.find();
+	}
+
+	private boolean containsUrl(final String input) {
+		final Matcher matcher = URL_PATTERN.matcher(input);
+		return matcher.find();
 	}
 }

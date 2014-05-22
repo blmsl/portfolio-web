@@ -1099,7 +1099,7 @@ ul.portfolioContainer li:hover span.hoverBox .linKed {
 	padding-left: 0px !important;
 }
 
-#success_page {
+.success_message {
 	color: #00bdbd;
 	font-weight: 500;
 }
@@ -1110,7 +1110,7 @@ ul.portfolioContainer li:hover span.hoverBox .linKed {
 	font-weight: 500;
 }
 
-#success_page h3 {
+.success_message h3 {
 	font-size: 17px;
 }
 /*----------------------------------------------------

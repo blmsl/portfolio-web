@@ -25,7 +25,7 @@
 		<link rel="shortcut icon" href="${pageContext.request.contextPath}/favicon.ico" type="image/x-icon" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<!--minified styles -->
-		<link href="${pageContext.request.contextPath}/css/style.min.css" rel="stylesheet" type="text/css" media="screen" />
+		<link href="${pageContext.request.contextPath}/css/style.min.css?v=${initParam['CACHE_VERSION']}" rel="stylesheet" type="text/css" media="screen" />
 		<!--google font style -->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300' rel='stylesheet' type='text/css' />
 		<noscript><link href="${pageContext.request.contextPath}/css/fallback.css" rel="stylesheet" type="text/css" /></noscript>
@@ -315,13 +315,12 @@
 					<!--contact form start-->
 					<div class="col-xs-12 col-sm-9 col-md-8 col-lg-8 conForm">
 						<h4>Send a message</h4>
-						<div id="message"></div>
+						<div id="result"></div>
 						<form method="post" action="" name="cform" id="cform">
 							<input name="name" id="name" type="text" class="col-xs-12 col-sm-6 col-md-6 col-lg-6" placeholder="Your name..." /> <input name="email" id="email" type="text" class="col-xs-12 col-sm-6 col-md-6 col-lg-6 noMarr" placeholder="Your email..." />
-							<textarea name="comments" id="comments" cols="" rows="" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" placeholder="Your message..."></textarea>
+							<textarea name="message" id="message" cols="" rows="" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" placeholder="Your message..."></textarea>
 							<input type="hidden" name="heuning" id="heuning" />
 							<input type="submit" id="submit" name="send" class="submitBnt" value="Send message" />
-							<div id="message"></div>
 						</form>
 					</div>
 					<!--contact form end-->
@@ -349,7 +348,7 @@
 		</div>
 		<!--wrapper end-->
     <!--minified js -->
-    <script src="${pageContext.request.contextPath}/js/script.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/script.min.js?v=${initParam['CACHE_VERSION']}"></script>
 	</body>
 </html>
 </compress:html>
