@@ -37,5 +37,6 @@ public class HttpCacheFilter implements Filter {
 
 	@Override
 	public void destroy() {
+		cacheExpiresInstructionDays = 0;
 	}
 }
