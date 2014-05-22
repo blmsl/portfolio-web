@@ -46,6 +46,8 @@
 			if(timeout) {
 				clearTimeout(timeout);
 			}
+
+			// wait half a second for resizing to stop before setting new sizes
 			timeout = setTimeout(function(){
 				previousWidth = $(window).width();
 				previousHeight = $(window).innerHeight();
@@ -92,15 +94,14 @@
 			chart.update(Math.random() * 100);
 		});
 	});
-
 }(jQuery));
 
 function setBannerSize(previousWidth, previousHeight) {
 	var windowWidth = $(window).width();
 	var windowHeight = $(window).height();
-
 	var widthChanged = previousWidth != windowWidth;
 	var heightChanged = false;
+	// mobile browsers ads about 60px to screen height when hiding address bar - ignore this
 	if(windowHeight - previousHeight > 60) {
 		heightChanged = true;
 	}
@@ -116,9 +117,16 @@ function setBannerSize(previousWidth, previousHeight) {
 }
 
 function elementInViewport(el) {
-	var viewportWidth = jQuery(window).width(), viewportHeight = jQuery(window).height(),
-	documentScrollTop = jQuery(document).scrollTop(), documentScrollLeft = jQuery(document).scrollLeft(),
-	minTop = documentScrollTop, maxTop = documentScrollTop + viewportHeight, minLeft = documentScrollLeft, maxLeft = documentScrollLeft + viewportWidth,
-	$myElement = el, elementOffset = $myElement.offset();
-	return ((elementOffset.top > minTop && elementOffset.top < maxTop) && (elementOffset.left > minLeft && elementOffset.left < maxLeft));
+	var viewportWidth = $(window).width(),
+			viewportHeight = $(window).height(),
+			documentScrollTop = $(document).scrollTop(),
+			documentScrollLeft = $(document).scrollLeft(),
+			minTop = documentScrollTop,
+			maxTop = documentScrollTop + viewportHeight,
+			minLeft = documentScrollLeft,
+			maxLeft = documentScrollLeft + viewportWidth,
+			$myElement = el,
+			elementOffset = $myElement.offset();
+	return ((elementOffset.top > minTop && elementOffset.top < maxTop)
+			&& (elementOffset.left > minLeft && elementOffset.left < maxLeft));
 }

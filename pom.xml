@@ -163,18 +163,18 @@
 								<cssSourceFile>font-awesome.css</cssSourceFile>
 							</cssSourceFiles>
 							<jsSourceFiles>
-								<jsSourceFile>modernizr.custom.26633.js</jsSourceFile>
-								<jsSourceFile>jquery.min.js</jsSourceFile>
-								<jsSourceFile>bootstrap.js</jsSourceFile>
-								<jsSourceFile>jquery.gridrotator.js</jsSourceFile>
+								<jsSourceFile>lib/modernizr.custom.26633.js</jsSourceFile>
+								<jsSourceFile>lib/jquery.min.js</jsSourceFile>
+								<jsSourceFile>lib/bootstrap.js</jsSourceFile>
+								<jsSourceFile>lib/jquery.gridrotator.js</jsSourceFile>
 								<jsSourceFile>custom.js</jsSourceFile>
-								<jsSourceFile>jquery.placeholder.js</jsSourceFile>
-								<jsSourceFile>stickUp.js</jsSourceFile>
-								<jsSourceFile>jquery.isotope.js</jsSourceFile>
-								<jsSourceFile>jquery.easing.min.js</jsSourceFile>
-								<jsSourceFile>jquery.easypiechart.js</jsSourceFile>
-								<jsSourceFile>jquery.contact.js</jsSourceFile>
-								<jsSourceFile>stickUpInit.js</jsSourceFile>
+								<jsSourceFile>lib/jquery.placeholder.js</jsSourceFile>
+								<jsSourceFile>lib/stickUp.js</jsSourceFile>
+								<jsSourceFile>lib/jquery.isotope.js</jsSourceFile>
+								<jsSourceFile>lib/jquery.easing.min.js</jsSourceFile>
+								<jsSourceFile>lib/jquery.easypiechart.js</jsSourceFile>
+								<jsSourceFile>contact.js</jsSourceFile>
+								<jsSourceFile>stickupinit.js</jsSourceFile>
 							</jsSourceFiles>
 							<jsEngine>CLOSURE</jsEngine>
 						</configuration>
