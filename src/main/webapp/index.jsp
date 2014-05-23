@@ -335,7 +335,7 @@
         <ul>
           <li><a href="http://nz.linkedin.com/in/louwswart/" target="_blank" title="See my LinkedIn here" class="js_track_link_click"><i class="fa fa-linkedin fa-2x"></i></a></li>
           <li><a href="http://github.com/ouq77" target="_blank" title="See examples of my code here" class="js_track_link_click"><i class="fa fa-github fa-2x"></i></a></li>
-          <li><a href="http://plus.google.com/u/0/+LouwSwart/about" target="_blank" title="See my Google+ here" class="js_track_link_click"><i class="fa fa-google-plus fa-2x"></i></a></li>
+          <li><a href="http://plus.google.com/u/0/+LouwSwart/about?rel=author" target="_blank" title="See my Google+ here" class="js_track_link_click"><i class="fa fa-google-plus fa-2x"></i></a></li>
           <li><a href="http://instagram.com/ouq77" target="_blank" title="See my Instagram here" class="js_track_link_click"><i class="fa fa-instagram fa-2x"></i></a></li>
           <li><a href="http://www.facebook.com/ouq77" target="_blank" title="See my Facebook here" class="js_track_link_click"><i class="fa fa-facebook fa-2x"></i></a></li>
         </ul>
