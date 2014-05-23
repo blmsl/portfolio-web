@@ -19,13 +19,13 @@ import org.apache.commons.lang3.StringUtils;
 public class Main {
 
 	private static final Level DEFAULT_LEVEL = Level.INFO;
+	private static final SimpleDateFormat CACHE_SDF = new SimpleDateFormat("yyyyMMddHHmm");
 	private static final String LOGGER_LEVEL = "LOGGER_LEVEL";
 	private static final String WEB_PORT_SYS_ENV = "PORT";
 	private static final String WEB_APPLICATION_DIR_LOCATION = "target/ouq77.herokuapp.com";
 	private static final String ANDROID_APP_URL = "ANDROID_APP_URL";
 	private static final String INSTAGRAM_IMAGE_FOLDER = "INSTAGRAM_IMAGE_FOLDER";
-	private static final SimpleDateFormat MAVEN_SDF = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
-	private static final SimpleDateFormat CACHE_SDF = new SimpleDateFormat("yyyyMMddHHmm");
+	private static final String MAVEN_SDF = "MAVEN_SDF";
 	private static final String BUILD_TIMESTAMP = "BUILD_TIMESTAMP";
 	private static final String CACHE_VERSION = "CACHE_VERSION";
 	private static final String ARTICLE_MODIFIED_TIME = "ARTICLE_MODIFIED_TIME";
@@ -60,13 +60,14 @@ public class Main {
 		ctx.addParameter(ANDROID_APP_URL, System.getenv(ANDROID_APP_URL));
 		ctx.addParameter(INSTAGRAM_IMAGE_FOLDER, System.getenv(INSTAGRAM_IMAGE_FOLDER));
 
-		final Properties prop = new Properties();
+		final Properties props = new Properties();
 		final ClassLoader loader = Thread.currentThread().getContextClassLoader();
 		final InputStream stream = loader.getResourceAsStream("webapp.properties");
-		prop.load(stream);
+		props.load(stream);
 
-		final String buildTimestamp = prop.getProperty(BUILD_TIMESTAMP);
-		final Date cacheDate = MAVEN_SDF.parse(buildTimestamp);
+		final SimpleDateFormat mavenSdf = new SimpleDateFormat(props.getProperty(MAVEN_SDF));
+		final String buildTimestamp = props.getProperty(BUILD_TIMESTAMP);
+		final Date cacheDate = mavenSdf.parse(buildTimestamp);
 		ctx.addParameter(CACHE_VERSION, CACHE_SDF.format(cacheDate));
 		ctx.addParameter(ARTICLE_MODIFIED_TIME, buildTimestamp);
 
