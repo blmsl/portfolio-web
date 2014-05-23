@@ -23,6 +23,6 @@
 <meta property="og:image" content="http://${pageContext.request.serverName}/images/icon.png?v=1" />
 <meta property="og:description" content="On-line Portfolio and CV for Louw Swart - Java Developer based in Wellington, New Zealand" /> 
 <meta property="og:site_name" content="ouq77.herokupp.com" /> 
-<meta property="article:published_time" content="2014-05-17T00:00:00+12:00" /> 
+<meta property="article:published_time" content="2014-05-17T00:00:00+1200" /> 
 <meta property="article:modified_time" content="${initParam['ARTICLE_MODIFIED_TIME']}" />
 <!-- Social Media ends -->

@@ -24,7 +24,7 @@ public class Main {
 	private static final String WEB_APPLICATION_DIR_LOCATION = "target/ouq77.herokuapp.com";
 	private static final String ANDROID_APP_URL = "ANDROID_APP_URL";
 	private static final String INSTAGRAM_IMAGE_FOLDER = "INSTAGRAM_IMAGE_FOLDER";
-	private static final SimpleDateFormat MAVEN_SDF = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX");
+	private static final SimpleDateFormat MAVEN_SDF = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
 	private static final SimpleDateFormat CACHE_SDF = new SimpleDateFormat("yyyyMMddHHmm");
 	private static final String BUILD_TIMESTAMP = "BUILD_TIMESTAMP";
 	private static final String CACHE_VERSION = "CACHE_VERSION";
