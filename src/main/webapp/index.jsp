@@ -104,9 +104,9 @@
             <p>a small introduction</p>
           </div>
           <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
-              <h3>Louw Swart</h3>
-              <h4 class="subHeading">Senior Java Developer, Wellington</h4>
+            <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7" itemscope itemtype="http://data-vocabulary.org/Person">
+              <h3><span itemprop="name">Louw Swart</span></h3>
+              <h4 class="subHeading"><span itemprop="title">Senior Java Developer</span>, Wellington</h4>
               <p>I am a Java Developer with nearly <b>6 years commercial experience</b>, of which roughly the past <b>3 years</b> have been in <b>agile environments</b>, designing, coding, testing and supporting applications across a <b>variety of technologies</b> and <b>platforms</b>.</p>
               <p>I have a strong <b>sense of responsibility</b> and am always driven to <b>deliver on or ahead of deadlines</b>. <b>Front end</b> or <b>back end</b>, I'm equally comfortable performing either or both.</p>
               <h4 class="subHeading">Hobbies and Interests</h4>
@@ -117,7 +117,7 @@
               <p><sub><i>* Requires Android 4.0 (Ice Cream Sandwich) or newer</i></sub></p>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1 col-lg-offset-1 proPic">
-              <img src="${pageContext.request.contextPath}/images/profile.jpg" alt="" class="img-circle topmar" width="295" height="295" />
+              <span itemprop="photo"><img src="${pageContext.request.contextPath}/images/profile.jpg" alt="" class="img-circle topmar" width="295" height="295" /></span>
             </div>
           </div>
         </div>
@@ -309,7 +309,7 @@
           <!--contact info start-->
           <div class="col-xs-12 col-sm-3 col-md-4 col-lg-4">
             <h4>Contact details</h4>
-            <p><i class="fa fa-map-marker fa-lg"></i> Eastbourne, Lower Hutt, Wellington, NZ</p>
+            <p><i class="fa fa-map-marker fa-lg"></i> <span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address"><span itemprop="locality">Eastbourne, Lower Hutt</span>, <span itemprop="region">Wellington</span>, <span itemprop="country-name">NZ</span></span></p>
             <p><i class="fa fa-mobile fa-lg"></i> +64 22 031 3927</p>
             <p><i class="fa fa-link"></i> <a href="http://ouq77.flavors.me" target="_blank" class="js_track_link_click">Flavors.me</a></p>
           </div>
