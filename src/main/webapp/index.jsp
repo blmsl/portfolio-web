@@ -117,7 +117,7 @@
               <p><sub><i>* Requires Android 4.0 (Ice Cream Sandwich) or newer</i></sub></p>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1 col-lg-offset-1 proPic">
-              <span itemprop="photo"></span><img src="${pageContext.request.contextPath}/images/profile.jpg" alt="" class="img-circle topmar" width="295" height="295" /></span>
+              <img src="${pageContext.request.contextPath}/images/profile.jpg" alt="" class="img-circle topmar" width="295" height="295" itemprop="photo" />
             </div>
           </div>
         </div>
