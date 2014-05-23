@@ -14,7 +14,7 @@
 <!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="en"> <![endif]-->
 <!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="en"> <![endif]-->
 <!--[if gt IE 9]><!-->
-<html class="no-js" lang="en" itemscope itemtype="http://schema.org/Article">
+<html class="no-js" lang="en" itemscope itemtype="http://data-vocabulary.org/Person">
 <!--<![endif]-->
   <head>
     <meta charset="UTF-8" />
@@ -104,7 +104,7 @@
             <p>a small introduction</p>
           </div>
           <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7" itemscope itemtype="http://data-vocabulary.org/Person">
+            <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
               <h3><span itemprop="name">Louw Swart</span></h3>
               <h4 class="subHeading"><span itemprop="title">Senior Java Developer</span>, Wellington</h4>
               <p>I am a Java Developer with nearly <b>6 years commercial experience</b>, of which roughly the past <b>3 years</b> have been in <b>agile environments</b>, designing, coding, testing and supporting applications across a <b>variety of technologies</b> and <b>platforms</b>.</p>
@@ -117,7 +117,7 @@
               <p><sub><i>* Requires Android 4.0 (Ice Cream Sandwich) or newer</i></sub></p>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1 col-lg-offset-1 proPic">
-              <span itemprop="photo"><img src="${pageContext.request.contextPath}/images/profile.jpg" alt="" class="img-circle topmar" width="295" height="295" /></span>
+              <img src="${pageContext.request.contextPath}/images/profile.jpg" alt="" class="img-circle topmar" width="295" height="295" />
             </div>
           </div>
         </div>
