@@ -18,7 +18,7 @@
 
 <!-- Open Graph data --> 
 <meta property="og:title" content="Louw Swart | Personal Portfolio" /> 
-<meta property="og:type" content="article" /> 
+<meta property="og:type" content="website" /> 
 <meta property="og:url" content="http://${pageContext.request.serverName}/" />
 <meta property="og:image" content="http://${pageContext.request.serverName}/images/icon.png?v=1" />
 <meta property="og:description" content="On-line Portfolio and CV for Louw Swart - Java Developer based in Wellington, New Zealand" /> 
