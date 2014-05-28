@@ -21,6 +21,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>Louw Swart | Personal Portfolio</title>
     <meta name="description" content="On-line Portfolio and CV for Louw Swart - Java Developer based in Wellington, New Zealand" />
+    <meta name="keywords" content="portfolio cv java developer louw swart" />
     <%@include file="include/social_media.jsp"%>
     <link rel="shortcut icon" href="${pageContext.request.contextPath}/favicon.ico" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
