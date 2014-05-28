@@ -483,20 +483,36 @@ header {
   margin-top: -62px !important;
 }
 
-.btnDownload {
+.btnNormal, .btnDownload {
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
-  background: #474d5d;
   padding: 16px 22px;
   display: inline-block;
   margin-bottom: 15px;
 }
 
-.btnDownload:hover {
-  background: #373d4c;
+.btnNormal:hover, .btnDownload:hover {
   color: #CCCCCC;
   text-decoration: none;
+}
+
+.btnNormal {
+  background: #474d5d;
+}
+
+.btnNormal:hover {
+  background: #373d4c;
+}
+
+.btnDownload {
+  color: #fff;
+  background: #ff675f;
+}
+
+.btnDownload:hover {
+  color: #fff;
+  background: #f5534b;
 }
 /*----------------------------------------------------
  7.	Technical Skills Style
@@ -1340,7 +1356,7 @@ ul.portfolioContainer li:hover span.hoverBox .linKed {
   ul.portfolioContainer li.col-xs-6 {
     width: 100%;
   }
-  .btnDownload {
+  .btnNormal, .btnDownload {
     font-size: 13px;
     padding: 16px 14px;
   }
