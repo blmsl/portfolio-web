@@ -1,13 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+    xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+    xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 
-<url>
-  <loc>http://ouq77.herokuapp.com/</loc>
-  <changefreq>monthly</changefreq>
-</url>
+  <url>
+    <loc>http://ouq77.herokuapp.com/</loc>
+    <image:image>
+      <image:loc>http://ouq77.herokuapp.com/images/icon.png</image:loc>
+    </image:image>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>http://ouq77.herokuapp.com/#aboutme</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>http://ouq77.herokuapp.com/#technical</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>http://ouq77.herokuapp.com/#exprience</loc>
+    <video:video>
+      <video:content_loc>https://www.youtube.com/watch?v=34Tb79-2ekc</video:content_loc>
+    </video:video>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>http://ouq77.herokuapp.com/#education</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>http://ouq77.herokuapp.com/#contact</loc>
+    <changefreq>monthly</changefreq>
+  </url>
 </urlset>
