@@ -19,12 +19,15 @@ import org.apache.commons.lang3.StringUtils;
 public class Main {
 
 	/**
-	 * HEROKU APP VARS
+	 * HEROKU CONFIG VARIABLES
 	 */
 	private static final String LOGGER_LEVEL = System.getenv("LOGGER_LEVEL");
 	private static final String WEB_PORT_SYS_ENV = System.getenv("WEB_PORT_SYS_ENV") != null && !System.getenv("WEB_PORT_SYS_ENV").isEmpty() ? System.getenv("WEB_PORT_SYS_ENV") : "8080";
 	private static final String ANDROID_APP_URL = "ANDROID_APP_URL";
 	private static final String INSTAGRAM_IMAGE_FOLDER = "INSTAGRAM_IMAGE_FOLDER";
+	/**
+	 * END HEROKU CONFIG VARIABLES
+	 */
 
 	private static final String ANDROID_APP_URL_VAL = System.getenv(ANDROID_APP_URL);
 	private static final String INSTAGRAM_IMAGE_FOLDER_VAL = System.getenv(INSTAGRAM_IMAGE_FOLDER);

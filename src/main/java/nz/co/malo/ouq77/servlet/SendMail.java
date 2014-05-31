@@ -34,13 +34,16 @@ public class SendMail extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 	/**
-	 * HEROKU APP VARS
+	 * HEROKU CONFIG VARIABLES
 	 */
 	private static final String CUSTOM_APP_DOMAIN = System.getenv("CUSTOM_APP_DOMAIN");
 	private static final String HEROKU_APP_DOMAIN = System.getenv("HEROKU_APP_DOMAIN");
 	private static final String OWNER_NAME = System.getenv("OWNER_NAME");
 	private static final String JAVA_MAIL_EMAIL = System.getenv("JAVA_MAIL_EMAIL");
 	private static final String JAVA_MAIL_PASSWORD = System.getenv("JAVA_MAIL_PASSWORD");
+	/**
+	 * END HEROKU CONFIG VARIABLES
+	 */
 
 	private static final Pattern ILLEGAL_CHARS_PATTERN = Pattern.compile("[<>^|%()&+]");
 	private static final Pattern URL_PATTERN = Pattern.compile("http[s]?");
