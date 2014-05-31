@@ -22,7 +22,7 @@ public class Main {
 	 * HEROKU CONFIG VARIABLES
 	 */
 	private static final String LOGGER_LEVEL = System.getenv("LOGGER_LEVEL");
-	private static final String WEB_PORT_SYS_ENV = System.getenv("WEB_PORT_SYS_ENV") != null && !System.getenv("WEB_PORT_SYS_ENV").isEmpty() ? System.getenv("WEB_PORT_SYS_ENV") : "8080";
+	private static final String PORT = System.getenv("PORT") != null && !System.getenv("PORT").isEmpty() ? System.getenv("PORT") : "8080";
 	private static final String ANDROID_APP_URL = "ANDROID_APP_URL";
 	private static final String INSTAGRAM_IMAGE_FOLDER = "INSTAGRAM_IMAGE_FOLDER";
 	/**
@@ -55,7 +55,8 @@ public class Main {
 		}
 
 		final Tomcat tomcat = new Tomcat();
-		tomcat.setPort(Integer.valueOf(WEB_PORT_SYS_ENV));
+		final String webPort = System.getenv(PORT) != null && !System.getenv(PORT).isEmpty() ? System.getenv(PORT) : "8080";
+		tomcat.setPort(Integer.valueOf(webPort));
 		final Connector c = tomcat.getConnector();
 		c.setProperty("compression", "on");
 		c.setProperty("compressionMinSize", "1024");
