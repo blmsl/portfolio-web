@@ -4,22 +4,22 @@
     xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 
   <url>
-    <loc>http://ouq77.herokuapp.com/</loc>
+    <loc>http://portfolio.ouq77.kiwi/</loc>
     <image:image>
-      <image:loc>http://ouq77.herokuapp.com/images/icon.png</image:loc>
+      <image:loc>http://portfolio.ouq77.kiwi/images/icon.png</image:loc>
     </image:image>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>http://ouq77.herokuapp.com/#aboutme</loc>
+    <loc>http://portfolio.ouq77.kiwi/#aboutme</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>http://ouq77.herokuapp.com/#technical</loc>
+    <loc>http://portfolio.ouq77.kiwi/#technical</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>http://ouq77.herokuapp.com/#exprience</loc>
+    <loc>http://portfolio.ouq77.kiwi/#exprience</loc>
     <video:video>
       <video:content_loc>https://www.youtube.com/watch?v=34Tb79-2ekc</video:content_loc>
       <video:title>Quirk Tracker</video:title>  
@@ -27,11 +27,11 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>http://ouq77.herokuapp.com/#education</loc>
+    <loc>http://portfolio.ouq77.kiwi/#education</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>http://ouq77.herokuapp.com/#contact</loc>
+    <loc>http://portfolio.ouq77.kiwi/#contact</loc>
     <changefreq>monthly</changefreq>
   </url>
 </urlset>
