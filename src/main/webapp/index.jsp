@@ -312,7 +312,7 @@
             <h4>Contact details</h4>
             <p><i class="fa fa-map-marker fa-lg"></i> <span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address"><span itemprop="locality">Eastbourne, Lower Hutt</span>, <span itemprop="region">Wellington</span>, <span itemprop="country-name">NZ</span></span></p>
             <p><i class="fa fa-mobile fa-lg"></i> +64 22 031 3927</p>
-            <p><i class="fa fa-link"></i> <a href="http://ouq77.flavors.me" target="_blank" class="js_track_link_click">Flavors.me</a></p>
+            <p><i class="fa fa-link"></i> <a href="http://flavors.ouq77.kiwi" target="_blank" class="js_track_link_click">Flavors.me</a></p>
           </div>
           <!--contact info end-->
           <!--contact form start-->
