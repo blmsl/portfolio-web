@@ -6,7 +6,7 @@
 
   <filter>
     <filter-name>httpCacheSevenDays</filter-name>
-    <filter-class>nz.co.malo.ouq77.filter.HttpCacheFilter</filter-class>
+    <filter-class>kiwi.ouq77.portfolio.filter.HttpCacheFilter</filter-class>
     <init-param>
       <param-name>Expires</param-name>
       <param-value>7</param-value>
@@ -21,7 +21,7 @@
 
   <filter>
     <filter-name>httpCacheFourteenDays</filter-name>
-    <filter-class>nz.co.malo.ouq77.filter.HttpCacheFilter</filter-class>
+    <filter-class>kiwi.ouq77.portfolio.filter.HttpCacheFilter</filter-class>
     <init-param>
       <param-name>Expires</param-name>
       <param-value>14</param-value>
@@ -38,7 +38,7 @@
 
   <filter>
     <filter-name>httpCacheThreeSixFiveDays</filter-name>
-    <filter-class>nz.co.malo.ouq77.filter.HttpCacheFilter</filter-class>
+    <filter-class>kiwi.ouq77.portfolio.filter.HttpCacheFilter</filter-class>
     <init-param>
       <param-name>Expires</param-name>
       <param-value>365</param-value>

@@ -1,4 +1,4 @@
-package nz.co.malo.ouq77.launch;
+package kiwi.ouq77.portfolio.launch;
 
 import java.io.File;
 import java.io.InputStream;

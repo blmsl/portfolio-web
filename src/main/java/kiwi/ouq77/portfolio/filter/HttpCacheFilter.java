@@ -1,4 +1,4 @@
-package nz.co.malo.ouq77.filter;
+package kiwi.ouq77.portfolio.filter;
 
 import java.io.IOException;
 

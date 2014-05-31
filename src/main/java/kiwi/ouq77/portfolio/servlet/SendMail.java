@@ -1,4 +1,4 @@
-package nz.co.malo.ouq77.servlet;
+package kiwi.ouq77.portfolio.servlet;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
