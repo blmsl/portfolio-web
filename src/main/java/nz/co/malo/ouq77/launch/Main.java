@@ -55,8 +55,8 @@ public class Main {
 		}
 
 		final Tomcat tomcat = new Tomcat();
-		final String webPort = System.getenv(PORT) != null && !System.getenv(PORT).isEmpty() ? System.getenv(PORT) : "8080";
-		tomcat.setPort(Integer.valueOf(webPort));
+		tomcat.setPort(Integer.valueOf(PORT));
+
 		final Connector c = tomcat.getConnector();
 		c.setProperty("compression", "on");
 		c.setProperty("compressionMinSize", "1024");
