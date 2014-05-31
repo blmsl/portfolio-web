@@ -33,17 +33,21 @@ import com.sun.mail.util.MailSSLSocketFactory;
 public class SendMail extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
+	/**
+	 * HEROKU APP VARS
+	 */
+	private static final String CUSTOM_APP_DOMAIN = System.getenv("CUSTOM_APP_DOMAIN");
+	private static final String HEROKU_APP_DOMAIN = System.getenv("HEROKU_APP_DOMAIN");
+	private static final String OWNER_NAME = System.getenv("OWNER_NAME");
+	private static final String JAVA_MAIL_EMAIL = System.getenv("JAVA_MAIL_EMAIL");
+	private static final String JAVA_MAIL_PASSWORD = System.getenv("JAVA_MAIL_PASSWORD");
+
 	private static final Pattern ILLEGAL_CHARS_PATTERN = Pattern.compile("[<>^|%()&+]");
 	private static final Pattern URL_PATTERN = Pattern.compile("http[s]?");
 	private static final String INPUT_HONEY_POT = "heuning";
 	private static final String INPUT_NAME = "name";
 	private static final String INPUT_EMAIL = "email";
 	private static final String INPUT_MESSAGE = "message";
-	private static final String CUSTOM_APP_DOMAIN = "portfolio.ouq77.kiwi";
-	private static final String HEROKU_APP_DOMAIN = "ouq77.herokuapp.com";
-	private static final String LOUW_SWART = "Louw Swart";
-	private static final String JAVA_MAIL_EMAIL = "JAVA_MAIL_EMAIL";
-	private static final String JAVA_MAIL_PASSWORD = "JAVA_MAIL_PASSWORD";
 	private static final String SUBJECT = "Message from %s | " + CUSTOM_APP_DOMAIN;
 	private static final String CONTENT = "You have been contacted by %s (%s). Their additional message is as follows:\n\n%s";
 	private static final String CONTENT_COPY = "Thank you for getting in touch - I've received your message.\n\nHere is a copy of what you sent:\n\n%s (%s)\n\n%s";
@@ -114,7 +118,7 @@ public class SendMail extends HttpServlet {
 		final Authenticator auth = new Authenticator() {
 			@Override
 			public PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication(System.getenv(JAVA_MAIL_EMAIL), System.getenv(JAVA_MAIL_PASSWORD));
+				return new PasswordAuthentication(JAVA_MAIL_EMAIL, JAVA_MAIL_PASSWORD);
 			}
 		};
 
@@ -125,7 +129,7 @@ public class SendMail extends HttpServlet {
 		InternetAddress toAddress = null;
 		try {
 			fromAddress = new InternetAddress(fromEmail, fromName);
-			toAddress = new InternetAddress(System.getenv(JAVA_MAIL_EMAIL), LOUW_SWART);
+			toAddress = new InternetAddress(JAVA_MAIL_EMAIL, OWNER_NAME);
 		} catch (final UnsupportedEncodingException e) {
 			// Heroku logging
 			System.err.println(e);
@@ -150,7 +154,7 @@ public class SendMail extends HttpServlet {
 		try {
 			simpleMessage.setFrom(toAddress);
 			simpleMessage.setRecipient(RecipientType.TO, fromAddress);
-			simpleMessage.setSubject(String.format(SUBJECT, LOUW_SWART));
+			simpleMessage.setSubject(String.format(SUBJECT, OWNER_NAME));
 			simpleMessage.setText(String.format(CONTENT_COPY, fromName, fromEmail, message));
 			Transport.send(simpleMessage);
 		} catch (final MessagingException e) {

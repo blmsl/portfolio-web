@@ -18,13 +18,19 @@ import org.apache.commons.lang3.StringUtils;
 
 public class Main {
 
-	private static final Level DEFAULT_LEVEL = Level.INFO;
-	private static final SimpleDateFormat CACHE_SDF = new SimpleDateFormat("yyyyMMddHHmm");
-	private static final String LOGGER_LEVEL = "LOGGER_LEVEL";
-	private static final String WEB_PORT_SYS_ENV = "PORT";
-	private static final String WEB_APPLICATION_DIR_LOCATION = "target/ouq77.herokuapp.com";
+	/**
+	 * HEROKU APP VARS
+	 */
+	private static final String LOGGER_LEVEL = System.getenv("LOGGER_LEVEL");
+	private static final String WEB_PORT_SYS_ENV = System.getenv("WEB_PORT_SYS_ENV") != null && !System.getenv("WEB_PORT_SYS_ENV").isEmpty() ? System.getenv("WEB_PORT_SYS_ENV") : "8080";
 	private static final String ANDROID_APP_URL = "ANDROID_APP_URL";
 	private static final String INSTAGRAM_IMAGE_FOLDER = "INSTAGRAM_IMAGE_FOLDER";
+
+	private static final String ANDROID_APP_URL_VAL = System.getenv(ANDROID_APP_URL);
+	private static final String INSTAGRAM_IMAGE_FOLDER_VAL = System.getenv(INSTAGRAM_IMAGE_FOLDER);
+	private static final Level DEFAULT_LEVEL = Level.INFO;
+	private static final SimpleDateFormat CACHE_SDF = new SimpleDateFormat("yyyyMMddHHmm");
+	private static final String WEB_APPLICATION_DIR_LOCATION = "target/ouq77.herokuapp.com";
 	private static final String MAVEN_SDF = "MAVEN_SDF";
 	private static final String BUILD_TIMESTAMP = "BUILD_TIMESTAMP";
 	private static final String CACHE_VERSION = "CACHE_VERSION";
@@ -32,7 +38,8 @@ public class Main {
 
 	public static void main(final String[] args) throws Exception {
 
-		final Level level = StringUtils.isNotEmpty(System.getenv(LOGGER_LEVEL)) ? Level.parse(System.getenv(LOGGER_LEVEL)) : DEFAULT_LEVEL;
+		// Restart required for logger level change to take effect
+		final Level level = StringUtils.isNotEmpty(LOGGER_LEVEL) ? Level.parse(LOGGER_LEVEL) : DEFAULT_LEVEL;
 		if (!level.getName().endsWith(DEFAULT_LEVEL.getName())) {
 			final Logger logger = Logger.getLogger("");
 			logger.setLevel(level);
@@ -45,9 +52,7 @@ public class Main {
 		}
 
 		final Tomcat tomcat = new Tomcat();
-		final String webPort = System.getenv(WEB_PORT_SYS_ENV) != null && !System.getenv(WEB_PORT_SYS_ENV).isEmpty() ? System.getenv(WEB_PORT_SYS_ENV) : "8080";
-
-		tomcat.setPort(Integer.valueOf(webPort));
+		tomcat.setPort(Integer.valueOf(WEB_PORT_SYS_ENV));
 		final Connector c = tomcat.getConnector();
 		c.setProperty("compression", "on");
 		c.setProperty("compressionMinSize", "1024");
@@ -57,8 +62,8 @@ public class Main {
 		// Heroku logging
 		System.out.println("configuring app with basedir: " + new File("./" + WEB_APPLICATION_DIR_LOCATION).getAbsolutePath());
 		final Context ctx = tomcat.addWebapp("/", new File(WEB_APPLICATION_DIR_LOCATION).getAbsolutePath());
-		ctx.addParameter(ANDROID_APP_URL, System.getenv(ANDROID_APP_URL));
-		ctx.addParameter(INSTAGRAM_IMAGE_FOLDER, System.getenv(INSTAGRAM_IMAGE_FOLDER));
+		ctx.addParameter(ANDROID_APP_URL, ANDROID_APP_URL_VAL);
+		ctx.addParameter(INSTAGRAM_IMAGE_FOLDER, INSTAGRAM_IMAGE_FOLDER_VAL);
 
 		final Properties props = new Properties();
 		final ClassLoader loader = Thread.currentThread().getContextClassLoader();
