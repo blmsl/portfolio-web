@@ -78,14 +78,14 @@
                       </button>
                       <a class="navbar-brand" href="#">Menu</a>
                     </div>
-                    <div class="navbar-collapse collapse">
+                    <div id="js_navbar" class="navbar-collapse collapse">
                       <ul class="nav navbar-nav">
                         <li class="menuItem active"><a href="#wrapper" class="js_track_link_click">Home</a></li>
                         <li class="menuItem"><a href="#aboutme" class="js_track_link_click">About</a></li>
                         <li class="menuItem"><a href="#technical" class="js_track_link_click">Skills</a></li>
                         <li class="menuItem"><a href="#exprience" class="js_track_link_click">Experience</a></li>
                         <li class="menuItem"><a href="#education" class="js_track_link_click">Education</a></li>
-                        <li class="menuItem" id="js_contact_link"><a href="#contact" class="js_track_link_click">Contact</a></li>
+                        <li class="menuItem" id='js_contact_li' ><a href="#contact" class="js_track_link_click">Contact</a></li>
                       </ul>
                     </div>
                   </div>

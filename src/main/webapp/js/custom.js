@@ -34,42 +34,41 @@
     });
   });
 
-  // for banner height js
-  setBannerSize(0, 0);
-
   $(document).ready(function(e) {
-    setBannerTextPosition();
+    // for banner height js
+    setBannerSize(0, 0);
+    setDynamicCssValues();
     var previousWidth = $(window).width();
     var previousHeight = $(window).height();
-    var $js_contact_link = $('#js_contact_link');
-    var timeout = null;
+    var timeoutResize = null;
     $(window).on('resize', function(e){
       setBannerSize(previousWidth, previousHeight);
-      setBannerTextPosition();
-      if(timeout) {
-        clearTimeout(timeout);
+      setDynamicCssValues();
+      if(timeoutResize) {
+        clearTimeout(timeoutResize);
       }
       // wait half a second for resizing to stop before setting new sizes
-      timeout = setTimeout(function(){
+      timeoutResize = setTimeout(function(){
         previousWidth = $(window).width();
         previousHeight = $(window).innerHeight();
       }, 500);
     });
 
+    var timeoutMenuAnimate = null;
     $('#js_menu_button').click(function(){
-      if(timeout) {
-        clearTimeout(timeout);
+      if(timeoutMenuAnimate) {
+        clearTimeout(timeoutMenuAnimate);
       }
       // wait half a second for menu collaps/expand to finish
-      timeout = setTimeout(function(){
-        if($js_contact_link.is(':visible')) {
-          if(!elementInViewport($js_contact_link)) {
+      timeoutMenuAnimate = setTimeout(function(){
+        if($('#js_navbar').hasClass('in')) {
+          if(!elementInViewport($('#js_contact_li'))) {
             $('html,body').animate({
               scrollTop : $('#js_menu_button').offset().top
             }, 1000);
           }
         }
-      }, 750);
+      }, 500);
     });
 
     // for skill chat jquery
@@ -97,7 +96,7 @@
         target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
         if (target.length) {
           $('html,body').animate({
-            scrollTop : target.offset().top - 60
+            scrollTop : target.offset().top - 63
           }, 1000);
           return false;
         }
@@ -114,8 +113,8 @@
   });
 }(jQuery));
 
-function setBannerTextPosition() {
-  $('.bannerText').css('top',($(window).height() - $('.bannerText').height() - 63) / 2);
+function setDynamicCssValues() {
+  $('.bannerText').css('top', ($(window).height() - $('.bannerText').height() - 63) / 2);
 }
 
 function setBannerSize(previousWidth, previousHeight) {
@@ -124,16 +123,16 @@ function setBannerSize(previousWidth, previousHeight) {
   var widthChanged = previousWidth != windowWidth;
   var heightChanged = false;
   // mobile browsers ads about 60px to screen height when hiding address bar - ignore this
-  if(windowHeight - previousHeight > 60) {
+  if(windowHeight - previousHeight > 63) {
     heightChanged = true;
   }
-  if(windowHeight - previousHeight < -60) {
+  if(windowHeight - previousHeight < -63) {
     heightChanged = true;
   }
   if(widthChanged || heightChanged) {
     $('.banner').css({
       'width' : windowWidth,
-      'height' : windowHeight - "60"
+      'height' : windowHeight - '63'
     });
   }
 }
