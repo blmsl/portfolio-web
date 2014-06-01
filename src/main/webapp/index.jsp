@@ -73,7 +73,7 @@
                 <div class="navbar navbar-inverse navbar-static-top">
                   <div class="container">
                     <div class="navbar-header">
-                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                      <button id="js_menu_button" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
                       </button>
                       <a class="navbar-brand" href="#">Menu</a>
@@ -85,7 +85,7 @@
                         <li class="menuItem"><a href="#technical" class="js_track_link_click">Skills</a></li>
                         <li class="menuItem"><a href="#exprience" class="js_track_link_click">Experience</a></li>
                         <li class="menuItem"><a href="#education" class="js_track_link_click">Education</a></li>
-                        <li class="menuItem"><a href="#contact" class="js_track_link_click">Contact</a></li>
+                        <li class="menuItem" id="js_contact_link"><a href="#contact" class="js_track_link_click">Contact</a></li>
                       </ul>
                     </div>
                   </div>

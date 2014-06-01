@@ -91,7 +91,7 @@ h1 {
   font-family: 'Open Sans', sans-serif;
   font-size: 80px;
   line-height: 90px;
-  font-weight: 700;
+  font-weight: 600;
   margin: 0px;
   padding-bottom: 8px;
 }
@@ -181,7 +181,6 @@ header {
   position: absolute;
   left: 0;
   right: 0;
-  top: 35%;
   text-align: center;
   padding: 30px 0 30px;
   max-width: 835px;
@@ -1313,7 +1312,6 @@ ul.portfolioContainer li:hover span.hoverBox .linKed {
     -webkit-transform: translate(0px, -70px); /* Safari and Chrome */
   }
   .bannerText {
-    top: 25%;
     padding-top: 15px;
     padding-bottom: 15px;
   }

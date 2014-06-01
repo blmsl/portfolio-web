@@ -38,11 +38,14 @@
   setBannerSize(0, 0);
 
   $(document).ready(function(e) {
+    setBannerTextPosition();
     var previousWidth = $(window).width();
     var previousHeight = $(window).height();
+    var $js_contact_link = $('#js_contact_link');
     var timeout = null;
     $(window).on('resize', function(e){
       setBannerSize(previousWidth, previousHeight);
+      setBannerTextPosition();
       if(timeout) {
         clearTimeout(timeout);
       }
@@ -50,6 +53,22 @@
       timeout = setTimeout(function(){
         previousWidth = $(window).width();
         previousHeight = $(window).innerHeight();
+      }, 500);
+    });
+
+    $('#js_menu_button').click(function(){
+      if(timeout) {
+        clearTimeout(timeout);
+      }
+      // wait half a second for menu collaps/expand to finish
+      timeout = setTimeout(function(){
+        if($js_contact_link.is(':visible')) {
+          if(!elementInViewport($js_contact_link)) {
+            $('html,body').animate({
+              scrollTop : $('#js_menu_button').offset().top
+            }, 1000);
+          }
+        }
       }, 500);
     });
 
@@ -95,6 +114,10 @@
   });
 }(jQuery));
 
+function setBannerTextPosition() {
+  $('.bannerText').css('top',($(window).height() - $('.bannerText').height() - 63) / 2);
+}
+
 function setBannerSize(previousWidth, previousHeight) {
   var windowWidth = $(window).width();
   var windowHeight = $(window).height();
@@ -124,8 +147,7 @@ function elementInViewport(el) {
       maxTop = documentScrollTop + viewportHeight,
       minLeft = documentScrollLeft,
       maxLeft = documentScrollLeft + viewportWidth,
-      $myElement = el,
-      elementOffset = $myElement.offset();
+      elementOffset = el.offset();
 
   return ((elementOffset.top > minTop && elementOffset.top < maxTop)
       && (elementOffset.left > minLeft && elementOffset.left < maxLeft));
