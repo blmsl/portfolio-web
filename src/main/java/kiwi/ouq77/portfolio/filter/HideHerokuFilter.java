@@ -10,24 +10,29 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletResponse;
 
-public class HttpCacheFilter implements Filter {
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
-	private final static String HEADER_EXPIRES = "Expires";
-	private int cacheExpiresInstructionDays;
+public class HideHerokuFilter implements Filter {
+
+	private static final Log log = LogFactory.getLog(HideHerokuFilter.class);
+	private static final String X_ROBOTS_TAG_KEY = "X-Robots-Tag";
+	private static final String X_ROBOTS_TAG_VAL = "noindex, nofollow";
+	private static final String HEROKUAPP_COM = ".herokuapp.com";
 
 	@Override
 	public void init(final FilterConfig fc) throws ServletException {
-		cacheExpiresInstructionDays = Integer.valueOf(fc.getInitParameter(HEADER_EXPIRES));
+		// nothing needed
 	}
 
 	@Override
 	public void doFilter(final ServletRequest req, final ServletResponse resp, final FilterChain chain) throws IOException, ServletException {
-		if (cacheExpiresInstructionDays > 0) {
+
+		log.info("HideHerokuFilter called");
+		if (req.getServerName().indexOf(HEROKUAPP_COM) != -1) {
 			final HttpServletResponse httpResp = (HttpServletResponse) resp;
-			final int CACHE_DURATION_IN_SECOND = 60 * 60 * 24 * cacheExpiresInstructionDays;
-			final long CACHE_DURATION_IN_MS = CACHE_DURATION_IN_SECOND * 1000;
-			long now = System.currentTimeMillis();
-			httpResp.setDateHeader(HEADER_EXPIRES, now + CACHE_DURATION_IN_MS);
+			httpResp.addHeader(X_ROBOTS_TAG_KEY, X_ROBOTS_TAG_VAL);
+			log.info("HideHerokuFilter executed");
 		}
 
 		chain.doFilter(req, resp);
@@ -35,6 +40,7 @@ public class HttpCacheFilter implements Filter {
 
 	@Override
 	public void destroy() {
-		cacheExpiresInstructionDays = 0;
+		// nothing needed
 	}
+
 }

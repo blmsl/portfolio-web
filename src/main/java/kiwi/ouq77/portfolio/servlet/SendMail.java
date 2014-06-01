@@ -41,8 +41,6 @@ public class SendMail extends HttpServlet {
 	/**
 	 * HEROKU CONFIG VARIABLES
 	 */
-	private static final String CUSTOM_APP_DOMAIN = System.getenv("CUSTOM_APP_DOMAIN");
-	private static final String HEROKU_APP_DOMAIN = System.getenv("HEROKU_APP_DOMAIN");
 	private static final String OWNER_NAME = System.getenv("OWNER_NAME");
 	private static final String JAVA_MAIL_EMAIL = System.getenv("JAVA_MAIL_EMAIL");
 	private static final String JAVA_MAIL_PASSWORD = System.getenv("JAVA_MAIL_PASSWORD");
@@ -55,7 +53,7 @@ public class SendMail extends HttpServlet {
 	private static final String INPUT_NAME = "name";
 	private static final String INPUT_EMAIL = "email";
 	private static final String INPUT_MESSAGE = "message";
-	private static final String SUBJECT = "Message from %s | " + CUSTOM_APP_DOMAIN;
+	private static final String SUBJECT = "Message from %s | " + Main.CUSTOM_APP_DOMAIN;
 	private static final String CONTENT = "You have been contacted by %s (%s). Their additional message is as follows:\n\n%s";
 	private static final String CONTENT_COPY = "Thank you for getting in touch - I've received your message.\n\nHere is a copy of what you sent:\n\n%s (%s)\n\n%s";
 	private static final String MESSAGE_DIV = "<div class=\"%s\">%s</div>";
@@ -114,7 +112,7 @@ public class SendMail extends HttpServlet {
 		props.put("mail.smtp.port", "465");
 
 		final MailSSLSocketFactory sf = new MailSSLSocketFactory();
-		sf.setTrustedHosts(new String[] { "localhost", HEROKU_APP_DOMAIN, CUSTOM_APP_DOMAIN });
+		sf.setTrustedHosts(new String[] { "localhost", Main.HEROKU_APP_DOMAIN, Main.CUSTOM_APP_DOMAIN });
 		props.put("mail.smtp.ssl.socketFactory", sf);
 
 		props.put("mail.smtp.ssl.enable", "true");

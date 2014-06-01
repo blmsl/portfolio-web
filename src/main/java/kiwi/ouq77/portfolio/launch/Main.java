@@ -26,26 +26,28 @@ public class Main {
 	/**
 	 * HEROKU CONFIG VARIABLES
 	 */
+	public static final String CUSTOM_APP_DOMAIN_KEY = "CUSTOM_APP_DOMAIN";
+	public static final String HEROKU_APP_DOMAIN = System.getenv("HEROKU_APP_DOMAIN");
+	private static final String ANDROID_APP_URL_KEY = "ANDROID_APP_URL";
+	private static final String INSTAGRAM_IMAGE_FOLDER_KEY = "INSTAGRAM_IMAGE_FOLDER";
 	private static final String LOGGER_LEVEL = System.getenv("LOGGER_LEVEL");
 	private static final String PORT = System.getenv("PORT") != null && !System.getenv("PORT").isEmpty() ? System.getenv("PORT") : "8080";
-	private static final String ANDROID_APP_URL = "ANDROID_APP_URL";
-	private static final String INSTAGRAM_IMAGE_FOLDER = "INSTAGRAM_IMAGE_FOLDER";
 	/**
 	 * END HEROKU CONFIG VARIABLES
 	 */
-	private static final String ANDROID_APP_URL_VAL = System.getenv(ANDROID_APP_URL);
-	private static final String INSTAGRAM_IMAGE_FOLDER_VAL = System.getenv(INSTAGRAM_IMAGE_FOLDER);
 	private static final Level DEFAULT_LEVEL = Level.INFO;
-	private static final SimpleDateFormat CACHE_SDF = new SimpleDateFormat("yyyyMMddHHmm");
+	public static final String CUSTOM_APP_DOMAIN = System.getenv(CUSTOM_APP_DOMAIN_KEY);
+	private static final String ANDROID_APP_URL = System.getenv(ANDROID_APP_URL_KEY);
+	private static final String INSTAGRAM_IMAGE_FOLDER = System.getenv(INSTAGRAM_IMAGE_FOLDER_KEY);
 	private static final String WEB_APPLICATION_DIR_LOCATION = "target/ouq77.herokuapp.com";
 	private static final String MAVEN_SDF = "MAVEN_SDF";
 	private static final String BUILD_TIMESTAMP = "BUILD_TIMESTAMP";
-	private static final String CACHE_VERSION = "CACHE_VERSION";
-	private static final String ARTICLE_MODIFIED_TIME = "ARTICLE_MODIFIED_TIME";
+	private static final String CACHE_VERSION_KEY = "CACHE_VERSION";
+	private static final String ARTICLE_MODIFIED_TIME_KEY = "ARTICLE_MODIFIED_TIME";
+	private static final SimpleDateFormat CACHE_SDF = new SimpleDateFormat("yyyyMMddHHmm");
 
 	public static void main(final String[] args) throws Exception {
 
-		// Restart required for logger level change to take effect
 		final Level level = StringUtils.isNotEmpty(LOGGER_LEVEL) ? Level.parse(LOGGER_LEVEL) : DEFAULT_LEVEL;
 		if (!level.getName().endsWith(DEFAULT_LEVEL.getName())) {
 			final Logger logger = Logger.getLogger("");
@@ -69,8 +71,9 @@ public class Main {
 
 		log.info("configuring app with basedir: " + new File("./" + WEB_APPLICATION_DIR_LOCATION).getAbsolutePath());
 		final Context ctx = tomcat.addWebapp("/", new File(WEB_APPLICATION_DIR_LOCATION).getAbsolutePath());
-		ctx.addParameter(ANDROID_APP_URL, ANDROID_APP_URL_VAL);
-		ctx.addParameter(INSTAGRAM_IMAGE_FOLDER, INSTAGRAM_IMAGE_FOLDER_VAL);
+		ctx.addParameter(ANDROID_APP_URL_KEY, ANDROID_APP_URL);
+		ctx.addParameter(INSTAGRAM_IMAGE_FOLDER_KEY, INSTAGRAM_IMAGE_FOLDER);
+		ctx.addParameter(CUSTOM_APP_DOMAIN_KEY, CUSTOM_APP_DOMAIN);
 
 		final Properties props = new Properties();
 		final ClassLoader loader = Thread.currentThread().getContextClassLoader();
@@ -80,8 +83,8 @@ public class Main {
 		final SimpleDateFormat mavenSdf = new SimpleDateFormat(props.getProperty(MAVEN_SDF));
 		final String buildTimestamp = props.getProperty(BUILD_TIMESTAMP);
 		final Date cacheDate = mavenSdf.parse(buildTimestamp);
-		ctx.addParameter(CACHE_VERSION, CACHE_SDF.format(cacheDate));
-		ctx.addParameter(ARTICLE_MODIFIED_TIME, buildTimestamp);
+		ctx.addParameter(CACHE_VERSION_KEY, CACHE_SDF.format(cacheDate));
+		ctx.addParameter(ARTICLE_MODIFIED_TIME_KEY, buildTimestamp);
 
 		final DynoKeepAliveScheduler dynoKeepAliveScheduler = new DynoKeepAliveScheduler();
 		dynoKeepAliveScheduler.start();

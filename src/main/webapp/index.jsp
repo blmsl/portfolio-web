@@ -25,6 +25,7 @@
     <%@include file="include/social_media.jsp"%>
     <link rel="icon" href="${pageContext.request.contextPath}/favicon.ico" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href="http://${initParam['CUSTOM_APP_DOMAIN']}/" />
     <!--minified styles -->
     <link href="${pageContext.request.contextPath}/css/style.min.css?v=${initParam['CACHE_VERSION']}" rel="stylesheet" type="text/css" media="screen" />
     <!--google font style -->
