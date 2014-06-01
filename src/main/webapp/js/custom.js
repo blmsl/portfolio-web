@@ -55,7 +55,9 @@
     });
 
     var timeoutMenuAnimate = null;
-    $('#js_menu_button').click(function(){
+    $('#js_menu_button').click(function(e){
+      e.preventDefault();
+
       if(timeoutMenuAnimate) {
         clearTimeout(timeoutMenuAnimate);
       }
