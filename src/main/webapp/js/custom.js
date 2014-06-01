@@ -114,7 +114,7 @@
 }(jQuery));
 
 function setDynamicCssValues() {
-  $('.bannerText').css('top', ($(window).height() - $('.bannerText').height() - 63) / 2);
+  $('.bannerText').css('top', ((($(window).height() - $('.bannerText').height()) / 2) - 63));
 }
 
 function setBannerSize(previousWidth, previousHeight) {
