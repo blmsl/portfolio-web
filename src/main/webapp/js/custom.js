@@ -98,7 +98,7 @@
         target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
         if (target.length) {
           $('html,body').animate({
-            scrollTop : target.offset().top - 63
+            scrollTop : target.offset().top - 60
           }, 1000);
           return false;
         }
@@ -125,16 +125,16 @@ function setBannerSize(previousWidth, previousHeight) {
   var widthChanged = previousWidth != windowWidth;
   var heightChanged = false;
   // mobile browsers ads about 60px to screen height when hiding address bar - ignore this
-  if(windowHeight - previousHeight > 63) {
+  if(windowHeight - previousHeight > 60) {
     heightChanged = true;
   }
-  if(windowHeight - previousHeight < -63) {
+  if(windowHeight - previousHeight < -60) {
     heightChanged = true;
   }
   if(widthChanged || heightChanged) {
     $('.banner').css({
       'width' : windowWidth,
-      'height' : windowHeight - '63'
+      'height' : windowHeight - 60
     });
   }
 }
