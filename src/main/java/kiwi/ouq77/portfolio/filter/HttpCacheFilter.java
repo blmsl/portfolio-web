@@ -22,6 +22,7 @@ public class HttpCacheFilter implements Filter {
 
 	@Override
 	public void doFilter(final ServletRequest req, final ServletResponse resp, final FilterChain chain) throws IOException, ServletException {
+
 		if (cacheExpiresInstructionDays > 0) {
 			final HttpServletResponse httpResp = (HttpServletResponse) resp;
 			final int CACHE_DURATION_IN_SECOND = 60 * 60 * 24 * cacheExpiresInstructionDays;

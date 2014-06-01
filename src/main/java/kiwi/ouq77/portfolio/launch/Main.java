@@ -5,18 +5,12 @@ import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
-import java.util.logging.ConsoleHandler;
-import java.util.logging.Handler;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.logging.SimpleFormatter;
 
 import kiwi.ouq77.portfolio.scheduler.DynoKeepAliveScheduler;
 
 import org.apache.catalina.Context;
 import org.apache.catalina.connector.Connector;
 import org.apache.catalina.startup.Tomcat;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -30,12 +24,10 @@ public class Main {
 	public static final String HEROKU_APP_DOMAIN = System.getenv("HEROKU_APP_DOMAIN");
 	private static final String ANDROID_APP_URL_KEY = "ANDROID_APP_URL";
 	private static final String INSTAGRAM_IMAGE_FOLDER_KEY = "INSTAGRAM_IMAGE_FOLDER";
-	private static final String LOGGER_LEVEL = System.getenv("LOGGER_LEVEL");
 	private static final String PORT = System.getenv("PORT") != null && !System.getenv("PORT").isEmpty() ? System.getenv("PORT") : "8080";
 	/**
 	 * END HEROKU CONFIG VARIABLES
 	 */
-	private static final Level DEFAULT_LEVEL = Level.INFO;
 	public static final String CUSTOM_APP_DOMAIN = System.getenv(CUSTOM_APP_DOMAIN_KEY);
 	private static final String ANDROID_APP_URL = System.getenv(ANDROID_APP_URL_KEY);
 	private static final String INSTAGRAM_IMAGE_FOLDER = System.getenv(INSTAGRAM_IMAGE_FOLDER_KEY);
@@ -48,18 +40,6 @@ public class Main {
 
 	public static void main(final String[] args) throws Exception {
 
-		final Level level = StringUtils.isNotEmpty(LOGGER_LEVEL) ? Level.parse(LOGGER_LEVEL) : DEFAULT_LEVEL;
-		if (!level.getName().endsWith(DEFAULT_LEVEL.getName())) {
-			final Logger logger = Logger.getLogger("");
-			logger.setLevel(level);
-			final Handler[] handlers = logger.getHandlers();
-			Handler handler = (handlers.length == 1 && handlers[0] instanceof ConsoleHandler) ? handlers[0] : new ConsoleHandler();
-			handler.setFormatter(new SimpleFormatter());
-			handler.setLevel(level);
-			handler.setEncoding("UTF-8");
-			logger.addHandler(handler);
-		}
-
 		final Tomcat tomcat = new Tomcat();
 		tomcat.setPort(Integer.valueOf(PORT));
 
@@ -67,7 +47,7 @@ public class Main {
 		c.setProperty("compression", "on");
 		c.setProperty("compressionMinSize", "1024");
 		c.setProperty("noCompressionUserAgents", "gozilla, traviata");
-		c.setProperty("compressableMimeType", "text/html,text/xml, text/css, application/json, application/javascript");
+		c.setProperty("compressableMimeType", "text/html, text/xml, text/css, application/json, application/javascript");
 
 		log.info("configuring app with basedir: " + new File("./" + WEB_APPLICATION_DIR_LOCATION).getAbsolutePath());
 		final Context ctx = tomcat.addWebapp("/", new File(WEB_APPLICATION_DIR_LOCATION).getAbsolutePath());
