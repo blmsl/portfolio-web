@@ -114,7 +114,7 @@
               <p><i class="fa fa-camera-retro"></i> Photography, <i class="fa fa-android"></i> Android, <i class="fa fa-road"></i> travel and <i class="fa fa-plane"></i> plane spotting - not necessarily in that order.</p>
               <a id="cv_request" href="#contact" target="_blank" class="btnNormal js_track_link_click">Request CV &amp; References</a>
               &nbsp;&nbsp;&nbsp;
-              <a id="droid_download" href="${initParam['ANDROID_APP_URL']}" target="_blank" class="btnDownload js_track_link_click" title="Download and install this Portfolio on your Android device running 4.0 or newer (enable 'Unknown sources' in Settings)">Download for&nbsp;&nbsp;&nbsp;<i class="fa fa-android fa-1_4x"></i>&nbsp;&nbsp;&nbsp;as APK*</a>
+              <a id="droid_download" href="${initParam['ANDROID_APP_URL']}" class="btnDownload js_track_link_click" title="Download and install this Portfolio on your Android device running 4.0 or newer (enable 'Unknown sources' in Settings)">Download for&nbsp;&nbsp;&nbsp;<i class="fa fa-android fa-1_4x"></i>&nbsp;&nbsp;&nbsp;as APK*</a>
               <p><sub><i>* Requires Android 4.0 (Ice Cream Sandwich) or newer</i></sub></p>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1 col-lg-offset-1 proPic">
