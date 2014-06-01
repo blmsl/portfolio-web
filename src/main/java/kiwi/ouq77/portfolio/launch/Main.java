@@ -11,13 +11,18 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
+import kiwi.ouq77.portfolio.scheduler.DynoKeepAliveScheduler;
+
 import org.apache.catalina.Context;
 import org.apache.catalina.connector.Connector;
 import org.apache.catalina.startup.Tomcat;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class Main {
 
+	private static final Log log = LogFactory.getLog(Main.class);
 	/**
 	 * HEROKU CONFIG VARIABLES
 	 */
@@ -28,7 +33,6 @@ public class Main {
 	/**
 	 * END HEROKU CONFIG VARIABLES
 	 */
-
 	private static final String ANDROID_APP_URL_VAL = System.getenv(ANDROID_APP_URL);
 	private static final String INSTAGRAM_IMAGE_FOLDER_VAL = System.getenv(INSTAGRAM_IMAGE_FOLDER);
 	private static final Level DEFAULT_LEVEL = Level.INFO;
@@ -63,8 +67,7 @@ public class Main {
 		c.setProperty("noCompressionUserAgents", "gozilla, traviata");
 		c.setProperty("compressableMimeType", "text/html,text/xml, text/css, application/json, application/javascript");
 
-		// Heroku logging
-		System.out.println("configuring app with basedir: " + new File("./" + WEB_APPLICATION_DIR_LOCATION).getAbsolutePath());
+		log.info("configuring app with basedir: " + new File("./" + WEB_APPLICATION_DIR_LOCATION).getAbsolutePath());
 		final Context ctx = tomcat.addWebapp("/", new File(WEB_APPLICATION_DIR_LOCATION).getAbsolutePath());
 		ctx.addParameter(ANDROID_APP_URL, ANDROID_APP_URL_VAL);
 		ctx.addParameter(INSTAGRAM_IMAGE_FOLDER, INSTAGRAM_IMAGE_FOLDER_VAL);
@@ -80,7 +83,11 @@ public class Main {
 		ctx.addParameter(CACHE_VERSION, CACHE_SDF.format(cacheDate));
 		ctx.addParameter(ARTICLE_MODIFIED_TIME, buildTimestamp);
 
+		final DynoKeepAliveScheduler dynoKeepAliveScheduler = new DynoKeepAliveScheduler();
+		dynoKeepAliveScheduler.start();
+
 		tomcat.start();
 		tomcat.getServer().await();
+
 	}
 }

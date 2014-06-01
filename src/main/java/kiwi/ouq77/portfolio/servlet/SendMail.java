@@ -24,7 +24,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kiwi.ouq77.portfolio.launch.Main;
+
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.commons.validator.routines.EmailValidator;
 
 import com.sun.mail.util.MailSSLSocketFactory;
@@ -33,6 +37,7 @@ import com.sun.mail.util.MailSSLSocketFactory;
 public class SendMail extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
+	private static final Log log = LogFactory.getLog(Main.class);
 	/**
 	 * HEROKU CONFIG VARIABLES
 	 */
@@ -44,7 +49,6 @@ public class SendMail extends HttpServlet {
 	/**
 	 * END HEROKU CONFIG VARIABLES
 	 */
-
 	private static final Pattern ILLEGAL_CHARS_PATTERN = Pattern.compile("[<>^|%()&+]");
 	private static final Pattern URL_PATTERN = Pattern.compile("http[s]?");
 	private static final String INPUT_HONEY_POT = "heuning";
@@ -86,12 +90,10 @@ public class SendMail extends HttpServlet {
 			try {
 				responseBuilder.append(send(name, email, message));
 			} catch (final GeneralSecurityException e) {
-				// Heroku logging
-				System.err.println(e);
+				log.error(e);
 				responseBuilder.append(UNKNOWN_ERROR);
 			} catch (final Exception e) {
-				// Heroku logging
-				System.err.println(e);
+				log.error(e);
 				responseBuilder.append(UNKNOWN_ERROR);
 			}
 		}
@@ -134,8 +136,7 @@ public class SendMail extends HttpServlet {
 			fromAddress = new InternetAddress(fromEmail, fromName);
 			toAddress = new InternetAddress(JAVA_MAIL_EMAIL, OWNER_NAME);
 		} catch (final UnsupportedEncodingException e) {
-			// Heroku logging
-			System.err.println(e);
+			log.error(e);
 			return UNKNOWN_ERROR;
 		}
 
@@ -148,8 +149,7 @@ public class SendMail extends HttpServlet {
 			simpleMessage.setText(String.format(CONTENT, fromName, fromEmail, message));
 			Transport.send(simpleMessage);
 		} catch (final MessagingException e) {
-			// Heroku logging
-			System.err.println(e);
+			log.error(e);
 			return UNKNOWN_ERROR;
 		}
 
@@ -161,8 +161,7 @@ public class SendMail extends HttpServlet {
 			simpleMessage.setText(String.format(CONTENT_COPY, fromName, fromEmail, message));
 			Transport.send(simpleMessage);
 		} catch (final MessagingException e) {
-			// Heroku logging
-			System.err.println(e);
+			log.error(e);
 			return UNKNOWN_ERROR;
 		}
 
