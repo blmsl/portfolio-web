@@ -8,30 +8,11 @@
     <image:image>
       <image:loc>http://portfolio.ouq77.kiwi/images/icon.png</image:loc>
     </image:image>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>http://portfolio.ouq77.kiwi/#aboutme</loc>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>http://portfolio.ouq77.kiwi/#technical</loc>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>http://portfolio.ouq77.kiwi/#exprience</loc>
     <video:video>
       <video:content_loc>https://www.youtube.com/watch?v=34Tb79-2ekc</video:content_loc>
       <video:title>Quirk Tracker</video:title>  
     </video:video>
     <changefreq>monthly</changefreq>
   </url>
-  <url>
-    <loc>http://portfolio.ouq77.kiwi/#education</loc>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>http://portfolio.ouq77.kiwi/#contact</loc>
-    <changefreq>monthly</changefreq>
-  </url>
+
 </urlset>
