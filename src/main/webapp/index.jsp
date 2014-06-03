@@ -301,11 +301,11 @@
       <section class="contact" id="contact">
         <div class="container topCon">
           <div class="heading">
-            <h2>Get In Touch</h2>
+            <h2 id="js_trigger_map_marker">Get In Touch</h2>
             <p>contact me to have a chat</p>
           </div>
         </div>
-        <div id="js_trigger_map_marker" class="row mapArea">
+        <div class="row mapArea">
           <div id="map-canvas"></div>
         </div>
       </section>
