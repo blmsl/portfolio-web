@@ -20,6 +20,7 @@ Requires
   * OWNER_NAME - the name of the site owner to be used in email messages
   * JAVA_MAIL_EMAIL - the site owner's email address (Gmail works well)
   * JAVA_MAIL_PASSWORD - the password for the above email address for SMTP authentication
+  * GOOGLE_MAPS_API_KEY -Google Maps API key
 
 
 ![alt tag](http://portfolio.ouq77.kiwi/images/icon.png)
