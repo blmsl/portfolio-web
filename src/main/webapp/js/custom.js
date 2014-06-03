@@ -1,3 +1,14 @@
+var chart,
+    previousWidth,
+    previousHeight,
+    timeoutResize,
+    timeoutMenuAnimate,
+    map,
+    marker;
+var wlgHarbour = new google.maps.LatLng(-41.280909, 174.850303);
+var eastbourne = new google.maps.LatLng(-41.291767, 174.897501);
+var skillChartDrawn = false;
+var mapMarkerDrawn = false;
 (function($) {
   "use strict";
   // For background slider
@@ -38,9 +49,6 @@
     // for banner height js
     setBannerSize(0, 0);
     setDynamicCssValues();
-    var previousWidth = $(window).width();
-    var previousHeight = $(window).height();
-    var timeoutResize = null;
     $(window).on('resize', function(e){
       setBannerSize(previousWidth, previousHeight);
       setDynamicCssValues();
@@ -54,7 +62,6 @@
       }, 500);
     });
 
-    var timeoutMenuAnimate = null;
     $('#js_menu_button').click(function(e){
       e.preventDefault();
 
@@ -73,19 +80,24 @@
       }, 500);
     });
 
-    // for skill chat jquery
-    var index = 0;
+    // for skill chart and map marker
     $(document).scroll(function() {
-      if (elementInViewport($('#js_trigger_skills'))) {
-        if (index == 0) {
-          $('.chart').easyPieChart({
-            easing : 'easeOutBounce',
-            onStep : function(from, to, percent) {
-              $(this.el).find('.percent').text(Math.round(percent));
-            }
-          });
-        }
-        index++;
+      if (elementInViewport($('#js_trigger_skills')) && !skillChartDrawn) {
+        $('.chart').easyPieChart({
+          easing : 'easeOutBounce',
+          onStep : function(from, to, percent) {
+            $(this.el).find('.percent').text(Math.round(percent));
+          }
+        });
+        skillChartDrawn = true;
+      }
+
+      if (elementInViewport($('#js_trigger_map_marker')) && !mapMarkerDrawn) {
+        setTimeout(function() {
+          marker = addMarker();
+          google.maps.event.addListener(marker, 'click', toggleBounce);
+        }, 1500);
+        mapMarkerDrawn = true;
       }
     });
   });
@@ -108,7 +120,7 @@
 
   // chart loading
   $(window).load(function() {
-    var chart = window.chart = $('.chart').data('easyPieChart');
+    chart = window.chart = $('.chart').data('easyPieChart');
     $('.js_update').on('click', function() {
       chart.update(Math.random() * 100);
     });
@@ -153,3 +165,29 @@ function elementInViewport(el) {
   return ((elementOffset.top > minTop && elementOffset.top < maxTop)
       && (elementOffset.left > minLeft && elementOffset.left < maxLeft));
 }
+
+// Google maps
+function initialize() {
+  var mapOptions = {
+    center: wlgHarbour,
+    zoom: 11,
+    scrollwheel: false
+  };
+  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+}
+function addMarker() {
+  return new google.maps.Marker({
+    position: eastbourne,
+    map: map,
+    title: 'I\'m in this area...',
+    draggable: false,
+    animation: google.maps.Animation.DROP
+  });
+}
+function toggleBounce() {
+  marker.setAnimation(google.maps.Animation.BOUNCE);
+  setTimeout(function(){
+    marker.setAnimation(null);
+  }, 2250);
+}
+google.maps.event.addDomListener(window, 'load', initialize);

@@ -24,6 +24,7 @@ public class Main {
 	public static final String HEROKU_APP_DOMAIN = System.getenv("HEROKU_APP_DOMAIN");
 	private static final String ANDROID_APP_URL_KEY = "ANDROID_APP_URL";
 	private static final String INSTAGRAM_IMAGE_FOLDER_KEY = "INSTAGRAM_IMAGE_FOLDER";
+	private static final String GOOGLE_MAPS_API_KEY_KEY = "GOOGLE_MAPS_API_KEY";
 	private static final String PORT = System.getenv("PORT") != null && !System.getenv("PORT").isEmpty() ? System.getenv("PORT") : "8080";
 	/**
 	 * END HEROKU CONFIG VARIABLES
@@ -31,6 +32,7 @@ public class Main {
 	public static final String CUSTOM_APP_DOMAIN = System.getenv(CUSTOM_APP_DOMAIN_KEY);
 	private static final String ANDROID_APP_URL = System.getenv(ANDROID_APP_URL_KEY);
 	private static final String INSTAGRAM_IMAGE_FOLDER = System.getenv(INSTAGRAM_IMAGE_FOLDER_KEY);
+	private static final String GOOGLE_MAPS_API_KEY = System.getenv(GOOGLE_MAPS_API_KEY_KEY);
 	private static final String WEB_APPLICATION_DIR_LOCATION = "target/ouq77.herokuapp.com";
 	private static final String MAVEN_SDF = "MAVEN_SDF";
 	private static final String BUILD_TIMESTAMP = "BUILD_TIMESTAMP";
@@ -54,6 +56,7 @@ public class Main {
 		ctx.addParameter(ANDROID_APP_URL_KEY, ANDROID_APP_URL);
 		ctx.addParameter(INSTAGRAM_IMAGE_FOLDER_KEY, INSTAGRAM_IMAGE_FOLDER);
 		ctx.addParameter(CUSTOM_APP_DOMAIN_KEY, CUSTOM_APP_DOMAIN);
+		ctx.addParameter(GOOGLE_MAPS_API_KEY_KEY, GOOGLE_MAPS_API_KEY);
 
 		final Properties props = new Properties();
 		final ClassLoader loader = Thread.currentThread().getContextClassLoader();
