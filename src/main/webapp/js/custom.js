@@ -96,7 +96,7 @@ var mapMarkerDrawn = false;
         setTimeout(function() {
           marker = addMarker();
           google.maps.event.addListener(marker, 'click', toggleBounce);
-        }, 1500);
+        }, 2500);
         mapMarkerDrawn = true;
       }
     });
