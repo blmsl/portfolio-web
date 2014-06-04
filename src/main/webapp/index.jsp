@@ -7,7 +7,10 @@
   compressJavaScript="true" 
   jsCompressor="closure"
   closureOptLevel="whitespace">
-<%@page import="java.text.SimpleDateFormat"%><%@page import="java.util.Date"%><%!final SimpleDateFormat yearDf = new SimpleDateFormat ("yyyy");%>
+<%@page contentType="text/html; charset=UTF-8"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
+<%!final SimpleDateFormat yearDf = new SimpleDateFormat ("yyyy");%>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="en"> <![endif]-->
 <!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="en"> <![endif]-->
@@ -53,7 +56,7 @@
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 noPadd">
             <!--slider start-->
             <div id="ri-grid" class="ri-grid-loading ri-grid ri-grid-size-2">
-              <img class="ri-loading-image" src="${pageContext.request.contextPath}/images/loading.gif" />
+              <img class="ri-loading-image" src="${pageContext.request.contextPath}/images/loading.gif" alt="Loading..." />
               <ul class="cb-slideshow">
                 <%@include file="include/banner_images.jsp"%>
               </ul>
@@ -86,7 +89,8 @@
                         <li class="menuItem"><a href="#technical" class="js_track_link_click">Skills</a></li>
                         <li class="menuItem"><a href="#exprience" class="js_track_link_click">Experience</a></li>
                         <li class="menuItem"><a href="#education" class="js_track_link_click">Education</a></li>
-                        <li class="menuItem" id='js_contact_li' ><a href="#contact" class="js_track_link_click">Contact</a></li>
+                        <li class="menuItem"><a href="#contact" class="js_track_link_click">Contact</a></li>
+                        <li class="menuItem" id="js_links_li"><a href="#links" class="js_track_link_click">Links</a></li>
                       </ul>
                     </div>
                   </div>
@@ -119,7 +123,7 @@
               <p><sub><i>* Requires Android 4.0 (Ice Cream Sandwich) or newer</i></sub></p>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1 col-lg-offset-1 proPic">
-              <img src="${pageContext.request.contextPath}/images/profile.jpg" alt="" class="img-circle topmar" width="295" height="295" itemprop="photo" />
+              <img src="${pageContext.request.contextPath}/images/profile.jpg" alt="Louw Swart" class="img-circle topmar" width="295" height="295" itemprop="photo" />
             </div>
           </div>
         </div>
@@ -335,21 +339,25 @@
       </section>
       <!--contact end-->
       <!--footer start-->
-      <section class="footer" id="footer">
-      <div class="container">
-        <ul>
-          <li><a href="http://nz.linkedin.com/in/louwswart/" target="_blank" title="See my LinkedIn here" class="js_track_link_click"><i class="fa fa-linkedin fa-2x"></i></a></li>
-          <li><a href="http://github.com/ouq77" target="_blank" title="See examples of my code here" class="js_track_link_click"><i class="fa fa-github fa-2x"></i></a></li>
-          <li><a href="http://plus.google.com/u/0/+LouwSwart/about?rel=author" target="_blank" title="See my Google+ here" class="js_track_link_click"><i class="fa fa-google-plus fa-2x"></i></a></li>
-          <li><a href="http://instagram.com/ouq77" target="_blank" title="See my Instagram here" class="js_track_link_click"><i class="fa fa-instagram fa-2x"></i></a></li>
-          <li><a href="http://www.facebook.com/ouq77" target="_blank" title="See my Facebook here" class="js_track_link_click"><i class="fa fa-facebook fa-2x"></i></a></li>
-        </ul>
-        <div class="footer-info">
-          <p><i class="fa fa-info"></i> Basic Java Web app (JSP, Servlet, Javascript, AJAX)</p>
-          <p>Hosted on the <i><a href="http://heroku.com" target="_blank" class="js_track_link_click">heroku.com</a></i> cloud platform</p>
-          <p>&copy; <%=yearDf.format(new Date())%> &ndash; HTML Template by <i><a href="http://themeforest.net/user/themeelite" target="_blank" class="js_track_link_click">themeelite</a></i></p>
+      <section class="footer" id="links">
+        <div class="container">
+          <div class="heading">
+            <h2>Links</h2>
+            <p>social links and page info</p>
+          </div>
+          <ul>
+            <li><a href="http://nz.linkedin.com/in/louwswart/" target="_blank" title="See my LinkedIn here" class="js_track_link_click"><i class="fa fa-linkedin fa-2x"></i></a></li>
+            <li><a href="http://github.com/ouq77" target="_blank" title="See examples of my code here" class="js_track_link_click"><i class="fa fa-github fa-2x"></i></a></li>
+            <li><a href="http://plus.google.com/u/0/+LouwSwart/about?rel=author" target="_blank" title="See my Google+ here" class="js_track_link_click"><i class="fa fa-google-plus fa-2x"></i></a></li>
+            <li><a href="http://instagram.com/ouq77" target="_blank" title="See my Instagram here" class="js_track_link_click"><i class="fa fa-instagram fa-2x"></i></a></li>
+            <li><a href="http://www.facebook.com/ouq77" target="_blank" title="See my Facebook here" class="js_track_link_click"><i class="fa fa-facebook fa-2x"></i></a></li>
+          </ul>
+          <div class="footer-info">
+            <p><i class="fa fa-info"></i> Basic Java Web app (JSP, Servlet, Javascript, AJAX)</p>
+            <p>Hosted on the <i><a href="http://heroku.com" target="_blank" class="js_track_link_click">heroku.com</a></i> cloud platform</p>
+            <p>&copy; <%=yearDf.format(new Date())%> &ndash; HTML Template by <i><a href="http://themeforest.net/user/themeelite" target="_blank" class="js_track_link_click">themeelite</a></i></p>
+          </div>
         </div>
-      </div>
       </section>
       <!--footer end-->
     </div>

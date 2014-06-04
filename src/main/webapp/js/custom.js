@@ -71,7 +71,7 @@ var mapMarkerDrawn = false;
       // wait half a second for menu collaps/expand to finish
       timeoutMenuAnimate = setTimeout(function(){
         if($('#js_navbar').hasClass('in')) {
-          if(!elementInViewport($('#js_contact_li'))) {
+          if(!elementInViewport($('#js_links_li'))) {
             $('html,body').animate({
               scrollTop : $('#js_menu_button').offset().top
             }, 1000);

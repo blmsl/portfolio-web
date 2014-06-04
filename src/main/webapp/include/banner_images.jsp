@@ -16,7 +16,7 @@
 <%
 	for (final Integer randomFilename : randomFilenames) {
 %>
-<li><a href="#"><img src="${initParam['INSTAGRAM_IMAGE_FOLDER']}/<%= randomFilename %>.jpg" /></a></li>
+<li><a href="#"><img src="${initParam['INSTAGRAM_IMAGE_FOLDER']}/<%= randomFilename %>.jpg" alt="instagram_<%= randomFilename %>" /></a></li>
 <%
 	}
 %>

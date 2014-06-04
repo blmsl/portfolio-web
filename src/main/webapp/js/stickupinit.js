@@ -8,7 +8,8 @@ jQuery(function($) {
         2 : 'technical',
         3 : 'exprience',
         4 : 'education',
-        5 : 'contact'
+        5 : 'contact',
+        6 : 'links'
       },
       itemClass : 'menuItem',
       itemHover : 'active',
