@@ -21,7 +21,7 @@
 <!--<![endif]-->
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
     <title>Louw Swart | Personal Portfolio</title>
     <meta name="description" content="On-line Portfolio and CV for Louw Swart - Java Developer based in Wellington, New Zealand" />
     <meta name="keywords" content="portfolio cv java developer louw swart" />
@@ -241,7 +241,7 @@
                 <p>Integrated an open source <b>mobile framework</b> (WURFL) into the Quirk software stack enabling development of mobile client solutions. Converted <b>Google's server-side JSP tracking</b> code to fit into the Quirk stack and WebWork framework.</p>
                 <p>Developed a <b>live tracking solution</b> of a colleague's mountain bike race via <b>GPS</b>, Vodacom API and <b>Google Maps API</b>.</p>
                 <div class="vid-container">
-                  <iframe width="xxx" height="xxx" src="//www.youtube.com/embed/34Tb79-2ekc" frameborder="0"></iframe>
+                  <iframe class="youtube_frame" width="0" height="0" src="//www.youtube.com/embed/34Tb79-2ekc"></iframe>
                 </div>
               </div>
             </div>
@@ -327,9 +327,9 @@
           <div class="col-xs-12 col-sm-9 col-md-8 col-lg-8 conForm">
             <h4>Send a message</h4>
             <div id="result"></div>
-            <form method="post" action="" name="cform" id="cform">
+            <form name="cform" id="cform">
               <input name="name" id="name" type="text" class="col-xs-12 col-sm-6 col-md-6 col-lg-6" placeholder="Your name..." /> <input name="email" id="email" type="text" class="col-xs-12 col-sm-6 col-md-6 col-lg-6 noMarr" placeholder="Your email..." />
-              <textarea name="message" id="message" cols="" rows="" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" placeholder="Your message..."></textarea>
+              <textarea name="message" id="message" cols="1" rows="1" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" placeholder="Your message..."></textarea>
               <input type="hidden" name="heuning" id="heuning" />
               <input type="submit" id="submit" name="send" class="submitBnt" value="Send message" />
             </form>
@@ -363,7 +363,7 @@
     </div>
     <!--wrapper end-->
     <!--google maps api-->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=${initParam['GOOGLE_MAPS_API_KEY']}&sensor=false"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=${initParam['GOOGLE_MAPS_API_KEY']}&amp;sensor=false"></script>
     <!--minified js-->
     <script src="${pageContext.request.contextPath}/js/script.min.js?v=${initParam['CACHE_VERSION']}"></script>
     <script type="text/javascript">
