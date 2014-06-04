@@ -82,22 +82,26 @@ var mapMarkerDrawn = false;
 
     // for skill chart and map marker
     $(document).scroll(function() {
-      if (elementInViewport($('#js_trigger_skills')) && !skillChartDrawn) {
-        $('.chart').easyPieChart({
-          easing : 'easeOutBounce',
-          onStep : function(from, to, percent) {
-            $(this.el).find('.percent').text(Math.round(percent));
-          }
-        });
-        skillChartDrawn = true;
+      if (!skillChartDrawn) {
+        if (elementInViewport($('#js_trigger_skills'))) {
+          $('.chart').easyPieChart({
+            easing : 'easeOutBounce',
+            onStep : function(from, to, percent) {
+              $(this.el).find('.percent').text(Math.round(percent));
+            }
+          });
+          skillChartDrawn = true;
+        }
       }
 
-      if (elementInViewport($('#js_trigger_map_marker')) && !mapMarkerDrawn) {
-        setTimeout(function() {
-          marker = addMarker();
-          google.maps.event.addListener(marker, 'click', toggleBounce);
-        }, 2500);
-        mapMarkerDrawn = true;
+      if (!mapMarkerDrawn) {
+        if (elementInViewport($('#js_trigger_map_marker'))) {
+          setTimeout(function() {
+            marker = addMarker();
+            google.maps.event.addListener(marker, 'click', toggleBounce);
+          }, 2500);
+          mapMarkerDrawn = true;
+        }
       }
     });
   });
