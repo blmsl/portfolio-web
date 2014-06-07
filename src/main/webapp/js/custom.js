@@ -3,6 +3,7 @@ var chart,
     previousHeight,
     timeoutResize,
     timeoutMenuAnimate,
+    timeoutMarkerBounce,
     map,
     marker;
 var wellington = new google.maps.LatLng(-41.284938, 174.762324);
@@ -49,6 +50,9 @@ var mapMarkerDrawn = false;
     // for banner height js
     setBannerSize(0, 0);
     setDynamicCssValues();
+    drawChart();
+    drawMarker();
+
     $(window).on('resize', function(e){
       setBannerSize(previousWidth, previousHeight);
       setDynamicCssValues();
@@ -82,30 +86,13 @@ var mapMarkerDrawn = false;
 
     // for skill chart and map marker
     $(document).scroll(function() {
-      if (!skillChartDrawn) {
-        if (elementInViewport($('#js_trigger_skills'))) {
-          $('.chart').easyPieChart({
-            easing : 'easeOutBounce',
-            onStep : function(from, to, percent) {
-              $(this.el).find('.percent').text(Math.round(percent));
-            }
-          });
-          skillChartDrawn = true;
-        }
-      }
+      drawChart();
+      drawMarker();
+    });
 
-      if (!mapMarkerDrawn) {
-        if (elementInViewport($('#js_trigger_map_marker'))) {
-          setTimeout(function() {
-            marker = addMarker();
-            google.maps.event.addListener(marker, 'click', toggleBounce);
-            if ($(window).width() > 1000) {
-              map.setZoom(11);
-            }
-          }, 2500);
-          mapMarkerDrawn = true;
-        }
-      }
+    $('#js_click_address').click(function(e){
+      e.preventDefault();
+      toggleBounce();
     });
   });
 
@@ -133,6 +120,35 @@ var mapMarkerDrawn = false;
     });
   });
 }(jQuery));
+
+function drawChart(){
+  if (!skillChartDrawn) {
+    if (elementInViewport($('#js_trigger_skills'))) {
+      $('.chart').easyPieChart({
+        easing : 'easeOutBounce',
+        onStep : function(from, to, percent) {
+          $(this.el).find('.percent').text(Math.round(percent));
+        }
+      });
+      skillChartDrawn = true;
+    }
+  }
+}
+
+function drawMarker(){
+  if (!mapMarkerDrawn) {
+    if (elementInViewport($('#js_trigger_map_marker'))) {
+      setTimeout(function() {
+        marker = addMarker();
+        google.maps.event.addListener(marker, 'click', toggleBounce);
+        if ($(window).width() > 1000) {
+          map.setZoom(11);
+        }
+      }, 2500);
+      mapMarkerDrawn = true;
+    }
+  }
+}
 
 function setDynamicCssValues() {
   $('.bannerText').css('top', ((($(window).height() - $('.bannerText').height()) / 2) - 63));
@@ -194,7 +210,10 @@ function addMarker() {
 }
 function toggleBounce() {
   marker.setAnimation(google.maps.Animation.BOUNCE);
-  setTimeout(function(){
+  if (timeoutMarkerBounce) {
+    clearTimeout(timeoutMarkerBounce);
+  }
+  timeoutMarkerBounce = setTimeout(function(){
     marker.setAnimation(null);
   }, 2250);
 }
