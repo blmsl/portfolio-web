@@ -363,7 +363,7 @@
     </div>
     <!--wrapper end-->
     <!--google maps api-->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=${initParam['GOOGLE_MAPS_API_KEY']}&amp;sensor=false"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=${initParam['GOOGLE_MAPS_API_KEY']}&amp;sensor=false&amp;libraries=geometry"></script>
     <!--minified js-->
     <script src="${pageContext.request.contextPath}/js/script.min.js?v=${initParam['CACHE_VERSION']}"></script>
     <script type="text/javascript">

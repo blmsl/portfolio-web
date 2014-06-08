@@ -4,12 +4,21 @@ var chart,
     timeoutResize,
     timeoutMenuAnimate,
     timeoutMarkerBounce,
+    timeoutZoom,
     map,
     marker;
+var indianocean = new google.maps.LatLng(-40.385219, 79.680933);
+var capetown = new google.maps.LatLng(-33.924673, 18.423458);
+var sydney = new google.maps.LatLng(-33.939953, 151.175249);
+var hamilton = new google.maps.LatLng(-37.779755, 175.277283);
+var auckland = new google.maps.LatLng(-36.847639, 174.762473);
 var wellington = new google.maps.LatLng(-41.284938, 174.762324);
 var eastbourne = new google.maps.LatLng(-41.291767, 174.897501);
+var cities = [{position: capetown, title: 'I\'ve from here...'}, {position: auckland, title: 'I\'ve lived here...'}, {position: hamilton, title: 'I\'ve lived here...'}, {position: eastbourne, title: 'I\'m in this area...'}];
 var skillChartDrawn = false;
-var mapMarkerDrawn = false;
+var mapMarkersDrawn = false;
+var cityMarkers = [];
+var iterator = 0;
 (function($) {
   "use strict";
   // For background slider
@@ -47,11 +56,12 @@ var mapMarkerDrawn = false;
   });
 
   $(document).ready(function(e) {
+    initializeMap();
     // for banner height js
     setBannerSize(0, 0);
     setDynamicCssValues();
     drawChart();
-    drawMarker();
+    dropMarkers();
 
     $(window).on('resize', function(e){
       setBannerSize(previousWidth, previousHeight);
@@ -87,7 +97,7 @@ var mapMarkerDrawn = false;
     // for skill chart and map marker
     $(document).scroll(function() {
       drawChart();
-      drawMarker();
+      dropMarkers();
     });
 
     $('#js_click_address').click(function(e){
@@ -135,21 +145,6 @@ function drawChart(){
   }
 }
 
-function drawMarker(){
-  if (!mapMarkerDrawn) {
-    if (elementInViewport($('#js_trigger_map_marker'))) {
-      setTimeout(function() {
-        marker = addMarker();
-        google.maps.event.addListener(marker, 'click', toggleBounce);
-        if ($(window).width() > 1000) {
-          map.setZoom(11);
-        }
-      }, 2500);
-      mapMarkerDrawn = true;
-    }
-  }
-}
-
 function setDynamicCssValues() {
   $('.bannerText').css('top', ((($(window).height() - $('.bannerText').height()) / 2) - 63));
 }
@@ -190,31 +185,62 @@ function elementInViewport(el) {
 }
 
 // Google maps
-function initialize() {
+function initializeMap() {
+  var initialZoom = $(window).width() >= 1000 ? 3 : 1;
   var mapOptions = {
-    center: wellington,
-    zoom: 10,
-    scrollwheel: false,
+    center: indianocean,
+    zoom: initialZoom,
     styles: [{featureType:'water',elementType:'geometry',stylers:[{color:'#00bdbd'}]},{featureType:'landscape.man_made',elementType:'geometry',stylers:[{color:'#f7f1df'}]},{featureType:'landscape.natural',elementType:'geometry',stylers:[{color:'#bde6ab'}]},{featureType:'landscape.natural.terrain',elementType:'geometry',stylers:[{visibility:'off'}]},{featureType:'poi.park',elementType:'geometry',stylers:[{color:'#abce83'}]},{featureType:'poi',elementType:'labels',stylers:[{visibility:'off'}]},{featureType:'poi.medical',elementType:'geometry',stylers:[{color:'#fbd3da'}]},{featureType:'poi.business',stylers:[{visibility:'off'}]},{featureType:'road',elementType:'geometry.stroke',stylers:[{visibility:'off'}]},{featureType:'road',elementType:'labels',stylers:[{visibility:'off'}]},{featureType:'road.highway',elementType:'geometry.fill',stylers:[{color:'#f5534b'}]},{featureType:'road.highway',elementType:'geometry.stroke',stylers:[{color:'#f5534b'}]},{featureType:'road.arterial',elementType:'geometry.fill',stylers:[{color:'#ff675f'}]},{featureType:'road.local',elementType:'geometry.fill',stylers:[{color:'black'}]},{featureType:'transit.station.airport',elementType:'geometry.fill',stylers:[{color:'#cfb2db'}]},{featureType:'transit.line',elementType:'geometry.fill',stylers:[{color:'#474d5d'}]},{featureType:'transit.line',elementType:'geometry.stroke',stylers:[{color:'#474d5d'}]}]
   };
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-}
-function addMarker() {
-  return new google.maps.Marker({
-    position: eastbourne,
-    map: map,
-    title: 'I\'m in this area...',
-    draggable: false,
-    animation: google.maps.Animation.DROP
+  new google.maps.Polyline({
+    path: [capetown, sydney, auckland, hamilton, auckland, wellington, eastbourne],
+    strokeColor: '#1b1f29',
+    strokeOpacity: 0.7,
+    strokeWeight: 3,
+    geodesic: true,
+    map: map
   });
 }
-function toggleBounce() {
-  marker.setAnimation(google.maps.Animation.BOUNCE);
-  if (timeoutMarkerBounce) {
-    clearTimeout(timeoutMarkerBounce);
+
+function dropMarkers() {
+  if (!mapMarkersDrawn) {
+    if (elementInViewport($('#js_trigger_map_marker'))) {
+      mapMarkersDrawn = true;
+      setTimeout(function(){
+        for (var i = 0; i < cities.length; i++) {
+          setTimeout(function() {
+            addMarker();
+          }, (i + 1) * 850);
+        }
+        setTimeout(function() {
+          map.panTo(wellington);
+          zoomMap();
+        }, ((cities.length + 1) * 850) + 850);
+      }, 2500);
+    }
   }
-  timeoutMarkerBounce = setTimeout(function(){
-    marker.setAnimation(null);
-  }, 2250);
 }
-google.maps.event.addDomListener(window, 'load', initialize);
+
+function addMarker() {
+  cityMarkers.push(new google.maps.Marker({
+    position: cities[iterator].position,
+    map: map,
+    title: cities[iterator].title,
+    draggable: false,
+    animation: google.maps.Animation.DROP
+  }));
+  iterator++;
+}
+
+function zoomMap() {
+  if (timeoutZoom) {
+    clearTimeout(timeoutZoom);
+  }
+  timeoutZoom = setTimeout(function() {
+    if (($(window).width() >= 1000 && map.getZoom() < 11) || $(window).width() < 1000 && map.getZoom() < 10) {
+      map.setZoom(map.getZoom() + 1);
+      zoomMap();
+    }
+  }, 650);
+}
