@@ -163,6 +163,7 @@
                 <cssSourceFile>layout.css</cssSourceFile>
                 <cssSourceFile>font-awesome.css</cssSourceFile>
               </cssSourceFiles>
+              <cssEngine>YUI</cssEngine>
               <jsSourceFiles>
                 <jsSourceFile>lib/modernizr.custom.26633.js</jsSourceFile>
                 <jsSourceFile>lib/jquery.min.js</jsSourceFile>
