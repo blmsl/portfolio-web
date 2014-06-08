@@ -5,8 +5,7 @@ var chart,
     timeoutMenuAnimate,
     timeoutMarkerBounce,
     timeoutZoom,
-    map,
-    marker;
+    map;
 var indianocean = new google.maps.LatLng(-40.385219, 79.680933);
 var capetown = new google.maps.LatLng(-33.924673, 18.423458);
 var sydney = new google.maps.LatLng(-33.939953, 151.175249);
@@ -14,7 +13,8 @@ var hamilton = new google.maps.LatLng(-37.779755, 175.277283);
 var auckland = new google.maps.LatLng(-36.847639, 174.762473);
 var wellington = new google.maps.LatLng(-41.284938, 174.762324);
 var eastbourne = new google.maps.LatLng(-41.291767, 174.897501);
-var cities = [{position: capetown, title: 'I\'ve from here...'}, {position: auckland, title: 'I\'ve lived here...'}, {position: hamilton, title: 'I\'ve lived here...'}, {position: eastbourne, title: 'I\'m in this area...'}];
+var markersize = new google.maps.Size(28, 40);
+var cities = [{position: capetown, title: 'I\'ve from here...', icon: {url: 'images/markerprev.png', size: markersize}}, {position: auckland, title: 'I\'ve lived here...', icon: {url: 'images/markerprev.png', size: markersize}}, {position: hamilton, title: 'I\'ve lived here...', icon: {url: 'images/markerprev.png', size: markersize}}, {position: eastbourne, title: 'I\'m in this area...', icon: {url: 'images/markercur.png', size: markersize}}];
 var skillChartDrawn = false;
 var mapMarkersDrawn = false;
 var cityMarkers = [];
@@ -61,7 +61,7 @@ var iterator = 0;
     setBannerSize(0, 0);
     setDynamicCssValues();
     drawChart();
-    dropMarkers();
+    dropMarkers(2500);
 
     $(window).on('resize', function(e){
       setBannerSize(previousWidth, previousHeight);
@@ -97,12 +97,12 @@ var iterator = 0;
     // for skill chart and map marker
     $(document).scroll(function() {
       drawChart();
-      dropMarkers();
+      dropMarkers(500);
     });
 
     $('#js_click_address').click(function(e){
       e.preventDefault();
-      toggleBounce();
+      toggleBounce(cityMarkers[cityMarkers.length - 1]);
     });
   });
 
@@ -203,21 +203,21 @@ function initializeMap() {
   });
 }
 
-function dropMarkers() {
+function dropMarkers(wait) {
   if (!mapMarkersDrawn) {
     if (elementInViewport($('#js_trigger_map_marker'))) {
       mapMarkersDrawn = true;
       setTimeout(function(){
-        for (var i = 0; i < cities.length; i++) {
+        for (var i = 1; i <= cities.length; i++) {
           setTimeout(function() {
             addMarker();
-          }, (i + 1) * 850);
+          }, i * 850);
         }
         setTimeout(function() {
           map.panTo(wellington);
           zoomMap();
-        }, ((cities.length + 1) * 850) + 850);
-      }, 2500);
+        }, (cities.length * 850) + 850);
+      }, wait);
     }
   }
 }
@@ -228,8 +228,19 @@ function addMarker() {
     map: map,
     title: cities[iterator].title,
     draggable: false,
-    animation: google.maps.Animation.DROP
+    animation: google.maps.Animation.DROP,
+    icon: cities[iterator].icon
   }));
+  var cityMarker = cityMarkers[iterator];
+  google.maps.event.addListener(cityMarker, 'click', function() {
+    if (timeoutMarkerBounce) {
+      clearTimeout(timeoutMarkerBounce);
+    }
+    cityMarker.setAnimation(google.maps.Animation.BOUNCE);
+    timeoutMarkerBounce = setTimeout(function(){
+      cityMarker.setAnimation(null);
+    }, 2000);
+  });
   iterator++;
 }
 
@@ -243,4 +254,14 @@ function zoomMap() {
       zoomMap();
     }
   }, 650);
+}
+
+function toggleBounce(marker) {
+  if (timeoutMarkerBounce) {
+    clearTimeout(timeoutMarkerBounce);
+  }
+  marker.setAnimation(google.maps.Animation.BOUNCE);
+  timeoutMarkerBounce = setTimeout(function(){
+    marker.setAnimation(null);
+  }, 2000);
 }
