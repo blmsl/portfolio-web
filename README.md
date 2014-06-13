@@ -1,9 +1,9 @@
 ouq77portfolio
 ==============
 
-Heroku Java Web App, running in an embedded Tomcat instance. 
+Heroku Java Web App, using Spring MVC, running in an embedded Tomcat instance. 
 
-Makes use of AJAX and JavaMail to submit messages from the site. 
+Makes use of AJAX and javax.mail to submit messages from the site. 
 
 All CSS and Javascript files are concatenated and compressed at build time (com.samaxes.maven.minify-maven-plugin).
 
