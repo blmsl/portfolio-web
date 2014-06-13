@@ -1,3 +1,4 @@
+var cacheBreaker = 2;
 var chart,
     previousWidth,
     previousHeight,
@@ -6,19 +7,83 @@ var chart,
     timeoutMarkerBounce,
     timeoutZoom,
     map;
-var indianocean = new google.maps.LatLng(-40.385219, 79.680933);
-var capetown = new google.maps.LatLng(-33.924673, 18.423458);
-var sydney = new google.maps.LatLng(-33.939953, 151.175249);
-var hamilton = new google.maps.LatLng(-37.779755, 175.277283);
-var auckland = new google.maps.LatLng(-36.847639, 174.762473);
-var wellington = new google.maps.LatLng(-41.284938, 174.762324);
-var eastbourne = new google.maps.LatLng(-41.291767, 174.897501);
-var markersize = new google.maps.Size(28, 40);
-var cities = [{position: capetown, title: 'I\'ve from here...', icon: {url: 'resources/images/markerprev.png', size: markersize}}, {position: auckland, title: 'I\'ve lived here...', icon: {url: 'resources/images/markerprev.png', size: markersize}}, {position: hamilton, title: 'I\'ve lived here...', icon: {url: 'resources/images/markerprev.png', size: markersize}}, {position: eastbourne, title: 'I\'m in this area...', icon: {url: 'resources/images/markercur.png', size: markersize}}];
-var skillChartDrawn = false;
-var mapMarkersDrawn = false;
+var jnb = new google.maps.LatLng(-26.136837, 28.241157),
+    cpt = new google.maps.LatLng(-33.971459, 18.602241),
+    mbo = new google.maps.LatLng(-25.807261, 25.544465),
+    dur = new google.maps.LatLng(-29.967507, 30.947187),
+    kim = new google.maps.LatLng(-28.802682, 24.765399),
+    bfn = new google.maps.LatLng(-29.095735, 26.298145),
+    plz = new google.maps.LatLng(-33.986448, 25.610390),
+    els = new google.maps.LatLng(-33.038191, 27.828955),
+    grj = new google.maps.LatLng(-34.005193, 22.378423),
+    mpm = new google.maps.LatLng(-25.919804, 32.572997),
+    gbe = new google.maps.LatLng(-24.555994, 25.918776),
+    wdh = new google.maps.LatLng(-22.480292, 17.470903),
+    buq = new google.maps.LatLng(-20.018368, 28.624652),
+    hre = new google.maps.LatLng(-17.918871, 31.097359),
+    lvi = new google.maps.LatLng(-17.818925, 25.818595),
+    lun = new google.maps.LatLng(-15.330899, 28.454393),
+    lad = new google.maps.LatLng(-8.848009, 13.234900),
+    dar = new google.maps.LatLng(-6.872619, 39.206986),
+    ebb = new google.maps.LatLng(0.044929, 32.442880),
+    nbo = new google.maps.LatLng(-1.322705, 36.926611),
+    fih = new google.maps.LatLng(-4.385679, 15.444503),
+    los = new google.maps.LatLng(6.581759, 3.321484),
+    abj = new google.maps.LatLng(5.254863, -3.932870),
+    acc = new google.maps.LatLng(5.606068, -0.168107),
+    dkr = new google.maps.LatLng(14.744887, -17.490146),
+    sal = new google.maps.LatLng(16.734608, -22.943608),
+    mru = new google.maps.LatLng(-20.430714, 57.675511),
+    gru = new google.maps.LatLng(-23.434617, -46.478013),
+    eze = new google.maps.LatLng(-34.822544, -58.534969),
+    mia = new google.maps.LatLng(25.795947, -80.286611),
+    atl = new google.maps.LatLng(33.640795, -84.427223),
+    iad = new google.maps.LatLng(38.952765, -77.451732),
+    jfk = new google.maps.LatLng(40.641242, -73.777941),
+    yvr = new google.maps.LatLng(49.196659, -123.181056),
+    lhr = new google.maps.LatLng(51.469979, -0.454044),
+    fra = new google.maps.LatLng(50.037936, 8.562608),
+    zrh = new google.maps.LatLng(47.458256, 8.555717),
+    cdg = new google.maps.LatLng(49.009702, 2.548251),
+    cph = new google.maps.LatLng(55.618039, 12.651198),
+    ams = new google.maps.LatLng(52.310523, 4.768740),
+    bom = new google.maps.LatLng(19.090121, 72.868905),
+    bkk = new google.maps.LatLng(13.913019, 100.604164),
+    kix = new google.maps.LatLng(34.432015, 135.230817),
+    ksm = new google.maps.LatLng(9.548389, 100.063484),
+    hkg = new google.maps.LatLng(22.324767, 114.198590),
+    per = new google.maps.LatLng(-31.938471, 115.967523),
+    dps = new google.maps.LatLng(-8.746727, 115.166801),
+    drw = new google.maps.LatLng(-12.411127, 130.878227),
+    adl = new google.maps.LatLng(-34.946134, 138.533726),
+    syd = new google.maps.LatLng(-33.939953, 151.175249),
+    hlz = new google.maps.LatLng(-37.865470, 175.337267),
+    chc = new google.maps.LatLng(-43.486456, 172.537369),
+    zqn = new google.maps.LatLng(-45.020983, 168.740325),
+    akl = new google.maps.LatLng(-37.008227, 174.785760),
+    wlg = new google.maps.LatLng(-41.327551, 174.808308),
+    nsn = new google.maps.LatLng(-41.300020, 173.225254);
+
+var indianocean = new google.maps.LatLng(4.101766, 79.350061),
+    london = new google.maps.LatLng(51.451005, -0.147970);
+    capetown = new google.maps.LatLng(-33.934620, 18.406203),
+    benoni = new google.maps.LatLng(-26.172906, 28.310071),
+    vryburg = new google.maps.LatLng(-26.952586, 24.716451),
+    hamilton = new google.maps.LatLng(-37.779755, 175.277283),
+    auckland = new google.maps.LatLng(-36.847639, 174.762473),
+    wellington = new google.maps.LatLng(-41.284938, 174.762324),
+    eastbourne = new google.maps.LatLng(-41.291767, 174.897501);
+var markersize = new google.maps.Size(25, 40),
+    airportsize = new google.maps.Size(9, 12);
+var lived = 'I\'ve lived here...';
+var prevMarker = 'resources/images/markerprev.png?v=' + cacheBreaker;
+var cities = [{position: vryburg, title: 'I grew up here...', icon: {url: prevMarker, size: markersize}}, {position: london, title: lived, icon: {url: prevMarker, size: markersize}}, {position: benoni, title: lived, icon: {url: prevMarker, size: markersize}}, {position: capetown, title: 'I\'ve from here...', icon: {url: prevMarker, size: markersize}}, {position: auckland, title: lived, icon: {url: prevMarker, size: markersize}}, {position: hamilton, title: lived, icon: {url: prevMarker, size: markersize}}, {position: eastbourne, title: 'I\'m in this area...', icon: {url: 'resources/images/markercur.png?v=' + cacheBreaker, size: markersize}}];
+var skillChartDrawn = false,
+    mapMarkersDrawn = false;
+var airports = [jnb, cpt, mbo, dur, kim, bfn, plz, els, grj, mpm, gbe, wdh, buq, hre, lvi, lun, lad, dar, ebb, nbo, fih, los, abj, acc, dkr, sal, mru, gru, eze, mia, atl, iad, jfk, yvr, lhr, fra, zrh, cdg, cph, ams, bom, bkk, kix, ksm, hkg, per, dps, drw, adl, syd, hlz, chc, zqn, akl, wlg, nsn];
 var cityMarkers = [];
 var iterator = 0;
+
 (function($) {
   "use strict";
   // For background slider
@@ -186,7 +251,7 @@ function elementInViewport(el) {
 
 // Google maps
 function initializeMap() {
-  var initialZoom = $(window).width() >= 1000 ? 3 : 1;
+  var initialZoom = $(window).width() >= 1000 ? 2 : 1;
   var mapOptions = {
     center: indianocean,
     zoom: initialZoom,
@@ -195,10 +260,10 @@ function initializeMap() {
   };
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
   new google.maps.Polyline({
-    path: [capetown, sydney, auckland, hamilton, auckland, wellington, eastbourne],
+    path: [jnb, cpt, jnb, mbo, jnb, dur, jnb, kim, jnb, bfn, jnb, plz, els, jnb, grj, jnb, mpm, jnb, gbe, jnb, wdh, jnb, buq, jnb, hre, jnb, lvi, jnb, lun, jnb, lad, jnb, dar, jnb, ebb, jnb, nbo, jnb, fih, jnb, los, jnb, abj, acc, jnb, dkr, jnb, sal, jfk, jnb, mru, jnb, gru, eze, cpt, lhr, cpt, fra, cpt, plz, dur, jnb, sal, mia, cpt, jnb, sal, atl, iad, jfk, jnb, lhr, yvr, lhr, jnb, fra, cdg, fra, jnb, zrh, cph, zrh, ams, jnb, bom, jnb, bkk, kix, bkk, ksm, bkk, jnb, hkg, akl, hkg, jnb, per, jnb, syd, per, dps, drw, adl, syd, jnb, syd, akl, wlg, hlz, wlg, akl, chc, akl, zqn, akl, wlg, akl, nsn, akl],
+    strokeOpacity: 0.5,
     strokeColor: '#1b1f29',
-    strokeOpacity: 0.7,
-    strokeWeight: 3,
+    strokeWeight: 2,
     geodesic: true,
     map: map
   });
@@ -209,6 +274,15 @@ function dropMarkers(wait) {
     if (elementInViewport($('#js_trigger_map_marker'))) {
       mapMarkersDrawn = true;
       setTimeout(function(){
+        for (var i = 1; i <= airports.length; i++) {
+          new google.maps.Marker({
+            position: airports[i],
+            map: map,
+            draggable: false,
+            animation: google.maps.Animation.DROP,
+            icon: {url: 'resources/images/markerairport.png?v=' + cacheBreaker, size: airportsize}
+          });
+        }
         for (var i = 1; i <= cities.length; i++) {
           setTimeout(function() {
             addMarker();
