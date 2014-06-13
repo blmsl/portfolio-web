@@ -7,7 +7,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 
-import kiwi.ouq77.portfolio.launch.Main;
+import kiwi.ouq77.portfolio.launch.Launch;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -18,7 +18,7 @@ import org.quartz.JobExecutionException;
 public class DynoKeepAliveJob implements Job {
 
 	private static final Log log = LogFactory.getLog(DynoKeepAliveJob.class);
-	private static final String GET_URL = "http://" + Main.HEROKU_APP_DOMAIN + "/google536c542405d09504.html";
+	private static final String GET_URL = "http://" + Launch.HEROKU_APP_DOMAIN + "/google536c542405d09504.html";
 
 	@Override
 	public void execute(final JobExecutionContext context) throws JobExecutionException {

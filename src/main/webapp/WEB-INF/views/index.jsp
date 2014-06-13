@@ -24,16 +24,16 @@
     <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
     <title>Louw Swart | Personal Portfolio</title>
     <meta name="description" content="On-line Portfolio and CV for Louw Swart - Java Developer based in Wellington, New Zealand" />
-    <meta name="keywords" content="portfolio cv java developer louw swart" />
+    <meta name="keywords" content="louw swart portfolio cv java developer" />
     <%@include file="include/social_media.jsp"%>
-    <link rel="icon" href="${pageContext.request.contextPath}/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="canonical" href="http://${initParam['CUSTOM_APP_DOMAIN']}/" />
     <!--minified styles -->
-    <link href="${pageContext.request.contextPath}/css/style.min.css?v=${initParam['CACHE_VERSION']}" rel="stylesheet" type="text/css" media="screen" />
+    <link href="/resources/css/style.min.css?v=${initParam['CACHE_VERSION']}" rel="stylesheet" type="text/css" media="screen" />
     <!--google font style -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300' rel='stylesheet' type='text/css' />
-    <noscript><link href="${pageContext.request.contextPath}/css/fallback.css" rel="stylesheet" type="text/css" /></noscript>
+    <noscript><link href="/resources/css/fallback.css" rel="stylesheet" type="text/css" /></noscript>
     <!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="css/fallback.css" /><![endif]-->
     <script>
       var _gaq = _gaq || [];
@@ -56,7 +56,7 @@
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 noPadd">
             <!--slider start-->
             <div id="ri-grid" class="ri-grid-loading ri-grid ri-grid-size-2">
-              <img class="ri-loading-image" src="${pageContext.request.contextPath}/images/loading.gif" alt="Loading..." />
+              <img class="ri-loading-image" src="/resources/images/loading.gif" alt="Loading..." />
               <ul class="cb-slideshow">
                 <%@include file="include/banner_images.jsp"%>
               </ul>
@@ -123,7 +123,7 @@
               <p><sub><i>* Requires Android 4.0 (Ice Cream Sandwich) or newer</i></sub></p>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1 col-lg-offset-1 proPic">
-              <img src="${pageContext.request.contextPath}/images/profile.jpg" alt="Louw Swart" class="img-circle topmar" width="295" height="295" itemprop="photo" />
+              <img src="/resources/images/profile.jpg" alt="Louw Swart" class="img-circle topmar" width="295" height="295" itemprop="photo" />
             </div>
           </div>
         </div>
@@ -353,7 +353,7 @@
             <li><a href="http://www.facebook.com/ouq77" target="_blank" title="See my Facebook here" class="js_track_link_click"><i class="fa fa-facebook fa-2x"></i></a></li>
           </ul>
           <div class="footer-info">
-            <p><i class="fa fa-info"></i> Basic Java Web app (JSP, Servlet, Javascript, AJAX)</p>
+            <p><i class="fa fa-info"></i> Basic Java Web app (Spring MVC, JSP, Javascript, AJAX)</p>
             <p>Hosted on the <i><a href="http://heroku.com" target="_blank" class="js_track_link_click">heroku.com</a></i> cloud platform</p>
             <p>&copy; <%=yearDf.format(new Date())%> &ndash; HTML Template by <i><a href="http://themeforest.net/user/themeelite" target="_blank" class="js_track_link_click">themeelite</a></i></p>
           </div>
@@ -365,7 +365,7 @@
     <!--google maps api-->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=${initParam['GOOGLE_MAPS_API_KEY']}&amp;sensor=false&amp;libraries=geometry"></script>
     <!--minified js-->
-    <script src="${pageContext.request.contextPath}/js/script.min.js?v=${initParam['CACHE_VERSION']}"></script>
+    <script src="/resources/js/script.min.js?v=${initParam['CACHE_VERSION']}"></script>
     <script type="text/javascript">
       $(document).ready(function(){
         $('.js_track_link_click').click(function() {
@@ -374,13 +374,7 @@
           }
         });
         
-        $('.submitBnt').click(function(){
-          if(_gaq){
-            _gaq.push(['_trackEvent', 'submit_click', $(this).attr('value')]);
-          }
-        });
-
-        $('.navbar-toggle').click(function(){
+        $('.submitBnt, .navbar-toggle').click(function(){
           if(_gaq){
             _gaq.push(['_trackEvent', 'submit_click', $(this).attr('value')]);
           }

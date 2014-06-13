@@ -4,7 +4,7 @@
     $('#cform').submit(function(e) {
       e.preventDefault();
       $("#result").slideUp(750, function() {
-        $('#submit').before('<img src="images/ajax-loader.gif" class="contact-loader" />').attr('disabled','disabled');
+        $('#submit').before('<img src="resources/images/ajax-loader.gif" class="contact-loader" />').attr('disabled','disabled');
         $.ajax({
           type: 'POST',
           url: '/send',

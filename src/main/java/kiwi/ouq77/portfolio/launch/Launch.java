@@ -14,9 +14,9 @@ import org.apache.catalina.startup.Tomcat;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-public class Main {
+public class Launch {
 
-	private static final Log log = LogFactory.getLog(Main.class);
+	private static final Log log = LogFactory.getLog(Launch.class);
 	/**
 	 * HEROKU CONFIG VARIABLES
 	 */
@@ -33,7 +33,7 @@ public class Main {
 	private static final String ANDROID_APP_URL = System.getenv(ANDROID_APP_URL_KEY);
 	private static final String INSTAGRAM_IMAGE_FOLDER = System.getenv(INSTAGRAM_IMAGE_FOLDER_KEY);
 	private static final String GOOGLE_MAPS_API_KEY = System.getenv(GOOGLE_MAPS_API_KEY_KEY);
-	private static final String WEB_APPLICATION_DIR_LOCATION = "target/ouq77.herokuapp.com";
+	private static final String WEB_APPLICATION_DIR_LOCATION = "target/com.herokuapp.ouq77";
 	private static final String MAVEN_SDF = "MAVEN_SDF";
 	private static final String BUILD_TIMESTAMP = "BUILD_TIMESTAMP";
 	private static final String CACHE_VERSION_KEY = "CACHE_VERSION";

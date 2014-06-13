@@ -3,6 +3,33 @@
   xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
   version="2.5">
 
+  <!-- The definition of the Root Spring Container shared by all Servlets and Filters -->
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>/WEB-INF/spring/root-context.xml</param-value>
+  </context-param>
+
+  <!-- Creates the Spring Container shared by all Servlets and Filters -->
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+
+  <!-- Processes application requests -->
+  <servlet>
+    <servlet-name>appServlet</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>appServlet</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+
   <filter>
     <filter-name>hideHeroku</filter-name>
     <filter-class>kiwi.ouq77.portfolio.filter.HideHerokuFilter</filter-class>
@@ -11,56 +38,6 @@
   <filter-mapping>
     <filter-name>hideHeroku</filter-name>
     <url-pattern>/*</url-pattern>
-  </filter-mapping>
-
-  <filter>
-    <filter-name>httpCacheSevenDays</filter-name>
-    <filter-class>kiwi.ouq77.portfolio.filter.HttpCacheFilter</filter-class>
-    <init-param>
-      <param-name>Expires</param-name>
-      <param-value>7</param-value>
-    </init-param>
-  </filter>
-
-  <filter-mapping>
-    <filter-name>httpCacheSevenDays</filter-name>
-    <url-pattern>*.js</url-pattern>
-    <url-pattern>*.css</url-pattern>
-  </filter-mapping>
-
-  <filter>
-    <filter-name>httpCacheFourteenDays</filter-name>
-    <filter-class>kiwi.ouq77.portfolio.filter.HttpCacheFilter</filter-class>
-    <init-param>
-      <param-name>Expires</param-name>
-      <param-value>14</param-value>
-    </init-param>
-  </filter>
-
-  <filter-mapping>
-    <filter-name>httpCacheFourteenDays</filter-name>
-    <url-pattern>*.gif</url-pattern>
-    <url-pattern>*.png</url-pattern>
-    <url-pattern>*.jpg</url-pattern>
-    <url-pattern>*.jpeg</url-pattern>
-  </filter-mapping>
-
-  <filter>
-    <filter-name>httpCacheThreeSixFiveDays</filter-name>
-    <filter-class>kiwi.ouq77.portfolio.filter.HttpCacheFilter</filter-class>
-    <init-param>
-      <param-name>Expires</param-name>
-      <param-value>365</param-value>
-    </init-param>
-  </filter>
-
-  <filter-mapping>
-    <filter-name>httpCacheThreeSixFiveDays</filter-name>
-    <url-pattern>*.gif</url-pattern>
-    <url-pattern>*.png</url-pattern>
-    <url-pattern>*.ico</url-pattern>
-    <url-pattern>*.jpg</url-pattern>
-    <url-pattern>*.jpeg</url-pattern>
   </filter-mapping>
 
 </web-app>

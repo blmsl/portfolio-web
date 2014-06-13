@@ -1,6 +1,5 @@
-package kiwi.ouq77.portfolio.servlet;
+package kiwi.ouq77.portfolio.controller;
 
-import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.security.GeneralSecurityException;
 import java.util.Properties;
@@ -17,27 +16,28 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
-import kiwi.ouq77.portfolio.launch.Main;
+import kiwi.ouq77.portfolio.launch.Launch;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.commons.validator.routines.EmailValidator;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sun.mail.util.MailSSLSocketFactory;
 
-@WebServlet(name = "sendMail", urlPatterns = { "/send" })
-public class SendMail extends HttpServlet {
+/**
+ * Handles requests for the application contact page.
+ */
+@Controller
+public class ContactController {
 
-	private static final long serialVersionUID = 1L;
-	private static final Log log = LogFactory.getLog(Main.class);
+	private static final Log log = LogFactory.getLog(ContactController.class);
 	/**
 	 * HEROKU CONFIG VARIABLES
 	 */
@@ -49,11 +49,10 @@ public class SendMail extends HttpServlet {
 	 */
 	private static final Pattern ILLEGAL_CHARS_PATTERN = Pattern.compile("[<>^|%()&+]");
 	private static final Pattern URL_PATTERN = Pattern.compile("http[s]?");
-	private static final String INPUT_HONEY_POT = "heuning";
 	private static final String INPUT_NAME = "name";
 	private static final String INPUT_EMAIL = "email";
 	private static final String INPUT_MESSAGE = "message";
-	private static final String SUBJECT = "Message from %s | " + Main.CUSTOM_APP_DOMAIN;
+	private static final String SUBJECT = "Message from %s | " + Launch.CUSTOM_APP_DOMAIN;
 	private static final String CONTENT = "You have been contacted by %s (%s). Their additional message is as follows:\n\n%s";
 	private static final String CONTENT_COPY = "Thank you for getting in touch - I've received your message.\n\nHere is a copy of what you sent:\n\n%s (%s)\n\n%s";
 	private static final String MESSAGE_DIV = "<div class=\"%s\">%s</div>";
@@ -68,12 +67,21 @@ public class SendMail extends HttpServlet {
 	private static final String UNKNOWN_ERROR = "Something unexpected happend - please try again later...";
 	private static final String SUCCESS = "<h3>Email Sent Successfully.</h3><p>Thank you <strong>%s</strong>, your message has been sent.</p>";
 
-	@Override
-	protected void doPost(final HttpServletRequest req, final HttpServletResponse resp) throws ServletException, IOException {
-		final String heuning = req.getParameter(INPUT_HONEY_POT);
-		final String name = req.getParameter(INPUT_NAME);
-		final String email = req.getParameter(INPUT_EMAIL);
-		final String message = req.getParameter(INPUT_MESSAGE);
+	/**
+	 * Simply selects the contact view to render by returning its name.
+	 */
+	@RequestMapping(value = "/contact", method = RequestMethod.GET)
+	public String contact() {
+		return "contact";
+	}
+
+	@RequestMapping(value = "/send", method = RequestMethod.POST)
+	public String send(
+			@RequestParam final String heuning,
+			@RequestParam final String name,
+			@RequestParam final String email,
+			@RequestParam final String message,
+			final Model model) {
 
 		final StringBuilder responseBuilder = new StringBuilder();
 		if (StringUtils.isNotEmpty(heuning)) {
@@ -98,11 +106,9 @@ public class SendMail extends HttpServlet {
 
 		final String response = String.format(MESSAGE_DIV, responseBuilder.toString().equals(String.format(SUCCESS, name)) ? SUCCESS_CLASS : ERROR_CLASS, responseBuilder.toString());
 
-		resp.setContentType("text/html");
-		final ServletOutputStream out = resp.getOutputStream();
-		out.write(response.getBytes());
-		out.flush();
-		out.close();
+		model.addAttribute("response", response);
+
+		return "ajax/response";
 	}
 
 	private String send(final String fromName, final String fromEmail, final String message) throws GeneralSecurityException {
@@ -112,7 +118,7 @@ public class SendMail extends HttpServlet {
 		props.put("mail.smtp.port", "465");
 
 		final MailSSLSocketFactory sf = new MailSSLSocketFactory();
-		sf.setTrustedHosts(new String[] { "localhost", Main.HEROKU_APP_DOMAIN, Main.CUSTOM_APP_DOMAIN });
+		sf.setTrustedHosts(new String[] { "localhost", Launch.HEROKU_APP_DOMAIN, Launch.CUSTOM_APP_DOMAIN });
 		props.put("mail.smtp.ssl.socketFactory", sf);
 
 		props.put("mail.smtp.ssl.enable", "true");
