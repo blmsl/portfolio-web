@@ -280,6 +280,7 @@ function dropMarkers(wait) {
             map: map,
             draggable: false,
             animation: google.maps.Animation.DROP,
+            zIndex: 100,
             icon: {url: 'resources/images/markerairport.png?v=' + cacheBreaker, size: airportsize}
           });
         }
@@ -304,6 +305,7 @@ function addMarker() {
     title: cities[iterator].title,
     draggable: false,
     animation: google.maps.Animation.DROP,
+    zIndex: 200,
     icon: cities[iterator].icon
   }));
   var cityMarker = cityMarkers[iterator];
