@@ -6,6 +6,7 @@ var chart,
     timeoutMenuAnimate,
     timeoutMarkerBounce,
     timeoutZoom,
+    initialZoom,
     map;
 var jnb = new google.maps.LatLng(-26.136837, 28.241157),
     cpt = new google.maps.LatLng(-33.971459, 18.602241),
@@ -49,9 +50,11 @@ var jnb = new google.maps.LatLng(-26.136837, 28.241157),
     ams = new google.maps.LatLng(52.310523, 4.768740),
     bom = new google.maps.LatLng(19.090121, 72.868905),
     bkk = new google.maps.LatLng(13.913019, 100.604164),
+    bkkn = new google.maps.LatLng(13.689084, 100.751023),
     kix = new google.maps.LatLng(34.432015, 135.230817),
     ksm = new google.maps.LatLng(9.548389, 100.063484),
     hkg = new google.maps.LatLng(22.324767, 114.198590),
+    hkgn = new google.maps.LatLng(22.307862, 113.922394),
     per = new google.maps.LatLng(-31.938471, 115.967523),
     dps = new google.maps.LatLng(-8.746727, 115.166801),
     drw = new google.maps.LatLng(-12.411127, 130.878227),
@@ -80,7 +83,7 @@ var prevMarker = 'resources/images/markerprev.png?v=' + cacheBreaker;
 var cities = [{position: vryburg, title: 'I grew up here...', icon: {url: prevMarker, size: markersize}}, {position: london, title: lived, icon: {url: prevMarker, size: markersize}}, {position: benoni, title: lived, icon: {url: prevMarker, size: markersize}}, {position: capetown, title: 'I\'ve from here...', icon: {url: prevMarker, size: markersize}}, {position: auckland, title: lived, icon: {url: prevMarker, size: markersize}}, {position: hamilton, title: lived, icon: {url: prevMarker, size: markersize}}, {position: eastbourne, title: 'I\'m in this area...', icon: {url: 'resources/images/markercur.png?v=' + cacheBreaker, size: markersize}}];
 var skillChartDrawn = false,
     mapMarkersDrawn = false;
-var airports = [jnb, cpt, mbo, dur, kim, bfn, plz, els, grj, mpm, gbe, wdh, buq, hre, lvi, lun, lad, dar, ebb, nbo, fih, los, abj, acc, dkr, sal, mru, gru, eze, mia, atl, iad, jfk, yvr, lhr, fra, zrh, cdg, cph, ams, bom, bkk, kix, ksm, hkg, per, dps, drw, adl, syd, hlz, chc, zqn, akl, wlg, nsn];
+var airports = [jnb, cpt, mbo, dur, kim, bfn, plz, els, grj, mpm, gbe, wdh, buq, hre, lvi, lun, lad, dar, ebb, nbo, fih, los, abj, acc, dkr, sal, mru, gru, eze, mia, atl, iad, jfk, yvr, lhr, fra, zrh, cdg, cph, ams, bom, bkk, bkkn, kix, ksm, hkg, hkgn, per, dps, drw, adl, syd, hlz, chc, zqn, akl, wlg, nsn];
 var cityMarkers = [];
 var iterator = 0;
 
@@ -251,7 +254,7 @@ function elementInViewport(el) {
 
 // Google maps
 function initializeMap() {
-  var initialZoom = $(window).width() >= 1000 ? 2 : 1;
+  initialZoom = $(window).width() >= 1000 ? 2 : 1;
   var mapOptions = {
     center: indianocean,
     zoom: initialZoom,
@@ -259,14 +262,16 @@ function initializeMap() {
     styles: [{featureType:'water',elementType:'geometry',stylers:[{color:'#00bdbd'}]},{featureType:'landscape.man_made',elementType:'geometry',stylers:[{color:'#f7f1df'}]},{featureType:'landscape.natural',elementType:'geometry',stylers:[{color:'#bde6ab'}]},{featureType:'landscape.natural.terrain',elementType:'geometry',stylers:[{visibility:'off'}]},{featureType:'poi.park',elementType:'geometry',stylers:[{color:'#abce83'}]},{featureType:'poi',elementType:'labels',stylers:[{visibility:'off'}]},{featureType:'poi.medical',elementType:'geometry',stylers:[{color:'#fbd3da'}]},{featureType:'poi.business',stylers:[{visibility:'off'}]},{featureType:'road',elementType:'geometry.stroke',stylers:[{visibility:'off'}]},{featureType:'road',elementType:'labels',stylers:[{visibility:'off'}]},{featureType:'road.highway',elementType:'geometry.fill',stylers:[{color:'#f5534b'}]},{featureType:'road.highway',elementType:'geometry.stroke',stylers:[{color:'#f5534b'}]},{featureType:'road.arterial',elementType:'geometry.fill',stylers:[{color:'#ff675f'}]},{featureType:'road.local',elementType:'geometry.fill',stylers:[{color:'black'}]},{featureType:'transit.station.airport',elementType:'geometry.fill',stylers:[{color:'#cfb2db'}]},{featureType:'transit.line',elementType:'geometry.fill',stylers:[{color:'#474d5d'}]},{featureType:'transit.line',elementType:'geometry.stroke',stylers:[{color:'#474d5d'}]}]
   };
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-  new google.maps.Polyline({
-    path: [jnb, cpt, jnb, mbo, jnb, dur, jnb, kim, jnb, bfn, jnb, plz, els, jnb, grj, jnb, mpm, jnb, gbe, jnb, wdh, jnb, buq, jnb, hre, jnb, lvi, jnb, lun, jnb, lad, jnb, dar, jnb, ebb, jnb, nbo, jnb, fih, jnb, los, jnb, abj, acc, jnb, dkr, jnb, sal, jfk, jnb, mru, jnb, gru, eze, cpt, lhr, cpt, fra, cpt, plz, dur, jnb, sal, mia, cpt, jnb, sal, atl, iad, jfk, jnb, lhr, yvr, lhr, jnb, fra, cdg, fra, jnb, zrh, cph, zrh, ams, jnb, bom, jnb, bkk, kix, bkk, ksm, bkk, jnb, hkg, akl, hkg, jnb, per, jnb, syd, per, dps, drw, adl, syd, jnb, syd, akl, wlg, hlz, wlg, akl, chc, akl, zqn, akl, wlg, akl, nsn, akl],
-    strokeOpacity: 0.5,
-    strokeColor: '#1b1f29',
-    strokeWeight: 2,
-    geodesic: true,
-    map: map
-  });
+  if (initialZoom > 1) {
+    new google.maps.Polyline({
+      path: [jnb, cpt, jnb, mbo, jnb, dur, jnb, kim, jnb, bfn, jnb, plz, els, jnb, grj, jnb, mpm, jnb, gbe, jnb, wdh, jnb, buq, jnb, hre, jnb, lvi, jnb, lun, jnb, lad, jnb, dar, jnb, ebb, jnb, nbo, jnb, fih, jnb, los, jnb, abj, acc, jnb, dkr, jnb, sal, jfk, jnb, mru, jnb, gru, eze, cpt, lhr, cpt, fra, cpt, plz, dur, jnb, sal, mia, cpt, jnb, sal, atl, iad, jfk, jnb, lhr, yvr, lhr, jnb, fra, cdg, fra, jnb, zrh, cph, zrh, ams, jnb, bom, jnb, bkk, kix, bkk, hkgn, bkk, jnb, bkkn, ksm, bkkn, jnb, hkg, jnb, hkgn, akl, hkgn, jnb, per, jnb, syd, per, dps, drw, adl, syd, jnb, syd, akl, wlg, hlz, wlg, akl, chc, akl, zqn, akl, wlg, akl, nsn, akl],
+      strokeOpacity: 0.5,
+      strokeColor: '#1b1f29',
+      strokeWeight: 2,
+      geodesic: true,
+      map: map
+    });
+  }
 }
 
 function dropMarkers(wait) {
@@ -274,15 +279,17 @@ function dropMarkers(wait) {
     if (elementInViewport($('#js_trigger_map_marker'))) {
       mapMarkersDrawn = true;
       setTimeout(function(){
-        for (var i = 1; i <= airports.length; i++) {
-          new google.maps.Marker({
-            position: airports[i],
-            map: map,
-            draggable: false,
-            animation: google.maps.Animation.DROP,
-            zIndex: 100,
-            icon: {url: 'resources/images/markerairport.png?v=' + cacheBreaker, size: airportsize}
-          });
+        if (initialZoom > 1) {
+          for (var i = 1; i <= airports.length; i++) {
+            new google.maps.Marker({
+              position: airports[i],
+              map: map,
+              draggable: false,
+              animation: google.maps.Animation.DROP,
+              zIndex: 100,
+              icon: {url: 'resources/images/markerairport.png?v=' + cacheBreaker, size: airportsize}
+            });
+          }
         }
         for (var i = 1; i <= cities.length; i++) {
           setTimeout(function() {
