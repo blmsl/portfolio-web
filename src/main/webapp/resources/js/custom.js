@@ -264,7 +264,7 @@ function initializeMap() {
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
   if (initialZoom > 1) {
     new google.maps.Polyline({
-      path: [jnb, cpt, jnb, mbo, jnb, dur, jnb, kim, jnb, bfn, jnb, plz, els, jnb, grj, jnb, mpm, jnb, gbe, jnb, wdh, jnb, buq, jnb, hre, jnb, lvi, jnb, lun, jnb, lad, jnb, dar, jnb, ebb, jnb, nbo, jnb, fih, jnb, los, jnb, abj, acc, jnb, dkr, jnb, sal, jfk, jnb, mru, jnb, gru, eze, cpt, lhr, cpt, fra, cpt, plz, dur, jnb, sal, mia, cpt, jnb, sal, atl, iad, jfk, jnb, lhr, yvr, lhr, jnb, fra, cdg, fra, jnb, zrh, cph, zrh, ams, jnb, bom, jnb, bkk, kix, bkk, hkgn, bkk, jnb, bkkn, ksm, bkkn, jnb, hkg, jnb, hkgn, akl, hkgn, jnb, per, jnb, syd, per, dps, drw, adl, syd, jnb, syd, akl, wlg, hlz, wlg, akl, chc, akl, zqn, akl, wlg, akl, nsn, akl],
+      path: [jnb, cpt, jnb, mbo, jnb, dur, jnb, kim, jnb, bfn, jnb, plz, els, jnb, grj, jnb, mpm, jnb, gbe, jnb, wdh, jnb, buq, jnb, hre, jnb, lvi, jnb, lun, jnb, lad, jnb, dar, jnb, ebb, jnb, nbo, jnb, fih, jnb, los, jnb, abj, acc, jnb, dkr, jnb, sal, jfk, jnb, mru, jnb, gru, eze, cpt, lhr, cpt, fra, cpt, plz, dur, jnb, sal, mia, cpt, jnb, sal, atl, iad, jfk, jnb, lhr, yvr, lhr, jnb, fra, cdg, fra, jnb, zrh, cph, zrh, ams, zrh, jnb, ams, lhr, ams, jnb, nbo, lhr, jnb, bom, jnb, bkk, kix, bkk, hkgn, bkk, jnb, bkkn, ksm, bkkn, jnb, hkg, jnb, hkgn, akl, hkgn, jnb, per, jnb, syd, per, dps, drw, adl, syd, jnb, syd, akl, wlg, hlz, wlg, akl, chc, akl, zqn, akl, wlg, akl, nsn, akl],
       strokeOpacity: 0.5,
       strokeColor: '#1b1f29',
       strokeWeight: 2,
