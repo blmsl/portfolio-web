@@ -133,7 +133,7 @@ var journeyLine,
     setBannerSize(0, 0);
     setDynamicCssValues();
     drawChart();
-    dropMarkers(2500);
+    dropMarkers(3500);
 
     $(window).on('resize', function(e){
       setBannerSize(previousWidth, previousHeight);
@@ -169,7 +169,7 @@ var journeyLine,
     // for skill chart and map marker
     $(document).scroll(function() {
       drawChart();
-      dropMarkers(500);
+      dropMarkers(1500);
     });
 
     $('#js_click_address').click(function(e){
