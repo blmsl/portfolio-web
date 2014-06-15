@@ -84,8 +84,12 @@ var cities = [{position: vryburg, title: 'I grew up here...', icon: {url: prevMa
 var skillChartDrawn = false,
     mapMarkersDrawn = false;
 var airports = [jnb, cpt, mbo, dur, kim, bfn, plz, els, grj, mpm, gbe, wdh, buq, hre, lvi, lun, lad, dar, ebb, nbo, fih, los, abj, acc, dkr, sal, mru, gru, eze, mia, atl, iad, jfk, yvr, lhr, fra, zrh, cdg, cph, ams, bom, bkk, bkkn, kix, ksm, hkg, hkgn, per, dps, drw, adl, syd, hlz, chc, zqn, akl, wlg, nsn];
-var cityMarkers = [];
-var iterator = 0;
+    journeys = [jnb, cpt, jnb, mbo, jnb, dur, jnb, kim, jnb, bfn, jnb, plz, els, jnb, grj, jnb, mpm, jnb, gbe, jnb, wdh, jnb, buq, jnb, hre, jnb, lvi, jnb, lun, jnb, lad, jnb, dar, jnb, ebb, jnb, nbo, jnb, fih, jnb, los, jnb, abj, acc, jnb, dkr, jnb, sal, jfk, jnb, mru, jnb, gru, eze, cpt, lhr, cpt, fra, cpt, plz, dur, jnb, sal, mia, cpt, jnb, sal, atl, iad, jfk, jnb, lhr, yvr, lhr, jnb, fra, cdg, fra, jnb, zrh, cph, zrh, ams, zrh, jnb, ams, lhr, ams, jnb, nbo, lhr, jnb, bom, jnb, bkk, kix, bkk, hkgn, bkk, jnb, bkkn, ksm, bkkn, jnb, hkg, jnb, hkgn, akl, hkgn, jnb, per, jnb, syd, per, dps, drw, adl, syd, jnb, syd, akl, wlg, hlz, wlg, akl, chc, akl, zqn, akl, wlg, akl, nsn, akl];
+var journeyLine,
+    cityMarkers = [],
+    markerIterator = 0,
+    airportIterator = 0,
+    journeyIterator = 0;
 
 (function($) {
   "use strict";
@@ -263,14 +267,13 @@ function initializeMap() {
   };
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
   if (initialZoom > 1) {
-    new google.maps.Polyline({
-      path: [jnb, cpt, jnb, mbo, jnb, dur, jnb, kim, jnb, bfn, jnb, plz, els, jnb, grj, jnb, mpm, jnb, gbe, jnb, wdh, jnb, buq, jnb, hre, jnb, lvi, jnb, lun, jnb, lad, jnb, dar, jnb, ebb, jnb, nbo, jnb, fih, jnb, los, jnb, abj, acc, jnb, dkr, jnb, sal, jfk, jnb, mru, jnb, gru, eze, cpt, lhr, cpt, fra, cpt, plz, dur, jnb, sal, mia, cpt, jnb, sal, atl, iad, jfk, jnb, lhr, yvr, lhr, jnb, fra, cdg, fra, jnb, zrh, cph, zrh, ams, zrh, jnb, ams, lhr, ams, jnb, nbo, lhr, jnb, bom, jnb, bkk, kix, bkk, hkgn, bkk, jnb, bkkn, ksm, bkkn, jnb, hkg, jnb, hkgn, akl, hkgn, jnb, per, jnb, syd, per, dps, drw, adl, syd, jnb, syd, akl, wlg, hlz, wlg, akl, chc, akl, zqn, akl, wlg, akl, nsn, akl],
+    journeyLine = new google.maps.Polyline({
       strokeOpacity: 0.5,
       strokeColor: '#1b1f29',
       strokeWeight: 2,
       geodesic: true,
       map: map
-    });
+    }).getPath();
   }
 }
 
@@ -280,15 +283,25 @@ function dropMarkers(wait) {
       mapMarkersDrawn = true;
       setTimeout(function(){
         if (initialZoom > 1) {
+          for (var i = 0; i < journeys.length; i++) {
+            setTimeout(function() {
+              journeyLine.push(journeys[journeyIterator]);
+              journeyIterator++;
+            }, i * 45);
+          }
           for (var i = 1; i <= airports.length; i++) {
-            new google.maps.Marker({
-              position: airports[i],
-              map: map,
-              draggable: false,
-              animation: google.maps.Animation.DROP,
-              zIndex: 100,
-              icon: {url: 'resources/images/markerairport.png?v=' + cacheBreaker, size: airportsize}
-            });
+            setTimeout(function() {
+              new google.maps.Marker({
+                position: airports[airportIterator],
+                map: map,
+                draggable: false,
+                animation: google.maps.Animation.DROP,
+                zIndex: 100,
+                title: 'I\'ve flown to this airport...',
+                icon: {url: 'resources/images/markerairport.png?v=' + cacheBreaker, size: airportsize}
+              });
+              airportIterator++;
+            }, i * 80);
           }
         }
         for (var i = 1; i <= cities.length; i++) {
@@ -299,7 +312,7 @@ function dropMarkers(wait) {
         setTimeout(function() {
           map.panTo(wellington);
           zoomMap();
-        }, (cities.length * 850) + 850);
+        }, (cities.length + 1) * 850);
       }, wait);
     }
   }
@@ -307,15 +320,15 @@ function dropMarkers(wait) {
 
 function addMarker() {
   cityMarkers.push(new google.maps.Marker({
-    position: cities[iterator].position,
+    position: cities[markerIterator].position,
     map: map,
-    title: cities[iterator].title,
+    title: cities[markerIterator].title,
     draggable: false,
     animation: google.maps.Animation.DROP,
     zIndex: 200,
-    icon: cities[iterator].icon
+    icon: cities[markerIterator].icon
   }));
-  var cityMarker = cityMarkers[iterator];
+  var cityMarker = cityMarkers[markerIterator];
   google.maps.event.addListener(cityMarker, 'click', function() {
     if (timeoutMarkerBounce) {
       clearTimeout(timeoutMarkerBounce);
@@ -325,7 +338,7 @@ function addMarker() {
       cityMarker.setAnimation(null);
     }, 2000);
   });
-  iterator++;
+  markerIterator++;
 }
 
 function zoomMap() {
