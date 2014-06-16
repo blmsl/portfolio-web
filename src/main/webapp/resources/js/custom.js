@@ -98,12 +98,12 @@ var journeyLine,
     $('#ri-grid').gridrotator({
       rows : 4,
       columns : 8,
-      animType : 'fadeInOut',
-      animSpeed : 1500,
-      interval : 1500,
+      animType : 'rotateBottom',
+      animSpeed : 300,
       step : 'random',
-      maxStep : 2,
+      maxStep : 3,
       preventClick : true,
+      onhover: true,
       w1024 : {
         rows : 5,
         columns : 6

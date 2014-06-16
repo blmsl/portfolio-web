@@ -335,11 +335,16 @@ header {
 
 .ri-grid-loading .ri-loading-image {
   position: relative;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   left: 50%;
   margin: 50px 0 50px -15px;
   display: block;
+}
+
+.contact-loader {
+  width: 35px;
+  height: 35px;
 }
 /*----------------------------------------------------
  5.	Menu Style
