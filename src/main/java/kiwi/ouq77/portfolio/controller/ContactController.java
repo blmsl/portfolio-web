@@ -41,7 +41,7 @@ public class ContactController {
 	/**
 	 * HEROKU CONFIG VARIABLES
 	 */
-	private static final String OWNER_NAME = System.getenv("OWNER_NAME");
+	private static final String OWNER_NAME = System.getenv("OWNER_NAME").replaceAll("\"", "");
 	private static final String JAVA_MAIL_EMAIL = System.getenv("JAVA_MAIL_EMAIL");
 	private static final String JAVA_MAIL_PASSWORD = System.getenv("JAVA_MAIL_PASSWORD");
 	/**
