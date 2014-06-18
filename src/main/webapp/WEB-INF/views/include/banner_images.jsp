@@ -16,7 +16,7 @@
 <%
 	for (final Integer randomFilename : randomFilenames) {
 %>
-<li><a href="#"><img src="/resources/images/grid/<%= randomFilename %>.jpg" alt="© Louw Swart" /></a></li>
+<li><a href="#"><img src="/resources/images/grid/<%= randomFilename %>.jpg?v=${initParam['CACHE_VERSION']}" alt="© Louw Swart" /></a></li>
 <%
 	}
 %>
