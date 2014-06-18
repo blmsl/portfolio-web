@@ -7,6 +7,7 @@
   compressJavaScript="true" 
   jsCompressor="closure"
   closureOptLevel="whitespace">
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
 <%@page contentType="text/html; charset=UTF-8"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
@@ -58,7 +59,9 @@
             <div id="ri-grid" class="ri-grid-loading ri-grid ri-grid-size-2">
               <img class="ri-loading-image" src="/resources/images/loading.gif" alt="Loading..." />
               <ul class="cb-slideshow">
-                <%@include file="include/banner_images.jsp"%>
+                <c:forEach var="randomFilename" items="${randomFilenames}">
+                <li><a href="#"><img src="/resources/images/grid/<c:out value="${randomFilename}" />.jpg?v=${initParam['CACHE_VERSION']}" alt="© Louw Swart" /></a></li>
+                </c:forEach>
               </ul>
             </div>
             <!--slider end-->
