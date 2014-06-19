@@ -143,7 +143,7 @@
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 skillsArea">
               <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 skills">
                 <span class="chart skilBg" data-percent="95"> <span class="percent"></span></span>
-                <h4 id="js_trigger_skills">Java</h4>
+                <h4 class="js_trigger_skills">Java</h4>
                 <p>Java EE; Java SE 6/7; Java ME;</p>
               </div>
             </div>
@@ -178,7 +178,7 @@
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 skillsArea">
               <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 skills">
                 <span class="chart skilBg" data-percent="60"> <span class="percent"></span></span>
-                <h4>Web Markup</h4>
+                <h4 class="js_trigger_skills">Web Markup</h4>
                 <p>HTML5; CSS3;</p>
               </div>
             </div>
@@ -308,7 +308,7 @@
       <section class="contact" id="contact">
         <div class="container topCon">
           <div class="heading">
-            <h2 id="js_trigger_map_marker">Get In Touch</h2>
+            <h2 class="js_trigger_map_marker">Get In Touch</h2>
             <p>contact me to have a chat</p>
           </div>
         </div>
@@ -320,7 +320,7 @@
         <div class="container">
           <!--contact info start-->
           <div class="col-xs-12 col-sm-3 col-md-4 col-lg-4">
-            <h4>Contact details</h4>
+            <h4 class="js_trigger_map_marker">Contact details</h4>
             <p><i class="fa fa-map-marker fa-lg"></i> <a href="#address" id="js_click_address" class="js_track_link_click"><span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address"><span itemprop="locality">Eastbourne, Lower Hutt</span>, <span itemprop="region">Wellington</span>, <span itemprop="country-name">NZ</span></span></a></p>
             <p><i class="fa fa-mobile fa-lg"></i> +64 22 031 3927</p>
             <p><i class="fa fa-link"></i> <a href="http://flavors.ouq77.kiwi" target="_blank" class="js_track_link_click">Flavors.me</a></p>

@@ -3,6 +3,7 @@ var chart,
     previousWidth,
     previousHeight,
     timeoutResize,
+    timeoutScroll,
     timeoutMenuAnimate,
     timeoutMarkerBounce,
     timeoutZoom,
@@ -168,8 +169,14 @@ var journeyLine,
 
     // for skill chart and map marker
     $(document).scroll(function() {
-      drawChart();
-      dropMarkers(1500);
+      // wait half a second for scroll to stop
+      if(timeoutScroll) {
+        clearTimeout(timeoutScroll);
+      }
+      timeoutScroll = setTimeout(function(){
+        drawChart();
+        dropMarkers(1500);
+      }, 500);
     });
 
     $('#js_click_address').click(function(e){
@@ -204,17 +211,17 @@ var journeyLine,
 }(jQuery));
 
 function drawChart(){
-  if (!skillChartDrawn) {
-    if (elementInViewport($('#js_trigger_skills'))) {
+  $('.js_trigger_skills').each(function(){
+    if (!skillChartDrawn && elementInViewport($(this))) {
+      skillChartDrawn = true;
       $('.chart').easyPieChart({
         easing : 'easeOutBounce',
         onStep : function(from, to, percent) {
           $(this.el).find('.percent').text(Math.round(percent));
         }
       });
-      skillChartDrawn = true;
     }
-  }
+  });
 }
 
 function setDynamicCssValues() {
@@ -260,6 +267,7 @@ function elementInViewport(el) {
 function initializeMap() {
   initialZoom = $(window).width() >= 1000 ? 2 : 1;
   var mapOptions = {
+    scrollwheel: false,
     center: indianocean,
     zoom: initialZoom,
     minZoom: initialZoom,
@@ -278,8 +286,8 @@ function initializeMap() {
 }
 
 function dropMarkers(wait) {
-  if (!mapMarkersDrawn) {
-    if (elementInViewport($('#js_trigger_map_marker'))) {
+  $('.js_trigger_map_marker').each(function() {
+    if (!mapMarkersDrawn && elementInViewport($(this))) {
       mapMarkersDrawn = true;
       setTimeout(function(){
         if (initialZoom > 1) {
@@ -315,7 +323,7 @@ function dropMarkers(wait) {
         }, (cities.length + 1) * 850);
       }, wait);
     }
-  }
+  });
 }
 
 function addMarker() {
@@ -349,6 +357,8 @@ function zoomMap() {
     if (($(window).width() >= 1000 && map.getZoom() < 11) || $(window).width() < 1000 && map.getZoom() < 10) {
       map.setZoom(map.getZoom() + 1);
       zoomMap();
+    } else {
+      map.setOptions({scrollwheel:true});
     }
   }, 650);
 }
