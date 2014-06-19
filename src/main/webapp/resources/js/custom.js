@@ -206,168 +206,168 @@ var journeyLine,
       chart.update(Math.random()*100);
     });
   });
+}(jQuery));
 
-  function drawChart(){
-    $('.js_trigger_skills').each(function(){
-      if (!skillChartDrawn && elementInViewport($(this))) {
-        skillChartDrawn = true;
-        $('.chart').easyPieChart({
-          easing : 'easeOutBounce',
-          onStep : function(from, to, percent) {
-            $(this.el).find('.percent').text(Math.round(percent));
-          }
-        });
-      }
-    });
-  }
-
-  function setDynamicCssValues() {
-    $('.bannerText').css('top', ((($(window).height() - $('.bannerText').height()) / 2) - 63));
-  }
-
-  function setBannerSize(previousWidth, previousHeight) {
-    var windowWidth = $(window).width();
-    var windowHeight = $(window).height();
-    var widthChanged = previousWidth != windowWidth;
-    var heightChanged = false;
-    // mobile browsers ads about 60px to screen height when hiding address bar - ignore this
-    if(windowHeight - previousHeight > 60) {
-      heightChanged = true;
-    }
-    if(windowHeight - previousHeight < -60) {
-      heightChanged = true;
-    }
-    if(widthChanged || heightChanged) {
-      $('.banner').css({
-        'width' : windowWidth,
-        'height' : windowHeight - 60
+function drawChart(){
+  $('.js_trigger_skills').each(function(){
+    if (!skillChartDrawn && elementInViewport($(this))) {
+      skillChartDrawn = true;
+      $('.chart').easyPieChart({
+        easing : 'easeOutBounce',
+        onStep : function(from, to, percent) {
+          $(this.el).find('.percent').text(Math.round(percent));
+        }
       });
     }
+  });
+}
+
+function setDynamicCssValues() {
+  $('.bannerText').css('top', ((($(window).height() - $('.bannerText').height()) / 2) - 63));
+}
+
+function setBannerSize(previousWidth, previousHeight) {
+  var windowWidth = $(window).width();
+  var windowHeight = $(window).height();
+  var widthChanged = previousWidth != windowWidth;
+  var heightChanged = false;
+  // mobile browsers ads about 60px to screen height when hiding address bar - ignore this
+  if(windowHeight - previousHeight > 60) {
+    heightChanged = true;
   }
-
-  function elementInViewport(el) {
-    var viewportWidth = $(window).width(),
-        viewportHeight = $(window).height(),
-        documentScrollTop = $(document).scrollTop(),
-        documentScrollLeft = $(document).scrollLeft(),
-        minTop = documentScrollTop,
-        maxTop = documentScrollTop + viewportHeight,
-        minLeft = documentScrollLeft,
-        maxLeft = documentScrollLeft + viewportWidth,
-        elementOffset = el.offset();
-
-    return ((elementOffset.top > minTop && elementOffset.top < maxTop)
-        && (elementOffset.left > minLeft && elementOffset.left < maxLeft));
+  if(windowHeight - previousHeight < -60) {
+    heightChanged = true;
   }
-
-  // Google maps
-  function initializeMap() {
-    initialZoom = $(window).width() >= 1000 ? 2 : 1;
-    var mapOptions = {
-      scrollwheel: false,
-      center: indianocean,
-      zoom: initialZoom,
-      minZoom: initialZoom,
-      styles: [{featureType:'water',elementType:'geometry',stylers:[{color:'#00bdbd'}]},{featureType:'landscape.man_made',elementType:'geometry',stylers:[{color:'#f7f1df'}]},{featureType:'landscape.natural',elementType:'geometry',stylers:[{color:'#bde6ab'}]},{featureType:'landscape.natural.terrain',elementType:'geometry',stylers:[{visibility:'off'}]},{featureType:'poi.park',elementType:'geometry',stylers:[{color:'#abce83'}]},{featureType:'poi',elementType:'labels',stylers:[{visibility:'off'}]},{featureType:'poi.medical',elementType:'geometry',stylers:[{color:'#fbd3da'}]},{featureType:'poi.business',stylers:[{visibility:'off'}]},{featureType:'road',elementType:'geometry.stroke',stylers:[{visibility:'off'}]},{featureType:'road',elementType:'labels',stylers:[{visibility:'off'}]},{featureType:'road.highway',elementType:'geometry.fill',stylers:[{color:'#f5534b'}]},{featureType:'road.highway',elementType:'geometry.stroke',stylers:[{color:'#f5534b'}]},{featureType:'road.arterial',elementType:'geometry.fill',stylers:[{color:'#ff675f'}]},{featureType:'road.local',elementType:'geometry.fill',stylers:[{color:'black'}]},{featureType:'transit.station.airport',elementType:'geometry.fill',stylers:[{color:'#cfb2db'}]},{featureType:'transit.line',elementType:'geometry.fill',stylers:[{color:'#474d5d'}]},{featureType:'transit.line',elementType:'geometry.stroke',stylers:[{color:'#474d5d'}]}]
-    };
-    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-    if (initialZoom > 1) {
-      journeyLine = new google.maps.Polyline({
-        strokeOpacity: 0.5,
-        strokeColor: '#1b1f29',
-        strokeWeight: 2,
-        geodesic: true,
-        map: map
-      }).getPath();
-    }
+  if(widthChanged || heightChanged) {
+    $('.banner').css({
+      'width' : windowWidth,
+      'height' : windowHeight - 60
+    });
   }
+}
 
-  function dropMarkers(wait) {
-    $('.js_trigger_map_marker').each(function() {
-      if (!mapMarkersDrawn && elementInViewport($(this))) {
-        mapMarkersDrawn = true;
-        setTimeout(function() {
-          if (initialZoom > 1) {
-            for (var i = 1; i <= airports.length; i++) {
-              setTimeout(function() {
-                new google.maps.Marker({
-                  position: airports[airportIterator].loc,
-                  map: map,
-                  draggable: false,
-                  animation: google.maps.Animation.DROP,
-                  zIndex: 100,
-                  title: airports[airportIterator].name,
-                  icon: {url: 'resources/images/markerairport.png', size: airportsize}
-                });
-                airportIterator++;
-              }, i * 100);
-            }
-            for (var i = 0; i < journeys.length; i++) {
-              setTimeout(function() {
-                journeyLine.push(journeys[journeyIterator].loc);
-                journeyIterator++;
-              }, i * 65);
-            }
-            additionalMarkerWait = ((airports.length - 1) * 100);
-          }
-          for (var i = 1; i <= cities.length; i++) {
+function elementInViewport(el) {
+  var viewportWidth = $(window).width(),
+      viewportHeight = $(window).height(),
+      documentScrollTop = $(document).scrollTop(),
+      documentScrollLeft = $(document).scrollLeft(),
+      minTop = documentScrollTop,
+      maxTop = documentScrollTop + viewportHeight,
+      minLeft = documentScrollLeft,
+      maxLeft = documentScrollLeft + viewportWidth,
+      elementOffset = el.offset();
+
+  return ((elementOffset.top > minTop && elementOffset.top < maxTop)
+      && (elementOffset.left > minLeft && elementOffset.left < maxLeft));
+}
+
+// Google maps
+function initializeMap() {
+  initialZoom = $(window).width() >= 1000 ? 2 : 1;
+  var mapOptions = {
+    scrollwheel: false,
+    center: indianocean,
+    zoom: initialZoom,
+    minZoom: initialZoom,
+    styles: [{featureType:'water',elementType:'geometry',stylers:[{color:'#00bdbd'}]},{featureType:'landscape.man_made',elementType:'geometry',stylers:[{color:'#f7f1df'}]},{featureType:'landscape.natural',elementType:'geometry',stylers:[{color:'#bde6ab'}]},{featureType:'landscape.natural.terrain',elementType:'geometry',stylers:[{visibility:'off'}]},{featureType:'poi.park',elementType:'geometry',stylers:[{color:'#abce83'}]},{featureType:'poi',elementType:'labels',stylers:[{visibility:'off'}]},{featureType:'poi.medical',elementType:'geometry',stylers:[{color:'#fbd3da'}]},{featureType:'poi.business',stylers:[{visibility:'off'}]},{featureType:'road',elementType:'geometry.stroke',stylers:[{visibility:'off'}]},{featureType:'road',elementType:'labels',stylers:[{visibility:'off'}]},{featureType:'road.highway',elementType:'geometry.fill',stylers:[{color:'#f5534b'}]},{featureType:'road.highway',elementType:'geometry.stroke',stylers:[{color:'#f5534b'}]},{featureType:'road.arterial',elementType:'geometry.fill',stylers:[{color:'#ff675f'}]},{featureType:'road.local',elementType:'geometry.fill',stylers:[{color:'black'}]},{featureType:'transit.station.airport',elementType:'geometry.fill',stylers:[{color:'#cfb2db'}]},{featureType:'transit.line',elementType:'geometry.fill',stylers:[{color:'#474d5d'}]},{featureType:'transit.line',elementType:'geometry.stroke',stylers:[{color:'#474d5d'}]}]
+  };
+  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+  if (initialZoom > 1) {
+    journeyLine = new google.maps.Polyline({
+      strokeOpacity: 0.5,
+      strokeColor: '#1b1f29',
+      strokeWeight: 2,
+      geodesic: true,
+      map: map
+    }).getPath();
+  }
+}
+
+function dropMarkers(wait) {
+  $('.js_trigger_map_marker').each(function() {
+    if (!mapMarkersDrawn && elementInViewport($(this))) {
+      mapMarkersDrawn = true;
+      setTimeout(function() {
+        if (initialZoom > 1) {
+          for (var i = 1; i <= airports.length; i++) {
             setTimeout(function() {
-              addMarker();
-            }, (i * 850) + additionalMarkerWait);
+              new google.maps.Marker({
+                position: airports[airportIterator].loc,
+                map: map,
+                draggable: false,
+                animation: google.maps.Animation.DROP,
+                zIndex: 100,
+                title: airports[airportIterator].name,
+                icon: {url: 'resources/images/markerairport.png', size: airportsize}
+              });
+              airportIterator++;
+            }, i * 100);
           }
+          for (var i = 0; i < journeys.length; i++) {
+            setTimeout(function() {
+              journeyLine.push(journeys[journeyIterator].loc);
+              journeyIterator++;
+            }, i * 65);
+          }
+          additionalMarkerWait = ((airports.length - 1) * 100);
+        }
+        for (var i = 1; i <= cities.length; i++) {
           setTimeout(function() {
-            map.panTo(wellington);
-            zoomMap();
-          }, ((cities.length + 1) * 850) + additionalMarkerWait);
-        }, wait);
-      }
-    });
-  }
-
-  function addMarker() {
-    cityMarkers.push(new google.maps.Marker({
-      position: cities[markerIterator].loc,
-      map: map,
-      title: cities[markerIterator].title,
-      draggable: false,
-      animation: google.maps.Animation.DROP,
-      zIndex: 200,
-      icon: cities[markerIterator].icon
-    }));
-    var cityMarker = cityMarkers[markerIterator];
-    google.maps.event.addListener(cityMarker, 'click', function() {
-      if (timeoutMarkerBounce) {
-        clearTimeout(timeoutMarkerBounce);
-      }
-      cityMarker.setAnimation(google.maps.Animation.BOUNCE);
-      timeoutMarkerBounce = setTimeout(function(){
-        cityMarker.setAnimation(null);
-      }, 2000);
-    });
-    markerIterator++;
-  }
-
-  function zoomMap() {
-    if (timeoutZoom) {
-      clearTimeout(timeoutZoom);
+            addMarker();
+          }, (i * 850) + additionalMarkerWait);
+        }
+        setTimeout(function() {
+          map.panTo(wellington);
+          zoomMap();
+        }, ((cities.length + 1) * 850) + additionalMarkerWait);
+      }, wait);
     }
-    timeoutZoom = setTimeout(function() {
-      if (($(window).width() >= 1000 && map.getZoom() < 11) || $(window).width() < 1000 && map.getZoom() < 10) {
-        map.setZoom(map.getZoom() + 1);
-        zoomMap();
-      } else {
-        map.setOptions({scrollwheel:true});
-      }
-    }, 650);
-  }
+  });
+}
 
-  function toggleBounce(marker) {
+function addMarker() {
+  cityMarkers.push(new google.maps.Marker({
+    position: cities[markerIterator].loc,
+    map: map,
+    title: cities[markerIterator].title,
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    zIndex: 200,
+    icon: cities[markerIterator].icon
+  }));
+  var cityMarker = cityMarkers[markerIterator];
+  google.maps.event.addListener(cityMarker, 'click', function() {
     if (timeoutMarkerBounce) {
       clearTimeout(timeoutMarkerBounce);
     }
-    marker.setAnimation(google.maps.Animation.BOUNCE);
+    cityMarker.setAnimation(google.maps.Animation.BOUNCE);
     timeoutMarkerBounce = setTimeout(function(){
-      marker.setAnimation(null);
+      cityMarker.setAnimation(null);
     }, 2000);
+  });
+  markerIterator++;
+}
+
+function zoomMap() {
+  if (timeoutZoom) {
+    clearTimeout(timeoutZoom);
   }
-}(jQuery));
+  timeoutZoom = setTimeout(function() {
+    if (($(window).width() >= 1000 && map.getZoom() < 11) || $(window).width() < 1000 && map.getZoom() < 10) {
+      map.setZoom(map.getZoom() + 1);
+      zoomMap();
+    } else {
+      map.setOptions({scrollwheel:true});
+    }
+  }, 650);
+}
+
+function toggleBounce(marker) {
+  if (timeoutMarkerBounce) {
+    clearTimeout(timeoutMarkerBounce);
+  }
+  marker.setAnimation(google.maps.Animation.BOUNCE);
+  timeoutMarkerBounce = setTimeout(function(){
+    marker.setAnimation(null);
+  }, 2000);
+}

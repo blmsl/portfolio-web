@@ -67,16 +67,23 @@ jQuery(function($) {
           contentTop[i] = $('#' + content[i] + '').offset().top;
           function bottomView(i) {
             if(varscroll < 100){
-              $('.'+itemClass).removeClass(itemHover);
-              $('.'+itemClass+':eq(0)').addClass(itemHover);
+              $('.' + itemClass).removeClass(itemHover);
+              $('.' + itemClass + ':eq(0)').addClass(itemHover);
             } else if(i < (menuSize -1) && varscroll > contentTop[i] - 100 && varscroll < contentTop[i + 1] + 100){
-              $('.'+itemClass).removeClass(itemHover);
-              $('.'+itemClass+':eq('+i+')').addClass(itemHover);
+              $('.' + itemClass).removeClass(itemHover);
+              $('.' + itemClass + ':eq('+i+')').addClass(itemHover);
             }
           }
-          if (scrollDir == 'down' && varscroll > contentTop[i] - 100 && varscroll < contentTop[i] + 100) {
-            $('.' + itemClass).removeClass(itemHover);
-            $('.' + itemClass + ':eq(' + i + ')').addClass(itemHover);
+          if (scrollDir == 'down') {
+            if(varscroll > contentTop[i] - 100 && varscroll < contentTop[i] + 100) {
+              $('.' + itemClass).removeClass(itemHover);
+              $('.' + itemClass + ':eq(' + i + ')').addClass(itemHover);
+            }
+            // in case bottom item is very small
+            if (elementInViewport($('#' + content[menuSize - 1] + ' h2:first'))) {
+              $('.' + itemClass).removeClass(itemHover);
+              $('.' + itemClass + ':eq(' + parseInt(menuSize - 1) + ')').addClass(itemHover);
+            }
           }
           if (scrollDir == 'up') {
             bottomView(i);
