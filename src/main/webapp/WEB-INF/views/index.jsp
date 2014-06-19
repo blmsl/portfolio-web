@@ -167,7 +167,7 @@
                 <h4>Version Control</h4>
                 <p>Mercurial; SVN; GIT;</p>
               </div>
-            </div>/
+            </div>
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 skillsArea">
               <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 skills">
                 <span class="chart skilBg" data-percent="85"> <span class="percent"></span></span>
@@ -356,7 +356,7 @@
             <li><a href="http://www.facebook.com/ouq77" target="_blank" title="See my Facebook here" class="js_track_link_click"><i class="fa fa-facebook fa-2x"></i></a></li>
           </ul>
           <div class="footer-info">
-            <p><i class="fa fa-info"></i> Basic Java Web app (Spring MVC, JSP, Javascript, AJAX)</p>
+            <p><i class="fa fa-info"></i> Java Web app (Spring MVC, JSP, Javascript, AJAX)</p>
             <p>Hosted on the <i><a href="http://heroku.com" target="_blank" class="js_track_link_click">heroku.com</a></i> cloud platform</p>
             <p>&copy; <%=yearDf.format(new Date())%> &ndash; HTML Template by <i><a href="http://themeforest.net/user/themeelite" target="_blank" class="js_track_link_click">themeelite</a></i></p>
           </div>
