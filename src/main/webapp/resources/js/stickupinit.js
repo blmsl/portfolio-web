@@ -1,11 +1,11 @@
 jQuery(function($) {
   $(document).ready(function() {
-    //enabling stickUp on the '.navbar-wrapper' class
+    // enabling stickUp on the '.navbar-wrapper' class
     $('.navbar-wrapper').stickUp({
       parts : {
         0 : 'banner',
         1 : 'aboutme',
-        2 : 'technical',
+        2 : 'skills',
         3 : 'exprience',
         4 : 'education',
         5 : 'contact',

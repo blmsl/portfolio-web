@@ -89,7 +89,7 @@
                       <ul class="nav navbar-nav">
                         <li class="menuItem active"><a href="#wrapper" class="js_track_link_click">Home</a></li>
                         <li class="menuItem"><a href="#aboutme" class="js_track_link_click">About</a></li>
-                        <li class="menuItem"><a href="#technical" class="js_track_link_click">Skills</a></li>
+                        <li class="menuItem"><a href="#skills" class="js_track_link_click">Skills</a></li>
                         <li class="menuItem"><a href="#exprience" class="js_track_link_click">Experience</a></li>
                         <li class="menuItem"><a href="#education" class="js_track_link_click">Education</a></li>
                         <li class="menuItem"><a href="#contact" class="js_track_link_click">Contact</a></li>
@@ -133,7 +133,7 @@
       </section>
       <!--about me end-->
       <!--technical start-->
-      <section class="technical" id="technical">
+      <section class="skills" id="skills">
         <div class="container">
           <div class="heading">
             <h2>Technical Skills</h2>

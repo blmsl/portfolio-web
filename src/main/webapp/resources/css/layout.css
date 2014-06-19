@@ -526,33 +526,33 @@ header {
   background: #eeeeee;
 }
 
-.technical {
+.skills {
   background: #eeeeee;
   color: #474d5d;
 }
 
-.technical .container {
+.skills .container {
   padding-top: 85px;
   padding-bottom: 69px;
 }
 
-.technical .heading p {
+.skills .heading p {
   padding-bottom: 41px;
 }
 
-.technical p {
+.skills p {
   color: #474d5d;
 }
 
-.technical h2 {
+.skills h2 {
   color: #ff675f;
 }
 
-.technical .skillsArea {
+.skills .skillsArea {
   padding: 0px;
 }
 
-.technical .skills {
+.skills .skills {
   margin: 0 auto;
   margin-bottom: 23px;
   text-align: center;
@@ -560,21 +560,21 @@ header {
   float: none;
 }
 
-.technical .skills p {
+.skills .skills p {
   color: #84868d;
   font-size: 13px;
   line-height: 18px;
   text-align: center;
 }
 
-.technical .skills img {
+.skills .skills img {
   margin: 0 auto;
   margin-bottom: 33px;
   width: 100%;
   max-width: 152px;
 }
 
-.technical .skills h4 {
+.skills .skills h4 {
   font-weight: 700;
   text-transform: uppercase;
 }

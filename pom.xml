@@ -194,11 +194,11 @@
                 <jsSourceFile>custom.js</jsSourceFile>
                 <jsSourceFile>lib/jquery.placeholder.js</jsSourceFile>
                 <jsSourceFile>lib/stickUp.js</jsSourceFile>
+                <jsSourceFile>stickupinit.js</jsSourceFile>
                 <jsSourceFile>lib/jquery.isotope.js</jsSourceFile>
                 <jsSourceFile>lib/jquery.easing.min.js</jsSourceFile>
                 <jsSourceFile>lib/jquery.easypiechart.js</jsSourceFile>
                 <jsSourceFile>contact.js</jsSourceFile>
-                <jsSourceFile>stickupinit.js</jsSourceFile>
                 <jsSourceFile>defenseleague.js</jsSourceFile>
               </jsSourceFiles>
               <jsEngine>CLOSURE</jsEngine>
