@@ -4,6 +4,7 @@ var chart,
     timeoutResize,
     timeoutScroll,
     timeoutMenuAnimate,
+    timeoutTilesloaded,
     timeoutMarkerBounce,
     timeoutZoom,
     initialZoom,
@@ -87,7 +88,8 @@ var skillChartDrawn = false,
     mapMarkersDrawn = false;
 var airports = [jnb, cpt, mbd, dur, kim, bfn, plz, els, grj, mpm, gbe, wdh, buq, hre, lvi, lun, lad, dar, ebb, nbo, fih, los, abj, acc, dkr, sid, mru, gru, eze, mia, atl, iad, jfk, lga, yvr, lhr, fra, zrh, cdg, cph, ams, bom, bkk, bkkn, kix, usm, hkg, hkgn, per, dps, drw, adl, syd, hlz, chc, zqn, akl, wlg, nsn];
     journeys = [jnb, cpt, jnb, mbd, jnb, dur, jnb, kim, jnb, bfn, jnb, plz, els, jnb, grj, jnb, mpm, jnb, gbe, jnb, wdh, jnb, buq, jnb, hre, jnb, lvi, jnb, lun, jnb, lad, jnb, dar, jnb, ebb, jnb, nbo, jnb, fih, jnb, los, jnb, abj, acc, jnb, dkr, jnb, sid, jfk, jnb, mru, jnb, eze, jnb, gru, eze, cpt, lhr, cpt, fra, cpt, plz, dur, jnb, sid, mia, cpt, jnb, sid, atl, iad, lga, atl, jnb, lhr, yvr, lhr, jnb, fra, ams, fra, jnb, zrh, cph, zrh, cdg, zrh, jnb, ams, lhr, ams, jnb, nbo, lhr, jnb, bom, jnb, bkk, kix, bkk, hkgn, bkk, usm, bkk, jnb, bkkn, usm, bkkn, jnb, hkg, jnb, hkgn, akl, hkgn, jnb, per, jnb, syd, per, dps, drw, adl, syd, jnb, syd, akl, wlg, hlz, wlg, akl, chc, akl, zqn, akl, wlg, akl, nsn, akl];
-var journeyLine,
+var tilesloaded = false,
+    journeyLine,
     cityMarkers = [],
     markerIterator = 0,
     airportIterator = 0,
@@ -136,7 +138,7 @@ var journeyLine,
     setBannerSize(0, 0);
     setDynamicCssValues();
     drawChart();
-    dropMarkers(3500);
+    dropMarkers(2500);
 
     $(window).on('resize', function(e){
       setBannerSize(previousWidth, previousHeight);
@@ -177,7 +179,7 @@ var journeyLine,
       }
       timeoutScroll = setTimeout(function(){
         drawChart();
-        dropMarkers(1500);
+        dropMarkers(750);
       }, 500);
     });
 
@@ -284,46 +286,58 @@ function initializeMap() {
       map: map
     }).getPath();
   }
+  google.maps.event.addListenerOnce(map, 'tilesloaded', function() {
+    tilesloaded = true;
+  });
 }
 
 function dropMarkers(wait) {
   $('.js_trigger_map_marker').each(function() {
     if (!mapMarkersDrawn && elementInViewport($(this))) {
-      mapMarkersDrawn = true;
-      setTimeout(function() {
-        if (initialZoom > 1) {
-          for (var i = 1; i <= airports.length; i++) {
-            setTimeout(function() {
-              new google.maps.Marker({
-                position: airports[airportIterator].loc,
-                map: map,
-                draggable: false,
-                animation: google.maps.Animation.DROP,
-                zIndex: 100,
-                title: airports[airportIterator].name,
-                icon: {url: 'resources/images/markerairport.png', size: airportsize}
-              });
-              airportIterator++;
-            }, i * 130);
+      if (tilesloaded) {
+        mapMarkersDrawn = true;
+        setTimeout(function() {
+          if (initialZoom > 1) {
+            for (var i = 1; i <= airports.length; i++) {
+              setTimeout(function() {
+                new google.maps.Marker({
+                  position: airports[airportIterator].loc,
+                  map: map,
+                  draggable: false,
+                  animation: google.maps.Animation.DROP,
+                  zIndex: 100,
+                  title: airports[airportIterator].name,
+                  icon: {url: 'resources/images/markerairport.png', size: airportsize}
+                });
+                airportIterator++;
+              }, i * 130);
+            }
+            for (var i = 0; i < journeys.length; i++) {
+              setTimeout(function() {
+                journeyLine.push(journeys[journeyIterator].loc);
+                journeyIterator++;
+              }, i * 65);
+            }
+            additionalMarkerWait = ((airports.length - 1) * 100);
           }
-          for (var i = 0; i < journeys.length; i++) {
+          for (var i = 1; i <= cities.length; i++) {
             setTimeout(function() {
-              journeyLine.push(journeys[journeyIterator].loc);
-              journeyIterator++;
-            }, i * 65);
+              addMarker();
+            }, (i * 650) + additionalMarkerWait);
           }
-          additionalMarkerWait = ((airports.length - 1) * 100);
-        }
-        for (var i = 1; i <= cities.length; i++) {
           setTimeout(function() {
-            addMarker();
-          }, (i * 650) + additionalMarkerWait);
+            map.panTo(wellington);
+            zoomMap();
+          }, ((cities.length + 1) * 850) + additionalMarkerWait);
+        }, wait);
+      } else {
+        if(timeoutTilesloaded) {
+          clearTimeout(timeoutTilesloaded);
         }
         setTimeout(function() {
-          map.panTo(wellington);
-          zoomMap();
-        }, ((cities.length + 1) * 850) + additionalMarkerWait);
-      }, wait);
+          dropMarkers(1000);
+        }, 500);
+      }
     }
   });
 }
