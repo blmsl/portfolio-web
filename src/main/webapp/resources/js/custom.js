@@ -41,6 +41,7 @@ var jnb = {loc: new google.maps.LatLng(-26.136837, 28.241157), name: 'JNB: OR Ta
     atl = {loc: new google.maps.LatLng(33.640795, -84.427223), name: 'ATL: Hartsfield–Jackson Atlanta International Airport'},
     iad = {loc: new google.maps.LatLng(38.952765, -77.451732), name: 'IAD: Washington Dulles International Airport'},
     jfk = {loc: new google.maps.LatLng(40.641242, -73.777941), name: 'JFK: John F. Kennedy International Airport, New York'},
+    lga = {loc: new google.maps.LatLng(40.776992, -73.873376), name: 'LGA: LaGuardia Airport, New York'},
     yvr = {loc: new google.maps.LatLng(49.196659, -123.181056), name: 'YVR: Vancouver International Airport'},
     lhr = {loc: new google.maps.LatLng(51.469979, -0.454044), name: 'LHR: London Heathrow Airport'},
     fra = {loc: new google.maps.LatLng(50.037936, 8.562608), name: 'FRA: Frankfurt Airport'},
@@ -84,8 +85,8 @@ var prevIcon = {url: 'resources/images/markerprev.png', size: markersize};
 var cities = [{loc: hartswater, title: 'I was born here...', icon: prevIcon}, {loc: heidelberg, title: 'I grew up here...', icon: prevIcon}, {loc: vryburg, title: 'I went to High School here...', icon: prevIcon}, {loc: london, title: lived, icon: prevIcon}, {loc: benoni, title: lived, icon: prevIcon}, {loc: capetown, title: 'I moved to NZ from here...', icon: prevIcon}, {loc: auckland, title: lived, icon: prevIcon}, {loc: hamilton, title: lived, icon: prevIcon}, {loc: eastbourne, title: 'I\'m in this area...', icon: {url: 'resources/images/markercur.png', size: markersize}}];
 var skillChartDrawn = false,
     mapMarkersDrawn = false;
-var airports = [jnb, cpt, mbd, dur, kim, bfn, plz, els, grj, mpm, gbe, wdh, buq, hre, lvi, lun, lad, dar, ebb, nbo, fih, los, abj, acc, dkr, sid, mru, gru, eze, mia, atl, iad, jfk, yvr, lhr, fra, zrh, cdg, cph, ams, bom, bkk, bkkn, kix, usm, hkg, hkgn, per, dps, drw, adl, syd, hlz, chc, zqn, akl, wlg, nsn];
-    journeys = [jnb, cpt, jnb, mbd, jnb, dur, jnb, kim, jnb, bfn, jnb, plz, els, jnb, grj, jnb, mpm, jnb, gbe, jnb, wdh, jnb, buq, jnb, hre, jnb, lvi, jnb, lun, jnb, lad, jnb, dar, jnb, ebb, jnb, nbo, jnb, fih, jnb, los, jnb, abj, acc, jnb, dkr, jnb, sid, jfk, jnb, mru, jnb, gru, eze, cpt, lhr, cpt, fra, cpt, plz, dur, jnb, sid, mia, cpt, jnb, sid, atl, iad, jfk, jnb, lhr, yvr, lhr, jnb, fra, cdg, fra, jnb, zrh, cph, zrh, ams, zrh, jnb, ams, lhr, ams, jnb, nbo, lhr, jnb, bom, jnb, bkk, kix, bkk, hkgn, bkk, jnb, bkkn, usm, bkkn, jnb, hkg, jnb, hkgn, akl, hkgn, jnb, per, jnb, syd, per, dps, drw, adl, syd, jnb, syd, akl, wlg, hlz, wlg, akl, chc, akl, zqn, akl, wlg, akl, nsn, akl];
+var airports = [jnb, cpt, mbd, dur, kim, bfn, plz, els, grj, mpm, gbe, wdh, buq, hre, lvi, lun, lad, dar, ebb, nbo, fih, los, abj, acc, dkr, sid, mru, gru, eze, mia, atl, iad, jfk, lga, yvr, lhr, fra, zrh, cdg, cph, ams, bom, bkk, bkkn, kix, usm, hkg, hkgn, per, dps, drw, adl, syd, hlz, chc, zqn, akl, wlg, nsn];
+    journeys = [jnb, cpt, jnb, mbd, jnb, dur, jnb, kim, jnb, bfn, jnb, plz, els, jnb, grj, jnb, mpm, jnb, gbe, jnb, wdh, jnb, buq, jnb, hre, jnb, lvi, jnb, lun, jnb, lad, jnb, dar, jnb, ebb, jnb, nbo, jnb, fih, jnb, los, jnb, abj, acc, jnb, dkr, jnb, sid, jfk, jnb, mru, jnb, eze, jnb, gru, eze, cpt, lhr, cpt, fra, cpt, plz, dur, jnb, sid, mia, cpt, jnb, sid, atl, iad, lga, atl, jnb, lhr, yvr, lhr, jnb, fra, ams, fra, jnb, zrh, cph, zrh, cdg, zrh, jnb, ams, lhr, ams, jnb, nbo, lhr, jnb, bom, jnb, bkk, kix, bkk, hkgn, bkk, usm, bkk, jnb, bkkn, usm, bkkn, jnb, hkg, jnb, hkgn, akl, hkgn, jnb, per, jnb, syd, per, dps, drw, adl, syd, jnb, syd, akl, wlg, hlz, wlg, akl, chc, akl, zqn, akl, wlg, akl, nsn, akl];
 var journeyLine,
     cityMarkers = [],
     markerIterator = 0,
@@ -303,7 +304,7 @@ function dropMarkers(wait) {
                 icon: {url: 'resources/images/markerairport.png', size: airportsize}
               });
               airportIterator++;
-            }, i * 100);
+            }, i * 130);
           }
           for (var i = 0; i < journeys.length; i++) {
             setTimeout(function() {
@@ -316,7 +317,7 @@ function dropMarkers(wait) {
         for (var i = 1; i <= cities.length; i++) {
           setTimeout(function() {
             addMarker();
-          }, (i * 850) + additionalMarkerWait);
+          }, (i * 650) + additionalMarkerWait);
         }
         setTimeout(function() {
           map.panTo(wellington);
