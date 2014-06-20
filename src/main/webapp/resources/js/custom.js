@@ -79,11 +79,11 @@ var indianocean = new google.maps.LatLng(4.101766, 79.350061),
     auckland = new google.maps.LatLng(-36.847639, 174.762473),
     wellington = new google.maps.LatLng(-41.284938, 174.762324),
     eastbourne = new google.maps.LatLng(-41.291767, 174.897501);
-var markersize = new google.maps.Size(25, 40),
+var markersize = new google.maps.Size(20, 32),
     airportsize = new google.maps.Size(9, 12);
 var lived = 'I\'ve lived here...';
-var prevIcon = {url: 'resources/images/markerprev.png', size: markersize};
-var cities = [{loc: hartswater, title: 'I was born here...', icon: prevIcon}, {loc: heidelberg, title: 'I grew up here...', icon: prevIcon}, {loc: vryburg, title: 'I went to High School here...', icon: prevIcon}, {loc: london, title: lived, icon: prevIcon}, {loc: benoni, title: lived, icon: prevIcon}, {loc: capetown, title: 'I moved to NZ from here...', icon: prevIcon}, {loc: auckland, title: lived, icon: prevIcon}, {loc: hamilton, title: lived, icon: prevIcon}, {loc: eastbourne, title: 'I\'m in this area...', icon: {url: 'resources/images/markercur.png', size: markersize}}];
+var prevIcon = {url: 'resources/images/markerprev.png?v=' + cache_version, size: markersize};
+var cities = [{loc: hartswater, title: 'I was born here...', icon: prevIcon}, {loc: heidelberg, title: 'I grew up here...', icon: prevIcon}, {loc: vryburg, title: 'I went to High School here...', icon: prevIcon}, {loc: london, title: lived, icon: prevIcon}, {loc: benoni, title: lived, icon: prevIcon}, {loc: capetown, title: 'I moved to NZ from here...', icon: prevIcon}, {loc: auckland, title: lived, icon: prevIcon}, {loc: hamilton, title: lived, icon: prevIcon}, {loc: eastbourne, title: 'I\'m in this area...', icon: {url: 'resources/images/markercur.png?v=' + cache_version, size: markersize}}];
 var skillChartDrawn = false,
     mapMarkersDrawn = false;
 var airports = [jnb, cpt, mbd, dur, kim, bfn, plz, els, grj, mpm, gbe, wdh, buq, hre, lvi, lun, lad, dar, ebb, nbo, fih, los, abj, acc, dkr, sid, mru, gru, eze, mia, atl, iad, jfk, lga, yvr, lhr, fra, zrh, cdg, cph, ams, bom, bkk, bkkn, kix, usm, hkg, hkgn, per, dps, drw, adl, syd, hlz, chc, zqn, akl, wlg, nsn];
@@ -307,7 +307,7 @@ function dropMarkers(wait) {
                   animation: google.maps.Animation.DROP,
                   zIndex: 100,
                   title: airports[airportIterator].name,
-                  icon: {url: 'resources/images/markerairport.png', size: airportsize}
+                  icon: {url: 'resources/images/markerairport.png?v=' + cache_version, size: airportsize}
                 });
                 airportIterator++;
               }, i * 130);

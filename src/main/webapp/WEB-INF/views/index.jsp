@@ -31,7 +31,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="canonical" href="http://${initParam['CUSTOM_APP_DOMAIN']}/" />
     <!--minified styles -->
-    <link href="/resources/css/style.min.css?v=${initParam['CACHE_VERSION']}" rel="stylesheet" type="text/css" media="screen" />
+    <link href="/resources/css/style.min.css?v=<c:out value="${initParam['CACHE_VERSION']}" />" rel="stylesheet" type="text/css" media="screen" />
     <!--google font style -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300' rel='stylesheet' type='text/css' />
     <noscript><link href="/resources/css/fallback.css" rel="stylesheet" type="text/css" /></noscript>
@@ -57,10 +57,10 @@
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 noPadd">
             <!--slider start-->
             <div id="ri-grid" class="ri-grid-loading ri-grid ri-grid-size-2">
-              <img class="ri-loading-image" src="/resources/images/loading.gif" alt="Loading..." />
+              <img class="ri-loading-image" src="/resources/images/loading.gif?v=<c:out value="${initParam['CACHE_VERSION']}" />" alt="Loading..." />
               <ul class="cb-slideshow">
                 <c:forEach var="randomFilename" items="${randomFilenames}">
-                <li><a href="#"><img src="/resources/images/grid/<c:out value="${randomFilename}" />.jpg?v=${initParam['CACHE_VERSION']}" alt="© Louw Swart" /></a></li>
+                <li><a href="#"><img src="/resources/images/grid/<c:out value="${randomFilename}" />.jpg?v=<c:out value="${initParam['CACHE_VERSION']}" />" alt="© Louw Swart" /></a></li>
                 </c:forEach>
               </ul>
             </div>
@@ -122,11 +122,11 @@
               <p><i class="fa fa-camera-retro"></i> Photography, <i class="fa fa-android"></i> Android, <i class="fa fa-road"></i> travel and <i class="fa fa-plane"></i> plane spotting - not necessarily in that order.</p>
               <a id="cv_request" href="#contact" target="_blank" class="btnNormal js_track_link_click">Request CV &amp; References</a>
               &nbsp;&nbsp;&nbsp;
-              <a id="droid_download" href="${initParam['ANDROID_APP_URL']}" class="btnDownload js_track_link_click" title="Download and install this Portfolio on your Android device running 4.0 or newer (enable 'Unknown sources' in Settings)">Download for&nbsp;&nbsp;&nbsp;<i class="fa fa-android fa-1_4x"></i>&nbsp;&nbsp;&nbsp;as APK*</a>
+              <a id="droid_download" href="<c:out value="${initParam['ANDROID_APP_URL']}" />" class="btnDownload js_track_link_click" title="Download and install this Portfolio on your Android device running 4.0 or newer (enable 'Unknown sources' in Settings)">Download for&nbsp;&nbsp;&nbsp;<i class="fa fa-android fa-1_4x"></i>&nbsp;&nbsp;&nbsp;as APK*</a>
               <p><sub><i>* Requires Android 4.0 (Ice Cream Sandwich) or newer</i></sub></p>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1 col-lg-offset-1 proPic">
-              <img src="/resources/images/profile.jpg" alt="Louw Swart" class="img-circle topmar" width="295" height="295" itemprop="photo" />
+              <img src="/resources/images/profile.jpg?v=<c:out value="${initParam['CACHE_VERSION']}" />" alt="Louw Swart" class="img-circle topmar" width="295" height="295" itemprop="photo" />
             </div>
           </div>
         </div>
@@ -366,9 +366,10 @@
     </div>
     <!--wrapper end-->
     <!--google maps api-->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=${initParam['GOOGLE_MAPS_API_KEY']}&amp;sensor=false&amp;libraries=geometry"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<c:out value="${initParam['GOOGLE_MAPS_API_KEY']}" />&amp;sensor=false&amp;libraries=geometry"></script>
     <!--minified js-->
-    <script src="/resources/js/script.min.js?v=${initParam['CACHE_VERSION']}"></script>
+    <script type="text/javascript">var cache_version = <c:out value="${initParam['CACHE_VERSION']}" />;</script>
+    <script src="/resources/js/script.min.js?v=<c:out value="${initParam['CACHE_VERSION']}" />"></script>
     <script type="text/javascript">
       $(document).ready(function(){
         $('.js_track_link_click').click(function() {
