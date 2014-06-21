@@ -137,8 +137,12 @@ var tilesloaded = false,
     // for banner height js
     setBannerSize(0, 0);
     setDynamicCssValues();
-    drawChart();
-    dropMarkers(2500);
+    if (!skillChartDrawn) {
+      drawChart();
+    }
+    if (!mapMarkersDrawn) {
+      dropMarkers(2500);
+    }
 
     $(window).on('resize', function(e){
       setBannerSize(previousWidth, previousHeight);
@@ -178,8 +182,12 @@ var tilesloaded = false,
         clearTimeout(timeoutScroll);
       }
       timeoutScroll = setTimeout(function(){
-        drawChart();
-        dropMarkers(750);
+        if (!skillChartDrawn) {
+          drawChart();
+        }
+        if (!mapMarkersDrawn) {
+          dropMarkers(750);
+        }
       }, 500);
     });
 
@@ -335,7 +343,9 @@ function dropMarkers(wait) {
           clearTimeout(timeoutTilesloaded);
         }
         setTimeout(function() {
-          dropMarkers(1000);
+          if (!mapMarkersDrawn) {
+            dropMarkers(1000);
+          }
         }, 500);
       }
     }

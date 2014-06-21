@@ -150,28 +150,28 @@
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 skillsArea">
               <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 skills">
                 <span class="chart skilBg" data-percent="85"> <span class="percent"></span></span>
-                <h4>Web Services</h4>
+                <h4 class="js_trigger_skills">Web Services</h4>
                 <p>JAX-WS; JAXB; RESTful Web Services;</p>
               </div>
             </div>
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 skillsArea">
               <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 skills">
                 <span class="chart skilBg" data-percent="85"> <span class="percent"></span></span>
-                <h4>Databases</h4>
+                <h4 class="js_trigger_skills">Databases</h4>
                 <p>PostgreSQL; PostGIS; MySQL/MSSQL; Hibernate;</p>
               </div>
             </div>
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 skillsArea">
               <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 skills">
                 <span class="chart skilBg" data-percent="90"> <span class="percent"></span></span>
-                <h4>Version Control</h4>
+                <h4 class="js_trigger_skills">Version Control</h4>
                 <p>Mercurial; SVN; GIT;</p>
               </div>
             </div>
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 skillsArea">
               <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 skills">
                 <span class="chart skilBg" data-percent="85"> <span class="percent"></span></span>
-                <h4>Scripting</h4>
+                <h4 class="js_trigger_skills">Scripting</h4>
                 <p>JavaScript; JQuery; AJAX; JSON;</p>
               </div>
             </div>

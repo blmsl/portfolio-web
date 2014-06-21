@@ -59,8 +59,19 @@ jQuery(function($) {
       stickyMarginB = parseInt($(this).css('margin-bottom'));
       currentMarginT = parseInt($(this).next().closest('div').css('margin-top'));
       vartop = parseInt($(this).offset().top);
+      initFocus();
     };
+
     $(document).on('scroll', function() {
+      handleScroll();
+    });
+
+    function initFocus() {
+      scrollDir = 'down';
+      handleScroll();
+    }
+
+    function handleScroll() {
       varscroll = parseInt($(document).scrollTop());
       if (menuSize != null) {
         for (var i = 0; i < menuSize; i++) {
@@ -105,6 +116,6 @@ jQuery(function($) {
         $('.stuckMenu').next().closest('div').css({'margin-top' : currentMarginT + 'px'}, 10);
         $('.stuckMenu').css("position", "relative");
       }
-    });
+    }
   });
 });
