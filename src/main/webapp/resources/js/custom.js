@@ -67,7 +67,8 @@ var jnb = {loc: new google.maps.LatLng(-26.136837, 28.241157), name: 'JNB: OR Ta
     zqn = {loc: new google.maps.LatLng(-45.020983, 168.740325), name: 'ZQN: Queenstown Airport'},
     akl = {loc: new google.maps.LatLng(-37.008227, 174.785760), name: 'AKL: Auckland Airport'},
     wlg = {loc: new google.maps.LatLng(-41.327551, 174.808308), name: 'WLG: Wellington International Airport'},
-    nsn = {loc: new google.maps.LatLng(-41.300020, 173.225254), name: 'NSN: Nelson Airport'};
+    nsn = {loc: new google.maps.LatLng(-41.300020, 173.225254), name: 'NSN: Nelson Airport'},
+    trg = {loc: new google.maps.LatLng(-37.672093, 176.197666), name: 'TRG: Tauranga City Airport'};
 var indianocean = new google.maps.LatLng(4.101766, 79.350061),
     london = new google.maps.LatLng(51.451005, -0.147970);
     capetown = new google.maps.LatLng(-33.934620, 18.406203),
@@ -86,8 +87,8 @@ var prevIcon = {url: 'resources/images/markerprev.png?v=' + cache_version, size:
 var cities = [{loc: hartswater, title: 'I was born here...', icon: prevIcon}, {loc: heidelberg, title: 'I grew up here...', icon: prevIcon}, {loc: vryburg, title: 'I went to High School here...', icon: prevIcon}, {loc: london, title: lived, icon: prevIcon}, {loc: benoni, title: lived, icon: prevIcon}, {loc: capetown, title: 'I moved to NZ from here...', icon: prevIcon}, {loc: auckland, title: lived, icon: prevIcon}, {loc: hamilton, title: lived, icon: prevIcon}, {loc: eastbourne, title: 'I\'m in this area...', icon: {url: 'resources/images/markercur.png?v=' + cache_version, size: markersize}}];
 var skillChartDrawn = false,
     mapMarkersDrawn = false;
-var airports = [jnb, cpt, mbd, dur, kim, bfn, plz, els, grj, mpm, gbe, wdh, buq, hre, lvi, lun, lad, dar, ebb, nbo, fih, los, abj, acc, dkr, sid, mru, gru, eze, mia, atl, iad, jfk, lga, yvr, lhr, fra, zrh, cdg, cph, ams, bom, bkk, bkkn, kix, usm, hkg, hkgn, per, dps, drw, adl, syd, hlz, chc, zqn, akl, wlg, nsn];
-    journeys = [jnb, cpt, jnb, mbd, jnb, dur, jnb, kim, jnb, bfn, jnb, plz, els, jnb, grj, jnb, mpm, jnb, gbe, jnb, wdh, jnb, buq, jnb, hre, jnb, lvi, jnb, lun, jnb, lad, jnb, dar, jnb, ebb, jnb, nbo, jnb, fih, jnb, los, jnb, abj, acc, jnb, dkr, jnb, sid, jfk, jnb, mru, jnb, eze, jnb, gru, eze, cpt, lhr, cpt, fra, cpt, plz, dur, jnb, sid, mia, cpt, jnb, sid, atl, iad, lga, atl, jnb, lhr, yvr, lhr, jnb, fra, ams, fra, jnb, zrh, cph, zrh, cdg, zrh, jnb, ams, lhr, ams, jnb, nbo, lhr, jnb, bom, jnb, bkk, kix, bkk, hkgn, bkk, usm, bkk, jnb, bkkn, usm, bkkn, jnb, hkg, jnb, hkgn, akl, hkgn, jnb, per, jnb, syd, per, dps, drw, adl, syd, jnb, syd, akl, wlg, hlz, wlg, akl, chc, hlz, chc, akl, zqn, akl, wlg, akl, nsn, akl];
+var airports = [jnb, cpt, mbd, dur, kim, bfn, plz, els, grj, mpm, gbe, wdh, buq, hre, lvi, lun, lad, dar, ebb, nbo, fih, los, abj, acc, dkr, sid, mru, gru, eze, mia, atl, iad, jfk, lga, yvr, lhr, fra, zrh, cdg, cph, ams, bom, bkk, bkkn, kix, usm, hkg, hkgn, per, dps, drw, adl, syd, hlz, chc, zqn, akl, wlg, nsn, trg];
+    journeys = [jnb, cpt, jnb, mbd, jnb, dur, jnb, kim, jnb, bfn, jnb, plz, els, jnb, grj, jnb, mpm, jnb, gbe, jnb, wdh, jnb, buq, jnb, hre, jnb, lvi, jnb, lun, jnb, lad, jnb, dar, jnb, ebb, jnb, nbo, jnb, fih, jnb, los, jnb, abj, acc, jnb, dkr, jnb, sid, jfk, jnb, mru, jnb, eze, jnb, gru, eze, cpt, lhr, cpt, fra, cpt, plz, dur, jnb, sid, mia, cpt, jnb, sid, atl, iad, lga, atl, jnb, lhr, yvr, lhr, jnb, fra, ams, fra, jnb, zrh, cph, zrh, cdg, zrh, jnb, ams, lhr, ams, jnb, nbo, lhr, jnb, bom, jnb, bkk, kix, bkk, hkgn, bkk, usm, bkk, jnb, bkkn, usm, bkkn, jnb, hkg, jnb, hkgn, akl, hkgn, jnb, per, jnb, syd, per, dps, drw, adl, syd, jnb, syd, akl, wlg, hlz, wlg, akl, chc, hlz, chc, akl, zqn, akl, wlg, akl, nsn, akl, wlg, trg];
 var tilesloaded = false,
     journeyLine,
     cityMarkers = [],
