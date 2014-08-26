@@ -120,7 +120,7 @@
               <p>I have a strong <b>sense of responsibility</b> and am always driven to <b>deliver on or ahead of deadlines</b>. <b>Front end</b> or <b>back end</b>, I'm equally comfortable performing either or both.</p>
               <h4 class="subHeading">Hobbies and Interests</h4>
               <p><i class="fa fa-camera-retro"></i> Photography, <i class="fa fa-android"></i> Android, <i class="fa fa-road"></i> travel and <i class="fa fa-plane"></i> plane spotting - not necessarily in that order.</p>
-              <a id="cv_request" href="#contact" target="_blank" class="btnNormal js_track_link_click">Request CV &amp; References</a>
+              <a id="cv_request" href="#contactForm" class="btnNormal js_track_link_click">Request CV &amp; References</a>
               &nbsp;&nbsp;&nbsp;
               <a id="droid_download" href="<c:out value="${initParam['ANDROID_APP_URL']}" />" class="btnDownload js_track_link_click" title="Download and install this Portfolio on your Android device running 4.0 or newer (enable 'Unknown sources' in Settings)">Download for&nbsp;&nbsp;&nbsp;<i class="fa fa-android fa-1_4x"></i>&nbsp;&nbsp;&nbsp;as APK*</a>
               <p><sub><i>* Requires Android 4.0 (Ice Cream Sandwich) or newer</i></sub></p>
@@ -192,6 +192,20 @@
           <div class="heading">
             <h2>Work Experience</h2>
             <p>what I've done so far</p>
+          </div>
+          <div class="row workDetails">
+            <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+              <div class="workYear">Jun 2014 <i class="fa fa-chevron-circle-right"></i><br/>Present</div>
+            </div>
+            <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
+              <div class="arrowpart"></div>
+              <div class="exCon">
+                <h4>Westpac New Zealand Ltd <a href="http://www.westpac.co.nz" target="_blank" class="link js_track_link_click"><i class="fa fa-link"></i></a></h4>
+                <h5>Analyst Programmer (UI)</h5>
+                <h5 class="subHeading"><i>Wellington, New Zealand</i></h5>
+                <p>Details coming soon...</p>
+              </div>
+            </div>
           </div>
           <div class="row workDetails">
             <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
@@ -316,7 +330,7 @@
           <div id="map-canvas"></div>
         </div>
       </section>
-      <section class="contactDetails">
+      <section class="contactDetails" id="contactForm">
         <div class="container">
           <!--contact info start-->
           <div class="col-xs-12 col-sm-3 col-md-4 col-lg-4">
