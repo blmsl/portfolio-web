@@ -6,7 +6,7 @@ jQuery(function($) {
         0 : 'banner',
         1 : 'aboutme',
         2 : 'skills',
-        3 : 'exprience',
+        3 : 'experience',
         4 : 'education',
         5 : 'contact',
         6 : 'links'

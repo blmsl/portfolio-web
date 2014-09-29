@@ -90,7 +90,7 @@
                         <li class="menuItem active"><a href="#wrapper" class="js_track_link_click">Home</a></li>
                         <li class="menuItem"><a href="#aboutme" class="js_track_link_click">About</a></li>
                         <li class="menuItem"><a href="#skills" class="js_track_link_click">Skills</a></li>
-                        <li class="menuItem"><a href="#exprience" class="js_track_link_click">Experience</a></li>
+                        <li class="menuItem"><a href="#experience" class="js_track_link_click">Experience</a></li>
                         <li class="menuItem"><a href="#education" class="js_track_link_click">Education</a></li>
                         <li class="menuItem"><a href="#contact" class="js_track_link_click">Contact</a></li>
                         <li class="menuItem" id="js_links_li"><a href="#links" class="js_track_link_click">Links</a></li>
@@ -186,8 +186,8 @@
         </div>
       </section>
       <!--technical end-->
-      <!--exprience start-->
-      <section class="exprience" id="exprience">
+      <!--experience start-->
+      <section class="experience" id="experience">
         <div class="container">
           <div class="heading">
             <h2>Work Experience</h2>
@@ -293,7 +293,7 @@
           </div>
         </div>
       </section>
-      <!--exprience end-->
+      <!--experience end-->
       <!--education start-->
       <section class="education" id="education">
         <div class="container">
