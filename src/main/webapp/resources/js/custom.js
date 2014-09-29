@@ -8,8 +8,20 @@ var chart,
     timeoutMarkerBounce,
     timeoutZoom,
     initialZoom,
-    map;
-var jnb = {loc: new google.maps.LatLng(-26.136837, 28.241157), name: 'JNB: OR Tambo International Airport, Johannesburg'},
+    map,
+    tilesloaded = false,
+    journeyLine,
+    upcomingJourneyLine,
+    cityMarkers = [],
+    markerIterator = 0,
+    airportIterator = 0,
+    journeyIterator = 0,
+    upcomingIterator = 0,
+    additionalMarkerWait = 0,
+    skillChartDrawn = false,
+    mapMarkersDrawn = false,
+
+    jnb = {loc: new google.maps.LatLng(-26.136837, 28.241157), name: 'JNB: OR Tambo International Airport, Johannesburg'},
     cpt = {loc: new google.maps.LatLng(-33.971459, 18.602241), name: 'CPT: Cape Town International Airport'},
     mbd = {loc: new google.maps.LatLng(-25.807261, 25.544465), name: 'MBD: Mafikeng International Airport'},
     dur = {loc: new google.maps.LatLng(-29.967507, 30.947187), name: 'DUR: Durban International Airport'},
@@ -68,8 +80,10 @@ var jnb = {loc: new google.maps.LatLng(-26.136837, 28.241157), name: 'JNB: OR Ta
     akl = {loc: new google.maps.LatLng(-37.008227, 174.785760), name: 'AKL: Auckland Airport'},
     wlg = {loc: new google.maps.LatLng(-41.327551, 174.808308), name: 'WLG: Wellington International Airport'},
     nsn = {loc: new google.maps.LatLng(-41.300020, 173.225254), name: 'NSN: Nelson Airport'},
-    trg = {loc: new google.maps.LatLng(-37.672093, 176.197666), name: 'TRG: Tauranga City Airport'};
-var indianocean = new google.maps.LatLng(4.101766, 79.350061),
+    trg = {loc: new google.maps.LatLng(-37.672093, 176.197666), name: 'TRG: Tauranga City Airport'},
+    rot = {loc: new google.maps.LatLng(-38.109354, 176.317118), name: 'ROT: Rotorua International Airport'},
+
+    indianocean = new google.maps.LatLng(4.101766, 79.350061),
     london = new google.maps.LatLng(51.451005, -0.147970);
     capetown = new google.maps.LatLng(-33.934620, 18.406203),
     benoni = new google.maps.LatLng(-26.172906, 28.310071),
@@ -79,23 +93,17 @@ var indianocean = new google.maps.LatLng(4.101766, 79.350061),
     hamilton = new google.maps.LatLng(-37.779755, 175.277283),
     auckland = new google.maps.LatLng(-36.847639, 174.762473),
     wellington = new google.maps.LatLng(-41.284938, 174.762324),
-    eastbourne = new google.maps.LatLng(-41.291767, 174.897501);
-var markersize = new google.maps.Size(20, 32),
-    airportsize = new google.maps.Size(9, 12);
-var lived = 'I\'ve lived here...';
-var prevIcon = {url: 'resources/images/markerprev.png?v=' + cache_version, size: markersize};
-var cities = [{loc: hartswater, title: 'I was born here...', icon: prevIcon}, {loc: heidelberg, title: 'I grew up here...', icon: prevIcon}, {loc: vryburg, title: 'I went to High School here...', icon: prevIcon}, {loc: london, title: lived, icon: prevIcon}, {loc: benoni, title: lived, icon: prevIcon}, {loc: capetown, title: 'I moved to NZ from here...', icon: prevIcon}, {loc: auckland, title: lived, icon: prevIcon}, {loc: hamilton, title: lived, icon: prevIcon}, {loc: eastbourne, title: 'I\'m in this area...', icon: {url: 'resources/images/markercur.png?v=' + cache_version, size: markersize}}];
-var skillChartDrawn = false,
-    mapMarkersDrawn = false;
-var airports = [jnb, cpt, mbd, dur, kim, bfn, plz, els, grj, mpm, gbe, wdh, buq, hre, lvi, lun, lad, dar, ebb, nbo, fih, los, abj, acc, dkr, sid, mru, gru, eze, mia, atl, iad, jfk, lga, yvr, lhr, fra, zrh, cdg, cph, ams, bom, bkk, bkkn, kix, usm, hkg, hkgn, per, dps, drw, adl, syd, hlz, chc, zqn, akl, wlg, nsn, trg];
-    journeys = [jnb, cpt, jnb, mbd, jnb, dur, jnb, kim, jnb, bfn, jnb, plz, els, jnb, grj, jnb, mpm, jnb, gbe, jnb, wdh, jnb, buq, jnb, hre, jnb, lvi, jnb, lun, jnb, lad, jnb, dar, jnb, ebb, jnb, nbo, jnb, fih, jnb, los, jnb, abj, acc, jnb, dkr, jnb, sid, jfk, jnb, mru, jnb, eze, jnb, gru, eze, cpt, lhr, cpt, fra, cpt, plz, dur, jnb, sid, mia, cpt, jnb, sid, atl, iad, lga, atl, jnb, lhr, yvr, lhr, jnb, fra, ams, fra, jnb, zrh, cph, zrh, cdg, zrh, jnb, ams, lhr, ams, jnb, nbo, lhr, jnb, bom, jnb, bkk, kix, bkk, hkgn, bkk, usm, bkk, jnb, bkkn, usm, bkkn, jnb, hkg, jnb, hkgn, akl, hkgn, jnb, per, jnb, syd, per, dps, drw, adl, syd, jnb, syd, akl, wlg, hlz, wlg, akl, chc, hlz, chc, akl, zqn, akl, wlg, akl, nsn, akl, wlg, trg];
-var tilesloaded = false,
-    journeyLine,
-    cityMarkers = [],
-    markerIterator = 0,
-    airportIterator = 0,
-    journeyIterator = 0,
-    additionalMarkerWait = 0;
+    eastbourne = new google.maps.LatLng(-41.291767, 174.897501),
+    markersize = new google.maps.Size(20, 32),
+    airportsize = new google.maps.Size(9, 12),
+
+    lived = 'I\'ve lived here...',
+    prevIcon = {url: 'resources/images/markerprev.png?v=' + cache_version, size: markersize},
+    cities = [{loc: hartswater, title: 'I was born here...', icon: prevIcon}, {loc: heidelberg, title: 'I grew up here...', icon: prevIcon}, {loc: vryburg, title: 'I went to High School here...', icon: prevIcon}, {loc: london, title: lived, icon: prevIcon}, {loc: benoni, title: lived, icon: prevIcon}, {loc: capetown, title: 'I moved to NZ from here...', icon: prevIcon}, {loc: auckland, title: lived, icon: prevIcon}, {loc: hamilton, title: lived, icon: prevIcon}, {loc: eastbourne, title: 'I\'m in this area...', icon: {url: 'resources/images/markercur.png?v=' + cache_version, size: markersize}}],
+
+    airports = [jnb, cpt, mbd, dur, kim, bfn, plz, els, grj, mpm, gbe, wdh, buq, hre, lvi, lun, lad, dar, ebb, nbo, fih, los, abj, acc, dkr, sid, mru, gru, eze, mia, atl, iad, jfk, lga, yvr, lhr, fra, zrh, cdg, cph, ams, bom, bkk, bkkn, kix, usm, hkg, hkgn, per, dps, drw, adl, syd, hlz, chc, zqn, akl, wlg, nsn, trg, rot];
+    journeys = [jnb, cpt, jnb, mbd, jnb, dur, jnb, kim, jnb, bfn, jnb, plz, els, jnb, grj, jnb, mpm, jnb, gbe, jnb, wdh, jnb, buq, jnb, hre, jnb, lvi, jnb, lun, jnb, lad, jnb, dar, jnb, ebb, jnb, nbo, jnb, fih, jnb, los, jnb, abj, acc, jnb, dkr, jnb, sid, jfk, jnb, mru, jnb, eze, jnb, gru, eze, cpt, lhr, cpt, fra, cpt, plz, dur, jnb, sid, mia, cpt, jnb, sid, atl, iad, lga, atl, jnb, lhr, yvr, lhr, jnb, fra, ams, fra, jnb, zrh, cph, zrh, cdg, zrh, jnb, ams, lhr, ams, jnb, nbo, lhr, jnb, bom, jnb, bkk, kix, bkk, hkgn, bkk, usm, bkk, jnb, bkkn, usm, bkkn, jnb, hkg, jnb, hkgn, akl, hkgn, jnb, per, jnb, syd, per, dps, drw, adl, syd, jnb, syd, akl, wlg, hlz, wlg, akl, chc, hlz, chc, akl, zqn, akl, wlg, akl, nsn, akl, wlg, trg],
+    upcoming = [wlg, rot, wlg, chc];
 
 (function($) {
   'use strict';
@@ -396,6 +404,20 @@ function initializeMap() {
       geodesic : true,
       map : map
     }).getPath();
+    upcomingJourneyLine = new google.maps.Polyline({
+      strokeOpacity : 0,
+      icons: [{
+        icon: {
+          path: 'M 0, -1 0,1',
+          strokeOpacity: 0.5,
+          strokeWeight : 2
+        },
+        offset: '0',
+        repeat: '20px'
+      }],
+      geodesic : true,
+      map : map
+    }).getPath();
   }
   google.maps.event.addListenerOnce(map, 'tilesloaded', function() {
     tilesloaded = true;
@@ -431,6 +453,12 @@ function dropMarkers(wait) {
                   journeyLine.push(journeys[journeyIterator].loc);
                   journeyIterator++;
                 }, i * 65);
+              }
+              for (var i = 0; i < upcoming.length; i++) {
+                setTimeout(function() {
+                  upcomingJourneyLine.push(upcoming[upcomingIterator].loc);
+                  upcomingIterator++;
+                }, (i + journeys.length) * 65);
               }
               additionalMarkerWait = ((airports.length - 1) * 100);
             }
