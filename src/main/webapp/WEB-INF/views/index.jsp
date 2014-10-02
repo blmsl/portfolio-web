@@ -195,7 +195,7 @@
           </div>
           <div class="row workDetails">
             <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-              <div class="workYear">Jun 2014 <i class="fa fa-chevron-circle-right"></i><br/>Present</div>
+              <div class="workYear">Jun 2014 <i class="fa fa-chevron-circle-right"></i><br>Present</div>
             </div>
             <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
               <div class="arrowpart"></div>
@@ -209,7 +209,7 @@
           </div>
           <div class="row workDetails">
             <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-              <div class="workYear">Jan 2013 <i class="fa fa-chevron-circle-right"></i><br/>Apr 2014</div>
+              <div class="workYear">Jan 2013 <i class="fa fa-chevron-circle-right"></i><br>Apr 2014</div>
             </div>
             <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
               <div class="arrowpart"></div>
@@ -227,7 +227,7 @@
           </div>
           <div class="row workDetails">
             <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-              <div class="workYear">Jul 2011 <i class="fa fa-chevron-circle-right"></i><br />Dec 2012</div>
+              <div class="workYear">Jul 2011 <i class="fa fa-chevron-circle-right"></i><br>Dec 2012</div>
             </div>
             <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
               <div class="arrowpart"></div>
@@ -244,7 +244,7 @@
           </div>
           <div class="row workDetails">
             <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-              <div class="workYear">Nov 2008 <i class="fa fa-chevron-circle-right"></i><br />Apr 2011</div>
+              <div class="workYear">Nov 2008 <i class="fa fa-chevron-circle-right"></i><br>Apr 2011</div>
             </div>
             <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
               <div class="arrowpart"></div>
@@ -265,7 +265,7 @@
           </div>
           <div class="row workDetails">
             <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-              <div class="workYear">Feb 2008 <i class="fa fa-chevron-circle-right"></i><br />Oct 2008</div>
+              <div class="workYear">Feb 2008 <i class="fa fa-chevron-circle-right"></i><br>Oct 2008</div>
             </div>
             <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
               <div class="arrowpart"></div>
@@ -279,7 +279,7 @@
           </div>
           <div class="row workDetails">
             <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-              <div class="workYear">Dec 1997 <i class="fa fa-chevron-circle-right"></i><br />Jan 2006</div>
+              <div class="workYear">Dec 1997 <i class="fa fa-chevron-circle-right"></i><br>Jan 2006</div>
             </div>
             <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
               <div class="arrowpart"></div>
@@ -287,7 +287,7 @@
                 <h4>South African Airways</h4>
                 <h5>Flight Attendant</h5>
                 <h5 class="subHeading"><i>Cape Town &amp; Johannesburg, South Africa</i></h5>
-                <p><br /><i class="fa fa-globe fa-2x"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-plane fa-2x"></i></p>
+                <p><br><i class="fa fa-globe fa-2x"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-plane fa-2x"></i></p>
               </div>
             </div>
           </div>
@@ -303,7 +303,7 @@
           </div>
           <div class="row workDetails">
             <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-              <div class="workYear">2006 <i class="fa fa-chevron-circle-right"></i><br />2007</div>
+              <div class="workYear">2006 <i class="fa fa-chevron-circle-right"></i><br>2007</div>
             </div>
             <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
               <div class="arrowpart"></div>
@@ -311,7 +311,7 @@
                 <h4>CTI  <a href="http://www.cti.co.za" target="_blank" class="link js_track_link_click"><i class="fa fa-link"></i></a></h4>
                 <h5>Comprehensive Programming</h5>
                 <h5 class="subHeading"><i>Cape Town, South Africa</i></h5>
-                <p>Java SE/EE;<br />Linux Red Hat;<br />Processing and Logic concepts;<br />Program Design;<br />Software Engineering;<br />Relational Database &amp; Modelling Design;<br />SQL Server 2000;<br />Linux Administration;</p>
+                <p>Java SE/EE;<br>Linux Red Hat;<br>Processing and Logic concepts;<br>Program Design;<br>Software Engineering;<br>Relational Database &amp; Modelling Design;<br>SQL Server 2000;<br>Linux Administration;</p>
               </div>
             </div>
           </div>
@@ -372,7 +372,7 @@
           <div class="footer-info">
             <p><i class="fa fa-info"></i> Java Web app (Spring MVC, JSP, Javascript, AJAX)</p>
             <p>Hosted on the <i><a href="http://heroku.com" target="_blank" class="js_track_link_click">heroku.com</a></i> cloud platform</p>
-            <p>&copy; <%=yearDf.format(new Date())%> &ndash; HTML Template by <i><a href="http://themeforest.net/user/themeelite" target="_blank" class="js_track_link_click">themeelite</a></i></p>
+            <p><i class="fa fa-cc"></i> <%=yearDf.format(new Date())%> &ndash; HTML Template by <i><a href="http://themeforest.net/user/themeelite" target="_blank" class="js_track_link_click">themeelite</a></i></p>
           </div>
         </div>
       </section>
