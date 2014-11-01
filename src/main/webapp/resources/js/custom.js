@@ -84,7 +84,7 @@ var chart,
     rot = {loc: new google.maps.LatLng(-38.109354, 176.317118), name: 'ROT: Rotorua International Airport'},
 
     indianocean = new google.maps.LatLng(4.101766, 79.350061),
-    london = new google.maps.LatLng(51.451005, -0.147970);
+    london = new google.maps.LatLng(51.451005, -0.147970),
     capetown = new google.maps.LatLng(-33.934620, 18.406203),
     benoni = new google.maps.LatLng(-26.172906, 28.310071),
     hartswater = new google.maps.LatLng(-27.746947, 24.760681),
@@ -101,9 +101,9 @@ var chart,
     prevIcon = {url: 'resources/images/markerprev.png?v=' + cache_version, size: markersize},
     cities = [{loc: hartswater, title: 'I was born here...', icon: prevIcon}, {loc: heidelberg, title: 'I grew up here...', icon: prevIcon}, {loc: vryburg, title: 'I went to High School here...', icon: prevIcon}, {loc: london, title: lived, icon: prevIcon}, {loc: benoni, title: lived, icon: prevIcon}, {loc: capetown, title: 'I moved to NZ from here...', icon: prevIcon}, {loc: auckland, title: lived, icon: prevIcon}, {loc: hamilton, title: lived, icon: prevIcon}, {loc: eastbourne, title: 'I\'m in this area...', icon: {url: 'resources/images/markercur.png?v=' + cache_version, size: markersize}}],
 
-    airports = [jnb, cpt, mbd, dur, kim, bfn, plz, els, grj, mpm, gbe, wdh, buq, hre, lvi, lun, lad, dar, ebb, nbo, fih, los, abj, acc, dkr, sid, mru, gru, eze, mia, atl, iad, jfk, lga, yvr, lhr, fra, zrh, cdg, cph, ams, bom, bkk, bkkn, kix, usm, hkg, hkgn, per, dps, drw, adl, syd, hlz, chc, zqn, akl, wlg, nsn, trg, rot];
-    journeys = [jnb, cpt, jnb, mbd, jnb, dur, jnb, kim, jnb, bfn, jnb, plz, els, jnb, grj, jnb, mpm, jnb, gbe, jnb, wdh, jnb, buq, jnb, hre, jnb, lvi, jnb, lun, jnb, lad, jnb, dar, jnb, ebb, jnb, nbo, jnb, fih, jnb, los, jnb, abj, acc, jnb, dkr, jnb, sid, jfk, jnb, mru, jnb, eze, jnb, gru, eze, cpt, lhr, cpt, fra, cpt, plz, dur, jnb, sid, mia, cpt, jnb, sid, atl, iad, lga, atl, jnb, lhr, yvr, lhr, jnb, fra, ams, fra, jnb, zrh, cph, zrh, cdg, zrh, jnb, ams, lhr, ams, jnb, nbo, lhr, jnb, bom, jnb, bkk, kix, bkk, hkgn, bkk, usm, bkk, jnb, bkkn, usm, bkkn, jnb, hkg, jnb, hkgn, akl, hkgn, jnb, per, jnb, syd, per, dps, drw, adl, syd, jnb, syd, akl, wlg, hlz, wlg, akl, chc, hlz, chc, akl, zqn, akl, wlg, akl, nsn, akl, wlg, trg],
-    upcoming = [wlg, rot, wlg, chc];
+    airports = [jnb, cpt, mbd, dur, kim, bfn, plz, els, grj, mpm, gbe, wdh, buq, hre, lvi, lun, lad, dar, ebb, nbo, fih, los, abj, acc, dkr, sid, mru, gru, eze, mia, atl, iad, jfk, lga, yvr, lhr, fra, zrh, cdg, cph, ams, bom, bkk, bkkn, kix, usm, hkg, hkgn, per, dps, drw, adl, syd, hlz, chc, zqn, akl, wlg, nsn, trg, rot],
+    journeys = [jnb, cpt, jnb, mbd, jnb, dur, jnb, kim, jnb, bfn, jnb, plz, els, jnb, grj, jnb, mpm, jnb, gbe, jnb, wdh, jnb, buq, jnb, hre, jnb, lvi, jnb, lun, jnb, lad, jnb, dar, jnb, ebb, jnb, nbo, jnb, fih, jnb, los, jnb, abj, acc, jnb, dkr, jnb, sid, jfk, jnb, mru, jnb, eze, jnb, gru, eze, cpt, lhr, cpt, fra, cpt, plz, dur, jnb, sid, mia, cpt, jnb, sid, atl, iad, lga, atl, jnb, lhr, yvr, lhr, jnb, fra, ams, fra, jnb, zrh, cph, zrh, cdg, zrh, jnb, ams, lhr, ams, jnb, nbo, lhr, jnb, bom, jnb, bkk, kix, bkk, hkgn, bkk, usm, bkk, jnb, bkkn, usm, bkkn, jnb, hkg, jnb, hkgn, akl, hkgn, jnb, per, jnb, syd, per, dps, drw, adl, syd, jnb, syd, akl, wlg, hlz, wlg, akl, chc, hlz, chc, akl, zqn, akl, wlg, akl, nsn, akl, wlg, trg, wlg, rot, wlg, chc, wlg],
+    upcoming = [];
 
 (function($) {
   'use strict';
@@ -292,108 +292,76 @@ function initializeMap() {
     center : indianocean,
     zoom : initialZoom,
     minZoom : initialZoom,
-    styles : [ {
-      featureType : 'water',
-      elementType : 'geometry',
-      stylers : [ {
-        color : '#00bdbd'
-      } ]
-    }, {
+    styles : [
+      {
+        featureType : 'water',
+        elementType : 'geometry',
+        stylers : [{ color : '#00bdbd' }]
+      }, {
       featureType : 'landscape.man_made',
       elementType : 'geometry',
-      stylers : [ {
-        color : '#f7f1df'
-      } ]
-    }, {
-      featureType : 'landscape.natural',
-      elementType : 'geometry',
-      stylers : [ {
-        color : '#bde6ab'
-      } ]
-    }, {
-      featureType : 'landscape.natural.terrain',
-      elementType : 'geometry',
-      stylers : [ {
-        visibility : 'off'
-      } ]
-    }, {
-      featureType : 'poi.park',
-      elementType : 'geometry',
-      stylers : [ {
-        color : '#abce83'
-      } ]
-    }, {
-      featureType : 'poi',
-      elementType : 'labels',
-      stylers : [ {
-        visibility : 'off'
-      } ]
-    }, {
-      featureType : 'poi.medical',
-      elementType : 'geometry',
-      stylers : [ {
-        color : '#fbd3da'
-      } ]
-    }, {
-      featureType : 'poi.business',
-      stylers : [ {
-        visibility : 'off'
-      } ]
-    }, {
-      featureType : 'road',
-      elementType : 'geometry.stroke',
-      stylers : [ {
-        visibility : 'off'
-      } ]
-    }, {
-      featureType : 'road',
-      elementType : 'labels',
-      stylers : [ {
-        visibility : 'off'
-      } ]
-    }, {
-      featureType : 'road.highway',
-      elementType : 'geometry.fill',
-      stylers : [ {
-        color : '#f5534b'
-      } ]
-    }, {
-      featureType : 'road.highway',
-      elementType : 'geometry.stroke',
-      stylers : [ {
-        color : '#f5534b'
-      } ]
-    }, {
-      featureType : 'road.arterial',
-      elementType : 'geometry.fill',
-      stylers : [ {
-        color : '#ff675f'
-      } ]
-    }, {
-      featureType : 'road.local',
-      elementType : 'geometry.fill',
-      stylers : [ {
-        color : 'black'
-      } ]
-    }, {
-      featureType : 'transit.station.airport',
-      elementType : 'geometry.fill',
-      stylers : [ {
-        color : '#cfb2db'
-      } ]
-    }, {
-      featureType : 'transit.line',
-      elementType : 'geometry.fill',
-      stylers : [ {
-        color : '#474d5d'
-      } ]
-    }, {
-      featureType : 'transit.line',
-      elementType : 'geometry.stroke',
-      stylers : [ {
-        color : '#474d5d'
-      } ]
-    } ]
+      stylers : [{ color : '#f7f1df' }]
+      }, {
+        featureType : 'landscape.natural',
+        elementType : 'geometry',
+        stylers : [{ color : '#bde6ab' }]
+      }, {
+        featureType : 'landscape.natural.terrain',
+        elementType : 'geometry',
+        stylers : [{ visibility : 'off' }]
+      }, {
+        featureType : 'poi.park',
+        elementType : 'geometry',
+        stylers : [{ color : '#abce83' }]
+      }, {
+        featureType : 'poi',
+        elementType : 'labels',
+        stylers : [{ visibility : 'off' }]
+      }, {
+        featureType : 'poi.medical',
+        elementType : 'geometry',
+        stylers : [{ color : '#fbd3da' }]
+      }, {
+        featureType : 'poi.business',
+        stylers : [{ visibility : 'off' }]
+      }, {
+        featureType : 'road',
+        elementType : 'geometry.stroke',
+        stylers : [{ visibility : 'off' }]
+      }, {
+        featureType : 'road',
+        elementType : 'labels',
+        stylers : [{ visibility : 'off' }]
+      }, {
+        featureType : 'road.highway',
+        elementType : 'geometry.fill',
+        stylers : [{ color : '#f5534b' }]
+      }, {
+        featureType : 'road.highway',
+        elementType : 'geometry.stroke',
+        stylers : [{ color : '#f5534b' }]
+      }, {
+        featureType : 'road.arterial',
+        elementType : 'geometry.fill',
+        stylers : [{ color : '#ff675f' }]
+      }, {
+        featureType : 'road.local',
+        elementType : 'geometry.fill',
+        stylers : [{ color : 'black' }]
+      }, {
+        featureType : 'transit.station.airport',
+        elementType : 'geometry.fill',
+        stylers : [{ color : '#cfb2db' }]
+      }, {
+        featureType : 'transit.line',
+        elementType : 'geometry.fill',
+        stylers : [{ color : '#474d5d' }]
+      }, {
+        featureType : 'transit.line',
+        elementType : 'geometry.stroke',
+        stylers : [{ color : '#474d5d' }]
+      }
+    ]
   };
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
   if (initialZoom > 1) {

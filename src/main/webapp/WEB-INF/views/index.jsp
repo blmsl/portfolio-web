@@ -383,7 +383,7 @@
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<c:out value="${initParam['GOOGLE_MAPS_API_KEY']}" />&amp;sensor=false&amp;libraries=geometry"></script>
     <!--minified js-->
     <script type="text/javascript">var cache_version = <c:out value="${initParam['CACHE_VERSION']}" />;</script>
-    <script src="/resources/js/script.min.js?v=<c:out value="${initParam['CACHE_VERSION']}" />"></script>
+    <script type="text/javascript" src="/resources/js/script.min.js?v=<c:out value="${initParam['CACHE_VERSION']}" />"></script>
     <script type="text/javascript">
       $(document).ready(function(){
         $('.js_track_link_click').click(function() {
