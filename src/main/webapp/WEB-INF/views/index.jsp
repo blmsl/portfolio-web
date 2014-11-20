@@ -34,6 +34,7 @@
     <link href="/resources/css/style.min.css?v=<c:out value="${initParam['CACHE_VERSION']}" />" rel="stylesheet" type="text/css" media="screen" />
     <!--google font style -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300' rel='stylesheet' type='text/css' />
+    <link rel="manifest" href="manifest.json">
     <noscript><link href="/resources/css/fallback.css" rel="stylesheet" type="text/css" /></noscript>
     <!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="css/fallback.css" /><![endif]-->
     <script>
