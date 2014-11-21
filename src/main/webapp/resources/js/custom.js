@@ -21,86 +21,86 @@ var chart,
     skillChartDrawn = false,
     mapMarkersDrawn = false,
 
-    jnb = {loc: new google.maps.LatLng(-26.136837, 28.241157), name: 'JNB: OR Tambo International Airport, Johannesburg'},
-    cpt = {loc: new google.maps.LatLng(-33.971459, 18.602241), name: 'CPT: Cape Town International Airport'},
-    mbd = {loc: new google.maps.LatLng(-25.807261, 25.544465), name: 'MBD: Mafikeng International Airport'},
-    dur = {loc: new google.maps.LatLng(-29.967507, 30.947187), name: 'DUR: Durban International Airport'},
-    kim = {loc: new google.maps.LatLng(-28.802682, 24.765399), name: 'KIM: Kimberley Airport'},
-    bfn = {loc: new google.maps.LatLng(-29.095735, 26.298145), name: 'BFN: Bram Fischer International Airport, Bloemfontein'},
-    plz = {loc: new google.maps.LatLng(-33.986448, 25.610390), name: 'PLZ: Port Elizabeth Airport'},
-    els = {loc: new google.maps.LatLng(-33.038191, 27.828955), name: 'ELS: East London Airport'},
-    grj = {loc: new google.maps.LatLng(-34.005193, 22.378423), name: 'GRJ: George Airport'},
-    mpm = {loc: new google.maps.LatLng(-25.919804, 32.572997), name: 'MPM: Maputo International Airport'},
-    gbe = {loc: new google.maps.LatLng(-24.555994, 25.918776), name: 'GBE: Sir Seretse Khama International Airport, Gaborone'},
-    wdh = {loc: new google.maps.LatLng(-22.480292, 17.470903), name: 'WDH: Windhoek Hosea Kutako International Airport'},
-    buq = {loc: new google.maps.LatLng(-20.018368, 28.624652), name: 'BUQ: Joshua Mqabuko Nkomo International Airport, Bulawayo'},
-    hre = {loc: new google.maps.LatLng(-17.918871, 31.097359), name: 'HRE: Harare International Airport'},
-    lvi = {loc: new google.maps.LatLng(-17.818925, 25.818595), name: 'LVI: Livingstone Airport'},
-    lun = {loc: new google.maps.LatLng(-15.330899, 28.454393), name: 'LUN: Lusaka International Airport'},
-    lad = {loc: new google.maps.LatLng(-8.848009, 13.234900), name: 'LAD: Quatro de Fevereiro Airport, Luanda'},
-    dar = {loc: new google.maps.LatLng(-6.872619, 39.206986), name: 'DAR: Julius Nyerere International Airport, Dar es Salaam'},
-    ebb = {loc: new google.maps.LatLng(0.044929, 32.442880), name: 'EBB: Entebbe International Airport'},
-    nbo = {loc: new google.maps.LatLng(-1.322705, 36.926611), name: 'NBO: Jomo Kenyatta International Airport, Nairobi'},
-    fih = {loc: new google.maps.LatLng(-4.385679, 15.444503), name: 'FIH: N\'djili Airport, Kinshasa'},
-    los = {loc: new google.maps.LatLng(6.581759, 3.321484), name: 'LOS: Murtala Muhammed International Airport, Lagos'},
-    abj = {loc: new google.maps.LatLng(5.254863, -3.932870), name: 'ABJ: Port Bouet Airport, Abidjan'},
-    acc = {loc: new google.maps.LatLng(5.606068, -0.168107), name: 'ACC: Kotoka International Airport, Accra'},
-    dkr = {loc: new google.maps.LatLng(14.744887, -17.490146), name: 'DKR: Léopold Sédar Senghor International Airport, Dakar'},
-    sid = {loc: new google.maps.LatLng(16.734608, -22.943608), name: 'SID: Amilcar Cabral International Airport, Ilha do Sal'},
-    mru = {loc: new google.maps.LatLng(-20.430714, 57.675511), name: 'MRU: Sir Seewoosagur Ramgoolam Airport, Mauritius'},
-    gru = {loc: new google.maps.LatLng(-23.434617, -46.478013), name: 'GRU: Guarulhos International Airport, São Paulo'},
-    eze = {loc: new google.maps.LatLng(-34.822544, -58.534969), name: 'EZE: Ministro Pistarini International Airport, Beunos Aires'},
-    mia = {loc: new google.maps.LatLng(25.795947, -80.286611), name: 'MIA: Miami International Airport'},
-    atl = {loc: new google.maps.LatLng(33.640795, -84.427223), name: 'ATL: Hartsfield–Jackson Atlanta International Airport'},
-    iad = {loc: new google.maps.LatLng(38.952765, -77.451732), name: 'IAD: Washington Dulles International Airport'},
-    jfk = {loc: new google.maps.LatLng(40.641242, -73.777941), name: 'JFK: John F. Kennedy International Airport, New York'},
-    lga = {loc: new google.maps.LatLng(40.776992, -73.873376), name: 'LGA: LaGuardia Airport, New York'},
-    yvr = {loc: new google.maps.LatLng(49.196659, -123.181056), name: 'YVR: Vancouver International Airport'},
-    lhr = {loc: new google.maps.LatLng(51.469979, -0.454044), name: 'LHR: London Heathrow Airport'},
-    fra = {loc: new google.maps.LatLng(50.037936, 8.562608), name: 'FRA: Frankfurt Airport'},
-    zrh = {loc: new google.maps.LatLng(47.458256, 8.555717), name: 'ZRH: Zurich Airport'},
-    cdg = {loc: new google.maps.LatLng(49.009702, 2.548251), name: 'CDG: Charles de Gaulle Airport, Paris'},
-    cph = {loc: new google.maps.LatLng(55.618039, 12.651198), name: 'CPH: Copenhagen Airport'},
-    ams = {loc: new google.maps.LatLng(52.310523, 4.768740), name: 'AMS: Amsterdam Airport Schiphol'},
-    bom = {loc: new google.maps.LatLng(19.090121, 72.868905), name: 'BOM: Chhatrapati Shivaji International Airport, Mumbai'},
-    bkk = {loc: new google.maps.LatLng(13.913019, 100.604164), name: 'BKK: Donmuang Airport, Bangkok (old)'},
-    bkkn = {loc: new google.maps.LatLng(13.689084, 100.751023), name: 'BKK: Suvarnabhumi Airport, Bangkok'},
-    kix = {loc: new google.maps.LatLng(34.432015, 135.230817), name: 'KIX: Kansai International Airport, Osaka'},
-    usm = {loc: new google.maps.LatLng(9.548389, 100.063484), name: 'USM: Koh Samui Airport'},
-    hkg = {loc: new google.maps.LatLng(22.324767, 114.198590), name: 'HKG: Kai Tak Airport, Hong Kong (old)'},
-    hkgn = {loc: new google.maps.LatLng(22.307862, 113.922394), name: 'HKG: Hong Kong International Airport'},
-    per = {loc: new google.maps.LatLng(-31.938471, 115.967523), name: 'PER: Perth Airport'},
-    dps = {loc: new google.maps.LatLng(-8.746727, 115.166801), name: 'DPS: Ngurah Rai International Airport, Denpasar'},
-    drw = {loc: new google.maps.LatLng(-12.411127, 130.878227), name: 'DRW: Darwin International Airport'},
-    adl = {loc: new google.maps.LatLng(-34.946134, 138.533726), name: 'ADL: Adelaide Airport'},
-    syd = {loc: new google.maps.LatLng(-33.939953, 151.175249), name: 'SYD: Kingsford Smith Sydney Airport'},
-    hlz = {loc: new google.maps.LatLng(-37.865470, 175.337267), name: 'HLZ: Hamilton International Airport'},
-    chc = {loc: new google.maps.LatLng(-43.486456, 172.537369), name: 'CHC: Christchurch International Airport'},
-    zqn = {loc: new google.maps.LatLng(-45.020983, 168.740325), name: 'ZQN: Queenstown Airport'},
-    akl = {loc: new google.maps.LatLng(-37.008227, 174.785760), name: 'AKL: Auckland Airport'},
-    wlg = {loc: new google.maps.LatLng(-41.327551, 174.808308), name: 'WLG: Wellington International Airport'},
-    nsn = {loc: new google.maps.LatLng(-41.300020, 173.225254), name: 'NSN: Nelson Airport'},
-    trg = {loc: new google.maps.LatLng(-37.672093, 176.197666), name: 'TRG: Tauranga City Airport'},
-    rot = {loc: new google.maps.LatLng(-38.109354, 176.317118), name: 'ROT: Rotorua International Airport'},
-    rar = {loc: new google.maps.LatLng(-21.202310, -159.805334), name: 'RAR: Rarotonga International Airport'},
+    jnb = { loc: { lat: -26.136837, lng: 28.241157 }, name: 'JNB: OR Tambo International Airport, Johannesburg' },
+    cpt = { loc: { lat: -33.971459, lng: 18.602241 }, name: 'CPT: Cape Town International Airport' },
+    mbd = { loc: { lat: -25.807261, lng: 25.544465 }, name: 'MBD: Mafikeng International Airport' },
+    dur = { loc: { lat: -29.967507, lng: 30.947187 }, name: 'DUR: Durban International Airport' },
+    kim = { loc: { lat: -28.802682, lng: 24.765399 }, name: 'KIM: Kimberley Airport' },
+    bfn = { loc: { lat: -29.095735, lng: 26.298145 }, name: 'BFN: Bram Fischer International Airport, Bloemfontein' },
+    plz = { loc: { lat: -33.986448, lng: 25.610390 }, name: 'PLZ: Port Elizabeth Airport' },
+    els = { loc: { lat: -33.038191, lng: 27.828955 }, name: 'ELS: East London Airport' },
+    grj = { loc: { lat: -34.005193, lng: 22.378423 }, name: 'GRJ: George Airport' },
+    mpm = { loc: { lat: -25.919804, lng: 32.572997 }, name: 'MPM: Maputo International Airport' },
+    gbe = { loc: { lat: -24.555994, lng: 25.918776 }, name: 'GBE: Sir Seretse Khama International Airport, Gaborone' },
+    wdh = { loc: { lat: -22.480292, lng: 17.470903 }, name: 'WDH: Windhoek Hosea Kutako International Airport' },
+    buq = { loc: { lat: -20.018368, lng: 28.624652 }, name: 'BUQ: Joshua Mqabuko Nkomo International Airport, Bulawayo' },
+    hre = { loc: { lat: -17.918871, lng: 31.097359 }, name: 'HRE: Harare International Airport' },
+    lvi = { loc: { lat: -17.818925, lng: 25.818595 }, name: 'LVI: Livingstone Airport' },
+    lun = { loc: { lat: -15.330899, lng: 28.454393 }, name: 'LUN: Lusaka International Airport' },
+    lad = { loc: { lat: -8.848009, lng: 13.234900 }, name: 'LAD: Quatro de Fevereiro Airport, Luanda' },
+    dar = { loc: { lat: -6.872619, lng: 39.206986 }, name: 'DAR: Julius Nyerere International Airport, Dar es Salaam' },
+    ebb = { loc: { lat: 0.044929, lng: 32.442880 }, name: 'EBB: Entebbe International Airport' },
+    nbo = { loc: { lat: -1.322705, lng: 36.926611 }, name: 'NBO: Jomo Kenyatta International Airport, Nairobi' },
+    fih = { loc: { lat: -4.385679, lng: 15.444503 }, name: 'FIH: N\'djili Airport, Kinshasa' },
+    los = { loc: { lat: 6.581759, lng: 3.321484 }, name: 'LOS: Murtala Muhammed International Airport, Lagos' },
+    abj = { loc: { lat: 5.254863, lng: -3.932870 }, name: 'ABJ: Port Bouet Airport, Abidjan' },
+    acc = { loc: { lat: 5.606068, lng: -0.168107 }, name: 'ACC: Kotoka International Airport, Accra' },
+    dkr = { loc: { lat: 14.744887, lng: -17.490146 }, name: 'DKR: Léopold Sédar Senghor International Airport, Dakar' },
+    sid = { loc: { lat: 16.734608, lng: -22.943608 }, name: 'SID: Amilcar Cabral International Airport, Ilha do Sal' },
+    mru = { loc: { lat: -20.430714, lng: 57.675511 }, name: 'MRU: Sir Seewoosagur Ramgoolam Airport, Mauritius' },
+    gru = { loc: { lat: -23.434617, lng: -46.478013 }, name: 'GRU: Guarulhos International Airport, São Paulo' },
+    eze = { loc: { lat: -34.822544, lng: -58.534969 }, name: 'EZE: Ministro Pistarini International Airport, Beunos Aires' },
+    mia = { loc: { lat: 25.795947, lng: -80.286611 }, name: 'MIA: Miami International Airport' },
+    atl = { loc: { lat: 33.640795, lng: -84.427223 }, name: 'ATL: Hartsfield–Jackson Atlanta International Airport' },
+    iad = { loc: { lat: 38.952765, lng: -77.451732 }, name: 'IAD: Washington Dulles International Airport' },
+    jfk = { loc: { lat: 40.641242, lng: -73.777941 }, name: 'JFK: John F. Kennedy International Airport, New York' },
+    lga = { loc: { lat: 40.776992, lng: -73.873376 }, name: 'LGA: LaGuardia Airport, New York' },
+    yvr = { loc: { lat: 49.196659, lng: -123.181056 }, name: 'YVR: Vancouver International Airport' },
+    lhr = { loc: { lat: 51.469979, lng: -0.454044 }, name: 'LHR: London Heathrow Airport' },
+    fra = { loc: { lat: 50.037936, lng: 8.562608 }, name: 'FRA: Frankfurt Airport' },
+    zrh = { loc: { lat: 47.458256, lng: 8.555717 }, name: 'ZRH: Zurich Airport' },
+    cdg = { loc: { lat: 49.009702, lng: 2.548251 }, name: 'CDG: Charles de Gaulle Airport, Paris' },
+    cph = { loc: { lat: 55.618039, lng: 12.651198 }, name: 'CPH: Copenhagen Airport' },
+    ams = { loc: { lat: 52.310523, lng: 4.768740 }, name: 'AMS: Amsterdam Airport Schiphol' },
+    bom = { loc: { lat: 19.090121, lng: 72.868905 }, name: 'BOM: Chhatrapati Shivaji International Airport, Mumbai' },
+    bkk = { loc: { lat: 13.913019, lng: 100.604164 }, name: 'BKK: Donmuang Airport, Bangkok (old)' },
+    bkkn = { loc: { lat: 13.689084, lng: 100.751023 }, name: 'BKK: Suvarnabhumi Airport, Bangkok' },
+    kix = { loc: { lat: 34.432015, lng: 135.230817 }, name: 'KIX: Kansai International Airport, Osaka' },
+    usm = { loc: { lat: 9.548389, lng: 100.063484 }, name: 'USM: Koh Samui Airport' },
+    hkg = { loc: { lat: 22.324767, lng: 114.198590 }, name: 'HKG: Kai Tak Airport, Hong Kong (old)' },
+    hkgn = { loc: { lat: 22.307862, lng: 113.922394 }, name: 'HKG: Hong Kong International Airport' },
+    per = { loc: { lat: -31.938471, lng: 115.967523 }, name: 'PER: Perth Airport' },
+    dps = { loc: { lat: -8.746727, lng: 115.166801 }, name: 'DPS: Ngurah Rai International Airport, Denpasar' },
+    drw = { loc: { lat: -12.411127, lng: 130.878227 }, name: 'DRW: Darwin International Airport' },
+    adl = { loc: { lat: -34.946134, lng: 138.533726 }, name: 'ADL: Adelaide Airport' },
+    syd = { loc: { lat: -33.939953, lng: 151.175249 }, name: 'SYD: Kingsford Smith Sydney Airport' },
+    hlz = { loc: { lat: -37.865470, lng: 175.337267 }, name: 'HLZ: Hamilton International Airport' },
+    chc = { loc: { lat: -43.486456, lng: 172.537369 }, name: 'CHC: Christchurch International Airport' },
+    zqn = { loc: { lat: -45.020983, lng: 168.740325 }, name: 'ZQN: Queenstown Airport' },
+    akl = { loc: { lat: -37.008227, lng: 174.785760 }, name: 'AKL: Auckland Airport' },
+    wlg = { loc: { lat: -41.327551, lng: 174.808308 }, name: 'WLG: Wellington International Airport' },
+    nsn = { loc: { lat: -41.300020, lng: 173.225254 }, name: 'NSN: Nelson Airport' },
+    trg = { loc: { lat: -37.672093, lng: 176.197666 }, name: 'TRG: Tauranga City Airport' },
+    rot = { loc: { lat: -38.109354, lng: 176.317118 }, name: 'ROT: Rotorua International Airport' },
+    rar = { loc: { lat: -21.202310, lng: -159.805334 }, name: 'RAR: Rarotonga International Airport' },
 
-    indianocean = new google.maps.LatLng(4.101766, 79.350061),
-    london = new google.maps.LatLng(51.451005, -0.147970),
-    capetown = new google.maps.LatLng(-33.934620, 18.406203),
-    benoni = new google.maps.LatLng(-26.172906, 28.310071),
-    hartswater = new google.maps.LatLng(-27.746947, 24.760681),
-    heidelberg = new google.maps.LatLng(-34.025956, 20.937695),
-    vryburg = new google.maps.LatLng(-26.952586, 24.716451),
-    hamilton = new google.maps.LatLng(-37.779755, 175.277283),
-    auckland = new google.maps.LatLng(-36.847639, 174.762473),
-    wellington = new google.maps.LatLng(-41.284938, 174.762324),
-    eastbourne = new google.maps.LatLng(-41.291767, 174.897501),
+    indianocean = { lat: 4.101766, lng: 79.350061 },
+    london = { lat: 51.451005, lng: -0.147970 },
+    capetown = { lat: -33.934620, lng: 18.406203 },
+    benoni = { lat: -26.172906, lng: 28.310071 },
+    hartswater = { lat: -27.746947, lng: 24.760681 },
+    heidelberg = { lat: -34.025956, lng: 20.937695 },
+    vryburg = { lat: -26.952586, lng: 24.716451 },
+    hamilton = { lat: -37.779755, lng: 175.277283 },
+    auckland = { lat: -36.847639, lng: 174.762473 },
+    wellington = { lat: -41.284938, lng: 174.762324 },
+    eastbourne = { lat: -41.291767, lng: 174.897501 },
     markersize = new google.maps.Size(20, 32),
     airportsize = new google.maps.Size(9, 12),
 
     lived = 'I\'ve lived here...',
-    prevIcon = {url: 'resources/images/markerprev.png?v=' + cache_version, size: markersize},
-    cities = [{loc: hartswater, title: 'I was born here...', icon: prevIcon}, {loc: heidelberg, title: 'I grew up here...', icon: prevIcon}, {loc: vryburg, title: 'I went to High School here...', icon: prevIcon}, {loc: london, title: lived, icon: prevIcon}, {loc: benoni, title: lived, icon: prevIcon}, {loc: capetown, title: 'I moved to NZ from here...', icon: prevIcon}, {loc: auckland, title: lived, icon: prevIcon}, {loc: hamilton, title: lived, icon: prevIcon}, {loc: eastbourne, title: 'I\'m in this area...', icon: {url: 'resources/images/markercur.png?v=' + cache_version, size: markersize}}],
+    prevIcon = {url: 'resources/images/markerprev.png?v=' + cache_version, size: markersize },
+    cities = [{ loc: hartswater, title: 'I was born here...', icon: prevIcon }, { loc: heidelberg, title: 'I grew up here...', icon: prevIcon }, { loc: vryburg, title: 'I went to High School here...', icon: prevIcon }, { loc: london, title: lived, icon: prevIcon }, { loc: benoni, title: lived, icon: prevIcon }, { loc: capetown, title: 'I moved to NZ from here...', icon: prevIcon }, { loc: auckland, title: lived, icon: prevIcon }, { loc: hamilton, title: lived, icon: prevIcon }, { loc: eastbourne, title: 'I\'m in this area...', icon: {url: 'resources/images/markercur.png?v=' + cache_version, size: markersize}}],
 
     airports = [jnb, cpt, mbd, dur, kim, bfn, plz, els, grj, mpm, gbe, wdh, buq, hre, lvi, lun, lad, dar, ebb, nbo, fih, los, abj, acc, dkr, sid, mru, gru, eze, mia, atl, iad, jfk, lga, yvr, lhr, fra, zrh, cdg, cph, ams, bom, bkk, bkkn, kix, usm, hkg, hkgn, per, dps, drw, adl, syd, hlz, chc, zqn, akl, wlg, nsn, trg, rot, rar],
     journeys = [jnb, cpt, jnb, mbd, jnb, dur, jnb, kim, jnb, bfn, jnb, plz, els, jnb, grj, jnb, mpm, jnb, gbe, jnb, wdh, jnb, buq, jnb, hre, jnb, lvi, jnb, lun, jnb, lad, jnb, dar, jnb, ebb, jnb, nbo, jnb, fih, jnb, los, jnb, abj, acc, jnb, dkr, jnb, sid, jfk, jnb, mru, jnb, eze, jnb, gru, eze, cpt, lhr, cpt, fra, cpt, plz, dur, jnb, sid, mia, cpt, jnb, sid, atl, iad, lga, atl, jnb, lhr, yvr, lhr, jnb, fra, ams, fra, jnb, zrh, cph, zrh, cdg, zrh, jnb, ams, lhr, ams, jnb, nbo, lhr, jnb, bom, jnb, bkk, kix, bkk, hkgn, bkk, usm, bkk, jnb, bkkn, usm, bkkn, jnb, hkg, jnb, hkgn, akl, hkgn, jnb, per, jnb, syd, per, dps, drw, adl, syd, jnb, syd, akl, wlg, hlz, wlg, akl, chc, hlz, chc, akl, zqn, akl, wlg, akl, nsn, akl, wlg, trg, wlg, rot, wlg, chc, wlg],
@@ -273,12 +273,10 @@ function setBannerSize(previousWidth, previousHeight) {
 function elementInViewport(el) {
   var viewportWidth = $(window).width(),
       viewportHeight = $(window).height(),
-      documentScrollTop = $(document).scrollTop(),
-      documentScrollLeft = $(document).scrollLeft(),
-      minTop = documentScrollTop,
-      maxTop = documentScrollTop + viewportHeight,
-      minLeft = documentScrollLeft,
-      maxLeft = documentScrollLeft + viewportWidth,
+      minTop = $(document).scrollTop(),
+      maxTop = minTop + viewportHeight,
+      minLeft = $(document).scrollLeft(),
+      maxLeft = minLeft + viewportWidth,
       elementOffset = el.offset();
 
   return ((elementOffset.top > minTop && elementOffset.top < maxTop)
@@ -382,7 +380,7 @@ function initializeMap() {
           strokeWeight : 2
         },
         offset: '0',
-        repeat: '20px'
+        repeat: '12px'
       }],
       geodesic : true,
       map : map
@@ -403,7 +401,7 @@ function dropMarkers(wait) {
               for (var i = 1; i <= airports.length; i++) {
                 setTimeout(function() {
                   new google.maps.Marker({
-                    position : airports[airportIterator].loc,
+                    position : new google.maps.LatLng(airports[airportIterator].loc.lat, airports[airportIterator].loc.lng),
                     map : map,
                     draggable : false,
                     animation : google.maps.Animation.DROP,
@@ -417,24 +415,24 @@ function dropMarkers(wait) {
                   airportIterator++;
                 }, i * 130);
               }
-              for (var i = 0; i < journeys.length; i++) {
+              for (var j = 0; j < journeys.length; j++) {
                 setTimeout(function() {
-                  journeyLine.push(journeys[journeyIterator].loc);
+                  journeyLine.push(new google.maps.LatLng(journeys[journeyIterator].loc.lat, journeys[journeyIterator].loc.lng));
                   journeyIterator++;
-                }, i * 65);
+                }, j * 65);
               }
-              for (var i = 0; i < upcoming.length; i++) {
+              for (var k = 0; k < upcoming.length; k++) {
                 setTimeout(function() {
-                  upcomingJourneyLine.push(upcoming[upcomingIterator].loc);
+                  upcomingJourneyLine.push(new google.maps.LatLng(upcoming[upcomingIterator].loc.lat, upcoming[upcomingIterator].loc.lng));
                   upcomingIterator++;
-                }, (i + journeys.length) * 65);
+                }, (k + journeys.length) * 65);
               }
               additionalMarkerWait = ((airports.length - 1) * 100);
             }
-            for (var i = 1; i <= cities.length; i++) {
+            for (var m = 1; m <= cities.length; m++) {
               setTimeout(function() {
                 addMarker();
-              }, (i * 650) + additionalMarkerWait);
+              }, (m * 650) + additionalMarkerWait);
             }
             setTimeout(function() {
               map.panTo(wellington);
@@ -457,7 +455,7 @@ function dropMarkers(wait) {
 
 function addMarker() {
   cityMarkers.push(new google.maps.Marker({
-    position : cities[markerIterator].loc,
+    position : new google.maps.LatLng(cities[markerIterator].loc.lat, cities[markerIterator].loc.lng),
     map : map,
     title : cities[markerIterator].title,
     draggable : false,

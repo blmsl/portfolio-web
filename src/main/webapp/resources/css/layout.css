@@ -186,8 +186,7 @@ header {
   max-width: 835px;
   border: 1px solid #fff;
   background: rgba(0, 0, 0, 0.3);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#b2000000,
-    endColorstr=#b2000000);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#b2000000,endColorstr=#b2000000);
   zoom: 1;
 }
 
@@ -1024,7 +1023,7 @@ ul.portfolioContainer li:hover span.hoverBox .linKed {
 .mapArea {
   background: url(../images/map-bro.png) repeat-x 0 0;
   padding-top: 4px;
-  height: 400px;
+  height: 500px;
   overflow: hidden;
   width: 100%;
   margin: 0;
