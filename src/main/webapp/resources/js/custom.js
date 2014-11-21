@@ -120,7 +120,7 @@ var chart,
       preventClick : true,
       onhover : true,
       w1024 : {
-        rows : 5,
+        rows : 6,
         columns : 6
       },
       w768 : {
@@ -128,7 +128,7 @@ var chart,
         columns : 4
       },
       w480 : {
-        rows : 4,
+        rows : 6,
         columns : 3
       },
       w320 : {
