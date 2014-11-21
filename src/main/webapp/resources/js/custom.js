@@ -111,7 +111,7 @@ var chart,
   // For background slider
   $(function() {
     $('#ri-grid').gridrotator({
-      rows : 4,
+      rows : 6,
       columns : 8,
       animType : 'rotateBottom',
       animSpeed : 300,
@@ -285,7 +285,7 @@ function elementInViewport(el) {
 
 // Google maps
 function initializeMap() {
-  initialZoom = $(window).width() >= 1000 ? 2 : 1;
+  initialZoom = $(window).width() >= 1000 ? 2 : 0;
   var mapOptions = {
     scrollwheel : false,
     center : indianocean,
@@ -363,7 +363,7 @@ function initializeMap() {
     ]
   };
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-  if (initialZoom > 1) {
+  //if (initialZoom > 1) {
     journeyLine = new google.maps.Polyline({
       strokeOpacity : 0.5,
       strokeColor : '#1b1f29',
@@ -385,7 +385,7 @@ function initializeMap() {
       geodesic : true,
       map : map
     }).getPath();
-  }
+  //}
   google.maps.event.addListenerOnce(map, 'tilesloaded', function() {
     tilesloaded = true;
   });
@@ -397,7 +397,7 @@ function dropMarkers(wait) {
         if (tilesloaded) {
           mapMarkersDrawn = true;
           setTimeout(function() {
-            if (initialZoom > 1) {
+            //if (initialZoom > 1) {
               for (var i = 1; i <= airports.length; i++) {
                 setTimeout(function() {
                   new google.maps.Marker({
@@ -428,7 +428,7 @@ function dropMarkers(wait) {
                 }, (k + journeys.length) * 65);
               }
               additionalMarkerWait = ((airports.length - 1) * 100);
-            }
+            //}
             for (var m = 1; m <= cities.length; m++) {
               setTimeout(function() {
                 addMarker();
