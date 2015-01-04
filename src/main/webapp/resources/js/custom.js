@@ -103,8 +103,8 @@ var chart,
     cities = [{ loc: hartswater, title: 'I was born here...', icon: prevIcon }, { loc: heidelberg, title: 'I grew up here...', icon: prevIcon }, { loc: vryburg, title: 'I went to High School here...', icon: prevIcon }, { loc: london, title: lived, icon: prevIcon }, { loc: benoni, title: lived, icon: prevIcon }, { loc: capetown, title: 'I moved to NZ from here...', icon: prevIcon }, { loc: auckland, title: lived, icon: prevIcon }, { loc: hamilton, title: lived, icon: prevIcon }, { loc: eastbourne, title: 'I\'m in this area...', icon: {url: 'resources/images/markercur.png?v=' + cache_version, size: markersize}}],
 
     airports = [jnb, cpt, mbd, dur, kim, bfn, plz, els, grj, mpm, gbe, wdh, buq, hre, lvi, lun, lad, dar, ebb, nbo, fih, los, abj, acc, dkr, sid, mru, gru, eze, mia, atl, iad, jfk, lga, yvr, lhr, fra, zrh, cdg, cph, ams, bom, bkk, bkkn, kix, usm, hkg, hkgn, per, dps, drw, adl, syd, hlz, chc, zqn, akl, wlg, nsn, trg, rot, rar],
-    journeys = [jnb, cpt, jnb, mbd, jnb, dur, jnb, kim, jnb, bfn, jnb, plz, els, jnb, grj, jnb, mpm, jnb, gbe, jnb, wdh, jnb, buq, jnb, hre, jnb, lvi, jnb, lun, jnb, lad, jnb, dar, jnb, ebb, jnb, nbo, jnb, fih, jnb, los, jnb, abj, acc, jnb, dkr, jnb, sid, jfk, jnb, mru, jnb, eze, jnb, gru, eze, cpt, lhr, cpt, fra, cpt, plz, dur, jnb, sid, mia, cpt, jnb, sid, atl, iad, lga, atl, jnb, lhr, yvr, lhr, jnb, fra, ams, fra, jnb, zrh, cph, zrh, cdg, zrh, jnb, ams, lhr, ams, jnb, nbo, lhr, jnb, bom, jnb, bkk, kix, bkk, hkgn, bkk, usm, bkk, jnb, bkkn, usm, bkkn, jnb, hkg, jnb, hkgn, akl, hkgn, jnb, per, jnb, syd, per, dps, drw, adl, syd, jnb, syd, akl, wlg, hlz, wlg, akl, chc, hlz, chc, akl, zqn, akl, wlg, akl, nsn, akl, wlg, trg, wlg, rot, wlg, chc, wlg],
-    upcoming = [akl, rar];
+    journeys = [jnb, cpt, jnb, mbd, jnb, dur, jnb, kim, jnb, bfn, jnb, plz, els, jnb, grj, jnb, mpm, jnb, gbe, jnb, wdh, jnb, buq, jnb, hre, jnb, lvi, jnb, lun, jnb, lad, jnb, dar, jnb, ebb, jnb, nbo, jnb, fih, jnb, los, jnb, abj, acc, jnb, dkr, jnb, sid, jfk, jnb, mru, jnb, eze, jnb, gru, eze, cpt, lhr, cpt, fra, cpt, plz, dur, jnb, sid, mia, cpt, jnb, sid, atl, iad, lga, atl, jnb, lhr, yvr, lhr, jnb, fra, ams, fra, jnb, zrh, cph, zrh, cdg, zrh, jnb, ams, lhr, ams, jnb, nbo, lhr, jnb, bom, jnb, bkk, kix, bkk, hkgn, bkk, usm, bkk, jnb, bkkn, usm, bkkn, jnb, hkg, jnb, hkgn, akl, hkgn, jnb, per, jnb, syd, per, dps, drw, adl, syd, jnb, syd, akl, wlg, hlz, wlg, akl, chc, hlz, chc, akl, zqn, akl, wlg, akl, nsn, akl, wlg, trg, wlg, rot, wlg, chc, wlg, akl, rar, akl, wlg],
+    upcoming = [];
 
 (function($) {
   'use strict';
@@ -142,7 +142,7 @@ var chart,
     });
   });
 
-  $(document).ready(function(e) {
+  $(document).ready(function() {
     initializeMap();
     // for banner height js
     setBannerSize(0, 0);
@@ -154,7 +154,7 @@ var chart,
       dropMarkers(2500);
     }
 
-    $(window).on('resize', function(e) {
+    $(window).on('resize', function() {
       setBannerSize(previousWidth, previousHeight);
       setDynamicCssValues();
       if (timeoutResize) {
@@ -247,7 +247,8 @@ function drawChart() {
 }
 
 function setDynamicCssValues() {
-  $('.bannerText').css('top', ((($(window).height() - $('.bannerText').height()) / 2) - 63));
+  var bannerText = $('.bannerText');
+  bannerText.css('top', ((($(window).height() - bannerText.height()) / 2) - 63));
 }
 
 function setBannerSize(previousWidth, previousHeight) {
