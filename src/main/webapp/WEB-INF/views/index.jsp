@@ -205,7 +205,7 @@
                 <h4>Westpac New Zealand Ltd <a href="http://www.westpac.co.nz" target="_blank" class="link js_track_link_click"><i class="fa fa-link"></i></a></h4>
                 <h5>Analyst Programmer (UI)</h5>
                 <h5 class="subHeading"><i>Wellington, New Zealand</i></h5>
-                <p>Working as a <b>UI Developer</b> at Westpac NZ. I have been involved in a number projects, including <i>Direct from Account&trade;</i>, <i>Westpac Exhange</i> and <i>Westpac One&trade;</i></p>
+                <p>Working as a <b>UI Developer</b> at Westpac NZ, where I have been involved in a number projects, including <i>Direct from Account&trade;</i>, <i>Westpac Exhange&trade;</i> and <i>Westpac One&trade;</i></p>
                 <p>The server-side development environment is <b>Java</b>, while client side applications are built using <b>several JavaScript frameworks and technologies</b>, most notably <b>RequireJS</b>, <b>Backbone</b>, Marionette, <b>Underscore</b>, <b>AngularJS</b>, SaSS, and Node.js during development.</p>
                 <p>Build and Testing tools include <b>Grunt</b>, Maven, Jenkins, JUnit, Cucumber, <b>Jasmine</b> and <b>Karma</b>.</p>
               </div>
