@@ -1,13 +1,13 @@
-<%@taglib prefix="compress" uri="http://htmlcompressor.googlecode.com/taglib/compressor"%><compress:html 
-  enabled="true" 
-  preserveLineBreaks="false" 
+<%@taglib prefix="compress" uri="http://htmlcompressor.googlecode.com/taglib/compressor"%><compress:html
+  enabled="true"
+  preserveLineBreaks="false"
   removeMultiSpaces="true"
   removeComments="true"
   removeQuotes="true"
-  compressJavaScript="true" 
+  compressJavaScript="true"
   jsCompressor="closure"
   closureOptLevel="whitespace">
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@page contentType="text/html; charset=UTF-8"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
@@ -24,8 +24,8 @@
     <meta charset="UTF-8" />
     <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
     <title>Louw Swart | Personal Portfolio</title>
-    <meta name="description" content="On-line Portfolio and CV for Louw Swart - Java Developer based in Wellington, New Zealand" />
-    <meta name="keywords" content="louw swart portfolio cv java developer" />
+    <meta name="description" content="On-line Portfolio and CV for Louw Swart - Analyst Programmer based in Wellington, New Zealand" />
+    <meta name="keywords" content="louw swart portfolio cv java developer analyst programmer javascript ui" />
     <%@include file="include/social_media.jsp"%>
     <link rel="icon" href="/favicon.ico?v=${initParam['CACHE_VERSION']}" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -41,7 +41,7 @@
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-43529041-2']);
       _gaq.push(['_trackPageview']);
-      
+
       (function() {
         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
@@ -377,7 +377,7 @@
             <p><i class="fa fa-info"></i> Java Web app (Spring MVC, JSP, Javascript, AJAX)</p>
             <p>Hosted on the <i><a href="http://heroku.com" target="_blank" class="js_track_link_click">heroku.com</a></i> cloud platform</p>
             <p><i class="fa fa-cc"></i> <%=yearDf.format(new Date())%> &ndash; HTML Template by <i><a href="http://themeforest.net/user/themeelite" target="_blank" class="js_track_link_click">themeelite</a></i></p>
-            <p>Last modified: <c:out value="${initParam['LAST_MODIFIED_TIME']}" /></p>
+            <p><sup>Last modified: <c:out value="${initParam['LAST_MODIFIED_TIME']}" /></sup></p>
           </div>
         </div>
       </section>
@@ -396,7 +396,7 @@
             _gaq.push(['_trackEvent', 'link_click', $(this).attr('href')]);
           }
         });
-        
+
         $('.submitBnt, .navbar-toggle').click(function(){
           if(_gaq){
             _gaq.push(['_trackEvent', 'submit_click', $(this).attr('value')]);
@@ -407,5 +407,4 @@
   </body>
 </html>
 </compress:html>
-
 <%@include file="include/ascii.jsp"%>
