@@ -8,9 +8,9 @@
   <name>${env.OWNER_NAME} - Profolio</name>
   <url>http://maven.apache.org</url>
   <properties>
-    <tomcat.version>7.0.34</tomcat.version>
-    <springframework.version>3.1.1.RELEASE</springframework.version>
-    <source.target.version>1.7</source.target.version>
+    <tomcat.version>8.0.21</tomcat.version>
+    <springframework.version>4.1.6.RELEASE</springframework.version>
+    <source.target.version>1.8</source.target.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <build.timestamp>${maven.build.timestamp}</build.timestamp>
     <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ssZ</maven.build.timestamp.format>
@@ -67,19 +67,19 @@
     <dependency>
       <groupId>com.sun.mail</groupId>
       <artifactId>javax.mail</artifactId>
-      <version>1.5.2</version>
+      <version>1.5.3</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
-      <version>3.3.2</version>
+      <version>3.4</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>commons-validator</groupId>
       <artifactId>commons-validator</artifactId>
-      <version>1.4.0</version>
+      <version>1.4.1</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
@@ -109,7 +109,7 @@
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
-      <version>1.7.7</version>
+      <version>1.7.12</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
@@ -119,7 +119,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.17</version>
+        <version>2.18.1</version>
         <configuration>
           <skipTests>true</skipTests>
         </configuration>
@@ -127,7 +127,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
-        <version>2.6</version>
+        <version>2.7</version>
         <executions>
           <execution>
             <id>copy-web-app-resources</id>
@@ -172,7 +172,7 @@
       <plugin>
         <groupId>com.samaxes.maven</groupId>
         <artifactId>minify-maven-plugin</artifactId>
-        <version>1.7.2</version>
+        <version>1.7.4</version>
         <executions>
           <execution>
             <id>default-minify</id>
@@ -212,7 +212,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.3.2</version>
+        <version>3.3</version>
         <inherited>true</inherited>
         <configuration>
           <source>${source.target.version}</source>
@@ -222,7 +222,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>appassembler-maven-plugin</artifactId>
-        <version>1.8</version>
+        <version>1.10</version>
         <configuration>
           <assembleDirectory>target</assembleDirectory>
           <programs>

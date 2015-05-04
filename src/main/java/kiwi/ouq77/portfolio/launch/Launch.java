@@ -36,7 +36,9 @@ public class Launch {
 	private static final String BUILD_TIMESTAMP = "BUILD_TIMESTAMP";
 	private static final String CACHE_VERSION_KEY = "CACHE_VERSION";
 	private static final String ARTICLE_MODIFIED_TIME_KEY = "ARTICLE_MODIFIED_TIME";
+	private static final String LAST_MODIFIED_TIME_KEY = "LAST_MODIFIED_TIME";
 	private static final SimpleDateFormat CACHE_SDF = new SimpleDateFormat("yyyyMMddHHmm");
+	private static final SimpleDateFormat LAST_MODIFIED_SDF = new SimpleDateFormat("dd/MM/yy");
 
 	public static void main(final String[] args) throws Exception {
 
@@ -65,6 +67,7 @@ public class Launch {
 		final Date cacheDate = mavenSdf.parse(buildTimestamp);
 		ctx.addParameter(CACHE_VERSION_KEY, CACHE_SDF.format(cacheDate));
 		ctx.addParameter(ARTICLE_MODIFIED_TIME_KEY, buildTimestamp);
+		ctx.addParameter(LAST_MODIFIED_TIME_KEY, LAST_MODIFIED_SDF.format(cacheDate));
 
 		final DynoKeepAliveScheduler dynoKeepAliveScheduler = new DynoKeepAliveScheduler();
 		dynoKeepAliveScheduler.start();

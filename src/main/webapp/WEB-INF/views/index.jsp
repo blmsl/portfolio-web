@@ -116,8 +116,9 @@
           <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
               <h3><span itemprop="name">Louw Swart</span></h3>
-              <h4 class="subHeading"><span itemprop="title">Senior Java Developer</span>, Wellington</h4>
-              <p>I am a Java Developer with nearly <b>6 years commercial experience</b>, of which roughly the past <b>3 years</b> have been in <b>agile environments</b>, designing, coding, testing and supporting applications across a <b>variety of technologies</b> and <b>platforms</b>.</p>
+              <h4 class="subHeading"><span itemprop="title">Analyst Programmer</span>, Wellington</h4>
+              <p>I have been in <b>Software Development</b> since 2008, with more than half that time spent in <b>agile environments</b>, designing, coding, testing and supporting applications across a <b>variety of technologies</b> and <b>platforms</b>.</p>
+              <p>While my background is <b>Java</b>, I have been focusing my attention on <b>JavaScript development</b> in the client layer since June 2014, working with frameworks such as Backbone, Marionette, Underscore and AngularJS.</p>
               <p>I have a strong <b>sense of responsibility</b> and am always driven to <b>deliver on or ahead of deadlines</b>. <b>Front end</b> or <b>back end</b>, I'm equally comfortable performing either or both.</p>
               <h4 class="subHeading">Hobbies and Interests</h4>
               <p><i class="fa fa-camera-retro"></i> Photography, <i class="fa fa-android"></i> Android, <i class="fa fa-road"></i> travel and <i class="fa fa-plane"></i> plane spotting - not necessarily in that order.</p>
@@ -143,7 +144,21 @@
           <div class="row">
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 skillsArea">
               <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 skills">
-                <span class="chart skilBg" data-percent="95"> <span class="percent"></span></span>
+                <span class="chart skilBg" data-percent="85"> <span class="percent"></span></span>
+                <h4 class="js_trigger_skills">Scripting</h4>
+                <p>JavaScript; JQuery; AJAX; JSON;</p>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 skillsArea">
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 skills">
+                <span class="chart skilBg" data-percent="70"> <span class="percent"></span></span>
+                <h4 class="js_trigger_skills">Web Markup</h4>
+                <p>HTML5; CSS3;</p>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 skillsArea">
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 skills">
+                <span class="chart skilBg" data-percent="90"> <span class="percent"></span></span>
                 <h4 class="js_trigger_skills">Java</h4>
                 <p>Java EE; Java SE 6/7; Java ME;</p>
               </div>
@@ -169,20 +184,6 @@
                 <p>Mercurial; SVN; GIT;</p>
               </div>
             </div>
-            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 skillsArea">
-              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 skills">
-                <span class="chart skilBg" data-percent="85"> <span class="percent"></span></span>
-                <h4 class="js_trigger_skills">Scripting</h4>
-                <p>JavaScript; JQuery; AJAX; JSON;</p>
-              </div>
-            </div>
-            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 skillsArea">
-              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 skills">
-                <span class="chart skilBg" data-percent="60"> <span class="percent"></span></span>
-                <h4 class="js_trigger_skills">Web Markup</h4>
-                <p>HTML5; CSS3;</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -204,7 +205,9 @@
                 <h4>Westpac New Zealand Ltd <a href="http://www.westpac.co.nz" target="_blank" class="link js_track_link_click"><i class="fa fa-link"></i></a></h4>
                 <h5>Analyst Programmer (UI)</h5>
                 <h5 class="subHeading"><i>Wellington, New Zealand</i></h5>
-                <p>Details coming soon...</p>
+                <p>Working as a <b>UI Developer</b> at Westpac NZ. I have been involved in a number projects, including <i>Direct from Account&trade;</i>, <i>Westpac Exhange</i> and <i>Westpac One&trade;</i></p>
+                <p>The server-side development environment is <b>Java</b>, while client side applications are built using <b>several JavaScript frameworks and technologies</b>, most notably <b>RequireJS</b>, <b>Backbone</b>, Marionette, <b>Underscore</b>, <b>AngularJS</b>, SaSS, and Node.js during development.</p>
+                <p>Build and Testing tools include <b>Grunt</b>, Maven, Jenkins, JUnit, Cucumber, <b>Jasmine</b> and <b>Karma</b>.</p>
               </div>
             </div>
           </div>
@@ -374,6 +377,7 @@
             <p><i class="fa fa-info"></i> Java Web app (Spring MVC, JSP, Javascript, AJAX)</p>
             <p>Hosted on the <i><a href="http://heroku.com" target="_blank" class="js_track_link_click">heroku.com</a></i> cloud platform</p>
             <p><i class="fa fa-cc"></i> <%=yearDf.format(new Date())%> &ndash; HTML Template by <i><a href="http://themeforest.net/user/themeelite" target="_blank" class="js_track_link_click">themeelite</a></i></p>
+            <p>Last modified: <c:out value="${initParam['LAST_MODIFIED_TIME']}" /></p>
           </div>
         </div>
       </section>
