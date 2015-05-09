@@ -1,5 +1,4 @@
-var chart,
-    previousWidth,
+var previousWidth,
     previousHeight,
     timeoutResize,
     timeoutScroll,
@@ -143,10 +142,10 @@ var chart,
   });
 
   $(document).ready(function() {
-    initializeMap();
     // for banner height js
     setBannerSize(0, 0);
     setDynamicCssValues();
+    initializeMap();
     if (!skillChartDrawn) {
       drawChart();
     }
@@ -246,11 +245,6 @@ function drawChart() {
   });
 }
 
-function setDynamicCssValues() {
-  var bannerText = $('.bannerText');
-  bannerText.css('top', ((($(window).height() - bannerText.height()) / 2) - 63));
-}
-
 function setBannerSize(previousWidth, previousHeight) {
   var windowWidth = $(window).width();
   var windowHeight = $(window).height();
@@ -269,6 +263,11 @@ function setBannerSize(previousWidth, previousHeight) {
       'height' : windowHeight - 60
     });
   }
+}
+
+function setDynamicCssValues() {
+  var bannerText = $('.bannerText');
+  bannerText.css('top', ((($(window).height() - bannerText.height()) / 2) - 63));
 }
 
 function elementInViewport(el) {

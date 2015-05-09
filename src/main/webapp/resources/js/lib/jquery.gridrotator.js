@@ -23,13 +23,13 @@
   var $event = $.event, $special, resizeTimeout;
 
   $special = $event.special.debouncedresize = {
-    setup : function() {
+    setup: function() {
       $(this).on("resize", $special.handler);
     },
-    teardown : function() {
+    teardown: function() {
       $(this).off("resize", $special.handler);
     },
-    handler : function(event, execAsap) {
+    handler: function(event, execAsap) {
       // Save the context
       var context = this, args = arguments, dispatch = function() {
         // set correct event type
@@ -44,7 +44,7 @@
       execAsap ? dispatch() : resizeTimeout = setTimeout(dispatch,
           $special.threshold);
     },
-    threshold : 100
+    threshold: 100
   };
 
   // http://www.hardcode.nl/subcategory_1/article_317-array-shuffle-function
@@ -63,7 +63,7 @@
   // http://www.html5rocks.com/en/tutorials/pagevisibility/intro/
   // by Joe Marini (@joemarini)
   function getHiddenProp() {
-    var prefixes = [ 'webkit', 'moz', 'ms', 'o' ];
+    var prefixes = ['webkit', 'moz', 'ms', 'o'];
 
     // if 'hidden' is natively supported just return it
     if ('hidden' in document)
@@ -78,6 +78,7 @@
     // otherwise it's not supported
     return null;
   }
+
   function isHidden() {
     var prop = getHiddenProp();
     if (!prop)
@@ -94,52 +95,48 @@
   var $window = $(window), Modernizr = window.Modernizr;
 
   $.GridRotator = function(options, element) {
-
     this.$el = $(element);
     if (Modernizr.backgroundsize) {
-
       var self = this;
       this.$el.addClass('ri-grid-loading');
       this._init(options);
-
     }
-
   };
 
   // the options
   $.GridRotator.defaults = {
     // number of rows
-    rows : 4,
+    rows: 4,
     // number of columns
-    columns : 10,
-    w1024 : {
-      rows : 3,
-      columns : 8
+    columns: 10,
+    w1024: {
+      rows: 3,
+      columns: 8
     },
-    w768 : {
-      rows : 3,
-      columns : 7
+    w768: {
+      rows: 3,
+      columns: 7
     },
-    w480 : {
-      rows : 3,
-      columns : 5
+    w480: {
+      rows: 3,
+      columns: 5
     },
-    w320 : {
-      rows : 2,
-      columns : 4
+    w320: {
+      rows: 2,
+      columns: 4
     },
-    w240 : {
-      rows : 2,
-      columns : 3
+    w240: {
+      rows: 2,
+      columns: 3
     },
     // step: number of items that are replaced at the same time
     // random || [some number]
     // note: for performance issues, the number "can't" be > options.maxStep
-    step : 'random',
+    step: 'random',
     // change it as you wish..
-    maxStep : 3,
+    maxStep: 3,
     // prevent user to click the items
-    preventClick : true,
+    preventClick: true,
     // animation type
     // showHide || fadeInOut ||
     // slideLeft || slideRight || slideTop || slideBottom ||
@@ -149,76 +146,68 @@
     // rotateLeftScale || rotateRightScale || rotateTopScale ||
     // rotateBottomScale ||
     // random
-    animType : 'random',
+    animType: 'random',
     // animation speed
-    animSpeed : 800,
+    animSpeed: 800,
     // animation easings
-    animEasingOut : 'linear',
-    animEasingIn : 'linear',
+    animEasingOut: 'linear',
+    animEasingIn: 'linear',
     // the item(s) will be replaced every 3 seconds
     // note: for performance issues, the time "can't" be < 300 ms
-    interval : 3000,
+    interval: 3000,
     // if false the animations will not start
     // use false if onhover is true for example
-    slideshow : true,
+    slideshow: true,
     // if true the items will switch when hovered
-    onhover : false,
+    onhover: false,
     // ids of elements that shouldn't change
-    nochange : [],
+    nochange: [],
     // callback function when drawn
-    onDraw : function() {
+    onDraw: function() {
     },
     // Height to Width Ratio (Height/Width). A 0.5 ratio would be used for an
     // image that is twice as large as it's height. Default is 1 (square
     // images).
-    heightToWidthRatio : 1,
-    subImg : false
+    heightToWidthRatio: 1,
+    subImg: false
   };
 
   $.GridRotator.prototype = {
 
-    _init : function(options) {
-
+    _init: function(options) {
       // options
       this.options = $.extend(true, {}, $.GridRotator.defaults, options);
       // cache some elements + variables
       this._config();
-
     },
-    _config : function() {
+    _config: function() {
 
       var self = this, transEndEventNames = {
-        'WebkitTransition' : 'webkitTransitionEnd',
-        'MozTransition' : 'transitionend',
-        'OTransition' : 'oTransitionEnd',
-        'msTransition' : 'MSTransitionEnd',
-        'transition' : 'transitionend'
+        'WebkitTransition': 'webkitTransitionEnd',
+        'MozTransition': 'transitionend',
+        'OTransition': 'oTransitionEnd',
+        'msTransition': 'MSTransitionEnd',
+        'transition': 'transitionend'
       };
 
       // support CSS transitions and 3d transforms
       this.supportTransitions = Modernizr.csstransitions;
       this.supportTransforms3D = Modernizr.csstransforms3d;
 
-      this.transEndEventName = transEndEventNames[Modernizr
-          .prefixed('transition')]
-          + '.gridrotator';
+      this.transEndEventName = transEndEventNames[Modernizr.prefixed('transition')] + '.gridrotator';
 
       // all animation types for the random option
-      this.animTypes = this.supportTransforms3D ? [ 'fadeInOut', 'slideLeft',
-          'slideRight', 'slideTop', 'slideBottom', 'rotateLeft', 'rotateRight',
-          'rotateTop', 'rotateBottom', 'scale', 'rotate3d', 'rotateLeftScale',
-          'rotateRightScale', 'rotateTopScale', 'rotateBottomScale' ] : [
-          'fadeInOut', 'slideLeft', 'slideRight', 'slideTop', 'slideBottom' ];
+      this.animTypes = this.supportTransforms3D ? ['fadeInOut', 'slideLeft',
+        'slideRight', 'slideTop', 'slideBottom', 'rotateLeft', 'rotateRight',
+        'rotateTop', 'rotateBottom', 'scale', 'rotate3d', 'rotateLeftScale',
+        'rotateRightScale', 'rotateTopScale', 'rotateBottomScale'] : [
+        'fadeInOut', 'slideLeft', 'slideRight', 'slideTop', 'slideBottom'];
 
       this.animType = this.options.animType;
 
-      if (this.animType !== 'random' && !this.supportTransforms3D
-          && $.inArray(this.animType, this.animTypes) === -1
-          && this.animType !== 'showHide') {
-
+      if (this.animType !== 'random' && !this.supportTransforms3D && $.inArray(this.animType, this.animTypes) === -1 && this.animType !== 'showHide') {
         // fallback to 'fadeInOut' if user sets a type which is not supported
         this.animType = 'fadeInOut';
-
       }
 
       this.animTypesTotal = this.animTypes.length;
@@ -227,8 +216,7 @@
       this.$list = this.$el.children('ul');
       // remove images and add background-image to anchors
       // preload the images before
-      var loaded = 0, subbed = 0, $imgs = this.$list.find('img'), count = $imgs.length, subColors = [
-          "#D92727", "#FFE433", "#0DB8B5" ];
+      var loaded = 0, subbed = 0, $imgs = this.$list.find('img'), count = $imgs.length, subColors = ["#D92727", "#FFE433", "#0DB8B5"];
 
       // Check if the substitute image is available
       if (self.options.subImg) {
@@ -272,63 +260,50 @@
             // get in
             // follow a "First In First Out" logic
             self._start();
-
           }
-
         }).attr('src', src);
 
         // If something is wrong with the image…
-        $('<img/>').error(
-            function() {
+        $('<img/>').error(function() {
 
-              ++subbed;
+          ++subbed;
 
-              // Are there any substitute images?
-              if (self.options.subImg) {
+          // Are there any substitute images?
+          if (self.options.subImg) {
+            $img.parent().css('background-image', 'url(' + self.options.subImg + ')');
+          } else {
+            var color = Math.floor(Math.random() * 3);
+            $img.parent().css('background', subColors[color]);
+          }
 
-                $img.parent().css('background-image',
-                    'url(' + self.options.subImg + ')');
+          /* This conditional block should be moved out to remove redundancy =) */
+          if (loaded + subbed === count) {
 
-              }
-
-              else {
-
-                var color = Math.floor(Math.random() * 3)
-                $img.parent().css('background', subColors[color]);
-
-              }
-
-              /* This conditional block should be moved out to remove redundancy =) */
-              if (loaded + subbed === count) {
-
-                $imgs.remove();
-                self.$el.removeClass('ri-grid-loading');
-                // the items
-                self.$items = self.$list.children('li');
-                // make a copy of the items
-                self.$itemsCache = self.$items.clone();
-                // total number of items
-                self.itemsTotal = self.$items.length;
-                // the items that will be out of the grid
-                // actually the item's child (anchor element)
-                self.outItems = [];
-                self._layout(function() {
-                  self._initEvents();
-                });
-                // replace [options.step] items after [options.interval] time
-                // the items that go out are randomly chosen, while the ones
-                // that get in
-                // follow a "First In First Out" logic
-                self._start();
-
-              }
-
-            }).attr('src', src);
-
+            $imgs.remove();
+            self.$el.removeClass('ri-grid-loading');
+            // the items
+            self.$items = self.$list.children('li');
+            // make a copy of the items
+            self.$itemsCache = self.$items.clone();
+            // total number of items
+            self.itemsTotal = self.$items.length;
+            // the items that will be out of the grid
+            // actually the item's child (anchor element)
+            self.outItems = [];
+            self._layout(function() {
+              self._initEvents();
+            });
+            // replace [options.step] items after [options.interval] time
+            // the items that go out are randomly chosen, while the ones
+            // that get in
+            // follow a "First In First Out" logic
+            self._start();
+          }
+        }).attr('src', src);
       });
 
     },
-    _layout : function(callback) {
+    _layout: function(callback) {
 
       var self = this;
 
@@ -350,14 +325,12 @@
 
       $outItems.remove();
 
-      // container's width
-      var containerWidth = (document.defaultView) ? parseInt(document.defaultView
-          .getComputedStyle(this.$el.get(0), null).width)
-          : this.$el.width(),
-      // item's width
-      itemWidth = Math.floor(containerWidth / this.columns),
-      // calculate gap
-      gapWidth = containerWidth - (this.columns * Math.floor(itemWidth));
+          // container's width
+      var containerWidth = (document.defaultView) ? parseInt(document.defaultView.getComputedStyle(this.$el.get(0), null).width) : this.$el.width(),
+          // item's width
+          itemWidth = Math.floor(containerWidth / this.columns),
+          // calculate gap
+          gapWidth = containerWidth - (this.columns * Math.floor(itemWidth));
 
       for (var i = 0; i < this.rows; ++i) {
 
@@ -366,8 +339,8 @@
           var idx = this.columns * i + j, $item = this.$items.eq(idx);
 
           $item.css({
-            width : j < Math.floor(gapWidth) ? itemWidth + 1 : itemWidth,
-            height : Math.floor(itemWidth * this.options.heightToWidthRatio)
+            width: j < Math.floor(gapWidth) ? itemWidth + 1 : itemWidth,
+            height: Math.floor(itemWidth * this.options.heightToWidthRatio)
           });
 
           if ($.inArray(idx, this.options.nochange) !== -1) {
@@ -379,10 +352,7 @@
       }
 
       if (this.options.preventClick) {
-
-        this.$items.children().css('cursor', 'default').on('click.gridrotator',
-            false);
-
+        this.$items.children().css('cursor', 'default').on('click.gridrotator', false);
       }
 
       if (callback) {
@@ -390,10 +360,9 @@
       }
 
       this.options.onDraw.call(this);
-
     },
     // set the grid rows and columns
-    _setGridDim : function() {
+    _setGridDim: function() {
 
       // container's width
       var c_w = this.$el.width();
@@ -401,37 +370,37 @@
       // we will choose the number of rows/columns according to the container's
       // width and the values set in the plugin options
       switch (true) {
-      case (c_w < 240):
-        this.rows = this.options.w240.rows;
-        this.columns = this.options.w240.columns;
-        break;
-      case (c_w < 320):
-        this.rows = this.options.w320.rows;
-        this.columns = this.options.w320.columns;
-        break;
-      case (c_w < 480):
-        this.rows = this.options.w480.rows;
-        this.columns = this.options.w480.columns;
-        break;
-      case (c_w < 768):
-        this.rows = this.options.w768.rows;
-        this.columns = this.options.w768.columns;
-        break;
-      case (c_w < 1024):
-        this.rows = this.options.w1024.rows;
-        this.columns = this.options.w1024.columns;
-        break;
-      default:
-        this.rows = this.options.rows;
-        this.columns = this.options.columns;
-        break;
+        case (c_w < 240):
+          this.rows = this.options.w240.rows;
+          this.columns = this.options.w240.columns;
+          break;
+        case (c_w < 320):
+          this.rows = this.options.w320.rows;
+          this.columns = this.options.w320.columns;
+          break;
+        case (c_w < 480):
+          this.rows = this.options.w480.rows;
+          this.columns = this.options.w480.columns;
+          break;
+        case (c_w < 768):
+          this.rows = this.options.w768.rows;
+          this.columns = this.options.w768.columns;
+          break;
+        case (c_w < 1024):
+          this.rows = this.options.w1024.rows;
+          this.columns = this.options.w1024.columns;
+          break;
+        default:
+          this.rows = this.options.rows;
+          this.columns = this.options.columns;
+          break;
       }
 
       this.showTotal = this.rows * this.columns;
 
     },
     // init window resize event
-    _initEvents : function() {
+    _initEvents: function() {
 
       var self = this;
 
@@ -461,28 +430,27 @@
             function() {
 
               var $item = $(this);
-              if (!$item.data('active') && !$item.data('hovered')
-                  && !$item.data('nochange')) {
+              if (!$item.data('active') && !$item.data('hovered') && !$item.data('nochange')) {
                 $item.data('hovered', true);
                 self._replace($item);
               }
 
             }).on('mouseleave.gridrotator', function() {
 
-          $(this).data('hovered', false);
+              $(this).data('hovered', false);
 
-        });
+            });
 
       }
 
     },
-    _visChange : function() {
+    _visChange: function() {
 
       isHidden() ? clearTimeout(this.playtimeout) : this._start();
 
     },
     // start rotating elements
-    _start : function() {
+    _start: function() {
 
       if (this.showTotal < this.itemsTotal && this.options.slideshow) {
         this._showNext();
@@ -490,169 +458,169 @@
 
     },
     // get which type of animation
-    _getAnimType : function() {
+    _getAnimType: function() {
 
       return this.animType === 'random' ? this.animTypes[Math.floor(Math
-          .random()
+              .random()
           * this.animTypesTotal)] : this.animType;
 
     },
     // get css properties for the transition effect
-    _getAnimProperties : function($out) {
+    _getAnimProperties: function($out) {
 
       var startInProp = {}, startOutProp = {}, endInProp = {}, endOutProp = {}, animType = this
           ._getAnimType(), speed, delay = 0;
 
       switch (animType) {
 
-      case 'showHide':
+        case 'showHide':
 
-        speed = 0;
-        endOutProp.opacity = 0;
-        break;
+          speed = 0;
+          endOutProp.opacity = 0;
+          break;
 
-      case 'fadeInOut':
+        case 'fadeInOut':
 
-        endOutProp.opacity = 0;
-        break;
+          endOutProp.opacity = 0;
+          break;
 
-      case 'slideLeft':
+        case 'slideLeft':
 
-        startInProp.left = $out.width();
-        endInProp.left = 0;
-        endOutProp.left = -$out.width();
-        break;
+          startInProp.left = $out.width();
+          endInProp.left = 0;
+          endOutProp.left = -$out.width();
+          break;
 
-      case 'slideRight':
+        case 'slideRight':
 
-        startInProp.left = -$out.width();
-        endInProp.left = 0;
-        endOutProp.left = $out.width();
-        break;
+          startInProp.left = -$out.width();
+          endInProp.left = 0;
+          endOutProp.left = $out.width();
+          break;
 
-      case 'slideTop':
+        case 'slideTop':
 
-        startInProp.top = $out.height();
-        endInProp.top = 0;
-        endOutProp.top = -$out.height();
-        break;
+          startInProp.top = $out.height();
+          endInProp.top = 0;
+          endOutProp.top = -$out.height();
+          break;
 
-      case 'slideBottom':
+        case 'slideBottom':
 
-        startInProp.top = -$out.height();
-        endInProp.top = 0;
-        endOutProp.top = $out.height();
-        break;
+          startInProp.top = -$out.height();
+          endInProp.top = 0;
+          endOutProp.top = $out.height();
+          break;
 
-      case 'rotateLeft':
+        case 'rotateLeft':
 
-        speed = this.options.animSpeed / 2;
-        startInProp.transform = 'rotateY(90deg)';
-        endInProp.transform = 'rotateY(0deg)';
-        delay = speed;
-        endOutProp.transform = 'rotateY(-90deg)';
-        break;
+          speed = this.options.animSpeed / 2;
+          startInProp.transform = 'rotateY(90deg)';
+          endInProp.transform = 'rotateY(0deg)';
+          delay = speed;
+          endOutProp.transform = 'rotateY(-90deg)';
+          break;
 
-      case 'rotateRight':
+        case 'rotateRight':
 
-        speed = this.options.animSpeed / 2;
-        startInProp.transform = 'rotateY(-90deg)';
-        endInProp.transform = 'rotateY(0deg)';
-        delay = speed;
-        endOutProp.transform = 'rotateY(90deg)';
-        break;
+          speed = this.options.animSpeed / 2;
+          startInProp.transform = 'rotateY(-90deg)';
+          endInProp.transform = 'rotateY(0deg)';
+          delay = speed;
+          endOutProp.transform = 'rotateY(90deg)';
+          break;
 
-      case 'rotateTop':
+        case 'rotateTop':
 
-        speed = this.options.animSpeed / 2;
-        startInProp.transform = 'rotateX(90deg)';
-        endInProp.transform = 'rotateX(0deg)';
-        delay = speed;
-        endOutProp.transform = 'rotateX(-90deg)';
-        break;
+          speed = this.options.animSpeed / 2;
+          startInProp.transform = 'rotateX(90deg)';
+          endInProp.transform = 'rotateX(0deg)';
+          delay = speed;
+          endOutProp.transform = 'rotateX(-90deg)';
+          break;
 
-      case 'rotateBottom':
+        case 'rotateBottom':
 
-        speed = this.options.animSpeed / 2;
-        startInProp.transform = 'rotateX(-90deg)';
-        endInProp.transform = 'rotateX(0deg)';
-        delay = speed;
-        endOutProp.transform = 'rotateX(90deg)';
-        break;
+          speed = this.options.animSpeed / 2;
+          startInProp.transform = 'rotateX(-90deg)';
+          endInProp.transform = 'rotateX(0deg)';
+          delay = speed;
+          endOutProp.transform = 'rotateX(90deg)';
+          break;
 
-      case 'scale':
+        case 'scale':
 
-        speed = this.options.animSpeed / 2;
-        startInProp.transform = 'scale(0)';
-        startOutProp.transform = 'scale(1)';
-        endInProp.transform = 'scale(1)';
-        delay = speed;
-        endOutProp.transform = 'scale(0)';
-        break;
+          speed = this.options.animSpeed / 2;
+          startInProp.transform = 'scale(0)';
+          startOutProp.transform = 'scale(1)';
+          endInProp.transform = 'scale(1)';
+          delay = speed;
+          endOutProp.transform = 'scale(0)';
+          break;
 
-      case 'rotateLeftScale':
+        case 'rotateLeftScale':
 
-        startOutProp.transform = 'scale(1)';
-        speed = this.options.animSpeed / 2;
-        startInProp.transform = 'scale(0.3) rotateY(90deg)';
-        endInProp.transform = 'scale(1) rotateY(0deg)';
-        delay = speed;
-        endOutProp.transform = 'scale(0.3) rotateY(-90deg)';
-        break;
+          startOutProp.transform = 'scale(1)';
+          speed = this.options.animSpeed / 2;
+          startInProp.transform = 'scale(0.3) rotateY(90deg)';
+          endInProp.transform = 'scale(1) rotateY(0deg)';
+          delay = speed;
+          endOutProp.transform = 'scale(0.3) rotateY(-90deg)';
+          break;
 
-      case 'rotateRightScale':
+        case 'rotateRightScale':
 
-        startOutProp.transform = 'scale(1)';
-        speed = this.options.animSpeed / 2;
-        startInProp.transform = 'scale(0.3) rotateY(-90deg)';
-        endInProp.transform = 'scale(1) rotateY(0deg)';
-        delay = speed;
-        endOutProp.transform = 'scale(0.3) rotateY(90deg)';
-        break;
+          startOutProp.transform = 'scale(1)';
+          speed = this.options.animSpeed / 2;
+          startInProp.transform = 'scale(0.3) rotateY(-90deg)';
+          endInProp.transform = 'scale(1) rotateY(0deg)';
+          delay = speed;
+          endOutProp.transform = 'scale(0.3) rotateY(90deg)';
+          break;
 
-      case 'rotateTopScale':
+        case 'rotateTopScale':
 
-        startOutProp.transform = 'scale(1)';
-        speed = this.options.animSpeed / 2;
-        startInProp.transform = 'scale(0.3) rotateX(90deg)';
-        endInProp.transform = 'scale(1) rotateX(0deg)';
-        delay = speed;
-        endOutProp.transform = 'scale(0.3) rotateX(-90deg)';
-        break;
+          startOutProp.transform = 'scale(1)';
+          speed = this.options.animSpeed / 2;
+          startInProp.transform = 'scale(0.3) rotateX(90deg)';
+          endInProp.transform = 'scale(1) rotateX(0deg)';
+          delay = speed;
+          endOutProp.transform = 'scale(0.3) rotateX(-90deg)';
+          break;
 
-      case 'rotateBottomScale':
+        case 'rotateBottomScale':
 
-        startOutProp.transform = 'scale(1)';
-        speed = this.options.animSpeed / 2;
-        startInProp.transform = 'scale(0.3) rotateX(-90deg)';
-        endInProp.transform = 'scale(1) rotateX(0deg)';
-        delay = speed;
-        endOutProp.transform = 'scale(0.3) rotateX(90deg)';
-        break;
+          startOutProp.transform = 'scale(1)';
+          speed = this.options.animSpeed / 2;
+          startInProp.transform = 'scale(0.3) rotateX(-90deg)';
+          endInProp.transform = 'scale(1) rotateX(0deg)';
+          delay = speed;
+          endOutProp.transform = 'scale(0.3) rotateX(90deg)';
+          break;
 
-      case 'rotate3d':
+        case 'rotate3d':
 
-        speed = this.options.animSpeed / 2;
-        startInProp.transform = 'rotate3d( 1, 1, 0, 90deg )';
-        endInProp.transform = 'rotate3d( 1, 1, 0, 0deg )';
-        delay = speed;
-        endOutProp.transform = 'rotate3d( 1, 1, 0, -90deg )';
-        break;
+          speed = this.options.animSpeed / 2;
+          startInProp.transform = 'rotate3d( 1, 1, 0, 90deg )';
+          endInProp.transform = 'rotate3d( 1, 1, 0, 0deg )';
+          delay = speed;
+          endOutProp.transform = 'rotate3d( 1, 1, 0, -90deg )';
+          break;
 
       }
 
       return {
-        startInProp : startInProp,
-        startOutProp : startOutProp,
-        endInProp : endInProp,
-        endOutProp : endOutProp,
-        delay : delay,
-        animSpeed : speed != undefined ? speed : this.options.animSpeed
+        startInProp: startInProp,
+        startOutProp: startOutProp,
+        endInProp: endInProp,
+        endOutProp: endOutProp,
+        delay: delay,
+        animSpeed: speed != undefined ? speed : this.options.animSpeed
       };
 
     },
     // show next [option.step] elements
-    _showNext : function(time) {
+    _showNext: function(time) {
 
       var self = this;
 
@@ -668,10 +636,10 @@
 
         // number of items to swith at this point of time
         var nmbOut = step === 'random' ? Math.floor(Math.random() * max + min)
-            : Math.min(Math.abs(step), max),
+                : Math.min(Math.abs(step), max),
         // array with random indexes. These will be the indexes of the items we
         // will replace
-        randArr = self._getRandom(nmbOut, self.showTotal);
+            randArr = self._getRandom(nmbOut, self.showTotal);
 
         for (var i = 0; i < nmbOut; ++i) {
 
@@ -698,13 +666,13 @@
       }, time || Math.max(Math.abs(this.options.interval), 300));
 
     },
-    _replace : function($out) {
+    _replace: function($out) {
 
       $out.data('active', true);
 
       var self = this, $outA = $out.children('a:last'), newElProp = {
-        width : $outA.width(),
-        height : $outA.height()
+        width: $outA.width(),
+        height: $outA.height()
       };
 
       // element stays active
@@ -732,30 +700,30 @@
 
       this
           ._applyTransition(
-              $inA,
-              animProp.endInProp,
-              animProp.animSpeed,
-              function() {
+          $inA,
+          animProp.endInProp,
+          animProp.animSpeed,
+          function() {
 
-                var $el = $(this), t = animProp.animSpeed === self.options.animSpeed
-                    && isEmpty(animProp.endInProp) ? animProp.animSpeed : 0;
+            var $el = $(this), t = animProp.animSpeed === self.options.animSpeed
+            && isEmpty(animProp.endInProp) ? animProp.animSpeed : 0;
 
-                setTimeout(function() {
+            setTimeout(function() {
 
-                  if (self.supportTransitions) {
-                    $el.off(self.transEndEventName);
-                  }
+              if (self.supportTransitions) {
+                $el.off(self.transEndEventName);
+              }
 
-                  $el.next().remove();
-                  $el.parent().data('active', false);
+              $el.next().remove();
+              $el.parent().data('active', false);
 
-                }, t);
+            }, t);
 
-              }, animProp.animSpeed === 0 || isEmpty(animProp.endInProp));
+          }, animProp.animSpeed === 0 || isEmpty(animProp.endInProp));
       this._applyTransition($outA, animProp.endOutProp, animProp.animSpeed);
 
     },
-    _getRandom : function(cnt, limit) {
+    _getRandom: function(cnt, limit) {
 
       var randArray = [];
 
@@ -766,7 +734,7 @@
       return randArray.shuffle().slice(0, cnt);
 
     },
-    _setTransition : function(el, prop, speed, delay, easing) {
+    _setTransition: function(el, prop, speed, delay, easing) {
 
       setTimeout(function() {
         el.css('transition', prop + ' ' + speed + 'ms ' + delay + 'ms '
@@ -774,7 +742,7 @@
       }, 25);
 
     },
-    _applyTransition : function(el, styleCSS, speed, fncomplete, force) {
+    _applyTransition: function(el, styleCSS, speed, fncomplete, force) {
 
       var self = this;
       setTimeout(function() {
@@ -791,12 +759,12 @@
         }
 
         fncomplete = fncomplete || function() {
-          return false;
-        };
+              return false;
+            };
 
         el.stop().applyStyle(styleCSS, $.extend(true, [], {
-          duration : speed + 'ms',
-          complete : fncomplete
+          duration: speed + 'ms',
+          complete: fncomplete
         }));
       }, 25);
 
