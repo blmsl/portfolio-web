@@ -27,6 +27,6 @@
       "density": "2.0"
     }
   ],
-  "start_url": "/",
+  "start_url": "/?utm_source=homescreen&utm_medium=chrome&utm_campaign=app",
   "display": "standalone"
 }
