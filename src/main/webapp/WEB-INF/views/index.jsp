@@ -119,7 +119,7 @@
               <h4 class="subHeading"><span itemprop="title">Analyst Programmer</span>, Wellington</h4>
               <p>I have been in <b>Software Development</b> since 2008, with more than half that time spent in <b>agile environments</b>, designing, coding, testing and supporting applications across a <b>variety of technologies</b> and <b>platforms</b>.</p>
               <p>While my background is <b>Java</b>, I have been focusing my attention on <b>JavaScript development</b> in the client layer since June 2014, working with frameworks such as Backbone, Marionette, Underscore and AngularJS.</p>
-              <p>I have a strong <b>sense of responsibility</b> and am always driven to <b>deliver on or ahead of deadlines</b>. <b>Front end</b> or <b>back end</b>, I'm equally comfortable performing either or both.</p>
+              <p>I have a strong <b>sense of responsibility</b> and am always driven to <b>deliver on or ahead of deadlines</b>. <b>Front-end</b> or <b>back-end</b>, I'm equally comfortable performing either or both.</p>
               <h4 class="subHeading">Hobbies and Interests</h4>
               <p><i class="fa fa-camera-retro"></i> Photography, <i class="fa fa-android"></i> Android, <i class="fa fa-road"></i> travel and <i class="fa fa-plane"></i> plane spotting - not necessarily in that order.</p>
               <a id="cv_request" href="#contactForm" class="btnNormal js_track_link_click">Request CV &amp; References</a>
@@ -221,7 +221,7 @@
                 <h4>EROAD <a href="http://www.eroad.co.nz" target="_blank" class="link js_track_link_click"><i class="fa fa-link"></i></a></h4>
                 <h5>Senior Java Developer</h5>
                 <h5 class="subHeading"><i>Auckland, New Zealand</i></h5>
-                <p>Employed as a Java Developer at EROAD, New Zealand's leading transport technology and services company. Worked in an <b>agile environment</b> developing and unit testing existing and new enhancements, which involved user <b>interface</b>, <b>web-services</b> and <b>back end integration</b> for EROAD's <b>Cloud Based SaaS application</b>.</p>
+                <p>Employed as a Java Developer at EROAD, New Zealand's leading transport technology and services company. Worked in an <b>agile environment</b> developing and unit testing existing and new enhancements, which involved user <b>interface</b>, <b>web-services</b> and <b>back-end integration</b> for EROAD's <b>Cloud Based SaaS application</b>.</p>
                 <p>The development environment was <b>Java</b>, and frameworks and technologies included <b>Spring MVC</b>, <b>JSP</b>, <b>JQuery</b>, <b>RESTful</b> web-services over <b>HTTP</b>, <b>JAX-WS/JAXB</b> web-services over <b>SOAP</b>, <b>Hibernate</b> and <b>PostgreSQL</b>.</p>
                 <p>Mainly functioned within the Tax and Localisation team, which included the <b>GIS</b> and mapping layer.</p>
                 <h6>Accomplishments</h6>
@@ -239,7 +239,7 @@
                 <h4>Rockwell <a href="http://nz.rockwellautomation.com" target="_blank" class="link js_track_link_click"><i class="fa fa-link"></i></a></h4>
                 <h5>Software Developer</h5>
                 <h5 class="subHeading"><i>Hamilton, New Zealand</i></h5>
-                <p>Worked as a Software Developer at the New Zealand campus of Rockwell Automation. Functioned within an <b>agile team</b> developing <b>user interface</b> elements as well as <b>web-services</b> and <b>back end integration</b> for a performance management platform used in a variety of industries worldwide. This <b>multi-tier application</b> was deployed in a web environment (<b>Tomcat</b> &amp; <b>JBoss</b>), on the <b>Java EE technology stack</b>.</p>
+                <p>Worked as a Software Developer at the New Zealand campus of Rockwell Automation. Functioned within an <b>agile team</b> developing <b>user interface</b> elements as well as <b>web-services</b> and <b>back-end integration</b> for a performance management platform used in a variety of industries worldwide. This <b>multi-tier application</b> was deployed in a web environment (<b>Tomcat</b> &amp; <b>JBoss</b>), on the <b>Java EE technology stack</b>.</p>
                 <p>The development environment was <b>Java</b>, utilizing third-party technologies such as <b>GWT</b>, to deliver a rich user experience.</p>
                 <h6>Accomplishments</h6>
                 <p>Was involved in a major overhaul of the UI for the PPM System, which, amongst other tasks, involved implementing of a <b>WYSIWYG editor</b> inside GWT. Worked with my team in New Zealand alongside teams in the US and China to re-build the data collection component.</p>
