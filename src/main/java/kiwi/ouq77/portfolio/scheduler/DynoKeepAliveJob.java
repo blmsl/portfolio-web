@@ -19,7 +19,6 @@ public class DynoKeepAliveJob implements Job {
 
 	private static final Log log = LogFactory.getLog(DynoKeepAliveJob.class);
 	private static final String GET_URL = "http://" + Launch.HEROKU_APP_DOMAIN + "/google536c542405d09504.html";
-	private static final String GET_URL_MY_NUMBERS = "https://my-numbers.herokuapp.com/robots.txt";
 
 	@Override
 	public void execute(final JobExecutionContext context) throws JobExecutionException {
@@ -34,22 +33,6 @@ public class DynoKeepAliveJob implements Job {
 				log.info(inputLine);
 			}
 			br.close();
-		} catch (final MalformedURLException e) {
-			log.error(e);
-		} catch (final IOException e) {
-			log.error(e);
-		}
-
-		try {
-			final URL urlMyNumbers = new URL(GET_URL_MY_NUMBERS);
-			final URLConnection connMyNumbers = urlMyNumbers.openConnection();
-			final BufferedReader brMyNumbers = new BufferedReader(new InputStreamReader(connMyNumbers.getInputStream()));
-
-			String inputLineMyNumbers;
-			while ((inputLineMyNumbers = brMyNumbers.readLine()) != null) {
-				log.info(inputLineMyNumbers);
-			}
-			brMyNumbers.close();
 		} catch (final MalformedURLException e) {
 			log.error(e);
 		} catch (final IOException e) {
