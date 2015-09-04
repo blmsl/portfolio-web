@@ -22,14 +22,12 @@ public class Launch {
 	 */
 	public static final String CUSTOM_APP_DOMAIN_KEY = "CUSTOM_APP_DOMAIN";
 	public static final String HEROKU_APP_DOMAIN = System.getenv("HEROKU_APP_DOMAIN");
-	private static final String ANDROID_APP_URL_KEY = "ANDROID_APP_URL";
 	private static final String GOOGLE_MAPS_API_KEY_KEY = "GOOGLE_MAPS_API_KEY";
 	private static final String PORT = System.getenv("PORT") != null && !System.getenv("PORT").isEmpty() ? System.getenv("PORT") : "8080";
 	/**
 	 * END HEROKU CONFIG VARIABLES
 	 */
 	public static final String CUSTOM_APP_DOMAIN = System.getenv(CUSTOM_APP_DOMAIN_KEY);
-	private static final String ANDROID_APP_URL = System.getenv(ANDROID_APP_URL_KEY);
 	private static final String GOOGLE_MAPS_API_KEY = System.getenv(GOOGLE_MAPS_API_KEY_KEY);
 	private static final String WEB_APPLICATION_DIR_LOCATION = "target/com.herokuapp.ouq77";
 	private static final String MAVEN_SDF = "MAVEN_SDF";
@@ -53,7 +51,6 @@ public class Launch {
 
 		log.info("configuring app with basedir: " + new File("./" + WEB_APPLICATION_DIR_LOCATION).getAbsolutePath());
 		final Context ctx = tomcat.addWebapp("/", new File(WEB_APPLICATION_DIR_LOCATION).getAbsolutePath());
-		ctx.addParameter(ANDROID_APP_URL_KEY, ANDROID_APP_URL);
 		ctx.addParameter(CUSTOM_APP_DOMAIN_KEY, CUSTOM_APP_DOMAIN);
 		ctx.addParameter(GOOGLE_MAPS_API_KEY_KEY, GOOGLE_MAPS_API_KEY);
 
