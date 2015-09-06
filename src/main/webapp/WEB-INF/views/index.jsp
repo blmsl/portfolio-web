@@ -369,6 +369,7 @@
             <li><a href="http://plus.google.com/u/0/+LouwSwart/about?rel=author" target="_blank" title="See my Google+ here" class="js_track_link_click"><i class="fa fa-google-plus fa-2x"></i></a></li>
             <li><a href="http://instagram.com/ouq77" target="_blank" title="See my Instagram here" class="js_track_link_click"><i class="fa fa-instagram fa-2x"></i></a></li>
             <li><a href="http://www.facebook.com/ouq77" target="_blank" title="See my Facebook here" class="js_track_link_click"><i class="fa fa-facebook fa-2x"></i></a></li>
+            <li><a href="https://www.codeschool.com/users/819219" target="_blank" title="See my Code School progress here" class="js_track_link_click"><i class="fa fa-code fa-2x"></i></a></li>
           </ul>
           <div class="footer-info">
             <p><i class="fa fa-info"></i> Java Web app (Spring MVC, JSP, Javascript, AJAX)</p>
