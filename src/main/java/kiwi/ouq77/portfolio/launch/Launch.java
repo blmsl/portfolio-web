@@ -8,8 +8,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 
-import kiwi.ouq77.portfolio.scheduler.DynoKeepAliveScheduler;
-
 import org.apache.catalina.Context;
 import org.apache.catalina.connector.Connector;
 import org.apache.catalina.startup.Tomcat;
@@ -69,8 +67,9 @@ public class Launch {
 		ctx.addParameter(ARTICLE_MODIFIED_TIME_KEY, buildTimestamp);
 		ctx.addParameter(LAST_MODIFIED_TIME_KEY, LAST_MODIFIED_SDF.format(cacheDate));
 
-		final DynoKeepAliveScheduler dynoKeepAliveScheduler = new DynoKeepAliveScheduler();
-		dynoKeepAliveScheduler.start();
+		// Experimenting without keep alive
+//		final DynoKeepAliveScheduler dynoKeepAliveScheduler = new DynoKeepAliveScheduler();
+//		dynoKeepAliveScheduler.start();
 
 		tomcat.start();
 		tomcat.getServer().await();
