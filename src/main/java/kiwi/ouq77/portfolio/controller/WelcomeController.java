@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import kiwi.ouq77.portfolio.launch.Launch;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,18 +23,18 @@ public class WelcomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String getIndex(final Model model) {
 
-		final List<Integer> randomFilenames = new ArrayList<Integer>(75);
+		final List<String> randomFilenames = new ArrayList<String>(75);
 		final Random random = new Random();
-		final int low = 1;
-		final int high = 130;
-		while (randomFilenames.size() < 76) {
-			int randomFilename = random.nextInt(high - low) + low;
-			if (!randomFilenames.contains(randomFilename)) {
-				randomFilenames.add(randomFilename);
+		final int idCount = Launch.INSTAGRAM_IMAGE_IDS.size();
+		final int maxImages = idCount >= 76 ? 76 : idCount;
+		while (randomFilenames.size() < maxImages) {
+			final String randomImageId = Launch.INSTAGRAM_IMAGE_IDS.get(random.nextInt(idCount));
+			if (!randomFilenames.contains(randomImageId)) {
+				randomFilenames.add(randomImageId);
 			}
 		}
 
-		model.addAttribute("randomFilenames", randomFilenames);
+		model.addAttribute("randomImageIds", randomFilenames);
 
 		return "index";
 	}

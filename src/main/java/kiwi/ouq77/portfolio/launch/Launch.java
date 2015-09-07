@@ -3,7 +3,9 @@ package kiwi.ouq77.portfolio.launch;
 import java.io.File;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 import java.util.Properties;
 
 import kiwi.ouq77.portfolio.scheduler.DynoKeepAliveScheduler;
@@ -22,6 +24,7 @@ public class Launch {
 	 */
 	public static final String CUSTOM_APP_DOMAIN_KEY = "CUSTOM_APP_DOMAIN";
 	public static final String HEROKU_APP_DOMAIN = System.getenv("HEROKU_APP_DOMAIN");
+	public static final List<String> INSTAGRAM_IMAGE_IDS = Arrays.asList(System.getenv("INSTAGRAM_IMAGE_IDS").split(","));
 	private static final String GOOGLE_MAPS_API_KEY_KEY = "GOOGLE_MAPS_API_KEY";
 	private static final String PORT = System.getenv("PORT") != null && !System.getenv("PORT").isEmpty() ? System.getenv("PORT") : "8080";
 	/**
