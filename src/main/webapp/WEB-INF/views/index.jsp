@@ -141,9 +141,9 @@
           <div class="row">
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 skillsArea">
               <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 skills">
-                <span class="chart skilBg" data-percent="85"> <span class="percent"></span></span>
+                <span class="chart skilBg" data-percent="90"> <span class="percent"></span></span>
                 <h4 class="js_trigger_skills">Scripting</h4>
-                <p>JavaScript; JQuery; AJAX; JSON;</p>
+                <p>JavaScript; AngularJS; Backbone.js; Node.js;</p>
               </div>
             </div>
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 skillsArea">
@@ -203,7 +203,7 @@
                 <h5>Analyst Programmer (UI)</h5>
                 <h5 class="subHeading"><i>Wellington, New Zealand</i></h5>
                 <p>Working as a <b>UI Developer</b> at Westpac NZ, where I have been involved in a number of projects, including <b><i>Direct from Account&trade;</i></b>, <b><i>Westpac Exhange&trade;</i></b> and <b><i>Westpac One&trade;</i></b>.</p>
-                <p>The server-side development environment is <b>Java</b>, while the client-side is built using a variety of <b>JavaScript technologies</b> and <b>frameworks</b>, most notably <b>RequireJS</b>, <b>Backbone</b>, Marionette, <b>Underscore</b>, <b>AngularJS</b>, SaSS, and, during development, <b>Node.js</b>.</p>
+                <p>The server-side development environment is <b>Java</b>, while the client-side is built using a variety of <b>JavaScript technologies</b> and <b>frameworks</b>, most notably <b>RequireJS</b>, <b>Backbone</b>, Marionette, <b>Underscore</b>, <b>AngularJS</b>, Sass, and, during development, <b>Node.js</b>.</p>
                 <p>Build and Testing tools include <b>Grunt</b>, Maven, Jenkins, JUnit, Cucumber, <b>Jasmine</b> and <b>Karma</b>.</p>
               </div>
             </div>
