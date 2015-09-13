@@ -143,21 +143,21 @@
               <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 skills">
                 <span class="chart skilBg" data-percent="90"> <span class="percent"></span></span>
                 <h4 class="js_trigger_skills">Scripting</h4>
-                <p>AngularJS; Backbone.js; Node.js;</p>
+                <p>AngularJS; Backbone.js; Node.js;</p><br>
               </div>
             </div>
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 skillsArea">
               <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 skills">
                 <span class="chart skilBg" data-percent="70"> <span class="percent"></span></span>
                 <h4 class="js_trigger_skills">Web Markup</h4>
-                <p>HTML5; CSS3;</p>
+                <p>HTML5; CSS3; Sass;</p><br>
               </div>
             </div>
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 skillsArea">
               <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 skills">
                 <span class="chart skilBg" data-percent="90"> <span class="percent"></span></span>
                 <h4 class="js_trigger_skills">Java</h4>
-                <p>Java EE; Java SE 6/7; Java ME;</p>
+                <p>Java EE; Java SE 6/7; Java ME;</p><br>
               </div>
             </div>
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 skillsArea">
