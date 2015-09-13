@@ -143,7 +143,7 @@
               <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 skills">
                 <span class="chart skilBg" data-percent="90"> <span class="percent"></span></span>
                 <h4 class="js_trigger_skills">Scripting</h4>
-                <p>AngularJS; Backbone.js; Node.js;</p><br>
+                <p>AngularJS; Backbone.js; Node.js;</p>
               </div>
             </div>
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 skillsArea">
