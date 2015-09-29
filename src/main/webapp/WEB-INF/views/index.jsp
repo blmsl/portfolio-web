@@ -336,7 +336,7 @@
           <!--contact info start-->
           <div class="col-xs-12 col-sm-3 col-md-4 col-lg-4">
             <h4 class="js_trigger_map_marker">Contact details</h4>
-            <p><i class="fa fa-map-marker fa-lg"></i> <a href="#address" id="js_click_address" class="js_track_link_click"><span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address"><span itemprop="locality">Eastbourne, Lower Hutt</span>, <span itemprop="region">Wellington</span>, <span itemprop="country-name">NZ</span></span></a></p>
+            <p><i class="fa fa-map-marker fa-lg"></i> <a href="#address" id="js_click_address" class="js_track_link_click"><span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address"><span itemprop="locality">Mount Cook</span>, <span itemprop="region">Wellington</span>, <span itemprop="country-name">NZ</span></span></a></p>
             <p><i class="fa fa-mobile fa-lg"></i> +64 22 031 3927</p>
             <p><i class="fa fa-link"></i> <a href="http://flavors.ouq77.kiwi" target="_blank" class="js_track_link_click">Flavors.me</a></p>
           </div>
