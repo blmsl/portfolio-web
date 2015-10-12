@@ -383,22 +383,23 @@
     </div>
     <!--wrapper end-->
     <!--google maps api-->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<c:out value="${initParam['GOOGLE_MAPS_API_KEY']}" />&amp;sensor=false&amp;libraries=geometry"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<c:out value="${initParam['GOOGLE_MAPS_API_KEY']}" />&amp;sensor=false&amp;libraries=geometry"></script>
     <!--minified js-->
-    <script type="text/javascript">var cache_version = <c:out value="${initParam['CACHE_VERSION']}" />;</script>
-    <script type="text/javascript" src="/resources/js/script.min.js?v=<c:out value="${initParam['CACHE_VERSION']}" />"></script>
-    <script type="text/javascript">
+    <script src="/resources/js/script.min.js?v=<c:out value="${initParam['CACHE_VERSION']}" />"></script>
+    <script>
+      function trackEvent(type, value) {
+        if(_gaq) {
+          _gaq.push(['_trackEvent', type, value]);
+        }
+      }
+
       $(document).ready(function(){
         $('.js_track_link_click').click(function() {
-          if(_gaq){
-            _gaq.push(['_trackEvent', 'link_click', $(this).attr('href')]);
-          }
+          trackEvent('link_click', $(this).attr('href'));
         });
 
         $('.submitBnt, .navbar-toggle').click(function(){
-          if(_gaq){
-            _gaq.push(['_trackEvent', 'submit_click', $(this).attr('value')]);
-          }
+          trackEvent('submit_click', $(this).attr('value'));
         });
       });
     </script>
