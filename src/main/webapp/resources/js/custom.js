@@ -82,6 +82,8 @@ var previousWidth,
     trg = { loc: { lat: -37.672093, lng: 176.197666 }, name: 'TRG: Tauranga City Airport' },
     rot = { loc: { lat: -38.109354, lng: 176.317118 }, name: 'ROT: Rotorua International Airport' },
     rar = { loc: { lat: -21.202310, lng: -159.805334 }, name: 'RAR: Rarotonga International Airport' },
+    nrt = { loc: { lat: 35.771991, lng: 140.3906614 }, name: 'NRT: Narita International Airport' },
+    sin = { loc: { lat: 1.3644256, lng: 103.9893421 }, name: 'SIN: Changi Airport Singapore' },
 
     indianocean = { lat: 4.101766, lng: 79.350061 },
     london = { lat: 51.451005, lng: -0.147970 },
@@ -101,9 +103,9 @@ var previousWidth,
     prevIcon = {url: 'resources/images/markerprev.png', size: markersize },
     cities = [{ loc: hartswater, title: 'I was born here...', icon: prevIcon }, { loc: heidelberg, title: 'I grew up here...', icon: prevIcon }, { loc: vryburg, title: 'I went to High School here...', icon: prevIcon }, { loc: london, title: lived, icon: prevIcon }, { loc: benoni, title: lived, icon: prevIcon }, { loc: capetown, title: 'I moved to NZ from here...', icon: prevIcon }, { loc: auckland, title: lived, icon: prevIcon }, { loc: hamilton, title: lived, icon: prevIcon }, { loc: mtcook, title: 'I\'m in this area...', icon: {url: 'resources/images/markercur.png', size: markersize}}],
 
-    airports = [jnb, cpt, mbd, dur, kim, bfn, plz, els, grj, mpm, gbe, wdh, buq, hre, lvi, lun, lad, dar, ebb, nbo, fih, los, abj, acc, dkr, sid, mru, gru, eze, mia, atl, iad, jfk, lga, yvr, lhr, fra, zrh, cdg, cph, ams, bom, bkk, bkkn, kix, usm, hkg, hkgn, per, dps, drw, adl, syd, hlz, chc, zqn, akl, wlg, nsn, trg, rot, rar],
+    airports = [jnb, cpt, mbd, dur, kim, bfn, plz, els, grj, mpm, gbe, wdh, buq, hre, lvi, lun, lad, dar, ebb, nbo, fih, los, abj, acc, dkr, sid, mru, gru, eze, mia, atl, iad, jfk, lga, yvr, lhr, fra, zrh, cdg, cph, ams, bom, bkk, bkkn, kix, usm, hkg, hkgn, per, dps, drw, adl, syd, hlz, chc, zqn, akl, wlg, nsn, trg, rot, rar, nrt, sin],
     journeys = [jnb, cpt, jnb, mbd, jnb, dur, jnb, kim, jnb, bfn, jnb, plz, els, jnb, grj, jnb, mpm, jnb, gbe, jnb, wdh, jnb, buq, jnb, hre, jnb, lvi, jnb, lun, jnb, lad, jnb, dar, jnb, ebb, jnb, nbo, jnb, fih, jnb, los, jnb, abj, acc, jnb, dkr, jnb, sid, jfk, jnb, mru, jnb, eze, jnb, gru, eze, cpt, lhr, cpt, fra, cpt, plz, dur, jnb, sid, mia, cpt, jnb, sid, atl, iad, lga, atl, jnb, lhr, yvr, lhr, jnb, fra, ams, fra, jnb, zrh, cph, zrh, cdg, zrh, jnb, ams, lhr, ams, jnb, nbo, lhr, jnb, bom, jnb, bkk, kix, bkk, hkgn, bkk, usm, bkk, jnb, bkkn, usm, bkkn, jnb, hkg, jnb, hkgn, akl, hkgn, jnb, per, jnb, syd, per, dps, drw, adl, syd, jnb, syd, bkkn, syd, akl, wlg, hlz, wlg, akl, chc, hlz, chc, akl, zqn, akl, wlg, akl, nsn, akl, wlg, trg, wlg, rot, wlg, chc, wlg, akl, rar, akl, wlg],
-    upcoming = [];
+    upcoming = [wlg, akl, nrt, lhr, sin, syd, wlg];
 
 (function($) {
   'use strict';
