@@ -54,8 +54,8 @@ public class ContactController {
 	private static final String INPUT_MESSAGE = "message";
 	private static final String SUBJECT = "Message from %s | " + Launch.CUSTOM_APP_DOMAIN;
 	private static final String SUBJECT_COPY = "Thanks for getting in touch | " + Launch.CUSTOM_APP_DOMAIN;
-	private static final String CONTENT = "<p>You have been contacted by %s (%s). Their additional message is as follows:</p><br><br><p>%s</p>";
-	private static final String CONTENT_COPY = "<p><strong>Thank you</strong> for getting in touch - I've received your message.</b><br><br><p>Here is a copy of what you sent:</p><br><br><p>%s (%s)<br><br>%s</p>";
+	private static final String CONTENT = "<p style=\"font-family:'Open Sans',sans-serif;color:#474d5d\">You have been contacted by %s (%s). Their additional message is as follows:</p><br><p style=\"font-family:'Open Sans',sans-serif;color:#474d5d\">%s</p>";
+	private static final String CONTENT_COPY = " <p style=\"font-family:'Open Sans',sans-serif;color:#474d5d\"><strong>Thank you</strong> for getting in touch - I've received your message and will respond soon.</p><br><p style=\"font-family:'Open Sans',sans-serif;color:#474d5d\">Here is a copy of what you sent:</p><br><p style=\"font-family:'Open Sans',sans-serif;color:#474d5d\">%s (%s)<br><br>%s</p>";
 	private static final String MESSAGE_DIV = "<div class=\"%s\">%s</div>";
 	private static final String ERROR_CLASS = "error_message";
 	private static final String SUCCESS_CLASS = "success_message";
@@ -65,7 +65,7 @@ public class ContactController {
 	private static final String EMAIL_INVALID = "You have entered an invalid email";
 	private static final String CONTAINS_ILLEGAL_CHARS = " contains one or more illegal characters: <i>< > ^ | \" ' % ; ) ( & + -</i>";
 	private static final String CONTAINS_URL = " does not allow URLs";
-	private static final String UNKNOWN_ERROR = "Something unexpected happend - please try again later...";
+	private static final String UNKNOWN_ERROR = "Something unexpected happened - please try again later...";
 	private static final String SUCCESS = "<h3>Email Sent Successfully.</h3><p>Thank you <strong>%s</strong>, your message has been sent.</p>";
 
 	@RequestMapping(value = "/send", method = RequestMethod.POST)
