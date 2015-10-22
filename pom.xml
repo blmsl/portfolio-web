@@ -203,6 +203,7 @@
                 <jsSourceFile>defenseleague.js</jsSourceFile>
               </jsSourceFiles>
               <jsEngine>CLOSURE</jsEngine>
+              <closureLanguageIn>ECMASCRIPT5</closureLanguageIn>
             </configuration>
             <goals>
               <goal>minify</goal>
