@@ -54,8 +54,8 @@ public class ContactController {
 	private static final String INPUT_MESSAGE = "message";
 	private static final String SUBJECT = "Message from %s | " + Launch.CUSTOM_APP_DOMAIN;
 	private static final String SUBJECT_COPY = "Thanks for getting in touch | " + Launch.CUSTOM_APP_DOMAIN;
-	private static final String CONTENT = "You have been contacted by %s (%s). Their additional message is as follows:\n\n%s";
-	private static final String CONTENT_COPY = "Thank you for getting in touch - I've received your message.\n\nHere is a copy of what you sent:\n\n%s (%s)\n\n%s";
+	private static final String CONTENT = "<p>You have been contacted by %s (%s). Their additional message is as follows:</p><br><br><p>%s</p>";
+	private static final String CONTENT_COPY = "<p><strong>Thank you</strong> for getting in touch - I've received your message.</b><br><br><p>Here is a copy of what you sent:</p><br><br><p>%s (%s)<br><br>%s</p>";
 	private static final String MESSAGE_DIV = "<div class=\"%s\">%s</div>";
 	private static final String ERROR_CLASS = "error_message";
 	private static final String SUCCESS_CLASS = "success_message";
@@ -67,14 +67,6 @@ public class ContactController {
 	private static final String CONTAINS_URL = " does not allow URLs";
 	private static final String UNKNOWN_ERROR = "Something unexpected happend - please try again later...";
 	private static final String SUCCESS = "<h3>Email Sent Successfully.</h3><p>Thank you <strong>%s</strong>, your message has been sent.</p>";
-
-	/**
-	 * Simply selects the contact view to render by returning its name.
-	 */
-	@RequestMapping(value = "/contact", method = RequestMethod.GET)
-	public String contact() {
-		return "contact";
-	}
 
 	@RequestMapping(value = "/send", method = RequestMethod.POST)
 	public String send(
@@ -134,9 +126,9 @@ public class ContactController {
 
 		final Session mailSession = Session.getInstance(props, auth);
 
-		final Message simpleMessage = new MimeMessage(mailSession);
-		InternetAddress fromAddress = null;
-		InternetAddress toAddress = null;
+		final Message htmlMessage = new MimeMessage(mailSession);
+		InternetAddress fromAddress;
+		InternetAddress toAddress;
 		try {
 			fromAddress = new InternetAddress(fromEmail, fromName);
 			toAddress = new InternetAddress(JAVA_MAIL_EMAIL, OWNER_NAME);
@@ -147,12 +139,12 @@ public class ContactController {
 
 		// Send my copy
 		try {
-			simpleMessage.setFrom(fromAddress);
-			simpleMessage.setReplyTo(new Address[] { fromAddress });
-			simpleMessage.setRecipient(RecipientType.TO, toAddress);
-			simpleMessage.setSubject(String.format(SUBJECT, fromName));
-			simpleMessage.setText(String.format(CONTENT, fromName, fromEmail, message));
-			Transport.send(simpleMessage);
+			htmlMessage.setFrom(fromAddress);
+			htmlMessage.setReplyTo(new Address[] { fromAddress });
+			htmlMessage.setRecipient(RecipientType.TO, toAddress);
+			htmlMessage.setSubject(String.format(SUBJECT, fromName));
+			htmlMessage.setContent(String.format(CONTENT, fromName, fromEmail, message), "text/html");
+			Transport.send(htmlMessage);
 		} catch (final MessagingException e) {
 			log.error(e);
 			return UNKNOWN_ERROR;
@@ -160,11 +152,11 @@ public class ContactController {
 
 		// Send user copy
 		try {
-			simpleMessage.setFrom(toAddress);
-			simpleMessage.setRecipient(RecipientType.TO, fromAddress);
-			simpleMessage.setSubject(SUBJECT_COPY);
-			simpleMessage.setText(String.format(CONTENT_COPY, fromName, fromEmail, message));
-			Transport.send(simpleMessage);
+			htmlMessage.setFrom(toAddress);
+			htmlMessage.setRecipient(RecipientType.TO, fromAddress);
+			htmlMessage.setSubject(SUBJECT_COPY);
+			htmlMessage.setContent(String.format(CONTENT_COPY, fromName, fromEmail, message), "text/html");
+			Transport.send(htmlMessage);
 		} catch (final MessagingException e) {
 			log.error(e);
 			return UNKNOWN_ERROR;
