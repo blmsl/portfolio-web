@@ -29,11 +29,11 @@
     <%@include file="include/social_media.jsp"%>
     <link rel="icon" href="/favicon.ico?v=${initParam['CACHE_VERSION']}" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="canonical" href="http://${initParam['CUSTOM_APP_DOMAIN']}/" />
+    <link rel="canonical" href="//${initParam['CUSTOM_APP_DOMAIN']}/" />
     <!--minified styles -->
     <link href="/resources/css/style.min.css?v=<c:out value="${initParam['CACHE_VERSION']}" />" rel="stylesheet" type="text/css" media="screen" />
     <!--google font style -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300' rel='stylesheet' type='text/css' />
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300' rel='stylesheet' type='text/css' />
     <link rel="manifest" href="manifest.json">
     <noscript><link href="/resources/css/fallback.css" rel="stylesheet" type="text/css" /></noscript>
     <!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="css/fallback.css" /><![endif]-->
@@ -199,7 +199,7 @@
             <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
               <div class="arrowpart"></div>
               <div class="exCon">
-                <h4>Westpac New Zealand Ltd <a href="http://www.westpac.co.nz" target="_blank" class="link js_track_link_click"><i class="fa fa-link"></i></a></h4>
+                <h4>Westpac New Zealand Ltd <a href="https://www.westpac.co.nz" target="_blank" class="link js_track_link_click"><i class="fa fa-link"></i></a></h4>
                 <h5>Analyst Programmer (UI)</h5>
                 <h5 class="subHeading"><i>Wellington, New Zealand</i></h5>
                 <p>Working as a <b>UI Developer</b> at Westpac NZ, where I have been involved in a number of projects, including <b><i>Direct from Account&trade;</i></b>, <b><i>Westpac Exhange&trade;</i></b> and <b><i>Westpac One&trade;</i></b>.</p>
