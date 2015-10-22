@@ -389,7 +389,7 @@
     <script>
     
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('./service-worker.js', {scope: './'});
+        navigator.serviceWorker.register('/resources/js/service-worker.min.js', {scope: './'});
       }
       
       function trackEvent(type, value) {
