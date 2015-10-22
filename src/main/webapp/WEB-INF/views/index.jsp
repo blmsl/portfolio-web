@@ -389,7 +389,11 @@
     <script>
     
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/resources/js/sw.min.js', {scope: '/resources/js/'});
+        navigator.serviceWorker.register('/resources/js/sw.min.js', {scope: '/resources/js/'}).then(function() {
+          // success
+        }).catch(function(error) {
+          // failed - possibly not HTTPS
+        });
       }
       
       function trackEvent(type, value) {
