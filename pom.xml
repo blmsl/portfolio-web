@@ -199,10 +199,25 @@
                 <jsSourceFile>lib/jquery.easing.min.js</jsSourceFile>
                 <jsSourceFile>lib/jquery.easypiechart.js</jsSourceFile>
                 <jsSourceFile>contact.js</jsSourceFile>
-                <jsSourceFile>lib/service-worker.js</jsSourceFile>
                 <jsSourceFile>defenseleague.js</jsSourceFile>
               </jsSourceFiles>
               <jsEngine>CLOSURE</jsEngine>
+              <closureLanguageIn>ECMASCRIPT5</closureLanguageIn>
+            </configuration>
+            <goals>
+              <goal>minify</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>service-worker-minify</id>
+            <configuration>
+              <charset>UTF-8</charset>
+              <jsSourceDir>resources/js</jsSourceDir>
+              <jsSourceFiles>
+                <jsSourceFile>lib/service-worker.js</jsSourceFile>
+              </jsSourceFiles>
+              <jsEngine>CLOSURE</jsEngine>
+              <jsFinalFile>service-worker.min.js</jsFinalFile>
               <closureLanguageIn>ECMASCRIPT5</closureLanguageIn>
             </configuration>
             <goals>
