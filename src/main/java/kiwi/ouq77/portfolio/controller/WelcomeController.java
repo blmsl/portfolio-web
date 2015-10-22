@@ -23,7 +23,7 @@ public class WelcomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String getIndex(final Model model) {
 
-		final List<String> randomFilenames = new ArrayList<String>(75);
+		final List<String> randomFilenames = new ArrayList<>(75);
 		final Random random = new Random();
 		final int idCount = Launch.INSTAGRAM_IMAGE_IDS.size();
 		final int maxImages = idCount >= 76 ? 76 : idCount;
