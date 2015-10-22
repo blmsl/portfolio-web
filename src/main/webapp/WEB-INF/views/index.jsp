@@ -387,6 +387,11 @@
     <!--minified js-->
     <script src="/resources/js/script.min.js?v=<c:out value="${initParam['CACHE_VERSION']}" />"></script>
     <script>
+    
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./service-worker.js', {scope: './'});
+      }
+      
       function trackEvent(type, value) {
         if(_gaq) {
           _gaq.push(['_trackEvent', type, value]);
