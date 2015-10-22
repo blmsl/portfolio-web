@@ -67,10 +67,6 @@ public class Launch {
 		ctx.addParameter(ARTICLE_MODIFIED_TIME_KEY, buildTimestamp);
 		ctx.addParameter(LAST_MODIFIED_TIME_KEY, LAST_MODIFIED_SDF.format(cacheDate));
 
-		// Experimenting without keep alive
-//		final DynoKeepAliveScheduler dynoKeepAliveScheduler = new DynoKeepAliveScheduler();
-//		dynoKeepAliveScheduler.start();
-
 		tomcat.start();
 		tomcat.getServer().await();
 	}
