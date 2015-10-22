@@ -51,7 +51,7 @@ public class Launch {
 		c.setProperty("compressableMimeType", "text/html, text/xml, text/css, application/json, application/javascript");
 
 		log.info("configuring app with basedir: " + new File("./" + WEB_APPLICATION_DIR_LOCATION).getAbsolutePath());
-		final Context ctx = tomcat.addWebapp("/", new File(WEB_APPLICATION_DIR_LOCATION).getAbsolutePath());
+		final Context ctx = tomcat.addWebapp("", new File(WEB_APPLICATION_DIR_LOCATION).getAbsolutePath());
 		ctx.addParameter(CUSTOM_APP_DOMAIN_KEY, CUSTOM_APP_DOMAIN);
 		ctx.addParameter(GOOGLE_MAPS_API_KEY_KEY, GOOGLE_MAPS_API_KEY);
 
