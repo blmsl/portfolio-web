@@ -1,4 +1,4 @@
-<%@taglib prefix="compress" uri="http://htmlcompressor.googlecode.com/taglib/compressor"%><compress:html
+  <%@taglib prefix="compress" uri="http://htmlcompressor.googlecode.com/taglib/compressor"%><compress:html
   enabled="true"
   preserveLineBreaks="false"
   removeMultiSpaces="true"
@@ -389,11 +389,9 @@
     <script>
     
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/resources/js/sw.min.js', {scope: '/resources/js/'}).then(function() {
-          // success
-        }).catch(function(error) {
-          // failed - possibly not HTTPS
-        });
+        try {
+          navigator.serviceWorker.register('/resources/js/sw.min.js', {scope: '/resources/js/'});
+        } catch (err) {}
       }
       
       function trackEvent(type, value) {
