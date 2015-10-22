@@ -53,6 +53,7 @@ public class ContactController {
 	private static final String INPUT_EMAIL = "email";
 	private static final String INPUT_MESSAGE = "message";
 	private static final String SUBJECT = "Message from %s | " + Launch.CUSTOM_APP_DOMAIN;
+	private static final String SUBJECT_COPY = "Thanks for getting in touch | " + Launch.CUSTOM_APP_DOMAIN;
 	private static final String CONTENT = "You have been contacted by %s (%s). Their additional message is as follows:\n\n%s";
 	private static final String CONTENT_COPY = "Thank you for getting in touch - I've received your message.\n\nHere is a copy of what you sent:\n\n%s (%s)\n\n%s";
 	private static final String MESSAGE_DIV = "<div class=\"%s\">%s</div>";
@@ -161,7 +162,7 @@ public class ContactController {
 		try {
 			simpleMessage.setFrom(toAddress);
 			simpleMessage.setRecipient(RecipientType.TO, fromAddress);
-			simpleMessage.setSubject(String.format(SUBJECT, OWNER_NAME));
+			simpleMessage.setSubject(SUBJECT_COPY);
 			simpleMessage.setText(String.format(CONTENT_COPY, fromName, fromEmail, message));
 			Transport.send(simpleMessage);
 		} catch (final MessagingException e) {
