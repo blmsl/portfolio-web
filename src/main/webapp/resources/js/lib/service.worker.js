@@ -24,6 +24,8 @@
 // cache, then increment the CACHE_VERSION value. It will kick off the service worker update
 // flow and the old cache(s) will be purged as part of the activate event handler when the
 // updated service worker is activated.
+'use strict';
+
 var CACHE_VERSION = 1;
 var CURRENT_CACHES = {
   'offline-analytics': 'offline-analytics-v' + CACHE_VERSION

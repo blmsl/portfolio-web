@@ -5,7 +5,7 @@
   removeComments="true"
   removeQuotes="true"
   compressJavaScript="true"
-  jsCompressor="closure"
+  jsCompressor="yui"
   closureOptLevel="whitespace">
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@page contentType="text/html; charset=UTF-8"%>
@@ -389,7 +389,7 @@
     <script>
     
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/resources/js/service-worker.min.js', {scope: './'});
+        navigator.serviceWorker.register('/resources/js/sw.min.js', {scope: '/resources/js/'});
       }
       
       function trackEvent(type, value) {
