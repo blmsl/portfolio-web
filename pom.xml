@@ -217,7 +217,7 @@
                 <jsSourceFile>lib/service-worker.js</jsSourceFile>
               </jsSourceFiles>
               <jsEngine>CLOSURE</jsEngine>
-              <jsFinalFile>service-worker.min.js</jsFinalFile>
+              <jsFinalFile>service-worker.js</jsFinalFile>
               <closureLanguageIn>ECMASCRIPT5</closureLanguageIn>
             </configuration>
             <goals>
