@@ -25,6 +25,12 @@
       "sizes": "96x96",
       "type": "image/png",
       "density": "2.0"
+    },
+    {
+      "src": "resources/images/manifesticons/eightbitme-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "density": "2.0"
     }
   ],
   "start_url": "/?utm_source=homescreen&utm_medium=chrome&utm_campaign=app",
