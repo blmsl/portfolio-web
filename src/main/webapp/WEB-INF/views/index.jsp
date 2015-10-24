@@ -27,6 +27,7 @@
     <meta name="description" content="On-line Portfolio and CV for Louw Swart - Analyst Programmer based in Wellington, New Zealand" />
     <meta name="keywords" content="louw swart portfolio cv java developer analyst programmer javascript ui" />
     <%@include file="include/social_media.jsp"%>
+    <%@include file="include/apple_icons.jsp"%>
     <link rel="icon" href="/favicon.ico?v=${initParam['CACHE_VERSION']}" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="canonical" href="//${initParam['CUSTOM_APP_DOMAIN']}/" />
