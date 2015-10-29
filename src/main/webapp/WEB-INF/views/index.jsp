@@ -391,7 +391,7 @@
     
       if ('serviceWorker' in navigator) {
         try {
-          navigator.serviceWorker.register('/resources/js/sw.min.js', {scope: '/resources/js/'});
+          navigator.serviceWorker.register('/sw.min.js', {scope: './'});
         } catch (err) {}
       }
       
