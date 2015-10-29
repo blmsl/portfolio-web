@@ -16,6 +16,7 @@
   <mvc:resources mapping="/sitemap.xml" location="/" cache-period="86400" />
   <mvc:resources mapping="/robots.txt" location="/" cache-period="86400" />
   <mvc:resources mapping="/manifest.json" location="/" cache-period="86400" />
+  <mvc:resources mapping="/sw.min.js" location="/" cache-period="86400" />
   <mvc:resources mapping="/*.html" location="/" cache-period="86400" />
 
   <!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
