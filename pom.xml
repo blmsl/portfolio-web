@@ -211,6 +211,7 @@
                 <jsSourceFile>lib/service.worker.js</jsSourceFile>
               </jsSourceFiles>
               <jsEngine>CLOSURE</jsEngine>
+              <jsTargetDir>/</jsTargetDir>
               <jsFinalFile>sw.js</jsFinalFile>
               <closureLanguage>ECMASCRIPT5_STRICT</closureLanguage>
             </configuration>
