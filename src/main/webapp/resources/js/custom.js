@@ -174,7 +174,7 @@ var previousWidth,
       if (timeoutMenuAnimate) {
         clearTimeout(timeoutMenuAnimate);
       }
-      // wait half a second for menu collaps/expand to finish
+      // wait half a second for menu collapse/expand to finish
       timeoutMenuAnimate = setTimeout(function() {
         if ($('#js_navbar').hasClass('in')) {
           if (!elementInViewport($('#js_links_li'))) {

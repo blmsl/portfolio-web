@@ -22,7 +22,7 @@
 <meta property="og:url" content="http://${pageContext.request.serverName}/" />
 <meta property="og:image" content="http://${pageContext.request.serverName}/resources/images/icon.png?v=1" />
 <meta property="og:description" content="On-line Portfolio and CV for Louw Swart - Analyst Programmer based in Wellington, New Zealand" />
-<meta property="og:site_name" content="ouq77.herokupp.com" /> 
+<meta property="og:site_name" content="portfolio.ouq77.kiwi" />
 <meta property="article:published_time" content="2014-05-17T00:00:00+1200" /> 
 <meta property="article:modified_time" content="${initParam['ARTICLE_MODIFIED_TIME']}" />
 <!-- Social Media ends -->
