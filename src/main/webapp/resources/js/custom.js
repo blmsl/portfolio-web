@@ -8,6 +8,7 @@ var previousWidth,
     timeoutZoom,
     initialZoom,
     map,
+    mapOptions,
     tilesloaded = false,
     journeyLine,
     upcomingJourneyLine,
@@ -19,6 +20,13 @@ var previousWidth,
     additionalMarkerWait = 0,
     skillChartDrawn = false,
     mapMarkersDrawn = false,
+    viewportWidth,
+    viewportHeight,
+    minTop,
+    maxTop,
+    minLeft,
+    maxLeft,
+    elementOffset,
 
     jnb = { loc: { lat: -26.136837, lng: 28.241157 }, name: 'JNB: OR Tambo International Airport, Johannesburg' },
     cpt = { loc: { lat: -33.971459, lng: 18.602241 }, name: 'CPT: Cape Town International Airport' },
@@ -109,37 +117,49 @@ var previousWidth,
 
 (function($) {
   'use strict';
-  // For background slider
-  $(function() {
-    $('#ri-grid').gridrotator({
-      rows : 6,
-      columns : 8,
-      animType : 'rotateBottom',
-      animSpeed : 300,
-      step : 'random',
-      maxStep : 3,
-      preventClick : true,
-      onhover : true,
-      w1024 : {
+
+  $.ajax({
+    url: '/imageids'
+  }).done(function(response) {
+    var imageIds = [],
+        slideShowEl = $('#js_cb_slideshow');
+
+    imageIds.concat(response.randomImageIds).forEach(function(imageId) {
+      slideShowEl.append('<li><a href="#"><img src="//instagram.com/p/' + imageId + '/media/?size=m" alt="© Louw Swart" /></a></li>');
+    });
+
+    // For background slider
+    $(function() {
+      $('#ri-grid').gridrotator({
         rows : 6,
-        columns : 6
-      },
-      w768 : {
-        rows : 7,
-        columns : 4
-      },
-      w480 : {
-        rows : 6,
-        columns : 3
-      },
-      w320 : {
-        rows : 4,
-        columns : 2
-      },
-      w240 : {
-        rows : 4,
-        columns : 2
-      }
+        columns : 8,
+        animType : 'rotateBottom',
+        animSpeed : 300,
+        step : 'random',
+        maxStep : 3,
+        preventClick : true,
+        onhover : true,
+        w1024 : {
+          rows : 6,
+          columns : 6
+        },
+        w768 : {
+          rows : 7,
+          columns : 4
+        },
+        w480 : {
+          rows : 6,
+          columns : 3
+        },
+        w320 : {
+          rows : 4,
+          columns : 2
+        },
+        w240 : {
+          rows : 4,
+          columns : 2
+        }
+      });
     });
   });
 
@@ -213,18 +233,18 @@ var previousWidth,
   // smooth page scroll
   $(function() {
     $('a[href*=#]:not([href=#])').click(
-        function() {
-          if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-            if (target.length) {
-              $('html,body').animate({
-                scrollTop : target.offset().top - 60
-              }, 1000);
-              return false;
-            }
+      function() {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+          if (target.length) {
+            $('html,body').animate({
+              scrollTop : target.offset().top - 60
+            }, 1000);
+            return false;
           }
-        });
+        }
+      });
   });
 
   $(window).load(function() {
@@ -250,10 +270,10 @@ function drawChart() {
 }
 
 function setBannerSize(previousWidth, previousHeight) {
-  var windowWidth = $(window).width();
-  var windowHeight = $(window).height();
-  var widthChanged = previousWidth != windowWidth;
-  var heightChanged = false;
+  var windowWidth = $(window).width(),
+    windowHeight = $(window).height(),
+    widthChanged = previousWidth != windowWidth,
+    heightChanged = false;
   // mobile browsers ads about 60px to screen height when hiding address bar - ignore this
   if (windowHeight - previousHeight > 60) {
     heightChanged = true;
@@ -275,13 +295,13 @@ function setDynamicCssValues() {
 }
 
 function elementInViewport(el) {
-  var viewportWidth = $(window).width(),
-      viewportHeight = $(window).height(),
-      minTop = $(document).scrollTop(),
-      maxTop = minTop + viewportHeight,
-      minLeft = $(document).scrollLeft(),
-      maxLeft = minLeft + viewportWidth,
-      elementOffset = el.offset();
+  viewportWidth = $(window).width();
+  viewportHeight = $(window).height();
+  minTop = $(document).scrollTop();
+  maxTop = minTop + viewportHeight;
+  minLeft = $(document).scrollLeft();
+  maxLeft = minLeft + viewportWidth;
+  elementOffset = el.offset();
 
   return ((elementOffset.top > minTop && elementOffset.top < maxTop)
       && (elementOffset.left > minLeft && elementOffset.left < maxLeft));
@@ -290,7 +310,7 @@ function elementInViewport(el) {
 // Google maps
 function initializeMap() {
   initialZoom = $(window).width() >= 1000 ? 2 : 0;
-  var mapOptions = {
+  mapOptions = {
     scrollwheel : false,
     center : indianocean,
     zoom : initialZoom,
@@ -397,64 +417,64 @@ function initializeMap() {
 
 function dropMarkers(wait) {
   $('.js_trigger_map_marker').each(function() {
-      if (!mapMarkersDrawn && elementInViewport($(this))) {
-        if (tilesloaded) {
-          mapMarkersDrawn = true;
-          setTimeout(function() {
-            //if (initialZoom > 1) {
-              for (var i = 1; i <= airports.length; i++) {
-                setTimeout(function() {
-                  new google.maps.Marker({
-                    position : new google.maps.LatLng(airports[airportIterator].loc.lat, airports[airportIterator].loc.lng),
-                    map : map,
-                    draggable : false,
-                    animation : google.maps.Animation.DROP,
-                    zIndex : 100,
-                    title : airports[airportIterator].name,
-                    icon : {
-                      url : 'resources/images/markerairport.png',
-                      size : airportsize
-                    }
-                  });
-                  airportIterator++;
-                }, i * 130);
-              }
-              for (var j = 0; j < journeys.length; j++) {
-                setTimeout(function() {
-                  journeyLine.push(new google.maps.LatLng(journeys[journeyIterator].loc.lat, journeys[journeyIterator].loc.lng));
-                  journeyIterator++;
-                }, j * 65);
-              }
-              for (var k = 0; k < upcoming.length; k++) {
-                setTimeout(function() {
-                  upcomingJourneyLine.push(new google.maps.LatLng(upcoming[upcomingIterator].loc.lat, upcoming[upcomingIterator].loc.lng));
-                  upcomingIterator++;
-                }, (k + journeys.length) * 65);
-              }
-              additionalMarkerWait = ((airports.length - 1) * 100);
-            //}
-            for (var m = 1; m <= cities.length; m++) {
+    if (!mapMarkersDrawn && elementInViewport($(this))) {
+      if (tilesloaded) {
+        mapMarkersDrawn = true;
+        setTimeout(function() {
+          //if (initialZoom > 1) {
+            for (var i = 1; i <= airports.length; i++) {
               setTimeout(function() {
-                addMarker();
-              }, (m * 650) + additionalMarkerWait);
+                new google.maps.Marker({
+                  position : new google.maps.LatLng(airports[airportIterator].loc.lat, airports[airportIterator].loc.lng),
+                  map : map,
+                  draggable : false,
+                  animation : google.maps.Animation.DROP,
+                  zIndex : 100,
+                  title : airports[airportIterator].name,
+                  icon : {
+                    url : 'resources/images/markerairport.png',
+                    size : airportsize
+                  }
+                });
+                airportIterator++;
+              }, i * 130);
             }
+            for (var j = 0; j < journeys.length; j++) {
+              setTimeout(function() {
+                journeyLine.push(new google.maps.LatLng(journeys[journeyIterator].loc.lat, journeys[journeyIterator].loc.lng));
+                journeyIterator++;
+              }, j * 65);
+            }
+            for (var k = 0; k < upcoming.length; k++) {
+              setTimeout(function() {
+                upcomingJourneyLine.push(new google.maps.LatLng(upcoming[upcomingIterator].loc.lat, upcoming[upcomingIterator].loc.lng));
+                upcomingIterator++;
+              }, (k + journeys.length) * 65);
+            }
+            additionalMarkerWait = ((airports.length - 1) * 100);
+          //}
+          for (var m = 1; m <= cities.length; m++) {
             setTimeout(function() {
-              map.panTo(wellington);
-              zoomMap();
-            }, ((cities.length + 1) * 850) + additionalMarkerWait);
-          }, wait);
-        } else {
-          if (timeoutTilesloaded) {
-            clearTimeout(timeoutTilesloaded);
+              addMarker();
+            }, (m * 650) + additionalMarkerWait);
           }
           setTimeout(function() {
-            if (!mapMarkersDrawn) {
-              dropMarkers(1000);
-            }
-          }, 500);
+            map.panTo(wellington);
+            zoomMap();
+          }, ((cities.length + 1) * 850) + additionalMarkerWait);
+        }, wait);
+      } else {
+        if (timeoutTilesloaded) {
+          clearTimeout(timeoutTilesloaded);
         }
+        setTimeout(function() {
+          if (!mapMarkersDrawn) {
+            dropMarkers(1000);
+          }
+        }, 500);
       }
-    });
+    }
+  });
 }
 
 function addMarker() {
