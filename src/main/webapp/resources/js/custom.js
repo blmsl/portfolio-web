@@ -92,7 +92,7 @@ var previousWidth,
     arn = { loc: { lat: 59.6497649, lng: 17.921592}, name: 'ARN: Stockholm Arlanda Airport' },
     bgo = { loc: { lat: 60.2918326, lng: 5.2198286}, name: 'BGO: Bergen Airport' },
     trd = { loc: { lat: 63.4582722, lng: 10.9204103}, name: 'TRD: Trondheim Airport' },
-    boo = { loc: { lat: 67.268313, lng: 14.3600464}, name: 'BOO: Bodø Airport Airport' },
+    boo = { loc: { lat: 67.268313, lng: 14.3600464}, name: 'BOO: Bodø Airport' },
     sjv = { loc: { lat: 68.243335, lng: 14.6669783}, name: 'SJV: Svolvær Airport' },
     tos = { loc: { lat: 69.6819372, lng: 18.914075}, name: 'TOS: Tromsø Airport' },
 
@@ -176,7 +176,7 @@ var previousWidth,
       [akl, rar]
     ],
     upcomingJourneys = [
-      [wlg, akl, nrt, lhr],
+      [akl, nrt, lhr],
       [lhr, arn],
       [bgo, trd],
       [boo, sjv],
