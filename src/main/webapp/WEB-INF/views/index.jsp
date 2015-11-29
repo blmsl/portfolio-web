@@ -61,9 +61,6 @@
             <div id="ri-grid" class="ri-grid-loading ri-grid ri-grid-size-2">
               <img class="ri-loading-image" src="/resources/images/loading.gif?v=<c:out value="${initParam['CACHE_VERSION']}" />" alt="Loading..." />
               <ul id="js_cb_slideshow" class="cb-slideshow">
-                <c:forEach var="randomImageId" items="${randomImageIds}">
-                <li><a href="#"><img src="//instagram.com/p/<c:out value="${randomImageId}" />/media/?size=m" alt="© Louw Swart" /></a></li>
-                </c:forEach>
               </ul>
             </div>
             <!--slider end-->
