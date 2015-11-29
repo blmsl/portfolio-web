@@ -92,6 +92,12 @@ var previousWidth,
     rar = { loc: { lat: -21.202310, lng: -159.805334 }, name: 'RAR: Rarotonga International Airport' },
     nrt = { loc: { lat: 35.771991, lng: 140.3906614 }, name: 'NRT: Narita International Airport' },
     sin = { loc: { lat: 1.3644256, lng: 103.9893421 }, name: 'SIN: Changi Airport Singapore' },
+    arn = { loc: { lat: 59.6497649, lng: 17.921592}, name: 'ARN: Stockholm Arlanda Airport' },
+    bgo = { loc: { lat: 60.2918326, lng: 5.2198286}, name: 'BGO: Bergen Airport' },
+    trd = { loc: { lat: 63.4582722, lng: 10.9204103}, name: 'TRD: Trondheim Airport' },
+    boo = { loc: { lat: 67.268313, lng: 14.3600464}, name: 'BOO: Bodø Airport Airport' },
+    sjv = { loc: { lat: 68.243335, lng: 14.6669783}, name: 'SJV: Svolvær Airport' },
+    tos = { loc: { lat: 69.6819372, lng: 18.914075}, name: 'TOS: Tromsø Airport' },
 
     indianocean = { lat: 4.101766, lng: 79.350061 },
     london = { lat: 51.451005, lng: -0.147970 },
@@ -111,9 +117,9 @@ var previousWidth,
     prevIcon = {url: 'resources/images/markerprev.png', size: markersize },
     cities = [{ loc: hartswater, title: 'I was born here...', icon: prevIcon }, { loc: heidelberg, title: 'I grew up here...', icon: prevIcon }, { loc: vryburg, title: 'I went to High School here...', icon: prevIcon }, { loc: london, title: lived, icon: prevIcon }, { loc: benoni, title: lived, icon: prevIcon }, { loc: capetown, title: 'I moved to NZ from here...', icon: prevIcon }, { loc: auckland, title: lived, icon: prevIcon }, { loc: hamilton, title: lived, icon: prevIcon }, { loc: mtcook, title: 'I\'m in this area...', icon: {url: 'resources/images/markercur.png', size: markersize}}],
 
-    airports = [jnb, cpt, mbd, dur, kim, bfn, plz, els, grj, mpm, gbe, wdh, buq, hre, lvi, lun, lad, dar, ebb, nbo, fih, los, abj, acc, dkr, sid, mru, gru, eze, mia, atl, iad, jfk, lga, yvr, lhr, fra, zrh, cdg, cph, ams, bom, bkk, bkkn, kix, usm, hkg, hkgn, per, dps, drw, adl, syd, hlz, chc, zqn, akl, wlg, nsn, trg, rot, rar, nrt, sin],
+    airports = [jnb, cpt, mbd, dur, kim, bfn, plz, els, grj, mpm, gbe, wdh, buq, hre, lvi, lun, lad, dar, ebb, nbo, fih, los, abj, acc, dkr, sid, mru, gru, eze, mia, atl, iad, jfk, lga, yvr, lhr, fra, zrh, cdg, cph, ams, bom, bkk, bkkn, kix, usm, hkg, hkgn, per, dps, drw, adl, syd, hlz, chc, zqn, akl, wlg, nsn, trg, rot, rar, nrt, sin, arn, bgo, trd, boo, sjv, tos],
     journeys = [jnb, cpt, jnb, mbd, jnb, dur, jnb, kim, jnb, bfn, jnb, plz, els, jnb, grj, jnb, mpm, jnb, gbe, jnb, wdh, jnb, buq, jnb, hre, jnb, lvi, jnb, lun, jnb, lad, jnb, dar, jnb, ebb, jnb, nbo, jnb, fih, jnb, los, jnb, abj, acc, jnb, dkr, jnb, sid, jfk, jnb, mru, jnb, eze, jnb, gru, eze, cpt, lhr, cpt, fra, cpt, plz, dur, jnb, sid, mia, cpt, jnb, sid, atl, iad, lga, atl, jnb, lhr, yvr, lhr, jnb, fra, ams, fra, jnb, zrh, cph, zrh, cdg, zrh, jnb, ams, lhr, ams, jnb, nbo, lhr, jnb, bom, jnb, bkk, kix, bkk, hkgn, bkk, usm, bkk, jnb, bkkn, usm, bkkn, jnb, hkg, jnb, hkgn, akl, hkgn, jnb, per, jnb, syd, per, dps, drw, adl, syd, jnb, syd, bkkn, syd, akl, wlg, hlz, wlg, akl, chc, hlz, chc, akl, zqn, akl, wlg, akl, nsn, akl, wlg, trg, wlg, rot, wlg, chc, wlg, akl, rar, akl, wlg],
-    upcoming = [wlg, akl, nrt, lhr, sin, syd, wlg];
+    upcoming = [wlg, akl, nrt, lhr, arn, bgo, trd, boo, sjv, tos, arn, lhr, sin, syd, wlg];
 
 (function($) {
   'use strict';
@@ -182,7 +188,7 @@ var previousWidth,
         clearTimeout(timeoutResize);
       }
       // wait half a second for resizing to stop before setting new sizes
-      timeoutResize = setTimeout(function() {
+      timeoutResize = _.delay(function() {
         previousWidth = $(window).width();
         previousHeight = $(window).innerHeight();
       }, 500);
@@ -195,7 +201,7 @@ var previousWidth,
         clearTimeout(timeoutMenuAnimate);
       }
       // wait half a second for menu collapse/expand to finish
-      timeoutMenuAnimate = setTimeout(function() {
+      timeoutMenuAnimate = _.delay(function() {
         if ($('#js_navbar').hasClass('in')) {
           if (!elementInViewport($('#js_links_li'))) {
             $('html,body').animate({
@@ -212,7 +218,7 @@ var previousWidth,
       if (timeoutScroll) {
         clearTimeout(timeoutScroll);
       }
-      timeoutScroll = setTimeout(function() {
+      timeoutScroll = _.delay(function() {
         if (!skillChartDrawn) {
           drawChart();
         }
@@ -420,10 +426,10 @@ function dropMarkers(wait) {
     if (!mapMarkersDrawn && elementInViewport($(this))) {
       if (tilesloaded) {
         mapMarkersDrawn = true;
-        setTimeout(function() {
+        _.delay(function() {
           //if (initialZoom > 1) {
             for (var i = 1; i <= airports.length; i++) {
-              setTimeout(function() {
+              _.delay(function() {
                 new google.maps.Marker({
                   position : new google.maps.LatLng(airports[airportIterator].loc.lat, airports[airportIterator].loc.lng),
                   map : map,
@@ -440,7 +446,7 @@ function dropMarkers(wait) {
               }, i * 130);
             }
             for (var j = 0; j < journeys.length; j++) {
-              setTimeout(function() {
+              _.delay(function() {
                 journeyLine.push(new google.maps.LatLng(journeys[journeyIterator].loc.lat, journeys[journeyIterator].loc.lng));
                 journeyIterator++;
               }, j * 65);
@@ -454,11 +460,11 @@ function dropMarkers(wait) {
             additionalMarkerWait = ((airports.length - 1) * 100);
           //}
           for (var m = 1; m <= cities.length; m++) {
-            setTimeout(function() {
+            _.delay(function() {
               addMarker();
             }, (m * 650) + additionalMarkerWait);
           }
-          setTimeout(function() {
+          _.delay(function() {
             map.panTo(wellington);
             zoomMap();
           }, ((cities.length + 1) * 850) + additionalMarkerWait);
@@ -467,7 +473,7 @@ function dropMarkers(wait) {
         if (timeoutTilesloaded) {
           clearTimeout(timeoutTilesloaded);
         }
-        setTimeout(function() {
+        _.delay(function() {
           if (!mapMarkersDrawn) {
             dropMarkers(1000);
           }
@@ -493,7 +499,7 @@ function addMarker() {
       clearTimeout(timeoutMarkerBounce);
     }
     cityMarker.setAnimation(google.maps.Animation.BOUNCE);
-    timeoutMarkerBounce = setTimeout(function() {
+    timeoutMarkerBounce = _.delay(function() {
       cityMarker.setAnimation(null);
     }, 2000);
   });
@@ -504,7 +510,7 @@ function zoomMap() {
   if (timeoutZoom) {
     clearTimeout(timeoutZoom);
   }
-  timeoutZoom = setTimeout(function() {
+  timeoutZoom = _.delay(function() {
     if (($(window).width() >= 1000 && map.getZoom() < 11)
         || $(window).width() < 1000 && map.getZoom() < 10) {
       map.setZoom(map.getZoom() + 1);
@@ -522,7 +528,7 @@ function toggleBounce(marker) {
     clearTimeout(timeoutMarkerBounce);
   }
   marker.setAnimation(google.maps.Animation.BOUNCE);
-  timeoutMarkerBounce = setTimeout(function() {
+  timeoutMarkerBounce = _.delay(function() {
     marker.setAnimation(null);
   }, 2000);
 }

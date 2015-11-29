@@ -185,6 +185,7 @@
                 <jsSourceFile>lib/jquery.1.11.3.js</jsSourceFile>
                 <jsSourceFile>lib/bootstrap.js</jsSourceFile>
                 <jsSourceFile>lib/jquery.gridrotator.js</jsSourceFile>
+                <jsSourceFile>lib/underscore.js</jsSourceFile>
                 <jsSourceFile>custom.js</jsSourceFile>
                 <jsSourceFile>lib/jquery.placeholder.js</jsSourceFile>
                 <jsSourceFile>lib/stickUp.js</jsSourceFile>

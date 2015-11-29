@@ -381,7 +381,7 @@
     </div>
     <!--wrapper end-->
     <!--google maps api-->
-    <script src="https://maps.googleapis.com/maps/api/js?key=<c:out value="${initParam['GOOGLE_MAPS_API_KEY']}" />&amp;sensor=false&amp;libraries=geometry"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<c:out value="${initParam['GOOGLE_MAPS_API_KEY']}" />&amp;libraries=geometry"></script>
     <!--minified js-->
     <script src="/resources/js/script.min.js?v=<c:out value="${initParam['CACHE_VERSION']}" />"></script>
     <script>
