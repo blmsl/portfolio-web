@@ -11,7 +11,7 @@ var previousWidth,
     mapOptions,
     tilesloaded = false,
     journeyLine,
-    upcomingJourneyLine,
+    upcomingJourneyLines = [],
     cityMarkers = [],
     additionalMarkerWait = 0,
     skillChartDrawn = false,
@@ -115,7 +115,14 @@ var previousWidth,
 
     airports = [jnb, cpt, mbd, dur, kim, bfn, plz, els, grj, mpm, gbe, wdh, buq, hre, lvi, lun, lad, dar, ebb, nbo, fih, los, abj, acc, dkr, sid, mru, gru, eze, mia, atl, iad, jfk, lga, yvr, lhr, fra, zrh, cdg, cph, ams, bom, bkk, bkkn, kix, usm, hkg, hkgn, per, dps, drw, adl, syd, hlz, chc, zqn, akl, wlg, nsn, trg, rot, rar, nrt, sin, arn, bgo, trd, boo, sjv, tos],
     journeys = [jnb, cpt, jnb, mbd, jnb, dur, jnb, kim, jnb, bfn, jnb, plz, els, jnb, grj, jnb, mpm, jnb, gbe, jnb, wdh, jnb, buq, jnb, hre, jnb, lvi, jnb, lun, jnb, lad, jnb, dar, jnb, ebb, jnb, nbo, jnb, fih, jnb, los, jnb, abj, acc, jnb, dkr, jnb, sid, jfk, jnb, mru, jnb, eze, jnb, gru, eze, cpt, lhr, cpt, fra, cpt, plz, dur, jnb, sid, mia, cpt, jnb, sid, atl, iad, lga, atl, jnb, lhr, yvr, lhr, jnb, fra, ams, fra, jnb, zrh, cph, zrh, cdg, zrh, jnb, ams, lhr, ams, jnb, nbo, lhr, jnb, bom, jnb, bkk, kix, bkk, hkgn, bkk, usm, bkk, jnb, bkkn, usm, bkkn, jnb, hkg, jnb, hkgn, akl, hkgn, jnb, per, jnb, syd, per, dps, drw, adl, syd, jnb, syd, bkkn, syd, akl, wlg, hlz, wlg, akl, chc, hlz, chc, akl, zqn, akl, wlg, akl, nsn, akl, wlg, trg, wlg, rot, wlg, chc, wlg, akl, rar, akl, wlg],
-    upcomingJourneys = [wlg, akl, nrt, lhr, arn, bgo, trd, boo, sjv, tos, arn, lhr, sin, syd, wlg];
+    upcomingJourneys = [
+      [wlg, akl, nrt, lhr],
+      [lhr, arn],
+      [bgo, trd],
+      [boo, sjv],
+      [tos, arn],
+      [lhr, sin, syd, wlg]
+    ];
 
 (function($) {
   'use strict';
@@ -395,20 +402,22 @@ function initializeMap() {
     geodesic : true,
     map : map
   }).getPath();
-  upcomingJourneyLine = new google.maps.Polyline({
-    strokeOpacity : 0,
-    icons: [{
-      icon: {
-        path: 'M 0, -1 0,1',
-        strokeOpacity: 0.5,
-        strokeWeight : 2
-      },
-      offset: '0',
-      repeat: '12px'
-    }],
-    geodesic : true,
-    map : map
-  }).getPath();
+  _.each(upcomingJourneys, function(upcomingJourney, index) {
+    upcomingJourneyLines[index] = new google.maps.Polyline({
+      strokeOpacity : 0,
+      icons: [{
+        icon: {
+          path: 'M 0, -1 0,1',
+          strokeOpacity: 0.5,
+          strokeWeight : 2
+        },
+        offset: '0',
+        repeat: '12px'
+      }],
+      geodesic : true,
+      map : map
+    });
+  });
   google.maps.event.addListenerOnce(map, 'tilesloaded', function() {
     tilesloaded = true;
   });
@@ -442,9 +451,13 @@ function dropMarkers(wait) {
             }, index * 65);
           });
           _.each(upcomingJourneys, function(upcomingJourney, index) {
-            _.delay(function() {
-              upcomingJourneyLine.push(new google.maps.LatLng(upcomingJourney.loc.lat, upcomingJourney.loc.lng));
-            }, (index + journeys.length) * 65);
+            _.each(upcomingJourney, function(journey) {
+              _.delay(function() {
+                (upcomingJourneyLines[index]).getPath().push(
+                  new google.maps.LatLng(journey.loc.lat, journey.loc.lng)
+                );
+              }, (index + journeys.length) * 65)
+            });
           });
           additionalMarkerWait = ((airports.length - 1) * 100);
           _.each(cities, function(city, index) {
