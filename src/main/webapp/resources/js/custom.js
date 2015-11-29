@@ -10,7 +10,8 @@ var previousWidth,
     map,
     mapOptions,
     tilesloaded = false,
-    journeyLine,
+    journeyLines = [],
+    journeyLineDrawWait = 0,
     upcomingJourneyLines = [],
     cityMarkers = [],
     additionalMarkerWait = 0,
@@ -114,7 +115,66 @@ var previousWidth,
     cities = [{ loc: hartswater, title: 'I was born here...', icon: prevIcon }, { loc: heidelberg, title: 'I grew up here...', icon: prevIcon }, { loc: vryburg, title: 'I went to High School here...', icon: prevIcon }, { loc: london, title: lived, icon: prevIcon }, { loc: benoni, title: lived, icon: prevIcon }, { loc: capetown, title: 'I moved to NZ from here...', icon: prevIcon }, { loc: auckland, title: lived, icon: prevIcon }, { loc: hamilton, title: lived, icon: prevIcon }, { loc: mtcook, title: 'I\'m in this area...', icon: {url: 'resources/images/markercur.png', size: markersize}}],
 
     airports = [jnb, cpt, mbd, dur, kim, bfn, plz, els, grj, mpm, gbe, wdh, buq, hre, lvi, lun, lad, dar, ebb, nbo, fih, los, abj, acc, dkr, sid, mru, gru, eze, mia, atl, iad, jfk, lga, yvr, lhr, fra, zrh, cdg, cph, ams, bom, bkk, bkkn, kix, usm, hkg, hkgn, per, dps, drw, adl, syd, hlz, chc, zqn, akl, wlg, nsn, trg, rot, rar, nrt, sin, arn, bgo, trd, boo, sjv, tos],
-    journeys = [jnb, cpt, jnb, mbd, jnb, dur, jnb, kim, jnb, bfn, jnb, plz, els, jnb, grj, jnb, mpm, jnb, gbe, jnb, wdh, jnb, buq, jnb, hre, jnb, lvi, jnb, lun, jnb, lad, jnb, dar, jnb, ebb, jnb, nbo, jnb, fih, jnb, los, jnb, abj, acc, jnb, dkr, jnb, sid, jfk, jnb, mru, jnb, eze, jnb, gru, eze, cpt, lhr, cpt, fra, cpt, plz, dur, jnb, sid, mia, cpt, jnb, sid, atl, iad, lga, atl, jnb, lhr, yvr, lhr, jnb, fra, ams, fra, jnb, zrh, cph, zrh, cdg, zrh, jnb, ams, lhr, ams, jnb, nbo, lhr, jnb, bom, jnb, bkk, kix, bkk, hkgn, bkk, usm, bkk, jnb, bkkn, usm, bkkn, jnb, hkg, jnb, hkgn, akl, hkgn, jnb, per, jnb, syd, per, dps, drw, adl, syd, jnb, syd, bkkn, syd, akl, wlg, hlz, wlg, akl, chc, hlz, chc, akl, zqn, akl, wlg, akl, nsn, akl, wlg, trg, wlg, rot, wlg, chc, wlg, akl, rar, akl, wlg],
+    journeys = [
+      [jnb, cpt],
+      [jnb, mbd],
+      [jnb, dur],
+      [jnb, kim],
+      [jnb, bfn],
+      [jnb, plz, els, jnb],
+      [jnb, grj],
+      [jnb, mpm],
+      [jnb, gbe],
+      [jnb, wdh],
+      [jnb, buq],
+      [jnb, hre],
+      [jnb, lvi],
+      [jnb, lun],
+      [jnb, lad],
+      [jnb, dar],
+      [jnb, ebb],
+      [jnb, nbo, lhr],
+      [jnb, fih],
+      [jnb, los],
+      [jnb, abj, acc, jnb],
+      [jnb, dkr],
+      [jnb, sid, jfk, jnb],
+      [jnb, mru],
+      [jnb, eze],
+      [jnb, gru, eze, cpt],
+      [cpt, lhr],
+      [cpt, fra],
+      [cpt, plz, dur],
+      [sid, mia, cpt],
+      [sid, atl, iad, lga, atl, jnb],
+      [lhr, yvr],
+      [jnb, fra, ams],
+      [jnb, zrh, cph],
+      [zrh, cdg],
+      [jnb, ams, lhr],
+      [jnb, bom],
+      [jnb, bkk, kix],
+      [jnb, hkg],
+      [bkk, hkgn],
+      [bkk, usm],
+      [jnb, bkkn, usm],
+      [jnb, per, syd],
+      [jnb, syd],
+      [per, dps, drw, adl, syd],
+      [hkgn, akl],
+      [syd, bkkn],
+      [syd, akl],
+      [akl, wlg],
+      [hlz, wlg],
+      [akl, chc],
+      [hlz, chc],
+      [akl, zqn],
+      [akl, nsn],
+      [wlg, trg],
+      [wlg, rot],
+      [wlg, chc],
+      [akl, rar]
+    ],
     upcomingJourneys = [
       [wlg, akl, nrt, lhr],
       [lhr, arn],
@@ -395,13 +455,15 @@ function initializeMap() {
     ]
   };
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-  journeyLine = new google.maps.Polyline({
-    strokeOpacity : 0.5,
-    strokeColor : '#1b1f29',
-    strokeWeight : 2,
-    geodesic : true,
-    map : map
-  }).getPath();
+  _.each(journeys, function(journey, index) {
+    journeyLines[index] = new google.maps.Polyline({
+      strokeOpacity : 0.5,
+      strokeColor : '#1b1f29',
+      strokeWeight : 2,
+      geodesic : true,
+      map : map
+    });
+  });
   _.each(upcomingJourneys, function(upcomingJourney, index) {
     upcomingJourneyLines[index] = new google.maps.Polyline({
       strokeOpacity : 0,
@@ -446,17 +508,23 @@ function dropMarkers(wait) {
             }, index * 130);
           });
           _.each(journeys, function(journey, index) {
-            _.delay(function() {
-              journeyLine.push(new google.maps.LatLng(journey.loc.lat, journey.loc.lng));
-            }, index * 65);
+            _.each(journey, function(leg, lIndex) {
+              journeyLineDrawWait++;
+              _.delay(function() {
+                (journeyLines[index]).getPath().push(
+                  new google.maps.LatLng(leg.loc.lat, leg.loc.lng)
+                );
+              }, journeyLineDrawWait * 65);
+            });
           });
-          _.each(upcomingJourneys, function(upcomingJourney, index) {
-            _.each(upcomingJourney, function(journey) {
+          _.each(upcomingJourneys, function(journey, index) {
+            _.each(journey, function(leg, lIndex) {
+              journeyLineDrawWait++;
               _.delay(function() {
                 (upcomingJourneyLines[index]).getPath().push(
-                  new google.maps.LatLng(journey.loc.lat, journey.loc.lng)
+                  new google.maps.LatLng(leg.loc.lat, leg.loc.lng)
                 );
-              }, (index + journeys.length) * 65)
+              }, journeyLineDrawWait * 65);
             });
           });
           additionalMarkerWait = ((airports.length - 1) * 100);
