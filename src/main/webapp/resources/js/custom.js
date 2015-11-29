@@ -13,10 +13,6 @@ var previousWidth,
     journeyLine,
     upcomingJourneyLine,
     cityMarkers = [],
-    markerIterator = 0,
-    airportIterator = 0,
-    journeyIterator = 0,
-    upcomingIterator = 0,
     additionalMarkerWait = 0,
     skillChartDrawn = false,
     mapMarkersDrawn = false,
@@ -119,7 +115,7 @@ var previousWidth,
 
     airports = [jnb, cpt, mbd, dur, kim, bfn, plz, els, grj, mpm, gbe, wdh, buq, hre, lvi, lun, lad, dar, ebb, nbo, fih, los, abj, acc, dkr, sid, mru, gru, eze, mia, atl, iad, jfk, lga, yvr, lhr, fra, zrh, cdg, cph, ams, bom, bkk, bkkn, kix, usm, hkg, hkgn, per, dps, drw, adl, syd, hlz, chc, zqn, akl, wlg, nsn, trg, rot, rar, nrt, sin, arn, bgo, trd, boo, sjv, tos],
     journeys = [jnb, cpt, jnb, mbd, jnb, dur, jnb, kim, jnb, bfn, jnb, plz, els, jnb, grj, jnb, mpm, jnb, gbe, jnb, wdh, jnb, buq, jnb, hre, jnb, lvi, jnb, lun, jnb, lad, jnb, dar, jnb, ebb, jnb, nbo, jnb, fih, jnb, los, jnb, abj, acc, jnb, dkr, jnb, sid, jfk, jnb, mru, jnb, eze, jnb, gru, eze, cpt, lhr, cpt, fra, cpt, plz, dur, jnb, sid, mia, cpt, jnb, sid, atl, iad, lga, atl, jnb, lhr, yvr, lhr, jnb, fra, ams, fra, jnb, zrh, cph, zrh, cdg, zrh, jnb, ams, lhr, ams, jnb, nbo, lhr, jnb, bom, jnb, bkk, kix, bkk, hkgn, bkk, usm, bkk, jnb, bkkn, usm, bkkn, jnb, hkg, jnb, hkgn, akl, hkgn, jnb, per, jnb, syd, per, dps, drw, adl, syd, jnb, syd, bkkn, syd, akl, wlg, hlz, wlg, akl, chc, hlz, chc, akl, zqn, akl, wlg, akl, nsn, akl, wlg, trg, wlg, rot, wlg, chc, wlg, akl, rar, akl, wlg],
-    upcoming = [wlg, akl, nrt, lhr, arn, bgo, trd, boo, sjv, tos, arn, lhr, sin, syd, wlg];
+    upcomingJourneys = [wlg, akl, nrt, lhr, arn, bgo, trd, boo, sjv, tos, arn, lhr, sin, syd, wlg];
 
 (function($) {
   'use strict';
@@ -127,10 +123,9 @@ var previousWidth,
   $.ajax({
     url: '/imageids'
   }).done(function(response) {
-    var imageIds = [],
-        slideShowEl = $('#js_cb_slideshow');
+    var slideShowEl = $('#js_cb_slideshow');
 
-    imageIds.concat(response.randomImageIds).forEach(function(imageId) {
+    _.each(response.randomImageIds, function(imageId) {
       slideShowEl.append('<li><a href="#"><img src="//instagram.com/p/' + imageId + '/media/?size=m" alt="© Louw Swart" /></a></li>');
     });
 
@@ -393,29 +388,27 @@ function initializeMap() {
     ]
   };
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-  //if (initialZoom > 1) {
-    journeyLine = new google.maps.Polyline({
-      strokeOpacity : 0.5,
-      strokeColor : '#1b1f29',
-      strokeWeight : 2,
-      geodesic : true,
-      map : map
-    }).getPath();
-    upcomingJourneyLine = new google.maps.Polyline({
-      strokeOpacity : 0,
-      icons: [{
-        icon: {
-          path: 'M 0, -1 0,1',
-          strokeOpacity: 0.5,
-          strokeWeight : 2
-        },
-        offset: '0',
-        repeat: '12px'
-      }],
-      geodesic : true,
-      map : map
-    }).getPath();
-  //}
+  journeyLine = new google.maps.Polyline({
+    strokeOpacity : 0.5,
+    strokeColor : '#1b1f29',
+    strokeWeight : 2,
+    geodesic : true,
+    map : map
+  }).getPath();
+  upcomingJourneyLine = new google.maps.Polyline({
+    strokeOpacity : 0,
+    icons: [{
+      icon: {
+        path: 'M 0, -1 0,1',
+        strokeOpacity: 0.5,
+        strokeWeight : 2
+      },
+      offset: '0',
+      repeat: '12px'
+    }],
+    geodesic : true,
+    map : map
+  }).getPath();
   google.maps.event.addListenerOnce(map, 'tilesloaded', function() {
     tilesloaded = true;
   });
@@ -427,43 +420,38 @@ function dropMarkers(wait) {
       if (tilesloaded) {
         mapMarkersDrawn = true;
         _.delay(function() {
-          //if (initialZoom > 1) {
-            for (var i = 1; i <= airports.length; i++) {
-              _.delay(function() {
-                new google.maps.Marker({
-                  position : new google.maps.LatLng(airports[airportIterator].loc.lat, airports[airportIterator].loc.lng),
-                  map : map,
-                  draggable : false,
-                  animation : google.maps.Animation.DROP,
-                  zIndex : 100,
-                  title : airports[airportIterator].name,
-                  icon : {
-                    url : 'resources/images/markerairport.png',
-                    size : airportsize
-                  }
-                });
-                airportIterator++;
-              }, i * 130);
-            }
-            for (var j = 0; j < journeys.length; j++) {
-              _.delay(function() {
-                journeyLine.push(new google.maps.LatLng(journeys[journeyIterator].loc.lat, journeys[journeyIterator].loc.lng));
-                journeyIterator++;
-              }, j * 65);
-            }
-            for (var k = 0; k < upcoming.length; k++) {
-              setTimeout(function() {
-                upcomingJourneyLine.push(new google.maps.LatLng(upcoming[upcomingIterator].loc.lat, upcoming[upcomingIterator].loc.lng));
-                upcomingIterator++;
-              }, (k + journeys.length) * 65);
-            }
-            additionalMarkerWait = ((airports.length - 1) * 100);
-          //}
-          for (var m = 1; m <= cities.length; m++) {
+          _.each(airports, function(airport, index) {
             _.delay(function() {
-              addMarker();
-            }, (m * 650) + additionalMarkerWait);
-          }
+              new google.maps.Marker({
+                position: new google.maps.LatLng(airport.loc.lat, airport.loc.lng),
+                map: map,
+                draggable: false,
+                animation: google.maps.Animation.DROP,
+                zIndex: 100,
+                title: airport.name,
+                icon: {
+                  url: 'resources/images/markerairport.png',
+                  size: airportsize
+                }
+              });
+            }, index * 130);
+          });
+          _.each(journeys, function(journey, index) {
+            _.delay(function() {
+              journeyLine.push(new google.maps.LatLng(journey.loc.lat, journey.loc.lng));
+            }, index * 65);
+          });
+          _.each(upcomingJourneys, function(upcomingJourney, index) {
+            _.delay(function() {
+              upcomingJourneyLine.push(new google.maps.LatLng(upcomingJourney.loc.lat, upcomingJourney.loc.lng));
+            }, (index + journeys.length) * 65);
+          });
+          additionalMarkerWait = ((airports.length - 1) * 100);
+          _.each(cities, function(city, index) {
+            _.delay(function() {
+              addMarker(city, index);
+            }, (index * 650) + additionalMarkerWait);
+          });
           _.delay(function() {
             map.panTo(wellington);
             zoomMap();
@@ -483,17 +471,17 @@ function dropMarkers(wait) {
   });
 }
 
-function addMarker() {
+function addMarker(city, index) {
   cityMarkers.push(new google.maps.Marker({
-    position : new google.maps.LatLng(cities[markerIterator].loc.lat, cities[markerIterator].loc.lng),
+    position : new google.maps.LatLng(city.loc.lat, city.loc.lng),
     map : map,
-    title : cities[markerIterator].title,
+    title : city.title,
     draggable : false,
     animation : google.maps.Animation.DROP,
     zIndex : 200,
-    icon : cities[markerIterator].icon
+    icon : city.icon
   }));
-  var cityMarker = cityMarkers[markerIterator];
+  var cityMarker = cityMarkers[index];
   google.maps.event.addListener(cityMarker, 'click', function() {
     if (timeoutMarkerBounce) {
       clearTimeout(timeoutMarkerBounce);
@@ -503,7 +491,6 @@ function addMarker() {
       cityMarker.setAnimation(null);
     }, 2000);
   });
-  markerIterator++;
 }
 
 function zoomMap() {
