@@ -462,7 +462,7 @@ function initializeMap() {
       strokeWeight : 2,
       geodesic : true,
       map : map
-    });
+    }).getPath();
   });
   _.each(upcomingJourneys, function(upcomingJourney, index) {
     upcomingJourneyLines[index] = new google.maps.Polyline({
@@ -478,7 +478,7 @@ function initializeMap() {
       }],
       geodesic : true,
       map : map
-    });
+    }).getPath();
   });
   google.maps.event.addListenerOnce(map, 'tilesloaded', function() {
     tilesloaded = true;
@@ -508,20 +508,22 @@ function dropMarkers(wait) {
             }, index * 130);
           });
           _.each(journeys, function(journey, index) {
-            _.each(journey, function(leg, lIndex) {
+            var journeyLine = journeyLines[index];
+            _.each(journey, function(leg) {
               journeyLineDrawWait++;
               _.delay(function() {
-                (journeyLines[index]).getPath().push(
+                journeyLine.push(
                   new google.maps.LatLng(leg.loc.lat, leg.loc.lng)
                 );
               }, journeyLineDrawWait * 65);
             });
           });
           _.each(upcomingJourneys, function(journey, index) {
-            _.each(journey, function(leg, lIndex) {
+            var upcomingJourneyLine = upcomingJourneyLines[index];
+            _.each(journey, function(leg) {
               journeyLineDrawWait++;
               _.delay(function() {
-                (upcomingJourneyLines[index]).getPath().push(
+                upcomingJourneyLine.push(
                   new google.maps.LatLng(leg.loc.lat, leg.loc.lng)
                 );
               }, journeyLineDrawWait * 65);
@@ -588,7 +590,7 @@ function zoomMap() {
         scrollwheel : true
       });
     }
-  }, 650);
+  }, 250);
 }
 
 function toggleBounce(marker) {
