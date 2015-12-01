@@ -3,7 +3,6 @@ var previousWidth,
     timeoutResize,
     timeoutScroll,
     timeoutMenuAnimate,
-    timeoutTilesloaded,
     timeoutMarkerBounce,
     initialZoom,
     map,
@@ -239,7 +238,7 @@ var previousWidth,
       drawChart();
     }
     if (!mapMarkersDrawn) {
-      dropMarkers(2500);
+      dropMarkers(1500);
     }
 
     $(window).on('resize', function() {
@@ -540,9 +539,6 @@ function dropMarkers(wait) {
           }, ((cities.length) * 700) + additionalMarkerWait);
         }, wait);
       } else {
-        if (timeoutTilesloaded) {
-          clearTimeout(timeoutTilesloaded);
-        }
         _.delay(function() {
           if (!mapMarkersDrawn) {
             dropMarkers(1000);
@@ -577,8 +573,8 @@ function addMarker(city, index) {
 
 function zoomMap(nextZoomLevel, maxZoom) {
   if (nextZoomLevel < maxZoom) {
-    var zoomChanged = google.maps.event.addListener(map, 'zoom_changed', function(event) {
-      google.maps.event.removeListener(zoomChanged);
+    var tilesLoaded = google.maps.event.addListener(map, 'tilesloaded', function(event) {
+      google.maps.event.removeListener(tilesLoaded);
       zoomMap(map.getZoom() + 1, maxZoom);
     });
     _.delay(function() {
