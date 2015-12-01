@@ -5,7 +5,6 @@ var previousWidth,
     timeoutMenuAnimate,
     timeoutTilesloaded,
     timeoutMarkerBounce,
-    timeoutZoom,
     initialZoom,
     map,
     mapOptions,
@@ -537,8 +536,8 @@ function dropMarkers(wait) {
           });
           _.delay(function() {
             map.panTo(wellington);
-            zoomMap();
-          }, ((cities.length + 1) * 850) + additionalMarkerWait);
+            zoomMap(map.getZoom() + 1, $(window).width() >= 1000 ? 11 : 10);
+          }, ((cities.length) * 700) + additionalMarkerWait);
         }, wait);
       } else {
         if (timeoutTilesloaded) {
@@ -576,21 +575,20 @@ function addMarker(city, index) {
   });
 }
 
-function zoomMap() {
-  if (timeoutZoom) {
-    clearTimeout(timeoutZoom);
+function zoomMap(nextZoomLevel, maxZoom) {
+  if (nextZoomLevel < maxZoom) {
+    var zoomChanged = google.maps.event.addListener(map, 'zoom_changed', function(event) {
+      google.maps.event.removeListener(zoomChanged);
+      zoomMap(map.getZoom() + 1, maxZoom);
+    });
+    _.delay(function() {
+      map.setZoom(nextZoomLevel);
+    }, 280);
+  } else {
+    map.setOptions({
+      scrollwheel : true
+    });
   }
-  timeoutZoom = _.delay(function() {
-    if (($(window).width() >= 1000 && map.getZoom() < 11)
-        || $(window).width() < 1000 && map.getZoom() < 10) {
-      map.setZoom(map.getZoom() + 1);
-      zoomMap();
-    } else {
-      map.setOptions({
-        scrollwheel : true
-      });
-    }
-  }, 250);
 }
 
 function toggleBounce(marker) {
