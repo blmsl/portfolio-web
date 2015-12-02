@@ -94,7 +94,7 @@ var previousWidth,
     sjv = { loc: { lat: 68.243335, lng: 14.6669783}, name: 'SJV: Svolvær Airport' },
     tos = { loc: { lat: 69.6819372, lng: 18.914075}, name: 'TOS: Tromsø Airport' },
 
-    indianocean = { lat: 4.101766, lng: 79.350061 },
+    startPoint = { lat: 22.4988409, lng: 78.471251 },
     london = { lat: 51.451005, lng: -0.147970 },
     capetown = { lat: -33.934620, lng: 18.406203 },
     benoni = { lat: -26.172906, lng: 28.310071 },
@@ -378,7 +378,7 @@ function initializeMap() {
   initialZoom = $(window).width() >= 1000 ? 2 : 0;
   mapOptions = {
     scrollwheel : false,
-    center : indianocean,
+    center : startPoint,
     zoom : initialZoom,
     minZoom : initialZoom,
     styles : [
