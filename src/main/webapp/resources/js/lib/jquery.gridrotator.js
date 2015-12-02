@@ -217,25 +217,24 @@
           subbed = 0,
           $imgs = this.$list.find('img'),
           count = $imgs.length,
-          subColors = ['#D92727', '#FFE433', '#0DB8B5'];
+          subColors = ['#D92727', '#FFE433', '#0DB8B5'],
+          imgSources = [];
 
       $imgs.each(function() {
-        var $img = $(this),
-            src = $img.attr('src');
-        $('<img/>').load(function() {
-          ++loaded;
-          $img.parent().css('background-image', 'url(' + src + ')');
-          self._checkCanStart($imgs, loaded, subbed, count);
-        }).attr('src', src);
-
-        // If something is wrong with the image…
-        $('<img/>').error(function() {
-          ++subbed;
-          var color = Math.floor(Math.random() * 3);
-          $img.parent().css('background', subColors[color]);
-          self._checkCanStart($imgs, loaded, subbed, count);
-        }).attr('src', src);
+        var $img = $(this);
+        $img.parent().css('background-color', subColors[Math.floor(Math.random() * 3)]);
+        imgSources.push($img.attr('src'));
       });
+      self._preStart($imgs);
+      self._start();
+      if (this.$items.length === imgSources.length) {
+        this.$items.each(function(index) {
+          $(this).find('a:first-child').css('background-image', 'url(' + imgSources[index] + ')');
+        });
+        this.$itemsCache.each(function(index) {
+          $(this).find('a:first-child').css('background-image', 'url(' + imgSources[index] + ')');
+        });
+      }
     },
     _layout: function(callback) {
       var self = this;
@@ -244,15 +243,13 @@
       // reset
       this.$list.empty();
       this.$items = this.$itemsCache.clone().appendTo(this.$list);
-      var $outItems = this.$items.filter(':gt(' + (this.showTotal - 1) + ')'), $outAItems = $outItems.children('a');
+      var $outItems = this.$items.filter(':gt(' + (this.showTotal - 1) + ')'),
+          $outAItems = $outItems.children('a');
       this.outItems.length = 0;
-
       $outAItems.each(function(i) {
         self.outItems.push($(this));
       });
-
       $outItems.remove();
-
           // container's width
       var containerWidth = (document.defaultView) ? parseInt(document.defaultView.getComputedStyle(this.$el.get(0), null).width) : this.$el.width(),
           // item's width
@@ -356,29 +353,27 @@
     _visChange: function() {
       isHidden() ? clearTimeout(this.playtimeout) : this._start();
     },
-    _checkCanStart: function($imgs, loaded, subbed, count) {
-      if (loaded + subbed === count) {
-        var self = this;
-        $imgs.remove();
-        this.$el.removeClass('ri-grid-loading');
-        // the items
-        this.$items = this.$list.children('li');
-        // make a copy of the items
-        this.$itemsCache = self.$items.clone();
-        // total number of items
-        this.itemsTotal = this.$items.length;
-        // the items that will be out of the grid
-        // actually the item's child (anchor element)
-        this.outItems = [];
-        this._layout(function() {
-          self._initEvents();
-        });
-        // replace [options.step] items after [options.interval] time
-        // the items that go out are randomly chosen, while the ones
-        // that get in
-        // follow a "First In First Out" logic
-        this._start();
-      }
+    _preStart: function($imgs) {
+      var self = this;
+      $imgs.remove();
+      this.$el.removeClass('ri-grid-loading');
+      // the items
+      this.$items = this.$list.children('li');
+      // make a copy of the items
+      this.$itemsCache = self.$items.clone();
+      // total number of items
+      this.itemsTotal = this.$items.length;
+      // the items that will be out of the grid
+      // actually the item's child (anchor element)
+      this.outItems = [];
+      this._layout(function() {
+        self._initEvents();
+      });
+      // replace [options.step] items after [options.interval] time
+      // the items that go out are randomly chosen, while the ones
+      // that get in
+      // follow a "First In First Out" logic
+      this._start();
     },
     // start rotating elements
     _start: function() {
