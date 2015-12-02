@@ -21,16 +21,16 @@
 
   $special = $event.special.debouncedresize = {
     setup: function() {
-      $(this).on("resize", $special.handler);
+      $(this).on('resize', $special.handler);
     },
     teardown: function() {
-      $(this).off("resize", $special.handler);
+      $(this).off('resize', $special.handler);
     },
     handler: function(event, execAsap) {
       // Save the context
       var context = this, args = arguments, dispatch = function() {
         // set correct event type
-        event.type = "debouncedresize";
+        event.type = 'debouncedresize';
         $event.dispatch.apply(context, args);
       };
 
@@ -217,7 +217,7 @@
           subbed = 0,
           $imgs = this.$list.find('img'),
           count = $imgs.length,
-          subColors = ["#D92727", "#FFE433", "#0DB8B5"];
+          subColors = ['#D92727', '#FFE433', '#0DB8B5'];
 
       $imgs.each(function() {
         var $img = $(this),
@@ -225,15 +225,7 @@
         $('<img/>').load(function() {
           ++loaded;
           $img.parent().css('background-image', 'url(' + src + ')');
-          if (loaded + subbed === count) {
-            $imgs.remove();
-            self._preStart();
-            // replace [options.step] items after [options.interval] time
-            // the items that go out are randomly chosen, while the ones that
-            // get in
-            // follow a "First In First Out" logic
-            self._start();
-          }
+          self._checkCanStart($imgs, loaded, subbed, count);
         }).attr('src', src);
 
         // If something is wrong with the image…
@@ -241,15 +233,7 @@
           ++subbed;
           var color = Math.floor(Math.random() * 3);
           $img.parent().css('background', subColors[color]);
-          if (loaded + subbed === count) {
-            $imgs.remove();
-            self._preStart();
-            // replace [options.step] items after [options.interval] time
-            // the items that go out are randomly chosen, while the ones
-            // that get in
-            // follow a "First In First Out" logic
-            self._start();
-          }
+          self._checkCanStart($imgs, loaded, subbed, count);
         }).attr('src', src);
       });
     },
@@ -372,21 +356,29 @@
     _visChange: function() {
       isHidden() ? clearTimeout(this.playtimeout) : this._start();
     },
-    _preStart: function() {
-      var self = this;
-      this.$el.removeClass('ri-grid-loading');
-      // the items
-      this.$items = this.$list.children('li');
-      // make a copy of the items
-      this.$itemsCache = self.$items.clone();
-      // total number of items
-      this.itemsTotal = this.$items.length;
-      // the items that will be out of the grid
-      // actually the item's child (anchor element)
-      this.outItems = [];
-      this._layout(function() {
-        self._initEvents();
-      });
+    _checkCanStart: function($imgs, loaded, subbed, count) {
+      if (loaded + subbed === count) {
+        var self = this;
+        $imgs.remove();
+        this.$el.removeClass('ri-grid-loading');
+        // the items
+        this.$items = this.$list.children('li');
+        // make a copy of the items
+        this.$itemsCache = self.$items.clone();
+        // total number of items
+        this.itemsTotal = this.$items.length;
+        // the items that will be out of the grid
+        // actually the item's child (anchor element)
+        this.outItems = [];
+        this._layout(function() {
+          self._initEvents();
+        });
+        // replace [options.step] items after [options.interval] time
+        // the items that go out are randomly chosen, while the ones
+        // that get in
+        // follow a "First In First Out" logic
+        this._start();
+      }
     },
     // start rotating elements
     _start: function() {
@@ -641,12 +633,12 @@
       var args = Array.prototype.slice.call(arguments, 1);
       this.each(function() {
         if (!instance) {
-          logError("cannot call methods on gridrotator prior to initialization; attempted to call method '" + options + "'");
+          logError('cannot call methods on gridrotator prior to initialization; attempted to call method "' + options + '"');
           return;
         }
 
-        if (!$.isFunction(instance[options]) || options.charAt(0) === "_") {
-          logError("no such method '" + options + "' for gridrotator instance");
+        if (!$.isFunction(instance[options]) || options.charAt(0) === '_') {
+          logError('no such method "' + options + '" for gridrotator instance');
           return;
         }
         instance[options].apply(instance, args);
