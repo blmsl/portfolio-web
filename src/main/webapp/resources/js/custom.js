@@ -105,7 +105,7 @@ var previousWidth,
     hamilton = { lat: -37.779755, lng: 175.277283 },
     auckland = { lat: -36.847639, lng: 174.762473 },
     wellington = { lat: -41.284938, lng: 174.762324 },
-    mtcook = { lat: -41.3036014, lng: 174.7748707 },
+    mtcook = { lat: -41.2985754, lng: 174.7707331 },
     markersize = new google.maps.Size(20, 32),
     airportsize = new google.maps.Size(9, 12),
 
