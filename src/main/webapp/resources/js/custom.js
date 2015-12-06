@@ -8,6 +8,7 @@ var previousWidth,
     map,
     mapOptions,
     tilesloaded = false,
+    airportMarkerDropWait = 0,
     journeyLines = [],
     journeyLineDrawWait = 0,
     upcomingJourneyLines = [],
@@ -112,8 +113,8 @@ var previousWidth,
     prevIcon = {url: 'resources/images/markerprev.png', size: markersize },
     cities = [{ loc: hartswater, title: 'I was born here...', icon: prevIcon }, { loc: heidelberg, title: 'I grew up here...', icon: prevIcon }, { loc: vryburg, title: 'I went to High School here...', icon: prevIcon }, { loc: london, title: lived, icon: prevIcon }, { loc: benoni, title: lived, icon: prevIcon }, { loc: capetown, title: 'I moved to NZ from here...', icon: prevIcon }, { loc: auckland, title: lived, icon: prevIcon }, { loc: hamilton, title: lived, icon: prevIcon }, { loc: mtcook, title: 'I\'m in this area...', icon: {url: 'resources/images/markercur.png', size: markersize}}],
 
-    airports = [kim, plz, els, jnb, ams, lhr, nbo, cpt, mbd, dur, bfn, grj, mpm, gbe, wdh, buq, hre, lvi, lun, lad, dar, ebb, fih, hkg, los, abj, acc, dkr, sid, mru, gru, eze, mia, atl, iad, jfk, lga, yvr, fra, zrh, cdg, cph, bom, bkk, bkkn, kix, usm, hkgn, per, dps, drw, adl, syd, hlz, chc, zqn, akl, wlg, nsn, trg, rot, rar, nrt, sin, arn, bgo, trd, boo, sjv, tos],
-    journeys = [[kim, plz, els], [kim, jnb], [jnb, ams, lhr], [jnb, nbo, lhr], [jnb, cpt], [jnb, mbd], [jnb, dur], [jnb, bfn], [jnb, plz], [jnb, els], [jnb, grj], [jnb, mpm], [jnb, gbe], [jnb, wdh], [jnb, buq], [jnb, hre], [jnb, lvi], [jnb, lun], [jnb, lad], [jnb, dar], [jnb, ebb], [jnb, fih], [jnb, los], [jnb, hkg], [jnb, abj, acc, jnb], [jnb, dkr], [jnb, sid, jfk, jnb], [sid, mia, cpt], [sid, atl, iad, lga, atl, jnb], [jnb, mru], [jnb, per, syd], [jnb, eze], [jnb, gru, eze, cpt], [lhr, yvr], [jnb, fra, ams], [jnb, zrh, cph], [zrh, cdg], [jnb, bom], [jnb, bkk, kix], [jnb, hkgn], [bkk, hkgn], [bkk, usm], [jnb, bkkn, usm], [jnb, syd], [per, dps, drw, adl, syd], [cpt, bfn], [cpt, kim], [cpt, lhr], [cpt, fra], [cpt, plz, dur], [hkgn, akl], [akl, syd, bkkn], [akl, wlg], [akl, chc], [hlz, wlg], [hlz, chc], [akl, zqn], [akl, nsn], [wlg, trg], [wlg, rot], [wlg, chc], [akl, rar]],
+    airports = [kim, plz, els, jnb, ams, lhr, nbo, cpt, mbd, dur, bfn, grj, mpm, gbe, wdh, buq, hre, lvi, lun, lad, dar, ebb, fih, los, abj, acc, dkr, sid, mia, atl, iad, jfk, lga, mru, hkg, per, syd, eze, gru, yvr, fra, zrh, cdg, cph, bom, bkk, kix, bkkn, usm, hkgn, dps, drw, adl, hlz, chc, zqn, akl, wlg, nsn, trg, rot, rar, nrt, sin, arn, bgo, trd, boo, sjv, tos],
+    journeys = [[kim, plz, els], [kim, jnb], [jnb, ams, lhr], [jnb, nbo, lhr], [jnb, cpt], [jnb, mbd], [jnb, dur], [jnb, bfn], [jnb, plz], [jnb, els], [jnb, grj], [jnb, mpm], [jnb, gbe], [jnb, wdh], [jnb, buq], [jnb, hre], [jnb, lvi], [jnb, lun], [jnb, lad], [jnb, dar], [jnb, ebb], [jnb, fih], [jnb, los], [jnb, abj, acc, jnb], [jnb, dkr], [jnb, sid, jfk, jnb], [sid, mia, cpt], [sid, atl, iad, lga, atl, jnb], [jnb, mru], [jnb, hkg], [jnb, per, syd], [jnb, eze], [jnb, gru, eze, cpt], [lhr, yvr], [jnb, fra, ams], [jnb, zrh, cph], [zrh, cdg], [jnb, bom], [jnb, bkk, kix], [jnb, hkgn], [bkk, hkgn], [bkk, usm], [jnb, bkkn, usm], [jnb, syd], [per, dps, drw, adl, syd], [cpt, bfn], [cpt, kim], [cpt, lhr], [cpt, fra], [cpt, plz, dur], [hkgn, akl], [akl, syd, bkkn], [akl, wlg], [akl, chc], [hlz, wlg], [hlz, chc], [akl, zqn], [akl, nsn], [wlg, trg], [wlg, rot], [wlg, chc], [akl, rar]],
     upcomingJourneys = [[akl, nrt, lhr], [lhr, arn], [bgo, trd], [boo, sjv], [tos, arn], [lhr, sin, syd, wlg]];
 
 (function($) {
@@ -423,7 +424,8 @@ function dropMarkers(wait) {
       if (tilesloaded) {
         mapMarkersDrawn = true;
         _.delay(function() {
-          _.each(airports, function(airport, index) {
+          _.each(airports, function(airport) {
+            airportMarkerDropWait++;
             _.delay(function() {
               new google.maps.Marker({
                 position: new google.maps.LatLng(airport.loc.lat, airport.loc.lng),
@@ -437,7 +439,7 @@ function dropMarkers(wait) {
                   size: airportsize
                 }
               });
-            }, index * 130);
+            }, airportMarkerDropWait * 135);
           });
           _.each(journeys, function(journey, index) {
             var journeyLine = journeyLines[index];

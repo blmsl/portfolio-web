@@ -194,7 +194,6 @@
                 <jsSourceFile>lib/jquery.easing.1.3.js</jsSourceFile>
                 <jsSourceFile>lib/jquery.easypiechart.js</jsSourceFile>
                 <jsSourceFile>contact.js</jsSourceFile>
-                <jsSourceFile>defenseleague.js</jsSourceFile>
               </jsSourceFiles>
               <jsEngine>CLOSURE</jsEngine>
               <closureLanguage>ECMASCRIPT5_STRICT</closureLanguage>
