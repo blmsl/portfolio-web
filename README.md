@@ -23,4 +23,4 @@ Requires
   * GOOGLE_MAPS_API_KEY -Google Maps API key
 
 
-![alt tag](http://portfolio.ouq77.kiwi/images/icon.png)
+![icon.png](https://portfolio.ouq77.kiwi/resources/images/icon.png)
