@@ -252,13 +252,6 @@ var previousWidth,
         }
       });
   });
-
-  $(window).load(function() {
-    var chart = window.chart = $('.chart').data('easyPieChart');
-    $('.js_update').on('click', function() {
-      chart.update(Math.random() * 100);
-    });
-  });
 }(jQuery));
 
 function drawChart() {

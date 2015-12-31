@@ -53,7 +53,7 @@
   </head>
   <body>
     <!--wrapper start-->
-    <div class="wrapper" id="wrapper">
+    <div class="wrapper" id="home">
       <header>
         <!--banner start-->
         <div class="banner row" id="banner">
@@ -87,7 +87,7 @@
                     </div>
                     <div id="js_navbar" class="navbar-collapse collapse">
                       <ul class="nav navbar-nav">
-                        <li class="menuItem active"><a href="#wrapper" class="js_track_link_click">Home</a></li>
+                        <li class="menuItem active"><a href="#home" class="js_track_link_click">Home</a></li>
                         <li class="menuItem"><a href="#aboutme" class="js_track_link_click">About</a></li>
                         <li class="menuItem"><a href="#skills" class="js_track_link_click">Skills</a></li>
                         <li class="menuItem"><a href="#experience" class="js_track_link_click">Experience</a></li>
@@ -386,13 +386,13 @@
     <!--minified js-->
     <script src="/resources/js/script.min.js?v=<c:out value="${initParam['CACHE_VERSION']}" />"></script>
     <script>
-    
+
       if ('serviceWorker' in navigator) {
         try {
           navigator.serviceWorker.register('/sw.min.js', {scope: './'});
         } catch (err) {}
       }
-      
+
       function trackEvent(type, value) {
         if(_gaq) {
           _gaq.push(['_trackEvent', type, value]);

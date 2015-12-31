@@ -190,7 +190,6 @@
                 <jsSourceFile>lib/jquery.placeholder.js</jsSourceFile>
                 <jsSourceFile>lib/stickUp.js</jsSourceFile>
                 <jsSourceFile>stickupinit.js</jsSourceFile>
-                <jsSourceFile>lib/isotope.pkgd.js</jsSourceFile>
                 <jsSourceFile>lib/jquery.easing.1.3.js</jsSourceFile>
                 <jsSourceFile>lib/jquery.easypiechart.js</jsSourceFile>
                 <jsSourceFile>contact.js</jsSourceFile>
