@@ -54,3 +54,6 @@ tmp
 
 # TSD Typings
 tools/typings/tsd
+
+# Heroku app - has own repo
+heroku/
