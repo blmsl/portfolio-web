@@ -1,0 +1,66 @@
+@import '../../assets/css/common.scss';
+
+/*
+ * About me
+ * ========================================================================== */
+
+.aboutme {
+  background: $iris-blue;
+  color: $white;
+  position: relative;
+  @include container-heading();
+}
+
+.btn-normal, .btn-download {
+  color: $white;
+  font-size: 16px;
+  font-family: $font-family-base;
+  font-weight: 700;
+  padding: 16px 22px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.btn-normal:hover, .btn-download:hover {
+  color: $white;
+  text-decoration: none;
+}
+
+.btn-normal {
+  background: $blue-zodiac;
+  &:hover {
+    background: $cloud-burst;
+  }
+
+  @media screen and (max-width: $screen-x2-min) {
+    font-size: 13px;
+    padding: 16px 14px;
+  }
+}
+
+.btn-download {
+  color: $white;
+  background: $bitter-sweet;
+  &:hover {
+    color: $white;
+    background: $sunset-orange;
+  }
+
+  @media screen and (max-width: $screen-x2-min) {
+    font-size: 13px;
+    padding: 16px 14px;
+  }
+}
+
+.profile-pic {
+  @media screen and (max-width: $screen-m1-min) {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: $screen-x2-min) {
+  img {
+    width: 100%;
+  }
+}
+

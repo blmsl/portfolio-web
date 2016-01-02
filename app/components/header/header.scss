@@ -1,0 +1,351 @@
+@import '../../assets/css/common.scss';
+
+/*
+ * Header Part
+ * ========================================================================== */
+
+header {
+  position: relative;
+
+  @media screen and (max-width: $screen-m2-min) {
+    font-size: 38px;
+    span {
+      font-size: 16px;
+    }
+  }
+}
+
+.banner {
+  overflow: hidden;
+  margin: 0 auto !important;
+  background: $midnight-express;
+  height: 2000px;
+
+  .no-padding {
+    padding: 0px !important;
+  }
+}
+
+.banner-text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 30px 0 30px;
+  max-width: 835px;
+  border: 1px solid $white;
+  background: $black-trans-point-3;
+  zoom: 1;
+  h1 {
+    text-transform: uppercase;
+  }
+  h2 {
+    font-size: 34px;
+    text-transform: none;
+  }
+
+  @media screen and (max-width: $screen-m1-min) {
+    padding-left: 25px;
+    padding-right: 25px;
+    h1 {
+      font-size: 65px;
+      line-height: 71px;
+    }
+    h2 {
+      font-size: 28px;
+    }
+  }
+
+  @media screen and (max-width: $screen-x1-min) {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    h1 {
+      font-size: 42px;
+      line-height: 48px;
+    }
+    h2 {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+}
+
+/*
+ * Slide show background control
+ * ========================================================================== */
+
+.cb-slideshow {
+  background: $black-russian;
+  li {
+    opacity: 0.5;
+  }
+}
+
+/*
+ * Background slider
+ * ========================================================================== */
+
+.ri-grid {
+  margin: 0px auto;
+  position: relative;
+  height: auto;
+  ul {
+    list-style: none;
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    &:before {
+      content: '';
+      display: table;
+    }
+    &:after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+    zoom: 1;
+    li {
+      @include css3-prefix(perspective, 400px);
+      margin: 0;
+      padding: 0;
+      float: left;
+      position: relative;
+      display: block;
+      overflow: hidden;
+      background: $black;
+      a {
+        display: block;
+        outline: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: $night-rider no-repeat center center;
+        @include css3-prefix(backface-visibility, hidden);
+        @include transform-style;
+        @include background-size;
+        @include box-sizing(content-box);
+      }
+    }
+  }
+}
+
+/*
+ * Grid wrapper
+ * ========================================================================== */
+
+.ri-grid-size-1 {
+  width: 55%;
+}
+
+.ri-grid-size-2 {
+  width: 100%;
+}
+
+.ri-grid-size-3 {
+  width: 100%;
+  margin-top: 0px;
+}
+
+/*
+ * Shadow
+ * ========================================================================== */
+
+.ri-shadow {
+  &:after, &:before {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    bottom: 15px;
+    left: 10px;
+    width: 50%;
+    height: 20%;
+    max-width: 300px;
+    max-height: 100px;
+    box-shadow: 0 15px 10px $black-trans-point-7;
+    @include transform(rotate(-3deg));
+  }
+  &:after {
+    right: 10px;
+    left: auto;
+    @include transform(rotate(3deg));
+  }
+}
+
+.ri-grid-loading {
+  &:after, &:before {
+    display: none;
+  }
+}
+
+.ri-loading-image {
+  display: none;
+}
+
+.ri-grid-loading .ri-loading-image {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  left: 50%;
+  margin: 50px 0 50px -15px;
+  display: block;
+}
+
+.contact-loader {
+  width: 35px;
+  height: 35px;
+}
+
+/*
+ * Menu
+ * ========================================================================== */
+
+.is-stuck {
+  left: 0px;
+  width: 100%;
+}
+
+.menu {
+  margin-top: 0px;
+  position: static;
+  left: 0px;
+  right: 0px;
+}
+
+.nav-wrapper .container {
+  padding: 0;
+  width: auto;
+
+  @media screen and (max-width: $screen-sm-min) {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+.navbar-header {
+  display: none;
+
+  @media screen and (max-width: $screen-sm-min) {
+    display: block;
+  }
+}
+
+.nav > li > a {
+  display: inline-block;
+}
+
+.navbar-nav > li {
+  float: none;
+  display: inline;
+}
+
+.navbar-nav {
+  margin: 0 auto;
+  text-align: center;
+  float: none;
+}
+
+.navbar-toggle {
+  margin-top: 14px;
+}
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
+  margin-top: 0px;
+  position: relative;
+  z-index: 15;
+  background: $midnight-express;
+}
+
+.navbar-wrapper .container {
+  padding: 0px;
+
+  @media screen and (max-width: $screen-sm-min) {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+.navbar-collapse {
+  padding: 0;
+}
+
+.navbar-collapse.in {
+  max-height: 100%;
+}
+
+.navbar.navbar-inverse.navbar-static-top {
+  margin: 0px auto;
+  background: $midnight-express;
+  color: $link-water;
+  border: none;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.navbar.navbar-inverse.navbar-static-top a {
+  color: $link-water;
+  padding: 22px 25px;
+  line-height: 18px;
+  text-align: center;
+
+  @media screen and (max-width: $screen-m1-min) {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  @media screen and (max-width: $screen-m2-min) {
+    padding-left: 17px;
+  }
+
+  @media screen and (max-width: $screen-x2-min) {
+    line-height: 17px;
+    padding-top: 20px;
+    padding-bottom: 11px;
+  }
+}
+
+.navbar.navbar-inverse.navbar-static-top a:hover {
+  color: $white;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus {
+  background: $black-forest;
+  color: $link-water;
+}
+
+@media screen and (max-width: $screen-sm-min) {
+  ul.navbar-nav li a {
+    display: block;
+  }
+}
+
+.navbar-inverse .navbar-nav > .active > a:hover {
+  background: $black-forest;
+  color: $white;
+}
+
+.hide-class {
+  display: none;
+}
+
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 600px;
+  background-color: $cerulean;
+}
+
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+}

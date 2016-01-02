@@ -1,0 +1,19 @@
+<!--footer start-->
+<section class="footer" id="links">
+  <div class="container">
+    <div class="heading">
+      <h2>Links</h2>
+      <p>social links and page info</p>
+    </div>
+    <ul>
+      <li *ngFor="#link of links"><a href="{{link.url}}" target="_blank" title="{{link.title}}" class="js_track_link_click"><i class="fa fa-{{link.icon}} fa-2x"></i></a></li>
+    </ul>
+    <div class="footer-info">
+      <p><i class="fa fa-info"></i> JavaScript app (Angular 2, NodeJS, TypeScript)</p>
+      <p>Hosted on the <i><a href="http://heroku.com" target="_blank" class="js_track_link_click">heroku.com</a></i> cloud platform</p>
+      <p><i class="fa fa-copyright"></i> {{currentDate | date:"yyyy"}} &ndash; HTML Template by <i><a href="http://themeforest.net/user/themeelite" target="_blank" class="js_track_link_click">themeelite</a></i></p>
+      <p><sup>Last modified: {{lastModified}}</sup></p>
+    </div>
+  </div>
+</section>
+<!--footer end-->

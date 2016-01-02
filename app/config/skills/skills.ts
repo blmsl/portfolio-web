@@ -1,0 +1,40 @@
+import {Skill} from './../../definitions/skills/skill';
+
+export var SKILLS:Array<Skill> = [
+  {
+    name: 'Scripting',
+    level: 90,
+    content: 'AngularJS; Backbone.js; Node.js;',
+  }, {
+    name: 'Web Markup',
+    level: 70,
+    content: 'HTML5; CSS3; Sass;',
+  }, {
+    name: 'Java',
+    level: 90,
+    content: 'Java EE; Java SE 6/7; Java ME;',
+  }, {
+    name: 'Web Services',
+    level: 85,
+    content: 'JAX-WS; JAXB; RESTful Web Services;',
+  }, {
+    name: 'Databases',
+    level: 85,
+    content: 'PostgreSQL; PostGIS; MySQL/MSSQL; Hibernate;',
+  }, {
+    name: 'Version Control',
+    level: 90,
+    content: 'GIT; Mercurial; SVN;',
+  },
+];
+
+
+
+
+
+
+
+
+
+
+
