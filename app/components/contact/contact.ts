@@ -1,5 +1,5 @@
 import {Component, View}      from 'angular2/core';
-import {ContactMapComponent}  from './contact.map';
+import {ContactMapComponent}  from './contact.gmap';
 import {ContactFormComponent} from './contact.form';
 
 @Component({

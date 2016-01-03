@@ -20,8 +20,8 @@ declare var jQuery:JQuery, _:UnderscoreStatic;
   providers: [Http, HTTP_PROVIDERS],
 })
 @View({
-  templateUrl: './components/contact/contact.map.html',
-  styleUrls: ['./components/contact/contact.map.css'],
+  templateUrl: './components/contact/contact.gmap.html',
+  styleUrls: ['./components/contact/contact.gmap.css'],
 })
 export class ContactMapComponent implements OnInit {
   public map:Map;
