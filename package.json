@@ -5,9 +5,9 @@
   "repository": {
     "url": "https://github.com/ouq77/portfolio-web"
   },
-  "main": "server/server.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node server/server.js"
+    "start": "node server.js"
   },
   "author": "ouq77",
   "license": "ISC",

@@ -2,9 +2,9 @@
 let nodeMailer = require('nodemailer');
 
 const
-    GMAIL_SENDER_EMAIL = process.env.GMAIL_SENDER_EMAIL || 'Louw Swart <louw@ouq77.kiwi>',
-    GMAIL_APP_EMAIL = process.env.GMAIL_APP_EMAIL || 'louw@ouq77.kiwi',
-    GMAIL_APP_PASSWORD = process.env.GMAIL_APP_PASSWORD || 'cenicbkuzpkfhqqx';
+    GMAIL_SENDER_EMAIL = process.env.GMAIL_SENDER_EMAIL,
+    GMAIL_APP_EMAIL = process.env.GMAIL_APP_EMAIL,
+    GMAIL_APP_PASSWORD = process.env.GMAIL_APP_PASSWORD;
 
 /**
  * {Object} message
