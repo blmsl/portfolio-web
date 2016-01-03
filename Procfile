@@ -1,1 +1,1 @@
-web: sh target/bin/webapp.sh
+web: node server/server.js

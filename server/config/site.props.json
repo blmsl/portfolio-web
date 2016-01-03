@@ -1,0 +1,42 @@
+{
+  "meta_tags": {
+    "title": "Louw Swart | Personal Portfolio",
+    "site": {
+      "description": "On-line Portfolio and CV for Louw Swart - Analyst Programmer based in Wellington, New Zealand",
+      "keywords": "louw swart portfolio cv java developer analyst programmer javascript ui",
+      "google-site-verification": "2QAoEd01NPLcv_b1tM-XJ7AT_xHmfqNkR2uHUcO2d5g"
+    },
+    "link_tags": {
+      "canonical": "https://portfolio.ouq77.kiwi/",
+      "author": "https://plus.google.com/u/0/+LouwSwart/posts",
+      "publisher": "https://plus.google.com/u/0/+LouwSwart"
+    },
+    "google": {
+      "name": "Louw Swart | Personal Portfolio",
+      "description": "On-line Portfolio and CV for Louw Swart - Analyst Programmer based in Wellington, New Zealand",
+      "image": "http://portfolio.ouq77.kiwi/resources/images/icon.png"
+    },
+    "twitter": {
+      "twitter:card": "summary",
+      "twitter:site": "@ouq77",
+      "twitter:title": "Louw Swart | Personal Portfolio",
+      "twitter:description": "On-line Portfolio and CV for Louw Swart - Analyst Programmer based in Wellington, New Zealand",
+      "twitter:creator": "@ouq77",
+      "twitter:image": "http://portfolio.ouq77.kiwi/resources/images/icon.png"
+    },
+    "facebook": {
+      "og:title": "Louw Swart | Personal Portfolio",
+      "og:type": "website",
+      "og:url": "http://portfolio.ouq77.kiwi/",
+      "og:image": "http://portfolio.ouq77.kiwi/resources/images/icon.png",
+      "og:description": "On-line Portfolio and CV for Louw Swart - Analyst Programmer based in Wellington, New Zealand",
+      "og:site_name": "ouq77.herokupp.com",
+      "article:published_time": "2014-05-17T00:00:00+1200",
+      "article:modified_time": "2015-07-07T06:24:21+0000"
+    }
+  },
+  "google_account": {
+    "analytics": "UA-43529041-2",
+    "maps_key": "AIzaSyDr6ZnLYRQ4iK20B2Z3NfwaSEfWHwddC7I"
+  }
+}

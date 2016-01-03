@@ -1,0 +1,59 @@
+{
+  "mappings": [
+    {
+      "uri": "/assets",
+      "location": "./app/assets",
+      "cache": "30d"
+    },
+    {
+      "uri": "/bundles",
+      "location": "./app/bundles",
+      "cache": "365d"
+    },
+    {
+      "uri": "/css",
+      "location": "./app/css",
+      "cache": "365d"
+    },
+    {
+      "uri": "/fonts",
+      "location": "./app/fonts",
+      "cache": "365d"
+    },
+    {
+      "uri": "/js",
+      "location": "./app/js",
+      "cache": "365d"
+    },
+    {
+      "uri": "/lib",
+      "location": "./app/lib",
+      "cache": "365d"
+    },
+    {
+      "uri": "/favicon.ico",
+      "location": "./app/favicon.ico",
+      "cache": "30d"
+    },
+    {
+      "uri": "/sitemap.xml",
+      "location": "./app/sitemap.xml",
+      "cache": "30d"
+    },
+    {
+      "uri": "/robots.txt",
+      "location": "./app/robots.txt",
+      "cache": "30d"
+    },
+    {
+      "uri": "/manifest.json",
+      "location": "./app/manifest.json",
+      "cache": "30d"
+    },
+    {
+      "uri": "/google536c542405d09504.html",
+      "location": "./app/google536c542405d09504.html",
+      "cache": "365d"
+    }
+  ]
+}

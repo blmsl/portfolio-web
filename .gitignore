@@ -1,7 +1,1 @@
-target
-.classpath
-.project
-.settings/*
-tomcat*
 .idea
-*.iml

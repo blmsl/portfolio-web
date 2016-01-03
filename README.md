@@ -1,26 +1,19 @@
 ouq77portfolio
 ==============
 
-Heroku Java Web App, using Spring MVC, running in an embedded Tomcat instance. 
-
-Makes use of AJAX and javax.mail to submit messages from the site. 
-
-All CSS and Javascript files are concatenated and compressed at build time (com.samaxes.maven.minify-maven-plugin).
-
-HTML is compressed at runtime (com.googlecode.htmlcompressor.htmlcompressor).
+Angular2 app, built on top of [angular2-seed](https://github.com/mgechev/angular2-seed), that can be run on Heroku in NodeJS. 
 
 Requires
 ========
-1. Maven 3.0.4 and up
+1. TODO
 2. Environment Variables:
-  * ANDROID_APP_URL - location of APK for download link (or remove from index.jsp and Main.java)
-  * INSTAGRAM_IMAGE_FOLDER - location of folder containing 50 or more images (update banner_images.jsp accordingly)
-  * CUSTOM_APP_DOMAIN - custom domain of app (or use ?.herokuapp.com)
-  * HEROKU_APP_DOMAIN - ?.herokuapp.com
-  * OWNER_NAME - the name of the site owner to be used in email messages
-  * JAVA_MAIL_EMAIL - the site owner's email address (Gmail works well)
-  * JAVA_MAIL_PASSWORD - the password for the above email address for SMTP authentication
-  * GOOGLE_MAPS_API_KEY -Google Maps API key
+  * CUSTOM_APP_DOMAIN - Custom domain, if not run on Heroku
+  * GMAIL_APP_EMAIL - Email address for logging into Gmail account
+  * GMAIL_APP_PASSWORD - Password for the email adress used for sending
+  * GMAIL_SENDER_EMAIL - Email address including name, e.g. "Jake the Dog <jake@the.dog>"
+  * GOOGLE_MAPS_API_KEY - Google Maps API key
+  * GOOGLE_ANALYTICS_ID - Analytics id for tracking
+  * INSTAGRAM_IMAGE_IDS - List of comma separated public Instagram image ids
 
 
-![icon.png](https://portfolio.ouq77.kiwi/resources/images/icon.png)
+![icon.png](https://portfolio.ouq77.kiwi/assets/images/icon.png)
