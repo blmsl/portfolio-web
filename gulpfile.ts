@@ -49,16 +49,7 @@ gulp.task('build.prod', done =>
 gulp.task('build.heroku', done =>
   runSequence(
     'clean.heroku',
-    'clean.dist',
-    'clean.tmp',
-    'tslint',
-    'build.sass.dev',
-    'build.img.dev',
-    'build.html_css.prod',
-    'build.deps',
-    'build.js.prod',
-    'build.bundles',
-    'build.index',
+    'build.prod',
     'build.heroku.copy',
     done));
 

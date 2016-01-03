@@ -59,18 +59,23 @@
       background: $sunset-orange-tint;
     }
   }
-}
 
-.success-message {
-  h3 {
-    font-size: 17px;
+  .contact-loader {
+    width: 35px;
+    height: 35px;
   }
-  color: $iris-blue;
-  font-weight: 500;
-}
 
-.error-message {
-  color: $bitter-sweet;
-  padding-bottom: 15px;
-  font-weight: 500;
+  .success-message {
+    h3 {
+      font-size: 17px;
+    }
+    color: $iris-blue;
+    font-weight: 500;
+  }
+
+  .error-message {
+    color: $bitter-sweet;
+    padding-bottom: 15px;
+    font-weight: 500;
+  }
 }

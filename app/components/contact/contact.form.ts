@@ -17,14 +17,16 @@ declare var _:UnderscoreStatic;
 })
 export class ContactFormComponent implements OnInit {
   public message:ContactMessage;
-  public sentSuccessfully:boolean;
   public submitClicked:boolean;
+  public submitting:boolean;
+  public sentSuccessfully:boolean;
   public errorConfig:JSON;
   public serverErrors:string;
 
   constructor(private _contactService:ContactService) {
-    this.sentSuccessfully = false;
     this.submitClicked = false;
+    this.submitting = false;
+    this.sentSuccessfully = false;
     this.message = new ContactMessage();
   }
 
@@ -46,6 +48,7 @@ export class ContactFormComponent implements OnInit {
   }
 
   onSubmit() {
+    this.submitting = true;
     this.serverErrors = '';
     this._contactService.send(this.message).subscribe(
         (res:Response) =>
@@ -56,10 +59,12 @@ export class ContactFormComponent implements OnInit {
   }
 
   handleSuccess() {
+    this.submitting = false;
     this.sentSuccessfully = true;
   }
 
   handleErrors(err:Response) {
+    this.submitting = false;
     switch (err.status) {
       case 400:
         _.each(err.json().errors, _.bind((error) => {
