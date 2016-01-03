@@ -21,7 +21,8 @@ function cleanAll(done) {
   async.parallel([
     cleanDist,
     cleanTest,
-    cleanTmp
+    cleanTmp,
+    cleanHeroku
   ], done);
 }
 function cleanDist(done) {

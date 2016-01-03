@@ -7,7 +7,7 @@ gulp.task('clean',          task('clean', 'all'));
 gulp.task('clean.dist',     task('clean', 'dist'));
 gulp.task('clean.test',     task('clean', 'test'));
 gulp.task('clean.tmp',      task('clean', 'tmp'));
-gulp.task('clean.heroku'),  task('clean', 'heroku');
+gulp.task('clean.heroku',  task('clean', 'heroku'));
 
 gulp.task('check.versions', task('check.versions'));
 
@@ -47,8 +47,18 @@ gulp.task('build.prod', done =>
 // --------------
 // Build prod.
 gulp.task('build.heroku', done =>
-  runSequence('build.prod',
+  runSequence(
     'clean.heroku',
+    'clean.dist',
+    'clean.tmp',
+    'tslint',
+    'build.sass.dev',
+    'build.img.dev',
+    'build.html_css.prod',
+    'build.deps',
+    'build.js.prod',
+    'build.bundles',
+    'build.index',
     'build.heroku.copy',
     done));
 
