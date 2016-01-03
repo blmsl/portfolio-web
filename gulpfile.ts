@@ -3,10 +3,11 @@ import {runSequence, task} from './tools/utils';
 
 // --------------
 // Clean (override).
-gulp.task('clean',       task('clean', 'all'));
-gulp.task('clean.dist',  task('clean', 'dist'));
-gulp.task('clean.test',  task('clean', 'test'));
-gulp.task('clean.tmp',   task('clean', 'tmp'));
+gulp.task('clean',          task('clean', 'all'));
+gulp.task('clean.dist',     task('clean', 'dist'));
+gulp.task('clean.test',     task('clean', 'test'));
+gulp.task('clean.tmp',      task('clean', 'tmp'));
+gulp.task('clean.heroku'),  task('clean', 'heroku');
 
 gulp.task('check.versions', task('check.versions'));
 
@@ -42,6 +43,14 @@ gulp.task('build.prod', done =>
               'build.bundles',
               'build.index',
               done));
+
+// --------------
+// Build prod.
+gulp.task('build.heroku', done =>
+  runSequence('build.prod',
+    'clean.heroku',
+    'build.heroku.copy',
+    done));
 
 // --------------
 // Watch.

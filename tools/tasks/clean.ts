@@ -1,6 +1,6 @@
 import * as async from 'async';
 import * as del from 'del';
-import {APP_DEST, TEST_DEST, TMP_DIR} from '../config';
+import {APP_DEST, TEST_DEST, TMP_DIR, HEROKU_APP_DIR} from '../config';
 
 export = function clean(gulp, plugins, option) {
   return function (done) {
@@ -10,6 +10,7 @@ export = function clean(gulp, plugins, option) {
       case 'dist'   : cleanDist(done);    break;
       case 'test'   : cleanTest(done);    break;
       case 'tmp'    : cleanTmp(done);     break;
+      case 'heroku' : cleanHeroku(done);  break;
       default: done();
     }
 
@@ -31,4 +32,7 @@ function cleanTest(done) {
 }
 function cleanTmp(done) {
   del(TMP_DIR, done);
+}
+function cleanHeroku(done) {
+  del(HEROKU_APP_DIR, done);
 }

@@ -29,6 +29,7 @@ export const JS_DEST              = `${APP_DEST}/js`;
 export const CSS_DEST             = `${APP_DEST}/css`;
 export const FONTS_DEST           = `${APP_DEST}/fonts`;
 export const LIB_DEST             = `${APP_DEST}/lib`;
+export const HEROKU_APP_DIR       = 'heroku/app';
 export const APP_ROOT             = ENV === 'dev' ? `${APP_BASE}${APP_DEST}/` : `${APP_BASE}`;
 export const VERSION              = appVersion();
 
@@ -147,6 +148,7 @@ export const APP_ASSETS = [
   { src: `${ASSETS_SRC}/css/layout.css`, inject: true, dest: CSS_DEST },
 
   // Other resources
+  { src: `${APP_SRC}/404.html`, dest: APP_DEST },
   { src: `${APP_SRC}/exclude.html`, dest: APP_DEST },
   { src: `${APP_SRC}/favicon.ico`, dest: APP_DEST },
   { src: `${APP_SRC}/google536c542405d09504.html`, dest: APP_DEST },
