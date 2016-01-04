@@ -6,7 +6,7 @@ const
     EMAIL_REGEX = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
 
 const
-    GMAIL_SENDER_EMAIL = process.env.GMAIL_SENDER_EMAILc,
+    GMAIL_SENDER_EMAIL = process.env.GMAIL_SENDER_EMAIL,
     CUSTOM_APP_DOMAIN = process.env.CUSTOM_APP_DOMAIN,
     SUBJECT = "Message from {0} | " + CUSTOM_APP_DOMAIN,
     SUBJECT_COPY = 'Thanks for getting in touch | ' + CUSTOM_APP_DOMAIN,
