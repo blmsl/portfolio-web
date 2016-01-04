@@ -1,0 +1,23 @@
+{
+  "bundles/app.js": "bundles/app-90f0cdd236.js",
+  "css/bootstrap.min.css": "css/bootstrap-2f624089c6.min.css",
+  "css/font-awesome.min.css": "css/font-awesome-4fbd15cb60.min.css",
+  "css/layout.css": "css/layout-83a7f04e61.css",
+  "js/bootstrap.min.js": "js/bootstrap-c5b5b2fa19.min.js",
+  "js/jquery.easing.min.js": "js/jquery-019ec7c16f.easing.min.js",
+  "js/jquery.easypiechart.min.js": "js/jquery-0e14886588.easypiechart.min.js",
+  "js/jquery.gridrotator.min.js": "js/jquery-a6153bd237.gridrotator.min.js",
+  "js/jquery.min.js": "js/jquery-4a356126b9.min.js",
+  "js/modernizr.custom.min.js": "js/modernizr-0ec8539e6e.custom.min.js",
+  "js/stick.up.min.js": "js/stick-feb7b57245.up.min.js",
+  "js/underscore-min.js": "js/underscore-min-543feb1eca.js",
+  "lib/Reflect.js": "lib/Reflect-ac20039590.js",
+  "lib/Rx.min.js": "lib/Rx-7022455f28.min.js",
+  "lib/angular2-polyfills.min.js": "lib/angular2-polyfills-dcb928c660.min.js",
+  "lib/angular2.min.js": "lib/angular2-377d180c90.min.js",
+  "lib/es6-shim.min.js": "lib/es6-shim-4bec749031.min.js",
+  "lib/http.min.js": "lib/http-bc8f6ed68c.min.js",
+  "lib/router.min.js": "lib/router-60da432c38.min.js",
+  "lib/system-polyfills.js": "lib/system-polyfills-20a9e2c110.js",
+  "lib/system.js": "lib/system-71219bd32f.js"
+}
