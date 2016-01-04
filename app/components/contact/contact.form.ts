@@ -20,14 +20,16 @@ export class ContactFormComponent implements OnInit {
   public submitClicked:boolean;
   public submitting:boolean;
   public sentSuccessfully:boolean;
-  public errorConfig:JSON;
+  public submitBtnText:string;
   public serverErrors:string;
+  public errorConfig:JSON;
 
   constructor(private _contactService:ContactService) {
+    this.message = new ContactMessage();
     this.submitClicked = false;
     this.submitting = false;
     this.sentSuccessfully = false;
-    this.message = new ContactMessage();
+    this.submitBtnText = 'Send message';
   }
 
   ngOnInit() {
@@ -48,7 +50,7 @@ export class ContactFormComponent implements OnInit {
   }
 
   onSubmit() {
-    this.submitting = true;
+    this.toggleSubmitting();
     this.serverErrors = '';
     this._contactService.send(this.message).subscribe(
         (res:Response) =>
@@ -59,12 +61,12 @@ export class ContactFormComponent implements OnInit {
   }
 
   handleSuccess() {
-    this.submitting = false;
+    this.toggleSubmitting();
     this.sentSuccessfully = true;
   }
 
   handleErrors(err:Response) {
-    this.submitting = false;
+    this.toggleSubmitting();
     switch (err.status) {
       case 400:
         _.each(err.json().errors, _.bind((error) => {
@@ -87,5 +89,10 @@ export class ContactFormComponent implements OnInit {
       this.serverErrors += '<br>';
     }
     this.serverErrors += error;
+  }
+
+  toggleSubmitting() {
+    this.submitting = !this.submitting;
+    this.submitBtnText = this.submitting ? 'Sending...' : 'Send message';
   }
 }

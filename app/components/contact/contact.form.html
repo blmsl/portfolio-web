@@ -35,9 +35,9 @@
            ngControl="heuning"
            type="hidden">
     <img *ngIf="submitting" src="assets/images/loading.gif" class="contact-loader" />
-    <input [disabled]="!contactForm.form.valid && submitClicked"
+    <input [disabled]="(!contactForm.form.valid && submitClicked) || submitting"
            (click)="onClick()"
-           type="submit" name="send" class="btn-submit" value="Send message">
+           type="submit" name="send" class="btn-submit" value="{{submitBtnText}}">
   </form>
 </div>
 <!--contact form end-->
