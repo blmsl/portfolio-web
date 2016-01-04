@@ -73,5 +73,26 @@
             'Report this error at https://github.com/mgechev/angular2-seed/issues');
         });
     </script>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        try {
+          navigator.serviceWorker.register('/sw.min.js', {scope: './'});
+        } catch (err) {}
+      }
+      function trackEvent(type, value) {
+        if(_gaq) {
+          _gaq.push(['_trackEvent', type, value]);
+        }
+      }
+      $(document).ready(function(){
+        $('.js_track_link_click').click(function() {
+          trackEvent('link_click', $(this).attr('href'));
+        });
+        $('.btn-submit').click(function(){
+          trackEvent('button_click', $(this).attr('value'));
+        });
+      });
+    </script>
   </body>
 </html>
