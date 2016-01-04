@@ -24,7 +24,8 @@
     <input [(ngModel)]="message.email"
            ngControl="email"
            #email="ngForm"
-           required type="text" class="col-xs-12 col-sm-6 col-md-6 col-lg-6 no-margin" placeholder="Your email...">
+           autocapitalize="off"
+           required type="email" class="col-xs-12 col-sm-6 col-md-6 col-lg-6 no-margin" placeholder="Your email...">
     <textarea [(ngModel)]="message.text"
               ngControl="text"
               #text="ngForm"
