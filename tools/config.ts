@@ -30,8 +30,14 @@ export const CSS_DEST             = `${APP_DEST}/css`;
 export const FONTS_DEST           = `${APP_DEST}/fonts`;
 export const LIB_DEST             = `${APP_DEST}/lib`;
 export const HEROKU_APP_DIR       = 'heroku/app';
+export const HEROKU_SERVER_DIR    = 'heroku/server';
 export const APP_ROOT             = ENV === 'dev' ? `${APP_BASE}${APP_DEST}/` : `${APP_BASE}`;
 export const VERSION              = appVersion();
+
+export const BUNDLES_FILE         = 'bundles/app.js';
+export const BUNDLES_INJECTED     = 'bundles/app';
+
+export const REV_MANIFEST         = 'rev-manifest.json';
 
 export const VERSION_NPM          = '3.3.12';
 export const VERSION_NODE         = '5.3.0';
@@ -96,15 +102,15 @@ export const NPM_DEPENDENCIES = [
   { src: 'es6-shim/es6-shim.map', dest: LIB_DEST },
   { src: 'reflect-metadata/Reflect.js', inject: 'shims', dest: LIB_DEST },
   { src: 'reflect-metadata/Reflect.js.map', dest: LIB_DEST },
-  { src: 'systemjs/dist/system.src.js', inject: 'shims', dest: LIB_DEST },
+  { src: 'systemjs/dist/system.js', inject: 'shims', dest: LIB_DEST },
   { src: 'systemjs/dist/system.js.map', dest: LIB_DEST },
-  { src: 'angular2/bundles/angular2-polyfills.js', inject: 'shims', dest: LIB_DEST },
+  { src: 'angular2/bundles/angular2-polyfills.min.js', inject: 'shims', dest: LIB_DEST },
 
   // Faster dev page load
   { src: 'rxjs/bundles/Rx.min.js', inject: 'libs', dest: LIB_DEST },
   { src: 'rxjs/bundles/Rx.min.js.map', dest: LIB_DEST },
   { src: 'angular2/bundles/angular2.min.js', inject: 'libs', dest: LIB_DEST },
-  { src: 'angular2/bundles/router.js', inject: 'libs', dest: LIB_DEST },
+  { src: 'angular2/bundles/router.min.js', inject: 'libs', dest: LIB_DEST },
   { src: 'angular2/bundles/http.min.js', inject: 'libs', dest: LIB_DEST },
 
   // Other JS libraries
@@ -139,13 +145,13 @@ export const NPM_DEPENDENCIES = [
 // Declare local files that needs to be injected
 export const APP_ASSETS = [
   // Custom JS files
-  { src: `${ASSETS_SRC}/js/modernizr.custom.js`, inject: true, dest: JS_DEST },
-  { src: `${ASSETS_SRC}/js/jquery.gridrotator.js`, inject: true, dest: JS_DEST },
-  { src: `${ASSETS_SRC}/js/stick.up.js`, inject: true, dest: JS_DEST },
-  { src: `${ASSETS_SRC}/js/jquery.easypiechart.js`, inject: true, dest: JS_DEST },
+  { src: `${ASSETS_SRC}/js/modernizr.custom.min.js`, inject: true, dest: JS_DEST },
+  { src: `${ASSETS_SRC}/js/jquery.gridrotator.min.js`, inject: true, dest: JS_DEST },
+  { src: `${ASSETS_SRC}/js/stick.up.min.js`, inject: true, dest: JS_DEST },
+  { src: `${ASSETS_SRC}/js/jquery.easypiechart.min.js`, inject: true, dest: JS_DEST },
 
   // Global CSS
-  { src: `${ASSETS_SRC}/css/layout.css`, inject: true, dest: CSS_DEST },
+  { src: `${TMP_DIR}/assets/css/layout.css`, inject: true, dest: CSS_DEST },
 
   // Other resources
   { src: `${APP_SRC}/404.html`, dest: APP_DEST },

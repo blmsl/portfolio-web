@@ -4,7 +4,7 @@ export var SKILLS:Array<Skill> = [
   {
     name: 'Scripting',
     level: 90,
-    content: 'AngularJS; Backbone.js; Node.js;',
+    content: 'AngularJS; Backbone; Node.js;',
   }, {
     name: 'Web Markup',
     level: 70,
