@@ -1,4 +1,6 @@
 'use strict';
+let fs = require('fs');
+
 const
     ERROR_MESSAGES = require('./../config/error.props.json'),
     DISALLOWED_CHARS = /[<>^|%()&+]/,
@@ -8,10 +10,10 @@ const
 const
     GMAIL_SENDER_EMAIL = process.env.GMAIL_SENDER_EMAIL,
     CUSTOM_APP_DOMAIN = process.env.CUSTOM_APP_DOMAIN,
-    SUBJECT = "Message from {0} | " + CUSTOM_APP_DOMAIN,
+    SUBJECT = 'Message from {0} | ' + CUSTOM_APP_DOMAIN,
     SUBJECT_COPY = 'Thanks for getting in touch | ' + CUSTOM_APP_DOMAIN,
-    CONTENT = '<p style="font-family:\'Open Sans\',sans-serif;color:#474d5d">You have been contacted by {0} ({1}). Their additional message is as follows:</p><br><p style="font-family:\'Open Sans\',sans-serif;color:#474d5d">{2}</p>',
-    CONTENT_COPY = '<p style="font-family:\'Open Sans\',sans-serif;color:#474d5d"><strong>Thank you</strong> for getting in touch, {0} - I\'ve received your message and will respond soon.<br><br>Thanks,<br>Louw</p><br><p style="font-family:\'Open Sans\',sans-serif;color:#474d5d">Here is a copy of what you sent:</p><br><p style="font-family:\'Open Sans\',sans-serif;color:#474d5d">{1}</p>';
+    CONTENT = fs.readFileSync(__dirname + '/../config/email-template.html'),
+    CONTENT_COPY = fs.readFileSync(__dirname + '/../config/email-copy-template.html');
 
 /**
  * Accepts a submission and validates the content
@@ -77,8 +79,8 @@ var buildMessage = (submission) => {
   let message = {
     replyTo: submission.name + ' <' + submission.email + '>', // sender address
     to: GMAIL_SENDER_EMAIL, // list of receivers
-    subject: new String(SUBJECT), // Subject line
-    html: new String(CONTENT) // html body
+    subject: '' + SUBJECT, // Subject line
+    html: '' + CONTENT // html body
   };
 
   message.subject = formatValue(message.subject, [submission.name]);
@@ -102,11 +104,11 @@ var buildMessage = (submission) => {
 var buildMessageCopy = (submission) => {
   let message = {
     to: submission.name + ' <' + submission.email + '>', // list of receivers
-    subject: new String(SUBJECT_COPY), // Subject line
-    html: new String(CONTENT_COPY) // html body
+    subject: '' + SUBJECT_COPY, // Subject line
+    html: '' + CONTENT_COPY // html body
   };
 
-  message.html = formatValue(message.html, [submission.name, submission.text]);
+  message.html = formatValue(message.html, [submission.name]);
 
   return message;
 }
