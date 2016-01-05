@@ -5,7 +5,7 @@ Angular2 app, built on top of [angular2-seed](https://github.com/mgechev/angular
 
 Requires
 ========
-1. TODO
+1. Angular2 (beta)
 2. Environment Variables:
   * CUSTOM_APP_DOMAIN - Custom domain, if not run on Heroku
   * GMAIL_APP_EMAIL - Email address for logging into Gmail account
@@ -16,4 +16,4 @@ Requires
   * INSTAGRAM_IMAGE_IDS - List of comma separated public Instagram image ids
 
 
-![icon.png](https://portfolio.ouq77.kiwi/resources/images/icon.png)
+![icon.png](https://portfolio.ouq77.kiwi/assets/images/manifesticons/eightbitme-192.png)
