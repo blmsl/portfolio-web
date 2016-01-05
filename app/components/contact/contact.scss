@@ -1,0 +1,60 @@
+@import '../../assets/css/common.scss';
+
+/*
+ * Get in touch
+ * ========================================================================== */
+
+.contact {
+  background: $white;
+  @include container-heading();
+
+  h2 {
+    color: $bitter-sweet;
+  }
+
+  p {
+    color: $manatee;
+    line-height: 18px;
+  }
+
+  .heading p {
+    padding-bottom: 41px;
+  }
+
+  h4 {
+    font-weight: 700;
+  }
+}
+
+.top-container {
+  padding-bottom: 0px !important;
+}
+
+.contact-details {
+  background: url(assets/images/map-bro.png) repeat-x 0 0 $blue-zodiac;
+  .container {
+    padding-top: 85px;
+    padding-bottom: 90px;
+  }
+  h4 {
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-bottom: 15px;
+  }
+  p {
+    color: $manatee;
+    font-size: 13px;
+    line-height: 19px;
+    padding-bottom: 14px;
+    a {
+      color: $manatee;
+      &:hover {
+        color: $mischka;
+        text-decoration: none;
+      }
+    }
+  }
+  i {
+    padding-right: 15px;
+  }
+}

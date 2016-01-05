@@ -1,0 +1,50 @@
+@import '../../assets/css/common.scss';
+
+/*
+ * Footer
+ * ========================================================================== */
+
+.footer {
+  background: $iris-blue;
+  @include container-heading();
+
+  ul {
+    margin: 0 auto;
+    text-align: center;
+    list-style-type: none;
+    li {
+      display: inline-block;
+      text-align: center;
+      background: $white;
+      color: $iris-blue;
+      line-height: 42px;
+      margin: 0 6px;
+      width: 42px !important;
+      height: 42px !important;
+      @include border-radius(50%);
+      &:hover {
+        background: $persian-green;
+        a {
+          color: $white;
+        }
+      }
+      a {
+        color: $iris-blue;
+        width: 42px !important;
+        height: 42px !important;
+        i {
+          line-height: 42px !important;
+        }
+      }
+    }
+  }
+}
+
+.footer-info {
+  text-align: center;
+  padding-top: 15px;
+  p {
+    padding-bottom: 5px;
+  }
+}
+
