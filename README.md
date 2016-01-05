@@ -16,4 +16,4 @@ Requires
   * INSTAGRAM_IMAGE_IDS - List of comma separated public Instagram image ids
 
 
-![icon.png](https://portfolio.ouq77.kiwi/assets/images/icon.png)
+![icon.png](https://portfolio.ouq77.kiwi/assets/images/manifesticons/eightbitme-192.png)
