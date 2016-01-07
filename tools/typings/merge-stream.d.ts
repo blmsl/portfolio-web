@@ -1,8 +1,10 @@
 declare module 'merge-stream' {
-  function mergeStream(...streams: NodeJS.ReadWriteStream[]): MergeStream;
+  function mergeStream(...streams:NodeJS.ReadWriteStream[]):MergeStream;
+
   interface MergeStream extends NodeJS.ReadWriteStream {
-    add(stream: NodeJS.ReadWriteStream): MergeStream;
+    add(stream:NodeJS.ReadWriteStream): MergeStream;
   }
-  module mergeStream {}
+  module mergeStream {
+  }
   export = mergeStream;
 }

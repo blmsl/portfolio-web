@@ -15,8 +15,8 @@ function buildJson() {
 
 function buildDateString() {
   // TODO improve
-  let now = new Date(),
-    day = '' + (now.getDate() < 10 ? '0' : '') + now.getDate(),
-    month = '' + (now.getMonth() < 9 ? '0' : '') + (now.getMonth() + 1);
+  let now = new Date();
+  let day = '' + (now.getDate() < 10 ? '0' : '') + now.getDate();
+  let month = '' + (now.getMonth() < 9 ? '0' : '') + (now.getMonth() + 1);
   return '' + day + '/' + month + '/' + now.getFullYear();
 };

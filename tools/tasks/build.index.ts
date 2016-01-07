@@ -3,7 +3,7 @@ import {APP_SRC, APP_DEST, DEPENDENCIES, ENV} from '../config';
 import {transformPath, templateLocals} from '../utils';
 
 export = function buildIndexDev(gulp, plugins) {
-  return function () {
+  return function() {
     return gulp.src(join(APP_SRC, 'index.html'))
       // NOTE: There might be a way to pipe in loop.
       .pipe(inject('shims'))
@@ -14,14 +14,14 @@ export = function buildIndexDev(gulp, plugins) {
   };
 
 
-  function inject(name?: string) {
-    return plugins.inject(gulp.src(getInjectablesDependenciesRef(name), { read: false }), {
+  function inject(name?:string) {
+    return plugins.inject(gulp.src(getInjectablesDependenciesRef(name), {read: false}), {
       name,
       transform: transformPath(plugins, 'dev')
     });
   }
 
-  function getInjectablesDependenciesRef(name?: string) {
+  function getInjectablesDependenciesRef(name?:string) {
     return DEPENDENCIES
       .filter(dep => dep['inject'] && dep['inject'] === (name || true))
       .map(mapPath);
