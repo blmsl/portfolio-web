@@ -8,12 +8,9 @@
     <meta name="description" content="On-line Portfolio and CV for Louw Swart - Analyst Programmer based in Wellington, New Zealand">
     <meta name="keywords" content="louw swart portfolio cv java developer analyst programmer javascript ui">
     <meta name="google-site-verification" content="2QAoEd01NPLcv_b1tM-XJ7AT_xHmfqNkR2uHUcO2d5g">
-
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="manifest" href="/manifest.json">
-
     <meta name="viewport" content="initial-scale=1.0, user-scalable=0, width=device-width, height=device-height">
-
     <meta name="apple-mobile-web-app-title" content="Louw Swart | Personal Portfolio">
     <meta content="yes" name="apple-mobile-web-app-capable">
     <link rel="apple-touch-icon" sizes="57x57" href="assets/images/touchicons/apple-touch-icon-57x57.png">
@@ -25,7 +22,6 @@
     <link rel="apple-touch-icon" sizes="144x144" href="assets/images/touchicons/apple-touch-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="assets/images/touchicons/apple-touch-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/touchicons/apple-touch-icon-180x180.png">
-
     <!-- Google Authorship and Publisher Markup -->
     <link rel="canonical" href="https://portfolio.ouq77.kiwi/">
     <link rel="author" href="https://plus.google.com/u/0/+LouwSwart/posts">
@@ -49,8 +45,7 @@
     <meta property="og:description" content="On-line Portfolio and CV for Louw Swart - Analyst Programmer based in Wellington, New Zealand">
     <meta property="og:site_name" content="ouq77.herokupp.com">
     <meta property="article:published_time" content="2014-05-17T00:00:00+1200">
-    <meta property="article:modified_time" content="2016-01-04T07:37:13.001Z">
-
+    <meta property="article:modified_time" content="2016-01-07T09:38:24.750Z">
     <!-- Google Analytics -->
     <script>var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-43529041-2']);
@@ -63,29 +58,16 @@
       var s = document.getElementsByTagName('script')[0];
       s.parentNode.insertBefore(ga, s)
     })();</script>
-
     <!-- Google Font Style -->
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300' rel='stylesheet' type='text/css'>
-
-    <!-- inject:css -->
-    <link rel="stylesheet" href="/css/bootstrap-2f624089c6.min.css">
-    <link rel="stylesheet" href="/css/font-awesome-4fbd15cb60.min.css">
-    <link rel="stylesheet" href="/css/layout-83a7f04e61.css">
-    <!-- endinject -->
-
-    <!-- inject:js -->
-    <script src="/js/jquery-4a356126b9.min.js"></script>
-    <script src="/js/bootstrap-c5b5b2fa19.min.js"></script>
-    <script src="/js/underscore-min-543feb1eca.js"></script>
-    <script src="/js/jquery-019ec7c16f.easing.min.js"></script>
-    <script src="/js/modernizr-0ec8539e6e.custom.min.js"></script>
-    <script src="/js/jquery-a6153bd237.gridrotator.min.js"></script>
-    <script src="/js/stick-feb7b57245.up.min.js"></script>
-    <script src="/js/jquery-0e14886588.easypiechart.min.js"></script>
-    <!-- endinject -->
-
     <!--google maps api-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDr6ZnLYRQ4iK20B2Z3NfwaSEfWHwddC7I&amp;libraries=geometry"></script>
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/css/common-ee1548de54.min.css">
+    <!-- endinject -->
+    <!-- inject:js -->
+    <script src="/js/common-950b219b0f.min.js"></script>
+    <!-- endinject -->
   </head>
   <body>
     <!--[if lt IE 10]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
@@ -94,32 +76,19 @@
         <img class="ng-loading-image" src="assets/images/loading.gif" alt="Loading..."/>
       </div>
     </container>
-
     <!-- shims:js -->
-    <script src="/lib/es6-shim-4bec749031.min.js"></script>
-    <script src="/lib/Reflect-ac20039590.js"></script>
     <script src="/lib/system-71219bd32f.js"></script>
-    <script src="/lib/angular2-polyfills-dcb928c660.min.js"></script>
+    <script src="/lib/shim-75d8b6620e.min.js"></script>
     <!-- endinject -->
-
-    <script>System.config({"defaultJSExtensions":true,"bundles":{"bundles/app-edaa1ae972":["bootstrap"]}})</script>
-
+    <script>System.config({"defaultJSExtensions":true,"bundles":{"bundles/app-b2e0436c65":["bootstrap"]}})</script>
     <!-- libs:js -->
-    <script src="/lib/Rx-7022455f28.min.js"></script>
-    <script src="/lib/angular2-377d180c90.min.js"></script>
-    <script src="/lib/router-60da432c38.min.js"></script>
-    <script src="/lib/http-bc8f6ed68c.min.js"></script>
+    <script src="/lib/lib-6db7f9f162.min.js"></script>
     <!-- endinject -->
-
     <script>
       System.import('bootstrap')
         .catch(function (e) {
-          console.error(e,
-            'Report this error at https://github.com/mgechev/angular2-seed/issues');
+          console.error(e, 'Report this error at https://github.com/ouq77/portfolio-web/issues');
         });
-    </script>
-
-    <script>
       if ('serviceWorker' in navigator) {
         try {
           navigator.serviceWorker.register('/sw.min.js', {scope: './'});
