@@ -14,12 +14,12 @@ const TASKS_PATH = join(TOOLS_DIR, 'tasks');
 //   scanDir(TASKS_PATH, (taskname) => registerTask(taskname));
 // }
 
-export function task(taskname: string, option?: string) {
+export function task(taskname:string, option?:string) {
   util.log('Loading task', chalk.yellow(taskname, option || ''));
   return require(join('..', 'tasks', taskname))(gulp, gulpLoadPlugins(), option);
 }
 
-export function runSequence(...sequence: any[]) {
+export function runSequence(...sequence:any[]) {
   let tasks = [];
   let _sequence = sequence.slice(0);
   sequence.pop();
@@ -27,7 +27,9 @@ export function runSequence(...sequence: any[]) {
   scanDir(TASKS_PATH, taskname => tasks.push(taskname));
 
   sequence.forEach(task => {
-    if (tasks.indexOf(task) > -1) { registerTask(task); }
+    if (tasks.indexOf(task) > -1) {
+      registerTask(task);
+    }
   });
 
   return _runSequence(..._sequence);
@@ -36,12 +38,12 @@ export function runSequence(...sequence: any[]) {
 // ----------
 // Private.
 
-function registerTask(taskname: string, filename?: string, option: string = ''): void {
+function registerTask(taskname:string, filename?:string, option:string = ''):void {
   gulp.task(taskname, task(filename || taskname, option));
 }
 
 // TODO: add recursive lookup ? or enforce pattern file + folder (ie ./tools/utils & ./tools/utils.ts )
-function scanDir(root: string, cb: (taskname: string) => void) {
+function scanDir(root:string, cb:(taskname:string) => void) {
   if (!existsSync(root)) return;
 
   walk(root);

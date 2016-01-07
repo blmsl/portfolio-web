@@ -41,7 +41,10 @@ gulp.task('build.prod', done =>
               'build.deps',
               'build.js.prod',
               'build.bundles',
+              'build.concat.prod',
               'build.index',
+              'build.rev.prod',
+              'build.rev.replace.prod',
               done));
 
 // --------------
@@ -50,9 +53,6 @@ gulp.task('build.heroku', done =>
   runSequence(
     'clean.heroku',
     'build.prod',
-    'build.rev',
-    'build.rev.replace',
-    'build.rev.clean',
     'build.heroku.copy',
     'build.heroku.update',
     done));

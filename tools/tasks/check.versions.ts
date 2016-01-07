@@ -1,17 +1,17 @@
 import {VERSION_NPM, VERSION_NODE} from '../config';
 
-function reportError(message: string) {
+function reportError(message:string) {
   console.error(require('chalk').white.bgRed.bold(message));
   process.exit(1);
 }
 
 module.exports = function check(gulp, plugins) {
-  return function () {
+  return function() {
     let exec = require('child_process').exec;
     let semver = require('semver');
 
     exec('npm --version',
-      function (error, stdout, stderr) {
+      function(error, stdout, stderr) {
         if (error !== null) {
           reportError('npm preinstall error: ' + error + stderr);
         }
@@ -22,7 +22,7 @@ module.exports = function check(gulp, plugins) {
       });
 
     exec('node --version',
-      function (error, stdout, stderr) {
+      function(error, stdout, stderr) {
         if (error !== null) {
           reportError('npm preinstall error: ' + error + stderr);
         }

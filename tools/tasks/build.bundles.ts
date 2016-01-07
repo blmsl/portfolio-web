@@ -10,7 +10,7 @@ const BUNDLE_OPTS = {
 };
 
 export = function bundles(gulp, plugins) {
-  return function (done) {
+  return function(done) {
     let builder = new Builder(SYSTEM_CONFIG_BUILDER);
 
     parallel([

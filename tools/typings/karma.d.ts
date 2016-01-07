@@ -2,11 +2,11 @@
 // generate a lot of errors.
 
 declare module 'karma' {
-  var karma: IKarma;
+  var karma:IKarma;
   export = karma;
   interface IKarma {
     server: {
-      start(options: any, callback: Function): void
+      start(options:any, callback:Function): void
     };
   }
 }
