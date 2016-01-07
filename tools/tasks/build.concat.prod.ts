@@ -1,12 +1,38 @@
 import * as merge from 'merge-stream';
 import {join} from 'path';
-import {ASSETS_SRC, JS_DEST, CSS_DEST} from '../config';
+import {ASSETS_SRC, LIB_DEST, JS_DEST, CSS_DEST} from '../config';
 
 const NODE_MODULES_ROOT = 'node_modules';
 
 export = function concat(gulp, plugins) {
   return function() {
-    return merge(concatJs(), concatCss());
+    return merge(concatLib(), concatShim(), concatJs(), concatCss());
+
+    function concatLib() {
+      return gulp.src([
+          join(NODE_MODULES_ROOT, 'rxjs/bundles/Rx.min.js'),
+          join(NODE_MODULES_ROOT, 'angular2/bundles/angular2.min.js'),
+          join(NODE_MODULES_ROOT, 'angular2/bundles/router.min.js'),
+          join(NODE_MODULES_ROOT, 'angular2/bundles/http.min.js')
+        ])
+        .pipe(plugins.sourcemaps.init())
+        .pipe(plugins.concat('lib.min.js'))
+        .pipe(plugins.sourcemaps.write('.'))
+        .pipe(gulp.dest(join(LIB_DEST)));
+    }
+
+    function concatShim() {
+      return gulp.src([
+          join(NODE_MODULES_ROOT, 'systemjs/dist/system-polyfills.js'),
+          join(NODE_MODULES_ROOT, 'es6-shim/es6-shim.min.js'),
+          join(NODE_MODULES_ROOT, 'reflect-metadata/Reflect.js'),
+          join(NODE_MODULES_ROOT, 'angular2/bundles/angular2-polyfills.min.js')
+        ])
+        .pipe(plugins.sourcemaps.init())
+        .pipe(plugins.concat('shim.min.js'))
+        .pipe(plugins.sourcemaps.write('.'))
+        .pipe(gulp.dest(join(LIB_DEST)));
+    }
 
     function concatJs() {
       let JS_SRC = join(ASSETS_SRC, 'js');
