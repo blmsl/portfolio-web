@@ -2,14 +2,15 @@
 let express = require('express'),
   compression = require('compression'),
   bodyParser = require('body-parser'),
-  randomImages = require('./server/modules/random.images.js'),
-  mailHelper = require('./server/modules/mail.helper.js'),
-  nodeMailer = require('./server/modules/node.mailer.js'),
-  app = express(),
+  path = require('path'),
+  randomImages = require('./modules/random.images.js'),
+  mailHelper = require('./modules/mail.helper.js'),
+  nodeMailer = require('./modules/node.mailer.js'),
+  expressStaticMappings = require('./config/express.static.props.json').mappings,
+  lastModified = require('./config/last.mod.props.json').last_modified,
+  errorMessages = require('./config/error.props.json'),
   port = process.env.PORT || 9000,
-  expressStaticMappings = require('./server/config/express.static.props.json').mappings,
-  lastModified = require('./server/config/last.mod.props.json').last_modified,
-  errorMessages = require('./server/config/error.props.json');
+  app = express();
 
 app.use(compression());
 app.use(bodyParser.json());
@@ -75,16 +76,16 @@ app.post('/send', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/app/index.html');
+  res.sendFile(path.resolve(__dirname, '../app/index.html'));
 });
 
 app.get('/exclude', (req, res) => {
-  res.sendFile(__dirname + '/app/exclude.html');
+  res.sendFile(path.resolve(__dirname, '../app/exclude.html'));
 });
 
 app.get('/*', (req, res) => {
   console.log('No resource matches: ' + req.url);
-  res.sendFile(__dirname + '/app/404.html');
+  res.sendFile(path.resolve(__dirname, '../app/404.html'));
 });
 
 app.listen(port, () => {
