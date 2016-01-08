@@ -38,10 +38,10 @@ export class ContactFormComponent implements OnInit {
 
   getErrorConfig() {
     this._contactService.getErrorConfig().subscribe(
-        (res:Response) =>
-            this.errorConfig = (res.json()).errorMessages,
-        (err:Response) =>
-            console.log(err.json)
+      (res:Response) =>
+        this.errorConfig = (res.json()).errorMessages,
+      (err:Response) =>
+        console.log(err.json)
     );
   }
 
@@ -52,11 +52,17 @@ export class ContactFormComponent implements OnInit {
   onSubmit() {
     this.toggleSubmitting();
     this.serverErrors = '';
-    this._contactService.send(this.message).subscribe(
-        (res:Response) =>
-            this.handleSuccess(),
-        (err:Response) =>
-            this.handleErrors(err)
+
+    let submission = new ContactMessage(
+      this.message.name.trim(),
+      this.message.email.trim(),
+      this.message.text.trim(),
+      this.message.heuning);
+    this._contactService.send(submission).subscribe(
+      (res:Response) =>
+        this.handleSuccess(),
+      (err:Response) =>
+        this.handleErrors(err)
     );
   }
 
