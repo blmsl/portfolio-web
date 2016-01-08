@@ -11,7 +11,7 @@ const
     GMAIL_SENDER_EMAIL = process.env.GMAIL_SENDER_EMAIL,
     CUSTOM_APP_DOMAIN = process.env.CUSTOM_APP_DOMAIN,
     SUBJECT = 'Message from {0} | ' + CUSTOM_APP_DOMAIN,
-    SUBJECT_COPY = 'Thanks for getting in touch | ' + CUSTOM_APP_DOMAIN,
+    SUBJECT_COPY = 'Thanks for getting in touch',
     CONTENT = fs.readFileSync(__dirname + '/../config/email-template.html'),
     CONTENT_COPY = fs.readFileSync(__dirname + '/../config/email-copy-template.html');
 
@@ -84,7 +84,7 @@ var buildMessage = (submission) => {
   };
 
   message.subject = formatValue(message.subject, [submission.name]);
-  message.html = formatValue(message.html, [submission.name, submission.email, submission.text]);
+  message.html = formatValue(message.html, [submission.name, submission.email, submission.text.replace(/\n/g, '<br>')]);
 
   return message;
 }
