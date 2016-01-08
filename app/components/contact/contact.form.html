@@ -3,7 +3,7 @@
   <h4>Send a message</h4>
   <div *ngIf="sentSuccessfully" class="success-message">
     <h3>Email Sent Successfully.</h3>
-    <p>Thank you <strong>{{message.name}}</strong>, your message has been sent.</p>
+    <p>Thank you <strong>{{message.name | trim}}</strong>, your message has been sent.</p>
   </div>
   <form *ngIf="!sentSuccessfully"
         (ngSubmit)="onSubmit()"
