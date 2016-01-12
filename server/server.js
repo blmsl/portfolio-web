@@ -28,14 +28,17 @@ expressStaticMappings.forEach((mapping) => {
 });
 
 app.get('/imageids', (req, res) => {
+  res.setHeader('Cache-Control', 'no-cache');
   res.json({imageIds: randomImages.getIds()});
 });
 
 app.get('/lastmodified', (req, res) => {
+  res.setHeader('Cache-Control', 'no-cache');
   res.send(lastModified);
 });
 
 app.get('/errorconfig', (req, res) => {
+  res.setHeader('Cache-Control', 'no-cache');
   res.json({errorMessages: errorMessages});
 });
 
@@ -52,8 +55,10 @@ app.post('/send', (req, res) => {
   let submission = req.body,
     response = mailHelper.validate(submission);
 
+  res.setHeader('Cache-Control', 'no-cache');
+
   if (response.length > 0) {
-    res.status(400).send({"errors": response});
+    res.status(400).json({errors: response});
   } else {
 
     let message = mailHelper.buildMessage(submission),
@@ -65,17 +70,18 @@ app.post('/send', (req, res) => {
           if (success) {
             res.send('OK');
           } else {
-            res.status(500).send({"errors": ["e_generic"]});
+            res.status(500).json({errors: ["e_generic"]});
           }
         });
       } else {
-        res.status(500).send({"errors": ["e_generic"]});
+        res.status(500).json({errors: ["e_generic"]});
       }
     });
   }
 });
 
 app.get('/', (req, res) => {
+  res.setHeader('Cache-Control', 'no-cache');
   res.sendFile(path.resolve(__dirname, '../app/index.html'));
 });
 
