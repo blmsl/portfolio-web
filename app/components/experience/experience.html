@@ -13,13 +13,19 @@
       <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 right-area">
         <div class="arrow-part"></div>
         <div class="experience-container">
-          <h4>{{job.institution.name}} <a *ngIf="job.institution.url" href="{{job.institution.url}}" target="_blank" class="link js_track_link_click"><i class="fa fa-link"></i></a></h4>
+          <h4>{{job.institution.name}}
+            <a *ngIf="job.institution.url" href="{{job.institution.url}}" target="_blank" class="link js_track_link_click">
+              <i class="fa fa-link">&nbsp;</i>
+            </a>
+          </h4>
           <h5>{{job.title}}</h5>
           <h5 class="sub-heading"><i>{{job.institution.location}}</i></h5>
           <section [innerHtml]="job.content" class="content"></section>
           <h6 *ngIf="job.accomplishments">Accomplishments</h6>
           <section *ngIf="job.accomplishments" [innerHtml]="job.accomplishments" class="content"></section>
-          <div *ngIf="job.video" class="vid-container"><iframe class="youtube-frame" width="0" height="0" src="//www.youtube.com/embed/{{job.video}}"></iframe></div>
+          <div *ngIf="job.video" class="vid-container">
+            <iframe class="youtube-frame" width="0" height="0" src="//www.youtube.com/embed/{{job.video}}">&nbsp;</iframe>
+          </div>
         </div>
       </div>
     </div>
