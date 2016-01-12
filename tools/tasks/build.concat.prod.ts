@@ -23,6 +23,7 @@ export = function concat(gulp, plugins) {
 
     function concatShim() {
       return gulp.src([
+          join(NODE_MODULES_ROOT, 'systemjs/dist/system.js'),
           join(NODE_MODULES_ROOT, 'systemjs/dist/system-polyfills.js'),
           join(NODE_MODULES_ROOT, 'es6-shim/es6-shim.min.js'),
           join(NODE_MODULES_ROOT, 'reflect-metadata/Reflect.js'),

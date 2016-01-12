@@ -37,19 +37,7 @@ export const REV_MANIFEST         = 'rev-manifest.json';
 export const VERSION_NPM          = '3.3.12';
 export const VERSION_NODE         = '5.3.0';
 
-// Declare NPM dependencies (Note that globs should not be injected).
-export const NPM_DEPENDENCIES = [
-  //{ src: 'systemjs/dist/system-polyfills.js', dest: LIB_DEST },
-  //
-  //{ src: 'es6-shim/es6-shim.min.js', inject: 'shims', dest: LIB_DEST },
-  //{ src: 'es6-shim/es6-shim.map', dest: LIB_DEST },
-  //{ src: 'reflect-metadata/Reflect.js', inject: 'shims', dest: LIB_DEST },
-  //{ src: 'reflect-metadata/Reflect.js.map', dest: LIB_DEST },
-  { src: 'systemjs/dist/system.js', inject: 'shims', dest: LIB_DEST },
-  { src: 'systemjs/dist/system.js.map', dest: LIB_DEST },
-  //{ src: 'angular2/bundles/angular2-polyfills.min.js', inject: 'shims', dest: LIB_DEST },
-
-  // Fonts
+const NPM_FONTS:any = [
   { src: 'font-awesome/fonts/FontAwesome.otf', dest: FONTS_DEST },
   { src: 'font-awesome/fonts/fontawesome-webfont.eot', dest: FONTS_DEST },
   { src: 'font-awesome/fonts/fontawesome-webfont.svg', dest: FONTS_DEST },
@@ -64,20 +52,41 @@ export const NPM_DEPENDENCIES = [
   { src: 'bootstrap/dist/fonts/glyphicons-halflings-regular.woff2', dest: FONTS_DEST }
 ];
 
-// Declare local files that needs to be injected
-export const APP_ASSETS = [
-  // Libraries
-  { src: `${LIB_DEST}/lib.min.js`, inject: 'libs', dest: LIB_DEST },
+const NPM_DEPENDENCIES_DEV:any = [
+  { src: 'systemjs/dist/system-polyfills.js', dest: LIB_DEST },
 
-  // Shims
-  { src: `${LIB_DEST}/shim.min.js`, inject: 'shims', dest: LIB_DEST },
+  { src: 'es6-shim/es6-shim.min.js', inject: 'shims', dest: LIB_DEST },
+  { src: 'reflect-metadata/Reflect.js', inject: 'shims', dest: LIB_DEST },
+  { src: 'systemjs/dist/system.src.js', inject: 'shims', dest: LIB_DEST },
+  { src: 'angular2/bundles/angular2-polyfills.js', inject: 'shims', dest: LIB_DEST },
 
-  // Custom JS files
-  { src: `${JS_DEST}/common.min.js`, inject: true, dest: JS_DEST },
+  // Faster dev page load
+  { src: 'rxjs/bundles/Rx.min.js', inject: 'libs', dest: LIB_DEST },
+  { src: 'angular2/bundles/angular2.min.js', inject: 'libs', dest: LIB_DEST },
+  { src: 'angular2/bundles/router.js', inject: 'libs', dest: LIB_DEST },
+  { src: 'angular2/bundles/http.min.js', inject: 'libs', dest: LIB_DEST },
 
-  // Global CSS
-  { src: `${CSS_DEST}/common.min.css`, inject: true, dest: CSS_DEST },
+  // Other JS libraries
+  { src: 'jquery/dist/jquery.min.js', inject: true, dest: JS_DEST },
+  { src: 'jquery/dist/jquery.min.map', dest: JS_DEST },
+  { src: 'bootstrap/dist/js/bootstrap.min.js', inject: true, dest: JS_DEST },
+  { src: 'underscore/underscore-min.js', inject: true, dest: JS_DEST },
+  { src: 'underscore/underscore-min.map', dest: JS_DEST },
+  { src: 'jquery.easing/jquery.easing.min.js', inject: true, dest: JS_DEST },
 
+  // CSS
+  { src: 'bootstrap/dist/css/bootstrap.min.css', inject: true, dest: CSS_DEST },
+  { src: 'bootstrap/dist/css/bootstrap.min.css.map', dest: CSS_DEST },
+  { src: 'font-awesome/css/font-awesome.min.css', inject: true, dest: CSS_DEST },
+  { src: 'font-awesome/css/font-awesome.css.map', dest: CSS_DEST },
+].concat(NPM_FONTS);
+
+const NPM_DEPENDENCIES_PROD:any = [].concat(NPM_FONTS);
+
+// Declare NPM dependencies (Note that globs should not be injected).
+export const NPM_DEPENDENCIES:any = ENV === 'dev' ? NPM_DEPENDENCIES_DEV : NPM_DEPENDENCIES_PROD;
+
+const APP_STATIC_ASSETS:any = [
   // Other resources
   { src: `${APP_SRC}/404.html`, dest: APP_DEST },
   { src: `${APP_SRC}/exclude.html`, dest: APP_DEST },
@@ -89,11 +98,39 @@ export const APP_ASSETS = [
   { src: `${APP_SRC}/sw.min.js`, dest: APP_DEST }
 ];
 
+const APP_ASSETS_DEV:any = [
+// Custom JS files
+  { src: `${ASSETS_SRC}/js/modernizr.custom.min.js`, inject: true, dest: JS_DEST },
+  { src: `${ASSETS_SRC}/js/jquery.gridrotator.min.js`, inject: true, dest: JS_DEST },
+  { src: `${ASSETS_SRC}/js/stick.up.min.js`, inject: true, dest: JS_DEST },
+  { src: `${ASSETS_SRC}/js/jquery.easypiechart.min.js`, inject: true, dest: JS_DEST },
+
+  // Global CSS
+  { src: `${ASSETS_SRC}/css/layout.css`, inject: true, dest: CSS_DEST },
+].concat(APP_STATIC_ASSETS);
+
+const APP_ASSETS_PROD:any = [
+  // Libraries
+  { src: `${LIB_DEST}/lib.min.js`, inject: 'libs', dest: LIB_DEST },
+
+  // Shims
+  { src: `${LIB_DEST}/shim.min.js`, inject: 'shims', dest: LIB_DEST },
+
+  // Custom JS files
+  { src: `${JS_DEST}/common.min.js`, inject: true, dest: JS_DEST },
+
+  // Global CSS
+  { src: `${CSS_DEST}/common.min.css`, inject: true, dest: CSS_DEST },
+].concat(APP_STATIC_ASSETS);
+
+// Declare local files that needs to be injected
+export const APP_ASSETS:any = ENV === 'dev' ? APP_ASSETS_DEV : APP_ASSETS_PROD;
+
 NPM_DEPENDENCIES
   .filter(d => !/\*/.test(d.src)) // Skip globs
   .forEach(d => d.src = require.resolve(d.src));
 
-export const DEPENDENCIES = NPM_DEPENDENCIES.concat(APP_ASSETS);
+export const DEPENDENCIES:any = NPM_DEPENDENCIES.concat(APP_ASSETS);
 
 
 // ----------------
