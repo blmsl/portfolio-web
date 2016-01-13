@@ -94,8 +94,7 @@ const APP_STATIC_ASSETS:any = [
   { src: `${APP_SRC}/google536c542405d09504.html`, dest: APP_DEST },
   { src: `${APP_SRC}/manifest.json`, dest: APP_DEST },
   { src: `${APP_SRC}/robots.txt`, dest: APP_DEST },
-  { src: `${APP_SRC}/sitemap.xml`, dest: APP_DEST },
-  { src: `${APP_SRC}/sw.min.js`, dest: APP_DEST }
+  { src: `${APP_SRC}/sitemap.xml`, dest: APP_DEST }
 ];
 
 const APP_ASSETS_DEV:any = [
