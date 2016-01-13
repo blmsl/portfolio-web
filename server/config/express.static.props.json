@@ -54,11 +54,6 @@
       "uri": "/google536c542405d09504.html",
       "location": "./app/google536c542405d09504.html",
       "cache": "365d"
-    },
-    {
-      "uri": "/sw.min.js",
-      "location": "./app/sw.min.js",
-      "cache": "365d"
     }
   ]
 }
