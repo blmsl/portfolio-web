@@ -6,7 +6,7 @@ import {BUNDLES_DEST, SYSTEM_CONFIG_BUILDER} from '../config';
 const BUNDLE_OPTS = {
   minify: true,
   mangle: false,
-  sourceMaps: true,
+  sourceMaps: false,
   format: 'cjs'
 };
 

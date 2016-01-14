@@ -18,10 +18,8 @@ export = function concat(gulp, plugins) {
           join(NODE_MODULES_ROOT, 'angular2/bundles/router.js'),
           join(NODE_MODULES_ROOT, 'angular2/bundles/http.js')
         ])
-        .pipe(plugins.sourcemaps.init())
         .pipe(plugins.concat('lib.min.js'))
         .pipe(plugins.uglify(UGLIFY_OPTS)) // TODO switch to already minified versions
-        .pipe(plugins.sourcemaps.write('.'))
         .pipe(gulp.dest(join(LIB_DEST)));
     }
 
@@ -33,10 +31,8 @@ export = function concat(gulp, plugins) {
           join(NODE_MODULES_ROOT, 'reflect-metadata/Reflect.js'),
           join(NODE_MODULES_ROOT, 'angular2/bundles/angular2-polyfills.js')
         ])
-        .pipe(plugins.sourcemaps.init())
         .pipe(plugins.concat('shim.min.js'))
         .pipe(plugins.uglify(UGLIFY_OPTS)) // TODO switch to already minified versions
-        .pipe(plugins.sourcemaps.write('.'))
         .pipe(gulp.dest(join(LIB_DEST)));
     }
 
@@ -52,9 +48,8 @@ export = function concat(gulp, plugins) {
           join(JS_SRC, 'stick.up.min.js'),
           join(JS_SRC, 'jquery.easypiechart.min.js')
         ])
-        .pipe(plugins.sourcemaps.init())
         .pipe(plugins.concat('common.min.js'))
-        .pipe(plugins.sourcemaps.write('.'))
+        .pipe(plugins.replace(/\/\/# sourceMappingURL=.*.map/g, ''))
         .pipe(gulp.dest(join(JS_DEST)));
     }
 
@@ -65,9 +60,7 @@ export = function concat(gulp, plugins) {
           join(NODE_MODULES_ROOT, 'font-awesome/css/font-awesome.min.css'),
           join(CSS_SRC, 'layout.css')
         ])
-        .pipe(plugins.sourcemaps.init())
         .pipe(plugins.concat('common.min.css'))
-        .pipe(plugins.sourcemaps.write('.'))
         .pipe(gulp.dest(join(CSS_DEST)));
     }
   };
