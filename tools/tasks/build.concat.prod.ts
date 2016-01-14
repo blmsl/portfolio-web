@@ -3,6 +3,9 @@ import {join} from 'path';
 import {ASSETS_SRC, LIB_DEST, JS_DEST, CSS_DEST} from '../config';
 
 const NODE_MODULES_ROOT = 'node_modules';
+const UGLIFY_OPTS = {
+  mangle: false
+};
 
 export = function concat(gulp, plugins) {
   return function() {
@@ -17,6 +20,7 @@ export = function concat(gulp, plugins) {
         ])
         .pipe(plugins.sourcemaps.init())
         .pipe(plugins.concat('lib.min.js'))
+        .pipe(plugins.uglify(UGLIFY_OPTS)) // TODO switch to already minified versions
         .pipe(plugins.sourcemaps.write('.'))
         .pipe(gulp.dest(join(LIB_DEST)));
     }
@@ -31,6 +35,7 @@ export = function concat(gulp, plugins) {
         ])
         .pipe(plugins.sourcemaps.init())
         .pipe(plugins.concat('shim.min.js'))
+        .pipe(plugins.uglify(UGLIFY_OPTS)) // TODO switch to already minified versions
         .pipe(plugins.sourcemaps.write('.'))
         .pipe(gulp.dest(join(LIB_DEST)));
     }

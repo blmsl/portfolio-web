@@ -63,7 +63,7 @@ const NPM_DEPENDENCIES_DEV:any = [
   // Faster dev page load
   { src: 'rxjs/bundles/Rx.js', inject: 'libs', dest: LIB_DEST },
   { src: 'angular2/bundles/angular2.dev.js', inject: 'libs', dest: LIB_DEST },
-  { src: 'angular2/bundles/router.js', inject: 'libs', dest: LIB_DEST },
+  { src: 'angular2/bundles/router.dev.js', inject: 'libs', dest: LIB_DEST },
   { src: 'angular2/bundles/http.dev.js', inject: 'libs', dest: LIB_DEST },
 
   // Other JS libraries
