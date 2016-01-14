@@ -132,3 +132,17 @@ h6 {
   margin: 50px 0 50px -15px;
   display: block;
 }
+
+.browsehappy {
+  background: $midnight-express;
+  text-align: center;
+  padding: 20px;
+
+  a {
+    color: $iris-blue;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}

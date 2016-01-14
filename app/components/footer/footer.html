@@ -6,7 +6,11 @@
       <p>social links and page info</p>
     </div>
     <ul>
-      <li *ngFor="#link of links"><a href="{{link.url}}" target="_blank" title="{{link.title}}" class="js_track_link_click"><i class="fa fa-{{link.icon}} fa-2x"></i></a></li>
+      <li *ngFor="#link of links">
+        <a href="{{link.url}}" target="_blank" title="{{link.title}}" class="js_track_link_click">
+          <i class="fa fa-{{link.icon}} fa-2x"></i>
+        </a>
+      </li>
     </ul>
     <div class="footer-info">
       <p><i class="fa fa-info"></i> JavaScript app (Angular 2, NodeJS, TypeScript)</p>
