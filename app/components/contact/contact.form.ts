@@ -1,9 +1,9 @@
-import {Component, View, OnInit}        from 'angular2/core';
-import {Pipe, PipeTransform}            from 'angular2/core';
-import {FORM_DIRECTIVES}                from 'angular2/common';
-import {Http, HTTP_PROVIDERS, Response} from 'angular2/http';
-import {ContactService}                 from './../../services/contact.service';
-import {ContactMessage}                 from './../../definitions/contact/contact.message';
+import {Component, View, OnInit}          from 'angular2/core';
+import {Pipe, PipeTransform}              from 'angular2/core';
+import {FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/common';
+import {Http, HTTP_PROVIDERS, Response}   from 'angular2/http';
+import {ContactService}                   from './../../services/contact.service';
+import {ContactMessage}                   from './../../definitions/contact/contact.message';
 
 declare var _:UnderscoreStatic;
 
@@ -13,7 +13,6 @@ export class TrimPipe implements PipeTransform {
     return value.trim();
   }
 }
-
 @Component({
   selector: 'contact-form',
   providers: [Http, HTTP_PROVIDERS, ContactService],
@@ -22,7 +21,7 @@ export class TrimPipe implements PipeTransform {
   pipes: [TrimPipe],
   templateUrl: './components/contact/contact.form.html',
   styleUrls: ['./components/contact/contact.form.css'],
-  directives: [FORM_DIRECTIVES],
+  directives: [FORM_DIRECTIVES, CORE_DIRECTIVES],
 })
 export class ContactFormComponent implements OnInit {
   public message:ContactMessage;

@@ -53,32 +53,28 @@ const NPM_FONTS:any = [
 ];
 
 const NPM_DEPENDENCIES_DEV:any = [
-  { src: 'systemjs/dist/system-polyfills.js', dest: LIB_DEST },
+  { src: 'systemjs/dist/system-polyfills.src.js', dest: LIB_DEST },
 
-  { src: 'es6-shim/es6-shim.min.js', inject: 'shims', dest: LIB_DEST },
+  { src: 'es6-shim/es6-shim.js', inject: 'shims', dest: LIB_DEST },
   { src: 'reflect-metadata/Reflect.js', inject: 'shims', dest: LIB_DEST },
   { src: 'systemjs/dist/system.src.js', inject: 'shims', dest: LIB_DEST },
   { src: 'angular2/bundles/angular2-polyfills.js', inject: 'shims', dest: LIB_DEST },
 
   // Faster dev page load
-  { src: 'rxjs/bundles/Rx.min.js', inject: 'libs', dest: LIB_DEST },
-  { src: 'angular2/bundles/angular2.min.js', inject: 'libs', dest: LIB_DEST },
+  { src: 'rxjs/bundles/Rx.js', inject: 'libs', dest: LIB_DEST },
+  { src: 'angular2/bundles/angular2.dev.js', inject: 'libs', dest: LIB_DEST },
   { src: 'angular2/bundles/router.js', inject: 'libs', dest: LIB_DEST },
-  { src: 'angular2/bundles/http.min.js', inject: 'libs', dest: LIB_DEST },
+  { src: 'angular2/bundles/http.dev.js', inject: 'libs', dest: LIB_DEST },
 
   // Other JS libraries
-  { src: 'jquery/dist/jquery.min.js', inject: true, dest: JS_DEST },
-  { src: 'jquery/dist/jquery.min.map', dest: JS_DEST },
-  { src: 'bootstrap/dist/js/bootstrap.min.js', inject: true, dest: JS_DEST },
-  { src: 'underscore/underscore-min.js', inject: true, dest: JS_DEST },
-  { src: 'underscore/underscore-min.map', dest: JS_DEST },
-  { src: 'jquery.easing/jquery.easing.min.js', inject: true, dest: JS_DEST },
+  { src: 'jquery/dist/jquery.js', inject: true, dest: JS_DEST },
+  { src: 'bootstrap/dist/js/bootstrap.js', inject: true, dest: JS_DEST },
+  { src: 'underscore/underscore.js', inject: true, dest: JS_DEST },
+  { src: 'jquery.easing/jquery.easing.js', inject: true, dest: JS_DEST },
 
   // CSS
-  { src: 'bootstrap/dist/css/bootstrap.min.css', inject: true, dest: CSS_DEST },
-  { src: 'bootstrap/dist/css/bootstrap.min.css.map', dest: CSS_DEST },
-  { src: 'font-awesome/css/font-awesome.min.css', inject: true, dest: CSS_DEST },
-  { src: 'font-awesome/css/font-awesome.css.map', dest: CSS_DEST },
+  { src: 'bootstrap/dist/css/bootstrap.css', inject: true, dest: CSS_DEST },
+  { src: 'font-awesome/css/font-awesome.css', inject: true, dest: CSS_DEST }
 ].concat(NPM_FONTS);
 
 const NPM_DEPENDENCIES_PROD:any = [].concat(NPM_FONTS);

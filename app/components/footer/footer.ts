@@ -37,7 +37,7 @@ export class FooterComponent implements OnInit {
         (res:Response) =>
             this.lastModified = res.text(),
         (err:Response) =>
-            this.lastModified = '???'
+            this.lastModified = '...'
     );
   }
 }

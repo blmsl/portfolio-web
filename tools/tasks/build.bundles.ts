@@ -5,6 +5,7 @@ import {BUNDLES_DEST, SYSTEM_CONFIG_BUILDER} from '../config';
 
 const BUNDLE_OPTS = {
   minify: true,
+  mangle: false,
   sourceMaps: true,
   format: 'cjs'
 };
@@ -19,8 +20,8 @@ export = function bundles(gulp, plugins) {
 
     function bundleApp(done) {
       builder.bundle(
-        'bootstrap - angular2/*',
-        join(BUNDLES_DEST, 'app.js'), BUNDLE_OPTS).then(done);
+        'bootstrap - angular2/*', join(BUNDLES_DEST, 'app.js'), BUNDLE_OPTS
+      ).then(done);
     }
   };
 };
