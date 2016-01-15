@@ -27,17 +27,17 @@ export class FooterComponent implements OnInit {
 
   getLinks() {
     this._footerService.getLinks().then(
-        links =>
-            this.links = links
+      links =>
+        this.links = links
     );
   }
 
   getLastModified() {
     this._footerService.getLastModified().subscribe(
-        (res:Response) =>
-            this.lastModified = res.text(),
-        (err:Response) =>
-            this.lastModified = '...'
+      (res:Response) =>
+        this.lastModified = res.text(),
+      (err:Response) =>
+        this.lastModified = '...'
     );
   }
 }

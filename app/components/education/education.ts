@@ -22,7 +22,7 @@ export class EducationComponent implements OnInit {
 
   getSchools() {
     this._educationService.getSchools().then(
-        schools =>
-            this.schools = schools);
+      schools =>
+        this.schools = schools);
   }
 }

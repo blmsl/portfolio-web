@@ -29,8 +29,8 @@ export class SkillsComponent implements OnInit {
 
   getSkills() {
     this._skillService.getSkills().then(
-        skills =>
-            this.skills = skills
+      skills =>
+        this.skills = skills
     );
   }
 
@@ -42,7 +42,7 @@ export class SkillsComponent implements OnInit {
         if (this._timeoutScroll) {
           clearTimeout(this._timeoutScroll);
         }
-        this._timeoutScroll = _.delay(_.bind(function() {
+        this._timeoutScroll = _.delay(_.bind(function () {
           if (!this._skillChartDrawn) {
             this.drawChart();
           }
@@ -63,7 +63,7 @@ export class SkillsComponent implements OnInit {
           this._skillChartDrawn = true;
           $('.chart').easyPieChart({
             easing: 'easeOutBounce',
-            onStep: function(from, to, percent) {
+            onStep: function (from, to, percent) {
               $(this.el).find('.percent').text(Math.round(percent));
             }
           });
