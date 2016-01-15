@@ -16,7 +16,7 @@ export var JOBS:Array<Job> = [
     'including <b><i>Direct from Account&trade;</i></b>, <b><i>Westpac Exhange&trade;</i></b> and <b>' +
     '<i>Westpac One&trade;</i></b>.</p><p>The server-side development environment is <b>Java</b>, while the ' +
     'client-side is built using a variety of <b>JavaScript technologies</b> and <b>frameworks</b>, most notably' +
-    '<b>RequireJS</b>, <b>Backbone</b>, Marionette, <b>Underscore</b>, <b>AngularJS</b>, Sass, and, during ' +
+    '<b>RequireJS</b>, <b>Backbone</b>, Marionette, <b>Underscore</b>, <b>AngularJS</b>, SCSS, and, during ' +
     'development, <b>Node.js</b>.</p><p>Build and Testing tools include <b>Grunt</b>, Maven, Jenkins, JUnit, ' +
     'Cucumber, <b>Jasmine</b> and <b>Karma</b>.</p>',
   }, {

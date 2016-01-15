@@ -8,7 +8,7 @@ export var SKILLS:Array<Skill> = [
   }, {
     name: 'Web Markup',
     level: 70,
-    content: 'HTML5; CSS3; Sass;',
+    content: 'HTML5; CSS3; SCSS;',
   }, {
     name: 'Java',
     level: 90,
