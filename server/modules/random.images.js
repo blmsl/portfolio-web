@@ -1,16 +1,16 @@
 'use strict';
-let imageIds = (process.env.INSTAGRAM_IMAGE_IDS || '').split(',');
+let imageIds = (process.env.INSTAGRAM_IMAGE_IDS || '').split(',')
 
-var getIds = () => {
-  var reducedImageIds = [],
-      imageIdsCopy = imageIds.slice(0);
+let getIds = () => {
+  let reducedImageIds = []
+  let imageIdsCopy = imageIds.slice(0)
+
   if (imageIds.length > 64) {
     while (reducedImageIds.length < 65) {
-      reducedImageIds.push(
-          imageIdsCopy.splice(Math.floor(Math.random() * (imageIdsCopy.length)), 1)[0]);
+      reducedImageIds.push(imageIdsCopy.splice(Math.floor(Math.random() * (imageIdsCopy.length)), 1)[0])
     }
   }
-  return reducedImageIds;
+  return reducedImageIds
 }
 
-module.exports.getIds = getIds;
+module.exports.getIds = getIds

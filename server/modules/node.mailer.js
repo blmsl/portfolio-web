@@ -1,10 +1,9 @@
 'use strict';
-let nodeMailer = require('nodemailer');
+let nodeMailer = require('nodemailer')
 
-const
-    GMAIL_SENDER_EMAIL = process.env.GMAIL_SENDER_EMAIL,
-    GMAIL_APP_EMAIL = process.env.GMAIL_APP_EMAIL,
-    GMAIL_APP_PASSWORD = process.env.GMAIL_APP_PASSWORD;
+const GMAIL_SENDER_EMAIL = process.env.GMAIL_SENDER_EMAIL
+const GMAIL_APP_EMAIL = process.env.GMAIL_APP_EMAIL
+const GMAIL_APP_PASSWORD = process.env.GMAIL_APP_PASSWORD
 
 /**
  * {Object} message
@@ -13,10 +12,8 @@ const
  * {string} message.subject
  * {string} message.html
  * {Function} [callback] optional callback returns true for a successful send, else false
- *
- * @returns {boolean} true for successful send, or false if an error occurred
  */
-var send = (message, callback) => {
+let send = (message, callback) => {
   let transporter = nodeMailer.createTransport({
     service: 'gmail',
     auth: {
@@ -25,15 +22,15 @@ var send = (message, callback) => {
     }
   }, {
     from: GMAIL_SENDER_EMAIL
-  });
-  return transporter.sendMail(message, (error, info) => {
+  })
+  transporter.sendMail(message, (error, info) => {
     if (error) {
-      console.log('Message not sent: ' + error);
-      callback(false);
+      console.log('Message not sent: ' + error)
+      callback(false)
     }
-    console.log('Message sent: ' + info.response);
-    callback(true);
-  });
+    console.log('Message sent: ' + info.response)
+    callback(true)
+  })
 }
 
-module.exports.send = send;
+module.exports.send = send
