@@ -1,5 +1,6 @@
-ouq77portfolio
+ouq77portfolio [![Dependency Status](https://david-dm.org/ouq77/portfolio-web/portfolio-web-ng2-heroku.svg)](https://david-dm.org/ouq77/portfolio-web/portfolio-web-ng2-heroku) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 ==============
+
 
 Angular2 app, built on top of [angular2-seed](https://github.com/mgechev/angular2-seed), that can be run on Heroku in NodeJS. 
 
