@@ -3,7 +3,7 @@ import Size     = google.maps.Size;
 import {Point}  from './point';
 
 export const START_POINT:Point = {lat: 22.4988409, lng: 78.471251};
-export const LONGON:Point = {lat: 51.451005, lng: -0.147970};
+export const LONDON:Point = {lat: 51.451005, lng: -0.147970};
 export const CAPE_TOWN:Point = {lat: -33.934620, lng: 18.406203};
 export const BENONI:Point = {lat: -26.172906, lng: 28.310071};
 export const HARTSWATER:Point = {lat: -27.746947, lng: 24.760681};

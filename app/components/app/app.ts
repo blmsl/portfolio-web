@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
     (($) => {
       'use strict';
       $('a[href*="#"]:not([href="#"])').click(
-        function() {
+        function () {
           if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
             var target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
@@ -66,7 +66,7 @@ export class AppComponent implements OnInit {
           clearTimeout(this._timeoutMenuAnimate);
         }
         // wait half a second for menu collapse/expand to finish
-        this._timeoutMenuAnimate = _.delay(function() {
+        this._timeoutMenuAnimate = _.delay(function () {
           if ($('#js_navbar').hasClass('in')) {
             if (!elementInViewport($, $('#js_links_li'))) {
               $('html,body').animate({

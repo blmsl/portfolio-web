@@ -31,8 +31,8 @@ export class HeaderComponent implements OnInit {
 
   getImageIds() {
     this._headerService.getImageIds().subscribe(
-        (res:Response) =>
-            this.initGridRotator(res.json().imageIds)
+      (res:Response) =>
+        this.initGridRotator(res.json().imageIds)
     );
   }
 
@@ -47,7 +47,7 @@ export class HeaderComponent implements OnInit {
       );
 
       $('.navbar-toggle').click(
-        ()  =>
+        () =>
           $('.navbar-collapse').removeClass('hide-class')
       );
     })(jQuery);

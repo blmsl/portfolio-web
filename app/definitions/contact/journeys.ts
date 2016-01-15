@@ -4,7 +4,7 @@ import * as a     from './airports';
 export const JOURNEYS:Array<Array<Airport>> = [
   [a.KIM, a.PLZ, a.ELS], [a.KIM, a.JNB], [a.JNB, a.AMS, a.LHR], [a.JNB, a.NBO, a.LHR],
   [a.JNB, a.CPT], [a.JNB, a.MBD], [a.JNB, a.DUR], [a.JNB, a.BFN], [a.JNB, a.PLZ], [a.JNB, a.ELS],
-  [a.JNB, a.GRJ], [a.JNB, a.MPM], [a.JNB, a.GBE], [a.JNB, a.WDH],  [a.JNB, a.BUQ], [a.JNB, a.HRE],
+  [a.JNB, a.GRJ], [a.JNB, a.MPM], [a.JNB, a.GBE], [a.JNB, a.WDH], [a.JNB, a.BUQ], [a.JNB, a.HRE],
   [a.JNB, a.LVI], [a.JNB, a.LUN], [a.JNB, a.LAD], [a.JNB, a.DAR], [a.JNB, a.EBB], [a.JNB, a.FIH],
   [a.JNB, a.LOS], [a.JNB, a.ABJ, a.ACC, a.JNB], [a.JNB, a.DKR], [a.JNB, a.SID, a.JFK, a.JNB],
   [a.SID, a.MIA, a.CPT], [a.SID, a.ATL, a.IAD, a.LGA, a.ATL, a.JNB], [a.JNB, a.MRU], [a.JNB, a.HKG],

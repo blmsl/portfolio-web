@@ -16,11 +16,11 @@ export class ContactService {
 
   send(message:ContactMessage) {
     return this.http.post('/send',
-        JSON.stringify(message),
-        {
-          headers: new Headers({
-            'Content-Type': 'application/json'
-          })
-        });
+      JSON.stringify(message),
+      {
+        headers: new Headers({
+          'Content-Type': 'application/json'
+        })
+      });
   }
 }

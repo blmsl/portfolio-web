@@ -19,7 +19,7 @@ export var CITIES:Array<City> = [
     title: 'I went to High School here...',
     icon: prevIcon
   }, {
-    loc: p.LONGON,
+    loc: p.LONDON,
     title: lived,
     icon: prevIcon
   }, {
