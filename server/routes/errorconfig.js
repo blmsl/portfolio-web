@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 let errorMessages = require('./../config/error.props.json')
 
 module.exports = (req, res) => {

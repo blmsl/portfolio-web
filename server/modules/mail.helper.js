@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 let fs = require('fs')
 
 const ERROR_MESSAGES = require('./../config/error.props.json')
@@ -41,8 +41,7 @@ let validate = (submission) => {
   }
   if (!submission.email) {
     response.push(ERROR_MESSAGES.e_email_required.code)
-  }
-  else if (!isValidEmail(submission.email)) {
+  } else if (!isValidEmail(submission.email)) {
     response.push(ERROR_MESSAGES.e_email_invalid.code)
   }
   if (!submission.text) {
@@ -131,8 +130,8 @@ let isValidEmail = (email) => {
  */
 let formatValue = (value, args) => {
   return value.replace(/{(\d+)}/g, function (match, number) {
-    return typeof args[number] != 'undefined' ?
-      args[number] : match
+    return typeof args[number] !== 'undefined'
+      ? args[number] : match
   })
 }
 

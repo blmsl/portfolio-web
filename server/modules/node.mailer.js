@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 let nodeMailer = require('nodemailer')
 
 const GMAIL_SENDER_EMAIL = process.env.GMAIL_SENDER_EMAIL

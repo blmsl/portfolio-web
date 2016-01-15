@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 let imageIds = (process.env.INSTAGRAM_IMAGE_IDS || '').split(',')
 
 let getIds = () => {

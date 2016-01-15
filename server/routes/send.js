@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 let mailHelper = require('./../modules/mail.helper.js')
 let nodeMailer = require('./../modules/node.mailer.js')
 
