@@ -39,24 +39,30 @@
   <body>
     <!--google maps api-->
     <script src="https://maps.googleapis.com/maps/api/js?key=<%= GOOGLE_ACCOUNT.maps_key %>&amp;libraries=geometry"></script>
-    <!-- inject:js -->
-    <!-- endinject -->
     <!--[if lt IE 10]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
     <container>
       <div class="ng-loading">
         <img class="ng-loading-image" src="assets/images/loading.gif" alt="Loading..."/>
       </div>
     </container>
+    <% if (ENV === 'dev') { %>
     <!-- shims:js -->
     <!-- endinject -->
-    <script>System.config(<%= JSON.stringify(SYSTEM_CONFIG) %>)</script>
     <!-- libs:js -->
     <!-- endinject -->
+    <% } %>
+    <!-- inject:js -->
+    <!-- endinject -->
+    <% if (ENV === 'dev') { %>
+    <script>System.config(<%= JSON.stringify(SYSTEM_CONFIG) %>)</script>
     <script>
       System.import('bootstrap')
         .catch(function (e) {
           console.error(e, 'Report this error at https://github.com/ouq77/portfolio-web/issues');
         });
+    </script>
+    <% } %>
+    <script>
       function trackEvent(type, value) {
         if(_gaq) {
           _gaq.push(['_trackEvent', type, value]);

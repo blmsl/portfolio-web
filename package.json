@@ -29,6 +29,7 @@
   "devDependencies": {
     "async": "^1.5.1",
     "body-parser": "^1.14.2",
+    "browserify": "^13.0.0",
     "chalk": "^1.1.1",
     "compression": "^1.6.0",
     "connect-livereload": "^0.5.4",
@@ -76,7 +77,6 @@
     "serve-static": "^1.10.0",
     "slash": "^1.0.0",
     "stream-series": "^0.1.1",
-    "systemjs-builder": "^0.14.15",
     "tiny-lr": "^0.2.1",
     "traceur": "^0.0.96",
     "ts-node": "^0.5.5",
@@ -86,6 +86,8 @@
     "typescript": "^1.7.5",
     "typescript-register": "^1.1.0",
     "underscore": "^1.8.3",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
     "yargs": "^3.31.0"
   },
   "dependencies": {

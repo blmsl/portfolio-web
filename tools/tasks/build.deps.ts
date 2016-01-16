@@ -6,7 +6,9 @@ export = function buildDepsProd(gulp, plugins) {
     let stream = merge();
 
     DEPENDENCIES.forEach(dep => {
-      stream.add(addStream(dep));
+      if (dep.dest) {
+        stream.add(addStream(dep));
+      }
     });
 
     return stream;
