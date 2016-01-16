@@ -7,7 +7,7 @@ gulp.task('clean',          task('clean', 'all'));
 gulp.task('clean.dist',     task('clean', 'dist'));
 gulp.task('clean.test',     task('clean', 'test'));
 gulp.task('clean.tmp',      task('clean', 'tmp'));
-gulp.task('clean.heroku',  task('clean', 'heroku'));
+gulp.task('clean.heroku',   task('clean', 'heroku'));
 
 gulp.task('check.versions', task('check.versions'));
 

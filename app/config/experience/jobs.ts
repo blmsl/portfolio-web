@@ -74,9 +74,9 @@ export var JOBS:Array<Job> = [
     content: '<p>Worked as a Software Engineer at the Cape Town office of Quirk developing <b>Java</b> (<b>Java ' +
     'EE</b>) <b>web based applications</b> to client specifications within specified deadlines. Projects included ' +
     '<b>SEO optimised websites</b> and <b>mobile websites</b>, <b>custom built CMS</b> solutions, ' +
-    '<b>Facebook Applications</b>, integrations with <b>Twitter</b> and other <b>3rd party APIs</b>, <b>RSS Feeds</b>' +
+    '<b>Facebook Applications</b>, integrations with <b>Twitter</b> and other <b>3rd party APIs</b>, <b>RSS Feeds</b> ' +
     '(both generating and parsing). The development environment was <b>Java</b>, utilising the <b>MVC WebWork</b> ' +
-    'framework and <b>Freemarker Templating</b> engine, backed by <b>Spring</b>, <b>MySQL</b> and ' +
+    'framework and <b>Freemarker Template</b> engine, backed by <b>Spring</b>, <b>MySQL</b> and ' +
     '<b>Hibernate</b>.</p><p>Maintained and supported existing applications. Interfaced with clients regularly for ' +
     'presentations and training. Compiled client facing documentation where required. Performed on-call server ' +
     'monitoring duties.</p>',

@@ -3,7 +3,7 @@ import {APP_SRC, APP_DEST, DEPENDENCIES, ENV} from '../config';
 import {transformPath, templateLocals} from '../utils';
 
 export = function buildIndexDev(gulp, plugins) {
-  return function() {
+  return function () {
     return gulp.src(join(APP_SRC, 'index.html'))
       // NOTE: There might be a way to pipe in loop.
       .pipe(inject('shims'))

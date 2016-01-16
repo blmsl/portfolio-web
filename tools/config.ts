@@ -38,43 +38,43 @@ export const VERSION_NPM          = '3.3.12';
 export const VERSION_NODE         = '5.3.0';
 
 const NPM_FONTS:any = [
-  { src: 'font-awesome/fonts/FontAwesome.otf', dest: FONTS_DEST },
-  { src: 'font-awesome/fonts/fontawesome-webfont.eot', dest: FONTS_DEST },
-  { src: 'font-awesome/fonts/fontawesome-webfont.svg', dest: FONTS_DEST },
-  { src: 'font-awesome/fonts/fontawesome-webfont.ttf', dest: FONTS_DEST },
-  { src: 'font-awesome/fonts/fontawesome-webfont.woff', dest: FONTS_DEST },
-  { src: 'font-awesome/fonts/fontawesome-webfont.woff2', dest: FONTS_DEST },
+  {src: 'font-awesome/fonts/FontAwesome.otf', dest: FONTS_DEST},
+  {src: 'font-awesome/fonts/fontawesome-webfont.eot', dest: FONTS_DEST},
+  {src: 'font-awesome/fonts/fontawesome-webfont.svg', dest: FONTS_DEST},
+  {src: 'font-awesome/fonts/fontawesome-webfont.ttf', dest: FONTS_DEST},
+  {src: 'font-awesome/fonts/fontawesome-webfont.woff', dest: FONTS_DEST},
+  {src: 'font-awesome/fonts/fontawesome-webfont.woff2', dest: FONTS_DEST},
 
-  { src: 'bootstrap/dist/fonts/glyphicons-halflings-regular.eot', dest: FONTS_DEST },
-  { src: 'bootstrap/dist/fonts/glyphicons-halflings-regular.svg', dest: FONTS_DEST },
-  { src: 'bootstrap/dist/fonts/glyphicons-halflings-regular.ttf', dest: FONTS_DEST },
-  { src: 'bootstrap/dist/fonts/glyphicons-halflings-regular.woff', dest: FONTS_DEST },
-  { src: 'bootstrap/dist/fonts/glyphicons-halflings-regular.woff2', dest: FONTS_DEST }
+  {src: 'bootstrap/dist/fonts/glyphicons-halflings-regular.eot', dest: FONTS_DEST},
+  {src: 'bootstrap/dist/fonts/glyphicons-halflings-regular.svg', dest: FONTS_DEST},
+  {src: 'bootstrap/dist/fonts/glyphicons-halflings-regular.ttf', dest: FONTS_DEST},
+  {src: 'bootstrap/dist/fonts/glyphicons-halflings-regular.woff', dest: FONTS_DEST},
+  {src: 'bootstrap/dist/fonts/glyphicons-halflings-regular.woff2', dest: FONTS_DEST}
 ];
 
 const NPM_DEPENDENCIES_DEV:any = [
-  { src: 'systemjs/dist/system-polyfills.src.js', dest: LIB_DEST },
+  {src: 'systemjs/dist/system-polyfills.src.js', dest: LIB_DEST},
 
-  { src: 'es6-shim/es6-shim.js', inject: 'shims', dest: LIB_DEST },
-  { src: 'reflect-metadata/Reflect.js', inject: 'shims', dest: LIB_DEST },
-  { src: 'systemjs/dist/system.src.js', inject: 'shims', dest: LIB_DEST },
-  { src: 'angular2/bundles/angular2-polyfills.js', inject: 'shims', dest: LIB_DEST },
+  {src: 'es6-shim/es6-shim.js', inject: 'shims', dest: LIB_DEST},
+  {src: 'reflect-metadata/Reflect.js', inject: 'shims', dest: LIB_DEST},
+  {src: 'systemjs/dist/system.src.js', inject: 'shims', dest: LIB_DEST},
+  {src: 'angular2/bundles/angular2-polyfills.js', inject: 'shims', dest: LIB_DEST},
 
   // Faster dev page load
-  { src: 'rxjs/bundles/Rx.js', inject: 'libs', dest: LIB_DEST },
-  { src: 'angular2/bundles/angular2.dev.js', inject: 'libs', dest: LIB_DEST },
-  { src: 'angular2/bundles/router.dev.js', inject: 'libs', dest: LIB_DEST },
-  { src: 'angular2/bundles/http.dev.js', inject: 'libs', dest: LIB_DEST },
+  {src: 'rxjs/bundles/Rx.js', inject: 'libs', dest: LIB_DEST},
+  {src: 'angular2/bundles/angular2.dev.js', inject: 'libs', dest: LIB_DEST},
+  {src: 'angular2/bundles/router.dev.js', inject: 'libs', dest: LIB_DEST},
+  {src: 'angular2/bundles/http.dev.js', inject: 'libs', dest: LIB_DEST},
 
   // Other JS libraries
-  { src: 'jquery/dist/jquery.js', inject: true, dest: JS_DEST },
-  { src: 'bootstrap/dist/js/bootstrap.js', inject: true, dest: JS_DEST },
-  { src: 'underscore/underscore.js', inject: true, dest: JS_DEST },
-  { src: 'jquery.easing/jquery.easing.js', inject: true, dest: JS_DEST },
+  {src: 'jquery/dist/jquery.js', inject: true, dest: JS_DEST},
+  {src: 'bootstrap/dist/js/bootstrap.js', inject: true, dest: JS_DEST},
+  {src: 'underscore/underscore.js', inject: true, dest: JS_DEST},
+  {src: 'jquery.easing/jquery.easing.js', inject: true, dest: JS_DEST},
 
   // CSS
-  { src: 'bootstrap/dist/css/bootstrap.css', inject: true, dest: CSS_DEST },
-  { src: 'font-awesome/css/font-awesome.css', inject: true, dest: CSS_DEST }
+  {src: 'bootstrap/dist/css/bootstrap.css', inject: true, dest: CSS_DEST},
+  {src: 'font-awesome/css/font-awesome.css', inject: true, dest: CSS_DEST}
 ].concat(NPM_FONTS);
 
 const NPM_DEPENDENCIES_PROD:any = [].concat(NPM_FONTS);
@@ -84,38 +84,38 @@ export const NPM_DEPENDENCIES:any = ENV === 'dev' ? NPM_DEPENDENCIES_DEV : NPM_D
 
 const APP_STATIC_ASSETS:any = [
   // Other resources
-  { src: `${APP_SRC}/404.html`, dest: APP_DEST },
-  { src: `${APP_SRC}/exclude.html`, dest: APP_DEST },
-  { src: `${APP_SRC}/favicon.ico`, dest: APP_DEST },
-  { src: `${APP_SRC}/google536c542405d09504.html`, dest: APP_DEST },
-  { src: `${APP_SRC}/manifest.json`, dest: APP_DEST },
-  { src: `${APP_SRC}/robots.txt`, dest: APP_DEST },
-  { src: `${APP_SRC}/sitemap.xml`, dest: APP_DEST }
+  {src: `${APP_SRC}/404.html`, dest: APP_DEST},
+  {src: `${APP_SRC}/exclude.html`, dest: APP_DEST},
+  {src: `${APP_SRC}/favicon.ico`, dest: APP_DEST},
+  {src: `${APP_SRC}/google536c542405d09504.html`, dest: APP_DEST},
+  {src: `${APP_SRC}/manifest.json`, dest: APP_DEST},
+  {src: `${APP_SRC}/robots.txt`, dest: APP_DEST},
+  {src: `${APP_SRC}/sitemap.xml`, dest: APP_DEST}
 ];
 
 const APP_ASSETS_DEV:any = [
 // Custom JS files
-  { src: `${ASSETS_SRC}/js/modernizr.custom.min.js`, inject: true, dest: JS_DEST },
-  { src: `${ASSETS_SRC}/js/jquery.gridrotator.min.js`, inject: true, dest: JS_DEST },
-  { src: `${ASSETS_SRC}/js/stick.up.min.js`, inject: true, dest: JS_DEST },
-  { src: `${ASSETS_SRC}/js/jquery.easypiechart.min.js`, inject: true, dest: JS_DEST },
+  {src: `${ASSETS_SRC}/js/modernizr.custom.min.js`, inject: true, dest: JS_DEST},
+  {src: `${ASSETS_SRC}/js/jquery.gridrotator.min.js`, inject: true, dest: JS_DEST},
+  {src: `${ASSETS_SRC}/js/stick.up.min.js`, inject: true, dest: JS_DEST},
+  {src: `${ASSETS_SRC}/js/jquery.easypiechart.min.js`, inject: true, dest: JS_DEST},
 
   // Global CSS
-  { src: `${ASSETS_SRC}/css/layout.css`, inject: true, dest: CSS_DEST },
+  {src: `${ASSETS_SRC}/css/layout.css`, inject: true, dest: CSS_DEST},
 ].concat(APP_STATIC_ASSETS);
 
 const APP_ASSETS_PROD:any = [
   // Libraries
-  { src: `${LIB_DEST}/lib.min.js`, inject: 'libs', dest: LIB_DEST },
+  {src: `${LIB_DEST}/lib.min.js`, inject: 'libs', dest: LIB_DEST},
 
   // Shims
-  { src: `${LIB_DEST}/shim.min.js`, inject: 'shims', dest: LIB_DEST },
+  {src: `${LIB_DEST}/shim.min.js`, inject: 'shims', dest: LIB_DEST},
 
   // Custom JS files
-  { src: `${JS_DEST}/common.min.js`, inject: true, dest: JS_DEST },
+  {src: `${JS_DEST}/common.min.js`, inject: true, dest: JS_DEST},
 
   // Global CSS
-  { src: `${CSS_DEST}/common.min.css`, inject: true, dest: CSS_DEST },
+  {src: `${CSS_DEST}/common.min.css`, inject: true, dest: CSS_DEST},
 ].concat(APP_STATIC_ASSETS);
 
 // Declare local files that needs to be injected
@@ -160,7 +160,7 @@ export const SYSTEM_CONFIG_BUILDER = {
 
 // --------------
 // Private.
-function appVersion(): number|string {
+function appVersion():number|string {
   var pkg = JSON.parse(readFileSync('package.json').toString());
   return pkg.version;
 }

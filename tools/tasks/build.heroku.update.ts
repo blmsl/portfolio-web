@@ -3,7 +3,7 @@ import * as fs from 'fs';
 import {HEROKU_SERVER_DIR} from '../config';
 
 export = function revClean() {
-  return function(done) {
+  return function (done) {
     fs.writeFileSync(join(HEROKU_SERVER_DIR, 'config', 'last.mod.props.json'), buildJson());
     done();
   };

@@ -10,7 +10,7 @@ const HTML_MIN_OPTS = {
 };
 
 export = function htmlMin(gulp, plugins) {
-  return function() {
+  return function () {
     return gulp.src([join(APP_DEST, '**/*.html')], {base: APP_DEST})
       .pipe(plugins.htmlmin(HTML_MIN_OPTS))
       .pipe(gulp.dest(APP_DEST));

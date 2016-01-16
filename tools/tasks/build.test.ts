@@ -3,7 +3,7 @@ import {APP_SRC, TEST_DEST} from '../config';
 import {tsProjectFn} from '../utils';
 
 export = function buildTest(gulp, plugins) {
-  return function() {
+  return function () {
     let tsProject = tsProjectFn(plugins);
     let src = [
       join(APP_SRC, '**/*.ts'),

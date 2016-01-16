@@ -3,7 +3,7 @@ import {join} from 'path';
 import {APP_DEST, BOOTSTRAP_FILE, BOOTSTRAP_INJECTED, REV_MANIFEST} from '../config';
 
 export = function revReplace(gulp, plugins) {
-  return function() {
+  return function () {
 
     let manifest = gulp.src(join(APP_DEST, REV_MANIFEST));
     let bundles = getBundlesRev();

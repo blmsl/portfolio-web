@@ -5,7 +5,7 @@ import * as del from 'del';
 import {APP_DEST, TEST_DEST, TMP_DIR, HEROKU_APP_DIR} from '../config';
 
 export = function clean(gulp, plugins, option) {
-  return function(done) {
+  return function (done) {
 
     switch (option) {
       case 'all'    :

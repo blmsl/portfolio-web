@@ -8,7 +8,7 @@ const UGLIFY_OPTS = {
 };
 
 export = function concat(gulp, plugins) {
-  return function() {
+  return function () {
     return merge(concatLib(), concatShim(), concatJs(), concatCss());
 
     function concatLib() {
