@@ -2,11 +2,13 @@ import * as merge from 'merge-stream';
 import {DEPENDENCIES} from '../config';
 
 export = function buildDepsProd(gulp, plugins) {
-  return function() {
+  return function () {
     let stream = merge();
 
     DEPENDENCIES.forEach(dep => {
-      stream.add(addStream(dep));
+      if (dep.dest) {
+        stream.add(addStream(dep));
+      }
     });
 
     return stream;

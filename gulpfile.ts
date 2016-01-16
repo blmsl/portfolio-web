@@ -7,7 +7,7 @@ gulp.task('clean',          task('clean', 'all'));
 gulp.task('clean.dist',     task('clean', 'dist'));
 gulp.task('clean.test',     task('clean', 'test'));
 gulp.task('clean.tmp',      task('clean', 'tmp'));
-gulp.task('clean.heroku',  task('clean', 'heroku'));
+gulp.task('clean.heroku',   task('clean', 'heroku'));
 
 gulp.task('check.versions', task('check.versions'));
 
@@ -26,7 +26,7 @@ gulp.task('build.dev', done =>
               'build.sass.dev',
               'build.img.dev',
               'build.js.dev',
-              'build.index',
+              'build.index.dev',
               done));
 
 // --------------
@@ -42,7 +42,7 @@ gulp.task('build.prod', done =>
               'build.js.prod',
               'build.bundles',
               'build.concat.prod',
-              'build.index',
+              'build.index.prod',
               'build.rev.prod',
               'build.rev.replace.prod',
               'build.index.min',
@@ -89,8 +89,7 @@ gulp.task('serve', done =>
 
 // --------------
 // Docs
-// Disabled until https://github.com/sebastian-lenz/typedoc/issues/162 gets resolved
-// gulp.task('docs', done =>
-//   runSequence('build.docs',
-//               'serve.docs',
-//               done));
+ gulp.task('docs', done =>
+   runSequence('build.docs',
+               'serve.docs',
+               done));

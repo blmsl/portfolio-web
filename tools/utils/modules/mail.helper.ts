@@ -137,7 +137,7 @@ function isValidEmail(email:string):boolean {
  * @returns {string} formatted value
  */
 function formatValue(value:string, args:Array<string>):string {
-  return value.replace(/{(\d+)}/g, function(match, number) {
+  return value.replace(/{(\d+)}/g, function (match, number) {
     return typeof args[number] !== 'undefined' ?
       args[number] : match;
   });

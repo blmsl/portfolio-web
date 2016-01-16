@@ -4,9 +4,9 @@ import {Callback}       from './../definitions/callback';
 import * as nodeMailer  from 'nodemailer';
 
 const
-    GMAIL_SENDER_EMAIL = process.env.GMAIL_SENDER_EMAIL,
-    GMAIL_APP_EMAIL = process.env.GMAIL_APP_EMAIL,
-    GMAIL_APP_PASSWORD = process.env.GMAIL_APP_PASSWORD;
+  GMAIL_SENDER_EMAIL = process.env.GMAIL_SENDER_EMAIL,
+  GMAIL_APP_EMAIL = process.env.GMAIL_APP_EMAIL,
+  GMAIL_APP_PASSWORD = process.env.GMAIL_APP_PASSWORD;
 
 /**
  * {Object} message

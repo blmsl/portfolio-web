@@ -16,7 +16,7 @@ export var JOBS:Array<Job> = [
     'including <b><i>Direct from Account&trade;</i></b>, <b><i>Westpac Exhange&trade;</i></b> and <b>' +
     '<i>Westpac One&trade;</i></b>.</p><p>The server-side development environment is <b>Java</b>, while the ' +
     'client-side is built using a variety of <b>JavaScript technologies</b> and <b>frameworks</b>, most notably' +
-    '<b>RequireJS</b>, <b>Backbone</b>, Marionette, <b>Underscore</b>, <b>AngularJS</b>, Sass, and, during ' +
+    '<b>RequireJS</b>, <b>Backbone</b>, Marionette, <b>Underscore</b>, <b>AngularJS</b>, SCSS, and, during ' +
     'development, <b>Node.js</b>.</p><p>Build and Testing tools include <b>Grunt</b>, Maven, Jenkins, JUnit, ' +
     'Cucumber, <b>Jasmine</b> and <b>Karma</b>.</p>',
   }, {
@@ -74,9 +74,9 @@ export var JOBS:Array<Job> = [
     content: '<p>Worked as a Software Engineer at the Cape Town office of Quirk developing <b>Java</b> (<b>Java ' +
     'EE</b>) <b>web based applications</b> to client specifications within specified deadlines. Projects included ' +
     '<b>SEO optimised websites</b> and <b>mobile websites</b>, <b>custom built CMS</b> solutions, ' +
-    '<b>Facebook Applications</b>, integrations with <b>Twitter</b> and other <b>3rd party APIs</b>, <b>RSS Feeds</b>' +
+    '<b>Facebook Applications</b>, integrations with <b>Twitter</b> and other <b>3rd party APIs</b>, <b>RSS Feeds</b> ' +
     '(both generating and parsing). The development environment was <b>Java</b>, utilising the <b>MVC WebWork</b> ' +
-    'framework and <b>Freemarker Templating</b> engine, backed by <b>Spring</b>, <b>MySQL</b> and ' +
+    'framework and <b>Freemarker Template</b> engine, backed by <b>Spring</b>, <b>MySQL</b> and ' +
     '<b>Hibernate</b>.</p><p>Maintained and supported existing applications. Interfaced with clients regularly for ' +
     'presentations and training. Compiled client facing documentation where required. Performed on-call server ' +
     'monitoring duties.</p>',
