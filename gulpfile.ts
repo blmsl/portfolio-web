@@ -44,7 +44,6 @@ gulp.task('build.prod', done =>
               'build.concat.prod',
               'build.index.prod',
               'build.rev.prod',
-              'build.rev.replace.prod',
               'build.index.min',
               done));
 

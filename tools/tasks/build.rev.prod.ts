@@ -14,7 +14,7 @@ export = function revision(gulp, plugins) {
       .pipe(plugins.rev())
       .pipe(plugins.revDeleteOriginal())
       .pipe(gulp.dest(APP_DEST))
-      .pipe(plugins.rev.manifest())
+      .pipe(plugins.revReplace({manifest: plugins.rev.manifest()}))
       .pipe(gulp.dest(APP_DEST));
   };
 };
