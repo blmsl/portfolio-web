@@ -3,11 +3,11 @@ import {runSequence, task} from './tools/utils';
 
 // --------------
 // Clean (override).
-gulp.task('clean',          task('clean', 'all'));
-gulp.task('clean.dist',     task('clean', 'dist'));
-gulp.task('clean.test',     task('clean', 'test'));
-gulp.task('clean.tmp',      task('clean', 'tmp'));
-gulp.task('clean.heroku',   task('clean', 'heroku'));
+gulp.task('clean', task('clean', 'all'));
+gulp.task('clean.dist', task('clean', 'dist'));
+gulp.task('clean.test', task('clean', 'test'));
+gulp.task('clean.tmp', task('clean', 'tmp'));
+gulp.task('clean.heroku', task('clean', 'heroku'));
 
 gulp.task('check.versions', task('check.versions'));
 
@@ -15,38 +15,41 @@ gulp.task('check.versions', task('check.versions'));
 // Postinstall.
 gulp.task('postinstall', done =>
   runSequence('clean',
-              'npm',
-              done));
+    'npm',
+    done));
 
 // --------------
 // Build dev.
 gulp.task('build.dev', done =>
-  runSequence('clean.dist',
-              'tslint',
-              'build.sass.dev',
-              'build.img.dev',
-              'build.js.dev',
-              'build.index.dev',
-              done));
+  runSequence(
+    'clean.dist',
+    'tslint',
+    'build.sass.dev',
+    'build.img.dev',
+    'build.assets.dev',
+    'build.js.dev',
+    'build.index.dev',
+    done));
 
 // --------------
 // Build prod.
 gulp.task('build.prod', done =>
-  runSequence('clean.dist',
-              'clean.tmp',
-              'tslint',
-              'build.sass.dev',
-              'build.img.dev',
-              'build.html_css.prod',
-              'build.deps',
-              'build.js.prod',
-              'build.bundles',
-              'build.concat.prod',
-              'build.index.prod',
-              'build.rev.prod',
-              'build.rev.replace.prod',
-              'build.index.min',
-              done));
+  runSequence(
+    'clean.dist',
+    'clean.tmp',
+    'tslint',
+    'build.sass.dev',
+    'build.img.dev',
+    'build.html_css.prod',
+    'build.assets.prod',
+    'build.js.prod',
+    'build.bundles',
+    'build.concat.prod',
+    'build.index.prod',
+    'build.rev.prod',
+    'build.rev.replace.prod',
+    'build.index.min',
+    done));
 
 // --------------
 // Build prod.
@@ -61,35 +64,40 @@ gulp.task('build.heroku', done =>
 // --------------
 // Watch.
 gulp.task('build.dev.watch', done =>
-  runSequence('build.dev',
-              'watch.dev',
-              done));
+  runSequence(
+    'build.dev',
+    'watch.dev',
+    done));
 
 gulp.task('build.test.watch', done =>
-  runSequence('build.test',
-              'watch.test',
-              done));
+  runSequence(
+    'build.test',
+    'watch.test',
+    done));
 
 // --------------
 // Test.
 gulp.task('test', done =>
-  runSequence('clean.test',
-              'tslint',
-              'build.test',
-              'karma.start',
-              done));
+  runSequence(
+    'clean.test',
+    'tslint',
+    'build.test',
+    'karma.start',
+    done));
 
 // --------------
 // Serve.
 gulp.task('serve', done =>
-  runSequence('build.dev',
-              'server.start',
-              'watch.serve',
-              done));
+  runSequence(
+    'build.dev',
+    'server.start',
+    'watch.serve',
+    done));
 
 // --------------
 // Docs
- gulp.task('docs', done =>
-   runSequence('build.docs',
-               'serve.docs',
-               done));
+gulp.task('docs', done =>
+  runSequence(
+    'build.docs',
+    'serve.docs',
+    done));

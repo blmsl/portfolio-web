@@ -1,7 +1,7 @@
 import * as merge from 'merge-stream';
 import {DEPENDENCIES} from '../config';
 
-export = function buildDepsProd(gulp, plugins) {
+export = function buildAssetsProd(gulp, plugins) {
   return function () {
     let stream = merge();
 
