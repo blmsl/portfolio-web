@@ -1,14 +1,15 @@
+'use strict';
 import {Component, View, OnInit}  from 'angular2/core';
 import {ExperienceService}        from './../../services/experience.service';
 import {Job}                      from './../../definitions/experience/job';
 
 @Component({
   selector: 'experience',
-  providers: [ExperienceService],
+  providers: [ExperienceService]
 })
 @View({
   templateUrl: './components/experience/experience.html',
-  styleUrls: ['./components/experience/experience.css'],
+  styleUrls: ['./components/experience/experience.css']
 })
 export class ExperienceComponent implements OnInit {
   public jobs:Array<Job>;

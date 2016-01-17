@@ -1,5 +1,6 @@
 /// <reference path="../../../tools/typings/tsd/jquery/jquery.d.ts" />
 /// <reference path="../../../tools/typings/tsd/underscore/underscore.d.ts" />
+'use strict';
 import {Component, View, OnInit}  from 'angular2/core';
 import {HeaderComponent}          from './../header/header';
 import {AboutMeComponent}         from './../aboutme/aboutme';
@@ -15,7 +16,7 @@ declare var jQuery:JQuery, _:UnderscoreStatic;
 
 @Component({
   selector: 'container',
-  providers: [AppService],
+  providers: [AppService]
 })
 @View({
   directives: [
@@ -28,7 +29,7 @@ declare var jQuery:JQuery, _:UnderscoreStatic;
     FooterComponent
   ],
   templateUrl: './components/app/app.html',
-  styleUrls: ['./components/app/app.css'],
+  styleUrls: ['./components/app/app.css']
 })
 export class AppComponent implements OnInit {
   private _timeoutMenuAnimate:any;
@@ -43,7 +44,6 @@ export class AppComponent implements OnInit {
 
   initSmoothPageScroll() {
     (($) => {
-      'use strict';
       $('a[href*="#"]:not([href="#"])').click(
         function () {
           if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {

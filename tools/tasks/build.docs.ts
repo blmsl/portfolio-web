@@ -1,8 +1,9 @@
+'use strict';
 import {join} from 'path';
 import {APP_SRC, DOCS_DEST} from '../config';
 import {META_TAGS} from '../config.site';
 
-export = function buildDocs(gulp, plugins, option) {
+export = function buildDocs(gulp, plugins) {
   return function () {
     let src = [
       join(APP_SRC, '**/*.ts'),

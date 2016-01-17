@@ -1,3 +1,4 @@
+'use strict';
 import {Injectable} from 'angular2/core';
 import {JOBS}       from './../config/experience/jobs';
 

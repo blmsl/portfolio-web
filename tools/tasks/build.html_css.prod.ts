@@ -1,3 +1,4 @@
+'use strict';
 import * as merge from 'merge-stream';
 import {join} from 'path';
 import {APP_SRC, TMP_DIR} from '../config';
@@ -6,7 +7,13 @@ const HTML_MIN_OPTS = {
   collapseWhitespace: true,
   removeComments: true,
   caseSensitive: true,
-  ignoreCustomFragments: [/\s+\*\w+=".*"/, /\s+#\w+=".*"/, /\s+\(\w+\)=".*"/, /\s+\[\(\w+\)]=".*"/, /\s+\[\w+\.?\w+\-?\w+]=".*"/]
+  ignoreCustomFragments: [
+    /\s+\*\w+=".*"/,
+    /\s+#\w+=".*"/,
+    /\s+\(\w+\)=".*"/,
+    /\s+\[\(\w+\)]=".*"/,
+    /\s+\[\w+\.?\w+\-?\w+]=".*"/
+  ]
 };
 
 export = function buildJSDev(gulp, plugins) {

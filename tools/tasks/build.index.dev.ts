@@ -1,3 +1,4 @@
+'use strict';
 import {join} from 'path';
 import {APP_SRC, APP_DEST, DEPENDENCIES} from '../config';
 import {transformPath, templateLocals} from '../utils';

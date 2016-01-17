@@ -1,7 +1,8 @@
+'use strict';
 import * as merge from 'merge-stream';
 import {DEPENDENCIES} from '../config';
 
-export = function buildAssetsProd(gulp, plugins) {
+export = function buildAssetsProd(gulp) {
   return function () {
     let stream = merge();
 

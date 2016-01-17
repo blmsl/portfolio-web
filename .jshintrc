@@ -17,9 +17,17 @@
   "undef": true,
   "indent": 2,
   "unused": true,
-
   "node": true,
+  "validthis": true,
   "globals": {
-    "System": true
+    "window": true,
+    "document": true,
+    "location": true,
+    "System": true,
+    "Reflect": true,
+    "Promise": true,
+    "jQuery": true,
+    "_": true,
+    "google": true
   }
 }

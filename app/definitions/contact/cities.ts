@@ -1,9 +1,9 @@
+'use strict';
 import {Icon, City}   from './city';
 import * as p         from './points';
 
-declare var lived:string, prevIcon:Icon;
-lived = 'I\'ve lived here...';
-prevIcon = {url: 'assets/images/markerprev.png', size: p.MARKER_SIZE};
+let lived:string = 'I\'ve lived here...';
+let prevIcon:Icon = {url: 'assets/images/markerprev.png', size: p.MARKER_SIZE};
 
 export var CITIES:Array<City> = [
   {

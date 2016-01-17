@@ -1,3 +1,4 @@
+'use strict';
 import {join} from 'path';
 import * as fs from 'fs';
 import {HEROKU_SERVER_DIR} from '../config';

@@ -1,3 +1,4 @@
+'use strict';
 import {Airport}  from './airport';
 
 export const JNB:Airport = {
@@ -281,9 +282,12 @@ export const TOS:Airport = {
 };
 
 export const AIRPORTS:Array<Airport> = [
-  KIM, PLZ, ELS, JNB, AMS, LHR, NBO, CPT, MBD, DUR, BFN, GRJ, MPM, GBE, WDH, BUQ, HRE,
-  LVI, LUN, LAD, DAR, EBB, FIH, LOS, ABJ, ACC, DKR, SID, MIA, ATL, IAD, JFK, LGA, MRU,
-  HKG, PER, SYD, EZE, GRU, YVR, FRA, ZRH, CDG, CPH, BOM, BKK, KIX, BKKN, USM, HKGN, DPS,
-  DRW, ADL, HLZ, CHC, ZQN, AKL, WLG, NSN, TRG, ROT, RAR, NRT, SIN, ARN, BGO, TRD, BOO,
-  SJV, TOS
+  KIM, PLZ, ELS, JNB, AMS, LHR, NBO, CPT, MBD,
+  DUR, BFN, GRJ, MPM, GBE, WDH, BUQ, HRE, LVI,
+  LUN, LAD, DAR, EBB, FIH, LOS, ABJ, ACC, DKR,
+  SID, MIA, ATL, IAD, JFK, LGA, MRU, HKG, PER,
+  SYD, EZE, GRU, YVR, FRA, ZRH, CDG, CPH, BOM,
+  BKK, KIX, BKKN, USM, HKGN, DPS, DRW, ADL, HLZ,
+  CHC, ZQN, AKL, WLG, NSN, TRG, ROT, RAR, NRT,
+  SIN, ARN, BGO, TRD, BOO, SJV, TOS
 ];

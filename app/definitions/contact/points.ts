@@ -1,4 +1,5 @@
 /// <reference path="../../../tools/typings/tsd/googlemaps/google.maps.d.ts" />
+'use strict';
 import Size     = google.maps.Size;
 import {Point}  from './point';
 

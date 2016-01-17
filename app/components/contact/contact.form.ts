@@ -1,3 +1,4 @@
+'use strict';
 import {Component, View, OnInit}          from 'angular2/core';
 import {Pipe, PipeTransform}              from 'angular2/core';
 import {FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/common';
@@ -9,19 +10,19 @@ declare var _:UnderscoreStatic;
 
 @Pipe({name: 'trim'})
 export class TrimPipe implements PipeTransform {
-  transform(value:any, args:string[]):any {
+  transform(value:any):any {
     return value.trim();
   }
 }
 @Component({
   selector: 'contact-form',
-  providers: [Http, HTTP_PROVIDERS, ContactService],
+  providers: [Http, HTTP_PROVIDERS, ContactService]
 })
 @View({
   pipes: [TrimPipe],
   templateUrl: './components/contact/contact.form.html',
   styleUrls: ['./components/contact/contact.form.css'],
-  directives: [FORM_DIRECTIVES, CORE_DIRECTIVES],
+  directives: [FORM_DIRECTIVES, CORE_DIRECTIVES]
 })
 export class ContactFormComponent implements OnInit {
   public message:ContactMessage;
@@ -67,7 +68,7 @@ export class ContactFormComponent implements OnInit {
       this.message.text.trim(),
       this.message.heuning);
     this._contactService.send(submission).subscribe(
-      (res:Response) =>
+      () =>
         this.handleSuccess(),
       (err:Response) =>
         this.handleErrors(err)

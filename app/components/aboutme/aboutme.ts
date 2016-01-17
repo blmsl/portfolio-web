@@ -1,3 +1,4 @@
+'use strict';
 import {Component, View} from 'angular2/core';
 
 @Component({
@@ -5,7 +6,7 @@ import {Component, View} from 'angular2/core';
 })
 @View({
   templateUrl: './components/aboutme/aboutme.html',
-  styleUrls: ['./components/aboutme/aboutme.css'],
+  styleUrls: ['./components/aboutme/aboutme.css']
 })
 export class AboutMeComponent {
 }

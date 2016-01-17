@@ -1,6 +1,7 @@
 /// <reference path="../../../tools/typings/tsd/googlemaps/google.maps.d.ts" />
 /// <reference path="../../../tools/typings/tsd/jquery/jquery.d.ts" />
 /// <reference path="../../../tools/typings/tsd/underscore/underscore.d.ts" />
+'use strict';
 import Map                            = google.maps.Map;
 import Polyline                       = google.maps.Polyline;
 import Marker                         = google.maps.Marker;
@@ -17,11 +18,11 @@ declare var jQuery:JQuery, _:UnderscoreStatic;
 
 @Component({
   selector: 'googlemap',
-  providers: [Http, HTTP_PROVIDERS],
+  providers: [Http, HTTP_PROVIDERS]
 })
 @View({
   templateUrl: './components/contact/contact.gmap.html',
-  styleUrls: ['./components/contact/contact.gmap.css'],
+  styleUrls: ['./components/contact/contact.gmap.css']
 })
 export class ContactMapComponent implements OnInit {
   public map:Map;
@@ -57,7 +58,6 @@ export class ContactMapComponent implements OnInit {
 
   initializeMap() {
     (($) => {
-      'use strict';
       _.delay(_.bind(() => {
         if ($(window).width() < 1000) {
           MAP_OPTIONS.zoom = 0;
@@ -99,7 +99,6 @@ export class ContactMapComponent implements OnInit {
 
   initScrollListener() {
     (($) => {
-      'use strict';
       $(document).on('scroll', _.bind(() => {
         // wait half a second for scroll to stop
         if (this._timeoutScroll) {
@@ -120,7 +119,6 @@ export class ContactMapComponent implements OnInit {
 
   initClickListener() {
     (($) => {
-      'use strict';
       $('#js_click_address').click(_.bind(function (e) {
         e.preventDefault();
         this.toggleBounce(this._cityMarkers[this._cityMarkers.length - 1]);
@@ -131,7 +129,6 @@ export class ContactMapComponent implements OnInit {
   dropMarkers(wait) {
     this._markerWait = wait;
     (($) => {
-      'use strict';
       $('.js_trigger_map_marker').each(_.bind(function (index, val) {
         if (!this._mapMarkersDrawn && elementInViewport($, $(val))) {
           if (this._tilesLoaded) {

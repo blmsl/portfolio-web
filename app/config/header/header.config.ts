@@ -1,3 +1,4 @@
+'use strict';
 export var MENU_CONFIG = {
   parts: {
     0: 'banner',
@@ -10,7 +11,7 @@ export var MENU_CONFIG = {
   },
   itemClass: 'menu-item',
   itemHover: 'active',
-  topMargin: 'auto',
+  topMargin: 'auto'
 };
 
 export var GRID_ROTATOR_CONFIG = {

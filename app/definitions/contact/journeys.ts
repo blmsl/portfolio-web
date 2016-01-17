@@ -1,3 +1,4 @@
+'use strict';
 import {Airport}  from './airport';
 import * as a     from './airports';
 

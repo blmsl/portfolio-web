@@ -1,3 +1,4 @@
+'use strict';
 // --------------
 // Environment vars.
 let GOOGLE_ANALYTICS_ID:string = process.env.GOOGLE_ANALYTICS_ID,

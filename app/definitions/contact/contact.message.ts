@@ -1,3 +1,4 @@
+'use strict';
 export class ContactMessage {
   public name:string;
   public email:string;

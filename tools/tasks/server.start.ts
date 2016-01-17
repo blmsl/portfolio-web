@@ -1,6 +1,7 @@
+'use strict';
 import {serveSPA} from '../utils';
 
-export = function serverStart(gulp, plugins) {
+export = function serverStart() {
   return function () {
     serveSPA();
   };

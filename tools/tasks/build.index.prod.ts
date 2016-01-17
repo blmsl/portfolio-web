@@ -1,3 +1,4 @@
+'use strict';
 import {join, sep} from 'path';
 import {templateLocals} from '../utils';
 import {APP_SRC, APP_DEST, CSS_DEST, JS_DEST, CSS_PROD_BUNDLE, JS_PROD_BUNDLE, JS_PROD_APP_BUNDLE, JS_PROD_SHIMS_BUNDLE} from '../config';

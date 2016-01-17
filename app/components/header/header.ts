@@ -1,3 +1,4 @@
+'use strict';
 import {Component, View, OnInit}          from 'angular2/core';
 import {Http, HTTP_PROVIDERS, Response}   from 'angular2/http';
 import {HeaderService}                    from './../../services/header.service';
@@ -7,11 +8,11 @@ declare var jQuery:JQuery, _:UnderscoreStatic;
 
 @Component({
   selector: 'header',
-  providers: [Http, HTTP_PROVIDERS, HeaderService],
+  providers: [Http, HTTP_PROVIDERS, HeaderService]
 })
 @View({
   templateUrl: './components/header/header.html',
-  styleUrls: ['./components/header/header.css'],
+  styleUrls: ['./components/header/header.css']
 })
 export class HeaderComponent implements OnInit {
   public imageIds:Array<String>;
@@ -38,7 +39,6 @@ export class HeaderComponent implements OnInit {
 
   initNavigation() {
     (($) => {
-      'use strict';
       $('.navbar-wrapper').stickUp(MENU_CONFIG);
 
       $('.navbar.navbar-inverse.navbar-static-top a').click(
@@ -56,7 +56,6 @@ export class HeaderComponent implements OnInit {
   initGridRotator(imageIds:Array<String>) {
     this.imageIds = imageIds;
     (($) => {
-      'use strict';
       // For background slider
       _.delay(_.bind(() => {
         $('#ri-grid').gridrotator(GRID_ROTATOR_CONFIG);
@@ -69,7 +68,6 @@ export class HeaderComponent implements OnInit {
 
   initResizeListener() {
     (($) => {
-      'use strict';
       $(window).on('resize', _.bind(() => {
         this.setBannerSize(this._previousWidth, this._previousHeight);
         this.setDynamicCssValues();
@@ -87,7 +85,6 @@ export class HeaderComponent implements OnInit {
 
   setBannerSize(previousWidth, previousHeight) {
     (($, previousWidth, previousHeight) => {
-      'use strict';
       var windowWidth = $(window).width(),
         windowHeight = $(window).height(),
         widthChanged = previousWidth !== windowWidth,
@@ -110,7 +107,6 @@ export class HeaderComponent implements OnInit {
 
   setDynamicCssValues() {
     (($) => {
-      'use strict';
       var bannerText = $('.banner-text');
       bannerText.css('top', ((($(window).height() - bannerText.height()) / 2) - 63));
     })(jQuery);

@@ -1,3 +1,4 @@
+'use strict';
 import {join} from 'path';
 import {APP_SRC, TEST_DEST} from '../config';
 import {tsProjectFn} from '../utils';

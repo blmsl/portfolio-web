@@ -1,3 +1,4 @@
+'use strict';
 export interface Job {
   year: {
     from: string;

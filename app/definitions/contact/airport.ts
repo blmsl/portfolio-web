@@ -1,3 +1,4 @@
+'use strict';
 export interface Airport {
   loc: {
     lat: number;

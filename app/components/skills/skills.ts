@@ -1,3 +1,4 @@
+'use strict';
 import {Component, View, OnInit}  from 'angular2/core';
 import {SkillService}             from './../../services/skills.service';
 import {Skill}                    from './../../definitions/skills/skill';
@@ -7,11 +8,11 @@ declare var jQuery:JQuery, _:UnderscoreStatic;
 
 @Component({
   selector: 'skills',
-  providers: [SkillService],
+  providers: [SkillService]
 })
 @View({
   templateUrl: './components/skills/skills.html',
-  styleUrls: ['./components/skills/skills.css'],
+  styleUrls: ['./components/skills/skills.css']
 })
 export class SkillsComponent implements OnInit {
   public skills:Array<Skill>;
@@ -36,7 +37,6 @@ export class SkillsComponent implements OnInit {
 
   initScrollListener() {
     (($) => {
-      'use strict';
       $(document).on('scroll', _.bind(() => {
         // wait half a second for scroll to stop
         if (this._timeoutScroll) {
@@ -57,7 +57,6 @@ export class SkillsComponent implements OnInit {
 
   drawChart() {
     (($) => {
-      'use strict';
       $('.js_trigger_skills').each(_.bind((index, val) => {
         if (!this._skillChartDrawn && elementInViewport($, $(val))) {
           this._skillChartDrawn = true;

@@ -1,3 +1,4 @@
+'use strict';
 export interface School {
   year: {
     from: number;

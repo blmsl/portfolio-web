@@ -1,3 +1,4 @@
+'use strict';
 import * as gulp from 'gulp';
 import {runSequence, task} from './tools/utils';
 
