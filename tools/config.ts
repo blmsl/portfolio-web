@@ -19,6 +19,8 @@ export const APP_BASE = argv['base'] || '/';
 
 export const APP_SRC = 'app';
 export const ASSETS_SRC = `${APP_SRC}/assets`;
+export const CSS_SRC = `${ASSETS_SRC}/css`;
+export const JS_SRC = `${ASSETS_SRC}/js`;
 
 export const TOOLS_DIR = 'tools';
 export const TMP_DIR = 'tmp';
@@ -38,8 +40,6 @@ export const CSS_PROD_BUNDLE = 'common.min.css';
 export const JS_PROD_BUNDLE = 'common.min.js';
 export const JS_PROD_SHIMS_BUNDLE = 'shims.min.js';
 export const JS_PROD_APP_BUNDLE = 'app.min.js';
-
-export const REV_MANIFEST = 'rev-manifest.json';
 
 export const VERSION_NPM = '3.3.12';
 export const VERSION_NODE = '5.3.0';
@@ -65,6 +65,29 @@ const NPM_FONTS:Array<Dependency> = normalizeDependencies([
   {src: 'bootstrap/dist/fonts/glyphicons-halflings-regular.woff2', dest: FONTS_DEST}
 ]);
 
+const NPM_VENDOR_JS:Array<Dependency> = normalizeDependencies([
+  {src: 'jquery/dist/jquery.min.js', inject: true, dest: JS_DEST},
+  {src: 'bootstrap/dist/js/bootstrap.min.js', inject: true, dest: JS_DEST},
+  {src: 'underscore/underscore-min.js', inject: true, dest: JS_DEST},
+  {src: 'jquery.easing/jquery.easing.min.js', inject: true, dest: JS_DEST}
+]);
+
+const JS_DEPENDENCIES:Array<Dependency> = [
+  {src: `${JS_SRC}/modernizr.custom.min.js`, inject: true, dest: JS_DEST},
+  {src: `${JS_SRC}/jquery.gridrotator.min.js`, inject: true, dest: JS_DEST},
+  {src: `${JS_SRC}/stick.up.min.js`, inject: true, dest: JS_DEST},
+  {src: `${JS_SRC}/jquery.easypiechart.min.js`, inject: true, dest: JS_DEST}
+];
+
+const NPM_VENDOR_CSS:Array<Dependency> = normalizeDependencies([
+  {src: 'bootstrap/dist/css/bootstrap.min.css', inject: true, dest: CSS_DEST},
+  {src: 'font-awesome/css/font-awesome.min.css', inject: true, dest: CSS_DEST}
+]);
+
+const CSS_DEPENDENCIES:Array<Dependency> = [
+  {src: `${CSS_SRC}/layout.css`, inject: true, dest: CSS_DEST}
+];
+
 let npmDependenciesDev:Array<Dependency> = normalizeDependencies([
   {src: 'systemjs/dist/system-polyfills.src.js', dest: LIB_DEST},
 
@@ -78,19 +101,12 @@ let npmDependenciesDev:Array<Dependency> = normalizeDependencies([
   {src: 'angular2/bundles/angular2.dev.js', inject: 'libs', dest: LIB_DEST},
   {src: 'angular2/bundles/router.dev.js', inject: 'libs', dest: LIB_DEST},
   {src: 'angular2/bundles/http.dev.js', inject: 'libs', dest: LIB_DEST},
-
-  // Other JS libraries
-  {src: 'jquery/dist/jquery.js', inject: true, dest: JS_DEST},
-  {src: 'bootstrap/dist/js/bootstrap.js', inject: true, dest: JS_DEST},
-  {src: 'underscore/underscore.js', inject: true, dest: JS_DEST},
-  {src: 'jquery.easing/jquery.easing.js', inject: true, dest: JS_DEST},
-
-  // CSS
-  {src: 'bootstrap/dist/css/bootstrap.css', inject: true, dest: CSS_DEST},
-  {src: 'font-awesome/css/font-awesome.css', inject: true, dest: CSS_DEST}
 ]);
 
-npmDependenciesDev = npmDependenciesDev.concat(NPM_FONTS);
+npmDependenciesDev = npmDependenciesDev
+  .concat(NPM_VENDOR_JS)
+  .concat(NPM_VENDOR_CSS)
+  .concat(NPM_FONTS);
 
 let npmDependenciesProd:Array<Dependency> = normalizeDependencies([
   {src: 'reflect-metadata/Reflect.js', inject: 'shims'},
@@ -103,6 +119,25 @@ npmDependenciesProd = npmDependenciesProd.concat(NPM_FONTS);
 // Declare NPM dependencies (Note that globs should not be injected).
 export const NPM_DEPENDENCIES:Array<Dependency> = ENV === 'dev' ? npmDependenciesDev : npmDependenciesProd;
 
+let jsConcatDependenciesProd:Array<Dependency> = [
+  {src: `${JS_SRC}/modernizr.custom.min.js`},
+  {src: `${JS_SRC}/jquery.gridrotator.min.js`},
+  {src: `${JS_SRC}/stick.up.min.js`},
+  {src: `${JS_SRC}/jquery.easypiechart.min.js`}
+];
+
+export const JS_CONCAT_DEPENDENCIES_PROD:Array<Dependency> = []
+  .concat(NPM_VENDOR_JS)
+  .concat(jsConcatDependenciesProd);
+
+let cssConcatDependenciesProd:Array<Dependency> = [
+  {src: `${CSS_SRC}/layout.css`}
+];
+
+export const CSS_CONCAT_DEPENDENCIES_PROD:Array<Dependency> = []
+  .concat(NPM_VENDOR_CSS)
+  .concat(cssConcatDependenciesProd);
+
 let APP_STATIC_ASSETS:Array<Dependency> = [
   // Other resources
   {src: `${APP_SRC}/404.html`, dest: APP_DEST},
@@ -114,25 +149,15 @@ let APP_STATIC_ASSETS:Array<Dependency> = [
   {src: `${APP_SRC}/sitemap.xml`, dest: APP_DEST}
 ];
 
-let appAssetsDev:Array<Dependency> = [
-  // Custom JS files
-  {src: `${ASSETS_SRC}/js/modernizr.custom.min.js`, inject: true, dest: JS_DEST},
-  {src: `${ASSETS_SRC}/js/jquery.gridrotator.min.js`, inject: true, dest: JS_DEST},
-  {src: `${ASSETS_SRC}/js/stick.up.min.js`, inject: true, dest: JS_DEST},
-  {src: `${ASSETS_SRC}/js/jquery.easypiechart.min.js`, inject: true, dest: JS_DEST},
+const APP_ASSETS_DEV:Array<Dependency> = []
+  .concat(JS_DEPENDENCIES)
+  .concat(CSS_DEPENDENCIES)
+  .concat(APP_STATIC_ASSETS);
 
-  // Global CSS
-  {src: `${ASSETS_SRC}/css/layout.css`, inject: true, dest: CSS_DEST},
-];
-
-appAssetsDev = appAssetsDev.concat(APP_STATIC_ASSETS);
-
-let appAssetsProd:Array<Dependency> = [];
-
-appAssetsProd = appAssetsProd.concat(APP_STATIC_ASSETS);
+const APP_ASSETS_PROD:Array<Dependency> = [].concat(APP_STATIC_ASSETS);
 
 // Declare local files that needs to be injected
-export const APP_ASSETS:Array<Dependency> = ENV === 'dev' ? appAssetsDev : appAssetsProd;
+export const APP_ASSETS:Array<Dependency> = ENV === 'dev' ? APP_ASSETS_DEV : APP_ASSETS_PROD;
 
 export const DEPENDENCIES:Array<Dependency> = NPM_DEPENDENCIES.concat(APP_ASSETS);
 
