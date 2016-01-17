@@ -15,13 +15,13 @@ export = function buildIndexDev(gulp, plugins) {
 
 
   function inject(name?:string) {
-    return plugins.inject(gulp.src(getInjectablesDependenciesRef(name), {read: false}), {
+    return plugins.inject(gulp.src(getInjectableDependenciesRef(name), {read: false}), {
       name,
       transform: transformPath(plugins, 'dev')
     });
   }
 
-  function getInjectablesDependenciesRef(name?:string) {
+  function getInjectableDependenciesRef(name?:string) {
     return DEPENDENCIES
       .filter(dep => dep['inject'] && dep['inject'] === (name || true))
       .map(mapPath);
