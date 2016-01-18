@@ -2,7 +2,7 @@
 import {Component, View} from 'angular2/core';
 
 @Component({
-  selector: 'aboutme',
+  selector: 'aboutme'
 })
 @View({
   templateUrl: './components/aboutme/aboutme.html',

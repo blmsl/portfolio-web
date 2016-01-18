@@ -13,7 +13,6 @@
   "globalstrict": true,
   "laxbreak": true,
   "loopfunc": true,
-  "sub": true,
   "undef": true,
   "indent": 2,
   "unused": true,
