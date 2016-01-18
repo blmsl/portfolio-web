@@ -22,7 +22,7 @@ export const META_TAGS = {
   google: {
     name: TITLE,
     description: DESCRIPTION,
-    image: `${URL}resources/images/icon.png`
+    image: `${URL}assets/images/icon.png`
   },
   twitter: {
     'twitter:card': 'summary',
@@ -30,13 +30,13 @@ export const META_TAGS = {
     'twitter:title': TITLE,
     'twitter:description': DESCRIPTION,
     'twitter:creator': '@ouq77',
-    'twitter:image': `${URL}resources/images/icon.png`
+    'twitter:image': `${URL}assets/images/icon.png`
   },
   facebook: {
     'og:title': TITLE,
     'og:type': 'website',
     'og:url': URL,
-    'og:image': `${URL}resources/images/icon.png`,
+    'og:image': `${URL}assets/images/icon.png`,
     'og:description': DESCRIPTION,
     'og:site_name': 'portfolio.ouq77.kiwi',
     'article:published_time': '2014-05-17T00:00:00+1200',
