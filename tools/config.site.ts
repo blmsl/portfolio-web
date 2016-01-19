@@ -3,7 +3,8 @@
 // Environment vars.
 const GOOGLE_ANALYTICS_ID:string = process.env.GOOGLE_ANALYTICS_ID;
 const GOOGLE_MAPS_API_KEY:string = process.env.GOOGLE_MAPS_API_KEY;
-const TITLE = 'Louw Swart | Personal Portfolio';
+const NAME = 'Louw Swart';
+const TITLE = `${NAME} | Personal Portfolio`;
 const DESCRIPTION = 'On-line Portfolio and CV for Louw Swart - Analyst JavaScript Programmer based in Wellington, New Zealand';
 const URL = 'https://portfolio.ouq77.kiwi/';
 
@@ -15,14 +16,13 @@ export const META_TAGS = {
     'google-site-verification': '2QAoEd01NPLcv_b1tM-XJ7AT_xHmfqNkR2uHUcO2d5g'
   },
   link_tags: {
-    canonical: URL,
+    publisher: 'https://plus.google.com/u/0/+LouwSwart',
     author: 'https://plus.google.com/u/0/+LouwSwart/posts',
-    publisher: 'https://plus.google.com/u/0/+LouwSwart'
+    canonical: URL
   },
   google: {
-    name: TITLE,
-    description: DESCRIPTION,
-    image: `${URL}assets/images/icon.png`
+    name: NAME,
+    url: URL
   },
   twitter: {
     'twitter:card': 'summary',
