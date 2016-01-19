@@ -33,7 +33,13 @@ node_modules
 .vscode
 
 # Generated files
+gulpfile.js*
 app/**/*.css*
+app/**/*.js
+app/**/*.js.map
+tools/**/*.js
+tools/**/*.js.map
+!app/assets/js
 
 # Generated folders
 dist
