@@ -167,8 +167,7 @@ export const DEPENDENCIES:Array<Dependency> = NPM_DEPENDENCIES.concat(APP_ASSETS
 const SYSTEM_CONFIG_DEV = {
   defaultJSExtensions: true,
   paths: {
-    'bootstrap': `${APP_ROOT}bootstrap`,
-    'hot_loader_bootstrap': `${APP_ROOT}hot_loader_bootstrap`,
+    'main': `${APP_ROOT}main`,
     '*': `${APP_BASE}node_modules/*`
   }
 };

@@ -31,7 +31,7 @@ export = function bundles(gulp, plugins) {
     }
 
     function bundleApp() {
-      return browserify(join(TMP_DIR, 'bootstrap'))
+      return browserify(join(TMP_DIR, 'main'))
         .bundle()
         .pipe(vinylSourceStream(JS_PROD_APP_BUNDLE))
         .pipe(vinylBuffer())

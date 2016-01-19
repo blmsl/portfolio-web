@@ -33,16 +33,7 @@ node_modules
 .vscode
 
 # Generated files
-app/bootstrap.js*
-app/assets/css/*.css*
-app/components/**/*.js*
-app/components/**/*.css*
-app/definitions/**/*.js*
-app/config/**/*.js*
-app/services/*.js*
-tools/**/*.js
-tools/**/*.js.map
-gulpfile.js*
+app/**/*.css.*
 
 # Generated folders
 dist
