@@ -15,10 +15,9 @@ export const JOURNEYS:Array<Array<Airport>> = [
   [a.PER, a.DPS, a.DRW, a.ADL, a.SYD], [a.CPT, a.BFN], [a.CPT, a.KIM], [a.CPT, a.LHR], [a.CPT, a.FRA],
   [a.CPT, a.PLZ, a.DUR], [a.HKGN, a.AKL], [a.AKL, a.SYD, a.BKKN], [a.AKL, a.WLG], [a.AKL, a.CHC],
   [a.HLZ, a.WLG], [a.HLZ, a.CHC], [a.AKL, a.ZQN], [a.AKL, a.NSN], [a.WLG, a.TRG], [a.WLG, a.ROT],
-  [a.WLG, a.CHC], [a.AKL, a.RAR]
+  [a.WLG, a.CHC], [a.AKL, a.RAR], [a.AKL, a.NRT, a.LHR], [a.LHR, a.ARN], [a.BGO, a.TRD], [a.BOO, a.SJV],
+  [a.TOS, a.ARN], [a.LHR, a.SIN, a.SYD, a.WLG]
 ];
 
 export const UPCOMING_JOURNEYS:Array<Array<Airport>> = [
-  [a.AKL, a.NRT, a.LHR], [a.LHR, a.ARN], [a.BGO, a.TRD], [a.BOO, a.SJV], [a.TOS, a.ARN],
-  [a.LHR, a.SIN, a.SYD, a.WLG]
 ];
