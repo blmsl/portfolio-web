@@ -1,5 +1,6 @@
 'use strict'
 let fs = require('fs')
+let path = require('path')
 
 const ERROR_MESSAGES = require('./../config/error.props.json')
 const DISALLOWED_CHARS = /[<>^|%()&+]/
@@ -10,8 +11,8 @@ const GMAIL_SENDER_EMAIL = process.env.GMAIL_SENDER_EMAIL
 const CUSTOM_APP_DOMAIN = process.env.CUSTOM_APP_DOMAIN
 const SUBJECT = 'Message from {0} | ' + CUSTOM_APP_DOMAIN
 const SUBJECT_COPY = 'Thanks for getting in touch'
-const CONTENT = fs.readFileSync(__dirname + '/../config/email-template.html')
-const CONTENT_COPY = fs.readFileSync(__dirname + '/../config/email-copy-template.html')
+const CONTENT = fs.readFileSync(path.join(__dirname, '/../config/email-template.html'))
+const CONTENT_COPY = fs.readFileSync(path.join(__dirname, '/../config/email-copy-template.html'))
 
 /**
  * Accepts a submission and validates the content
