@@ -17,12 +17,12 @@
   "author": "ouq77",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "1.14.2",
-    "camelcase": "^2.0.1",
-    "compression": "1.6.0",
+    "body-parser": "1.15.0",
+    "camelcase": "2.0.1",
+    "compression": "1.6.1",
     "express": "4.13.3",
     "nodemailer": "2.0.0",
-    "require-directory": "^2.1.1"
+    "require-directory": "2.1.1"
   },
   "devDependencies": {
     "standard": "^5.4.1"
