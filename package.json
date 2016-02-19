@@ -7,7 +7,7 @@
   },
   "main": "server/server.js",
   "scripts": {
-    "start": "standard && node server/server.js"
+    "start": "standard && node server/start.js"
   },
   "standard": {
     "ignore": [
@@ -21,6 +21,7 @@
     "camelcase": "2.1.0",
     "compression": "1.6.1",
     "express": "4.13.4",
+    "forever-monitor": "1.7.0",
     "nodemailer": "2.1.0",
     "require-directory": "2.1.1"
   },
