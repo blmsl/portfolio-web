@@ -1,6 +1,3 @@
-/// <reference path="../../../tools/typings/tsd/googlemaps/google.maps.d.ts" />
-/// <reference path="../../../tools/typings/tsd/jquery/jquery.d.ts" />
-/// <reference path="../../../tools/typings/tsd/underscore/underscore.d.ts" />
 'use strict';
 import Map                            = google.maps.Map;
 import Polyline                       = google.maps.Polyline;

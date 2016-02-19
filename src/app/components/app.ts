@@ -1,5 +1,3 @@
-/// <reference path="../../../tools/typings/tsd/jquery/jquery.d.ts" />
-/// <reference path="../../../tools/typings/tsd/underscore/underscore.d.ts" />
 'use strict';
 import {Component, View, OnInit}  from 'angular2/core';
 import {HeaderComponent}          from '../../header/components/header';

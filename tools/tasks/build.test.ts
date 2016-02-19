@@ -7,8 +7,10 @@ export = function buildTest(gulp, plugins) {
   return function () {
     let tsProject = tsProjectFn(plugins);
     let src = [
+      'typings/main.d.ts',
       join(APP_SRC, '**/*.ts'),
-      '!' + join(APP_SRC, 'bootstrap.ts')
+      '!' + join(APP_SRC, '**/*.e2e.ts'),
+      '!' + join(APP_SRC, 'main.ts')
     ];
 
     let result = gulp.src(src)

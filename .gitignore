@@ -23,6 +23,7 @@ build/Release/
 # Commenting this out is preferred by some people, see
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git-
 node_modules/
+typings/
 
 # Users Environment Variables
 .lock-wscript
@@ -48,9 +49,6 @@ docs/
 lib/
 test/
 tmp/
-
-# TSD Typings
-tools/typings/tsd/
 
 # Heroku app - has own repo
 heroku/
