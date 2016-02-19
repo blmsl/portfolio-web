@@ -1,3 +1,4 @@
+'use strict';
 import * as gulp from 'gulp';
 import * as util from 'gulp-util';
 import * as chalk from 'chalk';

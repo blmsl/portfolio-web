@@ -1,3 +1,4 @@
+'use strict';
 import * as merge from 'merge-stream';
 import {join} from 'path';
 import {JS_CONCAT_DEPENDENCIES_PROD, CSS_CONCAT_DEPENDENCIES_PROD, JS_PROD_BUNDLE, CSS_PROD_BUNDLE, JS_DEST, CSS_DEST} from '../config';

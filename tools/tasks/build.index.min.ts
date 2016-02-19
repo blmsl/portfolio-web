@@ -1,3 +1,4 @@
+'use strict';
 import {join} from 'path';
 import {APP_DEST} from '../config';
 

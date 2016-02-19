@@ -1,3 +1,4 @@
+'use strict';
 import {readFileSync} from 'fs';
 import {argv} from 'yargs';
 
@@ -17,7 +18,7 @@ export const LIVE_RELOAD_PORT = argv['reload-port'] || 4002;
 export const DOCS_PORT = argv['docs-port'] || 4003;
 export const APP_BASE = argv['base'] || '/';
 
-export const APP_SRC = 'app';
+export const APP_SRC = 'src';
 export const ASSETS_SRC = `${APP_SRC}/assets`;
 export const CSS_SRC = `${ASSETS_SRC}/css`;
 export const JS_SRC = `${ASSETS_SRC}/js`;
@@ -166,8 +167,7 @@ export const DEPENDENCIES:Array<Dependency> = NPM_DEPENDENCIES.concat(APP_ASSETS
 const SYSTEM_CONFIG_DEV = {
   defaultJSExtensions: true,
   paths: {
-    'bootstrap': `${APP_ROOT}bootstrap`,
-    'hot_loader_bootstrap': `${APP_ROOT}hot_loader_bootstrap`,
+    'main': `${APP_ROOT}main`,
     '*': `${APP_BASE}node_modules/*`
   }
 };

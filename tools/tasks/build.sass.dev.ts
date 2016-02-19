@@ -1,7 +1,8 @@
+'use strict';
 import {join} from 'path';
 import {APP_SRC} from '../config';
 
-export = function buildSassDev(gulp, plugins, option) {
+export = function buildSassDev(gulp, plugins) {
   return function () {
     return gulp.src(join(APP_SRC, '**', '*.scss'))
       .pipe(plugins.sass().on('error', plugins.sass.logError))

@@ -1,3 +1,4 @@
+'use strict';
 import {VERSION_NPM, VERSION_NODE} from '../config';
 
 function reportError(message:string) {
@@ -5,7 +6,7 @@ function reportError(message:string) {
   process.exit(1);
 }
 
-module.exports = function check(gulp, plugins) {
+module.exports = function check() {
   return function () {
     let exec = require('child_process').exec;
     let semver = require('semver');

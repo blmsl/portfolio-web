@@ -1,4 +1,6 @@
 {
+  "asi": true,
+  "esversion": 6,
   "bitwise": true,
   "immed": true,
   "newcap": true,
@@ -13,13 +15,20 @@
   "globalstrict": true,
   "laxbreak": true,
   "loopfunc": true,
-  "sub": true,
   "undef": true,
   "indent": 2,
   "unused": true,
-
   "node": true,
+  "validthis": true,
   "globals": {
-    "System": true
+    "window": true,
+    "document": true,
+    "location": true,
+    "System": true,
+    "Reflect": true,
+    "Promise": true,
+    "jQuery": true,
+    "_": true,
+    "google": true
   }
 }

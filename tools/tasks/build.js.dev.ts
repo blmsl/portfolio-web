@@ -1,3 +1,4 @@
+'use strict';
 import {join} from 'path';
 import {APP_SRC, APP_DEST} from '../config';
 import {templateLocals, tsProjectFn} from '../utils';
@@ -6,6 +7,7 @@ export = function buildJSDev(gulp, plugins) {
   let tsProject = tsProjectFn(plugins);
   return function () {
     let src = [
+      'typings/main.d.ts',
       join(APP_SRC, '**/*.ts'),
       '!' + join(APP_SRC, '**/*_spec.ts')
     ];

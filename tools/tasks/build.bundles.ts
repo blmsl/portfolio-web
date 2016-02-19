@@ -1,7 +1,8 @@
+'use strict';
 import * as merge from 'merge-stream';
 import {join} from 'path';
 import * as browserify from 'browserify';
-import * as vinylSourceStream from 'vinyl-source-stream';
+import vinylSourceStream = require('vinyl-source-stream');
 import * as vinylBuffer from 'vinyl-buffer';
 import {DEPENDENCIES, JS_PROD_SHIMS_BUNDLE, JS_PROD_APP_BUNDLE, JS_DEST, TMP_DIR} from '../config';
 
@@ -30,7 +31,7 @@ export = function bundles(gulp, plugins) {
     }
 
     function bundleApp() {
-      return browserify(join(TMP_DIR, 'bootstrap'))
+      return browserify(join(TMP_DIR, 'main'))
         .bundle()
         .pipe(vinylSourceStream(JS_PROD_APP_BUNDLE))
         .pipe(vinylBuffer())

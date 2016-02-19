@@ -1,3 +1,5 @@
+/// <reference path="../manual_typings/open.d.ts" />
+'use strict';
 import {resolve}                                                          from 'path';
 import {Message}                                                          from './definitions/message';
 import {Submission}                                                       from './definitions/submission';
