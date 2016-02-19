@@ -1,4 +1,6 @@
 {
+  "asi": true,
+  "esversion": 6,
   "bitwise": true,
   "immed": true,
   "newcap": true,
