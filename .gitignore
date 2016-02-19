@@ -34,12 +34,12 @@ node_modules/
 
 # Generated files
 gulpfile.js*
-app/**/*.css*
-app/**/*.js
-app/**/*.js.map
+src/**/*.css*
+src/**/*.js
+src/**/*.js.map
 tools/**/*.js
 tools/**/*.js.map
-!app/assets/js
+!src/assets/js
 
 # Generated folders
 dist/
