@@ -1,7 +1,7 @@
 'use strict';
 export var MENU_CONFIG = {
   parts: {
-    0: 'banner',
+    0: 'home',
     1: 'aboutme',
     2: 'skills',
     3: 'experience',
