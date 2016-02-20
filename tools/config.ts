@@ -1,6 +1,7 @@
 'use strict';
 import {readFileSync} from 'fs';
 import {argv} from 'yargs';
+import {join} from 'path';
 
 // --------------
 // Configuration.
@@ -44,6 +45,8 @@ export const JS_PROD_APP_BUNDLE = 'app.min.js';
 
 export const VERSION_NPM = '3.3.12';
 export const VERSION_NODE = '5.3.0';
+
+export const NG2LINT_RULES = join('node_modules', 'ng2lint', 'dist', 'src');
 
 interface Dependency {
   src: string;

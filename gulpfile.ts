@@ -4,20 +4,16 @@ import {runSequence, task} from './tools/utils';
 
 // --------------
 // Clean (override).
-gulp.task('clean', task('clean', 'all'));
-gulp.task('clean.dist', task('clean', 'dist'));
-gulp.task('clean.test', task('clean', 'test'));
-gulp.task('clean.tmp', task('clean', 'tmp'));
-gulp.task('clean.heroku', task('clean', 'heroku'));
+gulp.task('clean', done => task('clean', 'all')(done));
+gulp.task('clean.dist', done => task('clean', 'dist')(done));
+gulp.task('clean.test', done => task('clean', 'test')(done));
+gulp.task('clean.tmp', done => task('clean', 'tmp')(done));
+gulp.task('clean.heroku', done => task('clean', 'heroku')(done));
 
-gulp.task('check.versions', task('check.versions'));
+gulp.task('check.versions', () => task('check.versions'));
 
-// --------------
-// Postinstall.
-gulp.task('postinstall', done =>
-  runSequence('clean',
-    'npm',
-    done));
+gulp.task('build.docs', () => task('build.docs'));
+gulp.task('serve.docs', () => task('serve.docs'));
 
 // --------------
 // Build dev.
@@ -87,18 +83,40 @@ gulp.task('test', done =>
     done));
 
 // --------------
-// Serve.
-gulp.task('serve', done =>
-  runSequence(
-    'build.dev',
-    'server.start',
-    'watch.serve',
-    done));
-
-// --------------
 // Docs
 gulp.task('docs', done =>
   runSequence(
     'build.docs',
     'serve.docs',
+    done));
+
+// --------------
+// Serve dev
+gulp.task('serve.dev', done =>
+  runSequence('build.dev',
+    'server.start',
+    'watch.serve',
+    done));
+
+// --------------
+// Serve e2e
+gulp.task('serve.e2e', done =>
+  runSequence('build.e2e',
+    'server.start',
+    'watch.serve',
+    done));
+
+// --------------
+// Serve prod
+gulp.task('serve.prod', done =>
+  runSequence('build.prod',
+    'server.start',
+    'watch.serve',
+    done));
+
+// --------------
+// Test.
+gulp.task('test', done =>
+  runSequence('build.test',
+    'karma.start',
     done));
