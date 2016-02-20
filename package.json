@@ -26,6 +26,6 @@
     "require-directory": "2.1.1"
   },
   "devDependencies": {
-    "standard": "6.0.5"
+    "standard": "6.0.7"
   }
 }
