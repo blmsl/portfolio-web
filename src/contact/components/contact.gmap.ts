@@ -11,8 +11,6 @@ import {JOURNEYS, UPCOMING_JOURNEYS}  from '../../shared/models/contact/journeys
 import * as p                         from '../../shared/models/contact/points';
 import {elementInViewport}            from '../../shared/common/common';
 
-declare var jQuery:JQuery, _:UnderscoreStatic;
-
 @Component({
   selector: 'googlemap',
   providers: [Http, HTTP_PROVIDERS]

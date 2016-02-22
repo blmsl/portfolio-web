@@ -4,8 +4,6 @@ import {SkillService}             from '../../shared/services/skills.service';
 import {Skill}                    from '../../shared/models/skills/definitions/skill';
 import {elementInViewport}        from '../../shared/common/common';
 
-declare var jQuery:JQuery, _:UnderscoreStatic;
-
 @Component({
   selector: 'skills',
   providers: [SkillService]

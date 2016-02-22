@@ -1,13 +1,14 @@
 'use strict';
-import Size     = google.maps.Size;
 import {Point}  from './point';
+import {Icon}   from './icon';
 
-export interface Icon {
-  url: string;
-  size: Size;
-}
-
+/**
+ * Interface for a City object
+ */
 export interface City {
+  /**
+   * Location of the city
+   */
   loc: Point;
   title: string;
   icon: Icon;

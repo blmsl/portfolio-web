@@ -1,6 +1,10 @@
 'use strict';
 import {Job} from './definitions/job';
 
+/**
+ * Array of Jobs for the Experience section
+ * @type {Job[]}
+ */
 export var JOBS:Array<Job> = [
   {
     year: {

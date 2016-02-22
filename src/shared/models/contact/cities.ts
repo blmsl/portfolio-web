@@ -1,10 +1,15 @@
 'use strict';
-import {Icon, City}   from './definitions/city';
-import * as p         from './points';
+import {Icon}   from './definitions/icon';
+import {City}   from './definitions/city';
+import * as p   from './points';
 
 let lived:string = 'I\'ve lived here...';
 let prevIcon:Icon = {url: 'assets/images/markerprev.png', size: p.MARKER_SIZE};
 
+/**
+ * Array of Cities for the Contact section
+ * @type {City[]}
+ */
 export var CITIES:Array<City> = [
   {
     loc: p.HARTSWATER,

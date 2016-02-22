@@ -54,7 +54,9 @@ gulp.task('build.heroku', done =>
   runSequence(
     'clean.heroku',
     'build.prod',
+    'build.docs',
     'build.heroku.copy',
+    'build.heroku.docs.copy',
     'build.heroku.update',
     done));
 

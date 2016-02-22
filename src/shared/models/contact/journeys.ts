@@ -2,6 +2,10 @@
 import {Airport}  from './definitions/airport';
 import * as a     from './airports';
 
+/**
+ * Array of Journeys or the Contact section
+ * @type {Airport[][]}
+ */
 export const JOURNEYS:Array<Array<Airport>> = [
   [a.KIM, a.PLZ, a.ELS], [a.KIM, a.JNB], [a.JNB, a.AMS, a.LHR], [a.JNB, a.NBO, a.LHR],
   [a.JNB, a.CPT], [a.JNB, a.MBD], [a.JNB, a.DUR], [a.JNB, a.BFN], [a.JNB, a.PLZ], [a.JNB, a.ELS],
@@ -19,5 +23,9 @@ export const JOURNEYS:Array<Array<Airport>> = [
   [a.TOS, a.ARN], [a.LHR, a.SIN, a.SYD, a.WLG]
 ];
 
+/**
+ * Array of Upcoming Journeys for the Contact section
+ * @type {Array}
+ */
 export const UPCOMING_JOURNEYS:Array<Array<Airport>> = [
 ];

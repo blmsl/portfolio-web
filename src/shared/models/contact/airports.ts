@@ -281,6 +281,10 @@ export const TOS:Airport = {
   name: 'TOS: Tromsø Airport'
 };
 
+/**
+ * Array of all airports for the Contact section
+ * @type {Airport[]}
+ */
 export const AIRPORTS:Array<Airport> = [
   KIM, PLZ, ELS, JNB, AMS, LHR, NBO, CPT, MBD,
   DUR, BFN, GRJ, MPM, GBE, WDH, BUQ, HRE, LVI,

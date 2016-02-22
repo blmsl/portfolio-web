@@ -4,8 +4,6 @@ import {Http, HTTP_PROVIDERS, Response}   from 'angular2/http';
 import {HeaderService}                    from '../../shared/services/header.service';
 import {MENU_CONFIG, GRID_ROTATOR_CONFIG} from '../../shared/models/header/header.config';
 
-declare var jQuery:JQuery, _:UnderscoreStatic;
-
 @Component({
   selector: 'header',
   providers: [Http, HTTP_PROVIDERS, HeaderService]

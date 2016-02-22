@@ -6,8 +6,6 @@ import {Http, HTTP_PROVIDERS, Response}   from 'angular2/http';
 import {ContactService}                   from '../../shared/services/contact.service';
 import {ContactMessage}                   from '../../shared/models/contact/definitions/contact.message';
 
-declare var _:UnderscoreStatic;
-
 @Pipe({name: 'trim'})
 export class TrimPipe implements PipeTransform {
   transform(value:any):any {

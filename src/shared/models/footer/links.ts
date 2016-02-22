@@ -1,6 +1,10 @@
 'use strict';
 import {Link} from './definitions/link';
 
+/**
+ * Array of links for the Footer section
+ * @type {Link[]}
+ */
 export var LINKS:Array<Link> = [
   {
     url: 'https://nz.linkedin.com/in/louwswart/',

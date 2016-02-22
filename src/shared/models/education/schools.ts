@@ -1,6 +1,10 @@
 'use strict';
 import {School} from './definitions/school';
 
+/**
+ * Array of Schools for the Education section
+ * @type {School[]}
+ */
 export var SCHOOLS:Array<School> = [
   {
     year: {

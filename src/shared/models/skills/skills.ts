@@ -1,6 +1,10 @@
 'use strict';
 import {Skill} from './definitions/skill';
 
+/**
+ * Array of Skills for the Skills section
+ * @type {Skill[]}
+ */
 export var SKILLS:Array<Skill> = [
   {
     name: 'Scripting',
@@ -8,7 +12,7 @@ export var SKILLS:Array<Skill> = [
     content: 'AngularJS; Backbone; Node.js;'
   }, {
     name: 'Web Markup',
-    level: 70,
+    level: 80,
     content: 'HTML5; CSS3; SCSS;'
   }, {
     name: 'Java',

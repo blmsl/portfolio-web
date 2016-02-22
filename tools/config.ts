@@ -34,6 +34,7 @@ export const CSS_DEST = `${APP_DEST}/css`;
 export const FONTS_DEST = `${APP_DEST}/fonts`;
 export const LIB_DEST = `${APP_DEST}/lib`;
 export const HEROKU_APP_DIR = 'heroku/app';
+export const HEROKU_DOCS_DIR = `${HEROKU_APP_DIR}/docs`;
 export const HEROKU_SERVER_DIR = 'heroku/server';
 export const APP_ROOT = ENV === 'dev' ? `${APP_BASE}${APP_DEST}/` : `${APP_BASE}`;
 export const VERSION = appVersion();

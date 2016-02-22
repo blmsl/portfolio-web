@@ -10,8 +10,6 @@ import {FooterComponent}          from '../../footer/components/footer';
 import {AppService}               from '../../shared/services/app.service';
 import {elementInViewport}        from '../../shared/common/common';
 
-declare var jQuery:JQuery, _:UnderscoreStatic;
-
 @Component({
   selector: 'container',
   providers: [AppService]
