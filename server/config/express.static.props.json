@@ -44,6 +44,11 @@
       "uri": "/google536c542405d09504.html",
       "location": "./app/google536c542405d09504.html",
       "cache": "365d"
+    },
+    {
+      "uri": "/docs",
+      "location": "./app/docs",
+      "cache": "1d"
     }
   ]
 }
