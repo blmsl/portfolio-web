@@ -18,16 +18,16 @@ export class HeaderComponent implements OnInit {
   private _previousHeight:number;
 
   constructor(private _headerService:HeaderService) {
-    this._previousWidth = 0;
-    this._previousHeight = 0;
+    this.setPreviousWidth(0);
+    this.setPreviousHeight(0);
   }
 
   ngOnInit() {
-    this.getImageIds();
+    this.initImageIds();
     this.initResizeListener();
   }
 
-  getImageIds() {
+  initImageIds() {
     this._headerService.getImageIds().subscribe(
       (res:Response) =>
         this.initGridRotator(res.json().imageIds)
@@ -37,7 +37,7 @@ export class HeaderComponent implements OnInit {
   initResizeListener() {
     (($) => {
       $(window).on('resize', _.bind(() => {
-        this.setBannerSize(this._previousWidth, this._previousHeight);
+        this.setBannerSize(this.getPreviousWidth(), this.getPreviousHeight());
       }, this));
     })(jQuery);
   }
@@ -48,7 +48,7 @@ export class HeaderComponent implements OnInit {
       // For background slider
       _.delay(_.bind(() => {
         $('#ri-grid').gridrotator(GRID_ROTATOR_CONFIG);
-        this.setBannerSize(this._previousWidth, this._previousHeight);
+        this.setBannerSize(this.getPreviousWidth(), this.getPreviousHeight());
         this.initNavigation();
       }, this), 250);
     })(jQuery);
@@ -89,8 +89,8 @@ export class HeaderComponent implements OnInit {
           'height': windowHeight - 60
         });
         this.setDynamicCssValues();
-        this._previousWidth = windowWidth;
-        this._previousHeight = windowHeight;
+        this.setPreviousWidth(windowWidth);
+        this.setPreviousHeight(windowHeight);
       }
     })(jQuery, previousWidth, previousHeight);
   }
@@ -100,5 +100,21 @@ export class HeaderComponent implements OnInit {
       var bannerText = $('.banner-text');
       bannerText.css('top', ((($(window).innerHeight() - bannerText.height()) / 2) - 63));
     })(jQuery);
+  }
+
+  setPreviousWidth(previousWidth:number) {
+    this._previousWidth = previousWidth;
+  }
+
+  getPreviousWidth() {
+    return this._previousWidth;
+  }
+
+  setPreviousHeight(previousHeight:number) {
+    this._previousHeight = previousHeight;
+  }
+
+  getPreviousHeight() {
+    return this._previousHeight;
   }
 }
