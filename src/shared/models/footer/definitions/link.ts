@@ -4,7 +4,7 @@
  */
 export interface Link {
   /**
-   * Web address fro the link
+   * Web address for the link
    */
   url: string;
   /**

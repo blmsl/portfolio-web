@@ -1,4 +1,4 @@
-ouq77portfolio [![Dependency Status](https://david-dm.org/ouq77/portfolio-web.svg)](https://david-dm.org/ouq77/portfolio-web) [![devDependency Status](https://david-dm.org/ouq77/portfolio-web/dev-status.svg)](https://david-dm.org/ouq77/portfolio-web#info=devDependencies)
+ouq77portfolio [![Dependency Status](https://david-dm.org/ouq77/portfolio-web/portfolio-web-ng2-heroku.svg)](https://david-dm.org/ouq77/portfolio-web/portfolio-web-ng2-heroku) [![devDependency Status](https://david-dm.org/ouq77/portfolio-web/portfolio-web-ng2-heroku/dev-status.svg)](https://david-dm.org/ouq77/portfolio-web/portfolio-web-ng2-heroku#info=devDependencies)
 ==============
 
 Angular2 app, built on top of [angular2-seed](https://github.com/mgechev/angular2-seed), that can be run on Heroku in NodeJS. 
