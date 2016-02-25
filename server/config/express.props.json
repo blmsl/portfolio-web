@@ -1,5 +1,5 @@
 {
-  "mappings": [
+  "static": [
     {
       "uri": "/assets",
       "location": "./app/assets",
@@ -49,6 +49,12 @@
       "uri": "/docs",
       "location": "./app/docs",
       "cache": "1d"
+    }
+  ],
+  "redirects": [
+    {
+      "uri": "/resources/images/icon.png",
+      "newUri": "/assets/images/manifesticons/eightbitme-192.png"
     }
   ]
 }
