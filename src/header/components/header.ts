@@ -45,10 +45,10 @@ export class HeaderComponent implements OnInit {
   initGridRotator(imageIds:Array<String>) {
     this.imageIds = imageIds;
     (($) => {
-      // For background slider
+      // Delay 250ms for images to be rendered in template
       _.delay(_.bind(() => {
-        $('#ri-grid').gridrotator(GRID_ROTATOR_CONFIG);
         this.setBannerSize(this.getPreviousWidth(), this.getPreviousHeight());
+        $('#ri-grid').gridrotator(GRID_ROTATOR_CONFIG);
         this.initNavigation();
       }, this), 250);
     })(jQuery);
@@ -73,7 +73,7 @@ export class HeaderComponent implements OnInit {
   setBannerSize(previousWidth, previousHeight) {
     (($, previousWidth, previousHeight) => {
       var windowWidth = $(window).width(),
-        windowHeight = $(window).innerHeight(),
+        windowHeight = $(window).height(),
         widthChanged = previousWidth !== windowWidth,
         heightChanged = false;
       // mobile browsers ads about 60px to screen height when hiding address bar - ignore this
@@ -98,7 +98,7 @@ export class HeaderComponent implements OnInit {
   setDynamicCssValues() {
     (($) => {
       var bannerText = $('.banner-text');
-      bannerText.css('top', ((($(window).innerHeight() - bannerText.height()) / 2) - 63));
+      bannerText.css('top', ((($(window).height() - bannerText.height()) / 2) - 63));
     })(jQuery);
   }
 

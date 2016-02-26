@@ -4,7 +4,7 @@
 const GOOGLE_ANALYTICS_ID:string = process.env.GOOGLE_ANALYTICS_ID;
 const GOOGLE_MAPS_API_KEY:string = process.env.GOOGLE_MAPS_API_KEY;
 const NAME = 'Louw Swart';
-const TITLE = `${NAME} | Personal Portfolio`;
+const TITLE = `${NAME} // Personal Portfolio`;
 const DESCRIPTION = 'On-line Portfolio and CV for Louw Swart - Analyst JavaScript Programmer based in Wellington, New Zealand';
 const URL = 'https://portfolio.ouq77.kiwi/';
 
