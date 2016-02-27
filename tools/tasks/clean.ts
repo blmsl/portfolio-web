@@ -3,7 +3,7 @@ import * as async from 'async';
 import * as util from 'gulp-util';
 import * as chalk from 'chalk';
 import * as del from 'del';
-import {DIST_DIR, TEST_DEST, TMP_DIR, HEROKU_APP_DIR} from '../config';
+import {DIST_DIR, TEST_DEST, TMP_DIR, HEROKU_APP_DIR, DOCS_DEST} from '../config';
 
 export = function clean(gulp, plugins, option) {
   return function (done) {
@@ -24,6 +24,9 @@ export = function clean(gulp, plugins, option) {
       case 'heroku' :
         cleanHeroku(done);
         break;
+      case 'docs' :
+        cleanDocs(done);
+        break;
       default:
         done();
     }
@@ -36,7 +39,8 @@ function cleanAll(done) {
     cleanDist,
     cleanTest,
     cleanTmp,
-    cleanHeroku
+    cleanHeroku,
+    cleanDocs
   ], done);
 }
 function cleanDist(done) {
@@ -60,6 +64,12 @@ function cleanTmp(done) {
 function cleanHeroku(done) {
   del([HEROKU_APP_DIR]).then((paths) => {
     util.log('Clean', chalk.blue('heroku'), chalk.yellow(paths && paths.join(', ') || '-'));
+    done();
+  });
+}
+function cleanDocs(done) {
+  del([DOCS_DEST]).then((paths) => {
+    util.log('Clean', chalk.blue('docs'), chalk.yellow(paths && paths.join(', ') || '-'));
     done();
   });
 }

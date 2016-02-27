@@ -9,6 +9,7 @@ gulp.task('clean.dist', done => task('clean', 'dist')(done));
 gulp.task('clean.test', done => task('clean', 'test')(done));
 gulp.task('clean.tmp', done => task('clean', 'tmp')(done));
 gulp.task('clean.heroku', done => task('clean', 'heroku')(done));
+gulp.task('clean.docs', done => task('clean', 'docs')(done));
 
 gulp.task('check.versions', () => task('check.versions'));
 
@@ -53,6 +54,7 @@ gulp.task('build.prod', done =>
 gulp.task('build.heroku', done =>
   runSequence(
     'clean.heroku',
+    'clean.docs',
     'build.prod',
     'build.docs',
     'build.heroku.copy',
