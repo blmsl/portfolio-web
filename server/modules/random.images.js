@@ -5,8 +5,8 @@ let getIds = () => {
   let reducedImageIds = []
   let imageIdsCopy = imageIds.slice(0)
 
-  if (imageIds.length > 64) {
-    while (reducedImageIds.length < 65) {
+  if (imageIds.length > 200) {
+    while (reducedImageIds.length < 200) {
       reducedImageIds.push(imageIdsCopy.splice(Math.floor(Math.random() * (imageIdsCopy.length)), 1)[0])
     }
   }
