@@ -40,7 +40,7 @@ src/**/*.js
 src/**/*.js.map
 tools/**/*.js
 tools/**/*.js.map
-!src/assets/js
+!src/assets/js/**
 
 # Generated folders
 dist/

@@ -31,7 +31,7 @@ export var MENU_CONFIG = {
  * Grid Rotator config
  * @type {
  *    {
- *      rows: number,
+ *      container: string,
  *      columns: number,
  *      animType: string,
  *      animSpeed: number,
@@ -40,19 +40,16 @@ export var MENU_CONFIG = {
  *      preventClick: boolean,
  *      onhover: boolean,
  *      w1024: {
- *        rows: number, columns: number
+ *        columns: number
  *      },
  *      w768: {
- *        rows: number, columns: number
+ *        columns: number
  *      },
  *      w480: {
- *        rows: number, columns: number
+ *        columns: number
  *      },
  *      w320: {
- *        rows: number, columns: number
- *      },
- *      w240: {
- *        rows: number, columns: number
+ *        columns: number
  *      }
  *    }
  * }
