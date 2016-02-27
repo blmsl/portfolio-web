@@ -80,7 +80,10 @@ jQuery(function($) {
       if (varScroll < 100) {
         $('.' + itemClass).removeClass(itemHover);
         $('.' + itemClass + ':eq(0)').addClass(itemHover);
-      } else if (i < (menuSize - 1) && varScroll > contentTop[i] - 100 && varScroll < contentTop[i + 1] + 100) {
+      } else if (i < (menuSize - 1) &&
+          varScroll > contentTop[i] - 100 &&
+          varScroll < contentTop[i + 1] + 100 &&
+          varScroll < $('#' + content[0] + '').height() + 56) {
         $('.' + itemClass).removeClass(itemHover);
         $('.' + itemClass + ':eq(' + i + ')').addClass(itemHover);
       }
@@ -105,7 +108,9 @@ jQuery(function($) {
         for (var i = 0; i < menuSize; i++) {
           contentTop[i] = $('#' + content[i] + '').offset().top;
           if (scrollDir == 'down') {
-            if (varScroll > contentTop[i] - 100 && varScroll < contentTop[i] + 100) {
+            if (varScroll > contentTop[i] - 100 &&
+                varScroll < contentTop[i] + 100 &&
+                varScroll > $('#' + content[0] + '').height() + 56) {
               $('.' + itemClass).removeClass(itemHover);
               $('.' + itemClass + ':eq(' + i + ')').addClass(itemHover);
             }
