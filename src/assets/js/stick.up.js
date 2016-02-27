@@ -82,8 +82,7 @@ jQuery(function($) {
         $('.' + itemClass + ':eq(0)').addClass(itemHover);
       } else if (i < (menuSize - 1) &&
           varScroll > contentTop[i] - 100 &&
-          varScroll < contentTop[i + 1] + 100 &&
-          varScroll < $('#' + content[0] + '').height() + 56) {
+          varScroll < contentTop[i + 1] + 100) {
         $('.' + itemClass).removeClass(itemHover);
         $('.' + itemClass + ':eq(' + i + ')').addClass(itemHover);
       }
