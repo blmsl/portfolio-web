@@ -56,5 +56,9 @@
   }
   i {
     padding-right: 15px;
+
+    @media screen and (max-width: $screen-m2-min) {
+      padding-right: 5px;
+    }
   }
 }

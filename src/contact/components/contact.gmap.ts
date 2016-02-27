@@ -55,9 +55,12 @@ export class ContactMapComponent implements OnInit {
     (($) => {
       _.delay(_.bind(() => {
         let mapOptions = _.clone(MAP_OPTIONS);
-        if ($(window).width() < 1000) {
+        if ($(window).width() < 768) {
           mapOptions.zoom = 0;
           mapOptions.minZoom = 0;
+        } else if ($(window).width() < 1024) {
+          mapOptions.zoom = 1;
+          mapOptions.minZoom = 1;
         }
         this.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
         _.each(JOURNEYS, _.bind(function (journey, index) {
@@ -88,6 +91,7 @@ export class ContactMapComponent implements OnInit {
         this._tilesLoadedEvent = google.maps.event.addListener(this.map, 'tilesloaded', _.bind(function () {
           google.maps.event.removeListener(this._tilesLoadedEvent);
           this._tilesLoaded = true;
+          this.dropMarkers(1500);
         }, this));
       }, this), 250);
     })(jQuery);
@@ -107,10 +111,6 @@ export class ContactMapComponent implements OnInit {
         }, this), 500);
       }, this));
     })(jQuery);
-
-    if (!this._mapMarkersDrawn) {
-      this.dropMarkers(1500);
-    }
   }
 
   initClickListener() {
@@ -182,12 +182,6 @@ export class ContactMapComponent implements OnInit {
                 this.zoomMap(this.map.getZoom() + 1, $(window).width() >= 1000 ? 11 : 10);
               }, this), ((CITIES.length) * 700) + this._additionalMarkerWait);
             }, this), this._markerWait);
-          } else {
-            _.delay(_.bind(function () {
-              if (!this._mapMarkersDrawn) {
-                this.dropMarkers(1000);
-              }
-            }, this), 500);
           }
         }
       }, this));

@@ -28,8 +28,10 @@ export class SkillsComponent implements OnInit {
 
   getSkills() {
     this._skillService.getSkills().then(
-      skills =>
-        this.skills = skills
+      (skills) => {
+        this.skills = skills;
+        this.drawChart();
+      }
     );
   }
 

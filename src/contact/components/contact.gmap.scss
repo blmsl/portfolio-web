@@ -12,19 +12,15 @@
   width: 100%;
   margin: 0;
 
-  @media screen and (max-width: $screen-m1-min) {
-    height: 250px;
+  @media screen and (max-width: $screen-lg-min) {
+    height: 450px;
   }
 
   @media screen and (max-width: $screen-m2-min) {
-    height: 200px;
+    height: 350px;
   }
 
   @media screen and (max-width: $screen-sm-min) {
-    height: 160px;
-  }
-
-  @media screen and (max-width: $screen-x2-min) {
     height: 200px;
   }
 }
