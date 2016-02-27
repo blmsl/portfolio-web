@@ -38,17 +38,24 @@
       }
     }
   }
-}
 
-.footer-info {
-  text-align: center;
-  padding-top: 15px;
-  p {
-    padding-bottom: 5px;
+  .footer-info {
+    text-align: center;
+    padding-top: 15px;
+    p {
+      padding-bottom: 5px;
+    }
+
+    .js-standard-style {
+      height: 22px;
+    }
   }
 
-  .js-standard-style {
-    height: 22px;
+  .last-modified {
+    text-align: right;
+    p {
+      padding-bottom: 5px;
+      padding-right: 20px;
+    }
   }
 }
-

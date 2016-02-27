@@ -13,9 +13,6 @@
   background: $whisper;
   color: $blue-zodiac;
   @include container-heading(70px);
-  .heading p {
-    padding-bottom: 41px;
-  }
   p {
     color: $blue-zodiac;
   }

@@ -112,7 +112,7 @@ export var JOBS:Array<Job> = [
     },
     institution: {
       name: 'South African Airways',
-      location: 'Cape Town &amp; Johannesburg, South Africa'
+      location: 'Cape Town & Johannesburg, South Africa'
     },
     title: 'Flight Attendant',
     content: '<p><br><i class="fa fa-globe fa-2x"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;' +
