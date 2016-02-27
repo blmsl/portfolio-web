@@ -58,7 +58,7 @@ export var MENU_CONFIG = {
  * }
  */
 export var GRID_ROTATOR_CONFIG = {
-  rows: 6,
+  container: '#home',
   columns: 8,
   animType: 'rotateBottom',
   animSpeed: 300,
@@ -67,23 +67,15 @@ export var GRID_ROTATOR_CONFIG = {
   preventClick: true,
   onhover: true,
   w1024: {
-    rows: 6,
     columns: 6
   },
   w768: {
-    rows: 7,
     columns: 4
   },
   w480: {
-    rows: 6,
     columns: 3
   },
   w320: {
-    rows: 4,
-    columns: 2
-  },
-  w240: {
-    rows: 4,
     columns: 2
   }
 };

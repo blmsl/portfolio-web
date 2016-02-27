@@ -18,8 +18,8 @@ export class HeaderComponent implements OnInit {
   private _previousHeight:number;
 
   constructor(private _headerService:HeaderService) {
-    this.setPreviousWidth(0);
-    this.setPreviousHeight(0);
+    this._previousWidth = 0;
+    this._previousHeight = 0;
   }
 
   ngOnInit() {
@@ -37,7 +37,7 @@ export class HeaderComponent implements OnInit {
   initResizeListener() {
     (($) => {
       $(window).on('resize', _.bind(() => {
-        this.setBannerSize(this.getPreviousWidth(), this.getPreviousHeight());
+        this.setBannerSize(this._previousWidth, this._previousHeight);
       }, this));
     })(jQuery);
   }
@@ -47,7 +47,7 @@ export class HeaderComponent implements OnInit {
     (($) => {
       // Delay 250ms for images to be rendered in template
       _.delay(_.bind(() => {
-        this.setBannerSize(this.getPreviousWidth(), this.getPreviousHeight());
+        this.setBannerSize(this._previousWidth, this._previousHeight);
         $('#ri-grid').gridrotator(GRID_ROTATOR_CONFIG);
         this.initNavigation();
       }, this), 250);
@@ -89,8 +89,8 @@ export class HeaderComponent implements OnInit {
           'height': windowHeight - 60
         });
         this.setDynamicCssValues();
-        this.setPreviousWidth(windowWidth);
-        this.setPreviousHeight(windowHeight);
+        this._previousWidth = windowWidth;
+        this._previousHeight = windowHeight;
       }
     })(jQuery, previousWidth, previousHeight);
   }
@@ -100,21 +100,5 @@ export class HeaderComponent implements OnInit {
       var bannerText = $('.banner-text');
       bannerText.css('top', ((($(window).height() - bannerText.height()) / 2) - 63));
     })(jQuery);
-  }
-
-  setPreviousWidth(previousWidth:number) {
-    this._previousWidth = previousWidth;
-  }
-
-  getPreviousWidth() {
-    return this._previousWidth;
-  }
-
-  setPreviousHeight(previousHeight:number) {
-    this._previousHeight = previousHeight;
-  }
-
-  getPreviousHeight() {
-    return this._previousHeight;
   }
 }

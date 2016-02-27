@@ -24,11 +24,12 @@ export const ASSETS_SRC = `${APP_SRC}/assets`;
 export const CSS_SRC = `${ASSETS_SRC}/css`;
 export const JS_SRC = `${ASSETS_SRC}/js`;
 
+export const DIST_DIR = 'dist';
 export const TOOLS_DIR = 'tools';
 export const TMP_DIR = 'tmp';
 export const TEST_DEST = 'test';
 export const DOCS_DEST = 'docs';
-export const APP_DEST = `dist/${ENV}`;
+export const APP_DEST = `${DIST_DIR}/${ENV}`;
 export const JS_DEST = `${APP_DEST}/js`;
 export const CSS_DEST = `${APP_DEST}/css`;
 export const FONTS_DEST = `${APP_DEST}/fonts`;
@@ -78,10 +79,10 @@ const NPM_VENDOR_JS:Array<Dependency> = normalizeDependencies([
 ]);
 
 const JS_DEPENDENCIES:Array<Dependency> = [
-  {src: `${JS_SRC}/modernizr.custom.min.js`, inject: true, dest: JS_DEST},
-  {src: `${JS_SRC}/jquery.gridrotator.min.js`, inject: true, dest: JS_DEST},
-  {src: `${JS_SRC}/stick.up.min.js`, inject: true, dest: JS_DEST},
-  {src: `${JS_SRC}/jquery.easypiechart.min.js`, inject: true, dest: JS_DEST}
+  {src: `${JS_SRC}/modernizr.custom.js`, inject: true, dest: JS_DEST},
+  {src: `${JS_SRC}/jquery.gridrotator.js`, inject: true, dest: JS_DEST},
+  {src: `${JS_SRC}/stick.up.js`, inject: true, dest: JS_DEST},
+  {src: `${JS_SRC}/jquery.easypiechart.js`, inject: true, dest: JS_DEST}
 ];
 
 const NPM_VENDOR_CSS:Array<Dependency> = normalizeDependencies([
@@ -125,10 +126,10 @@ npmDependenciesProd = npmDependenciesProd.concat(NPM_FONTS);
 export const NPM_DEPENDENCIES:Array<Dependency> = ENV === 'dev' ? npmDependenciesDev : npmDependenciesProd;
 
 let jsConcatDependenciesProd:Array<Dependency> = [
-  {src: `${JS_SRC}/modernizr.custom.min.js`},
-  {src: `${JS_SRC}/jquery.gridrotator.min.js`},
-  {src: `${JS_SRC}/stick.up.min.js`},
-  {src: `${JS_SRC}/jquery.easypiechart.min.js`}
+  {src: `${JS_SRC}/modernizr.custom.js`},
+  {src: `${JS_SRC}/jquery.gridrotator.js`},
+  {src: `${JS_SRC}/stick.up.js`},
+  {src: `${JS_SRC}/jquery.easypiechart.js`}
 ];
 
 export const JS_CONCAT_DEPENDENCIES_PROD:Array<Dependency> = []

@@ -9,8 +9,13 @@ export = function concat(gulp, plugins) {
 
     function concatJs() {
       return gulp.src(JS_CONCAT_DEPENDENCIES_PROD.map(d => d.src))
+        // Strip comments and sourcemaps
+        .pipe(plugins.uglify({
+          mangle: false,
+          compress: false,
+          preserveComments: 'license'
+        }))
         .pipe(plugins.concat(JS_PROD_BUNDLE))
-        .pipe(plugins.replace(/\/\/# sourceMappingURL=.*.map/g, ''))
         .pipe(gulp.dest(join(JS_DEST)));
     }
 

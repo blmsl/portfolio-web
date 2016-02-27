@@ -35,6 +35,7 @@ export = function bundles(gulp, plugins) {
         .bundle()
         .pipe(vinylSourceStream(JS_PROD_APP_BUNDLE))
         .pipe(vinylBuffer())
+        // Strip comments and sourcemaps
         .pipe(plugins.uglify({
           mangle: false
         }))

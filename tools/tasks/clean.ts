@@ -3,7 +3,7 @@ import * as async from 'async';
 import * as util from 'gulp-util';
 import * as chalk from 'chalk';
 import * as del from 'del';
-import {APP_DEST, TEST_DEST, TMP_DIR, HEROKU_APP_DIR} from '../config';
+import {DIST_DIR, TEST_DEST, TMP_DIR, HEROKU_APP_DIR} from '../config';
 
 export = function clean(gulp, plugins, option) {
   return function (done) {
@@ -40,26 +40,26 @@ function cleanAll(done) {
   ], done);
 }
 function cleanDist(done) {
-  del([APP_DEST]).then((paths) => {
-    util.log('Deleted', chalk.yellow(paths && paths.join(', ') || 'none'));
+  del([DIST_DIR]).then((paths) => {
+    util.log('Clean', chalk.blue('dist'), chalk.yellow(paths && paths.join(', ') || '-'));
     done();
   });
 }
 function cleanTest(done) {
   del([TEST_DEST]).then((paths) => {
-    util.log('Deleted', chalk.yellow(paths && paths.join(', ') || 'none'));
+    util.log('Clean', chalk.blue('test'), chalk.yellow(paths && paths.join(', ') || '-'));
     done();
   });
 }
 function cleanTmp(done) {
   del([TMP_DIR]).then((paths) => {
-    util.log('Deleted', chalk.yellow(paths && paths.join(', ') || 'none'));
+    util.log('Clean', chalk.blue('tmp'), chalk.yellow(paths && paths.join(', ') || '-'));
     done();
   });
 }
 function cleanHeroku(done) {
   del([HEROKU_APP_DIR]).then((paths) => {
-    util.log('Deleted', chalk.yellow(paths && paths.join(', ') || 'none'));
+    util.log('Clean', chalk.blue('heroku'), chalk.yellow(paths && paths.join(', ') || '-'));
     done();
   });
 }

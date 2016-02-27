@@ -54,11 +54,12 @@ export class ContactMapComponent implements OnInit {
   initializeMap() {
     (($) => {
       _.delay(_.bind(() => {
+        let mapOptions = _.clone(MAP_OPTIONS);
         if ($(window).width() < 1000) {
-          MAP_OPTIONS.zoom = 0;
-          MAP_OPTIONS.minZoom = 0;
+          mapOptions.zoom = 0;
+          mapOptions.minZoom = 0;
         }
-        this.map = new google.maps.Map(document.getElementById('map-canvas'), MAP_OPTIONS);
+        this.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
         _.each(JOURNEYS, _.bind(function (journey, index) {
           this._journeyLines[index] = new google.maps.Polyline({
             strokeOpacity: 0.5,
