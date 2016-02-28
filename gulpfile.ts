@@ -10,6 +10,7 @@ gulp.task('clean.test', done => task('clean', 'test')(done));
 gulp.task('clean.tmp', done => task('clean', 'tmp')(done));
 gulp.task('clean.heroku', done => task('clean', 'heroku')(done));
 gulp.task('clean.docs', done => task('clean', 'docs')(done));
+gulp.task('clean.heroku.docs', done => task('clean', 'heroku.docs')(done));
 
 gulp.task('check.versions', () => task('check.versions'));
 
@@ -54,12 +55,17 @@ gulp.task('build.prod', done =>
 gulp.task('build.heroku', done =>
   runSequence(
     'clean.heroku',
-    'clean.docs',
     'build.prod',
-    'build.docs',
     'build.heroku.copy',
-    'build.heroku.docs.copy',
     'build.heroku.update',
+    done));
+
+gulp.task('build.heroku.docs', done =>
+  runSequence(
+    'clean.docs',
+    'clean.heroku.docs',
+    'build.docs',
+    'build.heroku.docs.copy',
     done));
 
 // --------------
@@ -97,7 +103,8 @@ gulp.task('docs', done =>
 // --------------
 // Serve dev
 gulp.task('serve.dev', done =>
-  runSequence('build.dev',
+  runSequence(
+    'build.dev',
     'server.start',
     'watch.serve',
     done));
@@ -105,7 +112,8 @@ gulp.task('serve.dev', done =>
 // --------------
 // Serve e2e
 gulp.task('serve.e2e', done =>
-  runSequence('build.e2e',
+  runSequence(
+    'build.e2e',
     'server.start',
     'watch.serve',
     done));
@@ -113,7 +121,8 @@ gulp.task('serve.e2e', done =>
 // --------------
 // Serve prod
 gulp.task('serve.prod', done =>
-  runSequence('build.prod',
+  runSequence(
+    'build.prod',
     'server.start',
     'watch.serve',
     done));
@@ -121,6 +130,7 @@ gulp.task('serve.prod', done =>
 // --------------
 // Test.
 gulp.task('test', done =>
-  runSequence('build.test',
+  runSequence(
+    'build.test',
     'karma.start',
     done));

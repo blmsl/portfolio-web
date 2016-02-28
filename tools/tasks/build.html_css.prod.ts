@@ -23,7 +23,10 @@ export = function buildJSDev(gulp, plugins) {
     return merge(minifyHtml(), minifyCss());
 
     function minifyHtml() {
-      return gulp.src(join(APP_SRC, '**/*.html'))
+      return gulp.src([
+          join(APP_SRC, '**/*.html'),
+          '!' + join(APP_SRC, 'index.html')
+        ])
         .pipe(plugins.htmlmin(HTML_MIN_OPTS))
         .pipe(gulp.dest(TMP_DIR));
     }
