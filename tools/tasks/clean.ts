@@ -43,7 +43,8 @@ function cleanAll(done) {
     cleanTest,
     cleanTmp,
     cleanHeroku,
-    cleanDocs
+    cleanDocs,
+    cleanHerokuDocs
   ], done);
 }
 function cleanDist(done) {
