@@ -15,7 +15,7 @@
 export var MENU_CONFIG = {
   parts: {
     0: 'home',
-    1: 'aboutme',
+    1: 'about',
     2: 'skills',
     3: 'experience',
     4: 'education',

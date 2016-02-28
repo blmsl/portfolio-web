@@ -1,7 +1,7 @@
 'use strict';
 import {Component, View, OnInit}  from 'angular2/core';
 import {HeaderComponent}          from '../../header/components/header';
-import {AboutMeComponent}         from '../../aboutme/components/aboutme';
+import {AboutComponent}           from '../../about/components/about';
 import {SkillsComponent}          from '../../skills/components/skills';
 import {ExperienceComponent}      from '../../experience/components/experience';
 import {EducationComponent}       from '../../education/components/education';
@@ -17,7 +17,7 @@ import {elementInViewport}        from '../../shared/common/common';
 @View({
   directives: [
     HeaderComponent,
-    AboutMeComponent,
+    AboutComponent,
     SkillsComponent,
     ExperienceComponent,
     EducationComponent,
