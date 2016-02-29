@@ -1,22 +1,23 @@
 'use strict';
-import {Injectable}     from 'angular2/core';
-import {Http, Headers}  from 'angular2/http';
-import {ContactMessage} from '../models/contact/definitions/contact.message';
+import {Injectable}               from 'angular2/core';
+import {Http, Headers, Response}  from 'angular2/http';
+import {Observable}               from 'angular2/src/facade/async';
+import {ContactMessage}           from '../models/contact/definitions/contact.message';
 
 @Injectable()
 export class ContactService {
-  private http:Http;
+  private _http:Http;
 
   constructor(http:Http) {
-    this.http = http;
+    this._http = http;
   }
 
-  getErrorConfig() {
-    return this.http.get('/errorconfig');
+  getErrorConfig():Observable<Response> {
+    return this._http.get('/errorconfig');
   }
 
-  send(message:ContactMessage) {
-    return this.http.post('/send',
+  send(message:ContactMessage):Observable<Response> {
+    return this._http.post('/send',
       JSON.stringify(message),
       {
         headers: new Headers({

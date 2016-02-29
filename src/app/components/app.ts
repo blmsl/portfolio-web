@@ -28,9 +28,11 @@ import {elementInViewport}        from '../../shared/common/common';
   styleUrls: ['./app/components/app.css']
 })
 export class AppComponent implements OnInit {
+  private _appService:AppService;
   private _timeoutMenuAnimate:any;
 
-  constructor(private _appService:AppService) {
+  constructor(appService:AppService) {
+    this._appService = appService;
   }
 
   ngOnInit() {

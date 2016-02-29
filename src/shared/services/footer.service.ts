@@ -1,21 +1,23 @@
 'use strict';
-import {Injectable} from 'angular2/core';
-import {Http}       from 'angular2/http';
-import {LINKS}      from '../models/footer/links';
+import {Injectable}     from 'angular2/core';
+import {Http, Response} from 'angular2/http';
+import {Observable}     from 'angular2/src/facade/async';
+import {LINKS}          from '../models/footer/links';
+import {Link}           from '../models/footer/definitions/link';
 
 @Injectable()
 export class FooterService {
-  private http:Http;
+  private _http:Http;
 
   constructor(http:Http) {
-    this.http = http;
+    this._http = http;
   }
 
-  getLinks() {
+  getLinks():Promise<Array<Link>>  {
     return Promise.resolve(LINKS);
   }
 
-  getLastModified() {
-    return this.http.get('/lastmodified');
+  getLastModified():Observable<Response> {
+    return this._http.get('/lastmodified');
   }
 }

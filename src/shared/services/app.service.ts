@@ -4,7 +4,7 @@ import {Injectable} from 'angular2/core';
 @Injectable()
 export class AppService {
 
-  consoleMessage() {
+  consoleMessage():void {
     if (console) {
       console.group('On-line Portfolio and CV for Louw Swart');
       console.log('\n\n' +

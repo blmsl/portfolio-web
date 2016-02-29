@@ -14,10 +14,12 @@ import {elementInViewport}        from '../../shared/common/common';
 })
 export class SkillsComponent implements OnInit {
   public skills:Array<Skill>;
+  private _skillService:SkillService;
   private _timeoutScroll:any;
   private _skillChartDrawn:boolean;
 
-  constructor(private _skillService:SkillService) {
+  constructor(skillService:SkillService) {
+    this._skillService = skillService;
     this._skillChartDrawn = false;
   }
 

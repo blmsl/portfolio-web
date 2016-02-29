@@ -39,6 +39,15 @@
     .content {
       color: $manatee;
       line-height: 21px;
+
+      .row {
+        padding-top: 20px;
+        .cs-badge {
+          p {
+            text-align: center;
+          }
+        }
+      }
     }
 
     @media screen and (max-width: $screen-sm-min) {
@@ -60,7 +69,6 @@
     }
   }
 
-
   .education-year {
     font-size: 17px;
     color: $white;
@@ -74,7 +82,7 @@
     @media screen and (min-width: $screen-lg-min) {
       width: 140px;
       height: 140px;
-      padding-top: 58px;
+      padding-top: 50px;
     }
 
     @media screen and (max-width: $screen-sm-min) {

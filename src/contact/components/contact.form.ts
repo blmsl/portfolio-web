@@ -8,7 +8,7 @@ import {ContactMessage}                   from '../../shared/models/contact/defi
 
 @Pipe({name: 'trim'})
 export class TrimPipe implements PipeTransform {
-  transform(value:any):any {
+  transform(value:string):string {
     return value.trim();
   }
 }
@@ -30,8 +30,10 @@ export class ContactFormComponent implements OnInit {
   public submitBtnText:string;
   public serverErrors:string;
   public errorConfig:JSON;
+  private _contactService:ContactService;
 
-  constructor(private _contactService:ContactService) {
+  constructor(contactService:ContactService) {
+    this._contactService = contactService;
     this.message = new ContactMessage();
     this.submitClicked = false;
     this.submitting = false;

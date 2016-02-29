@@ -14,10 +14,12 @@ import {MENU_CONFIG, GRID_ROTATOR_CONFIG} from '../../shared/models/header/heade
 })
 export class HeaderComponent implements OnInit {
   public imageIds:Array<String>;
+  private _headerService:HeaderService;
   private _previousWidth:number;
   private _previousHeight:number;
 
-  constructor(private _headerService:HeaderService) {
+  constructor(_headerService:HeaderService) {
+    this._headerService = _headerService;
     this._previousWidth = 0;
     this._previousHeight = 0;
   }

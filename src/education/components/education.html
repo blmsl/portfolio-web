@@ -5,6 +5,36 @@
       <h2>Education</h2>
       <p>what I've studied</p>
     </div>
+    <div *ngIf="codeSchool && codeSchool.courses"
+         class="row education-details">
+      <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+        <div class="education-year">Continuous<br>improvement</div>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 right-area">
+        <div class="arrow-part"></div>
+        <div class="education-container">
+          <h4>Code School  <a href="https://www.codeschool.com/users/ouq77" target="_blank" class="link js_track_link_click"><i class="fa fa-link"></i></a></h4>
+          <h5>Learn by doing</h5>
+          <h5 class="sub-heading"><i>Interactive programming courses and coding challenges</i></h5>
+          <h6>Courses completed</h6>
+          <section class="content">
+            <div class="row">
+              <div class="cs-badge col-md-2" *ngFor="#course of codeSchool.courses.completed">
+                <p><a href="{{course.badge | badgeUrl}}" title="{{course.title}}" target="_blank" class="js_track_link_click"><img src="{{course.badge}}" alt="{{course.title}}" width="95px"></a></p>
+              </div>
+            </div>
+          </section>
+          <h6>Courses in progress</h6>
+          <section class="content">
+            <div class="row">
+              <div class="cs-badge col-md-2" *ngFor="#course of codeSchool.courses.in_progress">
+                <p><a href="{{course.url}}" title="{{course.title}}" target="_blank" class="js_track_link_click"><img src="{{course.badge}}" alt="{{course.title}}" width="95px"></a></p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
     <div *ngFor="#school of schools"
          class="row education-details">
       <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">

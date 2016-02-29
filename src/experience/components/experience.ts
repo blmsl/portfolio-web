@@ -13,8 +13,10 @@ import {Job}                      from '../../shared/models/experience/definitio
 })
 export class ExperienceComponent implements OnInit {
   public jobs:Array<Job>;
+  private _experienceService:ExperienceService;
 
-  constructor(private _experienceService:ExperienceService) {
+  constructor(experienceService:ExperienceService) {
+    this._experienceService = experienceService;
   }
 
   ngOnInit() {

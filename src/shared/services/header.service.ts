@@ -1,16 +1,17 @@
 'use strict';
-import {Injectable}   from 'angular2/core';
-import {Http}         from 'angular2/http';
+import {Injectable}     from 'angular2/core';
+import {Http, Response} from 'angular2/http';
+import {Observable}     from 'angular2/src/facade/async';
 
 @Injectable()
 export class HeaderService {
-  private http:Http;
+  private _http:Http;
 
   constructor(http:Http) {
-    this.http = http;
+    this._http = http;
   }
 
-  getImageIds() {
-    return this.http.get('/imageids');
+  getImageIds():Observable<Response> {
+    return this._http.get('/imageids');
   }
 }

@@ -16,8 +16,10 @@ export class FooterComponent implements OnInit {
   public links:Array<Link>;
   public currentDate:Date;
   public lastModified:string;
+  private _footerService:FooterService;
 
-  constructor(private _footerService:FooterService) {
+  constructor(footerService:FooterService) {
+    this._footerService = footerService;
     this.currentDate = new Date();
   }
 
