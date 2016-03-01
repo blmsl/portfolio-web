@@ -17,8 +17,8 @@ expressStaticMappings.forEach((mapping) => {
 })
 
 expressRedirectMappings.forEach((mapping) => {
+  console.log('redirecting resource "' + mapping.uri + '" to new location "' + mapping.newUri + '"')
   app.get(mapping.uri, (req, res) => {
-    console.log('redirecting resource "' + mapping.uri + '" to new location "' + mapping.newUri + '"')
     res.redirect(301, mapping.newUri)
   })
 })

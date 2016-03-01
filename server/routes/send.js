@@ -28,11 +28,11 @@ module.exports = (req, res) => {
           if (success) {
             res.send('OK')
           } else {
-            res.status(500).json({errors: ['e_generic']})
+            res.status(500).json()
           }
         })
       } else {
-        res.status(500).json({errors: ['e_generic']})
+        res.status(500).json()
       }
     })
   }

@@ -15,6 +15,31 @@ const CONTENT = fs.readFileSync(path.join(__dirname, '/../config/email-template.
 const CONTENT_COPY = fs.readFileSync(path.join(__dirname, '/../config/email-copy-template.html'))
 
 /**
+ * Formats a value with the args passed in
+ * @param {string} value
+ * @param {Array} args
+ * @returns {string} formatted value
+ */
+let formatValue = (value, args) => {
+  return value.replace(/{(\d+)}/g, function (match, number) {
+    return typeof args[number] !== 'undefined'
+      ? args[number] : match
+  })
+}
+
+let containsDisallowedChars = (value) => {
+  return DISALLOWED_CHARS.test(value)
+}
+
+let containsUrl = (value) => {
+  return URL_REGEX.test(value)
+}
+
+let isValidEmail = (email) => {
+  return EMAIL_REGEX.test(email)
+}
+
+/**
  * Accepts a submission and validates the content
  * @param {Object} submission
  * @param {string} submission.name
@@ -109,31 +134,6 @@ let buildMessageCopy = (submission) => {
   message.html = formatValue(message.html, [submission.name])
 
   return message
-}
-
-let containsDisallowedChars = (value) => {
-  return DISALLOWED_CHARS.test(value)
-}
-
-let containsUrl = (value) => {
-  return URL_REGEX.test(value)
-}
-
-let isValidEmail = (email) => {
-  return EMAIL_REGEX.test(email)
-}
-
-/**
- * Formats a value with the args passed in
- * @param {string} value
- * @param {Array} args
- * @returns {string} formatted value
- */
-let formatValue = (value, args) => {
-  return value.replace(/{(\d+)}/g, function (match, number) {
-    return typeof args[number] !== 'undefined'
-      ? args[number] : match
-  })
 }
 
 module.exports.validate = validate
