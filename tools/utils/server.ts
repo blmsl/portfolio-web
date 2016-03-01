@@ -64,11 +64,11 @@ export function serveSPA() {
             if (success) {
               res.send('OK');
             } else {
-              res.status(500).send({errors: ['e_generic']});
+              res.status(500);
             }
           });
         } else {
-          res.status(500).send({errors: ['e_generic']});
+          res.status(500);
         }
       });
     }

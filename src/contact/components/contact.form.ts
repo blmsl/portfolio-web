@@ -66,7 +66,9 @@ export class ContactFormComponent implements OnInit {
       this.message.name.trim(),
       this.message.email.trim(),
       this.message.text.trim(),
-      this.message.heuning);
+      this.message.heuning
+    );
+
     this._contactService.send(submission).subscribe(
       () =>
         this.handleSuccess(),
@@ -89,10 +91,6 @@ export class ContactFormComponent implements OnInit {
         }, this));
         break;
       case 500:
-        _.each(err.json().errors, _.bind((error) => {
-          this.appendError(this.errorConfig[error].message);
-        }, this));
-        break;
       default:
         this.appendError(this.errorConfig['e_generic'].message);
         break;

@@ -23,6 +23,7 @@ export class ContactService {
         headers: new Headers({
           'Content-Type': 'application/json'
         })
-      });
+      }
+    );
   }
 }
