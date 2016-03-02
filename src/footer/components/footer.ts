@@ -1,8 +1,9 @@
 'use strict';
-import {Component, View, OnInit}        from 'angular2/core';
-import {Http, HTTP_PROVIDERS, Response} from 'angular2/http';
-import {FooterService}                  from '../../shared/services/footer.service';
-import {Link}                           from '../../shared/models/footer/definitions/link';
+import {Component, View, OnInit}  from 'angular2/core';
+import {Http, HTTP_PROVIDERS}     from 'angular2/http';
+import {FooterService}            from '../../shared/services/footer.service';
+import {Link}                     from '../../shared/models/footer/definitions/link';
+import {LastModified}             from '../../shared/models/footer/definitions/last.modified';
 
 @Component({
   selector: 'footer',
@@ -15,7 +16,7 @@ import {Link}                           from '../../shared/models/footer/definit
 export class FooterComponent implements OnInit {
   public links:Array<Link>;
   public currentDate:Date;
-  public lastModified:string;
+  public lastModified:LastModified;
   private _footerService:FooterService;
 
   constructor(footerService:FooterService) {
@@ -30,17 +31,13 @@ export class FooterComponent implements OnInit {
 
   getLinks() {
     this._footerService.getLinks().then(
-      links =>
-        this.links = links
+      links => this.links = links
     );
   }
 
   getLastModified() {
     this._footerService.getLastModified().subscribe(
-      (res:Response) =>
-        this.lastModified = res.text(),
-      () =>
-        this.lastModified = '...'
+      lastModified => this.lastModified = lastModified
     );
   }
 }

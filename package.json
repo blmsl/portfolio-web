@@ -89,7 +89,7 @@
     "ts-node": "0.5.5",
     "tslint": "3.5.0",
     "typedoc": "0.3.12",
-    "typescript": "1.8.2",
+    "typescript": "1.8.7",
     "typings": "0.6.8",
     "underscore": "1.8.3",
     "vinyl-buffer": "1.0.0",

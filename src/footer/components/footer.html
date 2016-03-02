@@ -21,8 +21,9 @@
       <p><i class="fa fa-file-code-o"></i> Docs <a href="/docs/index.html" target="_blank" class="js_track_link_click">hosted here</a></p>
     </div>
   </div>
-  <div class="last-modified">
-    <p><sup>Last modified: {{lastModified}}</sup></p>
+  <div *ngIf="lastModified"
+       class="last-modified">
+    <p><sup>Last modified: {{lastModified.last_modified}}</sup></p>
   </div>
 </section>
 <!--footer end-->

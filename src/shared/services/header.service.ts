@@ -1,7 +1,10 @@
 'use strict';
-import {Injectable}     from 'angular2/core';
-import {Http, Response} from 'angular2/http';
-import {Observable}     from 'angular2/src/facade/async';
+import {Injectable}   from 'angular2/core';
+import {Http}         from 'angular2/http';
+import {Observable}   from 'angular2/src/facade/async';
+import 'rxjs/Rx';
+import {ImageIds}     from '../models/header/definitions/image.ids';
+import {wrapError}    from '../common/wrap.error';
 
 @Injectable()
 export class HeaderService {
@@ -11,7 +14,9 @@ export class HeaderService {
     this._http = http;
   }
 
-  getImageIds():Observable<Response> {
-    return this._http.get('/imageids');
+  getImageIds():Observable<ImageIds> {
+    return this._http.get('/imageids')
+      .map(resp => resp.json())
+      .catch(err => wrapError(err));
   }
 }

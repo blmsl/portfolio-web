@@ -1,8 +1,9 @@
 'use strict';
 import {Component, View, OnInit}          from 'angular2/core';
-import {Http, HTTP_PROVIDERS, Response}   from 'angular2/http';
+import {Http, HTTP_PROVIDERS}             from 'angular2/http';
 import {HeaderService}                    from '../../shared/services/header.service';
 import {MENU_CONFIG, GRID_ROTATOR_CONFIG} from '../../shared/models/header/header.config';
+import {ImageIds}                         from '../../shared/models/header/definitions/image.ids';
 
 @Component({
   selector: 'header',
@@ -31,8 +32,8 @@ export class HeaderComponent implements OnInit {
 
   initImageIds() {
     this._headerService.getImageIds().subscribe(
-      (res:Response) =>
-        this.initGridRotator(res.json().imageIds)
+      (res:ImageIds) =>
+        this.initGridRotator(res.imageIds)
     );
   }
 
