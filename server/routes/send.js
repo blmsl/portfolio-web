@@ -12,12 +12,12 @@ let nodeMailer = require('./../modules/node.mailer.js')
  */
 module.exports = (req, res) => {
   let submission = req.body
-  let response = mailHelper.validate(submission)
+  let errors = mailHelper.validate(submission)
 
   res.setHeader('Cache-Control', 'no-cache')
 
-  if (response.length > 0) {
-    res.status(400).json({errors: response})
+  if (errors.length > 0) {
+    res.status(400).json({errors: errors})
   } else {
     let message = mailHelper.buildMessage(submission)
     let messageCopy = mailHelper.buildMessageCopy(submission)
@@ -26,13 +26,13 @@ module.exports = (req, res) => {
       if (success) {
         nodeMailer.send(messageCopy, (success) => {
           if (success) {
-            res.send('OK')
+            res.status(200).json('Sent successfully')
           } else {
-            res.status(500).json()
+            res.sendStatus(500)
           }
         })
       } else {
-        res.status(500).json()
+        res.sendStatus(500)
       }
     })
   }

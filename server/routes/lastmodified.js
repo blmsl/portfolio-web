@@ -1,7 +1,7 @@
 'use strict'
-let lastModified = require('./../config/last.mod.props.json').last_modified
+let lastModified = require('./../config/last.mod.props.json')
 
 module.exports = (req, res) => {
   res.setHeader('Cache-Control', 'no-cache')
-  res.send(lastModified)
+  res.json(lastModified)
 }
