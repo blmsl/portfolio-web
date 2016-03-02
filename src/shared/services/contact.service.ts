@@ -1,8 +1,11 @@
 'use strict';
-import {Injectable}               from 'angular2/core';
-import {Http, Headers, Response}  from 'angular2/http';
-import {Observable}               from 'angular2/src/facade/async';
-import {ContactMessage}           from '../models/contact/definitions/contact.message';
+import {Injectable}                     from 'angular2/core';
+import {Http, Headers, RequestOptions}  from 'angular2/http';
+import {Observable}                     from 'rxjs/Observable';
+import 'rxjs/Rx';
+import {ErrorConfig}                    from '../models/contact/definitions/error.config';
+import {ContactMessage}                 from '../models/contact/definitions/contact.message';
+import {wrapError}                      from '../common/wrap.error';
 
 @Injectable()
 export class ContactService {
@@ -12,18 +15,17 @@ export class ContactService {
     this._http = http;
   }
 
-  getErrorConfig():Observable<Response> {
-    return this._http.get('/errorconfig');
+  getErrorConfig():Observable<ErrorConfig> {
+    return this._http.get('/errorconfig')
+      .map(resp => resp.json())
+      .catch(err => wrapError(err));
   }
 
-  send(message:ContactMessage):Observable<Response> {
-    return this._http.post('/send',
-      JSON.stringify(message),
-      {
-        headers: new Headers({
-          'Content-Type': 'application/json'
-        })
-      }
-    );
+  send(message:ContactMessage):Observable<JSON> {
+    let body = JSON.stringify(message);
+    let options = new RequestOptions({headers: new Headers({'Content-Type': 'application/json'})});
+    return this._http.post('/send', body, options)
+      .map(resp => resp.json())
+      .catch(err => wrapError(err));
   }
 }

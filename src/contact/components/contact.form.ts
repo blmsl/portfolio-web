@@ -2,9 +2,11 @@
 import {Component, View, OnInit}          from 'angular2/core';
 import {Pipe, PipeTransform}              from 'angular2/core';
 import {FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/common';
-import {Http, HTTP_PROVIDERS, Response}   from 'angular2/http';
+import {Http, HTTP_PROVIDERS}             from 'angular2/http';
 import {ContactService}                   from '../../shared/services/contact.service';
+import {ErrorConfig}                      from '../../shared/models/contact/definitions/error.config';
 import {ContactMessage}                   from '../../shared/models/contact/definitions/contact.message';
+import {WrappedError}                     from '../../shared/common/definitions/wrapped.error';
 
 @Pipe({name: 'trim'})
 export class TrimPipe implements PipeTransform {
@@ -29,7 +31,7 @@ export class ContactFormComponent implements OnInit {
   public sentSuccessfully:boolean;
   public submitBtnText:string;
   public serverErrors:string;
-  public errorConfig:JSON;
+  public errorConfig:ErrorConfig;
   private _contactService:ContactService;
 
   constructor(contactService:ContactService) {
@@ -47,10 +49,8 @@ export class ContactFormComponent implements OnInit {
 
   getErrorConfig() {
     this._contactService.getErrorConfig().subscribe(
-      (res:Response) =>
-        this.errorConfig = (res.json()).errorMessages,
-      (err:Response) =>
-        console.log(err.json)
+      res => this.errorConfig = res.errorConfig,
+      err => console.warn('errorConfig not returned')
     );
   }
 
@@ -70,10 +70,8 @@ export class ContactFormComponent implements OnInit {
     );
 
     this._contactService.send(submission).subscribe(
-      () =>
-        this.handleSuccess(),
-      (err:Response) =>
-        this.handleErrors(err)
+      resp => this.handleSuccess(),
+      err => this.handleErrors(err)
     );
   }
 
@@ -82,11 +80,11 @@ export class ContactFormComponent implements OnInit {
     this.sentSuccessfully = true;
   }
 
-  handleErrors(err:Response) {
+  handleErrors(err:WrappedError) {
     this.toggleSubmitting();
     switch (err.status) {
       case 400:
-        _.each(err.json().errors, _.bind((error) => {
+        _.each(err.content.errors, _.bind((error) => {
           this.appendError(this.errorConfig[error].message);
         }, this));
         break;

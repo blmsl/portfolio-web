@@ -15,8 +15,8 @@ import * as openResource                                                  from '
 import * as serveStatic                                                   from 'serve-static';
 import {APP_BASE, APP_DEST, DOCS_DEST, LIVE_RELOAD_PORT, DOCS_PORT, PORT} from '../config';
 
-let lastModified = require('./config/last.mod.props.json').last_modified,
-  errorMessages = require('./config/error.props.json'),
+let lastModified = require('./config/last.mod.props.json'),
+  errorConfig = require('./config/error.props.json'),
   tinylr = tinylrFn();
 
 export function serveSPA() {
@@ -31,11 +31,11 @@ export function serveSPA() {
   });
 
   server.get('/lastmodified', (req, res) => {
-    res.send(lastModified);
+    res.json(lastModified);
   });
 
   server.get('/errorconfig', (req, res) => {
-    res.json({errorMessages: errorMessages});
+    res.json(errorConfig);
   });
 
   /**
@@ -49,10 +49,10 @@ export function serveSPA() {
    */
   server.post('/send', (req, res) => {
     let submission:Submission = req.body,
-      response:Array<string> = mailHelper.validate(submission);
+      errors:Array<string> = mailHelper.validate(submission);
 
-    if (response.length > 0) {
-      res.status(400).send({errors: response});
+    if (errors.length > 0) {
+      res.status(400).send({errors: errors});
     } else {
 
       let message:Message = mailHelper.buildMessage(submission),
@@ -62,13 +62,13 @@ export function serveSPA() {
         if (success) {
           nodeMailer.send(messageCopy, (success:boolean) => {
             if (success) {
-              res.send('OK');
+              res.status(200).json('Sent successfully');
             } else {
-              res.status(500);
+              res.sendStatus(500);
             }
           });
         } else {
-          res.status(500);
+          res.sendStatus(500);
         }
       });
     }

@@ -1,10 +1,10 @@
 'use strict';
-import {Component, View, OnInit}            from 'angular2/core';
-import {Pipe, PipeTransform}                from 'angular2/core';
-import {Jsonp, JSONP_PROVIDERS, Response}   from 'angular2/http';
-import {EducationService}                   from '../../shared/services/education.service';
-import {School}                             from '../../shared/models/education/definitions/school';
-import {CodeSchool}                         from '../../shared/models/education/definitions/code.school';
+import {Component, View, OnInit}  from 'angular2/core';
+import {Pipe, PipeTransform}      from 'angular2/core';
+import {Jsonp, JSONP_PROVIDERS}   from 'angular2/http';
+import {EducationService}         from '../../shared/services/education.service';
+import {School}                   from '../../shared/models/education/definitions/school';
+import {CodeSchool}               from '../../shared/models/education/definitions/code.school';
 
 @Pipe({name: 'badgeUrl'})
 export class BadgeUrlPipe implements PipeTransform {
@@ -38,15 +38,13 @@ export class EducationComponent implements OnInit {
 
   getSchools() {
     this._educationService.getSchools().then(
-      schools =>
-        this.schools = schools);
+      schools => this.schools = schools
+    );
   }
 
   getCodeSchool() {
     this._educationService.getCodeSchool().subscribe(
-      (resp:Response) => {
-        this.codeSchool = resp.json();
-      }
+      codeSchool => this.codeSchool = codeSchool
     );
   }
 }

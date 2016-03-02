@@ -3,7 +3,7 @@ import {Submission} from './../definitions/submission';
 import {Message}    from './../definitions/message';
 
 const
-  ERROR_MESSAGES = require('./../config/error.props.json'),
+  ERROR_MESSAGES = require('./../config/error.props.json').errorConfig,
   DISALLOWED_CHARS = /[<>^|%()&+]/,
   URL_REGEX = /(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?/,
   EMAIL_REGEX = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
