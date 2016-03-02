@@ -49,10 +49,8 @@ export class ContactFormComponent implements OnInit {
 
   getErrorConfig() {
     this._contactService.getErrorConfig().subscribe(
-      (res:ErrorConfig) =>
-        this.errorConfig = res.errorConfig,
-      (err:WrappedError) =>
-        console.warn('errorConfig not returned')
+      res => this.errorConfig = res.errorConfig,
+      err => console.warn('errorConfig not returned')
     );
   }
 
@@ -72,10 +70,8 @@ export class ContactFormComponent implements OnInit {
     );
 
     this._contactService.send(submission).subscribe(
-      () =>
-        this.handleSuccess(),
-      (err:WrappedError) =>
-        this.handleErrors(err)
+      resp => this.handleSuccess(),
+      err => this.handleErrors(err)
     );
   }
 

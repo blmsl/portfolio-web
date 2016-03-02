@@ -21,7 +21,7 @@ export class ContactService {
       .catch(err => wrapError(err));
   }
 
-  send(message:ContactMessage):Observable<void> {
+  send(message:ContactMessage):Observable<JSON> {
     let body = JSON.stringify(message);
     let options = new RequestOptions({headers: new Headers({'Content-Type': 'application/json'})});
     return this._http.post('/send', body, options)
