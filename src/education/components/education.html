@@ -13,9 +13,12 @@
       <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 right-area">
         <div class="arrow-part"></div>
         <div class="education-container">
-          <h4>Code School  <a href="https://www.codeschool.com/users/ouq77" target="_blank" class="link js_track_link_click"><i class="fa fa-link"></i></a></h4>
+          <h4>Code School <a href="https://www.codeschool.com/users/ouq77" target="_blank" class="link js_track_link_click"><i class="fa fa-link"></i></a></h4>
           <h5>Learn by doing</h5>
           <h5 class="sub-heading"><i>Interactive programming courses and coding challenges</i></h5>
+          <section class="content">
+            <p>Member since: <strong><i>{{codeSchool.user.member_since | memberDate}}</i></strong><br>Total score: <strong><i>{{codeSchool.user.total_score | score}}</i></strong></p>
+          </section>
           <h6>Courses completed</h6>
           <section class="content">
             <div class="row">
@@ -24,8 +27,9 @@
               </div>
             </div>
           </section>
-          <h6>Courses in progress</h6>
-          <section class="content">
+          <h6 *ngIf="codeSchool.courses.in_progress">Courses in progress</h6>
+          <section *ngIf="codeSchool.courses.in_progress"
+                   class="content">
             <div class="row">
               <div class="cs-badge col-md-2" *ngFor="#course of codeSchool.courses.in_progress">
                 <p><a href="{{course.url}}" title="{{course.title}}" target="_blank" class="js_track_link_click"><img src="{{course.badge}}" alt="{{course.title}}" width="95px"></a></p>
