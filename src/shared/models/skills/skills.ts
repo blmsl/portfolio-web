@@ -5,7 +5,7 @@ import {Skill} from './definitions/skill';
  * Array of Skills for the Skills section
  * @type {Skill[]}
  */
-export var SKILLS:Array<Skill> = [
+export const SKILLS:Array<Skill> = [
   {
     name: 'Scripting',
     level: 90,

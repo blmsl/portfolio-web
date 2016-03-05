@@ -10,7 +10,7 @@ let prevIcon:Icon = {url: 'assets/images/markerprev.png', size: p.MARKER_SIZE};
  * Array of Cities for the Contact section
  * @type {City[]}
  */
-export var CITIES:Array<City> = [
+export const CITIES:Array<City> = [
   {
     loc: p.HARTSWATER,
     title: 'I was born here...',

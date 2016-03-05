@@ -5,7 +5,7 @@ import {School} from './definitions/school';
  * Array of Schools for the Education section
  * @type {School[]}
  */
-export var SCHOOLS:Array<School> = [
+export const SCHOOLS:Array<School> = [
   {
     year: {
       from: 2006,
