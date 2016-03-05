@@ -17,7 +17,10 @@
           <h5>Learn by doing</h5>
           <h5 class="sub-heading"><i>Interactive programming courses and coding challenges</i></h5>
           <section class="content">
-            <p>Member since: <strong><i>{{codeSchool.user.member_since | memberDate}}</i></strong><br>Total score: <strong><i>{{codeSchool.user.total_score | score}}</i></strong></p>
+            <p>
+              Member since: <strong><i><time>{{codeSchool.user.member_since | memberDate}}</time></i></strong><br>
+              Total score: <strong><i>{{codeSchool.user.total_score | score}}</i></strong>
+            </p>
           </section>
           <h6>Courses completed</h6>
           <section class="content">
