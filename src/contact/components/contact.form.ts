@@ -84,9 +84,9 @@ export class ContactFormComponent implements OnInit {
     this.toggleSubmitting();
     switch (err.status) {
       case 400:
-        _.each(err.content.errors, _.bind((error) => {
+        _.each(err.content.errors, (error:string) => {
           this.appendError(this.errorConfig[error].message);
-        }, this));
+        });
         break;
       case 500:
       default:

@@ -36,9 +36,9 @@ export class HeaderComponent implements OnInit {
 
   initResizeListener() {
     (($) => {
-      $(window).on('resize', _.bind(() => {
+      $(window).on('resize', () => {
         this.setBannerSize(this._previousWidth, this._previousHeight);
-      }, this));
+      });
     })(jQuery);
   }
 
@@ -46,11 +46,11 @@ export class HeaderComponent implements OnInit {
     this.imageIds = imageIds;
     (($) => {
       // Delay 250ms for images to be rendered in template
-      _.delay(_.bind(() => {
+      _.delay(() => {
         this.setBannerSize(this._previousWidth, this._previousHeight);
         $('#ri-grid').gridrotator(GRID_ROTATOR_CONFIG);
         this.initNavigation();
-      }, this), 250);
+      }, 250);
     })(jQuery);
   }
 

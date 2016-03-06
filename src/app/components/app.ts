@@ -57,7 +57,7 @@ export class AppComponent implements OnInit {
         }
       );
 
-      $('#js_menu_button').click(_.bind((e) => {
+      $('#js_menu_button').click((e) => {
         e.preventDefault();
 
         if (this._timeoutMenuAnimate) {
@@ -73,7 +73,7 @@ export class AppComponent implements OnInit {
             }
           }
         }, 500);
-      }, this));
+      });
     })(jQuery);
   }
 }

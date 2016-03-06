@@ -57,7 +57,7 @@ export class ContactMapComponent implements OnInit {
     const MAP_MAX_MOBILE_ZOOM_ZERO:number = 768;
     const MAP_MAX_TABLET_ZOOM_ONE:number = 1024;
     (($) => {
-      _.delay(_.bind(() => {
+      _.delay(() => {
         let mapOptions = _.clone(MAP_OPTIONS);
         if ($(window).width() < MAP_MAX_MOBILE_ZOOM_ZERO) {
           mapOptions.zoom = 0;
@@ -67,7 +67,7 @@ export class ContactMapComponent implements OnInit {
           mapOptions.minZoom = 1;
         }
         this.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-        _.each(JOURNEYS, _.bind(function (journey:Polyline, index:number) {
+        _.each(JOURNEYS, (journey:Array<Airport>, index:number) => {
           this._journeyLines[index] = new google.maps.Polyline({
             strokeOpacity: 0.5,
             strokeColor: '#1b1f29',
@@ -75,8 +75,8 @@ export class ContactMapComponent implements OnInit {
             geodesic: true,
             map: this.map
           });
-        }, this));
-        _.each(UPCOMING_JOURNEYS, _.bind(function (upcomingJourney:Polyline, index:number) {
+        });
+        _.each(UPCOMING_JOURNEYS, (upcomingJourney:Array<Airport>, index:number) => {
           this._upcomingJourneyLines[index] = new google.maps.Polyline({
             strokeOpacity: 0,
             icons: [{
@@ -91,52 +91,52 @@ export class ContactMapComponent implements OnInit {
             geodesic: true,
             map: this.map
           });
-        }, this));
-        this._tilesLoadedEvent = google.maps.event.addListener(this.map, 'tilesloaded', _.bind(function () {
+        });
+        this._tilesLoadedEvent = google.maps.event.addListener(this.map, 'tilesloaded', () => {
           google.maps.event.removeListener(this._tilesLoadedEvent);
           this._tilesLoaded = true;
           this.dropMarkers();
-        }, this));
-      }, this), 250);
+        });
+      }, 250);
     })(jQuery);
   }
 
   initScrollListener() {
     (($) => {
-      $(document).on('scroll', _.bind(() => {
+      $(document).on('scroll', () => {
         // wait half a second for scroll to stop
         if (this._timeoutScroll) {
           clearTimeout(this._timeoutScroll);
         }
-        this._timeoutScroll = _.delay(_.bind(function () {
+        this._timeoutScroll = _.delay(() => {
           if (!this._mapMarkersDrawn) {
             this.dropMarkers(750);
           }
-        }, this), 500);
-      }, this));
+        }, 500);
+      });
     })(jQuery);
   }
 
   initClickListener() {
     (($) => {
-      $('#js_click_address').click(_.bind(function (e) {
+      $('#js_click_address').click((e) => {
         e.preventDefault();
         this.toggleBounce(this._cityMarkers[this._cityMarkers.length - 1]);
-      }, this));
+      });
     })(jQuery);
   }
 
   dropMarkers(wait:number = 1500) {
     this._markerWait = wait;
     (($) => {
-      $('.js_trigger_map_marker').each(_.bind(function (index:number, val:string) {
+      $('.js_trigger_map_marker').each((index:number, val:string) => {
         if (!this._mapMarkersDrawn && elementInViewport($, $(val))) {
           if (this._tilesLoaded) {
             this._mapMarkersDrawn = true;
-            _.delay(_.bind(function () {
-              _.each(AIRPORTS, _.bind(function (airport:Airport) {
+            _.delay(() => {
+              _.each(AIRPORTS, (airport:Airport) => {
                 this._airportMarkerDropWait++;
-                _.delay(_.bind(function () {
+                _.delay(() => {
                   /* tslint:disable */
                   new google.maps.Marker({
                     position: new google.maps.LatLng(airport.loc.lat, airport.loc.lng),
@@ -151,44 +151,44 @@ export class ContactMapComponent implements OnInit {
                     }
                   });
                   /* tslint:enable */
-                }, this), this._airportMarkerDropWait * 135);
-              }, this));
-              _.each(JOURNEYS, _.bind(function (journey:Array<Airport>, index:number) {
+                }, this._airportMarkerDropWait * 135);
+              });
+              _.each(JOURNEYS, (journey:Array<Airport>, index:number) => {
                 let journeyLine:Polyline = this._journeyLines[index];
-                _.each(journey, _.bind(function (leg) {
+                _.each(journey, (leg:Airport) => {
                   this._journeyLineDrawWait++;
-                  _.delay(_.bind(function () {
+                  _.delay(() => {
                     journeyLine.getPath().push(
                       new google.maps.LatLng(leg.loc.lat, leg.loc.lng)
                     );
-                  }, this), this._journeyLineDrawWait * 65);
-                }, this));
-              }, this));
-              _.each(UPCOMING_JOURNEYS, _.bind(function (journey:Array<Airport>, index:number) {
+                  }, this._journeyLineDrawWait * 65);
+                });
+              });
+              _.each(UPCOMING_JOURNEYS, (journey:Array<Airport>, index:number) => {
                 let upcomingJourneyLine:Polyline = this._upcomingJourneyLines[index];
-                _.each(journey, _.bind(function (leg) {
+                _.each(journey, (leg:Airport) => {
                   this._journeyLineDrawWait++;
-                  _.delay(_.bind(function () {
+                  _.delay(() => {
                     upcomingJourneyLine.getPath().push(
                       new google.maps.LatLng(leg.loc.lat, leg.loc.lng)
                     );
-                  }, this), this._journeyLineDrawWait * 65);
-                }, this));
-              }, this));
+                  }, this._journeyLineDrawWait * 65);
+                });
+              });
               this._additionalMarkerWait = ((AIRPORTS.length - 1) * 100);
-              _.each(CITIES, _.bind(function (city:City, index:number) {
-                _.delay(_.bind(function () {
+              _.each(CITIES, (city:City, index:number) => {
+                _.delay(() => {
                   this.addMarker(city, index);
-                }, this), (index * 650) + this._additionalMarkerWait);
-              }, this));
-              _.delay(_.bind(function () {
+                }, (index * 650) + this._additionalMarkerWait);
+              });
+              _.delay(() => {
                 this.map.panTo(p.WELLINGTON);
                 this.zoomMap(this.map.getZoom() + 1, $(window).width() >= 1000 ? 11 : 10);
-              }, this), ((CITIES.length) * 700) + this._additionalMarkerWait);
-            }, this), this._markerWait);
+              }, ((CITIES.length) * 700) + this._additionalMarkerWait);
+            }, this._markerWait);
           }
         }
-      }, this));
+      });
     })(jQuery);
   }
 
@@ -203,26 +203,26 @@ export class ContactMapComponent implements OnInit {
       icon: city.icon
     }));
     let cityMarker:Marker = this._cityMarkers[index];
-    google.maps.event.addListener(cityMarker, 'click', _.bind(function () {
+    google.maps.event.addListener(cityMarker, 'click', () => {
       if (this._timeoutMarkerBounce) {
         clearTimeout(this._timeoutMarkerBounce);
       }
       cityMarker.setAnimation(google.maps.Animation.BOUNCE);
-      this._timeoutMarkerBounce = _.delay(function () {
+      this._timeoutMarkerBounce = _.delay(() => {
         cityMarker.setAnimation(null);
       }, 2000);
-    }, this));
+    });
   }
 
   zoomMap(nextZoomLevel:number = 0, maxZoom:number = 0) {
     if (nextZoomLevel < maxZoom) {
-      this._tilesLoadedEvent = google.maps.event.addListener(this.map, 'tilesloaded', _.bind(function () {
+      this._tilesLoadedEvent = google.maps.event.addListener(this.map, 'tilesloaded', () => {
         google.maps.event.removeListener(this._tilesLoadedEvent);
         this.zoomMap(this.map.getZoom() + 1, maxZoom);
-      }, this));
-      _.delay(_.bind(function () {
+      });
+      _.delay(() => {
         this.map.setZoom(nextZoomLevel);
-      }, this), 280);
+      }, 280);
     } else {
       this.map.setOptions({
         scrollwheel: true
@@ -235,7 +235,7 @@ export class ContactMapComponent implements OnInit {
       clearTimeout(this._timeoutMarkerBounce);
     }
     marker.setAnimation(google.maps.Animation.BOUNCE);
-    this._timeoutMarkerBounce = _.delay(function () {
+    this._timeoutMarkerBounce = _.delay(() => {
       marker.setAnimation(null);
     }, 2000);
   }

@@ -39,17 +39,17 @@ export class SkillsComponent implements OnInit {
 
   initScrollListener() {
     (($) => {
-      $(document).on('scroll', _.bind(() => {
+      $(document).on('scroll', () => {
         // wait half a second for scroll to stop
         if (this._timeoutScroll) {
           clearTimeout(this._timeoutScroll);
         }
-        this._timeoutScroll = _.delay(_.bind(function () {
+        this._timeoutScroll = _.delay(() => {
           if (!this._skillChartDrawn) {
             this.drawChart();
           }
-        }, this), 500);
-      }, this));
+        }, 500);
+      });
     })(jQuery);
 
     if (!this._skillChartDrawn) {
@@ -59,7 +59,7 @@ export class SkillsComponent implements OnInit {
 
   drawChart() {
     (($) => {
-      $('.js_trigger_skills').each(_.bind((index, val) => {
+      $('.js_trigger_skills').each((index, val) => {
         if (!this._skillChartDrawn && elementInViewport($, $(val))) {
           this._skillChartDrawn = true;
           $('.chart').easyPieChart({
@@ -69,7 +69,7 @@ export class SkillsComponent implements OnInit {
             }
           });
         }
-      }, this));
+      });
     })(jQuery);
   }
 }
