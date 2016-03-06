@@ -9,7 +9,7 @@ import {CodeSchool}               from '../../shared/models/education/definition
 @Pipe({name: 'badgeUrl'})
 export class BadgeUrlPipe implements PipeTransform {
   transform(badge:string):string {
-    var badgeId = badge.match(/(\/\d{2,3}\/)/);
+    let badgeId = badge.match(/(\/\d{2,3}\/)/);
     return 'https://www.codeschool.com/users/ouq77/badges' + (badgeId && badgeId[0] || '');
   }
 }

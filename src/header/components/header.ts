@@ -20,8 +20,6 @@ export class HeaderComponent implements OnInit {
 
   constructor(_headerService:HeaderService) {
     this._headerService = _headerService;
-    this._previousWidth = 0;
-    this._previousHeight = 0;
   }
 
   ngOnInit() {
@@ -72,12 +70,12 @@ export class HeaderComponent implements OnInit {
     })(jQuery);
   }
 
-  setBannerSize(previousWidth, previousHeight) {
+  setBannerSize(previousWidth:number = 0, previousHeight:number = 0) {
     (($, previousWidth, previousHeight) => {
-      var windowWidth = $(window).width(),
-        windowHeight = $(window).height(),
-        widthChanged = previousWidth !== windowWidth,
-        heightChanged = false;
+      let windowWidth:number = $(window).width(),
+        windowHeight:number = $(window).height(),
+        widthChanged:boolean = previousWidth !== windowWidth,
+        heightChanged:boolean = false;
       // mobile browsers ads about 60px to screen height when hiding address bar - ignore this
       if (windowHeight - previousHeight > 60) {
         heightChanged = true;
@@ -99,7 +97,7 @@ export class HeaderComponent implements OnInit {
 
   setDynamicCssValues() {
     (($) => {
-      var bannerText = $('.banner-text');
+      let bannerText:JQuery = $('.banner-text');
       bannerText.css('top', ((($(window).height() - bannerText.height()) / 2) - 63));
     })(jQuery);
   }

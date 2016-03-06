@@ -62,7 +62,7 @@ export class ContactFormComponent implements OnInit {
     this.toggleSubmitting();
     this.serverErrors = '';
 
-    let submission = new ContactMessage(
+    let submission:ContactMessage = new ContactMessage(
       this.message.name.trim(),
       this.message.email.trim(),
       this.message.text.trim(),

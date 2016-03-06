@@ -1,5 +1,5 @@
 'use strict';
-export function elementInViewport(jQuery:JQuery, el:Object) {
+export function elementInViewport(jQuery:JQuery, el:JQuery) {
   return (($, element) => {
     let viewportWidth = $(window).width();
     let viewportHeight = $(window).height();
