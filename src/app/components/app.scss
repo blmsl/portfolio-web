@@ -1,13 +1,13 @@
-@import '../../assets/css/common.scss';
+@import '../../assets/css/common';
 
-/*
- * Document Setup
- * ========================================================================== */
+//
+// Document Setup
+// ========================================================================== //
 
 .wrapper {
   width: 100%;
 
-  @media screen and (max-width: $screen-x1-min) {
+  @include respond-to($query: $screen-x1-min) {
     top: 200px !important;
   }
 }
@@ -25,29 +25,29 @@
   font-size: 12px;
 }
 
-/*
- * Browser upgrade prompt
- * ========================================================================== */
+//
+// Browser upgrade prompt
+// ========================================================================== //
 
 .browserupgrade {
   margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
+  background: $very-light-grey;
+  color: $black;
   padding: 0.2em 0;
 }
 
-/*
- * Print styles
- * Inlined to avoid the additional HTTP request:
- * http://www.phpied.com/delay-loading-your-print-css/
- * ========================================================================== */
+//
+// Print styles
+// Inlined to avoid the additional HTTP request:
+// http://www.phpied.com/delay-loading-your-print-css/
+// ========================================================================== //
 
 @media print {
   *,
   *:before,
   *:after {
     background: transparent !important;
-    color: #000 !important; /* Black prints faster: http://www.sanbeiji.com/archives/953 */
+    color: $black !important; // Black prints faster: http://www.sanbeiji.com/archives/953 //
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -65,10 +65,8 @@
     content: " (" attr(title) ")";
   }
 
-  /*
-   * Don't show links that are fragment identifiers,
-   * or use the 'javascript:' pseudo protocol
-   */
+  // Don't show links that are fragment identifiers,
+  // or use the 'javascript:' pseudo protocol
 
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
@@ -77,14 +75,12 @@
 
   pre,
   blockquote {
-    border: 1px solid #999;
+    border: 1px solid $nobel;
     page-break-inside: avoid;
   }
 
-  /*
-   * Printing Tables:
-   * http://css-discuss.incutio.com/wiki/Printing_Tables
-   */
+  // Printing Tables:
+  // http://css-discuss.incutio.com/wiki/Printing_Tables
 
   thead {
     display: table-header-group;

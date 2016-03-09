@@ -1,27 +1,27 @@
-/* -------------------------------------------------------------
-  Sass CSS3 Mixins! The Cross-Browser CSS3 Sass Library
-  By: Matthieu Aussaguel, http://www.mynameismatthieu.com, @matthieu_tweets
-
-  List of CSS3 Sass Mixins File to be @imported and @included as you need
-
-  The purpose of this library is to facilitate the use of CSS3 on different browsers avoiding HARD TO READ and NEVER
-  ENDING css files
-
-  note: All CSS3 Properties are being supported by Safari 5
-  more info: http://www.findmebyip.com/litmus/#css3-properties
-
-------------------------------------------------------------- */
-
-
-////
-/// @author Matthieu Aussaguel
-/// @group sass-css3-mixins
-////
+// -------------------------------------------------------------
+//   Sass CSS3 Mixins! The Cross-Browser CSS3 Sass Library
+//   By: Matthieu Aussaguel, http://www.mynameismatthieu.com, @matthieu_tweets
+//
+//   List of CSS3 Sass Mixins File to be @imported and @included as you need
+//
+//   The purpose of this library is to facilitate the use of CSS3 on different browsers avoiding HARD TO READ and NEVER
+//   ENDING css files
+//
+//   note: All CSS3 Properties are being supported by Safari 5
+//   more info: http://www.findmebyip.com/litmus/#css3-properties
+//
+// ------------------------------------------------------------- //
 
 
-/// Adds a browser prefix to the property
-/// @param {*} $property Property
-/// @param {*} $value Value
+//
+// @author Matthieu Aussaguel
+// @group sass-css3-mixins
+//
+
+
+// Adds a browser prefix to the property
+// @param {*} $property Property
+// @param {*} $value Value
 
 @mixin css3-prefix($property, $value) {
   -webkit-#{$property}: #{$value};
@@ -33,9 +33,9 @@
 }
 
 
-/// Background Gradient
-/// @param {Color} $startColor [#3C3C3C] - Start Color
-/// @param {Color} $endColor [#999999] - End Color
+// Background Gradient
+// @param {Color} $startColor [#3C3C3C] - Start Color
+// @param {Color} $endColor [#999999] - End Color
 
 @mixin background-gradient($startColor: #3C3C3C, $endColor: #999999) {
     background-color: $startColor;
@@ -49,9 +49,9 @@
 }
 
 
-/// Background Horizontal
-/// @param {Color} $startColor [#3C3C3C] - Start Color
-/// @param {Color} $endColor [#999999] - End Color
+// Background Horizontal
+// @param {Color} $startColor [#3C3C3C] - Start Color
+// @param {Color} $endColor [#999999] - End Color
 
 @mixin background-horizontal($startColor: #3C3C3C, $endColor: #999999) {
     background-color: $startColor;
@@ -65,11 +65,11 @@
 }
 
 
-/// Background Radial
-/// @param {Color} $startColor [#3C3C3C] - Start Color
-/// @param {Percentage} $startPos [0%] - Start position
-/// @param {Color} $endColor [#999999] - End Color
-/// @param {Percentage} $endPos [100%] - End position
+// Background Radial
+// @param {Color} $startColor [#3C3C3C] - Start Color
+// @param {Percentage} $startPos [0%] - Start position
+// @param {Color} $endColor [#999999] - End Color
+// @param {Percentage} $endPos [100%] - End position
 
 @mixin background-radial($startColor: #FFFFFF, $startPos: 0%, $endColor: #000000, $endPos:100%) {
     background: -moz-radial-gradient(center, ellipse cover, $startColor $startPos, $endColor $endPos);
@@ -81,10 +81,10 @@
 }
 
 
-/// Background Size
-/// @param {Size} $width [100%] - Width
-/// @param {Size} $width [$width] - Height
-/// @require {mixin} css3-prefix
+// Background Size
+// @param {Size} $width [100%] - Width
+// @param {Size} $width [$width] - Height
+// @require {mixin} css3-prefix
 
 @mixin background-size($width: 100%, $height: $width) {
   @if type-of($width) == 'number' and $height != null {
@@ -95,9 +95,9 @@
 }
 
 
-/// Background Color Opacity
-/// @param {Color} $color [100%] - Color
-/// @param {Double} $opacity [0.85] - Opacity
+// Background Color Opacity
+// @param {Color} $color [100%] - Color
+// @param {Double} $opacity [0.85] - Opacity
 
 @mixin background-opacity($color: #000, $opacity: 0.85) {
   background: $color;
@@ -105,20 +105,20 @@
 }
 
 
-/// Border Radius
-/// @param {Size} $radius [5px] - Radius
-/// @require {mixin} css3-prefix
+// Border Radius
+// @param {Size} $radius [5px] - Radius
+// @require {mixin} css3-prefix
 
 @mixin border-radius($radius: 5px) {
     @include css3-prefix('border-radius', $radius);
 }
 
 
-/// Border Radius Separate
-/// @param {Size} $topLeftRadius [5px] - Top Left
-/// @param {Size} $topRightRadius [5px] - Top Right
-/// @param {Size} $bottomLeftRadius [5px] - Bottom Left
-/// @param {Size} $bottomRightRadius [5px] - Bottom Right
+// Border Radius Separate
+// @param {Size} $topLeftRadius [5px] - Top Left
+// @param {Size} $topRightRadius [5px] - Top Right
+// @param {Size} $bottomLeftRadius [5px] - Bottom Left
+// @param {Size} $bottomRightRadius [5px] - Bottom Right
 
 @mixin border-radius-separate($topLeftRadius: 5px, $topRightRadius: 5px, $bottomLeftRadius: 5px, $bottomRightRadius: 5px) {
   -webkit-border-top-left-radius:     $topLeftRadius;
@@ -138,11 +138,11 @@
 }
 
 
-/// Box
-/// @param {*} $orient [horizontal] - Orientation
-/// @param {*} $pack [center] - Pack
-/// @param {*} $align [center] - Align
-/// @require {mixin} css3-prefix
+// Box
+// @param {*} $orient [horizontal] - Orientation
+// @param {*} $pack [center] - Pack
+// @param {*} $align [center] - Align
+// @require {mixin} css3-prefix
 
 @mixin box($orient: horizontal, $pack: center, $align: center) {
   display: -webkit-box;
@@ -155,12 +155,12 @@
 }
 
 
-/// Box RGBA
-/// @param {Integer} $r [60] - Red
-/// @param {Integer} $g [3] - Green
-/// @param {Integer} $b [12] - Blue
-/// @param {Double} $opacity [0.23] - Opacity
-/// @param {Color} $color [#3C3C3C] - Color
+// Box RGBA
+// @param {Integer} $r [60] - Red
+// @param {Integer} $g [3] - Green
+// @param {Integer} $b [12] - Blue
+// @param {Double} $opacity [0.23] - Opacity
+// @param {Color} $color [#3C3C3C] - Color
 
 @mixin box-rgba($r: 60, $g: 3, $b: 12, $opacity: 0.23, $color: #3C3C3C) {
   background-color: transparent;
@@ -170,12 +170,12 @@
 }
 
 
-/// Box Shadow
-/// @param {Size} $x [2px] - X
-/// @param {Size} $y [2px] - Y
-/// @param {Size} $blur [5px] - Blur
-/// @param {Color} $color [rgba(0,0,0,.4)] - Color
-/// @param {Boolean} $inset - Inset
+// Box Shadow
+// @param {Size} $x [2px] - X
+// @param {Size} $y [2px] - Y
+// @param {Size} $blur [5px] - Blur
+// @param {Color} $color [rgba(0,0,0,.4)] - Color
+// @param {Boolean} $inset - Inset
 
 @mixin box-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4), $inset: "") {
   @if ($inset != "") {
@@ -186,19 +186,19 @@
 }
 
 
-/// Box Sizing
-/// @param {*} $type [border-box] - Type
-/// @require {mixin} css3-prefix
+// Box Sizing
+// @param {*} $type [border-box] - Type
+// @require {mixin} css3-prefix
 
 @mixin box-sizing($type: border-box) {
   @include css3-prefix('box-sizing', $type);
 }
 
 
-/// Columns
-/// @param {Integer} $count [3] - Count
-/// @param {Integer} $gap [10] - Gap
-/// @require {mixin} css3-prefix
+// Columns
+// @param {Integer} $count [3] - Count
+// @param {Integer} $gap [10] - Gap
+// @require {mixin} css3-prefix
 
 @mixin columns($count: 3, $gap: 10) {
   @include css3-prefix('column-count', $count);
@@ -206,12 +206,12 @@
 }
 
 
-/// Double Borders
-/// @param {Color} $colorOne [#3C3C3C] - Color One
-/// @param {Color} $colorTwo [#999999] - Color Two
-/// @param {Size} $radius [0] - Radius
-/// @require {mixin} css3-prefix
-/// @require {mixin} border-radius
+// Double Borders
+// @param {Color} $colorOne [#3C3C3C] - Color One
+// @param {Color} $colorTwo [#999999] - Color Two
+// @param {Size} $radius [0] - Radius
+// @require {mixin} css3-prefix
+// @require {mixin} border-radius
 
 @mixin double-borders($colorOne: #3C3C3C, $colorTwo: #999999, $radius: 0) {
   border: 1px solid $colorOne;
@@ -222,18 +222,18 @@
 }
 
 
-/// Flex
-/// @param {Integer} $value [1] - Value
-/// @require {mixin} css3-prefix
+// Flex
+// @param {Integer} $value [1] - Value
+// @require {mixin} css3-prefix
 
 @mixin flex($value: 1) {
   @include css3-prefix('box-flex', $value);
 }
 
 
-/// Flip
-/// @param {Double} $scaleX [-1] - ScaleX
-/// @require {mixin} css3-prefix
+// Flip
+// @param {Double} $scaleX [-1] - ScaleX
+// @require {mixin} css3-prefix
 
 @mixin flip($scaleX: -1) {
   @include css3-prefix('transform', scaleX($scaleX));
@@ -242,12 +242,12 @@
 }
 
 
-/// Font Face
-/// @param {Font} $fontFamily [myFont] - Font Family
-/// @param {String} $eotFileSrc ['myFont.eot'] - Eot File Source
-/// @param {String} $woffFileSrc ['myFont.woff'] - Woff File Source
-/// @param {String} $ttfFileSrc ['myFont.ttf'] - Ttf File Source
-/// @param {String} $svgFileSrc ['myFont.svg'] - Svg File Source
+// Font Face
+// @param {Font} $fontFamily [myFont] - Font Family
+// @param {String} $eotFileSrc ['myFont.eot'] - Eot File Source
+// @param {String} $woffFileSrc ['myFont.woff'] - Woff File Source
+// @param {String} $ttfFileSrc ['myFont.ttf'] - Ttf File Source
+// @param {String} $svgFileSrc ['myFont.svg'] - Svg File Source
 
 @mixin font-face($fontFamily: myFont, $eotFileSrc: 'myFont.eot', $woffFileSrc: 'myFont.woff', $ttfFileSrc: 'myFont.ttf', $svgFileSrc: 'myFont.svg', $svgFontID: '#myFont') {
   font-family: $fontFamily;
@@ -258,9 +258,9 @@
 }
 
 
-/// Opacity
-/// @param {Double} $opacity [0.5] - Opacity
-/// @require {mixin} css3-prefix
+// Opacity
+// @param {Double} $opacity [0.5] - Opacity
+// @require {mixin} css3-prefix
 
 @mixin opacity($opacity: 0.5) {
     $opacityMultiplied: ($opacity * 100);
@@ -271,33 +271,33 @@
 }
 
 
-/// Outline Radius
-/// @param {Size} $radius [5px] - Radius
-/// @require {mixin} css3-prefix
+// Outline Radius
+// @param {Size} $radius [5px] - Radius
+// @require {mixin} css3-prefix
 
 @mixin outline-radius($radius: 5px) {
   @include css3-prefix('outline-radius', $radius);
 }
 
 
-/// Resize
-/// @param {*} $directoin [both] - Direction
-/// @require {mixin} css3-prefix
+// Resize
+// @param {*} $directoin [both] - Direction
+// @require {mixin} css3-prefix
 
 @mixin resize($direction: both) {
   @include css3-prefix('resize', $direction);
 }
 
 
-/// Rotate
-///
-/// CSS Matrix Rotation Calculator http://www.boogdesign.com/examples/transforms/matrix-calculator.html
-/// @param {Double} $deg [0] - Degree
-/// @param {Double} $m11 [0] - M11
-/// @param {Double} $m12 [0] - M12
-/// @param {Double} $m21 [0] - M21
-/// @param {Double} $m22 [0] - M22
-/// @require {mixin} css3-prefix
+// Rotate
+//
+// CSS Matrix Rotation Calculator http://www.boogdesign.com/examples/transforms/matrix-calculator.html
+// @param {Double} $deg [0] - Degree
+// @param {Double} $m11 [0] - M11
+// @param {Double} $m12 [0] - M12
+// @param {Double} $m21 [0] - M21
+// @param {Double} $m22 [0] - M22
+// @require {mixin} css3-prefix
 
 @mixin rotate($deg: 0, $m11: 0, $m12: 0, $m21: 0, $m22: 0) {
   @include css3-prefix('transform', rotate($deg + deg));
@@ -307,29 +307,29 @@
 }
 
 
-/// Text Shadow
-/// @param {Size} $x [2px] - X
-/// @param {Size} $y [2px] - Y
-/// @param {Size} $blur [2px] - Blur
-/// @param {Color} $color [rgba(0,0,0,.4)] - Color
+// Text Shadow
+// @param {Size} $x [2px] - X
+// @param {Size} $y [2px] - Y
+// @param {Size} $blur [2px] - Blur
+// @param {Color} $color [rgba(0,0,0,.4)] - Color
 
 @mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4)) {
     text-shadow: $x $y $blur $color;
 }
 
 
-/// Transform
-/// @param {List} $params - Params
-/// @require {mixin} css3-prefix
+// Transform
+// @param {List} $params - Params
+// @require {mixin} css3-prefix
 
 @mixin transform($params) {
   @include css3-prefix('transform', $params);
 }
 
 
-/// Transform-Origin
-/// @param {List} $params - Params
-/// @require {mixin} css3-prefix
+// Transform-Origin
+// @param {List} $params - Params
+// @require {mixin} css3-prefix
 
 @mixin transform-origin($params) {
   @include css3-prefix('transform-origin', $params);
@@ -337,16 +337,16 @@
 
 
 // Transform-Style
-/// @param {List} $params - Params
-/// @require {mixin} css3-prefix
+// @param {List} $params - Params
+// @require {mixin} css3-prefix
 
 @mixin transform-style($style: preserve-3d) {
   @include css3-prefix('transform-style', $style);
 }
 
-/// Transition
-/// @param {List} $properties - Properties
-/// @require {mixin} css3-prefix
+// Transition
+// @param {List} $properties - Properties
+// @require {mixin} css3-prefix
 
 @mixin transition($properties...) {
 
@@ -360,13 +360,13 @@
 }
 
 
-/// Triple Borders
-/// @param {Color} $colorOne [#3C3C3C] - Color One
-/// @param {Color} $colorTwo [#999999] - Color Two
-/// @param {Color} $colorThree [#000000] - Color Three
-/// @param {Size} $radius [0] - Radius
-/// @require {mixin} border-radius
-/// @require {mixin} css3-prefix
+// Triple Borders
+// @param {Color} $colorOne [#3C3C3C] - Color One
+// @param {Color} $colorTwo [#999999] - Color Two
+// @param {Color} $colorThree [#000000] - Color Three
+// @param {Size} $radius [0] - Radius
+// @require {mixin} border-radius
+// @require {mixin} css3-prefix
 
 @mixin triple-borders($colorOne: #3C3C3C, $colorTwo: #999999, $colorThree: #000000, $radius: 0) {
     border: 1px solid $colorOne;
@@ -377,9 +377,9 @@
 }
 
 
-/// Keyframes
-/// @param {*} $animation-name - Animation name
-/// @content [Animation css]
+// Keyframes
+// @param {*} $animation-name - Animation name
+// @content [Animation css]
 
 @mixin keyframes($animation-name) {
   @-webkit-keyframes #{$animation-name} {
@@ -400,9 +400,9 @@
 }
 
 
-/// Animation
-/// @param {*} $str - name duration timing-function delay iteration-count direction fill-mode play-state ([http://www.w3schools.com/cssref/css3_pr_animation.asp](http://www.w3schools.com/cssref/css3_pr_animation.asp))
-/// @require {mixin} css3-prefix
+// Animation
+// @param {*} $str - name duration timing-function delay iteration-count direction fill-mode play-state ([http://www.w3schools.com/cssref/css3_pr_animation.asp](http://www.w3schools.com/cssref/css3_pr_animation.asp))
+// @require {mixin} css3-prefix
 
 @mixin animation($str) {
   @include css3-prefix('animation', $str);

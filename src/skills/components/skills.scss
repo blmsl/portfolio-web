@@ -1,8 +1,8 @@
-@import '../../assets/css/common.scss';
+@import '../../assets/css/common';
 
-/*
- * Skills
- * ========================================================================== */
+//
+// Skills
+// ========================================================================== //
 
 .add-space {
   height: 60px;
@@ -29,7 +29,7 @@
     padding: 0px;
     width: 200px;
     p {
-      color: #84868d;
+      color: $manatee;
       font-size: 13px;
       line-height: 18px;
       text-align: center;
@@ -47,7 +47,7 @@
 }
 
 .skill-background {
-  background: url(assets/images/skills.png) no-repeat 0 0;
+  @include bg-image($image: 'skills.png');
 }
 
 .chart {

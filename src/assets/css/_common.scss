@@ -1,8 +1,8 @@
-@import './css3-mixins.scss';
+@import 'css3-mixins';
 
-/*
- * Colors
- * ========================================================================== */
+//
+// Colors
+// ========================================================================== //
 
 $white:                 #ffffff;
 $snow:                  #fafafa;
@@ -10,6 +10,7 @@ $white-smoke:           #f3f3f3;
 $whisper:               #eeeeee;
 $whisper-dark:          #e5e4e4;
 $link-water:            #c3c8d6;
+$very-light-grey:       #cccccc;
 $bitter-sweet:          #ff675f;
 $sunset-orange-tint:    #f9918c;
 $sunset-orange:         #f5534b;
@@ -21,6 +22,7 @@ $cerulean:              #0a64a4;
 $orient:                #15596e;
 $persian-green:         #0a9f9f;
 $mischka:               #a9abb0;
+$nobel:                 #999999;
 $manatee:               #84868d;
 $chambray:              #585f73;
 $blue-zodiac:           #474d5d;
@@ -30,18 +32,18 @@ $midnight-express:      #262B37;
 $black-russian:         #1b1f2b;
 $black-forest:          #1b1f29;
 $black:                 #000000;
-$black-trans-point-5:   rgba(0, 0, 0, 0.5);
-$black-trans-point-7:   rgba(0, 0, 0, 0.7);
+$black-trans-point-5:   rgba($black, 0.5);
+$black-trans-point-7:   rgba($black, 0.7);
 
-/*
- * Typography
- * ========================================================================== */
+//
+// Typography
+// ========================================================================== //
 
 $font-family-base:      'Open Sans', sans-serif;
 
-/*
- * Media queries breakpoints
- * ========================================================================== */
+//
+// Media queries breakpoints
+// ========================================================================== //
 
 $screen-x2-min:         480px;
 $screen-x1-min:         650px;
@@ -50,9 +52,9 @@ $screen-m2-min:         810px;
 $screen-m1-min:         992px;
 $screen-lg-min:         1200px;
 
-/*
- * Container & Heading mixin
- * ========================================================================== */
+//
+// Container & Heading mixin
+// ========================================================================== //
 
 @mixin container-heading($padding-bottom: 90px) {
   .container {
@@ -66,4 +68,17 @@ $screen-lg-min:         1200px;
       margin: 0px;
     }
   }
+}
+
+//
+// Media query mixin
+// ========================================================================== //
+@mixin respond-to($val: max-width, $query: $screen-sm-min) {
+  @media screen and ($val: $query) {
+    @content
+  }
+}
+
+@mixin bg-image($image, $color: transparent, $repeat: no-repeat, $x-pos: 0, $y-pos: 0) {
+  background: $color url(assets/images/#{$image}) $repeat $x-pos $y-pos;
 }
