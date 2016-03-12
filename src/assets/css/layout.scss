@@ -140,9 +140,16 @@ h6 {
 
   a {
     color: $iris-blue;
+    &:hover {
+      text-decoration: underline;
+    }
   }
+}
 
-  a:hover {
-    text-decoration: underline;
+.map-info-window {
+  h3 {
+    color:  $bitter-sweet;
+    font-size: 18px;
+    padding: 0;
   }
 }

@@ -1,7 +1,11 @@
 'use strict';
+import Animation                      = google.maps.Animation;
+import event                          = google.maps.event;
+import InfoWindow                     = google.maps.InfoWindow;
+import LatLng                         = google.maps.LatLng;
 import Map                            = google.maps.Map;
-import Polyline                       = google.maps.Polyline;
 import Marker                         = google.maps.Marker;
+import Polyline                       = google.maps.Polyline;
 import {Component, View, OnInit}      from 'angular2/core';
 import {Http, HTTP_PROVIDERS}         from 'angular2/http';
 import {MAP_OPTIONS}                  from '../../shared/models/contact/map.config';
@@ -28,6 +32,7 @@ export class ContactMapComponent implements OnInit {
   private _tilesLoadedEvent:any;
   private _tilesLoaded:boolean;
   private _mapMarkersDrawn:boolean;
+  private _infoWindow:InfoWindow;
   private _journeyLines:Array<Polyline>;
   private _upcomingJourneyLines:Array<Polyline>;
   private _cityMarkers:Array<Marker>;
@@ -39,6 +44,7 @@ export class ContactMapComponent implements OnInit {
   constructor() {
     this._tilesLoaded = false;
     this._mapMarkersDrawn = false;
+    this._infoWindow = new InfoWindow();
     this._journeyLines = [];
     this._upcomingJourneyLines = [];
     this._cityMarkers = [];
@@ -66,9 +72,9 @@ export class ContactMapComponent implements OnInit {
           mapOptions.zoom = 1;
           mapOptions.minZoom = 1;
         }
-        this.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+        this.map = new Map(document.getElementById('map-canvas'), mapOptions);
         _.each(JOURNEYS, (journey:Array<Airport>, index:number) => {
-          this._journeyLines[index] = new google.maps.Polyline({
+          this._journeyLines[index] = new Polyline({
             strokeOpacity: 0.5,
             strokeColor: '#1b1f29',
             strokeWeight: 2,
@@ -77,7 +83,7 @@ export class ContactMapComponent implements OnInit {
           });
         });
         _.each(UPCOMING_JOURNEYS, (upcomingJourney:Array<Airport>, index:number) => {
-          this._upcomingJourneyLines[index] = new google.maps.Polyline({
+          this._upcomingJourneyLines[index] = new Polyline({
             strokeOpacity: 0,
             icons: [{
               icon: {
@@ -92,8 +98,8 @@ export class ContactMapComponent implements OnInit {
             map: this.map
           });
         });
-        this._tilesLoadedEvent = google.maps.event.addListener(this.map, 'tilesloaded', () => {
-          google.maps.event.removeListener(this._tilesLoadedEvent);
+        this._tilesLoadedEvent = event.addListener(this.map, 'tilesloaded', () => {
+          event.removeListener(this._tilesLoadedEvent);
           this._tilesLoaded = true;
           this.dropMarkers();
         });
@@ -137,12 +143,11 @@ export class ContactMapComponent implements OnInit {
               _.each(AIRPORTS, (airport:Airport) => {
                 this._airportMarkerDropWait++;
                 _.delay(() => {
-                  /* tslint:disable */
-                  new google.maps.Marker({
-                    position: new google.maps.LatLng(airport.loc.lat, airport.loc.lng),
+                  let marker = new Marker({
+                    position: new LatLng(airport.loc.lat, airport.loc.lng),
                     map: this.map,
                     draggable: false,
-                    animation: google.maps.Animation.DROP,
+                    animation: Animation.DROP,
                     zIndex: 100,
                     title: airport.name,
                     icon: {
@@ -150,7 +155,9 @@ export class ContactMapComponent implements OnInit {
                       size: p.AIRPORT_SIZE
                     }
                   });
-                  /* tslint:enable */
+                  event.addListener(marker, 'click', () => {
+                    this.toggleBounce(marker);
+                  });
                 }, this._airportMarkerDropWait * 135);
               });
               _.each(JOURNEYS, (journey:Array<Airport>, index:number) => {
@@ -159,7 +166,7 @@ export class ContactMapComponent implements OnInit {
                   this._journeyLineDrawWait++;
                   _.delay(() => {
                     journeyLine.getPath().push(
-                      new google.maps.LatLng(leg.loc.lat, leg.loc.lng)
+                      new LatLng(leg.loc.lat, leg.loc.lng)
                     );
                   }, this._journeyLineDrawWait * 65);
                 });
@@ -170,7 +177,7 @@ export class ContactMapComponent implements OnInit {
                   this._journeyLineDrawWait++;
                   _.delay(() => {
                     upcomingJourneyLine.getPath().push(
-                      new google.maps.LatLng(leg.loc.lat, leg.loc.lng)
+                      new LatLng(leg.loc.lat, leg.loc.lng)
                     );
                   }, this._journeyLineDrawWait * 65);
                 });
@@ -193,31 +200,25 @@ export class ContactMapComponent implements OnInit {
   }
 
   addMarker(city:City, index:number) {
-    this._cityMarkers.push(new google.maps.Marker({
-      position: new google.maps.LatLng(city.loc.lat, city.loc.lng),
+    this._cityMarkers.push(new Marker({
+      position: new LatLng(city.loc.lat, city.loc.lng),
       map: this.map,
       title: city.title,
       draggable: false,
-      animation: google.maps.Animation.DROP,
+      animation: Animation.DROP,
       zIndex: 200,
       icon: city.icon
     }));
     let cityMarker:Marker = this._cityMarkers[index];
-    google.maps.event.addListener(cityMarker, 'click', () => {
-      if (this._timeoutMarkerBounce) {
-        clearTimeout(this._timeoutMarkerBounce);
-      }
-      cityMarker.setAnimation(google.maps.Animation.BOUNCE);
-      this._timeoutMarkerBounce = _.delay(() => {
-        cityMarker.setAnimation(null);
-      }, 2000);
+    event.addListener(cityMarker, 'click', () => {
+      this.toggleBounce(cityMarker);
     });
   }
 
   zoomMap(nextZoomLevel:number = 0, maxZoom:number = 0) {
     if (nextZoomLevel < maxZoom) {
-      this._tilesLoadedEvent = google.maps.event.addListener(this.map, 'tilesloaded', () => {
-        google.maps.event.removeListener(this._tilesLoadedEvent);
+      this._tilesLoadedEvent = event.addListener(this.map, 'tilesloaded', () => {
+        event.removeListener(this._tilesLoadedEvent);
         this.zoomMap(this.map.getZoom() + 1, maxZoom);
       });
       _.delay(() => {
@@ -234,7 +235,14 @@ export class ContactMapComponent implements OnInit {
     if (this._timeoutMarkerBounce) {
       clearTimeout(this._timeoutMarkerBounce);
     }
-    marker.setAnimation(google.maps.Animation.BOUNCE);
+    marker.setAnimation(Animation.BOUNCE);
+    this._infoWindow.close();
+    this._infoWindow.setContent(`
+          <div class="map-info-window">
+            <h3>${marker.getTitle()}</h3>
+          </div>
+        `);
+    this._infoWindow.open(this.map, marker);
     this._timeoutMarkerBounce = _.delay(() => {
       marker.setAnimation(null);
     }, 2000);
