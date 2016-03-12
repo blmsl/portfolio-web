@@ -10,6 +10,10 @@ export interface Airport {
    */
   loc: Point;
   /**
+   * Airport IATA code
+   */
+  iataCode: string;
+  /**
    * Airport name
    */
   name: string;

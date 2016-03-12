@@ -127,7 +127,10 @@ export class ContactMapComponent implements OnInit {
     (($) => {
       $('#js_click_address').click((e) => {
         e.preventDefault();
-        this.toggleBounce(this._cityMarkers[this._cityMarkers.length - 1]);
+        let cityMarker = this._cityMarkers[this._cityMarkers.length - 1];
+        if (cityMarker && cityMarker.getTitle()) {
+          this.toggleBounce(cityMarker, cityMarker.getTitle());
+        }
       });
     })(jQuery);
   }
@@ -149,14 +152,14 @@ export class ContactMapComponent implements OnInit {
                     draggable: false,
                     animation: Animation.DROP,
                     zIndex: 100,
-                    title: airport.name,
+                    title: airport.iataCode + ' // ' + airport.name,
                     icon: {
                       url: 'assets/images/markerairport.png',
                       size: p.AIRPORT_SIZE
                     }
                   });
                   event.addListener(marker, 'click', () => {
-                    this.toggleBounce(marker);
+                    this.toggleBounce(marker, airport.iataCode, airport.name);
                   });
                 }, this._airportMarkerDropWait * 135);
               });
@@ -211,7 +214,7 @@ export class ContactMapComponent implements OnInit {
     }));
     let cityMarker:Marker = this._cityMarkers[index];
     event.addListener(cityMarker, 'click', () => {
-      this.toggleBounce(cityMarker);
+      this.toggleBounce(cityMarker, city.title);
     });
   }
 
@@ -231,17 +234,24 @@ export class ContactMapComponent implements OnInit {
     }
   }
 
-  toggleBounce(marker:Marker) {
+  toggleBounce(marker:Marker, infoTitle:string, infoContent?:string) {
     if (this._timeoutMarkerBounce) {
       clearTimeout(this._timeoutMarkerBounce);
     }
     marker.setAnimation(Animation.BOUNCE);
     this._infoWindow.close();
-    this._infoWindow.setContent(`
-          <div class="map-info-window">
-            <h3>${marker.getTitle()}</h3>
-          </div>
-        `);
+    let content = infoContent ?
+      `
+        <div class="map-info-window">
+          <h3>${infoTitle}</h3>
+          <p>${infoContent}</p>
+        </div>
+      `: `
+        <div class="map-info-window">
+          <h3>${infoTitle}</h3>
+        </div>
+      `;
+    this._infoWindow.setContent(content);
     this._infoWindow.open(this.map, marker);
     this._timeoutMarkerBounce = _.delay(() => {
       marker.setAnimation(null);
