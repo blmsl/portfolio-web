@@ -18,7 +18,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "1.15.0",
-    "camelcase": "2.1.0",
+    "camelcase": "2.1.1",
     "compression": "1.6.1",
     "express": "4.13.4",
     "forever-monitor": "1.7.0",
