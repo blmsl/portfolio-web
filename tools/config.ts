@@ -33,9 +33,10 @@ export const JS_DEST:string = `${APP_DEST}/js`;
 export const CSS_DEST:string = `${APP_DEST}/css`;
 export const FONTS_DEST:string = `${APP_DEST}/fonts`;
 export const LIB_DEST:string = `${APP_DEST}/lib`;
-export const HEROKU_APP_DIR:string = 'heroku/app';
+export const HEROKU_DIR = 'heroku';
+export const HEROKU_APP_DIR:string = `${HEROKU_DIR}/app`;
+export const HEROKU_SERVER_DIR:string = `${HEROKU_DIR}/server`;
 export const HEROKU_DOCS_DIR:string = `${HEROKU_APP_DIR}/docs`;
-export const HEROKU_SERVER_DIR:string = 'heroku/server';
 export const HEROKU_CLEAN_CONFIG:Array<string> = [
   `${HEROKU_APP_DIR}/assets`,
   `${HEROKU_APP_DIR}/css`,

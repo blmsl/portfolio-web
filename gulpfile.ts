@@ -12,10 +12,24 @@ gulp.task('clean.heroku', done => task('clean', 'heroku')(done));
 gulp.task('clean.docs', done => task('clean', 'docs')(done));
 gulp.task('clean.heroku.docs', done => task('clean', 'heroku.docs')(done));
 
-gulp.task('check.versions', () => task('check.versions'));
+// Bump (override)
+gulp.task('bump', () => task('bump', 'patch')());
+gulp.task('bump.patch', () => task('bump', 'patch')());
+gulp.task('bump.minor', () => task('bump', 'minor')());
+gulp.task('bump.major', () => task('bump', 'major')());
 
-gulp.task('build.docs', () => task('build.docs'));
-gulp.task('serve.docs', () => task('serve.docs'));
+// Bump Heroku (override)
+gulp.task('bump.heroku', () => task('bump', 'heroku.patch')());
+gulp.task('bump.heroku.patch', () => task('bump', 'heroku.patch')());
+gulp.task('bump.heroku.minor', () => task('bump', 'heroku.minor')());
+gulp.task('bump.heroku.major', () => task('bump', 'heroku.major')());
+
+// Check versions
+gulp.task('check.versions', () => task('check.versions')());
+
+// Docs
+gulp.task('build.docs', () => task('build.docs')());
+gulp.task('serve.docs', () => task('serve.docs')());
 
 // --------------
 // Build dev.

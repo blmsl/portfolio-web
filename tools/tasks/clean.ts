@@ -6,7 +6,7 @@ import * as del from 'del';
 import {DIST_DIR, TEST_DEST, TMP_DIR, HEROKU_CLEAN_CONFIG, DOCS_DEST, HEROKU_DOCS_DIR} from '../config';
 
 export = function clean(gulp, plugins, option) {
-  return function (done) {
+  return (done) => {
 
     switch (option) {
       case 'all'    :
@@ -33,11 +33,10 @@ export = function clean(gulp, plugins, option) {
       default:
         done();
     }
-
   };
 };
 
-function cleanAll(done) {
+let cleanAll = (done) => {
   async.parallel([
     cleanDist,
     cleanTest,
@@ -47,37 +46,37 @@ function cleanAll(done) {
     cleanHerokuDocs
   ], done);
 }
-function cleanDist(done) {
+let cleanDist = (done) => {
   del([DIST_DIR]).then((paths) => {
     util.log('Clean', chalk.blue('dist'), chalk.yellow(paths && paths.join(', ') || '-'));
     done();
   });
 }
-function cleanTest(done) {
+let cleanTest = (done) => {
   del([TEST_DEST]).then((paths) => {
     util.log('Clean', chalk.blue('test'), chalk.yellow(paths && paths.join(', ') || '-'));
     done();
   });
 }
-function cleanTmp(done) {
+let cleanTmp = (done) => {
   del([TMP_DIR]).then((paths) => {
     util.log('Clean', chalk.blue('tmp'), chalk.yellow(paths && paths.join(', ') || '-'));
     done();
   });
 }
-function cleanHeroku(done) {
+let cleanHeroku = (done) => {
   del(HEROKU_CLEAN_CONFIG).then((paths) => {
     util.log('Clean', chalk.blue('heroku'), chalk.yellow(paths && paths.join(', ') || '-'));
     done();
   });
 }
-function cleanDocs(done) {
+let cleanDocs = (done) => {
   del([DOCS_DEST]).then((paths) => {
     util.log('Clean', chalk.blue('docs'), chalk.yellow(paths && paths.join(', ') || '-'));
     done();
   });
 }
-function cleanHerokuDocs(done) {
+let cleanHerokuDocs = (done) => {
   del([HEROKU_DOCS_DIR]).then((paths) => {
     util.log('Clean', chalk.blue('heroku.docs'), chalk.yellow(paths && paths.join(', ') || '-'));
     done();
