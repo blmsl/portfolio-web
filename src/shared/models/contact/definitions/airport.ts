@@ -17,4 +17,12 @@ export interface Airport {
    * Airport name
    */
   name: string;
+  /**
+   * Airport city
+   */
+  city: string;
+  /**
+   * Airport country
+   */
+  country: string;
 }

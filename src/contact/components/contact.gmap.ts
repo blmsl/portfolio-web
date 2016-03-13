@@ -161,7 +161,7 @@ export class ContactMapComponent implements OnInit {
                     }
                   });
                   event.addListener(marker, 'click', () => {
-                    this.toggleBounce(marker, airport.iataCode, airport.name);
+                    this.toggleBounce(marker, airport.iataCode, airport.name + '<br>' + airport.city + ', ' + airport.country);
                   });
                 }, this._airportMarkerDropWait * 135);
               });
