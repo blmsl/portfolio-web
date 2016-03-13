@@ -5,8 +5,6 @@ import {HEROKU_DIR} from '../config';
 export = function bumpTag(gulp, plugins, option) {
   return function () {
 
-    let herokuPackageSrcPath = join(HEROKU_DIR, 'package.json');
-
     switch (option) {
       case 'patch':
         return bumpTagPackage(gulp, plugins);
@@ -15,22 +13,28 @@ export = function bumpTag(gulp, plugins, option) {
       case 'major':
         return bumpTagPackage(gulp, plugins, 'major');
       case 'heroku.patch':
-        return bumpTagPackage(gulp, plugins, 'patch', herokuPackageSrcPath, HEROKU_DIR);
+        return bumpHerokuPackage(gulp, plugins, 'patch');
       case 'heroku.minor':
-        return bumpTagPackage(gulp, plugins, 'minor', herokuPackageSrcPath, HEROKU_DIR);
+        return bumpHerokuPackage(gulp, plugins, 'minor');
       case 'heroku.major':
-        return bumpTagPackage(gulp, plugins, 'major', herokuPackageSrcPath, HEROKU_DIR);
+        return bumpHerokuPackage(gulp, plugins, 'major');
       default:
-        break;
+        throw new Error('Undefined option ' + option);
     }
 
   };
 };
 
-let bumpTagPackage = (gulp, plugins, type = 'patch', src = 'package.json', dest = '') => {
-  return gulp.src(join('./', src))
+let bumpTagPackage = (gulp, plugins, type = 'patch') => {
+  return gulp.src(join('./', 'package.json'))
     .pipe(plugins.bump({type: type}))
-    .pipe(gulp.dest(join('./', dest)))
+    .pipe(gulp.dest(join('./')))
     .pipe(plugins.git.commit('Bumped package version'))
     .pipe(plugins.tagVersion());
-}
+};
+
+let bumpHerokuPackage = (gulp, plugins, type = 'patch') => {
+  return gulp.src(join('./', HEROKU_DIR, 'package.json'))
+    .pipe(plugins.bump({type: type}))
+    .pipe(gulp.dest(join('./', HEROKU_DIR)));
+};

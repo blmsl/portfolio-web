@@ -19,7 +19,6 @@ const HTML_MIN_OPTS = {
 
 export = function buildJSDev(gulp, plugins) {
   return function () {
-
     return merge(minifyHtml(), minifyCss());
 
     function minifyHtml() {

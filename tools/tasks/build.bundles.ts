@@ -8,7 +8,6 @@ import {DEPENDENCIES, JS_PROD_SHIMS_BUNDLE, JS_PROD_APP_BUNDLE, JS_DEST, TMP_DIR
 
 export = function bundles(gulp, plugins) {
   return function () {
-
     return merge(bundleShims(), bundleApp());
 
     function getShims() {
