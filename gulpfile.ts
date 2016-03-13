@@ -13,16 +13,16 @@ gulp.task('clean.docs', done => task('clean', 'docs')(done));
 gulp.task('clean.heroku.docs', done => task('clean', 'heroku.docs')(done));
 
 // Bump (override)
-gulp.task('bump', () => task('bump', 'patch')());
-gulp.task('bump.patch', () => task('bump', 'patch')());
-gulp.task('bump.minor', () => task('bump', 'minor')());
-gulp.task('bump.major', () => task('bump', 'major')());
+gulp.task('bump.tag', () => task('bump.tag', 'patch')());
+gulp.task('bump.tag.patch', () => task('bump.tag', 'patch')());
+gulp.task('bump.tag.minor', () => task('bump.tag', 'minor')());
+gulp.task('bump.tag.major', () => task('bump.tag', 'major')());
 
 // Bump Heroku (override)
-gulp.task('bump.heroku', () => task('bump', 'heroku.patch')());
-gulp.task('bump.heroku.patch', () => task('bump', 'heroku.patch')());
-gulp.task('bump.heroku.minor', () => task('bump', 'heroku.minor')());
-gulp.task('bump.heroku.major', () => task('bump', 'heroku.major')());
+gulp.task('bump.tag.heroku', () => task('bump.tag', 'heroku.patch')());
+gulp.task('bump.tag.heroku.patch', () => task('bump.tag', 'heroku.patch')());
+gulp.task('bump.tag.heroku.minor', () => task('bump.tag', 'heroku.minor')());
+gulp.task('bump.tag.heroku.major', () => task('bump.tag', 'heroku.major')());
 
 // Check versions
 gulp.task('check.versions', () => task('check.versions')());
