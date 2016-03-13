@@ -15,11 +15,11 @@ import * as openResource                                                  from '
 import * as serveStatic                                                   from 'serve-static';
 import {APP_BASE, APP_DEST, DOCS_DEST, LIVE_RELOAD_PORT, DOCS_PORT, PORT} from '../config';
 
-let lastModified = require('./config/last.mod.props.json'),
-  errorConfig = require('./config/error.props.json'),
-  tinylr = tinylrFn();
+let lastModified = require('./config/last.mod.props.json');
+let errorConfig = require('./config/error.props.json');
+let tinylr = tinylrFn();
 
-export function serveSPA() {
+let serveSPA = () => {
   let server = express();
   tinylr.listen(LIVE_RELOAD_PORT);
 
@@ -83,16 +83,16 @@ export function serveSPA() {
   server.listen(PORT, () =>
     openResource('http://localhost:' + PORT + APP_BASE + APP_DEST)
   );
-}
+};
 
-export function notifyLiveReload(e) {
+let notifyLiveReload = (e) => {
   let fileName = e.path;
   tinylr.changed({
     body: {files: [fileName]}
   });
-}
+};
 
-export function serveDocs() {
+let serveDocs = () => {
   let server = express();
 
   server.use(
@@ -103,4 +103,6 @@ export function serveDocs() {
   server.listen(DOCS_PORT, () =>
     openResource('http://localhost:' + DOCS_PORT + APP_BASE)
   );
-}
+};
+
+export {serveSPA, notifyLiveReload, serveDocs};

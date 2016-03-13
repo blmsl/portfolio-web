@@ -1,8 +1,10 @@
 'use strict';
 import {serveSPA} from '../utils';
 
-export = function serverStart() {
-  return function () {
+let serverStart = () => {
+  return () => {
     serveSPA();
   };
 };
+
+export = serverStart;

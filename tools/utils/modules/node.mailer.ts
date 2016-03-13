@@ -18,7 +18,7 @@ const
  *
  * @returns {boolean} true for successful send, or false if an error occurred
  */
-export function send(message:Message, callback:Callback):void {
+let send = (message:Message, callback:Callback):void => {
   let transporter = nodeMailer.createTransport({
     service: 'gmail',
     auth: {
@@ -36,4 +36,6 @@ export function send(message:Message, callback:Callback):void {
     console.log('Message sent: ' + info.response);
     callback(true);
   });
-}
+};
+
+export {send};

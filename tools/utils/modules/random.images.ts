@@ -1,7 +1,7 @@
 'use strict';
 let imageIds = (process.env.INSTAGRAM_IMAGE_IDS || '').split(',');
 
-export function getIds():Array<string> {
+let getIds = ():Array<string> => {
   var reducedImageIds = [],
     imageIdsCopy = imageIds.slice(0);
   if (imageIds.length > 199) {
@@ -11,4 +11,6 @@ export function getIds():Array<string> {
     }
   }
   return reducedImageIds;
-}
+};
+
+export {getIds};

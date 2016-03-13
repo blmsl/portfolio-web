@@ -3,8 +3,8 @@ import {join} from 'path';
 import {APP_SRC, DOCS_DEST} from '../config';
 import {META_TAGS} from '../config.site';
 
-export = function buildDocs(gulp, plugins) {
-  return function () {
+let buildDocs = (gulp, plugins) => {
+  return () => {
     let src = [
       'typings/main.d.ts',
       join(APP_SRC, '**/*.ts'),
@@ -27,4 +27,6 @@ export = function buildDocs(gulp, plugins) {
         version: true
       }));
   };
-}
+};
+
+export = buildDocs;

@@ -2,8 +2,22 @@
 import {join} from 'path';
 import {HEROKU_DIR} from '../config';
 
-export = function bumpTag(gulp, plugins, option) {
-  return function () {
+let bumpTagPackage = (gulp, plugins, type = 'patch') => {
+  return gulp.src(join('./', 'package.json'))
+    .pipe(plugins.bump({type: type}))
+    .pipe(gulp.dest(join('./')))
+    .pipe(plugins.git.commit('Bumped package version'))
+    .pipe(plugins.tagVersion());
+};
+
+let bumpHerokuPackage = (gulp, plugins, type = 'patch') => {
+  return gulp.src(join('./', HEROKU_DIR, 'package.json'))
+    .pipe(plugins.bump({type: type}))
+    .pipe(gulp.dest(join('./', HEROKU_DIR)));
+};
+
+let bumpTag = (gulp, plugins, option) => {
+  return () => {
 
     switch (option) {
       case 'patch':
@@ -25,16 +39,4 @@ export = function bumpTag(gulp, plugins, option) {
   };
 };
 
-let bumpTagPackage = (gulp, plugins, type = 'patch') => {
-  return gulp.src(join('./', 'package.json'))
-    .pipe(plugins.bump({type: type}))
-    .pipe(gulp.dest(join('./')))
-    .pipe(plugins.git.commit('Bumped package version'))
-    .pipe(plugins.tagVersion());
-};
-
-let bumpHerokuPackage = (gulp, plugins, type = 'patch') => {
-  return gulp.src(join('./', HEROKU_DIR, 'package.json'))
-    .pipe(plugins.bump({type: type}))
-    .pipe(gulp.dest(join('./', HEROKU_DIR)));
-};
+export = bumpTag;

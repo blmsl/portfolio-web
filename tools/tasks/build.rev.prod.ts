@@ -2,8 +2,8 @@
 import {join} from 'path';
 import {APP_DEST} from '../config';
 
-export = function revision(gulp, plugins) {
-  return function () {
+let revision = (gulp, plugins) => {
+  return () => {
     return gulp.src([
         join(APP_DEST, 'bundles', '**/*.js'),
         join(APP_DEST, 'css', '**/*.css'),
@@ -19,3 +19,5 @@ export = function revision(gulp, plugins) {
       .pipe(gulp.dest(APP_DEST));
   };
 };
+
+export = revision;

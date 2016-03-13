@@ -79,7 +79,7 @@ gulp.task('build.heroku.docs', done =>
     'clean.docs',
     'clean.heroku.docs',
     'build.docs',
-    'build.heroku.docs.copy',
+    'build.heroku.copy.docs',
     done));
 
 // --------------

@@ -1,13 +1,13 @@
 'use strict';
 import {VERSION_NPM, VERSION_NODE} from '../config';
 
-function reportError(message:string) {
+let reportError = (message:string) => {
   console.error(require('chalk').white.bgRed.bold(message));
   process.exit(1);
-}
+};
 
-module.exports = function check() {
-  return function () {
+let check = () => {
+  return () => {
     let exec = require('child_process').exec;
     let semver = require('semver');
 
@@ -34,3 +34,5 @@ module.exports = function check() {
       });
   };
 };
+
+export = check;

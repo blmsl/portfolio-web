@@ -3,9 +3,9 @@ import {join} from 'path';
 import {APP_SRC, APP_DEST} from '../config';
 import {templateLocals, tsProjectFn} from '../utils';
 
-export = function buildJSDev(gulp, plugins) {
+let buildJSDev = (gulp, plugins) => {
   let tsProject = tsProjectFn(plugins);
-  return function () {
+  return () => {
     let src = [
       'typings/main.d.ts',
       join(APP_SRC, '**/*.ts'),
@@ -25,3 +25,5 @@ export = function buildJSDev(gulp, plugins) {
       .pipe(gulp.dest(APP_DEST));
   };
 };
+
+export = buildJSDev;

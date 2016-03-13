@@ -12,6 +12,33 @@ const ENVIRONMENTS = {
   HEROKU: 'heroku'
 };
 
+// --------------
+// Private.
+let normalizeDependencies = (deps:Array<Dependency>) => {
+  deps
+    .filter(d => !/\*/.test(d.src)) // Skip globs
+    .forEach(d => d.src = require.resolve(d.src));
+  return deps;
+};
+
+let appVersion = ():number|string => {
+  var pkg = JSON.parse(readFileSync('package.json').toString());
+  return pkg.version;
+};
+
+let getEnvironment = () => {
+  let base = argv['_'];
+  let prodKeyword = !!base.filter(
+    o => o.indexOf(ENVIRONMENTS.PRODUCTION) >= 0 || o.indexOf(ENVIRONMENTS.HEROKU) >= 0
+  ).pop();
+  if (base && prodKeyword || argv['env'] === ENVIRONMENTS.PRODUCTION) {
+    return ENVIRONMENTS.PRODUCTION;
+  } else {
+    return ENVIRONMENTS.DEVELOPMENT;
+  }
+};
+
+// --------------
 export const ENV:string = getEnvironment();
 export const PORT:number = argv['port'] || 5555;
 export const LIVE_RELOAD_PORT:number = argv['reload-port'] || 4002;
@@ -192,29 +219,3 @@ const SYSTEM_CONFIG_DEV:Object = {
 };
 
 export const SYSTEM_CONFIG:Object = SYSTEM_CONFIG_DEV;
-
-// --------------
-// Private.
-function normalizeDependencies(deps:Array<Dependency>) {
-  deps
-    .filter(d => !/\*/.test(d.src)) // Skip globs
-    .forEach(d => d.src = require.resolve(d.src));
-  return deps;
-}
-
-function appVersion():number|string {
-  var pkg = JSON.parse(readFileSync('package.json').toString());
-  return pkg.version;
-}
-
-function getEnvironment() {
-  let base = argv['_'];
-  let prodKeyword = !!base.filter(
-    o => o.indexOf(ENVIRONMENTS.PRODUCTION) >= 0 || o.indexOf(ENVIRONMENTS.HEROKU) >= 0
-  ).pop();
-  if (base && prodKeyword || argv['env'] === ENVIRONMENTS.PRODUCTION) {
-    return ENVIRONMENTS.PRODUCTION;
-  } else {
-    return ENVIRONMENTS.DEVELOPMENT;
-  }
-}

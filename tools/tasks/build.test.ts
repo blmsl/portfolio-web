@@ -3,8 +3,8 @@ import {join} from 'path';
 import {APP_SRC, TEST_DEST} from '../config';
 import {tsProjectFn} from '../utils';
 
-export = function buildTest(gulp, plugins) {
-  return function () {
+let buildTest = (gulp, plugins) => {
+  return () => {
     let tsProject = tsProjectFn(plugins);
     let src = [
       'typings/main.d.ts',
@@ -22,3 +22,5 @@ export = function buildTest(gulp, plugins) {
       .pipe(gulp.dest(TEST_DEST));
   };
 };
+
+export = buildTest;
