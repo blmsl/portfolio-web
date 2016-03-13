@@ -1,26 +1,34 @@
 'use strict';
-import {Airport}  from './definitions/airport';
-import * as a     from './airports';
+import {Airport}      from './definitions/airport';
+import * as airports  from './airports';
 
 /**
  * Array of Journeys or the Contact section
  * @type {Airport[][]}
  */
 export const JOURNEYS:Array<Array<Airport>> = [
-  [a.KIM, a.PLZ, a.ELS], [a.KIM, a.JNB], [a.JNB, a.AMS, a.LHR], [a.JNB, a.NBO, a.LHR],
-  [a.JNB, a.CPT], [a.JNB, a.MBD], [a.JNB, a.DUR], [a.JNB, a.BFN], [a.JNB, a.PLZ], [a.JNB, a.ELS],
-  [a.JNB, a.GRJ], [a.JNB, a.MPM], [a.JNB, a.GBE], [a.JNB, a.WDH], [a.JNB, a.BUQ], [a.JNB, a.HRE],
-  [a.JNB, a.LVI], [a.JNB, a.LUN], [a.JNB, a.LAD], [a.JNB, a.DAR], [a.JNB, a.EBB], [a.JNB, a.FIH],
-  [a.JNB, a.LOS], [a.JNB, a.ABJ, a.ACC, a.JNB], [a.JNB, a.DKR], [a.JNB, a.SID, a.JFK, a.JNB],
-  [a.SID, a.MIA, a.CPT], [a.SID, a.ATL, a.IAD, a.LGA, a.ATL, a.JNB], [a.JNB, a.MRU], [a.JNB, a.HKG],
-  [a.JNB, a.PER, a.SYD], [a.JNB, a.EZE], [a.JNB, a.GRU, a.EZE, a.CPT], [a.LHR, a.YVR],
-  [a.JNB, a.FRA, a.AMS], [a.JNB, a.ZRH, a.CPH], [a.ZRH, a.CDG], [a.JNB, a.BOM], [a.JNB, a.BKK, a.KIX],
-  [a.JNB, a.HKGN], [a.BKK, a.HKGN], [a.BKK, a.USM], [a.JNB, a.BKKN, a.USM], [a.JNB, a.SYD],
-  [a.PER, a.DPS, a.DRW, a.ADL, a.SYD], [a.CPT, a.BFN], [a.CPT, a.KIM], [a.CPT, a.LHR], [a.CPT, a.FRA],
-  [a.CPT, a.PLZ, a.DUR], [a.HKGN, a.AKL], [a.AKL, a.SYD, a.BKKN], [a.AKL, a.WLG], [a.AKL, a.CHC],
-  [a.HLZ, a.WLG], [a.HLZ, a.CHC], [a.AKL, a.ZQN], [a.AKL, a.NSN], [a.WLG, a.TRG], [a.WLG, a.ROT],
-  [a.WLG, a.CHC], [a.AKL, a.RAR], [a.AKL, a.NRT, a.LHR], [a.LHR, a.ARN], [a.BGO, a.TRD], [a.BOO, a.SJV],
-  [a.TOS, a.ARN], [a.LHR, a.SIN, a.SYD, a.WLG]
+  [airports.KIM, airports.PLZ, airports.ELS], [airports.KIM, airports.JNB], [airports.JNB, airports.AMS, airports.LHR],
+  [airports.JNB, airports.NBO, airports.LHR], [airports.JNB, airports.CPT], [airports.JNB, airports.MBD],
+  [airports.JNB, airports.DUR], [airports.JNB, airports.BFN], [airports.JNB, airports.PLZ], [airports.JNB, airports.ELS],
+  [airports.JNB, airports.GRJ], [airports.JNB, airports.MPM], [airports.JNB, airports.GBE], [airports.JNB, airports.WDH],
+  [airports.JNB, airports.BUQ], [airports.JNB, airports.HRE], [airports.JNB, airports.LVI], [airports.JNB, airports.LUN],
+  [airports.JNB, airports.LAD], [airports.JNB, airports.DAR], [airports.JNB, airports.EBB], [airports.JNB, airports.FIH],
+  [airports.JNB, airports.LOS], [airports.JNB, airports.ABJ, airports.ACC, airports.JNB], [airports.JNB, airports.DKR],
+  [airports.JNB, airports.SID, airports.JFK, airports.JNB], [airports.SID, airports.MIA, airports.CPT],
+  [airports.SID, airports.ATL, airports.IAD, airports.LGA, airports.ATL, airports.JNB], [airports.JNB, airports.MRU],
+  [airports.JNB, airports.HKG], [airports.JNB, airports.PER, airports.SYD], [airports.JNB, airports.EZE],
+  [airports.JNB, airports.GRU, airports.EZE, airports.CPT], [airports.LHR, airports.YVR],
+  [airports.JNB, airports.FRA, airports.AMS], [airports.JNB, airports.ZRH, airports.CPH], [airports.ZRH, airports.CDG],
+  [airports.JNB, airports.BOM], [airports.JNB, airports.BKK, airports.KIX], [airports.JNB, airports.HKGN],
+  [airports.BKK, airports.HKGN], [airports.BKK, airports.USM], [airports.JNB, airports.BKKN, airports.USM],
+  [airports.JNB, airports.SYD], [airports.PER, airports.DPS, airports.DRW, airports.ADL, airports.SYD],
+  [airports.CPT, airports.BFN], [airports.CPT, airports.KIM], [airports.CPT, airports.LHR], [airports.CPT, airports.FRA],
+  [airports.CPT, airports.PLZ, airports.DUR], [airports.HKGN, airports.AKL], [airports.AKL, airports.SYD, airports.BKKN],
+  [airports.AKL, airports.WLG], [airports.AKL, airports.CHC], [airports.HLZ, airports.WLG], [airports.HLZ, airports.CHC],
+  [airports.AKL, airports.ZQN], [airports.AKL, airports.NSN], [airports.WLG, airports.TRG], [airports.WLG, airports.ROT],
+  [airports.WLG, airports.CHC], [airports.AKL, airports.RAR], [airports.AKL, airports.NRT, airports.LHR],
+  [airports.LHR, airports.ARN], [airports.BGO, airports.TRD], [airports.BOO, airports.SJV], [airports.TOS, airports.ARN],
+  [airports.LHR, airports.SIN, airports.SYD, airports.WLG]
 ];
 
 /**

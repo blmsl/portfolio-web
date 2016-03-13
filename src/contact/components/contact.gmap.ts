@@ -9,10 +9,11 @@ import Polyline                       = google.maps.Polyline;
 import {Component, View, OnInit}      from 'angular2/core';
 import {Http, HTTP_PROVIDERS}         from 'angular2/http';
 import {MAP_OPTIONS}                  from '../../shared/models/contact/map.config';
+import {MT_COOK}                      from '../../shared/models/contact/cities';
 import {CITIES}                       from '../../shared/models/contact/cities';
 import {AIRPORTS}                     from '../../shared/models/contact/airports';
 import {JOURNEYS, UPCOMING_JOURNEYS}  from '../../shared/models/contact/journeys';
-import * as p                         from '../../shared/models/contact/points';
+import * as points                    from '../../shared/models/contact/points';
 import {City}                         from '../../shared/models/contact/definitions/city';
 import {Airport}                      from '../../shared/models/contact/definitions/airport';
 import {elementInViewport}            from '../../shared/common/common';
@@ -33,6 +34,7 @@ export class ContactMapComponent implements OnInit {
   private _tilesLoaded:boolean;
   private _mapMarkersDrawn:boolean;
   private _infoWindow:InfoWindow;
+  private _markerBounce:Marker;
   private _journeyLines:Array<Polyline>;
   private _upcomingJourneyLines:Array<Polyline>;
   private _cityMarkers:Array<Marker>;
@@ -128,8 +130,8 @@ export class ContactMapComponent implements OnInit {
       $('#js_click_address').click((e) => {
         e.preventDefault();
         let cityMarker = this._cityMarkers[this._cityMarkers.length - 1];
-        if (cityMarker && cityMarker.getTitle()) {
-          this.toggleBounce(cityMarker, cityMarker.getTitle());
+        if (cityMarker) {
+          this.toggleBounce(cityMarker, MT_COOK.name, MT_COOK.description);
         }
       });
     })(jQuery);
@@ -155,7 +157,7 @@ export class ContactMapComponent implements OnInit {
                     title: airport.iataCode + ' // ' + airport.name,
                     icon: {
                       url: 'assets/images/markerairport.png',
-                      size: p.AIRPORT_SIZE
+                      size: points.AIRPORT_SIZE
                     }
                   });
                   event.addListener(marker, 'click', () => {
@@ -192,7 +194,7 @@ export class ContactMapComponent implements OnInit {
                 }, (index * 650) + this._additionalMarkerWait);
               });
               _.delay(() => {
-                this.map.panTo(p.WELLINGTON);
+                this.map.panTo(points.WELLINGTON);
                 this.zoomMap(this.map.getZoom() + 1, $(window).width() >= 1000 ? 11 : 10);
               }, ((CITIES.length) * 700) + this._additionalMarkerWait);
             }, this._markerWait);
@@ -206,7 +208,7 @@ export class ContactMapComponent implements OnInit {
     this._cityMarkers.push(new Marker({
       position: new LatLng(city.loc.lat, city.loc.lng),
       map: this.map,
-      title: city.title,
+      title: city.name,
       draggable: false,
       animation: Animation.DROP,
       zIndex: 200,
@@ -214,7 +216,7 @@ export class ContactMapComponent implements OnInit {
     }));
     let cityMarker:Marker = this._cityMarkers[index];
     event.addListener(cityMarker, 'click', () => {
-      this.toggleBounce(cityMarker, city.title);
+      this.toggleBounce(cityMarker, city.name, city.description);
     });
   }
 
@@ -234,27 +236,26 @@ export class ContactMapComponent implements OnInit {
     }
   }
 
-  toggleBounce(marker:Marker, infoTitle:string, infoContent?:string) {
+  toggleBounce(marker:Marker, infoTitle:string, infoContent:string) {
     if (this._timeoutMarkerBounce) {
       clearTimeout(this._timeoutMarkerBounce);
+      if (this._markerBounce) {
+        this._markerBounce.setAnimation(null);
+      }
     }
-    marker.setAnimation(Animation.BOUNCE);
+    this._markerBounce = marker;
+    this._markerBounce.setAnimation(Animation.BOUNCE);
     this._infoWindow.close();
-    let content = infoContent ?
-      `
+    this._infoWindow.setContent(`
         <div class="map-info-window">
           <h3>${infoTitle}</h3>
           <p>${infoContent}</p>
         </div>
-      `: `
-        <div class="map-info-window">
-          <h3>${infoTitle}</h3>
-        </div>
-      `;
-    this._infoWindow.setContent(content);
-    this._infoWindow.open(this.map, marker);
+      `);
+    this._infoWindow.open(this.map, this._markerBounce);
     this._timeoutMarkerBounce = _.delay(() => {
-      marker.setAnimation(null);
+      this._markerBounce.setAnimation(null);
+      this._markerBounce = null;
     }, 2000);
   }
 }

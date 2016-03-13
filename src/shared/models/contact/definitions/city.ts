@@ -7,9 +7,19 @@ import {Icon}   from './icon';
  */
 export interface City {
   /**
+   * Location name
+   */
+  name: string;
+  /**
    * Location of the city
    */
   loc: Point;
-  title: string;
+  /**
+   * Location title
+   */
+  description: string;
+  /**
+   * Location icon
+   */
   icon: Icon;
 }
