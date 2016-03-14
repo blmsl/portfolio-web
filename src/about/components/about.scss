@@ -11,39 +11,21 @@
   @include container-heading();
 }
 
-.btn-normal, .btn-download {
-  color: $white;
-  font-size: 16px;
+.btn-normal {
+  color: $whisper;
+  background: $blue-zodiac;
   font-family: $font-family-base;
+  font-size: 16px;
   font-weight: 700;
   padding: 16px 22px;
   display: inline-block;
   margin-bottom: 15px;
-}
+  transition: all 0.2s ease-in-out;
 
-.btn-normal:hover, .btn-download:hover {
-  color: $white;
-  text-decoration: none;
-}
-
-.btn-normal {
-  background: $blue-zodiac;
-  &:hover {
-    background: $cloud-burst;
-  }
-
-  @include respond-to($query: $screen-x2-min) {
-    font-size: 13px;
-    padding: 16px 14px;
-  }
-}
-
-.btn-download {
-  color: $white;
-  background: $bitter-sweet;
   &:hover {
     color: $white;
-    background: $sunset-orange;
+    background: $cloud-burst;
+    text-decoration: none;
   }
 
   @include respond-to($query: $screen-x2-min) {
