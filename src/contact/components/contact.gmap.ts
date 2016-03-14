@@ -129,9 +129,11 @@ export class ContactMapComponent implements OnInit {
     (($) => {
       $('#js_click_address').click((e) => {
         e.preventDefault();
-        let cityMarker = this._cityMarkers[this._cityMarkers.length - 1];
-        if (cityMarker) {
-          this.toggleBounce(cityMarker, MT_COOK.name, MT_COOK.description);
+        if (this._cityMarkers.length === CITIES.length) {
+          let cityMarker = this._cityMarkers[this._cityMarkers.length - 1];
+          if (cityMarker) {
+            this.toggleBounce(cityMarker, MT_COOK.name, MT_COOK.description);
+          }
         }
       });
     })(jQuery);
