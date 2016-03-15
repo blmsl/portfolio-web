@@ -36,4 +36,5 @@ export const JOURNEYS:Array<Array<Airport>> = [
  * @type {Array}
  */
 export const UPCOMING_JOURNEYS:Array<Array<Airport>> = [
+  [airports.WLG, airports.TIU]
 ];
