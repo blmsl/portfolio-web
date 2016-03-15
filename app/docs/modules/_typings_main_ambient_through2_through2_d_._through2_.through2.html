@@ -76,23 +76,71 @@
 			<section class="tsd-panel">
 				<h3 class="tsd-before-signature">Callable</h3>
 				<ul class="tsd-signatures tsd-kind-module tsd-parent-kind-module tsd-is-external">
-					<li class="tsd-signature tsd-kind-icon">through2<span class="tsd-signature-symbol">(</span>transform<span class="tsd-signature-symbol">?: </span><a href="_typings_main_ambient_through2_through2_d_._through2_.html#transformfunction" class="tsd-signature-type">TransformFunction</a>, flush<span class="tsd-signature-symbol">?: </span><a href="_typings_main_ambient_through2_through2_d_._through2_.html#flashcallback" class="tsd-signature-type">FlashCallback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_main_ambient_node_node_d_.nodejs.readwritestream.html" class="tsd-signature-type">ReadWriteStream</a></li>
-					<li class="tsd-signature tsd-kind-icon">through2<span class="tsd-signature-symbol">(</span>opts<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_typings_main_ambient_node_node_d_._stream_.duplexoptions.html" class="tsd-signature-type">DuplexOptions</a>, transform<span class="tsd-signature-symbol">?: </span><a href="_typings_main_ambient_through2_through2_d_._through2_.html#transformfunction" class="tsd-signature-type">TransformFunction</a>, flush<span class="tsd-signature-symbol">?: </span><a href="_typings_main_ambient_through2_through2_d_._through2_.html#flashcallback" class="tsd-signature-type">FlashCallback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_main_ambient_node_node_d_.nodejs.readwritestream.html" class="tsd-signature-type">ReadWriteStream</a></li>
+					<li class="tsd-signature tsd-kind-icon">through2<span class="tsd-signature-symbol">(</span>transform<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">function</span>, flush<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_main_ambient_node_node_d_.nodejs.readwritestream.html" class="tsd-signature-type">ReadWriteStream</a></li>
+					<li class="tsd-signature tsd-kind-icon">through2<span class="tsd-signature-symbol">(</span>opts<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_typings_main_ambient_node_node_d_._stream_.duplexoptions.html" class="tsd-signature-type">DuplexOptions</a>, transform<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">function</span>, flush<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_main_ambient_node_node_d_.nodejs.readwritestream.html" class="tsd-signature-type">ReadWriteStream</a></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in typings/main/ambient/through2/through2.d.ts:17</li>
+								<li>Defined in typings/main/ambient/through2/through2.d.ts:13</li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> transform: <a href="_typings_main_ambient_through2_through2_d_._through2_.html#transformfunction" class="tsd-signature-type">TransformFunction</a></h5>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> transform: <span class="tsd-signature-type">function</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter-siganture">
+										<ul class="tsd-signatures tsd-kind-type-literal">
+											<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>chunk<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, enc<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+										</ul>
+										<ul class="tsd-descriptions">
+											<li class="tsd-description">
+												<h4 class="tsd-parameters-title">Parameters</h4>
+												<ul class="tsd-parameters">
+													<li>
+														<h5>chunk: <span class="tsd-signature-type">any</span></h5>
+													</li>
+													<li>
+														<h5>enc: <span class="tsd-signature-type">string</span></h5>
+													</li>
+													<li>
+														<h5>callback: <span class="tsd-signature-type">function</span></h5>
+														<ul class="tsd-parameters">
+															<li class="tsd-parameter-siganture">
+																<ul class="tsd-signatures tsd-kind-type-literal">
+																	<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+																</ul>
+																<ul class="tsd-descriptions">
+																	<li class="tsd-description">
+																		<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+																	</li>
+																</ul>
+															</li>
+														</ul>
+													</li>
+												</ul>
+												<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+											</li>
+										</ul>
+									</li>
+								</ul>
 							</li>
 							<li>
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> flush: <a href="_typings_main_ambient_through2_through2_d_._through2_.html#flashcallback" class="tsd-signature-type">FlashCallback</a></h5>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> flush: <span class="tsd-signature-type">function</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter-siganture">
+										<ul class="tsd-signatures tsd-kind-type-literal">
+											<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+										</ul>
+										<ul class="tsd-descriptions">
+											<li class="tsd-description">
+												<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+											</li>
+										</ul>
+									</li>
+								</ul>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <a href="../interfaces/_typings_main_ambient_node_node_d_.nodejs.readwritestream.html" class="tsd-signature-type">ReadWriteStream</a></h4>
@@ -100,7 +148,7 @@
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in typings/main/ambient/through2/through2.d.ts:19</li>
+								<li>Defined in typings/main/ambient/through2/through2.d.ts:15</li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -109,10 +157,58 @@
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> opts: <a href="../interfaces/_typings_main_ambient_node_node_d_._stream_.duplexoptions.html" class="tsd-signature-type">DuplexOptions</a></h5>
 							</li>
 							<li>
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> transform: <a href="_typings_main_ambient_through2_through2_d_._through2_.html#transformfunction" class="tsd-signature-type">TransformFunction</a></h5>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> transform: <span class="tsd-signature-type">function</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter-siganture">
+										<ul class="tsd-signatures tsd-kind-type-literal">
+											<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>chunk<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, enc<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+										</ul>
+										<ul class="tsd-descriptions">
+											<li class="tsd-description">
+												<h4 class="tsd-parameters-title">Parameters</h4>
+												<ul class="tsd-parameters">
+													<li>
+														<h5>chunk: <span class="tsd-signature-type">any</span></h5>
+													</li>
+													<li>
+														<h5>enc: <span class="tsd-signature-type">string</span></h5>
+													</li>
+													<li>
+														<h5>callback: <span class="tsd-signature-type">function</span></h5>
+														<ul class="tsd-parameters">
+															<li class="tsd-parameter-siganture">
+																<ul class="tsd-signatures tsd-kind-type-literal">
+																	<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+																</ul>
+																<ul class="tsd-descriptions">
+																	<li class="tsd-description">
+																		<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+																	</li>
+																</ul>
+															</li>
+														</ul>
+													</li>
+												</ul>
+												<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+											</li>
+										</ul>
+									</li>
+								</ul>
 							</li>
 							<li>
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> flush: <a href="_typings_main_ambient_through2_through2_d_._through2_.html#flashcallback" class="tsd-signature-type">FlashCallback</a></h5>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> flush: <span class="tsd-signature-type">function</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter-siganture">
+										<ul class="tsd-signatures tsd-kind-type-literal">
+											<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+										</ul>
+										<ul class="tsd-descriptions">
+											<li class="tsd-description">
+												<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+											</li>
+										</ul>
+									</li>
+								</ul>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <a href="../interfaces/_typings_main_ambient_node_node_d_.nodejs.readwritestream.html" class="tsd-signature-type">ReadWriteStream</a></h4>
@@ -139,22 +235,70 @@
 					<a name="obj" class="tsd-anchor"></a>
 					<h3>obj</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">obj<span class="tsd-signature-symbol">(</span>transform<span class="tsd-signature-symbol">?: </span><a href="_typings_main_ambient_through2_through2_d_._through2_.html#transformfunction" class="tsd-signature-type">TransformFunction</a>, flush<span class="tsd-signature-symbol">?: </span><a href="_typings_main_ambient_through2_through2_d_._through2_.html#flashcallback" class="tsd-signature-type">FlashCallback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_main_ambient_node_node_d_.nodejs.readwritestream.html" class="tsd-signature-type">ReadWriteStream</a></li>
+						<li class="tsd-signature tsd-kind-icon">obj<span class="tsd-signature-symbol">(</span>transform<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">function</span>, flush<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_main_ambient_node_node_d_.nodejs.readwritestream.html" class="tsd-signature-type">ReadWriteStream</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/main/ambient/through2/through2.d.ts:23</li>
+									<li>Defined in typings/main/ambient/through2/through2.d.ts:19</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> transform: <a href="_typings_main_ambient_through2_through2_d_._through2_.html#transformfunction" class="tsd-signature-type">TransformFunction</a></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> transform: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>chunk<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, enc<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>chunk: <span class="tsd-signature-type">any</span></h5>
+														</li>
+														<li>
+															<h5>enc: <span class="tsd-signature-type">string</span></h5>
+														</li>
+														<li>
+															<h5>callback: <span class="tsd-signature-type">function</span></h5>
+															<ul class="tsd-parameters">
+																<li class="tsd-parameter-siganture">
+																	<ul class="tsd-signatures tsd-kind-type-literal">
+																		<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+																	</ul>
+																	<ul class="tsd-descriptions">
+																		<li class="tsd-description">
+																			<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+																		</li>
+																	</ul>
+																</li>
+															</ul>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> flush: <a href="_typings_main_ambient_through2_through2_d_._through2_.html#flashcallback" class="tsd-signature-type">FlashCallback</a></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> flush: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_typings_main_ambient_node_node_d_.nodejs.readwritestream.html" class="tsd-signature-type">ReadWriteStream</a></h4>
@@ -171,7 +315,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/main/ambient/through2/through2.d.ts:25</li>
+									<li>Defined in typings/main/ambient/through2/through2.d.ts:21</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>

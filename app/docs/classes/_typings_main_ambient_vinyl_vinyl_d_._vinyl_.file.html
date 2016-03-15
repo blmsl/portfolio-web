@@ -107,16 +107,11 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#base" class="tsd-kind-icon">base</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#basename" class="tsd-kind-icon">basename</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#contents" class="tsd-kind-icon">contents</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#cwd" class="tsd-kind-icon">cwd</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#dirname" class="tsd-kind-icon">dirname</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#extname" class="tsd-kind-icon">extname</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#history" class="tsd-kind-icon">history</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#path" class="tsd-kind-icon">path</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#relative" class="tsd-kind-icon">relative</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#stat" class="tsd-kind-icon">stat</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#stem" class="tsd-kind-icon">stem</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-external">
@@ -125,10 +120,10 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#clone" class="tsd-kind-icon">clone</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#inspect" class="tsd-kind-icon">inspect</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#isbuffer" class="tsd-kind-icon">is<wbr>Buffer</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#isdirectory" class="tsd-kind-icon">is<wbr>Directory</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#isnull" class="tsd-kind-icon">is<wbr>Null</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#isstream" class="tsd-kind-icon">is<wbr>Stream</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external"><a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#pipe" class="tsd-kind-icon">pipe</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#isvinyl" class="tsd-kind-icon">is<wbr>Vinyl</a></li>
 							</ul>
 						</section>
 					</div>
@@ -219,19 +214,14 @@
 					<div class="tsd-signature tsd-kind-icon">base<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in typings/main/ambient/vinyl/vinyl.d.ts:61</li>
+							<li>Defined in typings/main/ambient/vinyl/vinyl.d.ts:52</li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
-					<a name="basename" class="tsd-anchor"></a>
-					<h3>basename</h3>
-					<div class="tsd-signature tsd-kind-icon">basename<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in typings/main/ambient/vinyl/vinyl.d.ts:60</li>
-						</ul>
-					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Used for relative pathing. Typically where a glob starts.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
 					<a name="contents" class="tsd-anchor"></a>
@@ -239,7 +229,7 @@
 					<div class="tsd-signature tsd-kind-icon">contents<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_typings_main_ambient_node_node_d_.buffer.html" class="tsd-signature-type">Buffer</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_typings_main_ambient_node_node_d_.nodejs.readablestream.html" class="tsd-signature-type">ReadableStream</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in typings/main/ambient/vinyl/vinyl.d.ts:87</li>
+							<li>Defined in typings/main/ambient/vinyl/vinyl.d.ts:61</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -254,7 +244,7 @@
 					<div class="tsd-signature tsd-kind-icon">cwd<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in typings/main/ambient/vinyl/vinyl.d.ts:54</li>
+							<li>Defined in typings/main/ambient/vinyl/vinyl.d.ts:48</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -264,57 +254,12 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
-					<a name="dirname" class="tsd-anchor"></a>
-					<h3>dirname</h3>
-					<div class="tsd-signature tsd-kind-icon">dirname<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in typings/main/ambient/vinyl/vinyl.d.ts:59</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Used for relative pathing. Typically where a glob starts.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
-					<a name="extname" class="tsd-anchor"></a>
-					<h3>extname</h3>
-					<div class="tsd-signature tsd-kind-icon">extname<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in typings/main/ambient/vinyl/vinyl.d.ts:77</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Gets and sets path.extname for the file path</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
-					<a name="history" class="tsd-anchor"></a>
-					<h3>history</h3>
-					<div class="tsd-signature tsd-kind-icon">history<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in typings/main/ambient/vinyl/vinyl.d.ts:82</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Array of path values the file object has had</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
 					<a name="path" class="tsd-anchor"></a>
 					<h3>path</h3>
 					<div class="tsd-signature tsd-kind-icon">path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in typings/main/ambient/vinyl/vinyl.d.ts:66</li>
+							<li>Defined in typings/main/ambient/vinyl/vinyl.d.ts:56</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -329,7 +274,7 @@
 					<div class="tsd-signature tsd-kind-icon">relative<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in typings/main/ambient/vinyl/vinyl.d.ts:99</li>
+							<li>Defined in typings/main/ambient/vinyl/vinyl.d.ts:72</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -351,24 +296,9 @@
 					<div class="tsd-signature tsd-kind-icon">stat<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_typings_main_ambient_node_node_d_._fs_.stats.html" class="tsd-signature-type">Stats</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in typings/main/ambient/vinyl/vinyl.d.ts:67</li>
+							<li>Defined in typings/main/ambient/vinyl/vinyl.d.ts:57</li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
-					<a name="stem" class="tsd-anchor"></a>
-					<h3>stem</h3>
-					<div class="tsd-signature tsd-kind-icon">stem<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in typings/main/ambient/vinyl/vinyl.d.ts:72</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Gets and sets stem (filename without suffix) for the file path.</p>
-						</div>
-					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-external">
@@ -383,7 +313,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/main/ambient/vinyl/vinyl.d.ts:119</li>
+									<li>Defined in typings/main/ambient/vinyl/vinyl.d.ts:85</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -398,9 +328,6 @@
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter">
 											<h5><span class="tsd-flag ts-flagOptional">Optional</span> contents<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span></h5>
-										</li>
-										<li class="tsd-parameter">
-											<h5><span class="tsd-flag ts-flagOptional">Optional</span> deep<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span></h5>
 										</li>
 									</ul>
 								</li>
@@ -419,7 +346,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/main/ambient/vinyl/vinyl.d.ts:138</li>
+									<li>Defined in typings/main/ambient/vinyl/vinyl.d.ts:105</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -441,14 +368,26 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/main/ambient/vinyl/vinyl.d.ts:104</li>
+									<li>Defined in typings/main/ambient/vinyl/vinyl.d.ts:74</li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Returns true if file.contents is a Buffer.</p>
-								</div>
-							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="isdirectory" class="tsd-anchor"></a>
+					<h3>is<wbr>Directory</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Directory<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in typings/main/ambient/vinyl/vinyl.d.ts:80</li>
+								</ul>
+							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
@@ -463,14 +402,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/main/ambient/vinyl/vinyl.d.ts:114</li>
+									<li>Defined in typings/main/ambient/vinyl/vinyl.d.ts:78</li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Returns true if file.contents is null.</p>
-								</div>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
@@ -485,14 +419,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/main/ambient/vinyl/vinyl.d.ts:109</li>
+									<li>Defined in typings/main/ambient/vinyl/vinyl.d.ts:76</li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Returns true if file.contents is a Stream.</p>
-								</div>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
@@ -507,7 +436,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/main/ambient/vinyl/vinyl.d.ts:126</li>
+									<li>Defined in typings/main/ambient/vinyl/vinyl.d.ts:92</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -546,34 +475,6 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
-					<a name="isvinyl" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> is<wbr>Vinyl</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>Vinyl<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in typings/main/ambient/vinyl/vinyl.d.ts:143</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Checks if a given object is a vinyl file.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>obj: <span class="tsd-signature-type">any</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -606,22 +507,10 @@
 								<a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#base" class="tsd-kind-icon">base</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
-								<a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#basename" class="tsd-kind-icon">basename</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
 								<a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#contents" class="tsd-kind-icon">contents</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
 								<a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#cwd" class="tsd-kind-icon">cwd</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
-								<a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#dirname" class="tsd-kind-icon">dirname</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
-								<a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#extname" class="tsd-kind-icon">extname</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
-								<a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#history" class="tsd-kind-icon">history</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
 								<a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#path" class="tsd-kind-icon">path</a>
@@ -631,9 +520,6 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
 								<a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#stat" class="tsd-kind-icon">stat</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
-								<a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#stem" class="tsd-kind-icon">stem</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
 								<a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#clone" class="tsd-kind-icon">clone</a>
@@ -645,6 +531,9 @@
 								<a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#isbuffer" class="tsd-kind-icon">is<wbr>Buffer</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#isdirectory" class="tsd-kind-icon">is<wbr>Directory</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
 								<a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#isnull" class="tsd-kind-icon">is<wbr>Null</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
@@ -652,9 +541,6 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external">
 								<a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#pipe" class="tsd-kind-icon">pipe</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
-								<a href="_typings_main_ambient_vinyl_vinyl_d_._vinyl_.file.html#isvinyl" class="tsd-kind-icon">is<wbr>Vinyl</a>
 							</li>
 						</ul>
 					</li>
