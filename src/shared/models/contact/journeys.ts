@@ -3,7 +3,7 @@ import {Airport}      from './definitions/airport';
 import * as airports  from './airports';
 
 /**
- * Array of Journeys or the Contact section
+ * Array of Journeys for the Contact section
  * @type {Airport[][]}
  */
 export const JOURNEYS:Array<Array<Airport>> = [
@@ -33,7 +33,7 @@ export const JOURNEYS:Array<Array<Airport>> = [
 
 /**
  * Array of Upcoming Journeys for the Contact section
- * @type {Array}
+ * @type {Airport[][]}
  */
 export const UPCOMING_JOURNEYS:Array<Array<Airport>> = [
   [airports.WLG, airports.TIU]
