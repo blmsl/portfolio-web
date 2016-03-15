@@ -158,7 +158,7 @@ const FIH:Airport = {
   name: 'N\'djili International Airport',
   city: 'Kinshasa',
   country: 'Congo (DRC)'
-;
+};
 const LOS:Airport = {
   loc: {lat: 6.581759, lng: 3.321484},
   iataCode: 'LOS',
