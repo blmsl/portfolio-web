@@ -502,6 +502,13 @@ export const TOS:Airport = {
   city: 'Tromsø',
   country: NORWAY
 };
+export const TIU:Airport = {
+  loc: {lat: -44.303448, lng: 171.2241313},
+  iataCode: 'TIU',
+  name: 'Richard Pearse Airport',
+  city: 'Timaru',
+  country: NEW_ZEALAND
+};
 
 /**
  * Array of all airports for the Contact section
@@ -515,5 +522,5 @@ export const AIRPORTS:Array<Airport> = [
   SYD, EZE, GRU, YVR, FRA, ZRH, CDG, CPH, BOM,
   BKK, KIX, BKKN, USM, HKGN, DPS, DRW, ADL, HLZ,
   CHC, ZQN, AKL, WLG, NSN, TRG, ROT, RAR, NRT,
-  SIN, ARN, BGO, TRD, BOO, SJV, TOS
+  SIN, ARN, BGO, TRD, BOO, SJV, TOS, TIU
 ];
