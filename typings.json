@@ -2,7 +2,6 @@
   "name": "ouq77-portfolio",
   "ambientDependencies": {
     "Q": "github:DefinitelyTyped/DefinitelyTyped/q/Q.d.ts#5c3e47967affa3c4128a3875d1664ba206ae1b0f",
-    "angular-protractor": "github:DefinitelyTyped/DefinitelyTyped/angular-protractor/angular-protractor.d.ts#17fa1e5f269189f7f8e0f53f8c443e6c2eac562c",
     "async": "github:DefinitelyTyped/DefinitelyTyped/async/async.d.ts#5c3e47967affa3c4128a3875d1664ba206ae1b0f",
     "body-parser": "github:DefinitelyTyped/DefinitelyTyped/body-parser/body-parser.d.ts#fe563dff3428bac1260d1794e2c2ecf8f097535a",
     "browser-sync": "github:DefinitelyTyped/DefinitelyTyped/browser-sync/browser-sync.d.ts#d9b5b35ba3a79ac778c5890531393442439df5dd",
@@ -44,7 +43,7 @@
     "yargs": "github:DefinitelyTyped/DefinitelyTyped/yargs/yargs.d.ts#4de74cb527395c13ba20b438c3a7a419ad931f1c",
     "zone.js": "github:DefinitelyTyped/DefinitelyTyped/zone.js/zone.js.d.ts#9027703c0bd831319dcdf7f3169f7a468537f448"
   },
-  "dependencies": {
+  "devDependencies": {
     "xhr2": "github:gdi2290/typed-xhr2#69f2b8d40d0cd407c1b2a2f2f41fecc6852cabbb"
   }
 }
