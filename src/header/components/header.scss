@@ -280,48 +280,51 @@ header {
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   text-transform: uppercase;
+
+  a {
+    padding: 22px 25px;
+    line-height: 18px;
+    text-align: center;
+    @include transition(all 0.2s ease);
+
+    &:hover {
+      color: $white;
+    }
+
+    @include respond-to($query: $screen-m1-min) {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+
+    @include respond-to($query: $screen-m2-min) {
+      padding-left: 17px;
+    }
+
+    @include respond-to($query: $screen-x2-min) {
+      line-height: 17px;
+      padding-top: 20px;
+      padding-bottom: 11px;
+    }
+  }
 }
 
-.navbar.navbar-inverse.navbar-static-top a {
-  color: $link-water;
-  padding: 22px 25px;
-  line-height: 18px;
-  text-align: center;
-
-  @include respond-to($query: $screen-m1-min) {
-    padding-left: 18px;
-    padding-right: 18px;
-  }
-
-  @include respond-to($query: $screen-m2-min) {
-    padding-left: 17px;
-  }
-
-  @include respond-to($query: $screen-x2-min) {
-    line-height: 17px;
-    padding-top: 20px;
-    padding-bottom: 11px;
-  }
-}
-
-.navbar.navbar-inverse.navbar-static-top a:hover {
-  color: $white;
-}
-
-.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus {
+.navbar-inverse .navbar-nav > .active > a {
   background: $black-forest;
   color: $link-water;
+
+  &:focus {
+    color: $link-water;
+  }
+
+  &:hover {
+    color: $white;
+  }
 }
 
 @include respond-to {
   ul.navbar-nav li a {
     display: block;
   }
-}
-
-.navbar-inverse .navbar-nav > .active > a:hover {
-  background: $black-forest;
-  color: $white;
 }
 
 .hide-class {

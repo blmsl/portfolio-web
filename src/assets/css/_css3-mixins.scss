@@ -25,9 +25,7 @@
 
 @mixin css3-prefix($property, $value) {
   -webkit-#{$property}: #{$value};
-   -khtml-#{$property}: #{$value};
      -moz-#{$property}: #{$value};
-      -ms-#{$property}: #{$value};
        -o-#{$property}: #{$value};
           #{$property}: #{$value};
 }
@@ -42,10 +40,8 @@
     background-image: -webkit-gradient(linear, left top, left bottom, from($startColor), to($endColor));
     background-image: -webkit-linear-gradient(top, $startColor, $endColor);
     background-image:    -moz-linear-gradient(top, $startColor, $endColor);
-    background-image:     -ms-linear-gradient(top, $startColor, $endColor);
     background-image:      -o-linear-gradient(top, $startColor, $endColor);
     background-image:         linear-gradient(top, $startColor, $endColor);
-    filter:            progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$startColor}', endColorStr='#{$endColor}');
 }
 
 
@@ -58,10 +54,8 @@
     background-image: -webkit-gradient(linear, left top, right top, from($startColor), to($endColor));
     background-image: -webkit-linear-gradient(left, $startColor, $endColor);
     background-image:    -moz-linear-gradient(left, $startColor, $endColor);
-    background-image:     -ms-linear-gradient(left, $startColor, $endColor);
     background-image:      -o-linear-gradient(left, $startColor, $endColor);
     background-image:         linear-gradient(left, $startColor, $endColor);
-    filter:            progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$startColor}', endColorStr='#{$endColor}', gradientType='1');
 }
 
 
@@ -72,11 +66,9 @@
 // @param {Percentage} $endPos [100%] - End position
 
 @mixin background-radial($startColor: #FFFFFF, $startPos: 0%, $endColor: #000000, $endPos:100%) {
-    background: -moz-radial-gradient(center, ellipse cover, $startColor $startPos, $endColor $endPos);
     background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop($startPos,$startColor), color-stop($endPos,$endColor));
     background: -webkit-radial-gradient(center, ellipse cover, $startColor $startPos,$endColor $endPos);
     background: -o-radial-gradient(center, ellipse cover, $startColor $startPos,$endColor $endPos);
-    background: -ms-radial-gradient(center, ellipse cover, $startColor $startPos,$endColor $endPos);
     background: radial-gradient(ellipse at center, $startColor $startPos,$endColor $endPos);
 }
 
@@ -121,20 +113,10 @@
 // @param {Size} $bottomRightRadius [5px] - Bottom Right
 
 @mixin border-radius-separate($topLeftRadius: 5px, $topRightRadius: 5px, $bottomLeftRadius: 5px, $bottomRightRadius: 5px) {
-  -webkit-border-top-left-radius:     $topLeftRadius;
-  -webkit-border-top-right-radius:    $topRightRadius;
-  -webkit-border-bottom-right-radius: $bottomRightRadius;
-  -webkit-border-bottom-left-radius:  $bottomLeftRadius;
-
-  -moz-border-radius-topleft:     $topLeftRadius;
-  -moz-border-radius-topright:    $topRightRadius;
-  -moz-border-radius-bottomright: $bottomRightRadius;
-  -moz-border-radius-bottomleft:  $bottomLeftRadius;
-
-  border-top-left-radius:     $topLeftRadius;
-  border-top-right-radius:    $topRightRadius;
-  border-bottom-right-radius: $bottomRightRadius;
-  border-bottom-left-radius:  $bottomLeftRadius;
+  @include css3-prefix('border-top-left-radius', $topLeftRadius);
+  @include css3-prefix('border-top-right-radius', $topRightRadius);
+  @include css3-prefix('border-bottom-right-radius', $bottomRightRadius);
+  @include css3-prefix('border-bottom-left-radius', $bottomLeftRadius);
 }
 
 
@@ -301,9 +283,7 @@
 
 @mixin rotate($deg: 0, $m11: 0, $m12: 0, $m21: 0, $m22: 0) {
   @include css3-prefix('transform', rotate($deg + deg));
-  filter: progid:DXImageTransform.Microsoft.Matrix(
-       M11=#{$m11}, M12=#{$m12}, M21=#{$m21}, M22=#{$m22}, sizingMethod='auto expand');
-    zoom: 1;
+  zoom: 1;
 }
 
 
