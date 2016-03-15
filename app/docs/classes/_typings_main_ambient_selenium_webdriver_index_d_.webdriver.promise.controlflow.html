@@ -1,0 +1,1080 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>ControlFlow | Louw Swart // Portfolio</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script src="../assets/js/modernizr.js"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="../../portfolio-web">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../../portfolio-web/index.html" class="title">Louw Swart // Portfolio</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../../portfolio-web/globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.html">&quot;typings/main/ambient/selenium-webdriver/index.d&quot;</a>
+				</li>
+				<li>
+					<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.html">webdriver</a>
+				</li>
+				<li>
+					<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.html">promise</a>
+				</li>
+				<li>
+					<a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html">ControlFlow</a>
+				</li>
+			</ul>
+			<h1>Class ControlFlow</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Handles the execution of scheduled tasks, each of which may be an
+							asynchronous operation. The control flow will ensure tasks are executed in
+							the ordered scheduled, starting each task only once those before it have
+						completed.</p>
+					</div>
+					<p>Each task scheduled within this flow may return a
+						<a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.promise.html">webdriver.promise.Promise</a> to indicate it is an asynchronous
+						operation. The ControlFlow will wait for such promises to be resolved before
+					marking the task as completed.</p>
+					<p>Tasks and each callback registered on a <a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.promise.html">webdriver.promise.Promise</a>
+						will be run in their own ControlFlow frame.  Any tasks scheduled within a
+						frame will take priority over previously scheduled tasks. Furthermore, if any
+						of the tasks in the frame fail, the remainder of the tasks in that frame will
+						be discarded and the failure will be propagated to the user through the
+					callback/task&#39;s promised result.</p>
+					<p>Each time a ControlFlow empties its task queue, it will fire an
+						{@link webdriver.promise.ControlFlow.EventType.IDLE IDLE} event. Conversely,
+						whenever the flow terminates due to an unhandled error, it will remove all
+						remaining tasks in its queue and fire an
+						{@link webdriver.promise.ControlFlow.EventType.UNCAUGHT_EXCEPTION
+						UNCAUGHT_EXCEPTION} event. If there are no listeners registered with the
+					flow, the error will be rethrown to the global error handler.</p>
+					<dl class="tsd-comment-tags">
+						<dt>extends</dt>
+						<dd><p>{EventEmitter}</p>
+						</dd>
+						<dt>final</dt>
+						<dd></dd>
+					</dl>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.eventemitter.html" class="tsd-signature-type">EventEmitter</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">ControlFlow</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-external"><a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html#eventtype" class="tsd-kind-icon">Event<wbr>Type</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html#addlistener" class="tsd-kind-icon">add<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html#emit" class="tsd-kind-icon">emit</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external"><a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html#execute" class="tsd-kind-icon">execute</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html#getschedule" class="tsd-kind-icon">get<wbr>Schedule</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html#listeners" class="tsd-kind-icon">listeners</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html#on" class="tsd-kind-icon">on</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html#once" class="tsd-kind-icon">once</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html#removealllisteners" class="tsd-kind-icon">remove<wbr>All<wbr>Listeners</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html#removelistener" class="tsd-kind-icon">remove<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html#reset-1" class="tsd-kind-icon">reset</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html#timeout" class="tsd-kind-icon">timeout</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html#tostring" class="tsd-kind-icon">to<wbr>String</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external"><a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html#wait" class="tsd-kind-icon">wait</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-external">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Control<wbr>Flow<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html" class="tsd-signature-type">ControlFlow</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overwrites <a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.eventemitter.html">EventEmitter</a>.<a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.eventemitter.html#constructor">constructor</a></p>
+								<ul>
+									<li>Defined in typings/main/ambient/selenium-webdriver/index.d.ts:1675</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>constructor</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html" class="tsd-signature-type">ControlFlow</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="eventtype" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> Event<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">Event<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in typings/main/ambient/selenium-webdriver/index.d.ts:1685</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Events that may be emitted by an <a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html">webdriver.promise.ControlFlow</a>.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>enum</dt>
+							<dd><p>{string}</p>
+							</dd>
+						</dl>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>IDLE<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>Emitted when all tasks have been successfully executed.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>RESET<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>Emitted when a ControlFlow has been reset.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>SCHEDULE_<wbr>TASK<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>Emitted whenever a new task has been scheduled.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>UNCAUGHT_<wbr>EXCEPTION<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>Emitted whenever a control flow aborts due to an unhandled promise
+											rejection. This event will be emitted along with the offending rejection
+											reason. Upon emitting this event, the control flow will empty its task
+										queue and revert to its initial state.</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+					<a name="addlistener" class="tsd-anchor"></a>
+					<h3>add<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, listenerFn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span>, opt_scope<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.eventemitter.html" class="tsd-signature-type">EventEmitter</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.eventemitter.html">EventEmitter</a>.<a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.eventemitter.html#addlistener">addListener</a></p>
+								<ul>
+									<li>Defined in typings/main/ambient/selenium-webdriver/index.d.ts:3301</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Registers a listener.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The type of event to listen for.</p>
+									</div>
+								</li>
+								<li>
+									<h5>listenerFn: <span class="tsd-signature-type">Function</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The function to invoke when the event is fired.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_scope: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The object in whose scope to invoke the listener.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.eventemitter.html" class="tsd-signature-type">EventEmitter</a></h4>
+							<p>A self reference.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+					<a name="emit" class="tsd-anchor"></a>
+					<h3>emit</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">emit<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, <span class="tsd-signature-symbol">...</span>var_args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.eventemitter.html">EventEmitter</a>.<a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.eventemitter.html#emit">emit</a></p>
+								<ul>
+									<li>Defined in typings/main/ambient/selenium-webdriver/index.d.ts:3283</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Fires an event and calls all listeners.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The type of event to emit.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>var_args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Any arguments to pass to each listener.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external">
+					<a name="execute" class="tsd-anchor"></a>
+					<h3>execute</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">execute&lt;T&gt;<span class="tsd-signature-symbol">(</span>fn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, opt_description<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in typings/main/ambient/selenium-webdriver/index.d.ts:1743</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Schedules a task for execution. If there is nothing currently in the
+										queue, the task will be executed in the next turn of the event loop. If
+										the task function is a generator, the task will be executed using
+									<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.html#consume">webdriver.promise.consume</a>.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>template</dt>
+									<dd><p>T</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>fn: <span class="tsd-signature-type">function</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The function to
+											call to start the task. If the function returns a
+											<a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.promise.html">webdriver.promise.Promise</a>, this instance will wait for it to be
+										resolved before starting the next task.</p>
+									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span>
+														<span class="tsd-signature-symbol"> | </span>
+														<a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>
+													</h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_description: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A description of the task.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>A promise that will be resolved
+							with the result of the action.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="getschedule" class="tsd-anchor"></a>
+					<h3>get<wbr>Schedule</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Schedule<span class="tsd-signature-symbol">(</span>opt_includeStackTraces<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in typings/main/ambient/selenium-webdriver/index.d.ts:1726</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Generates an annotated string describing the internal state of this control
+										flow, including the currently executing as well as pending tasks. If
+										{@code opt_includeStackTraces === true}, the string will include the
+									stack trace from when each task was scheduled.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_includeStackTraces: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Whether to include the stack traces
+										from when each task was scheduled. Defaults to false.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<p>String representation of this flow&#39;s internal state.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+					<a name="listeners" class="tsd-anchor"></a>
+					<h3>listeners</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">listeners<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.eventemitter.html">EventEmitter</a>.<a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.eventemitter.html#listeners">listeners</a></p>
+								<ul>
+									<li>Defined in typings/main/ambient/selenium-webdriver/index.d.ts:3292</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a mutable list of listeners for a specific type of event.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The type of event to retrieve the listeners for.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>{!Array.&lt;{fn: !Function, oneshot: boolean,
+								scope: (Object|undefined)}&gt;} The registered listeners for
+							the given event type.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+					<a name="on" class="tsd-anchor"></a>
+					<h3>on</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, listenerFn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span>, opt_scope<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.eventemitter.html" class="tsd-signature-type">EventEmitter</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.eventemitter.html">EventEmitter</a>.<a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.eventemitter.html#on">on</a></p>
+								<ul>
+									<li>Defined in typings/main/ambient/selenium-webdriver/index.d.ts:3320</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>An alias for {@code #addListener()}.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The type of event to listen for.</p>
+									</div>
+								</li>
+								<li>
+									<h5>listenerFn: <span class="tsd-signature-type">Function</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The function to invoke when the event is fired.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_scope: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The object in whose scope to invoke the listener.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.eventemitter.html" class="tsd-signature-type">EventEmitter</a></h4>
+							<p>A self reference.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+					<a name="once" class="tsd-anchor"></a>
+					<h3>once</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">once<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, listenerFn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, opt_scope<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.eventemitter.html" class="tsd-signature-type">EventEmitter</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.eventemitter.html">EventEmitter</a>.<a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.eventemitter.html#once">once</a></p>
+								<ul>
+									<li>Defined in typings/main/ambient/selenium-webdriver/index.d.ts:3311</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Registers a one-time listener which will be called only the first time an
+									event is emitted, after which it will be removed.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The type of event to listen for.</p>
+									</div>
+								</li>
+								<li>
+									<h5>listenerFn: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The function to invoke when the event is fired.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_scope: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The object in whose scope to invoke the listener.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.eventemitter.html" class="tsd-signature-type">EventEmitter</a></h4>
+							<p>A self reference.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+					<a name="removealllisteners" class="tsd-anchor"></a>
+					<h3>remove<wbr>All<wbr>Listeners</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>All<wbr>Listeners<span class="tsd-signature-symbol">(</span>opt_type<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.eventemitter.html" class="tsd-signature-type">EventEmitter</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.eventemitter.html">EventEmitter</a>.<a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.eventemitter.html#removealllisteners">removeAllListeners</a></p>
+								<ul>
+									<li>Defined in typings/main/ambient/selenium-webdriver/index.d.ts:3336</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Removes all listeners for a specific type of event. If no event is
+									specified, all listeners across all types will be removed.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_type: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The type of event to remove listeners from.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.eventemitter.html" class="tsd-signature-type">EventEmitter</a></h4>
+							<p>A self reference.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+					<a name="removelistener" class="tsd-anchor"></a>
+					<h3>remove<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, listenerFn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.eventemitter.html" class="tsd-signature-type">EventEmitter</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.eventemitter.html">EventEmitter</a>.<a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.eventemitter.html#removelistener">removeListener</a></p>
+								<ul>
+									<li>Defined in typings/main/ambient/selenium-webdriver/index.d.ts:3328</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Removes a previously registered event listener.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The type of event to unregister.</p>
+									</div>
+								</li>
+								<li>
+									<h5>listenerFn: <span class="tsd-signature-type">Function</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The handler function to remove.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.eventemitter.html" class="tsd-signature-type">EventEmitter</a></h4>
+							<p>A self reference.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="reset-1" class="tsd-anchor"></a>
+					<h3>reset</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">reset<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in typings/main/ambient/selenium-webdriver/index.d.ts:1715</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Resets this instance, clearing its queue and removing all event listeners.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="timeout" class="tsd-anchor"></a>
+					<h3>timeout</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">timeout<span class="tsd-signature-symbol">(</span>ms<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, opt_description<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in typings/main/ambient/selenium-webdriver/index.d.ts:1754</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Inserts a {@code setTimeout} into the command queue. This is equivalent to
+									a thread sleep in a synchronous programming language.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>ms: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The timeout delay, in milliseconds.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_description: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A description to accompany the timeout.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>A promise that will be resolved with
+							the result of the action.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="tostring" class="tsd-anchor"></a>
+					<h3>to<wbr>String</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>String<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in typings/main/ambient/selenium-webdriver/index.d.ts:1710</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a string representation of this control flow, which is its current
+									{@link #getSchedule() schedule}, sans task stack traces.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>override</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<p>The string representation of this contorl flow.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external">
+					<a name="wait" class="tsd-anchor"></a>
+					<h3>wait</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">wait&lt;T&gt;<span class="tsd-signature-symbol">(</span>condition<span class="tsd-signature-symbol">: </span><a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Function</span>, opt_timeout<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, opt_message<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in typings/main/ambient/selenium-webdriver/index.d.ts:1792</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Schedules a task that shall wait for a condition to hold. Each condition
+									function may return any value, but it will always be evaluated as a boolean.</p>
+								</div>
+								<p>Condition functions may schedule sub-tasks with this instance, however,
+								their execution time will be factored into whether a wait has timed out.</p>
+								<p>In the event a condition returns a Promise, the polling loop will wait for
+									it to be resolved before evaluating whether the condition has been satisfied.
+									The resolution time for a promise is factored into whether a wait has timed
+								out.</p>
+								<p>If the condition function throws, or returns a rejected promise, the
+								wait task will fail.</p>
+								<p>If the condition is defined as a promise, the flow will wait for it to
+									settle. If the timeout expires before the promise settles, the promise
+								returned by this function will be rejected.</p>
+								<p>If this function is invoked with <code>timeout === 0</code>, or the timeout is omitted,
+								the flow will wait indefinitely for the condition to be satisfied.</p>
+								<dl class="tsd-comment-tags">
+									<dt>throws</dt>
+									<dd><p>{TypeError} If condition is not a function or promise or if timeout
+										is not a number &gt;= 0.</p>
+									</dd>
+									<dt>template</dt>
+									<dd><p>T</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>condition: <a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Function</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The condition to poll,
+										or a promise to wait on.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_timeout: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>How long to wait, in milliseconds, for the
+											condition to hold before timing out. If omitted, the flow will wait
+										indefinitely.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_message: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An optional error message to include if the
+										wait times out; defaults to the empty string.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>A promise that will be fulfilled
+								when the condition has been satisified. The promise shall be rejected if
+							the wait times out waiting for the condition.</p>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../../portfolio-web/globals.html"><em>Globals</em></a>
+					</li>
+					<li class="current tsd-kind-external-module tsd-is-external">
+						<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.html">"typings/main/ambient/selenium-<wbr>webdriver/index.d"</a>
+						<ul>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_._selenium_webdriver_.html">"selenium-<wbr>webdriver"</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_._selenium_webdriver_chrome_.html">"selenium-<wbr>webdriver/chrome"</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_._selenium_webdriver_executors_.html">"selenium-<wbr>webdriver/executors"</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_._selenium_webdriver_firefox_.html">"selenium-<wbr>webdriver/firefox"</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_._selenium_webdriver_testing_.html">"selenium-<wbr>webdriver/testing"</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
+								<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.chrome.html">chrome</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
+								<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.executors.html">executors</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
+								<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.firefox.html">firefox</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
+								<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.testing.html">testing</a>
+							</li>
+							<li class="current tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
+								<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.html">webdriver</a>
+								<ul>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
+										<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.by.html">By</a>
+									</li>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
+										<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.error.html">error</a>
+									</li>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
+										<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.logging.html">logging</a>
+									</li>
+									<li class="current tsd-kind-module tsd-parent-kind-module tsd-is-external">
+										<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.html">promise</a>
+									</li>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
+										<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.stacktrace.html">stacktrace</a>
+									</li>
+									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
+										<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.until.html">until</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-is-external">
+						<a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.cancellationerror.html" class="tsd-kind-icon">Cancellation<wbr>Error</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-module tsd-is-external">
+						<a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html" class="tsd-kind-icon">Control<wbr>Flow</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-external">
+								<a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html#eventtype" class="tsd-kind-icon">Event<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+								<a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html#addlistener" class="tsd-kind-icon">add<wbr>Listener</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+								<a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html#emit" class="tsd-kind-icon">emit</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external">
+								<a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html#execute" class="tsd-kind-icon">execute</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html#getschedule" class="tsd-kind-icon">get<wbr>Schedule</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+								<a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html#listeners" class="tsd-kind-icon">listeners</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+								<a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html#on" class="tsd-kind-icon">on</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+								<a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html#once" class="tsd-kind-icon">once</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+								<a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html#removealllisteners" class="tsd-kind-icon">remove<wbr>All<wbr>Listeners</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
+								<a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html#removelistener" class="tsd-kind-icon">remove<wbr>Listener</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html#reset-1" class="tsd-kind-icon">reset</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html#timeout" class="tsd-kind-icon">timeout</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html#tostring" class="tsd-kind-icon">to<wbr>String</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external">
+								<a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.controlflow.html#wait" class="tsd-kind-icon">wait</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter tsd-is-external">
+						<a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.deferred.html" class="tsd-kind-icon">Deferred</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter tsd-is-external">
+						<a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-kind-icon">Promise</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter tsd-is-external">
+						<a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.thenable.html" class="tsd-kind-icon">Thenable</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-external">
+						<a href="../interfaces/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.icontrolflowtimer.html" class="tsd-kind-icon">IControl<wbr>Flow<wbr>Timer</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter tsd-is-external">
+						<a href="../interfaces/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.ifulfilledcallback.html" class="tsd-kind-icon">IFulfilled<wbr>Callback</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-external">
+						<a href="../interfaces/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.irejectedcallback.html" class="tsd-kind-icon">IRejected<wbr>Callback</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter tsd-is-external">
+						<a href="../interfaces/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.ithenable.html" class="tsd-kind-icon">IThenable</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-external">
+						<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.html#all" class="tsd-kind-icon">all</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-external">
+						<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.html#asap" class="tsd-kind-icon">asap</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter tsd-is-external">
+						<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.html#checkednodecall" class="tsd-kind-icon">checked<wbr>Node<wbr>Call</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter tsd-is-external">
+						<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.html#consume" class="tsd-kind-icon">consume</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-external">
+						<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.html#controlflow-1" class="tsd-kind-icon">control<wbr>Flow</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter tsd-is-external">
+						<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.html#createflow" class="tsd-kind-icon">create<wbr>Flow</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter tsd-is-external">
+						<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.html#defer" class="tsd-kind-icon">defer</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-external">
+						<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.html#delayed" class="tsd-kind-icon">delayed</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter tsd-is-external">
+						<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.html#filter" class="tsd-kind-icon">filter</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter tsd-is-external">
+						<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.html#fulfilled" class="tsd-kind-icon">fulfilled</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter tsd-is-external">
+						<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.html#fullyresolved" class="tsd-kind-icon">fully<wbr>Resolved</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-external">
+						<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.html#isgenerator" class="tsd-kind-icon">is<wbr>Generator</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-external">
+						<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.html#ispromise" class="tsd-kind-icon">is<wbr>Promise</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter tsd-is-external">
+						<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.html#map" class="tsd-kind-icon">map</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-external">
+						<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.html#rejected" class="tsd-kind-icon">rejected</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-external">
+						<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.html#setdefaultflow" class="tsd-kind-icon">set<wbr>Default<wbr>Flow</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter tsd-is-external">
+						<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.promise.html#when" class="tsd-kind-icon">when</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.io" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
