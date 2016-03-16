@@ -192,7 +192,7 @@ export class ContactMapComponent implements OnInit {
               this._additionalMarkerWait = ((AIRPORTS.length - 1) * 100);
               _.each(CITIES, (city:City, index:number) => {
                 _.delay(() => {
-                  this.addMarker(city, index);
+                  this.addMarker(city);
                 }, (index * 650) + this._additionalMarkerWait);
               });
               _.delay(() => {
@@ -206,7 +206,7 @@ export class ContactMapComponent implements OnInit {
     })(jQuery);
   }
 
-  addMarker(city:City, index:number) {
+  addMarker(city:City) {
     let cityMarker:Marker = new Marker({
       position: new LatLng(city.loc.lat, city.loc.lng),
       map: this.map,
