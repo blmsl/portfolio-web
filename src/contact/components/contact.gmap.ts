@@ -207,7 +207,7 @@ export class ContactMapComponent implements OnInit {
   }
 
   addMarker(city:City, index:number) {
-    this._cityMarkers.push(new Marker({
+    let cityMarker:Marker = new Marker({
       position: new LatLng(city.loc.lat, city.loc.lng),
       map: this.map,
       title: city.name,
@@ -215,8 +215,8 @@ export class ContactMapComponent implements OnInit {
       animation: Animation.DROP,
       zIndex: 200,
       icon: city.icon
-    }));
-    let cityMarker:Marker = this._cityMarkers[index];
+    });
+    this._cityMarkers.push(cityMarker);
     event.addListener(cityMarker, 'click', () => {
       this.toggleBounce(cityMarker, city.name, city.description);
     });
