@@ -8,15 +8,15 @@ import Marker                         = google.maps.Marker;
 import Polyline                       = google.maps.Polyline;
 import {Component, View, OnInit}      from 'angular2/core';
 import {Http, HTTP_PROVIDERS}         from 'angular2/http';
-import {MAP_OPTIONS}                  from '../../shared/models/contact/map.config';
-import {MT_COOK}                      from '../../shared/models/contact/cities';
-import {CITIES}                       from '../../shared/models/contact/cities';
-import {AIRPORTS}                     from '../../shared/models/contact/airports';
-import {JOURNEYS, UPCOMING_JOURNEYS}  from '../../shared/models/contact/journeys';
-import * as points                    from '../../shared/models/contact/points';
-import {City}                         from '../../shared/models/contact/definitions/city';
-import {Airport}                      from '../../shared/models/contact/definitions/airport';
-import {elementInViewport}            from '../../shared/common/common';
+import {MAP_OPTIONS}                  from '../models/map.config';
+import {MT_COOK}                      from '../models/cities';
+import {CITIES}                       from '../models/cities';
+import {AIRPORTS}                     from '../models/airports';
+import {JOURNEYS, UPCOMING_JOURNEYS}  from '../models/journeys';
+import * as points                    from '../models/points';
+import {City}                         from '../definitions/city';
+import {Airport}                      from '../definitions/airport';
+import {elementInViewport}            from '../../shared/common/element.in.viewport';
 
 @Component({
   selector: 'googlemap',

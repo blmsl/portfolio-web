@@ -1,9 +1,9 @@
 'use strict';
 import {Component, View, OnInit}  from 'angular2/core';
 import {Http, HTTP_PROVIDERS}     from 'angular2/http';
-import {FooterService}            from '../../shared/services/footer.service';
-import {Link}                     from '../../shared/models/footer/definitions/link';
-import {LastModified}             from '../../shared/models/footer/definitions/last.modified';
+import {FooterService}            from '../services/footer';
+import {Link}                     from '../definitions/link';
+import {LastModified}             from '../definitions/last.modified';
 
 @Component({
   selector: 'footer',

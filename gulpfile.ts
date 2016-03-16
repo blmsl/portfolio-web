@@ -65,7 +65,7 @@ gulp.task('build.prod', done =>
     done));
 
 // --------------
-// Build prod.
+// Build heroku.
 gulp.task('build.heroku', done =>
   runSequence(
     'clean.heroku',
@@ -80,6 +80,12 @@ gulp.task('build.heroku.docs', done =>
     'clean.heroku.docs',
     'build.docs',
     'build.heroku.copy.docs',
+    done));
+
+gulp.task('build.heroku.all', done =>
+  runSequence(
+    'build.heroku',
+    'build.heroku.docs',
     done));
 
 // --------------

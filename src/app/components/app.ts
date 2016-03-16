@@ -1,5 +1,6 @@
 'use strict';
 import {Component, View, OnInit}  from 'angular2/core';
+import {AppService}               from '../services/app';
 import {HeaderComponent}          from '../../header/components/header';
 import {AboutComponent}           from '../../about/components/about';
 import {SkillsComponent}          from '../../skills/components/skills';
@@ -7,8 +8,7 @@ import {ExperienceComponent}      from '../../experience/components/experience';
 import {EducationComponent}       from '../../education/components/education';
 import {ContactComponent}         from '../../contact/components/contact';
 import {FooterComponent}          from '../../footer/components/footer';
-import {AppService}               from '../../shared/services/app.service';
-import {elementInViewport}        from '../../shared/common/common';
+import {elementInViewport}        from '../../shared/common/element.in.viewport';
 
 @Component({
   selector: 'container',
