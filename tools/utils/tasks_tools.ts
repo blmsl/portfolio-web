@@ -67,4 +67,4 @@ let runSequence = (...sequence:any[]) => {
   return _runSequence(..._sequence);
 };
 
-module.exports = {task, runSequence};
+export {task, runSequence};
