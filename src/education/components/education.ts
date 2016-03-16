@@ -2,9 +2,9 @@
 import {Component, View, OnInit}  from 'angular2/core';
 import {Pipe, PipeTransform}      from 'angular2/core';
 import {Jsonp, JSONP_PROVIDERS}   from 'angular2/http';
-import {EducationService}         from '../../shared/services/education.service';
-import {School}                   from '../../shared/models/education/definitions/school';
-import {CodeSchool}               from '../../shared/models/education/definitions/code.school';
+import {EducationService}         from '../services/education';
+import {School}                   from '../definitions/school';
+import {CodeSchool}               from '../definitions/code.school';
 
 @Pipe({name: 'badgeUrl'})
 export class BadgeUrlPipe implements PipeTransform {

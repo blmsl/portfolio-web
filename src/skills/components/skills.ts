@@ -1,8 +1,8 @@
 'use strict';
 import {Component, View, OnInit}  from 'angular2/core';
-import {SkillService}             from '../../shared/services/skills.service';
-import {Skill}                    from '../../shared/models/skills/definitions/skill';
-import {elementInViewport}        from '../../shared/common/common';
+import {SkillService}             from '../services/skills';
+import {Skill}                    from '../definitions/skill';
+import {elementInViewport}        from '../../shared/common/element.in.viewport';
 
 @Component({
   selector: 'skills',

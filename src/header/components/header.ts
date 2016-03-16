@@ -1,8 +1,8 @@
 'use strict';
 import {Component, View, OnInit}          from 'angular2/core';
 import {Http, HTTP_PROVIDERS}             from 'angular2/http';
-import {HeaderService}                    from '../../shared/services/header.service';
-import {MENU_CONFIG, GRID_ROTATOR_CONFIG} from '../../shared/models/header/header.config';
+import {HeaderService}                    from '../services/header';
+import {MENU_CONFIG, GRID_ROTATOR_CONFIG} from '../models/header.config';
 
 @Component({
   selector: 'header',

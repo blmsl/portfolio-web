@@ -1,7 +1,7 @@
 'use strict';
 import {Component, View, OnInit}  from 'angular2/core';
-import {ExperienceService}        from '../../shared/services/experience.service';
-import {Job}                      from '../../shared/models/experience/definitions/job';
+import {ExperienceService}        from '../services/experience';
+import {Job}                      from '../definitions/job';
 
 @Component({
   selector: 'experience',

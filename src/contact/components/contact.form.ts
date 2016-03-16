@@ -3,10 +3,10 @@ import {Component, View, OnInit}          from 'angular2/core';
 import {Pipe, PipeTransform}              from 'angular2/core';
 import {FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/common';
 import {Http, HTTP_PROVIDERS}             from 'angular2/http';
-import {ContactService}                   from '../../shared/services/contact.service';
-import {ErrorConfig}                      from '../../shared/models/contact/definitions/error.config';
-import {ContactMessage}                   from '../../shared/models/contact/definitions/contact.message';
-import {WrappedError}                     from '../../shared/common/definitions/wrapped.error';
+import {ContactService}                   from '../services/contact';
+import {ErrorConfig}                      from '../definitions/error.config';
+import {ContactMessage}                   from '../definitions/contact.message';
+import {WrappedError}                     from '../../shared/definitions/wrapped.error';
 
 @Pipe({name: 'trim'})
 export class TrimPipe implements PipeTransform {
