@@ -1,5 +1,5 @@
 'use strict';
-import Size     = google.maps.Size;
+import Size = google.maps.Size;
 
 /**
  * Interface for an Icon object

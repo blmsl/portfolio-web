@@ -1,12 +1,12 @@
 'use strict';
-import {Injectable}   from 'angular2/core';
-import {Http}         from 'angular2/http';
-import {Observable}   from 'angular2/src/facade/async';
+import {Injectable} from 'angular2/core';
+import {Http} from 'angular2/http';
+import {Observable} from 'angular2/src/facade/async';
 import 'rxjs/Rx';
-import {LINKS}        from '../models/links';
-import {Link}         from '../definitions/link';
+import {LINKS} from '../models/links';
+import {Link} from '../definitions/link';
 import {LastModified} from '../definitions/last.modified';
-import {wrapError}    from '../../shared/common/wrap.error';
+import {wrapError} from '../../shared/common/wrap.error';
 
 @Injectable()
 export class FooterService {

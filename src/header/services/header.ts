@@ -1,10 +1,10 @@
 'use strict';
-import {Injectable}   from 'angular2/core';
-import {Http}         from 'angular2/http';
-import {Observable}   from 'angular2/src/facade/async';
+import {Injectable} from 'angular2/core';
+import {Http} from 'angular2/http';
+import {Observable} from 'angular2/src/facade/async';
 import 'rxjs/Rx';
-import {ImageIds}     from '../definitions/image.ids';
-import {wrapError}    from '../../shared/common/wrap.error';
+import {ImageIds} from '../definitions/image.ids';
+import {wrapError} from '../../shared/common/wrap.error';
 
 @Injectable()
 export class HeaderService {

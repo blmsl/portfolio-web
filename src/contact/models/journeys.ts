@@ -1,6 +1,6 @@
 'use strict';
-import {Airport}      from '../definitions/airport';
-import * as airports  from './airports';
+import {Airport} from '../definitions/airport';
+import * as airports from './airports';
 
 /**
  * Array of Journeys for the Contact section

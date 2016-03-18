@@ -1,6 +1,6 @@
 'use strict';
-import {Point}  from './point';
-import {Icon}   from './icon';
+import {Point} from './point';
+import {Icon} from './icon';
 
 /**
  * Interface for a City object

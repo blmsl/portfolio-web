@@ -1,7 +1,7 @@
 'use strict';
-import {Icon}         from '../definitions/icon';
-import {City}         from '../definitions/city';
-import * as points    from './points';
+import {Icon} from '../definitions/icon';
+import {City} from '../definitions/city';
+import * as points from './points';
 
 let lived:string = 'I\'ve lived here...';
 let prevIcon:Icon = {url: 'assets/images/markerprev.png', size: points.MARKER_SIZE};
@@ -55,13 +55,14 @@ const AUCKLAND:City = {
   description: lived,
   icon: prevIcon
 };
-
-export const MT_COOK:City = {
+const MT_COOK:City = {
   name: 'Mt Cook, Wellington, New Zealand',
   loc: points.MT_COOK,
   description: 'I currently live in this area...',
   icon: curIcon
 };
+
+export const CURRENT_LOCATION = MT_COOK;
 
 /**
  * Array of Cities for the Contact section

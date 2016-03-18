@@ -1,5 +1,5 @@
 'use strict';
-import {Airport}  from '../definitions/airport';
+import {Airport} from '../definitions/airport';
 
 const SOUTH_AFRICA:string = 'South Africa';
 const NEW_ZEALAND = 'New Zealand';

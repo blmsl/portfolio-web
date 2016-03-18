@@ -1,11 +1,11 @@
 'use strict';
-import {Injectable}                     from 'angular2/core';
-import {Http, Headers, RequestOptions}  from 'angular2/http';
-import {Observable}                     from 'rxjs/Observable';
+import {Injectable} from 'angular2/core';
+import {Http, Headers, RequestOptions} from 'angular2/http';
+import {Observable} from 'rxjs/Observable';
 import 'rxjs/Rx';
-import {ErrorConfig}                    from '../definitions/error.config';
-import {ContactMessage}                 from '../definitions/contact.message';
-import {wrapError}                      from '../../shared/common/wrap.error';
+import {ErrorConfig} from '../definitions/error.config';
+import {ContactMessage} from '../definitions/contact.message';
+import {wrapError} from '../../shared/common/wrap.error';
 
 @Injectable()
 export class ContactService {

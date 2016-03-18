@@ -1,10 +1,8 @@
 'use strict';
-import {Component, View} from 'angular2/core';
+import {Component} from 'angular2/core';
 
 @Component({
-  selector: 'about'
-})
-@View({
+  selector: 'about',
   templateUrl: './about/components/about.html',
   styleUrls: ['./about/components/about.css']
 })

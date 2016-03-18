@@ -1,12 +1,12 @@
 'use strict';
-import {Injectable}   from 'angular2/core';
-import {Jsonp}        from 'angular2/http';
-import {Observable}   from 'angular2/src/facade/async';
+import {Injectable} from 'angular2/core';
+import {Jsonp} from 'angular2/http';
+import {Observable} from 'angular2/src/facade/async';
 import 'rxjs/Rx';
-import {SCHOOLS}      from '../models/schools';
-import {School}       from '../definitions/school';
-import {CodeSchool}   from '../definitions/code.school';
-import {wrapError}    from '../../shared/common/wrap.error';
+import {SCHOOLS} from '../models/schools';
+import {School} from '../definitions/school';
+import {CodeSchool} from '../definitions/code.school';
+import {wrapError} from '../../shared/common/wrap.error';
 
 @Injectable()
 export class EducationService {

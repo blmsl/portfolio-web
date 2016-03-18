@@ -1,14 +1,12 @@
 'use strict';
-import {Component, View, OnInit}  from 'angular2/core';
-import {SkillService}             from '../services/skills';
-import {Skill}                    from '../definitions/skill';
-import {elementInViewport}        from '../../shared/common/element.in.viewport';
+import {Component, OnInit} from 'angular2/core';
+import {SkillService} from '../services/skills';
+import {Skill} from '../definitions/skill';
+import {elementInViewport} from '../../shared/common/element.in.viewport';
 
 @Component({
   selector: 'skills',
-  providers: [SkillService]
-})
-@View({
+  providers: [SkillService],
   templateUrl: './skills/components/skills.html',
   styleUrls: ['./skills/components/skills.css']
 })

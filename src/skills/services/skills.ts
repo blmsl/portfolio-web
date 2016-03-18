@@ -1,7 +1,7 @@
 'use strict';
 import {Injectable} from 'angular2/core';
-import {SKILLS}     from '../models/skills';
-import {Skill}      from '../definitions/skill';
+import {SKILLS} from '../models/skills';
+import {Skill} from '../definitions/skill';
 
 @Injectable()
 export class SkillService {

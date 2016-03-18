@@ -1,6 +1,6 @@
 'use strict';
-import Size     = google.maps.Size;
-import {Point}  from '../definitions/point';
+import Size = google.maps.Size;
+import {Point} from '../definitions/point';
 
 export const START_POINT:Point = {lat: 22.4988409, lng: 78.471251};
 export const LONDON:Point = {lat: 51.451005, lng: -0.147970};

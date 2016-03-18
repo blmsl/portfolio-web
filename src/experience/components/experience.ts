@@ -1,13 +1,11 @@
 'use strict';
-import {Component, View, OnInit}  from 'angular2/core';
-import {ExperienceService}        from '../services/experience';
-import {Job}                      from '../definitions/job';
+import {Component, OnInit} from 'angular2/core';
+import {ExperienceService} from '../services/experience';
+import {Job} from '../definitions/job';
 
 @Component({
   selector: 'experience',
-  providers: [ExperienceService]
-})
-@View({
+  providers: [ExperienceService],
   templateUrl: './experience/components/experience.html',
   styleUrls: ['./experience/components/experience.css']
 })

@@ -1,12 +1,12 @@
 'use strict';
-import {Component, View, OnInit}          from 'angular2/core';
-import {Pipe, PipeTransform}              from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
+import {Pipe, PipeTransform} from 'angular2/core';
 import {FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/common';
-import {Http, HTTP_PROVIDERS}             from 'angular2/http';
-import {ContactService}                   from '../services/contact';
-import {ErrorConfig}                      from '../definitions/error.config';
-import {ContactMessage}                   from '../definitions/contact.message';
-import {WrappedError}                     from '../../shared/definitions/wrapped.error';
+import {Http, HTTP_PROVIDERS} from 'angular2/http';
+import {ContactService} from '../services/contact';
+import {ErrorConfig} from '../definitions/error.config';
+import {ContactMessage} from '../definitions/contact.message';
+import {WrappedError} from '../../shared/definitions/wrapped.error';
 
 @Pipe({name: 'trim'})
 export class TrimPipe implements PipeTransform {
@@ -16,9 +16,7 @@ export class TrimPipe implements PipeTransform {
 }
 @Component({
   selector: 'contact-form',
-  providers: [Http, HTTP_PROVIDERS, ContactService]
-})
-@View({
+  providers: [Http, HTTP_PROVIDERS, ContactService],
   pipes: [TrimPipe],
   templateUrl: './contact/components/contact.form.html',
   styleUrls: ['./contact/components/contact.form.css'],

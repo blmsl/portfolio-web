@@ -1,28 +1,26 @@
 'use strict';
-import Animation                      = google.maps.Animation;
-import event                          = google.maps.event;
-import InfoWindow                     = google.maps.InfoWindow;
-import LatLng                         = google.maps.LatLng;
-import Map                            = google.maps.Map;
-import Marker                         = google.maps.Marker;
-import Polyline                       = google.maps.Polyline;
-import {Component, View, OnInit}      from 'angular2/core';
-import {Http, HTTP_PROVIDERS}         from 'angular2/http';
-import {MAP_OPTIONS}                  from '../models/map.config';
-import {MT_COOK}                      from '../models/cities';
-import {CITIES}                       from '../models/cities';
-import {AIRPORTS}                     from '../models/airports';
-import {JOURNEYS, UPCOMING_JOURNEYS}  from '../models/journeys';
-import * as points                    from '../models/points';
-import {City}                         from '../definitions/city';
-import {Airport}                      from '../definitions/airport';
-import {elementInViewport}            from '../../shared/common/element.in.viewport';
+import Animation = google.maps.Animation;
+import event = google.maps.event;
+import InfoWindow = google.maps.InfoWindow;
+import LatLng = google.maps.LatLng;
+import Map = google.maps.Map;
+import Marker = google.maps.Marker;
+import Polyline = google.maps.Polyline;
+import {Component, OnInit} from 'angular2/core';
+import {Http, HTTP_PROVIDERS} from 'angular2/http';
+import {MAP_OPTIONS} from '../models/map.config';
+import {CURRENT_LOCATION} from '../models/cities';
+import {CITIES} from '../models/cities';
+import {AIRPORTS} from '../models/airports';
+import {JOURNEYS, UPCOMING_JOURNEYS} from '../models/journeys';
+import * as points from '../models/points';
+import {City} from '../definitions/city';
+import {Airport} from '../definitions/airport';
+import {elementInViewport} from '../../shared/common/element.in.viewport';
 
 @Component({
   selector: 'googlemap',
-  providers: [Http, HTTP_PROVIDERS]
-})
-@View({
+  providers: [Http, HTTP_PROVIDERS],
   templateUrl: './contact/components/contact.gmap.html',
   styleUrls: ['./contact/components/contact.gmap.css']
 })
@@ -132,7 +130,7 @@ export class ContactMapComponent implements OnInit {
         if (this._cityMarkers.length === CITIES.length) {
           let cityMarker = this._cityMarkers[this._cityMarkers.length - 1];
           if (cityMarker) {
-            this.toggleBounce(cityMarker, MT_COOK.name, MT_COOK.description);
+            this.toggleBounce(cityMarker, CURRENT_LOCATION.name, CURRENT_LOCATION.description);
           }
         }
       });

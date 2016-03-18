@@ -1,12 +1,10 @@
 'use strict';
-import {Component, View}      from 'angular2/core';
-import {ContactMapComponent}  from './contact.gmap';
+import {Component} from 'angular2/core';
+import {ContactMapComponent} from './contact.gmap';
 import {ContactFormComponent} from './contact.form';
 
 @Component({
-  selector: 'contact'
-})
-@View({
+  selector: 'contact',
   directives: [
     ContactMapComponent,
     ContactFormComponent
