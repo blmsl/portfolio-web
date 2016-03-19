@@ -1,18 +1,18 @@
 /// <reference path="../manual_typings/open.d.ts" />
 'use strict';
-import {resolve}                                                          from 'path';
-import {Message}                                                          from './definitions/message';
-import {Submission}                                                       from './definitions/submission';
-import * as connectLivereload                                             from 'connect-livereload';
-import * as express                                                       from 'express';
-import * as compression                                                   from 'compression';
-import * as bodyParser                                                    from 'body-parser';
-import * as randomImages                                                  from './modules/random.images';
-import * as mailHelper                                                    from './modules/mail.helper';
-import * as nodeMailer                                                    from './modules/node.mailer';
-import * as tinylrFn                                                      from 'tiny-lr';
-import * as openResource                                                  from 'open';
-import * as serveStatic                                                   from 'serve-static';
+import {resolve} from 'path';
+import {Message} from './definitions/message';
+import {Submission} from './definitions/submission';
+import * as connectLivereload from 'connect-livereload';
+import * as express from 'express';
+import * as compression from 'compression';
+import * as bodyParser from 'body-parser';
+import * as randomImages from './modules/random.images';
+import * as mailHelper from './modules/mail.helper';
+import * as nodeMailer from './modules/node.mailer';
+import * as tinylrFn from 'tiny-lr';
+import * as openResource from 'open';
+import * as serveStatic from 'serve-static';
 import {APP_BASE, APP_DEST, DOCS_DEST, LIVE_RELOAD_PORT, DOCS_PORT, PORT} from '../config';
 
 let lastModified = require('./config/last.mod.props.json');

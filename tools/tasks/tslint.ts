@@ -1,3 +1,4 @@
+'use strict';
 import {join} from 'path';
 import {APP_SRC, TOOLS_DIR, NG2LINT_RULES} from '../config';
 

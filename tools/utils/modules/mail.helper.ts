@@ -1,6 +1,6 @@
 'use strict';
 import {Submission} from './../definitions/submission';
-import {Message}    from './../definitions/message';
+import {Message} from './../definitions/message';
 
 const
   ERROR_MESSAGES = require('./../config/error.props.json').errorConfig,
