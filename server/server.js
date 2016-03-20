@@ -12,12 +12,12 @@ app.use(require('body-parser').json())
 app.use(middleware.heroku.exclude)
 
 expressStaticMappings.forEach((mapping) => {
-  console.log('mapping resource "' + mapping.uri + '" to static location "' + mapping.location + '" with cache "' + mapping.cache + '"')
+  console.info('mapping resource "' + mapping.uri + '" to static location "' + mapping.location + '" with cache "' + mapping.cache + '"')
   app.use(mapping.uri, express.static(mapping.location, {maxAge: mapping.cache}))
 })
 
 expressRedirectMappings.forEach((mapping) => {
-  console.log('redirecting resource "' + mapping.uri + '" to new location "' + mapping.newUri + '"')
+  console.info('redirecting resource "' + mapping.uri + '" to new location "' + mapping.newUri + '"')
   app.get(mapping.uri, (req, res) => {
     res.redirect(301, mapping.newUri)
   })
@@ -32,5 +32,5 @@ app.get('/', routes.html)
 app.get('/*', routes.fourohfour)
 
 app.listen(port, () => {
-  console.log('Listening on port ' + port)
+  console.info('Listening on port ' + port)
 })
