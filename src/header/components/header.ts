@@ -33,7 +33,7 @@ export class HeaderComponent implements OnInit {
   }
 
   initResizeListener() {
-    (($) => {
+    (($:JQueryStatic) => {
       $(window).on('resize', () => {
         this.setBannerSize(this._previousWidth, this._previousHeight);
       });
@@ -69,7 +69,7 @@ export class HeaderComponent implements OnInit {
   }
 
   setBannerSize(previousWidth:number = 0, previousHeight:number = 0) {
-    (($, previousWidth, previousHeight) => {
+    (($:JQueryStatic, previousWidth:number, previousHeight:number) => {
       let windowWidth:number = $(window).width(),
         windowHeight:number = $(window).height(),
         widthChanged:boolean = previousWidth !== windowWidth,
@@ -94,7 +94,7 @@ export class HeaderComponent implements OnInit {
   }
 
   setDynamicCssValues() {
-    (($) => {
+    (($:JQueryStatic) => {
       let bannerText:JQuery = $('.banner-text');
       bannerText.css('top', ((($(window).height() - bannerText.height()) / 2) - 63));
     })(jQuery);

@@ -36,7 +36,7 @@ export class SkillsComponent implements OnInit {
   }
 
   initScrollListener() {
-    (($) => {
+    (($:JQueryStatic) => {
       $(document).on('scroll', () => {
         // wait half a second for scroll to stop
         if (this._timeoutScroll) {
@@ -57,12 +57,12 @@ export class SkillsComponent implements OnInit {
 
   drawChart() {
     (($) => {
-      $('.js_trigger_skills').each((index, val) => {
+      $('.js_trigger_skills').each((index:number, val:Element) => {
         if (!this._skillChartDrawn && elementInViewport($, $(val))) {
           this._skillChartDrawn = true;
           $('.chart').easyPieChart({
             easing: 'easeOutBounce',
-            onStep: function (from, to, percent) {
+            onStep: function (from:number, to:number, percent:number) {
               $(this.el).find('.percent').text(Math.round(percent));
             }
           });

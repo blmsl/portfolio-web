@@ -89,30 +89,6 @@ gulp.task('build.heroku.all', done =>
     done));
 
 // --------------
-// Watch.
-gulp.task('build.dev.watch', done =>
-  runSequence(
-    'build.dev',
-    'watch.dev',
-    done));
-
-gulp.task('build.test.watch', done =>
-  runSequence(
-    'build.test',
-    'watch.test',
-    done));
-
-// --------------
-// Test.
-gulp.task('test', done =>
-  runSequence(
-    'clean.test',
-    'tslint',
-    'build.test',
-    'karma.start',
-    done));
-
-// --------------
 // Docs
 gulp.task('docs', done =>
   runSequence(
@@ -151,6 +127,5 @@ gulp.task('serve.prod', done =>
 // Test.
 gulp.task('test', done =>
   runSequence(
-    'build.test',
-    'karma.start',
+    'build.prod',
     done));

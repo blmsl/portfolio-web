@@ -39,30 +39,28 @@ export class AppComponent implements OnInit {
   }
 
   initSmoothPageScroll() {
-    (($) => {
-      $('a[href*="#"]:not([href="#"])').click(
-        function () {
-          if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
-            let target:JQuery = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-            if (target.length) {
-              $('html,body').animate({
-                scrollTop: target.offset().top - 60
-              }, 500);
-              return false;
-            }
+    (($:JQueryStatic) => {
+      $('a[href*="#"]:not([href="#"])').click(function (e:JQueryEventObject) {
+        e.preventDefault();
+        if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
+          let target:JQuery = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+          if (target.length) {
+            $('html,body').animate({
+              scrollTop: target.offset().top - 60
+            }, 500);
           }
         }
-      );
+      });
 
-      $('#js_menu_button').click((e) => {
+      $('#js_menu_button').click((e:JQueryEventObject) => {
         e.preventDefault();
 
         if (this._timeoutMenuAnimate) {
           clearTimeout(this._timeoutMenuAnimate);
         }
         // wait half a second for menu collapse/expand to finish
-        this._timeoutMenuAnimate = _.delay(function () {
+        this._timeoutMenuAnimate = _.delay(() => {
           if ($('#js_navbar').hasClass('in')) {
             if (!elementInViewport($, $('#js_links_li'))) {
               $('html,body').animate({

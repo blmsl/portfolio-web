@@ -62,7 +62,7 @@ export class ContactMapComponent implements OnInit {
   initializeMap() {
     const MAP_MAX_MOBILE_ZOOM_ZERO:number = 768;
     const MAP_MAX_TABLET_ZOOM_ONE:number = 1024;
-    (($) => {
+    (($:JQueryStatic) => {
       _.delay(() => {
         let mapOptions = _.clone(MAP_OPTIONS);
         if ($(window).width() < MAP_MAX_MOBILE_ZOOM_ZERO) {
@@ -108,7 +108,7 @@ export class ContactMapComponent implements OnInit {
   }
 
   initScrollListener() {
-    (($) => {
+    (($:JQueryStatic) => {
       $(document).on('scroll', () => {
         // wait half a second for scroll to stop
         if (this._timeoutScroll) {
@@ -124,8 +124,8 @@ export class ContactMapComponent implements OnInit {
   }
 
   initClickListener() {
-    (($) => {
-      $('#js_click_address').click((e) => {
+    (($:JQueryStatic) => {
+      $('#js_click_address').click((e:JQueryEventObject) => {
         e.preventDefault();
         if (this._cityMarkers.length === CITIES.length) {
           let cityMarker = this._cityMarkers[this._cityMarkers.length - 1];
@@ -139,8 +139,8 @@ export class ContactMapComponent implements OnInit {
 
   dropMarkers(wait:number = 1500) {
     this._markerWait = wait;
-    (($) => {
-      $('.js_trigger_map_marker').each((index:number, val:string) => {
+    (($:JQueryStatic) => {
+      $('.js_trigger_map_marker').each((index:number, val:Element) => {
         if (!this._mapMarkersDrawn && elementInViewport($, $(val))) {
           if (this._tilesLoaded) {
             this._mapMarkersDrawn = true;

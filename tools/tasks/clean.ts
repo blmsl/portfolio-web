@@ -79,6 +79,7 @@ let clean = (gulp, plugins, option) => {
         break;
       default:
         done();
+        break;
     }
   };
 };
