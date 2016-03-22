@@ -29,13 +29,13 @@ export class FooterComponent implements OnInit {
 
   getLinks() {
     this._footerService.getLinks().then(
-      links => this.links = links
+      links => this.links = <Array<Link>>links
     );
   }
 
   getLastModified() {
     this._footerService.getLastModified().subscribe(
-      lastModified => this.lastModified = lastModified
+      lastModified => this.lastModified = <LastModified>lastModified
     );
   }
 }

@@ -3,6 +3,7 @@ import {Component, OnInit} from 'angular2/core';
 import {Http, HTTP_PROVIDERS} from 'angular2/http';
 import {HeaderService} from '../services/header';
 import {MENU_CONFIG, GRID_ROTATOR_CONFIG} from '../models/header.config';
+import {ImageIds} from '../definitions/image.ids';
 
 @Component({
   selector: 'header',
@@ -27,7 +28,7 @@ export class HeaderComponent implements OnInit {
 
   initImageIds() {
     this._headerService.getImageIds().subscribe(
-      resp => this.initGridRotator(resp.imageIds),
+      resp => this.initGridRotator((<ImageIds>resp).imageIds),
       err => console.warn('imageIds not returned')
     );
   }

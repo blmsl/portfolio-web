@@ -6,6 +6,7 @@ import 'rxjs/Rx';
 import {LINKS} from '../models/links';
 import {Link} from '../definitions/link';
 import {LastModified} from '../definitions/last.modified';
+import {WrappedError} from '../../shared/definitions/wrapped.error';
 import {wrapError} from '../../shared/common/wrap.error';
 
 @Injectable()
@@ -20,7 +21,7 @@ export class FooterService {
     return Promise.resolve(LINKS);
   }
 
-  getLastModified():Observable<LastModified> {
+  getLastModified():Observable<LastModified|WrappedError> {
     return this._http.get('/lastmodified')
       .map(resp => resp.json())
       .catch(err => wrapError(err));

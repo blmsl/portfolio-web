@@ -47,7 +47,7 @@ export class ContactFormComponent implements OnInit {
 
   getErrorConfig() {
     this._contactService.getErrorConfig().subscribe(
-      res => this.errorConfig = res.errorConfig,
+      res => this.errorConfig = (<ErrorConfig>res).errorConfig,
       err => console.warn('errorConfig not returned')
     );
   }

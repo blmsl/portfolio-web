@@ -54,7 +54,7 @@ export class EducationComponent implements OnInit {
 
   getCodeSchool() {
     this._educationService.getCodeSchool().subscribe(
-      codeSchool => this.codeSchool = codeSchool
+      codeSchool => this.codeSchool = <CodeSchool>codeSchool
     );
   }
 }
