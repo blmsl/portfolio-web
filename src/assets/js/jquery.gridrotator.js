@@ -193,7 +193,7 @@
       this.$list = this.$el.children('ul');
       // remove images and add background-image to anchors
       var $imgs = this.$list.find('img'),
-          subColors = ['#D92727', '#FFE433', '#0DB8B5'],
+          subColors = ['#d92727', '#ffe433', '#0db8b5'],
           imgSources = [];
 
       $imgs.each(function() {
