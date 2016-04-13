@@ -8,8 +8,20 @@ import {Job} from '../definitions/job';
 export const JOBS:Array<Job> = [
   {
     year: {
-      from: 'Jun 2014',
+      from: 'Apr 2016',
       to: 'Present'
+    },
+    institution: {
+      name: 'Fairfax Media',
+      url: 'http://www.fairfaxmedia.co.nz/',
+      location: 'Wellington, New Zealand'
+    },
+    title: 'Front-end Developer (Contract)',
+    content: '&nbsp;'
+  }, {
+    year: {
+      from: 'Jun 2014',
+      to: 'Mar 2016'
     },
     institution: {
       name: 'Westpac New Zealand Ltd',
@@ -17,12 +29,12 @@ export const JOBS:Array<Job> = [
       location: 'Wellington, New Zealand'
     },
     title: 'Analyst Programmer (UI)',
-    content: '<p>Working as a <b>UI Developer</b> at Westpac NZ, where I have been involved in a number of projects, ' +
+    content: '<p>Worked as a <b>UI Developer</b> at Westpac NZ, where I was involved in a number of projects, ' +
     'including <b><i>Direct from Account&trade;</i></b>, <b><i>Westpac Exhange&trade;</i></b> and <b>' +
-    '<i>Westpac One&trade;</i></b>.</p><p>The server-side development environment is <b>Java</b>, while the ' +
-    'client-side is built using a variety of <b>JavaScript technologies</b> and <b>frameworks</b>, most notably ' +
+    '<i>Westpac One&reg;</i></b>.</p><p>The server-side development environment was <b>Java</b>, while the ' +
+    'client-side was built using a variety of <b>JavaScript technologies</b> and <b>frameworks</b>, most notably ' +
     '<b>RequireJS</b>, <b>Backbone</b>, Marionette, <b>Underscore</b>, <b>AngularJS</b>, SCSS, and, during ' +
-    'development, <b>Node.js</b>.</p><p>Build and Testing tools include <b>Grunt</b>, Maven, Jenkins, JUnit, ' +
+    'development, <b>Node.js</b>.</p><p>Build and Testing tools included <b>Grunt</b>, Maven, Jenkins, JUnit, ' +
     'Cucumber, <b>Jasmine</b> and <b>Karma</b>.</p>'
   }, {
     year: {
