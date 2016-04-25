@@ -1,6 +1,6 @@
 {
   "name": "ouq77-portfolio",
-  "version": "2.4.7",
+  "version": "2.4.8",
   "description": "On-line portfolio of Louw Swart, based on 'angular2-seed'",
   "repository": {
     "url": "https://github.com/ouq77/portfolio-web"
@@ -92,7 +92,7 @@
     "tiny-lr": "0.2.1",
     "traceur": "0.0.108",
     "ts-node": "0.7.2",
-    "tslint": "3.8.0",
+    "tslint": "3.8.1",
     "typedoc": "0.3.12",
     "typescript": "1.8.10",
     "typings": "0.8.1",
