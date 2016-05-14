@@ -1,6 +1,6 @@
 {
   "name": "ouq77-portfolio",
-  "version": "2.4.9",
+  "version": "2.5.0",
   "description": "On-line portfolio of Louw Swart, based on 'angular2-seed'",
   "repository": {
     "url": "https://github.com/ouq77/portfolio-web"
@@ -17,15 +17,15 @@
   "author": "ouq77",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "1.15.0",
-    "camelcase": "2.1.1",
-    "compression": "1.6.1",
+    "body-parser": "1.15.1",
+    "camelcase": "3.0.0",
+    "compression": "1.6.2",
     "express": "4.13.4",
     "forever-monitor": "1.7.0",
-    "nodemailer": "2.3.2",
+    "nodemailer": "2.4.1",
     "require-directory": "2.1.1"
   },
   "devDependencies": {
-    "standard": "6.0.8"
+    "standard": "7.0.1"
   }
 }
