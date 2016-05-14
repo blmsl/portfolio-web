@@ -100,7 +100,7 @@
     "yargs": "4.7.0"
   },
   "dependencies": {
-    "angular2": "2.0.0-beta.15",
+    "angular2": "2.0.0-beta.17",
     "body-parser": "1.15.1",
     "bootstrap": "3.3.6",
     "compression": "1.6.2",

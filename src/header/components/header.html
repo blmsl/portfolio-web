@@ -5,7 +5,7 @@
     <div id="ri-grid" class="ri-grid-loading ri-grid ri-grid-size-2">
       <img class="ri-loading-image" src="assets/images/loading.gif" alt="Loading..." />
       <ul id="js_cb_slideshow" class="cb-slideshow">
-        <li *ngFor="#imageId of imageIds">
+        <li *ngFor="let imageId of imageIds">
           <a href="#"><img src="//instagram.com/p/{{imageId}}/media/?size=m" alt="© Louw Swart"></a>
         </li>
       </ul>

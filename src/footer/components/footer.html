@@ -6,7 +6,7 @@
       <p>social links and page info</p>
     </div>
     <ul>
-      <li *ngFor="#link of links">
+      <li *ngFor="let link of links">
         <a href="{{link.url}}" target="_blank" title="{{link.title}}" class="js_track_link_click">
           <i class="fa fa-{{link.icon}} fa-2x"></i>
         </a>
