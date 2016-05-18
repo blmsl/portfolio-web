@@ -1,6 +1,6 @@
 {
   "name": "ouq77-portfolio",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "description": "On-line portfolio of Louw Swart, based on 'angular2-seed'",
   "repository": {
     "url": "https://github.com/ouq77/portfolio-web"
@@ -73,7 +73,7 @@
     "karma": "0.13.22",
     "karma-chrome-launcher": "1.0.1",
     "karma-jasmine": "1.0.2",
-    "karma-mocha-reporter": "2.0.2",
+    "karma-mocha-reporter": "2.0.3",
     "karma-phantomjs-launcher": "1.0.0",
     "lodash": "4.12.0",
     "merge-stream": "1.0.0",
@@ -82,7 +82,7 @@
     "phantomjs-prebuilt": "2.1.7",
     "protractor": "3.3.0",
     "rimraf": "2.5.2",
-    "run-sequence": "1.1.5",
+    "run-sequence": "1.2.0",
     "semver": "5.1.0",
     "serve-static": "1.10.2",
     "slash": "1.0.0",
@@ -94,10 +94,10 @@
     "tslint": "3.10.2",
     "typedoc": "0.3.12",
     "typescript": "1.8.10",
-    "typings": "0.8.1",
+    "typings": "1.0.4",
     "vinyl-buffer": "1.0.0",
     "vinyl-source-stream": "1.1.0",
-    "yargs": "4.7.0"
+    "yargs": "4.7.1"
   },
   "dependencies": {
     "angular2": "2.0.0-beta.17",
