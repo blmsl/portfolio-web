@@ -252,8 +252,8 @@
 							ordered from highest quality to lowest.</p>
 						</div>
 						<p>Examples:</p>
-						<pre><code>Accept-<span class="hljs-string">Charset:</span> iso-<span class="hljs-number">8859</span>-<span class="hljs-number">5</span>;q=<span class="hljs-number">.2</span>, unicode-<span class="hljs-number">1</span>-<span class="hljs-number">1</span>;q=<span class="hljs-number">0.8</span>
-[<span class="hljs-string">'unicode-1-1'</span>, <span class="hljs-string">'iso-8859-5'</span>]
+						<pre><code><span class="hljs-keyword">Accept</span>-Charset: iso-<span class="hljs-number">8859</span>-<span class="hljs-number">5</span>;q=.<span class="hljs-number">2</span>, unicode-<span class="hljs-number">1</span>-<span class="hljs-number">1</span>;q=<span class="hljs-number">0.8</span>
+[<span class="hljs-symbol">'unicode</span>-<span class="hljs-number">1</span>-<span class="hljs-number">1</span>', <span class="hljs-symbol">'iso</span>-<span class="hljs-number">8859</span>-<span class="hljs-number">5</span>']
 </code></pre>
 					</div>
 				</section>
@@ -801,29 +801,29 @@
 									or an array <code>[&quot;json&quot;, &quot;html&quot;, &quot;text/plain&quot;]</code>. When a list
 								or array is given the <em>best</em> match, if any is returned.</p>
 								<p>Examples:</p>
-								<pre><code>/<span class="hljs-regexp">/ Accept: text/html</span>
-req.accepts(<span class="hljs-string">'html'</span>);
-<span class="hljs-regexp">//</span> =&gt; <span class="hljs-string">"html"</span>
+								<pre><code><span class="hljs-comment">// Accept: text/html</span>
+req<span class="hljs-selector-class">.accepts</span>(<span class="hljs-string">'html'</span>);
+<span class="hljs-comment">// =&gt; "html"</span>
 
-/<span class="hljs-regexp">/ Accept: text/</span>*, application/json
-req.accepts(<span class="hljs-string">'html'</span>);
-<span class="hljs-regexp">//</span> =&gt; <span class="hljs-string">"html"</span>
-req.accepts(<span class="hljs-string">'text/html'</span>);
-<span class="hljs-regexp">//</span> =&gt; <span class="hljs-string">"text/html"</span>
-req.accepts(<span class="hljs-string">'json, text'</span>);
-<span class="hljs-regexp">//</span> =&gt; <span class="hljs-string">"json"</span>
-req.accepts(<span class="hljs-string">'application/json'</span>);
-<span class="hljs-regexp">//</span> =&gt; <span class="hljs-string">"application/json"</span>
+<span class="hljs-comment">// Accept: text/*, application/json</span>
+req<span class="hljs-selector-class">.accepts</span>(<span class="hljs-string">'html'</span>);
+<span class="hljs-comment">// =&gt; "html"</span>
+req<span class="hljs-selector-class">.accepts</span>(<span class="hljs-string">'text/html'</span>);
+<span class="hljs-comment">// =&gt; "text/html"</span>
+req<span class="hljs-selector-class">.accepts</span>(<span class="hljs-string">'json, text'</span>);
+<span class="hljs-comment">// =&gt; "json"</span>
+req<span class="hljs-selector-class">.accepts</span>(<span class="hljs-string">'application/json'</span>);
+<span class="hljs-comment">// =&gt; "application/json"</span>
 
-/<span class="hljs-regexp">/ Accept: text/</span>*, application/json
-req.accepts(<span class="hljs-string">'image/png'</span>);
-req.accepts(<span class="hljs-string">'png'</span>);
-<span class="hljs-regexp">//</span> =&gt; undefined
+<span class="hljs-comment">// Accept: text/*, application/json</span>
+req<span class="hljs-selector-class">.accepts</span>(<span class="hljs-string">'image/png'</span>);
+req<span class="hljs-selector-class">.accepts</span>(<span class="hljs-string">'png'</span>);
+<span class="hljs-comment">// =&gt; undefined</span>
 
-/<span class="hljs-regexp">/ Accept: text/</span>*;q=.<span class="hljs-number">5</span>, application/json
-req.accepts([<span class="hljs-string">'html'</span>, <span class="hljs-string">'json'</span>]);
-req.accepts(<span class="hljs-string">'html, json'</span>);
-<span class="hljs-regexp">//</span> =&gt; <span class="hljs-string">"json"</span>
+<span class="hljs-comment">// Accept: text/*;q=.5, application/json</span>
+req<span class="hljs-selector-class">.accepts</span>([<span class="hljs-string">'html'</span>, <span class="hljs-string">'json'</span>]);
+req<span class="hljs-selector-class">.accepts</span>(<span class="hljs-string">'html, json'</span>);
+<span class="hljs-comment">// =&gt; "json"</span>
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1019,13 +1019,13 @@ req.accepts(<span class="hljs-string">'html, json'</span>);
 								<p>The <code>Referrer</code> header field is special-cased,
 								both <code>Referrer</code> and <code>Referer</code> are interchangeable.</p>
 								<p>Examples:</p>
-								<pre><code>req.<span class="hljs-keyword">get</span>(<span class="hljs-string">'Content-Type'</span>);
+								<pre><code>req<span class="hljs-selector-class">.get</span>(<span class="hljs-string">'Content-Type'</span>);
 <span class="hljs-comment">// =&gt; "text/plain"</span>
 
-req.<span class="hljs-keyword">get</span>(<span class="hljs-string">'content-type'</span>);
+req<span class="hljs-selector-class">.get</span>(<span class="hljs-string">'content-type'</span>);
 <span class="hljs-comment">// =&gt; "text/plain"</span>
 
-req.<span class="hljs-keyword">get</span>(<span class="hljs-string">'Something'</span>);
+req<span class="hljs-selector-class">.get</span>(<span class="hljs-string">'Something'</span>);
 <span class="hljs-comment">// =&gt; undefined</span>
 </code></pre><p>Aliased as <code>req.header()</code>.</p>
 							</div>
@@ -1102,18 +1102,18 @@ req.<span class="hljs-keyword">get</span>(<span class="hljs-string">'Something'<
 								</div>
 								<p>Examples:</p>
 								<pre><code> <span class="hljs-comment">// With Content-Type: text/html; charset=utf-8</span>
- req.<span class="hljs-keyword">is</span>(<span class="hljs-string">'html'</span>);
- req.<span class="hljs-keyword">is</span>(<span class="hljs-string">'text/html'</span>);
- req.<span class="hljs-keyword">is</span>(<span class="hljs-string">'text/*'</span>);
+ req<span class="hljs-selector-class">.is</span>(<span class="hljs-string">'html'</span>);
+ req<span class="hljs-selector-class">.is</span>(<span class="hljs-string">'text/html'</span>);
+ req<span class="hljs-selector-class">.is</span>(<span class="hljs-string">'text/*'</span>);
  <span class="hljs-comment">// =&gt; true</span>
 
  <span class="hljs-comment">// When Content-Type is application/json</span>
- req.<span class="hljs-keyword">is</span>(<span class="hljs-string">'json'</span>);
- req.<span class="hljs-keyword">is</span>(<span class="hljs-string">'application/json'</span>);
- req.<span class="hljs-keyword">is</span>(<span class="hljs-string">'application/*'</span>);
+ req<span class="hljs-selector-class">.is</span>(<span class="hljs-string">'json'</span>);
+ req<span class="hljs-selector-class">.is</span>(<span class="hljs-string">'application/json'</span>);
+ req<span class="hljs-selector-class">.is</span>(<span class="hljs-string">'application/*'</span>);
  <span class="hljs-comment">// =&gt; true</span>
 
- req.<span class="hljs-keyword">is</span>(<span class="hljs-string">'html'</span>);
+ req<span class="hljs-selector-class">.is</span>(<span class="hljs-string">'html'</span>);
  <span class="hljs-comment">// =&gt; false</span>
 </code></pre>
 							</div>

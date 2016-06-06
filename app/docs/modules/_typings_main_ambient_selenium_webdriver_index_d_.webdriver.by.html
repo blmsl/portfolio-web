@@ -116,8 +116,8 @@
 							<p>Short-hand expressions for the primary element locator strategies.
 							For example the following two statements are equivalent:</p>
 						</div>
-						<pre><code><span class="hljs-built_in">var</span> e1 = driver<span class="hljs-built_in">.</span>findElement(webdriver<span class="hljs-built_in">.</span><span class="hljs-keyword">By</span><span class="hljs-built_in">.</span>id(<span class="hljs-string">'foo'</span>));
-<span class="hljs-built_in">var</span> e2 = driver<span class="hljs-built_in">.</span>findElement({id: <span class="hljs-string">'foo'</span>});
+						<pre><code><span class="hljs-built_in">var</span> e1 = driver.findElement(webdriver.<span class="hljs-keyword">By</span>.id(<span class="hljs-string">'foo'</span>));
+<span class="hljs-built_in">var</span> e2 = driver.findElement({id: <span class="hljs-string">'foo'</span>});
 </code></pre><p>Care should be taken when using JavaScript minifiers (such as the
 							Closure compiler), as locator hashes will always be parsed using
 						the un-obfuscated properties listed.</p>

@@ -80,10 +80,10 @@
 							document root using a <a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.webdriver.html">webdriver.WebDriver</a> instance, or by searching
 						under another WebElement:</p>
 					</div>
-					<pre><code>driver<span class="hljs-built_in">.</span>get(<span class="hljs-string">'http://www.google.com'</span>);
-<span class="hljs-built_in">var</span> searchForm = driver<span class="hljs-built_in">.</span>findElement(<span class="hljs-keyword">By</span><span class="hljs-built_in">.</span>tagName(<span class="hljs-string">'form'</span>));
-<span class="hljs-built_in">var</span> searchBox = searchForm<span class="hljs-built_in">.</span>findElement(<span class="hljs-keyword">By</span><span class="hljs-built_in">.</span>name(<span class="hljs-string">'q'</span>));
-searchBox<span class="hljs-built_in">.</span>sendKeys(<span class="hljs-string">'webdriver'</span>);
+					<pre><code>driver.get(<span class="hljs-string">'http://www.google.com'</span>);
+<span class="hljs-built_in">var</span> searchForm = driver.findElement(<span class="hljs-keyword">By</span>.tagName(<span class="hljs-string">'form'</span>));
+<span class="hljs-built_in">var</span> searchBox = searchForm.findElement(<span class="hljs-keyword">By</span>.name(<span class="hljs-string">'q'</span>));
+searchBox.sendKeys(<span class="hljs-string">'webdriver'</span>);
 </code></pre><p>The WebElement is implemented as a promise for compatibility with the promise
 						API. It will always resolve itself when its internal state has been fully
 						resolved and commands may be issued against the element. This can be used to
@@ -336,8 +336,8 @@ searchBox<span class="hljs-built_in">.</span>sendKeys(<span class="hljs-string">
 									factories in the <a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.by.html">webdriver.By</a> namespace, or as a short-hand
 									<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.by.html#hash">webdriver.By.Hash</a> object. For example, the following two statements
 								are equivalent:</p>
-								<pre><code><span class="hljs-built_in">var</span> e1 = element<span class="hljs-built_in">.</span>findElement(<span class="hljs-keyword">By</span><span class="hljs-built_in">.</span>id(<span class="hljs-string">'foo'</span>));
-<span class="hljs-built_in">var</span> e2 = element<span class="hljs-built_in">.</span>findElement({id:<span class="hljs-string">'foo'</span>});
+								<pre><code><span class="hljs-built_in">var</span> e1 = element.findElement(<span class="hljs-keyword">By</span>.id(<span class="hljs-string">'foo'</span>));
+<span class="hljs-built_in">var</span> e2 = element.findElement({id:<span class="hljs-string">'foo'</span>});
 </code></pre><p>You may also provide a custom locator function, which takes as input
 									this WebDriver instance and returns a <a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.webelement.html">webdriver.WebElement</a>, or a
 									promise that will resolve to a WebElement. For example, to find the first
@@ -864,11 +864,11 @@ searchBox<span class="hljs-built_in">.</span>sendKeys(<span class="hljs-string">
 											released (with accompanying keyup events). The NULL key can be used to
 										simulate common keyboard shortcuts:</p>
 										<pre><code>  element.sendKeys(<span class="hljs-string">"text was"</span>,
-                   webdriver.Key.CONTROL, <span class="hljs-string">"a"</span>, webdriver.Key.<span class="hljs-literal">NULL</span>,
+                   webdriver.<span class="hljs-built_in">Key</span>.CONTROL, <span class="hljs-string">"a"</span>, webdriver.<span class="hljs-built_in">Key</span>.<span class="hljs-built_in">NULL</span>,
                    <span class="hljs-string">"now text is"</span>);
   <span class="hljs-comment">// Alternatively:</span>
   element.sendKeys(<span class="hljs-string">"text was"</span>,
-                   webdriver.Key.chord(webdriver.Key.CONTROL, <span class="hljs-string">"a"</span>),
+                   webdriver.<span class="hljs-built_in">Key</span>.chord(webdriver.<span class="hljs-built_in">Key</span>.CONTROL, <span class="hljs-string">"a"</span>),
                    <span class="hljs-string">"now text is"</span>);
 </code></pre></li>
 									<li><p>The end of the keysequence is encountered. When there are no more keys

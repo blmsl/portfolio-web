@@ -522,13 +522,13 @@ driver.executeAsyncScript(
           <span class="hljs-string">'Elapsed time: '</span> + (<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime() - start) + <span class="hljs-string">' ms'</span>);
     });
 </code></pre><p><strong>Example #2:</strong> Synchronizing a test with an AJAX application:</p>
-								<pre><code><span class="hljs-built_in">var</span> button = driver<span class="hljs-built_in">.</span>findElement(<span class="hljs-keyword">By</span><span class="hljs-built_in">.</span>id(<span class="hljs-string">'compose-button'</span>));
-button<span class="hljs-built_in">.</span>click();
-driver<span class="hljs-built_in">.</span>executeAsyncScript(
+								<pre><code><span class="hljs-built_in">var</span> button = driver.findElement(<span class="hljs-keyword">By</span>.id(<span class="hljs-string">'compose-button'</span>));
+button.click();
+driver.executeAsyncScript(
     <span class="hljs-string">'var callback = arguments[arguments.length - 1];'</span> +
     <span class="hljs-string">'mailClient.getComposeWindowWidget().onload(callback);'</span>);
-driver<span class="hljs-built_in">.</span>switchTo()<span class="hljs-built_in">.</span>frame(<span class="hljs-string">'composeWidget'</span>);
-driver<span class="hljs-built_in">.</span>findElement(<span class="hljs-keyword">By</span><span class="hljs-built_in">.</span>id(<span class="hljs-string">'to'</span>))<span class="hljs-built_in">.</span>sendKeys(<span class="hljs-string">'dog@example.com'</span>);
+driver.switchTo().frame(<span class="hljs-string">'composeWidget'</span>);
+driver.findElement(<span class="hljs-keyword">By</span>.id(<span class="hljs-string">'to'</span>)).sendKeys(<span class="hljs-string">'dog@example.com'</span>);
 </code></pre><p><strong>Example #3:</strong> Injecting a XMLHttpRequest and waiting for the result. In
 									this example, the inject script is specified with a function literal. When
 									using this format, the function is converted to a string for injection, so it
@@ -710,8 +710,8 @@ driver<span class="hljs-built_in">.</span>findElement(<span class="hljs-keyword"
 							factories in the <a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.by.html">webdriver.By</a> namespace, or as a short-hand
 							<a href="../modules/_typings_main_ambient_selenium_webdriver_index_d_.webdriver.by.html#hash">webdriver.By.Hash</a> object. For example, the following two statements
 						are equivalent:</p>
-						<pre><code><span class="hljs-built_in">var</span> e1 = driver<span class="hljs-built_in">.</span>findElement(<span class="hljs-keyword">By</span><span class="hljs-built_in">.</span>id(<span class="hljs-string">'foo'</span>));
-<span class="hljs-built_in">var</span> e2 = driver<span class="hljs-built_in">.</span>findElement({id:<span class="hljs-string">'foo'</span>});
+						<pre><code><span class="hljs-built_in">var</span> e1 = driver.findElement(<span class="hljs-keyword">By</span>.id(<span class="hljs-string">'foo'</span>));
+<span class="hljs-built_in">var</span> e2 = driver.findElement({id:<span class="hljs-string">'foo'</span>});
 </code></pre><p>You may also provide a custom locator function, which takes as input
 							this WebDriver instance and returns a <a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.webelement.html">webdriver.WebElement</a>, or a
 							promise that will resolve to a WebElement. For example, to find the first
@@ -1282,10 +1282,10 @@ driver<span class="hljs-built_in">.</span>findElement(<span class="hljs-keyword"
 								scheduled for execution until {@link webdriver.TouchSequence#perform} is
 							called. Example:</p>
 						</div>
-						<pre><code>driver.touch<span class="hljs-variable">Actions</span>().
-    tap(element1).
-    double<span class="hljs-variable">Tap</span>(element2).
-    perform();
+						<pre><code>driver<span class="hljs-selector-class">.touchActions</span>().
+    <span class="hljs-selector-tag">tap</span>(element1).
+    <span class="hljs-selector-tag">doubleTap</span>(element2).
+    <span class="hljs-selector-tag">perform</span>();
 </code></pre>
 					</div>
 					<h4 class="tsd-returns-title">Returns <a href="_typings_main_ambient_selenium_webdriver_index_d_.webdriver.touchsequence.html" class="tsd-signature-type">TouchSequence</a></h4>

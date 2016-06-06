@@ -80,11 +80,11 @@
 						will not be executed until {@link #perform} is called.</p>
 					</div>
 					<p>Example:</p>
-					<pre><code><span class="hljs-tag">new</span> <span class="hljs-tag">webdriver</span><span class="hljs-class">.TouchSequence</span>(<span class="hljs-tag">driver</span>).
-    <span class="hljs-tag">tapAndHold</span>(<span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">x</span>:<span class="hljs-value"> <span class="hljs-number">0</span>, y: <span class="hljs-number">0</span></span></span></span>}).
-    <span class="hljs-tag">move</span>(<span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">x</span>:<span class="hljs-value"> <span class="hljs-number">3</span>, y: <span class="hljs-number">4</span></span></span></span>}).
-    <span class="hljs-tag">release</span>(<span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">x</span>:<span class="hljs-value"> <span class="hljs-number">10</span>, y: <span class="hljs-number">10</span></span></span></span>}).
-    <span class="hljs-tag">perform</span>();
+					<pre><code><span class="hljs-selector-tag">new</span> <span class="hljs-selector-tag">webdriver</span><span class="hljs-selector-class">.TouchSequence</span>(<span class="hljs-selector-tag">driver</span>).
+    <span class="hljs-selector-tag">tapAndHold</span>({<span class="hljs-attribute">x</span>: <span class="hljs-number">0</span>, y: <span class="hljs-number">0</span>}).
+    <span class="hljs-selector-tag">move</span>({<span class="hljs-attribute">x</span>: <span class="hljs-number">3</span>, y: <span class="hljs-number">4</span>}).
+    <span class="hljs-selector-tag">release</span>({<span class="hljs-attribute">x</span>: <span class="hljs-number">10</span>, y: <span class="hljs-number">10</span>}).
+    <span class="hljs-selector-tag">perform</span>();
 </code></pre>
 				</div>
 			</section>

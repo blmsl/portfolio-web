@@ -236,10 +236,10 @@
 							<p>Send JSON response.</p>
 						</div>
 						<p>Examples:</p>
-						<pre><code>res.json(<span class="hljs-literal">null</span>);
-res.json({ <span class="hljs-string">user:</span> <span class="hljs-string">'tj'</span> });
-res.json(<span class="hljs-number">500</span>, <span class="hljs-string">'oh noes!'</span>);
-res.json(<span class="hljs-number">404</span>, <span class="hljs-string">'I dont have that'</span>);
+						<pre><code>res<span class="hljs-selector-class">.json</span>(null);
+<span class="hljs-selector-tag">res</span><span class="hljs-selector-class">.json</span>({ <span class="hljs-attribute">user</span>: <span class="hljs-string">'tj'</span> });
+res<span class="hljs-selector-class">.json</span>(<span class="hljs-number">500</span>, <span class="hljs-string">'oh noes!'</span>);
+res<span class="hljs-selector-class">.json</span>(<span class="hljs-number">404</span>, <span class="hljs-string">'I dont have that'</span>);
 </code></pre>
 					</div>
 				</section>
@@ -257,10 +257,10 @@ res.json(<span class="hljs-number">404</span>, <span class="hljs-string">'I dont
 							<p>Send JSON response with JSONP callback support.</p>
 						</div>
 						<p>Examples:</p>
-						<pre><code>res.jsonp(<span class="hljs-literal">null</span>);
-res.jsonp({ <span class="hljs-string">user:</span> <span class="hljs-string">'tj'</span> });
-res.jsonp(<span class="hljs-number">500</span>, <span class="hljs-string">'oh noes!'</span>);
-res.jsonp(<span class="hljs-number">404</span>, <span class="hljs-string">'I dont have that'</span>);
+						<pre><code>res<span class="hljs-selector-class">.jsonp</span>(null);
+<span class="hljs-selector-tag">res</span><span class="hljs-selector-class">.jsonp</span>({ <span class="hljs-attribute">user</span>: <span class="hljs-string">'tj'</span> });
+res<span class="hljs-selector-class">.jsonp</span>(<span class="hljs-number">500</span>, <span class="hljs-string">'oh noes!'</span>);
+res<span class="hljs-selector-class">.jsonp</span>(<span class="hljs-number">404</span>, <span class="hljs-string">'I dont have that'</span>);
 </code></pre>
 					</div>
 				</section>
@@ -288,11 +288,11 @@ res.jsonp(<span class="hljs-number">404</span>, <span class="hljs-string">'I don
 							<p>Send a response.</p>
 						</div>
 						<p>Examples:</p>
-						<pre><code>res.<span class="hljs-built_in">send</span>(new Buffer(<span class="hljs-string">'wahoo'</span>))<span class="hljs-comment">;</span>
-res.<span class="hljs-built_in">send</span>({ some: <span class="hljs-string">'json'</span> })<span class="hljs-comment">;</span>
-res.<span class="hljs-built_in">send</span>(<span class="hljs-string">'&lt;p&gt;some html&lt;/p&gt;'</span>)<span class="hljs-comment">;</span>
-res.<span class="hljs-built_in">send</span>(<span class="hljs-number">404</span>, <span class="hljs-string">'Sorry, cant find that'</span>)<span class="hljs-comment">;</span>
-res.<span class="hljs-built_in">send</span>(<span class="hljs-number">404</span>)<span class="hljs-comment">;</span>
+						<pre><code>res<span class="hljs-selector-class">.send</span>(new Buffer(<span class="hljs-string">'wahoo'</span>));
+<span class="hljs-selector-tag">res</span><span class="hljs-selector-class">.send</span>({ <span class="hljs-attribute">some</span>: <span class="hljs-string">'json'</span> });
+res<span class="hljs-selector-class">.send</span>(<span class="hljs-string">'&lt;p&gt;some html&lt;/p&gt;'</span>);
+res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404</span>, <span class="hljs-string">'Sorry, cant find that'</span>);
+res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404</span>);
 </code></pre>
 					</div>
 				</section>
@@ -528,11 +528,11 @@ res.<span class="hljs-built_in">send</span>(<span class="hljs-number">404</span>
 									when it does not contain &quot;/&quot;, or set the Content-Type to <code>type</code> otherwise.</p>
 								</div>
 								<p>Examples:</p>
-								<pre><code><span class="hljs-title">res</span>.<span class="hljs-typedef"><span class="hljs-keyword">type</span><span class="hljs-container">('.html')</span>;</span>
-<span class="hljs-title">res</span>.<span class="hljs-typedef"><span class="hljs-keyword">type</span><span class="hljs-container">('html')</span>;</span>
-<span class="hljs-title">res</span>.<span class="hljs-typedef"><span class="hljs-keyword">type</span><span class="hljs-container">('json')</span>;</span>
-<span class="hljs-title">res</span>.<span class="hljs-typedef"><span class="hljs-keyword">type</span><span class="hljs-container">('application/json')</span>;</span>
-<span class="hljs-title">res</span>.<span class="hljs-typedef"><span class="hljs-keyword">type</span><span class="hljs-container">('png')</span>;</span>
+								<pre><code><span class="hljs-title">res</span>.<span class="hljs-keyword">type</span>('.html');
+<span class="hljs-title">res</span>.<span class="hljs-keyword">type</span>('html');
+<span class="hljs-title">res</span>.<span class="hljs-keyword">type</span>('json');
+<span class="hljs-title">res</span>.<span class="hljs-keyword">type</span>('application/json');
+<span class="hljs-title">res</span>.<span class="hljs-keyword">type</span>('png');
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1146,9 +1146,9 @@ res.<span class="hljs-built_in">send</span>(<span class="hljs-number">404</span>
 									is given a path that does <em>not</em> lead with &quot;/&quot; it becomes
 									relative to the mount-point. For example if the application
 								is mounted at &quot;/blog&quot;, the following would become &quot;/blog/login&quot;.</p>
-								<pre><code> <span class="hljs-keyword">res</span>.location(<span class="hljs-string">'login'</span>);
+								<pre><code> res<span class="hljs-selector-class">.location</span>(<span class="hljs-string">'login'</span>);
 </code></pre><p>  While the leading slash would result in a location of &quot;/login&quot;:</p>
-								<pre><code> <span class="hljs-keyword">res</span>.location(<span class="hljs-string">'/login'</span>);
+								<pre><code> res<span class="hljs-selector-class">.location</span>(<span class="hljs-string">'/login'</span>);
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1505,7 +1505,7 @@ res.<span class="hljs-built_in">send</span>(<span class="hljs-number">404</span>
 									be used as an alternative for the <code>static()</code> middleware for
 									dynamic situations. The code backing <code>res.sendFile()</code> is actually
 								the same code, so HTTP cache support etc is identical.</p>
-								<pre><code>app.<span class="hljs-keyword">get</span>(<span class="hljs-string">'/user/:uid/photos/:file'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(req, res)</span></span>{
+								<pre><code>app.get(<span class="hljs-string">'/user/:uid/photos/:file'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(req, res)</span></span>{
   <span class="hljs-keyword">var</span> uid = req.params.uid
     , file = req.params.file;
 
@@ -1888,11 +1888,11 @@ res.<span class="hljs-built_in">send</span>(<span class="hljs-number">404</span>
 									when it does not contain &quot;/&quot;, or set the Content-Type to <code>type</code> otherwise.</p>
 								</div>
 								<p>Examples:</p>
-								<pre><code><span class="hljs-title">res</span>.<span class="hljs-typedef"><span class="hljs-keyword">type</span><span class="hljs-container">('.html')</span>;</span>
-<span class="hljs-title">res</span>.<span class="hljs-typedef"><span class="hljs-keyword">type</span><span class="hljs-container">('html')</span>;</span>
-<span class="hljs-title">res</span>.<span class="hljs-typedef"><span class="hljs-keyword">type</span><span class="hljs-container">('json')</span>;</span>
-<span class="hljs-title">res</span>.<span class="hljs-typedef"><span class="hljs-keyword">type</span><span class="hljs-container">('application/json')</span>;</span>
-<span class="hljs-title">res</span>.<span class="hljs-typedef"><span class="hljs-keyword">type</span><span class="hljs-container">('png')</span>;</span>
+								<pre><code><span class="hljs-title">res</span>.<span class="hljs-keyword">type</span>('.html');
+<span class="hljs-title">res</span>.<span class="hljs-keyword">type</span>('html');
+<span class="hljs-title">res</span>.<span class="hljs-keyword">type</span>('json');
+<span class="hljs-title">res</span>.<span class="hljs-keyword">type</span>('application/json');
+<span class="hljs-title">res</span>.<span class="hljs-keyword">type</span>('png');
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
