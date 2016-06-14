@@ -1,6 +1,6 @@
 {
   "name": "ouq77-portfolio",
-  "version": "2.5.6",
+  "version": "2.5.7",
   "description": "On-line portfolio of Louw Swart, based on 'angular2-seed'",
   "repository": {
     "url": "https://github.com/ouq77/portfolio-web"
@@ -68,7 +68,7 @@
     "gulp-watch": "4.3.6",
     "jasmine-core": "2.4.1",
     "jasmine-spec-reporter": "2.5.0",
-    "jquery": "3.0.0",
+    "jquery": "2.2.4",
     "jquery.easing": "1.3.2",
     "karma": "0.13.22",
     "karma-chrome-launcher": "1.0.1",
