@@ -135,17 +135,12 @@ const CSS_DEPENDENCIES:Array<Dependency> = [
 let npmDependenciesDev:Array<Dependency> = normalizeDependencies([
   {src: 'systemjs/dist/system-polyfills.src.js', dest: LIB_DEST},
 
-  {src: 'es6-shim/es6-shim.js', inject: 'shims', dest: LIB_DEST},
   {src: 'reflect-metadata/Reflect.js', inject: 'shims', dest: LIB_DEST},
   {src: 'systemjs/dist/system.src.js', inject: 'shims', dest: LIB_DEST},
-  {src: 'angular2/es6/dev/src/testing/shims_for_IE.js', inject: 'shims'},
   {src: 'zone.js/dist/zone.js', inject: 'shims', dest: LIB_DEST},
 
   // Faster dev page load
   {src: 'rxjs/bundles/Rx.js', inject: 'libs', dest: LIB_DEST},
-  {src: 'angular2/bundles/angular2.dev.js', inject: 'libs', dest: LIB_DEST},
-  {src: 'angular2/bundles/router.dev.js', inject: 'libs', dest: LIB_DEST},
-  {src: 'angular2/bundles/http.dev.js', inject: 'libs', dest: LIB_DEST},
 ]);
 
 npmDependenciesDev = npmDependenciesDev
@@ -154,9 +149,7 @@ npmDependenciesDev = npmDependenciesDev
   .concat(NPM_FONTS);
 
 let npmDependenciesProd:Array<Dependency> = normalizeDependencies([
-  {src: 'systemjs/dist/system-polyfills.src.js', inject: 'shims'},
   {src: 'reflect-metadata/Reflect.js', inject: 'shims'},
-  {src: 'es6-shim/es6-shim.min.js', inject: 'shims'},
   {src: 'systemjs/dist/system.src.js', inject: 'shims'},
   {src: 'zone.js/dist/zone.js', inject: 'libs'}
 ]);

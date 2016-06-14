@@ -1,7 +1,7 @@
 'use strict';
-import {Component, OnInit} from 'angular2/core';
-import {Pipe, PipeTransform} from 'angular2/core';
-import {Jsonp, JSONP_PROVIDERS} from 'angular2/http';
+import {Component, OnInit} from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
+import {Jsonp, JSONP_PROVIDERS} from '@angular/http';
 import {EducationService} from '../services/education';
 import {School} from '../definitions/school';
 import {CodeSchool} from '../definitions/code.school';

@@ -1,8 +1,7 @@
 'use strict';
-import {Injectable} from 'angular2/core';
-import {Http} from 'angular2/http';
-import {Observable} from 'angular2/src/facade/async';
-import 'rxjs/Rx';
+import {Injectable} from '@angular/core';
+import {Http} from '@angular/http';
+import {Observable} from 'rxjs/Observable';
 import {LINKS} from '../models/links';
 import {Link} from '../definitions/link';
 import {LastModified} from '../definitions/last.modified';

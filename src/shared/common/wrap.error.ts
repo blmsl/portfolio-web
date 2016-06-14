@@ -1,7 +1,6 @@
 'use strict';
-import {Response} from 'angular2/http';
+import {Response} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
-import 'rxjs/Rx';
 import {WrappedError} from '../definitions/wrapped.error';
 
 export function wrapError(err:Response):Observable<WrappedError> {

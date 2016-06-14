@@ -1,6 +1,6 @@
 'use strict';
-import {Component, OnInit} from 'angular2/core';
-import {Http, HTTP_PROVIDERS} from 'angular2/http';
+import {Component, OnInit} from '@angular/core';
+import {Http, HTTP_PROVIDERS} from '@angular/http';
 import {HeaderService} from '../services/header';
 import {MENU_CONFIG, GRID_ROTATOR_CONFIG} from '../models/header.config';
 import {ImageIds} from '../definitions/image.ids';

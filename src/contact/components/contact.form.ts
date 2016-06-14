@@ -1,8 +1,8 @@
 'use strict';
-import {Component, OnInit} from 'angular2/core';
-import {Pipe, PipeTransform} from 'angular2/core';
-import {FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/common';
-import {Http, HTTP_PROVIDERS} from 'angular2/http';
+import {Component, OnInit} from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
+import {FORM_DIRECTIVES, CORE_DIRECTIVES} from '@angular/common';
+import {Http, HTTP_PROVIDERS} from '@angular/http';
 import {ContactService} from '../services/contact';
 import {ErrorConfig} from '../definitions/error.config';
 import {ContactMessage} from '../definitions/contact.message';

@@ -1,5 +1,5 @@
 'use strict';
-import {Component, OnInit} from 'angular2/core';
+import {Component, OnInit} from '@angular/core';
 import {ExperienceService} from '../services/experience';
 import {Job} from '../definitions/job';
 

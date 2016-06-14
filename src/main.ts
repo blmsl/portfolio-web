@@ -1,8 +1,8 @@
 'use strict';
-import {provide, enableProdMode} from 'angular2/core';
-import {bootstrap} from 'angular2/platform/browser';
-import {ROUTER_PROVIDERS} from 'angular2/router';
-import {LocationStrategy, HashLocationStrategy} from 'angular2/platform/common';
+import {provide, enableProdMode} from '@angular/core';
+import {bootstrap} from '@angular/platform-browser-dynamic';
+import {ROUTER_PROVIDERS} from '@angular/router';
+import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 import {AppComponent} from './app/components/app';
 
 enableProdMode();

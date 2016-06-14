@@ -1,8 +1,7 @@
 'use strict';
-import {Injectable} from 'angular2/core';
-import {Http} from 'angular2/http';
-import {Observable} from 'angular2/src/facade/async';
-import 'rxjs/Rx';
+import {Injectable} from '@angular/core';
+import {Http} from '@angular/http';
+import {Observable} from 'rxjs/Observable';
 import {ImageIds} from '../definitions/image.ids';
 import {WrappedError} from '../../shared/definitions/wrapped.error';
 import {wrapError} from '../../shared/common/wrap.error';

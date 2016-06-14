@@ -1,8 +1,7 @@
 'use strict';
-import {Injectable} from 'angular2/core';
-import {Jsonp} from 'angular2/http';
-import {Observable} from 'angular2/src/facade/async';
-import 'rxjs/Rx';
+import {Injectable} from '@angular/core';
+import {Jsonp} from '@angular/http';
+import {Observable} from 'rxjs/Observable';
 import {SCHOOLS} from '../models/schools';
 import {School} from '../definitions/school';
 import {CodeSchool} from '../definitions/code.school';
