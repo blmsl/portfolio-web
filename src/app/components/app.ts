@@ -1,5 +1,6 @@
 'use strict';
 import {Component, OnInit} from '@angular/core';
+import {ROUTER_DIRECTIVES} from '@angular/router';
 import {AppService} from '../services/app';
 import {HeaderComponent} from '../../header/components/header';
 import {AboutComponent} from '../../about/components/about';
@@ -14,6 +15,7 @@ import {elementInViewport} from '../../shared/common/element.in.viewport';
   selector: 'container',
   providers: [AppService],
   directives: [
+    ROUTER_DIRECTIVES,
     HeaderComponent,
     AboutComponent,
     SkillsComponent,

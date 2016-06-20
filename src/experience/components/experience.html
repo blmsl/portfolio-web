@@ -24,7 +24,7 @@
           <h6 *ngIf="job.accomplishments">Accomplishments</h6>
           <section *ngIf="job.accomplishments" [innerHtml]="job.accomplishments" class="content"></section>
           <div *ngIf="job.video" class="vid-container">
-            <iframe class="youtube-frame" width="0" height="0" src="//www.youtube.com/embed/{{job.video}}"></iframe>
+            <iframe class="youtube-frame" width="0" height="0" [src]="job.video | videoUrl"></iframe>
           </div>
         </div>
       </div>

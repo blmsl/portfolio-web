@@ -30,7 +30,7 @@ export const JOBS:Array<Job> = [
     },
     title: 'Analyst Programmer (UI)',
     content: '<p>Worked as a <b>UI Developer</b> at Westpac NZ, where I was involved in a number of projects, ' +
-    'including <b><i>Direct from Account&trade;</i></b>, <b><i>Westpac Exhange&trade;</i></b> and <b>' +
+    'including <b><i>Direct from Account&trade;</i></b>, <b><i>Westpac Exchange&trade;</i></b> and <b>' +
     '<i>Westpac One&reg;</i></b>.</p><p>The server-side development environment was <b>Java</b>, while the ' +
     'client-side was built using a variety of <b>JavaScript technologies</b> and <b>frameworks</b>, most notably ' +
     '<b>RequireJS</b>, <b>Backbone</b>, Marionette, <b>Underscore</b>, <b>AngularJS</b>, SCSS, and, during ' +
@@ -77,7 +77,6 @@ export const JOBS:Array<Job> = [
     'involved the implementation of a <b>WYSIWYG editor</b> inside GWT. Worked with my team in New Zealand alongside ' +
     'teams in the US and China to re-build the data collection component.</p>'
   }, {
-
     year: {
       from: 'Nov 2008',
       to: 'Apr 2011'
@@ -101,7 +100,7 @@ export const JOBS:Array<Job> = [
     'enabling development of mobile client solutions. Converted <b>Google\'s server-side JSP tracking</b> code to ' +
     'fit into the Quirk stack and WebWork framework.</p><p>Developed a <b>live tracking solution</b> of a ' +
     'colleague\'s mountain bike race via <b>GPS</b>, Vodacom API and <b>Google Maps API</b>.</p>',
-    video: '34Tb79-2ekc'
+    video: '//www.youtube.com/embed/34Tb79-2ekc'
   }, {
 
     year: {
