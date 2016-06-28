@@ -509,6 +509,13 @@ export const TIU:Airport = {
   city: 'Timaru',
   country: NEW_ZEALAND
 };
+export const CBR:Airport = {
+  loc: {lat: -35.3032616, lng:149.1746154},
+  iataCode: 'CBR',
+  name: 'Canberra Airport',
+  city: 'Canberra',
+  country: AUSTRALIA
+};
 
 /**
  * Array of all airports for the Contact section
@@ -522,5 +529,5 @@ export const AIRPORTS:Array<Airport> = [
   SYD, EZE, GRU, YVR, FRA, ZRH, CDG, CPH, BOM,
   BKK, KIX, BKKN, USM, HKGN, DPS, DRW, ADL, HLZ,
   CHC, ZQN, AKL, WLG, NSN, TRG, ROT, RAR, NRT,
-  SIN, ARN, BGO, TRD, BOO, SJV, TOS, TIU
+  SIN, ARN, BGO, TRD, BOO, SJV, TOS, TIU, CBR
 ];
