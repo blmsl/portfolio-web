@@ -1,6 +1,6 @@
 {
   "name": "ouq77-portfolio",
-  "version": "2.7.2",
+  "version": "2.7.3",
   "description": "On-line portfolio of Louw Swart, based on 'angular2-seed'",
   "repository": {
     "url": "https://github.com/ouq77/portfolio-web"
@@ -46,7 +46,7 @@
     "gulp-bump": "2.2.0",
     "gulp-concat": "2.6.0",
     "gulp-cssnano": "2.1.2",
-    "gulp-git": "1.7.2",
+    "gulp-git": "1.8.0",
     "gulp-htmlmin": "2.0.0",
     "gulp-if": "2.0.1",
     "gulp-inject": "4.1.0",
@@ -83,8 +83,8 @@
     "phantomjs-prebuilt": "2.1.7",
     "protractor": "3.3.0",
     "rimraf": "2.5.2",
-    "run-sequence": "1.2.1",
-    "semver": "5.1.1",
+    "run-sequence": "1.2.2",
+    "semver": "5.2.0",
     "serve-static": "1.11.1",
     "slash": "1.0.0",
     "stream-series": "0.1.1",
