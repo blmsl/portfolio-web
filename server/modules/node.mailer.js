@@ -25,10 +25,10 @@ let send = (message, callback) => {
   })
   transporter.sendMail(message, (error, info) => {
     if (error) {
-      console.error('Message not sent: ' + error)
+      console.error(`Message not sent: ${error}`)
       callback(false)
     }
-    console.error('Message sent: ' + info.response)
+    console.error(`Message sent: ${info.response}`)
     callback(true)
   })
 }
