@@ -100,7 +100,7 @@ export const JOBS:Array<Job> = [
     'enabling development of mobile client solutions. Converted <b>Google\'s server-side JSP tracking</b> code to ' +
     'fit into the Quirk stack and WebWork framework.</p><p>Developed a <b>live tracking solution</b> of a ' +
     'colleague\'s mountain bike race via <b>GPS</b>, Vodacom API and <b>Google Maps API</b>.</p>',
-    video: '//www.youtube.com/embed/34Tb79-2ekc'
+    video: '//www.youtube.com/embed/34Tb79-2ekc?rel=0'
   }, {
 
     year: {
