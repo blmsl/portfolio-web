@@ -10,7 +10,7 @@ Requires
 2. Environment Variables:
   * CUSTOM_APP_DOMAIN - Custom domain, if not run on Heroku
   * GMAIL_APP_EMAIL - Email address for logging into Gmail account
-  * GMAIL_APP_PASSWORD - Password for the email adress used for sending
+  * GMAIL_APP_PASSWORD - Password for the email address used for sending
   * GMAIL_SENDER_EMAIL - Email address including name, e.g. "Jake the Dog <jake@the.dog>"
   * GOOGLE_MAPS_API_KEY - Google Maps API key
   * GOOGLE_ANALYTICS_ID - Analytics id for tracking
