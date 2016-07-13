@@ -6,7 +6,7 @@ import {META_TAGS} from '../config.site';
 let buildDocs = (gulp, plugins) => {
   return () => {
     let src = [
-      'typings/main.d.ts',
+      'typings/index.d.ts',
       join(APP_SRC, '**/*.ts'),
       '!' + join(APP_SRC, '**/*_spec.ts'),
       '!' + join(APP_SRC, '**/*.e2e.ts')

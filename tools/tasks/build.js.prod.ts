@@ -7,7 +7,7 @@ let buildJSDev = (gulp, plugins) => {
   return () => {
     let tsProject = tsProjectFn(plugins);
     let src = [
-      'typings/main.d.ts',
+      'typings/index.d.ts',
       join(APP_SRC, '**/*.ts'),
       '!' + join(APP_SRC, '**/*.e2e.ts'),
       '!' + join(APP_SRC, '**/*_spec.ts')
