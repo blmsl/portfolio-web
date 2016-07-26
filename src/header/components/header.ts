@@ -55,17 +55,19 @@ export class HeaderComponent implements OnInit {
 
   initNavigation() {
     (($) => {
-      $('.navbar-wrapper').stickUp(MENU_CONFIG);
+      $(document).on('stickUpReady', () => {
+        $('.navbar-wrapper').stickUp(MENU_CONFIG);
 
-      $('.navbar.navbar-inverse.navbar-static-top a').click(
-        () =>
-          $('.navbar-collapse').addClass('hide-class').addClass('collapse').removeClass('in')
-      );
+        $('.navbar.navbar-inverse.navbar-static-top a').click(
+          () =>
+            $('.navbar-collapse').addClass('hide-class').addClass('collapse').removeClass('in')
+        );
 
-      $('.navbar-toggle').click(
-        () =>
-          $('.navbar-collapse').removeClass('hide-class')
-      );
+        $('.navbar-toggle').click(
+          () =>
+            $('.navbar-collapse').removeClass('hide-class')
+        );
+      });
     })(jQuery);
   }
 

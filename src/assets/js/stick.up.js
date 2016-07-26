@@ -60,7 +60,7 @@ jQuery(function($) {
         } else {
           topMargin = 0;
         }
-        menuSize = $('.' + itemClass).size();
+        menuSize = $('.' + itemClass).length;
       }
       stickyHeight = parseInt($(this).height());
       stickyMarginB = parseInt($(this).css('margin-bottom'));
@@ -142,5 +142,7 @@ jQuery(function($) {
         $('.stuck-menu').css('position', 'relative');
       }
     }
+
+    $(document).trigger('stickUpReady');
   });
 });
