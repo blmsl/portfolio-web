@@ -55,7 +55,7 @@ export class HeaderComponent implements OnInit {
 
   initNavigation() {
     (($) => {
-      $(document).on('stickUpReady', () => {
+      $(document).ready(() => {
         $('.navbar-wrapper').stickUp(MENU_CONFIG);
 
         $('.navbar.navbar-inverse.navbar-static-top a').click(
