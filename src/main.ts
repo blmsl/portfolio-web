@@ -1,13 +1,13 @@
-'use strict';
-import {APP_BASE_HREF} from '@angular/common';
 import {enableProdMode} from '@angular/core';
-import {bootstrap} from '@angular/platform-browser-dynamic';
-import {AppComponent} from './app/components/app';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {FormsModule} from '@angular/forms';
+import {AppModule} from './app.module';
 
 enableProdMode();
-bootstrap(AppComponent, [
+
+platformBrowserDynamic().bootstrapModule(
+  AppModule,
   {
-    provide: APP_BASE_HREF,
-    useValue: '.'
+    modules: [FormsModule]
   }
-]);
+);

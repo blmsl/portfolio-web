@@ -140,7 +140,7 @@ let npmDependenciesDev:Array<Dependency> = normalizeDependencies([
   {src: 'zone.js/dist/zone.js', inject: 'shims', dest: LIB_DEST},
 
   // Faster dev page load
-  {src: 'rxjs/bundles/Rx.js', inject: 'libs', dest: LIB_DEST},
+  {src: 'rxjs/bundles/Rx.umd.js', inject: 'libs', dest: LIB_DEST},
 ]);
 
 npmDependenciesDev = npmDependenciesDev
