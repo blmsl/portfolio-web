@@ -1,13 +1,12 @@
 'use strict';
 import {Component, OnInit} from '@angular/core';
-import {Http, HTTP_PROVIDERS} from '@angular/http';
 import {FooterService} from '../services/footer';
 import {Link} from '../definitions/link';
 import {LastModified} from '../definitions/last.modified';
 
 @Component({
   selector: 'footer',
-  providers: [Http, HTTP_PROVIDERS, FooterService],
+  providers: [FooterService],
   templateUrl: './footer/components/footer.html',
   styleUrls: ['./footer/components/footer.css']
 })

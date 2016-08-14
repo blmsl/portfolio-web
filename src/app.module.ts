@@ -1,11 +1,11 @@
 import {NgModule} from '@angular/core';
 import {APP_BASE_HREF} from '@angular/common';
 import {BrowserModule} from '@angular/platform-browser';
-import {DeprecatedFormsModule} from '@angular/common';
+import {HttpModule} from '@angular/http';
 import {AppComponent} from './app/components/app';
 
 @NgModule({
-  imports: [BrowserModule, DeprecatedFormsModule],
+  imports: [BrowserModule, HttpModule],
   declarations: [AppComponent],
   providers: [{
     provide: APP_BASE_HREF,

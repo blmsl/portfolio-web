@@ -1,8 +1,7 @@
 'use strict';
 import {Component, OnInit} from '@angular/core';
 import {Pipe, PipeTransform} from '@angular/core';
-import {FORM_DIRECTIVES, CORE_DIRECTIVES} from '@angular/common';
-import {Http, HTTP_PROVIDERS} from '@angular/http';
+import {REACTIVE_FORM_DIRECTIVES, FormGroup, FormControl, Validators, FormBuilder} from '@angular/forms';
 import {ContactService} from '../services/contact';
 import {ErrorConfig} from '../definitions/error.config';
 import {ContactMessage} from '../definitions/contact.message';
@@ -16,14 +15,18 @@ export class TrimPipe implements PipeTransform {
 }
 @Component({
   selector: 'contact-form',
-  providers: [Http, HTTP_PROVIDERS, ContactService],
+  providers: [FormBuilder, ContactService],
   pipes: [TrimPipe],
   templateUrl: './contact/components/contact.form.html',
   styleUrls: ['./contact/components/contact.form.css'],
-  directives: [FORM_DIRECTIVES, CORE_DIRECTIVES]
+  directives: [REACTIVE_FORM_DIRECTIVES]
 })
 export class ContactFormComponent implements OnInit {
-  public message:ContactMessage;
+  public name:FormControl;
+  public email:FormControl;
+  public message:FormControl;
+  public heuning:FormControl;
+  public form:FormGroup;
   public submitClicked:boolean;
   public submitting:boolean;
   public sentSuccessfully:boolean;
@@ -32,9 +35,18 @@ export class ContactFormComponent implements OnInit {
   public errorConfig:ErrorConfig;
   private _contactService:ContactService;
 
-  constructor(contactService:ContactService) {
+  constructor(contactService:ContactService, fb:FormBuilder) {
     this._contactService = contactService;
-    this.message = new ContactMessage();
+    this.name = new FormControl('', Validators.required);
+    this.email = new FormControl('', Validators.required);
+    this.message = new FormControl('', Validators.required);
+    this.heuning = new FormControl('');
+    this.form = fb.group({
+      name: this.name,
+      email: this.email,
+      message: this.message,
+      heuning: this.heuning
+    });
     this.submitClicked = false;
     this.submitting = false;
     this.sentSuccessfully = false;
@@ -61,10 +73,10 @@ export class ContactFormComponent implements OnInit {
     this.serverErrors = '';
 
     let submission:ContactMessage = new ContactMessage(
-      this.message.name.trim(),
-      this.message.email.trim(),
-      this.message.text.trim(),
-      this.message.heuning
+      this.name.value.trim(),
+      this.email.value.trim(),
+      this.message.value.trim(),
+      this.heuning.value
     );
 
     this._contactService.send(submission).subscribe(

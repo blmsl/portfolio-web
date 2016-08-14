@@ -7,7 +7,6 @@ import Map = google.maps.Map;
 import Marker = google.maps.Marker;
 import Polyline = google.maps.Polyline;
 import {Component, OnInit} from '@angular/core';
-import {Http, HTTP_PROVIDERS} from '@angular/http';
 import {MAP_OPTIONS} from '../models/map.config';
 import {CURRENT_LOCATION} from '../models/cities';
 import {CITIES} from '../models/cities';
@@ -20,7 +19,6 @@ import {elementInViewport} from '../../shared/common/element.in.viewport';
 
 @Component({
   selector: 'googlemap',
-  providers: [Http, HTTP_PROVIDERS],
   templateUrl: './contact/components/contact.gmap.html',
   styleUrls: ['./contact/components/contact.gmap.css']
 })
