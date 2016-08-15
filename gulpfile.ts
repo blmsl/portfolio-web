@@ -24,9 +24,6 @@ gulp.task('bump.tag.heroku.patch', () => task('bump.tag', 'heroku.patch')());
 gulp.task('bump.tag.heroku.minor', () => task('bump.tag', 'heroku.minor')());
 gulp.task('bump.tag.heroku.major', () => task('bump.tag', 'heroku.major')());
 
-// Check versions
-gulp.task('check.versions', () => task('check.versions')());
-
 // Docs
 gulp.task('build.docs', () => task('build.docs')());
 gulp.task('serve.docs', () => task('serve.docs')());

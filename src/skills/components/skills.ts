@@ -61,7 +61,6 @@ export class SkillsComponent implements OnInit {
         if (!this._skillChartDrawn && elementInViewport($, $(val))) {
           this._skillChartDrawn = true;
           $('.chart').easyPieChart({
-            easing: 'easeOutBounce',
             onStep: function (from:number, to:number, percent:number) {
               $(this.el).find('.percent').text(Math.round(percent));
             }

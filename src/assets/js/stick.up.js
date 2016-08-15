@@ -1,6 +1,6 @@
 /*! stick.up (Custom Build) !*/
-'use strict';
-jQuery(function($) {
+(function($) {
+  'use strict';
   var contentTop = [],
     content = [],
     lastScrollTop = 0,
@@ -126,19 +126,21 @@ jQuery(function($) {
 
     comparator = varScroll + topMargin;
 
+    var $stuckMenu = $('.stuck-menu');
+
     if (varTop < comparator && varScroll > 60) {
       $('.wrapper').addClass('special-height');
-      $('.stuck-menu').addClass('is-stuck');
-      $('.stuck-menu').next().closest('div').css({'margin-top': stickyHeight + stickyMarginB + currentMarginT + 'px'});
-      $('.stuck-menu').css('position', 'fixed');
+      $stuckMenu.addClass('is-stuck');
+      $stuckMenu.next().closest('div').css({'margin-top': stickyHeight + stickyMarginB + currentMarginT + 'px'});
+      $stuckMenu.css('position', 'fixed');
       $('.is-stuck').css({top: '0px'}, 10);
     }
 
     if (comparator < varTop) {
       $('.wrapper').removeClass('special-height');
-      $('.stuck-menu').removeClass('is-stuck');
-      $('.stuck-menu').next().closest('div').css({'margin-top': currentMarginT + 'px'});
-      $('.stuck-menu').css('position', 'relative');
+      $stuckMenu.removeClass('is-stuck');
+      $stuckMenu.next().closest('div').css({'margin-top': currentMarginT + 'px'});
+      $stuckMenu.css('position', 'relative');
     }
   }
-});
+})(jQuery);

@@ -6,8 +6,8 @@
  * @author Robert Fleischmann <rendro87@gmail.com> (http://robert-fleischmann.de)
  * @version 2.1.7
  **/
-
 (function (root, factory) {
+  'use strict';
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module unless amdModuleId is set
     define(["jquery"], function (a0) {
@@ -65,8 +65,8 @@
 
     // IE polyfill for Date
     Date.now = Date.now || function () {
-      return +(new Date());
-    };
+        return +(new Date());
+      };
 
     /**
      * Draw a circle around the center of the canvas
@@ -217,24 +217,28 @@
 
   var EasyPieChart = function (el, opts) {
     var defaultOptions = {
-      barColor : '#ff675f',
-      trackColor : '#e1e1e3',
-      scaleColor : '#e1e1e3',
-      scaleLength : 0,
-      lineCap : 'round',
-      lineWidth : 15,
-      size : 152,
-      rotate : 0,
+      barColor: '#ff675f',
+      trackColor: '#e1e1e3',
+      scaleColor: '#e1e1e3',
+      scaleLength: 0,
+      lineCap: 'round',
+      lineWidth: 15,
+      size: 152,
+      rotate: 0,
       animate: {
         duration: 1000,
         enabled: true
       },
       easing: function (x, t, b, c, d) { // more can be found here: http://gsgd.co.uk/sandbox/jquery/easing/
-        t = t / (d / 2);
-        if (t < 1) {
-          return c / 2 * t * t + b;
+        if ((t /= d) < (1 / 2.75)) {
+          return c * (7.5625 * t * t) + b;
+        } else if (t < (2 / 2.75)) {
+          return c * (7.5625 * (t -= (1.5 / 2.75)) * t + 0.75) + b;
+        } else if (t < (2.5 / 2.75)) {
+          return c * (7.5625 * (t -= (2.25 / 2.75)) * t + 0.9375) + b;
+        } else {
+          return c * (7.5625 * (t -= (2.625 / 2.75)) * t + 0.984375) + b;
         }
-        return -c / 2 * ((--t) * (t - 2) - 1) + b;
       },
       onStart: function (from, to) {
         return;
