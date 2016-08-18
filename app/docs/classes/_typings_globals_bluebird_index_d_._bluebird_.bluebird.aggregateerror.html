@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>TypeError | Louw Swart // Portfolio</title>
+	<title>AggregateError | Louw Swart // Portfolio</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -60,19 +60,32 @@
 					<a href="../modules/_typings_globals_bluebird_index_d_.html">&quot;typings/globals/bluebird/index.d&quot;</a>
 				</li>
 				<li>
-					<a href="../modules/_typings_globals_bluebird_index_d_.promise.html">Promise</a>
+					<a href="../modules/_typings_globals_bluebird_index_d_._bluebird_.html">&quot;bluebird&quot;</a>
 				</li>
 				<li>
-					<a href="_typings_globals_bluebird_index_d_.promise.typeerror.html">TypeError</a>
+					<a href="_typings_globals_bluebird_index_d_._bluebird_.bluebird.html">Bluebird</a>
+				</li>
+				<li>
+					<a href="_typings_globals_bluebird_index_d_._bluebird_.bluebird.aggregateerror.html">AggregateError</a>
 				</li>
 			</ul>
-			<h1>Interface TypeError</h1>
+			<h1>Class AggregateError</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>A collection of errors. <code>AggregateError</code> is an array-like object, with numeric indices and a <code>.length</code> property.
+						It supports all generic array methods such as <code>.forEach</code> directly.</p>
+					</div>
+					<p><code>AggregateError</code>s are caught in <code>.error</code> handlers, even if the contained errors are not operational.</p>
+					<p><code>Promise.some</code> and <code>Promise.any</code> use <code>AggregateError</code> as rejection reason when they fail.</p>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -80,7 +93,7 @@
 						<span class="tsd-signature-type">Error</span>
 						<ul class="tsd-hierarchy">
 							<li>
-								<span class="target">TypeError</span>
+								<span class="target">AggregateError</span>
 							</li>
 						</ul>
 					</li>
@@ -93,10 +106,10 @@
 						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="_typings_globals_bluebird_index_d_.promise.typeerror.html#error" class="tsd-kind-icon">Error</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="_typings_globals_bluebird_index_d_.promise.typeerror.html#message" class="tsd-kind-icon">message</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="_typings_globals_bluebird_index_d_.promise.typeerror.html#name" class="tsd-kind-icon">name</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="_typings_globals_bluebird_index_d_.promise.typeerror.html#stack" class="tsd-kind-icon">stack</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="_typings_globals_bluebird_index_d_._bluebird_.bluebird.aggregateerror.html#error" class="tsd-kind-icon">Error</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external"><a href="_typings_globals_bluebird_index_d_._bluebird_.bluebird.aggregateerror.html#message" class="tsd-kind-icon">message</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external"><a href="_typings_globals_bluebird_index_d_._bluebird_.bluebird.aggregateerror.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external"><a href="_typings_globals_bluebird_index_d_._bluebird_.bluebird.aggregateerror.html#stack" class="tsd-kind-icon">stack</a></li>
 							</ul>
 						</section>
 					</div>
@@ -104,9 +117,9 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
 					<a name="error" class="tsd-anchor"></a>
-					<h3>Error</h3>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> Error</h3>
 					<div class="tsd-signature tsd-kind-icon">Error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ErrorConstructor</span></div>
 					<aside class="tsd-sources">
 						<ul>
@@ -114,9 +127,9 @@
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
 					<a name="message" class="tsd-anchor"></a>
-					<h3>message</h3>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> message</h3>
 					<div class="tsd-signature tsd-kind-icon">message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<p>Inherited from Error.message</p>
@@ -125,9 +138,9 @@
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
 					<a name="name" class="tsd-anchor"></a>
-					<h3>name</h3>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> name</h3>
 					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<p>Inherited from Error.name</p>
@@ -136,12 +149,12 @@
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
 					<a name="stack" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> stack</h3>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagOptional">Optional</span> stack</h3>
 					<div class="tsd-signature tsd-kind-icon">stack<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="_typings_globals_node_index_d_.error.html">Error</a>.<a href="_typings_globals_node_index_d_.error.html#stack">stack</a></p>
+						<p>Inherited from <a href="../interfaces/_typings_globals_node_index_d_.error.html">Error</a>.<a href="../interfaces/_typings_globals_node_index_d_.error.html#stack">stack</a></p>
 						<ul>
 							<li>Defined in typings/globals/node/index.d.ts:4</li>
 						</ul>
@@ -158,11 +171,8 @@
 					<li class="current tsd-kind-external-module tsd-is-external">
 						<a href="../modules/_typings_globals_bluebird_index_d_.html">"typings/globals/bluebird/index.d"</a>
 						<ul>
-							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+							<li class="current tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
 								<a href="../modules/_typings_globals_bluebird_index_d_._bluebird_.html">"bluebird"</a>
-							</li>
-							<li class="current tsd-kind-module tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-external">
-								<a href="../modules/_typings_globals_bluebird_index_d_.promise.html">Promise</a>
 							</li>
 						</ul>
 					</li>
@@ -172,20 +182,25 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-module tsd-is-external">
-						<a href="_typings_globals_bluebird_index_d_.promise.typeerror.html" class="tsd-kind-icon">Type<wbr>Error</a>
+					<li class="current tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter tsd-is-external">
+						<a href="_typings_globals_bluebird_index_d_._bluebird_.bluebird.html" class="tsd-kind-icon">Bluebird</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-								<a href="_typings_globals_bluebird_index_d_.promise.typeerror.html#error" class="tsd-kind-icon">Error</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
-								<a href="_typings_globals_bluebird_index_d_.promise.typeerror.html#message" class="tsd-kind-icon">message</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
-								<a href="_typings_globals_bluebird_index_d_.promise.typeerror.html#name" class="tsd-kind-icon">name</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
-								<a href="_typings_globals_bluebird_index_d_.promise.typeerror.html#stack" class="tsd-kind-icon">stack</a>
+							<li class="current tsd-kind-class tsd-parent-kind-class tsd-is-external">
+								<a href="_typings_globals_bluebird_index_d_._bluebird_.bluebird.aggregateerror.html" class="tsd-kind-icon">Aggregate<wbr>Error</a>
+								<ul>
+									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
+										<a href="_typings_globals_bluebird_index_d_._bluebird_.bluebird.aggregateerror.html#error" class="tsd-kind-icon">Error</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+										<a href="_typings_globals_bluebird_index_d_._bluebird_.bluebird.aggregateerror.html#message" class="tsd-kind-icon">message</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+										<a href="_typings_globals_bluebird_index_d_._bluebird_.bluebird.aggregateerror.html#name" class="tsd-kind-icon">name</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+										<a href="_typings_globals_bluebird_index_d_._bluebird_.bluebird.aggregateerror.html#stack" class="tsd-kind-icon">stack</a>
+									</li>
+								</ul>
 							</li>
 						</ul>
 					</li>
