@@ -47,7 +47,7 @@
     "reflect-metadata": "0.1.8",
     "rxjs": "5.0.0-beta.11",
     "systemjs": "0.19.36",
-    "zone.js": "0.6.12"
+    "zone.js": "0.6.14"
   },
   "devDependencies": {
     "async": "2.0.1",
@@ -90,7 +90,7 @@
     "jasmine-spec-reporter": "2.5.0",
     "jquery": "3.1.0",
     "karma": "1.2.0",
-    "karma-chrome-launcher": "1.0.1",
+    "karma-chrome-launcher": "2.0.0",
     "karma-jasmine": "1.0.2",
     "karma-mocha-reporter": "2.1.0",
     "karma-phantomjs-launcher": "1.0.1",
@@ -109,13 +109,13 @@
     "systemjs-builder": "0.15.26",
     "tiny-lr": "0.2.1",
     "traceur": "0.0.111",
-    "ts-node": "1.2.2",
+    "ts-node": "1.2.3",
     "tslint": "3.14.0",
-    "typedoc": "0.4.4",
+    "typedoc": "0.4.5",
     "typescript": "1.8.10",
     "typings": "1.3.2",
     "vinyl-buffer": "1.0.0",
     "vinyl-source-stream": "1.1.0",
-    "yargs": "4.8.1"
+    "yargs": "5.0.0"
   }
 }
