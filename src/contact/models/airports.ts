@@ -510,11 +510,18 @@ export const TIU:Airport = {
   country: NEW_ZEALAND
 };
 export const CBR:Airport = {
-  loc: {lat: -35.3032616, lng:149.1746154},
+  loc: {lat: -35.3032616, lng: 149.1746154},
   iataCode: 'CBR',
   name: 'Canberra Airport',
   city: 'Canberra',
   country: AUSTRALIA
+};
+export const NPL:Airport = {
+  loc: {lat: -39.007847, lng: 174.1754103},
+  iataCode: 'NPL',
+  name: 'New Plymouth Airport',
+  city: 'New Plymouth',
+  country: NEW_ZEALAND
 };
 
 /**
@@ -522,12 +529,11 @@ export const CBR:Airport = {
  * @type {Airport[]}
  */
 export const AIRPORTS:Array<Airport> = [
-  KIM, PLZ, ELS, JNB, AMS, LHR, NBO, CPT, MBD,
-  DUR, BFN, GRJ, MPM, GBE, WDH, BUQ, HRE, LVI,
-  LUN, LAD, DAR, EBB, FIH, LOS, ABJ, ACC, DKR,
-  SID, MIA, ATL, IAD, JFK, LGA, MRU, HKG, PER,
-  SYD, EZE, GRU, YVR, FRA, ZRH, CDG, CPH, BOM,
-  BKK, KIX, BKKN, USM, HKGN, DPS, DRW, ADL, HLZ,
-  CHC, ZQN, AKL, WLG, NSN, TRG, ROT, RAR, NRT,
-  SIN, ARN, BGO, TRD, BOO, SJV, TOS, TIU, CBR
+  KIM, PLZ, ELS, JNB, AMS, LHR, NBO, CPT, MBD, DUR, BFN,
+  GRJ, MPM, GBE, WDH, BUQ, HRE, LVI, LUN, LAD, DAR, EBB,
+  FIH, LOS, ABJ, ACC, DKR, SID, MIA, ATL, IAD, JFK, LGA,
+  MRU, HKG, PER, SYD, EZE, GRU, YVR, FRA, ZRH, CDG, CPH,
+  BOM, BKK, KIX, BKKN, USM, HKGN, DPS, DRW, ADL, HLZ, CHC,
+  ZQN, AKL, WLG, NSN, TRG, ROT, RAR, NRT, SIN, ARN, BGO,
+  TRD, BOO, SJV, TOS, TIU, CBR, NPL
 ];
