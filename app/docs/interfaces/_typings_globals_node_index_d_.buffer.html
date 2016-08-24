@@ -132,7 +132,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-external tsd-is-not-exported"><a href="_typings_globals_node_index_d_.buffer.html#foreach" class="tsd-kind-icon">for<wbr>Each</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited tsd-is-external tsd-is-not-exported"><a href="_typings_globals_node_index_d_.buffer.html#indexof" class="tsd-kind-icon">index<wbr>Of</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-external tsd-is-not-exported"><a href="_typings_globals_node_index_d_.buffer.html#join" class="tsd-kind-icon">join</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-external tsd-is-not-exported"><a href="_typings_globals_node_index_d_.buffer.html#lastindexof" class="tsd-kind-icon">last<wbr>Index<wbr>Of</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited tsd-is-external tsd-is-not-exported"><a href="_typings_globals_node_index_d_.buffer.html#lastindexof" class="tsd-kind-icon">last<wbr>Index<wbr>Of</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-external tsd-is-not-exported"><a href="_typings_globals_node_index_d_.buffer.html#map" class="tsd-kind-icon">map</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-external tsd-is-not-exported"><a href="_typings_globals_node_index_d_.buffer.html#readdoublebe" class="tsd-kind-icon">read<wbr>DoubleBE</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-external tsd-is-not-exported"><a href="_typings_globals_node_index_d_.buffer.html#readdoublele" class="tsd-kind-icon">read<wbr>DoubleLE</a></li>
@@ -756,7 +756,7 @@
 					<a name="indexof" class="tsd-anchor"></a>
 					<h3>index<wbr>Of</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited tsd-is-external tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">index<wbr>Of<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_typings_globals_node_index_d_.buffer.html" class="tsd-signature-type">Buffer</a>, byteOffset<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon">index<wbr>Of<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_typings_globals_node_index_d_.buffer.html" class="tsd-signature-type">Buffer</a>, byteOffset<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, encoding<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -764,7 +764,7 @@
 								<p>Inherited from <a href="_typings_globals_node_index_d_.nodebuffer.html">NodeBuffer</a>.<a href="_typings_globals_node_index_d_.nodebuffer.html#indexof">indexOf</a></p>
 								<p>Overwrites Uint8Array.indexOf</p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:498</li>
+									<li>Defined in typings/globals/node/index.d.ts:497</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -774,6 +774,9 @@
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> byteOffset: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> encoding: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -813,39 +816,31 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-external tsd-is-not-exported">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited tsd-is-external tsd-is-not-exported">
 					<a name="lastindexof" class="tsd-anchor"></a>
 					<h3>last<wbr>Index<wbr>Of</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-external tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">last<wbr>Index<wbr>Of<span class="tsd-signature-symbol">(</span>searchElement<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, fromIndex<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited tsd-is-external tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">last<wbr>Index<wbr>Of<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_typings_globals_node_index_d_.buffer.html" class="tsd-signature-type">Buffer</a>, byteOffset<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, encoding<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from Uint8Array.lastIndexOf</p>
+								<p>Inherited from <a href="_typings_globals_node_index_d_.nodebuffer.html">NodeBuffer</a>.<a href="_typings_globals_node_index_d_.nodebuffer.html#lastindexof">lastIndexOf</a></p>
+								<p>Overwrites Uint8Array.lastIndexOf</p>
 								<ul>
-									<li>Defined in node_modules/typescript/lib/lib.d.ts:1771</li>
+									<li>Defined in typings/globals/node/index.d.ts:498</li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Returns the index of the last occurrence of a value in an array.</p>
-								</div>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>searchElement: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The value to locate in the array.</p>
-									</div>
+									<h5>value: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="_typings_globals_node_index_d_.buffer.html" class="tsd-signature-type">Buffer</a></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> fromIndex: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The array index at which to begin the search. If fromIndex is omitted, the
-										search starts at index 0.</p>
-									</div>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> byteOffset: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> encoding: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -2839,7 +2834,7 @@
 							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-external tsd-is-not-exported">
 								<a href="_typings_globals_node_index_d_.buffer.html#join" class="tsd-kind-icon">join</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-external tsd-is-not-exported">
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited tsd-is-external tsd-is-not-exported">
 								<a href="_typings_globals_node_index_d_.buffer.html#lastindexof" class="tsd-kind-icon">last<wbr>Index<wbr>Of</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-external tsd-is-not-exported">
