@@ -111,8 +111,7 @@ const NPM_FONTS:Array<Dependency> = normalizeDependencies([
 
 const NPM_VENDOR_JS:Array<Dependency> = normalizeDependencies([
   {src: 'jquery/dist/jquery.min.js', inject: true, dest: JS_DEST},
-  {src: 'bootstrap/dist/js/bootstrap.min.js', inject: true, dest: JS_DEST},
-  {src: 'lodash/lodash.min.js', inject: true, dest: JS_DEST}
+  {src: 'bootstrap/dist/js/bootstrap.min.js', inject: true, dest: JS_DEST}
 ]);
 
 const JS_DEPENDENCIES:Array<Dependency> = [

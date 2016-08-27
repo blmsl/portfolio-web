@@ -11,12 +11,12 @@ import {LastModified} from '../definitions/last.modified';
   styleUrls: ['./footer/components/footer.css']
 })
 export class FooterComponent implements OnInit {
-  public links:Array<Link>;
-  public currentDate:Date;
-  public lastModified:LastModified;
-  private _footerService:FooterService;
+  public links: Array<Link>;
+  public currentDate: Date;
+  public lastModified: LastModified;
+  private _footerService: FooterService;
 
-  constructor(footerService:FooterService) {
+  constructor(footerService: FooterService) {
     this._footerService = footerService;
     this.currentDate = new Date();
   }

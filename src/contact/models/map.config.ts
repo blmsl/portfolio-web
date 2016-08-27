@@ -1,36 +1,12 @@
 'use strict';
+import {MapOptions} from '../definitions/map.options';
 import {START_POINT} from './points';
 
 /**
  * Configuration for the Map in the Contact section
- * @type {
- *    {
- *      scrollwheel: boolean,
- *      center: Point,
- *      zoom: number,
- *      minZoom: number,
- *      styles: {
- *        featureType: string,
- *        elementType: string,
- *        stylers: {
- *          color: string
- *        }[]
- *      } | {
- *        featureType: string,
- *        elementType: string,
- *        stylers: {
- *          visibility: string
- *        }[]
- *      } | {
- *        featureType: string,
- *        stylers: {
- *          visibility: string
- *        }[]
- *      }[]
- *    }
- * }
+ * @type {MapOptions}
  */
-export const MAP_OPTIONS:any = {
+export const MAP_OPTIONS: MapOptions = {
   scrollwheel: false,
   center: START_POINT,
   zoom: 2,

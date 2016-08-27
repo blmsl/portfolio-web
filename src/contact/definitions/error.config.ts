@@ -3,5 +3,5 @@
  * Interface for ErrorConfig
  */
 export interface ErrorConfig {
-  errorConfig:any;
+  errorConfig: any;
 }

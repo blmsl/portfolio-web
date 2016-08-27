@@ -5,7 +5,7 @@ import {Job} from '../definitions/job';
 
 @Injectable()
 export class ExperienceService {
-  getJobs():Promise<Array<Job>> {
+  getJobs(): Promise<Array<Job>> {
     return Promise.resolve(JOBS);
   }
 }

@@ -7,13 +7,13 @@ import {Job} from '../definitions/job';
 
 @Pipe({name: 'videoUrl'})
 export class VideoUrlPipe implements PipeTransform {
-  private _sanitationService:DomSanitizationService;
+  private _sanitationService: DomSanitizationService;
 
-  constructor(sanitationService:DomSanitizationService) {
+  constructor(sanitationService: DomSanitizationService) {
     this._sanitationService = sanitationService;
   }
 
-  transform(videoUrl:string):SafeResourceUrl {
+  transform(videoUrl: string): SafeResourceUrl {
     return this._sanitationService.bypassSecurityTrustResourceUrl(videoUrl);
   }
 }
@@ -25,10 +25,10 @@ export class VideoUrlPipe implements PipeTransform {
   styleUrls: ['./experience/components/experience.css']
 })
 export class ExperienceComponent implements OnInit {
-  public jobs:Array<Job>;
-  private _experienceService:ExperienceService;
+  public jobs: Array<Job>;
+  private _experienceService: ExperienceService;
 
-  constructor(experienceService:ExperienceService) {
+  constructor(experienceService: ExperienceService) {
     this._experienceService = experienceService;
   }
 

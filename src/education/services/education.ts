@@ -10,17 +10,17 @@ import {wrapError} from '../../shared/common/wrap.error';
 
 @Injectable()
 export class EducationService {
-  private _jsonp:Jsonp;
+  private _jsonp: Jsonp;
 
-  constructor(jsonp:Jsonp) {
+  constructor(jsonp: Jsonp) {
     this._jsonp = jsonp;
   }
 
-  getSchools():Promise<Array<School>> {
+  getSchools(): Promise<Array<School>> {
     return Promise.resolve(SCHOOLS);
   }
 
-  getCodeSchool():Observable<CodeSchool|WrappedError> {
+  getCodeSchool(): Observable<CodeSchool|WrappedError> {
     return this._jsonp.request('https://www.codeschool.com/users/ouq77.json?callback=JSONP_CALLBACK')
       .map(resp => resp.json())
       .catch(err => wrapError(err));

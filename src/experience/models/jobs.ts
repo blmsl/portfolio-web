@@ -5,7 +5,7 @@ import {Job} from '../definitions/job';
  * Array of Jobs for the Experience section
  * @type {Job[]}
  */
-export const JOBS:Array<Job> = [
+export const JOBS: Array<Job> = [
   {
     year: {
       from: 'Apr 2016',

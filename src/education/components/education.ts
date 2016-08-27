@@ -8,20 +8,20 @@ import {CodeSchool} from '../definitions/code.school';
 
 @Pipe({name: 'badgeUrl'})
 export class BadgeUrlPipe implements PipeTransform {
-  transform(badge:string):string {
+  transform(badge: string): string {
     let badgeId = badge.match(/(\/\d{2,3}\/)/);
     return 'https://www.codeschool.com/users/ouq77/badges' + (badgeId && badgeId[0] || '');
   }
 }
 @Pipe({name: 'memberDate'})
 export class MemberDatePipe implements PipeTransform {
-  transform(memberDate:string):string {
+  transform(memberDate: string): string {
     return new Date(memberDate).toLocaleDateString();
   }
 }
 @Pipe({name: 'score'})
 export class ScorePipe implements PipeTransform {
-  transform(score:number):string {
+  transform(score: number): string {
     return score.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   }
 }
@@ -33,11 +33,11 @@ export class ScorePipe implements PipeTransform {
   styleUrls: ['./education/components/education.css']
 })
 export class EducationComponent implements OnInit {
-  public schools:Array<School>;
-  public codeSchool:CodeSchool;
-  private _educationService:EducationService;
+  public schools: Array<School>;
+  public codeSchool: CodeSchool;
+  private _educationService: EducationService;
 
-  constructor(educationService:EducationService) {
+  constructor(educationService: EducationService) {
     this._educationService = educationService;
   }
 

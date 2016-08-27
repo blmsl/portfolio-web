@@ -103,26 +103,10 @@ gulp.task('serve.dev', done =>
     done));
 
 // --------------
-// Serve e2e
-gulp.task('serve.e2e', done =>
-  runSequence(
-    'build.e2e',
-    'server.start',
-    'watch.serve',
-    done));
-
-// --------------
 // Serve prod
 gulp.task('serve.prod', done =>
   runSequence(
     'build.prod',
     'server.start',
     'watch.serve',
-    done));
-
-// --------------
-// Test.
-gulp.task('test', done =>
-  runSequence(
-    'build.prod',
     done));

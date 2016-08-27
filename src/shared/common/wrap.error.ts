@@ -3,8 +3,8 @@ import {Response} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import {WrappedError} from '../definitions/wrapped.error';
 
-export function wrapError(err:Response):Observable<WrappedError> {
-  let wrappedError:WrappedError;
+export function wrapError(err: Response): Observable<WrappedError> {
+  let wrappedError: WrappedError;
   try {
     wrappedError = {
       status: err.status,
@@ -16,6 +16,6 @@ export function wrapError(err:Response):Observable<WrappedError> {
       content: err.text() || jsonError.message
     };
   }
-  console.warn('' + wrappedError.status + ': ' + (wrappedError.content && JSON.stringify(wrappedError.content) || '-'));
+  console.warn(`${wrappedError.status}: ${(wrappedError.content && JSON.stringify(wrappedError.content) || '-')}`);
   return Observable.throw(wrappedError);
 }

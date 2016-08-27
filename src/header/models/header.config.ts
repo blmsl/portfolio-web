@@ -12,7 +12,7 @@
  *    }
  * }
  */
-export const MENU_CONFIG = {
+export const MENU_CONFIG:any = {
   parts: {
     0: 'home',
     1: 'about',
@@ -54,7 +54,7 @@ export const MENU_CONFIG = {
  *    }
  * }
  */
-export const GRID_ROTATOR_CONFIG = {
+export const GRID_ROTATOR_CONFIG: any = {
   container: '#home',
   columns: 8,
   animType: 'rotateBottom',

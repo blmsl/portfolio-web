@@ -9,6 +9,7 @@ import {ExperienceComponent} from '../../experience/components/experience';
 import {EducationComponent} from '../../education/components/education';
 import {ContactComponent} from '../../contact/components/contact';
 import {FooterComponent} from '../../footer/components/footer';
+import {cancelableDelay} from '../../shared/common/delay';
 import {elementInViewport} from '../../shared/common/element.in.viewport';
 
 @Component({
@@ -28,10 +29,10 @@ import {elementInViewport} from '../../shared/common/element.in.viewport';
   styleUrls: ['./app/components/app.css']
 })
 export class AppComponent implements OnInit {
-  private _appService:AppService;
-  private _timeoutMenuAnimate:any;
+  private _appService: AppService;
+  private _timeoutMenuAnimate: any;
 
-  constructor(appService:AppService) {
+  constructor(appService: AppService) {
     this._appService = appService;
   }
 
@@ -41,11 +42,11 @@ export class AppComponent implements OnInit {
   }
 
   initSmoothPageScroll() {
-    (($:JQueryStatic) => {
-      $('a[href*="#"]:not([href="#"])').click(function (e:JQueryEventObject) {
+    (($: JQueryStatic) => {
+      $('a[href*="#"]:not([href="#"])').click(function (e: JQueryEventObject) {
         e.preventDefault();
         if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
-          let target:JQuery = $(this.hash);
+          let target: JQuery = $(this.hash);
           target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
           if (target.length) {
             $('html,body').animate({
@@ -55,14 +56,14 @@ export class AppComponent implements OnInit {
         }
       });
 
-      $('#js_menu_button').click((e:JQueryEventObject) => {
+      $('#js_menu_button').click((e: JQueryEventObject) => {
         e.preventDefault();
 
         if (this._timeoutMenuAnimate) {
           clearTimeout(this._timeoutMenuAnimate);
         }
         // wait half a second for menu collapse/expand to finish
-        this._timeoutMenuAnimate = _.delay(() => {
+        this._timeoutMenuAnimate = cancelableDelay(500, () => {
           if ($('#js_navbar').hasClass('in')) {
             if (!elementInViewport($, $('#js_links_li'))) {
               $('html,body').animate({
@@ -70,7 +71,7 @@ export class AppComponent implements OnInit {
               }, 1000);
             }
           }
-        }, 500);
+        });
       });
     })(jQuery);
   }

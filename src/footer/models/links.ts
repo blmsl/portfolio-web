@@ -5,7 +5,7 @@ import {Link} from '../definitions/link';
  * Array of links for the Footer section
  * @type {Link[]}
  */
-export const LINKS:Array<Link> = [
+export const LINKS: Array<Link> = [
   {
     url: 'https://nz.linkedin.com/in/louwswart/',
     title: 'See my LinkedIn here',

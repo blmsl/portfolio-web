@@ -10,19 +10,19 @@ import {wrapError} from '../../shared/common/wrap.error';
 
 @Injectable()
 export class ContactService {
-  private _http:Http;
+  private _http: Http;
 
-  constructor(http:Http) {
+  constructor(http: Http) {
     this._http = http;
   }
 
-  getErrorConfig():Observable<ErrorConfig|WrappedError> {
+  getErrorConfig(): Observable<ErrorConfig|WrappedError> {
     return this._http.get('/errorconfig')
       .map(resp => resp.json())
       .catch(err => wrapError(err));
   }
 
-  send(message:ContactMessage):Observable<JSON|WrappedError> {
+  send(message: ContactMessage): Observable<JSON|WrappedError> {
     let body = JSON.stringify(message);
     let options = new RequestOptions({headers: new Headers({'Content-Type': 'application/json'})});
     return this._http.post('/send', body, options)

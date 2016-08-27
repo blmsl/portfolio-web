@@ -6,7 +6,7 @@ import * as airports from './airports';
  * Array of Journeys for the Contact section
  * @type {Airport[][]}
  */
-export const JOURNEYS:Array<Array<Airport>> = [
+export const JOURNEYS: Array<Array<Airport>> = [
   [airports.KIM, airports.PLZ, airports.ELS], [airports.KIM, airports.JNB], [airports.JNB, airports.AMS, airports.LHR],
   [airports.JNB, airports.NBO, airports.LHR], [airports.JNB, airports.CPT], [airports.JNB, airports.MBD],
   [airports.JNB, airports.DUR], [airports.JNB, airports.BFN], [airports.JNB, airports.PLZ], [airports.JNB, airports.ELS],
@@ -35,7 +35,7 @@ export const JOURNEYS:Array<Array<Airport>> = [
  * Array of Upcoming Journeys for the Contact section
  * @type {Airport[][]}
  */
-export const UPCOMING_JOURNEYS:Array<Array<Airport>> = [
+export const UPCOMING_JOURNEYS: Array<Array<Airport>> = [
   [airports.WLG, airports.CBR, airports.SIN, airports.JNB],
   [airports.WLG, airports.NPL]
 ];

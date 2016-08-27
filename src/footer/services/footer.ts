@@ -10,17 +10,17 @@ import {wrapError} from '../../shared/common/wrap.error';
 
 @Injectable()
 export class FooterService {
-  private _http:Http;
+  private _http: Http;
 
-  constructor(http:Http) {
+  constructor(http: Http) {
     this._http = http;
   }
 
-  getLinks():Promise<Array<Link>>  {
+  getLinks(): Promise<Array<Link>> {
     return Promise.resolve(LINKS);
   }
 
-  getLastModified():Observable<LastModified|WrappedError> {
+  getLastModified(): Observable<LastModified|WrappedError> {
     return this._http.get('/lastmodified')
       .map(resp => resp.json())
       .catch(err => wrapError(err));

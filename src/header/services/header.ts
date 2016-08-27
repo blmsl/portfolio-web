@@ -8,13 +8,13 @@ import {wrapError} from '../../shared/common/wrap.error';
 
 @Injectable()
 export class HeaderService {
-  private _http:Http;
+  private _http: Http;
 
-  constructor(http:Http) {
+  constructor(http: Http) {
     this._http = http;
   }
 
-  getImageIds():Observable<ImageIds|WrappedError> {
+  getImageIds(): Observable<ImageIds|WrappedError> {
     return this._http.get('/imageids')
       .map(resp => resp.json())
       .catch(err => wrapError(err));

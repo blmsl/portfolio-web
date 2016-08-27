@@ -9,7 +9,7 @@ import {WrappedError} from '../../shared/definitions/wrapped.error';
 
 @Pipe({name: 'trim'})
 export class TrimPipe implements PipeTransform {
-  transform(value:string):string {
+  transform(value: string): string {
     return value.trim();
   }
 }
@@ -22,20 +22,20 @@ export class TrimPipe implements PipeTransform {
   directives: [REACTIVE_FORM_DIRECTIVES]
 })
 export class ContactFormComponent implements OnInit {
-  public name:FormControl;
-  public email:FormControl;
-  public message:FormControl;
-  public heuning:FormControl;
-  public form:FormGroup;
-  public submitClicked:boolean;
-  public submitting:boolean;
-  public sentSuccessfully:boolean;
-  public submitBtnText:string;
-  public serverErrors:string;
-  public errorConfig:ErrorConfig;
-  private _contactService:ContactService;
+  public name: FormControl;
+  public email: FormControl;
+  public message: FormControl;
+  public heuning: FormControl;
+  public form: FormGroup;
+  public submitClicked: boolean;
+  public submitting: boolean;
+  public sentSuccessfully: boolean;
+  public submitBtnText: string;
+  public serverErrors: string;
+  public errorConfig: ErrorConfig;
+  private _contactService: ContactService;
 
-  constructor(contactService:ContactService, fb:FormBuilder) {
+  constructor(contactService: ContactService, fb: FormBuilder) {
     this._contactService = contactService;
     this.name = new FormControl('', Validators.required);
     this.email = new FormControl('', Validators.required);
@@ -72,7 +72,7 @@ export class ContactFormComponent implements OnInit {
     this.toggleSubmitting();
     this.serverErrors = '';
 
-    let submission:ContactMessage = new ContactMessage(
+    let submission: ContactMessage = new ContactMessage(
       this.name.value.trim(),
       this.email.value.trim(),
       this.message.value.trim(),
@@ -90,11 +90,11 @@ export class ContactFormComponent implements OnInit {
     this.sentSuccessfully = true;
   }
 
-  handleErrors(err:WrappedError) {
+  handleErrors(err: WrappedError) {
     this.toggleSubmitting();
     switch (err.status) {
       case 400:
-        _.each(err.content.errors, (error:string) => {
+        err.content.errors.forEach((error: string) => {
           this.appendError(this.errorConfig[error].message);
         });
         break;
@@ -105,7 +105,7 @@ export class ContactFormComponent implements OnInit {
     }
   }
 
-  appendError(error:String) {
+  appendError(error: String) {
     if (this.serverErrors) {
       this.serverErrors += '<br>';
     }
