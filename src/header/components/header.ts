@@ -7,7 +7,6 @@ import {delay} from '../../shared/common/delay';
 
 @Component({
   selector: 'header',
-  providers: [HeaderService],
   templateUrl: './header/components/header.html',
   styleUrls: ['./header/components/header.css']
 })

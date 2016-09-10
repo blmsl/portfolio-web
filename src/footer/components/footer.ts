@@ -6,7 +6,6 @@ import {LastModified} from '../definitions/last.modified';
 
 @Component({
   selector: 'footer',
-  providers: [FooterService],
   templateUrl: './footer/components/footer.html',
   styleUrls: ['./footer/components/footer.css']
 })

@@ -1,25 +1,15 @@
 'use strict';
 import {Component, OnInit} from '@angular/core';
-import {Pipe, PipeTransform} from '@angular/core';
-import {REACTIVE_FORM_DIRECTIVES, FormGroup, FormControl, Validators, FormBuilder} from '@angular/forms';
+import {FormGroup, FormControl, Validators, FormBuilder} from '@angular/forms';
 import {ContactService} from '../services/contact';
 import {ErrorConfig} from '../definitions/error.config';
 import {ContactMessage} from '../definitions/contact.message';
 import {WrappedError} from '../../shared/definitions/wrapped.error';
 
-@Pipe({name: 'trim'})
-export class TrimPipe implements PipeTransform {
-  transform(value: string): string {
-    return value.trim();
-  }
-}
 @Component({
   selector: 'contact-form',
-  providers: [FormBuilder, ContactService],
-  pipes: [TrimPipe],
   templateUrl: './contact/components/contact.form.html',
-  styleUrls: ['./contact/components/contact.form.css'],
-  directives: [REACTIVE_FORM_DIRECTIVES]
+  styleUrls: ['./contact/components/contact.form.css']
 })
 export class ContactFormComponent implements OnInit {
   public name: FormControl;

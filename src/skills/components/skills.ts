@@ -7,7 +7,6 @@ import {elementInViewport} from '../../shared/common/element.in.viewport';
 
 @Component({
   selector: 'skills',
-  providers: [SkillService],
   templateUrl: './skills/components/skills.html',
   styleUrls: ['./skills/components/skills.css']
 })

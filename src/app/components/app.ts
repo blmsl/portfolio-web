@@ -1,30 +1,11 @@
 'use strict';
 import {Component, OnInit} from '@angular/core';
-import {ROUTER_DIRECTIVES} from '@angular/router';
 import {AppService} from '../services/app';
-import {HeaderComponent} from '../../header/components/header';
-import {AboutComponent} from '../../about/components/about';
-import {SkillsComponent} from '../../skills/components/skills';
-import {ExperienceComponent} from '../../experience/components/experience';
-import {EducationComponent} from '../../education/components/education';
-import {ContactComponent} from '../../contact/components/contact';
-import {FooterComponent} from '../../footer/components/footer';
 import {cancelableDelay} from '../../shared/common/delay';
 import {elementInViewport} from '../../shared/common/element.in.viewport';
 
 @Component({
   selector: 'container',
-  providers: [AppService],
-  directives: [
-    ROUTER_DIRECTIVES,
-    HeaderComponent,
-    AboutComponent,
-    SkillsComponent,
-    ExperienceComponent,
-    EducationComponent,
-    ContactComponent,
-    FooterComponent
-  ],
   templateUrl: './app/components/app.html',
   styleUrls: ['./app/components/app.css']
 })
