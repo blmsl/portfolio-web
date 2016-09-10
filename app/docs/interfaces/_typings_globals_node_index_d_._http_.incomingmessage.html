@@ -80,7 +80,7 @@
 						<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html" class="tsd-signature-type">EventEmitter</a>
 					</li>
 					<li>
-						<a href="../classes/_typings_globals_node_index_d_._stream_.readable.html" class="tsd-signature-type">Readable</a>
+						<a href="../classes/_typings_globals_node_index_d_._stream_.internal.readable.html" class="tsd-signature-type">Readable</a>
 						<ul class="tsd-hierarchy">
 							<li>
 								<span class="target">IncomingMessage</span>
@@ -100,8 +100,6 @@
 			<section class="tsd-panel">
 				<h3>Implements</h3>
 				<ul class="tsd-hierarchy">
-					<li><a href="_typings_globals_node_index_d_.nodejs.eventemitter.html" class="tsd-signature-type">EventEmitter</a></li>
-					<li><a href="_typings_globals_node_index_d_.nodejs.eventemitter.html" class="tsd-signature-type">EventEmitter</a></li>
 					<li><a href="_typings_globals_node_index_d_.nodejs.readablestream.html" class="tsd-signature-type">ReadableStream</a></li>
 				</ul>
 			</section>
@@ -118,8 +116,11 @@
 						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="_typings_globals_node_index_d_._http_.incomingmessage.html#connection" class="tsd-kind-icon">connection</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="_typings_globals_node_index_d_._http_.incomingmessage.html#headers" class="tsd-kind-icon">headers</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="_typings_globals_node_index_d_._http_.incomingmessage.html#httpversion" class="tsd-kind-icon">http<wbr>Version</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="_typings_globals_node_index_d_._http_.incomingmessage.html#httpversionmajor" class="tsd-kind-icon">http<wbr>Version<wbr>Major</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="_typings_globals_node_index_d_._http_.incomingmessage.html#httpversionminor" class="tsd-kind-icon">http<wbr>Version<wbr>Minor</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="_typings_globals_node_index_d_._http_.incomingmessage.html#method" class="tsd-kind-icon">method</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="_typings_globals_node_index_d_._http_.incomingmessage.html#rawheaders" class="tsd-kind-icon">raw<wbr>Headers</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="_typings_globals_node_index_d_._http_.incomingmessage.html#rawtrailers" class="tsd-kind-icon">raw<wbr>Trailers</a></li>
@@ -173,20 +174,20 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Incoming<wbr>Message<span class="tsd-signature-symbol">(</span>opts<span class="tsd-signature-symbol">?: </span><a href="_typings_globals_node_index_d_._stream_.readableoptions.html" class="tsd-signature-type">ReadableOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_node_index_d_._http_.incomingmessage.html" class="tsd-signature-type">IncomingMessage</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Incoming<wbr>Message<span class="tsd-signature-symbol">(</span>opts<span class="tsd-signature-symbol">?: </span><a href="_typings_globals_node_index_d_._stream_.internal.readableoptions.html" class="tsd-signature-type">ReadableOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_node_index_d_._http_.incomingmessage.html" class="tsd-signature-type">IncomingMessage</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.readable.html">Readable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.readable.html#constructor">constructor</a></p>
+								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.readable.html">Readable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.readable.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2185</li>
+									<li>Defined in typings/globals/node/index.d.ts:2450</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opts: <a href="_typings_globals_node_index_d_._stream_.readableoptions.html" class="tsd-signature-type">ReadableOptions</a></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opts: <a href="_typings_globals_node_index_d_._stream_.internal.readableoptions.html" class="tsd-signature-type">ReadableOptions</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_typings_globals_node_index_d_._http_.incomingmessage.html" class="tsd-signature-type">IncomingMessage</a></h4>
@@ -197,12 +198,22 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="connection" class="tsd-anchor"></a>
+					<h3>connection</h3>
+					<div class="tsd-signature tsd-kind-icon">connection<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in typings/globals/node/index.d.ts:653</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="headers" class="tsd-anchor"></a>
 					<h3>headers</h3>
 					<div class="tsd-signature tsd-kind-icon">headers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in typings/globals/node/index.d.ts:645</li>
+							<li>Defined in typings/globals/node/index.d.ts:654</li>
 						</ul>
 					</aside>
 				</section>
@@ -212,7 +223,27 @@
 					<div class="tsd-signature tsd-kind-icon">http<wbr>Version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in typings/globals/node/index.d.ts:644</li>
+							<li>Defined in typings/globals/node/index.d.ts:650</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="httpversionmajor" class="tsd-anchor"></a>
+					<h3>http<wbr>Version<wbr>Major</h3>
+					<div class="tsd-signature tsd-kind-icon">http<wbr>Version<wbr>Major<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in typings/globals/node/index.d.ts:651</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="httpversionminor" class="tsd-anchor"></a>
+					<h3>http<wbr>Version<wbr>Minor</h3>
+					<div class="tsd-signature tsd-kind-icon">http<wbr>Version<wbr>Minor<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in typings/globals/node/index.d.ts:652</li>
 						</ul>
 					</aside>
 				</section>
@@ -222,7 +253,7 @@
 					<div class="tsd-signature tsd-kind-icon">method<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in typings/globals/node/index.d.ts:653</li>
+							<li>Defined in typings/globals/node/index.d.ts:662</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -237,7 +268,7 @@
 					<div class="tsd-signature tsd-kind-icon">raw<wbr>Headers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in typings/globals/node/index.d.ts:646</li>
+							<li>Defined in typings/globals/node/index.d.ts:655</li>
 						</ul>
 					</aside>
 				</section>
@@ -247,7 +278,7 @@
 					<div class="tsd-signature tsd-kind-icon">raw<wbr>Trailers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in typings/globals/node/index.d.ts:648</li>
+							<li>Defined in typings/globals/node/index.d.ts:657</li>
 						</ul>
 					</aside>
 				</section>
@@ -256,9 +287,9 @@
 					<h3>readable</h3>
 					<div class="tsd-signature tsd-kind-icon">readable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.readable.html">Readable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.readable.html#readable">readable</a></p>
+						<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.readable.html">Readable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.readable.html#readable">readable</a></p>
 						<ul>
-							<li>Defined in typings/globals/node/index.d.ts:2185</li>
+							<li>Defined in typings/globals/node/index.d.ts:2450</li>
 						</ul>
 					</aside>
 				</section>
@@ -268,7 +299,7 @@
 					<div class="tsd-signature tsd-kind-icon">socket<span class="tsd-signature-symbol">:</span> <a href="_typings_globals_node_index_d_._net_.socket.html" class="tsd-signature-type">Socket</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in typings/globals/node/index.d.ts:666</li>
+							<li>Defined in typings/globals/node/index.d.ts:675</li>
 						</ul>
 					</aside>
 				</section>
@@ -278,7 +309,7 @@
 					<div class="tsd-signature tsd-kind-icon">status<wbr>Code<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in typings/globals/node/index.d.ts:661</li>
+							<li>Defined in typings/globals/node/index.d.ts:670</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -293,7 +324,7 @@
 					<div class="tsd-signature tsd-kind-icon">status<wbr>Message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in typings/globals/node/index.d.ts:665</li>
+							<li>Defined in typings/globals/node/index.d.ts:674</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -308,7 +339,7 @@
 					<div class="tsd-signature tsd-kind-icon">trailers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in typings/globals/node/index.d.ts:647</li>
+							<li>Defined in typings/globals/node/index.d.ts:656</li>
 						</ul>
 					</aside>
 				</section>
@@ -318,7 +349,7 @@
 					<div class="tsd-signature tsd-kind-icon">url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in typings/globals/node/index.d.ts:657</li>
+							<li>Defined in typings/globals/node/index.d.ts:666</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -335,7 +366,7 @@
 						<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#eventemitter">EventEmitter</a></p>
 						<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#eventemitter">EventEmitter</a></p>
 						<ul>
-							<li>Defined in typings/globals/node/index.d.ts:536</li>
+							<li>Defined in typings/globals/node/index.d.ts:542</li>
 						</ul>
 					</aside>
 				</section>
@@ -347,7 +378,7 @@
 						<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#defaultmaxlisteners">defaultMaxListeners</a></p>
 						<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#defaultmaxlisteners">defaultMaxListeners</a></p>
 						<ul>
-							<li>Defined in typings/globals/node/index.d.ts:538</li>
+							<li>Defined in typings/globals/node/index.d.ts:544</li>
 						</ul>
 					</aside>
 				</section>
@@ -363,9 +394,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.readable.html">Readable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.readable.html#_read">_read</a></p>
+								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.readable.html">Readable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.readable.html#_read">_read</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2187</li>
+									<li>Defined in typings/globals/node/index.d.ts:2452</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -388,9 +419,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#addlistener">addListener</a></p>
-								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#addlistener">addListener</a></p>
+								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_.nodejs.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_.nodejs.eventemitter.html#addlistener">addListener</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:540</li>
+									<li>Defined in typings/globals/node/index.d.ts:546</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -415,7 +446,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:667</li>
+									<li>Defined in typings/globals/node/index.d.ts:676</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -438,9 +469,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#emit">emit</a></p>
-								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#emit">emit</a></p>
+								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_.nodejs.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_.nodejs.eventemitter.html#emit">emit</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:550</li>
+									<li>Defined in typings/globals/node/index.d.ts:556</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -466,9 +497,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#eventnames">eventNames</a></p>
-								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#eventnames">eventNames</a></p>
+								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_.nodejs.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_.nodejs.eventemitter.html#eventnames">eventNames</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:551</li>
+									<li>Defined in typings/globals/node/index.d.ts:557</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
@@ -485,9 +516,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#getmaxlisteners">getMaxListeners</a></p>
-								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#getmaxlisteners">getMaxListeners</a></p>
+								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_.nodejs.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_.nodejs.eventemitter.html#getmaxlisteners">getMaxListeners</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:548</li>
+									<li>Defined in typings/globals/node/index.d.ts:554</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -504,9 +535,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#listenercount">listenerCount</a></p>
-								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#listenercount">listenerCount</a></p>
+								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_.nodejs.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_.nodejs.eventemitter.html#listenercount">listenerCount</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:552</li>
+									<li>Defined in typings/globals/node/index.d.ts:558</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -529,9 +560,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#listeners">listeners</a></p>
-								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#listeners">listeners</a></p>
+								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_.nodejs.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_.nodejs.eventemitter.html#listeners">listeners</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:549</li>
+									<li>Defined in typings/globals/node/index.d.ts:555</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -554,9 +585,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#on">on</a></p>
-								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#on">on</a></p>
+								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_.nodejs.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_.nodejs.eventemitter.html#on">on</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:541</li>
+									<li>Defined in typings/globals/node/index.d.ts:547</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -581,9 +612,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#once">once</a></p>
-								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#once">once</a></p>
+								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_.nodejs.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_.nodejs.eventemitter.html#once">once</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:542</li>
+									<li>Defined in typings/globals/node/index.d.ts:548</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -602,17 +633,17 @@
 					<a name="pause" class="tsd-anchor"></a>
 					<h3>pause</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">pause<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/_typings_globals_node_index_d_._stream_.readable.html" class="tsd-signature-type">Readable</a></li>
+						<li class="tsd-signature tsd-kind-icon">pause<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/_typings_globals_node_index_d_._stream_.internal.readable.html" class="tsd-signature-type">Readable</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.readable.html">Readable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.readable.html#pause">pause</a></p>
+								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.readable.html">Readable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.readable.html#pause">pause</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2190</li>
+									<li>Defined in typings/globals/node/index.d.ts:2455</li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="../classes/_typings_globals_node_index_d_._stream_.readable.html" class="tsd-signature-type">Readable</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../classes/_typings_globals_node_index_d_._stream_.internal.readable.html" class="tsd-signature-type">Readable</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -625,9 +656,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.readable.html">Readable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.readable.html#pipe">pipe</a></p>
+								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.readable.html">Readable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.readable.html#pipe">pipe</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2192</li>
+									<li>Defined in typings/globals/node/index.d.ts:2457</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -664,9 +695,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#prependlistener">prependListener</a></p>
-								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#prependlistener">prependListener</a></p>
+								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_.nodejs.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_.nodejs.eventemitter.html#prependlistener">prependListener</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:543</li>
+									<li>Defined in typings/globals/node/index.d.ts:549</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -691,9 +722,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#prependoncelistener">prependOnceListener</a></p>
-								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#prependoncelistener">prependOnceListener</a></p>
+								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_.nodejs.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_.nodejs.eventemitter.html#prependoncelistener">prependOnceListener</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:544</li>
+									<li>Defined in typings/globals/node/index.d.ts:550</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -717,9 +748,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.readable.html">Readable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.readable.html#push">push</a></p>
+								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.readable.html">Readable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.readable.html#push">push</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2196</li>
+									<li>Defined in typings/globals/node/index.d.ts:2461</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -744,9 +775,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.readable.html">Readable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.readable.html#read">read</a></p>
+								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.readable.html">Readable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.readable.html#read">read</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2188</li>
+									<li>Defined in typings/globals/node/index.d.ts:2453</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -769,9 +800,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#removealllisteners">removeAllListeners</a></p>
-								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#removealllisteners">removeAllListeners</a></p>
+								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_.nodejs.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_.nodejs.eventemitter.html#removealllisteners">removeAllListeners</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:546</li>
+									<li>Defined in typings/globals/node/index.d.ts:552</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -793,9 +824,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#removelistener">removeListener</a></p>
-								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#removelistener">removeListener</a></p>
+								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_.nodejs.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_.nodejs.eventemitter.html#removelistener">removeListener</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:545</li>
+									<li>Defined in typings/globals/node/index.d.ts:551</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -814,17 +845,17 @@
 					<a name="resume" class="tsd-anchor"></a>
 					<h3>resume</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">resume<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/_typings_globals_node_index_d_._stream_.readable.html" class="tsd-signature-type">Readable</a></li>
+						<li class="tsd-signature tsd-kind-icon">resume<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/_typings_globals_node_index_d_._stream_.internal.readable.html" class="tsd-signature-type">Readable</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.readable.html">Readable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.readable.html#resume">resume</a></p>
+								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.readable.html">Readable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.readable.html#resume">resume</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2191</li>
+									<li>Defined in typings/globals/node/index.d.ts:2456</li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="../classes/_typings_globals_node_index_d_._stream_.readable.html" class="tsd-signature-type">Readable</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../classes/_typings_globals_node_index_d_._stream_.internal.readable.html" class="tsd-signature-type">Readable</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -837,9 +868,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.readable.html">Readable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.readable.html#setencoding">setEncoding</a></p>
+								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.readable.html">Readable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.readable.html#setencoding">setEncoding</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2189</li>
+									<li>Defined in typings/globals/node/index.d.ts:2454</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -862,9 +893,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#setmaxlisteners">setMaxListeners</a></p>
-								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#setmaxlisteners">setMaxListeners</a></p>
+								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_.nodejs.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_.nodejs.eventemitter.html#setmaxlisteners">setMaxListeners</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:547</li>
+									<li>Defined in typings/globals/node/index.d.ts:553</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -886,7 +917,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:649</li>
+									<li>Defined in typings/globals/node/index.d.ts:658</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -911,9 +942,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.readable.html">Readable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.readable.html#unpipe">unpipe</a></p>
+								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.readable.html">Readable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.readable.html#unpipe">unpipe</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2193</li>
+									<li>Defined in typings/globals/node/index.d.ts:2458</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -941,9 +972,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.readable.html">Readable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.readable.html#unshift">unshift</a></p>
+								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.readable.html">Readable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.readable.html#unshift">unshift</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2194</li>
+									<li>Defined in typings/globals/node/index.d.ts:2459</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -965,9 +996,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.readable.html">Readable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.readable.html#wrap">wrap</a></p>
+								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.readable.html">Readable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.readable.html#wrap">wrap</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2195</li>
+									<li>Defined in typings/globals/node/index.d.ts:2460</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -992,7 +1023,7 @@
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#listenercount-1">listenerCount</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#listenercount-1">listenerCount</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:537</li>
+									<li>Defined in typings/globals/node/index.d.ts:543</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1049,10 +1080,19 @@
 								<a href="_typings_globals_node_index_d_._http_.incomingmessage.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="_typings_globals_node_index_d_._http_.incomingmessage.html#connection" class="tsd-kind-icon">connection</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="_typings_globals_node_index_d_._http_.incomingmessage.html#headers" class="tsd-kind-icon">headers</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="_typings_globals_node_index_d_._http_.incomingmessage.html#httpversion" class="tsd-kind-icon">http<wbr>Version</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="_typings_globals_node_index_d_._http_.incomingmessage.html#httpversionmajor" class="tsd-kind-icon">http<wbr>Version<wbr>Major</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="_typings_globals_node_index_d_._http_.incomingmessage.html#httpversionminor" class="tsd-kind-icon">http<wbr>Version<wbr>Minor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="_typings_globals_node_index_d_._http_.incomingmessage.html#method" class="tsd-kind-icon">method</a>
