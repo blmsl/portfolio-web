@@ -9,8 +9,8 @@ let concat = (gulp, plugins) => {
       return gulp.src(JS_CONCAT_DEPENDENCIES_PROD.map(d => d.src))
         // Strip comments and sourcemaps
         .pipe(plugins.uglify({
-          mangle: false,
-          compress: false,
+          mangle: true,
+          compress: true,
           preserveComments: 'license'
         }))
         .pipe(plugins.concat(JS_PROD_BUNDLE))
