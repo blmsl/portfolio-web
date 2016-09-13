@@ -20,7 +20,7 @@ let bundles = (gulp, plugins) => {
       return gulp.src(getShims())
         // Strip comments and sourcemaps
         .pipe(plugins.uglify({
-          mangle: false
+          mangle: true
         }))
         .pipe(plugins.concat(JS_PROD_SHIMS_BUNDLE))
         .pipe(gulp.dest(JS_DEST));
@@ -33,7 +33,7 @@ let bundles = (gulp, plugins) => {
         .pipe(vinylBuffer())
         // Strip comments and sourcemaps
         .pipe(plugins.uglify({
-          mangle: false
+          mangle: true
         }))
         .pipe(gulp.dest(JS_DEST));
     };
