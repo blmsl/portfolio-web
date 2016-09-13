@@ -21,7 +21,8 @@ let bundles = (gulp, plugins) => {
         // Strip comments and sourcemaps
         .pipe(plugins.uglify({
           mangle: true,
-          compress: true
+          compress: true,
+          preserveComments: 'license'
         }))
         .pipe(plugins.concat(JS_PROD_SHIMS_BUNDLE))
         .pipe(gulp.dest(JS_DEST));
@@ -35,7 +36,8 @@ let bundles = (gulp, plugins) => {
         // Strip comments and sourcemaps
         .pipe(plugins.uglify({
           mangle: true,
-          compress: true
+          compress: true,
+          preserveComments: 'license'
         }))
         .pipe(gulp.dest(JS_DEST));
     };
