@@ -81,20 +81,18 @@
 					<div class="lead">
 						<p>Error used when the computation of a promise is cancelled.</p>
 					</div>
-					<dl class="tsd-comment-tags">
-						<dt>extends</dt>
-						<dd><p>{goog.debug.Error}</p>
-						</dd>
-						<dt>final</dt>
-						<dd></dd>
-					</dl>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">CancellationError</span>
+						<span class="tsd-signature-type">Error</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">CancellationError</span>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -111,8 +109,10 @@
 						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.cancellationerror.html#message" class="tsd-kind-icon">message</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.cancellationerror.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.cancellationerror.html#error" class="tsd-kind-icon">Error</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.cancellationerror.html#message" class="tsd-kind-icon">message</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.cancellationerror.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.cancellationerror.html#stack" class="tsd-kind-icon">stack</a></li>
 							</ul>
 						</section>
 					</div>
@@ -130,14 +130,10 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:1145</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2283</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>constructor</dt>
-									<dd></dd>
-								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -157,23 +153,46 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
-					<a name="message" class="tsd-anchor"></a>
-					<h3>message</h3>
-					<div class="tsd-signature tsd-kind-icon">message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="error" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> Error</h3>
+					<div class="tsd-signature tsd-kind-icon">Error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ErrorConstructor</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in typings/globals/selenium-webdriver/index.d.ts:1153</li>
+							<li>Defined in node_modules/typescript/lib/lib.d.ts:889</li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+					<a name="message" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> message</h3>
+					<div class="tsd-signature tsd-kind-icon">message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from Error.message</p>
+						<ul>
+							<li>Defined in node_modules/typescript/lib/lib.d.ts:880</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
 					<a name="name" class="tsd-anchor"></a>
-					<h3>name</h3>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> name</h3>
 					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from Error.name</p>
 						<ul>
-							<li>Defined in typings/globals/selenium-webdriver/index.d.ts:1152</li>
+							<li>Defined in node_modules/typescript/lib/lib.d.ts:879</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+					<a name="stack" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagOptional">Optional</span> stack</h3>
+					<div class="tsd-signature tsd-kind-icon">stack<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="../interfaces/_typings_globals_node_index_d_.error.html">Error</a>.<a href="../interfaces/_typings_globals_node_index_d_.error.html#stack">stack</a></p>
+						<ul>
+							<li>Defined in typings/globals/node/index.d.ts:4</li>
 						</ul>
 					</aside>
 				</section>
@@ -198,19 +217,34 @@
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_._selenium_webdriver_executors_.html">"selenium-<wbr>webdriver/executors"</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
-								<a href="../modules/_typings_globals_selenium_webdriver_index_d_._selenium_webdriver_firefox_.html">"selenium-<wbr>webdriver/firefox"</a>
-							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_._selenium_webdriver_testing_.html">"selenium-<wbr>webdriver/testing"</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.chrome.html">chrome</a>
 							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.edge.html">edge</a>
+							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.executors.html">executors</a>
 							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.firefox.html">firefox</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.http.html">http</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.ie.html">ie</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.opera.html">opera</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.remote.html">remote</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.safari.html">safari</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.testing.html">testing</a>
@@ -219,9 +253,6 @@
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.html">webdriver</a>
 								<ul>
 									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
-										<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.by.html">By</a>
-									</li>
-									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
 										<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.error.html">error</a>
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
@@ -229,9 +260,6 @@
 									</li>
 									<li class="current tsd-kind-module tsd-parent-kind-module tsd-is-external">
 										<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.promise.html">promise</a>
-									</li>
-									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
-										<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.stacktrace.html">stacktrace</a>
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
 										<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.until.html">until</a>
@@ -252,11 +280,17 @@
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-external">
 								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.cancellationerror.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.cancellationerror.html#error" class="tsd-kind-icon">Error</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
 								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.cancellationerror.html#message" class="tsd-kind-icon">message</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
 								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.cancellationerror.html#name" class="tsd-kind-icon">name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
+								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.cancellationerror.html#stack" class="tsd-kind-icon">stack</a>
 							</li>
 						</ul>
 					</li>
@@ -286,7 +320,7 @@
 					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter tsd-is-external">
 						<a href="../interfaces/_typings_globals_selenium_webdriver_index_d_.webdriver.promise.ithenable.html" class="tsd-kind-icon">IThenable</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-external">
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter tsd-is-external">
 						<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.promise.html#all" class="tsd-kind-icon">all</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-external">
@@ -328,7 +362,7 @@
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter tsd-is-external">
 						<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.promise.html#map" class="tsd-kind-icon">map</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-external">
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter tsd-is-external">
 						<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.promise.html#rejected" class="tsd-kind-icon">rejected</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-external">

@@ -114,35 +114,36 @@
 					<a name="abletoswitchtoframe" class="tsd-anchor"></a>
 					<h3>able<wbr>ToSwitch<wbr>ToFrame</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">able<wbr>ToSwitch<wbr>ToFrame<span class="tsd-signature-symbol">(</span>frame<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a><span class="tsd-signature-symbol"> | </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.locator.html" class="tsd-signature-type">Locator</a><span class="tsd-signature-symbol"> | </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.by.html#hash" class="tsd-signature-type">Hash</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.until.condition.html" class="tsd-signature-type">Condition</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">able<wbr>ToSwitch<wbr>ToFrame<span class="tsd-signature-symbol">(</span>frame<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a><span class="tsd-signature-symbol"> | </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.by.html" class="tsd-signature-type">By</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.until.condition.html" class="tsd-signature-type">Condition</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:1934</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2897</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Creates a condition that will wait until the input driver is able to switch
-									to the designated frame. The target frame may be specified as:</p>
-									<ol>
-										<li>A numeric index into {@code window.frames} for the currently selected
-											frame.
-											<li>A <a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html">webdriver.WebElement</a>, which must reference a FRAME or IFRAME
-												element on the current page.
-												<li>A locator which may be used to first locate a FRAME or IFRAME on the
-													current page before attempting to switch to it.
-									</ol>
+									to the designated frame. The target frame may be specified as</p>
 								</div>
-								<p><p>Upon successful resolution of this condition, the driver will be left
-									focused on the new frame.</p>
+								<ol>
+									<li>a numeric index into
+										<a href="https://developer.mozilla.org/en-US/docs/Web/API/Window.frames">window.frames</a>
+									for the currently selected frame.</li>
+									<li>a {@link ./webdriver.WebElement}, which must reference a FRAME or IFRAME
+									element on the current page.</li>
+									<li>a locator which may be used to first locate a FRAME or IFRAME on the
+									current page before attempting to switch to it.</li>
+								</ol>
+								<p>Upon successful resolution of this condition, the driver will be left
+								focused on the new frame.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>frame: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a><span class="tsd-signature-symbol"> | </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.locator.html" class="tsd-signature-type">Locator</a><span class="tsd-signature-symbol"> | </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.by.html#hash" class="tsd-signature-type">Hash</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span></h5>
+									<h5>frame: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a><span class="tsd-signature-symbol"> | </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.by.html" class="tsd-signature-type">By</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.until.condition.html" class="tsd-signature-type">Condition</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -154,13 +155,13 @@
 					<a name="alertispresent" class="tsd-anchor"></a>
 					<h3>alert<wbr>IsPresent</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">alert<wbr>IsPresent<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.until.condition.html" class="tsd-signature-type">Condition</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_typings_globals_selenium_webdriver_index_d_.webdriver.alert.html" class="tsd-signature-type">Alert</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">alert<wbr>IsPresent<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.until.condition.html" class="tsd-signature-type">Condition</a><span class="tsd-signature-symbol">&lt;</span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.alert.html" class="tsd-signature-type">Alert</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:1942</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2905</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -169,7 +170,7 @@
 									returned promise will be fulfilled with the handle for the opened alert.</p>
 								</div>
 							</div>
-							<h4 class="tsd-returns-title">Returns <a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.until.condition.html" class="tsd-signature-type">Condition</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_typings_globals_selenium_webdriver_index_d_.webdriver.alert.html" class="tsd-signature-type">Alert</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.until.condition.html" class="tsd-signature-type">Condition</a><span class="tsd-signature-symbol">&lt;</span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.alert.html" class="tsd-signature-type">Alert</a><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>The new condition.</p>
 						</li>
 					</ul>
@@ -184,7 +185,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:1951</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2914</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -221,7 +222,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:1960</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2923</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -258,7 +259,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:1969</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2932</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -295,7 +296,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:1979</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2942</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -333,7 +334,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:1987</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2950</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -370,7 +371,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:1996</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2959</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -401,28 +402,27 @@
 					<a name="elementlocated" class="tsd-anchor"></a>
 					<h3>element<wbr>Located</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">element<wbr>Located<span class="tsd-signature-symbol">(</span>locator<span class="tsd-signature-symbol">: </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.locator.html" class="tsd-signature-type">Locator</a><span class="tsd-signature-symbol"> | </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.by.html#hash" class="tsd-signature-type">Hash</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.until.condition.html" class="tsd-signature-type">Condition</a><span class="tsd-signature-symbol">&lt;</span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">element<wbr>Located<span class="tsd-signature-symbol">(</span>locator<span class="tsd-signature-symbol">: </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.by.html" class="tsd-signature-type">By</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.until.condition.html" class="tsd-signature-type">Condition</a><span class="tsd-signature-symbol">&lt;</span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2006</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2968</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Creates a condition that will loop until an element is
-									{@link webdriver.WebDriver#findElement found} with the given locator.</p>
+									{@link ./webdriver.WebDriver#findElement found} with the given locator.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>locator: <a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.locator.html" class="tsd-signature-type">Locator</a><span class="tsd-signature-symbol"> | </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.by.html#hash" class="tsd-signature-type">Hash</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Function</span></h5>
+									<h5>locator: <a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.by.html" class="tsd-signature-type">By</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Function</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The locator
-										to use.</p>
+										<p>The locator to use.</p>
 									</div>
 								</li>
 							</ul>
@@ -441,7 +441,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2018</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2980</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -486,7 +486,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2030</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2992</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -531,7 +531,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2042</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3004</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -570,13 +570,13 @@
 					<a name="elementslocated" class="tsd-anchor"></a>
 					<h3>elements<wbr>Located</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">elements<wbr>Located<span class="tsd-signature-symbol">(</span>locator<span class="tsd-signature-symbol">: </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.locator.html" class="tsd-signature-type">Locator</a><span class="tsd-signature-symbol"> | </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.by.html#hash" class="tsd-signature-type">Hash</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.until.condition.html" class="tsd-signature-type">Condition</a><span class="tsd-signature-symbol">&lt;</span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">elements<wbr>Located<span class="tsd-signature-symbol">(</span>locator<span class="tsd-signature-symbol">: </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.by.html" class="tsd-signature-type">By</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.until.condition.html" class="tsd-signature-type">Condition</a><span class="tsd-signature-symbol">&lt;</span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2053</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3015</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -588,7 +588,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>locator: <a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.locator.html" class="tsd-signature-type">Locator</a><span class="tsd-signature-symbol"> | </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.by.html#hash" class="tsd-signature-type">Hash</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Function</span></h5>
+									<h5>locator: <a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.by.html" class="tsd-signature-type">By</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Function</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The locator
 										to use.</p>
@@ -611,7 +611,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2063</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3025</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -645,7 +645,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2073</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3035</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -679,7 +679,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2082</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3044</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -712,7 +712,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2091</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3053</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -756,19 +756,34 @@
 								<a href="_typings_globals_selenium_webdriver_index_d_._selenium_webdriver_executors_.html">"selenium-<wbr>webdriver/executors"</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
-								<a href="_typings_globals_selenium_webdriver_index_d_._selenium_webdriver_firefox_.html">"selenium-<wbr>webdriver/firefox"</a>
-							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
 								<a href="_typings_globals_selenium_webdriver_index_d_._selenium_webdriver_testing_.html">"selenium-<wbr>webdriver/testing"</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
 								<a href="_typings_globals_selenium_webdriver_index_d_.chrome.html">chrome</a>
 							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="_typings_globals_selenium_webdriver_index_d_.edge.html">edge</a>
+							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
 								<a href="_typings_globals_selenium_webdriver_index_d_.executors.html">executors</a>
 							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
 								<a href="_typings_globals_selenium_webdriver_index_d_.firefox.html">firefox</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="_typings_globals_selenium_webdriver_index_d_.http.html">http</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="_typings_globals_selenium_webdriver_index_d_.ie.html">ie</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="_typings_globals_selenium_webdriver_index_d_.opera.html">opera</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="_typings_globals_selenium_webdriver_index_d_.remote.html">remote</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="_typings_globals_selenium_webdriver_index_d_.safari.html">safari</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
 								<a href="_typings_globals_selenium_webdriver_index_d_.testing.html">testing</a>
@@ -777,9 +792,6 @@
 								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.html">webdriver</a>
 								<ul>
 									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
-										<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.by.html">By</a>
-									</li>
-									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
 										<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.error.html">error</a>
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
@@ -787,9 +799,6 @@
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
 										<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.html">promise</a>
-									</li>
-									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
-										<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.stacktrace.html">stacktrace</a>
 									</li>
 									<li class="current tsd-kind-module tsd-parent-kind-module tsd-is-external">
 										<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.until.html">until</a>

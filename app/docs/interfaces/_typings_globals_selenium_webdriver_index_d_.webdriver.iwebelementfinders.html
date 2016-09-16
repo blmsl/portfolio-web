@@ -102,13 +102,13 @@
 					<a name="findelement" class="tsd-anchor"></a>
 					<h3>find<wbr>Element</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">find<wbr>Element<span class="tsd-signature-symbol">(</span>locator<span class="tsd-signature-symbol">: </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.locator.html" class="tsd-signature-type">Locator</a><span class="tsd-signature-symbol"> | </span><a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.by.html#hash" class="tsd-signature-type">Hash</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.webelementpromise.html" class="tsd-signature-type">WebElementPromise</a></li>
+						<li class="tsd-signature tsd-kind-icon">find<wbr>Element<span class="tsd-signature-symbol">(</span>locator<span class="tsd-signature-symbol">: </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.by.html" class="tsd-signature-type">By</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.webelementpromise.html" class="tsd-signature-type">WebElementPromise</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:4554</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:5763</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -121,8 +121,8 @@
 									element is present on the page, use {@code #isElementPresent} instead.</p>
 								</div>
 								<p><p>The search criteria for an element may be defined using one of the
-										factories in the <a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.by.html">webdriver.By</a> namespace, or as a short-hand
-										<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.by.html#hash">webdriver.By.Hash</a> object. For example, the following two statements
+										factories in the <a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.by.html">webdriver.By</a> namespace, or as a short-hand
+										{@link webdriver.By.Hash} object. For example, the following two statements
 										are equivalent:
 										<code><pre>
 var e1 = element.findElement(By.id(&#39;foo&#39;));
@@ -147,7 +147,7 @@ var link = element.findElement(firstVisibleLink);</p>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>locator: <a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.locator.html" class="tsd-signature-type">Locator</a><span class="tsd-signature-symbol"> | </span><a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.by.html#hash" class="tsd-signature-type">Hash</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Function</span></h5>
+									<h5>locator: <a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.by.html" class="tsd-signature-type">By</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Function</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The
 										locator strategy to use when searching for the element.</p>
@@ -165,13 +165,13 @@ var link = element.findElement(firstVisibleLink);</p>
 					<a name="findelements" class="tsd-anchor"></a>
 					<h3>find<wbr>Elements</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">find<wbr>Elements<span class="tsd-signature-symbol">(</span>locator<span class="tsd-signature-symbol">: </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.locator.html" class="tsd-signature-type">Locator</a><span class="tsd-signature-symbol"> | </span><a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.by.html#hash" class="tsd-signature-type">Hash</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">find<wbr>Elements<span class="tsd-signature-symbol">(</span>locator<span class="tsd-signature-symbol">: </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.by.html" class="tsd-signature-type">By</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:4576</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:5785</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -183,7 +183,7 @@ var link = element.findElement(firstVisibleLink);</p>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>locator: <a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.locator.html" class="tsd-signature-type">Locator</a><span class="tsd-signature-symbol"> | </span><a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.by.html#hash" class="tsd-signature-type">Hash</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Function</span></h5>
+									<h5>locator: <a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.by.html" class="tsd-signature-type">By</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Function</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The
 										locator strategy to use when searching for the elements.</p>
@@ -200,13 +200,13 @@ var link = element.findElement(firstVisibleLink);</p>
 					<a name="iselementpresent" class="tsd-anchor"></a>
 					<h3>is<wbr>Element<wbr>Present</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>Element<wbr>Present<span class="tsd-signature-symbol">(</span>locator<span class="tsd-signature-symbol">: </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.locator.html" class="tsd-signature-type">Locator</a><span class="tsd-signature-symbol"> | </span><a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.by.html#hash" class="tsd-signature-type">Hash</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Element<wbr>Present<span class="tsd-signature-symbol">(</span>locator<span class="tsd-signature-symbol">: </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.by.html" class="tsd-signature-type">By</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:4565</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:5774</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -218,7 +218,7 @@ var link = element.findElement(firstVisibleLink);</p>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>locator: <a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.locator.html" class="tsd-signature-type">Locator</a><span class="tsd-signature-symbol"> | </span><a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.by.html#hash" class="tsd-signature-type">Hash</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Function</span></h5>
+									<h5>locator: <a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.by.html" class="tsd-signature-type">By</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Function</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The
 										locator strategy to use when searching for the element.</p>
@@ -252,19 +252,34 @@ var link = element.findElement(firstVisibleLink);</p>
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_._selenium_webdriver_executors_.html">"selenium-<wbr>webdriver/executors"</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
-								<a href="../modules/_typings_globals_selenium_webdriver_index_d_._selenium_webdriver_firefox_.html">"selenium-<wbr>webdriver/firefox"</a>
-							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_._selenium_webdriver_testing_.html">"selenium-<wbr>webdriver/testing"</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.chrome.html">chrome</a>
 							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.edge.html">edge</a>
+							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.executors.html">executors</a>
 							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.firefox.html">firefox</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.http.html">http</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.ie.html">ie</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.opera.html">opera</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.remote.html">remote</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.safari.html">safari</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.testing.html">testing</a>
@@ -273,9 +288,6 @@ var link = element.findElement(firstVisibleLink);</p>
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.html">webdriver</a>
 								<ul>
 									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
-										<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.by.html">By</a>
-									</li>
-									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
 										<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.error.html">error</a>
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
@@ -283,9 +295,6 @@ var link = element.findElement(firstVisibleLink);</p>
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
 										<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.promise.html">promise</a>
-									</li>
-									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
-										<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.stacktrace.html">stacktrace</a>
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
 										<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.until.html">until</a>

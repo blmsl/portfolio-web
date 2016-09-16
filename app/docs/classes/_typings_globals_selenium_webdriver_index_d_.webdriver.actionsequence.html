@@ -79,15 +79,15 @@
 						<p>Class for defining sequences of complex user interactions. Each sequence
 						will not be executed until {@link #perform} is called.</p>
 					</div>
-					<p><p>Example:<pre><code>
-  new webdriver.ActionSequence(driver).
-      keyDown(webdriver.Key.SHIFT).
-      click(element1).
-      click(element2).
-      dragAndDrop(element3, element4).
-      keyUp(webdriver.Key.SHIFT).
-      perform();
-</pre></code></p>
+					<p>Example:</p>
+					<pre><code><span class="hljs-function"><span class="hljs-keyword">new</span> <span class="hljs-title">ActionSequence</span>(driver).
+    <span class="hljs-title">keyDown</span>(<span class="hljs-type">Key</span>.<span class="hljs-type">SHIFT</span>).
+    <span class="hljs-title">click</span>(element1).
+    <span class="hljs-title">click</span>(element2).
+    <span class="hljs-title">dragAndDrop</span>(element3, element4).
+    <span class="hljs-title">keyUp</span>(<span class="hljs-type">Key</span>.<span class="hljs-type">SHIFT</span>).
+    <span class="hljs-title">perform</span>();</span>
+</code></pre>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -138,7 +138,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2222</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3168</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -169,60 +169,46 @@
 					<a name="click" class="tsd-anchor"></a>
 					<h3>click</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">click<span class="tsd-signature-symbol">(</span>opt_elementOrButton<span class="tsd-signature-symbol">?: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a>, opt_button<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></li>
-						<li class="tsd-signature tsd-kind-icon">click<span class="tsd-signature-symbol">(</span>opt_elementOrButton<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></li>
+						<li class="tsd-signature tsd-kind-icon">click<span class="tsd-signature-symbol">(</span>opt_elementOrButton<span class="tsd-signature-symbol">?: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a><span class="tsd-signature-symbol"> | </span><a href="../enums/_typings_globals_selenium_webdriver_index_d_.webdriver.button.html" class="tsd-signature-type">Button</a>, opt_button<span class="tsd-signature-symbol">?: </span><a href="../enums/_typings_globals_selenium_webdriver_index_d_.webdriver.button.html" class="tsd-signature-type">Button</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2332</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3284</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Clicks a mouse button.</p>
 								</div>
-								<p><p>If an element is provided, the mouse will first be moved to the center
-									of that element. This is equivalent to:</p>
-									<pre><code>sequence.mouseMove(element).click()</code></pre>
+								<p>If an element is provided, the mouse will first be moved to the center
+								of that element. This is equivalent to:</p>
+								<pre><code><span class="hljs-selector-tag">sequence</span><span class="hljs-selector-class">.mouseMove</span>(<span class="hljs-selector-tag">element</span>)<span class="hljs-selector-class">.click</span>()
+</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_elementOrButton: <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_elementOrButton: <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a><span class="tsd-signature-symbol"> | </span><a href="../enums/_typings_globals_selenium_webdriver_index_d_.webdriver.button.html" class="tsd-signature-type">Button</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>Either
 											the element to interact with or the button to click with.
-											Defaults to {@link webdriver.Button.LEFT} if neither an element nor
+											Defaults to {@link input.Button.LEFT} if neither an element nor
 										button is specified.</p>
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_button: <span class="tsd-signature-type">number</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_button: <a href="../enums/_typings_globals_selenium_webdriver_index_d_.webdriver.button.html" class="tsd-signature-type">Button</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The button to use. Defaults to
-											{@link webdriver.Button.LEFT}. Ignored if a button is provided as the
+											{@link input.Button.LEFT}. Ignored if a button is provided as the
 										first argument.</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></h4>
 							<p>A self reference.</p>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2333</li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_elementOrButton: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -230,42 +216,41 @@
 					<a name="doubleclick" class="tsd-anchor"></a>
 					<h3>double<wbr>Click</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">double<wbr>Click<span class="tsd-signature-symbol">(</span>opt_elementOrButton<span class="tsd-signature-symbol">?: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a>, opt_button<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></li>
-						<li class="tsd-signature tsd-kind-icon">double<wbr>Click<span class="tsd-signature-symbol">(</span>opt_elementOrButton<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></li>
+						<li class="tsd-signature tsd-kind-icon">double<wbr>Click<span class="tsd-signature-symbol">(</span>opt_elementOrButton<span class="tsd-signature-symbol">?: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a><span class="tsd-signature-symbol"> | </span><a href="../enums/_typings_globals_selenium_webdriver_index_d_.webdriver.button.html" class="tsd-signature-type">Button</a>, opt_button<span class="tsd-signature-symbol">?: </span><a href="../enums/_typings_globals_selenium_webdriver_index_d_.webdriver.button.html" class="tsd-signature-type">Button</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2354</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3306</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Double-clicks a mouse button.</p>
 								</div>
-								<p><p>If an element is provided, the mouse will first be moved to the center of
-									that element. This is equivalent to:</p>
-									<pre><code>sequence.mouseMove(element).doubleClick()</code></pre>
-									<p><p>Warning: this method currently only supports the left mouse button. See
-										<a href="http://code.google.com/p/selenium/issues/detail?id=4047">http://code.google.com/p/selenium/issues/detail?id=4047</a></p>
+								<p>If an element is provided, the mouse will first be moved to the center of
+								that element. This is equivalent to:</p>
+								<pre><code><span class="hljs-selector-tag">sequence</span><span class="hljs-selector-class">.mouseMove</span>(<span class="hljs-selector-tag">element</span>)<span class="hljs-selector-class">.doubleClick</span>()
+</code></pre><p>Warning: this method currently only supports the left mouse button. See
+								<a href="http://code.google.com/p/selenium/issues/detail?id=4047">issue 4047</a>.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_elementOrButton: <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_elementOrButton: <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a><span class="tsd-signature-symbol"> | </span><a href="../enums/_typings_globals_selenium_webdriver_index_d_.webdriver.button.html" class="tsd-signature-type">Button</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>Either
 											the element to interact with or the button to click with.
-											Defaults to {@link webdriver.Button.LEFT} if neither an element nor
+											Defaults to {@link input.Button.LEFT} if neither an element nor
 										button is specified.</p>
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_button: <span class="tsd-signature-type">number</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_button: <a href="../enums/_typings_globals_selenium_webdriver_index_d_.webdriver.button.html" class="tsd-signature-type">Button</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The button to use. Defaults to
-											{@link webdriver.Button.LEFT}. Ignored if a button is provided as the
+											{@link input.Button.LEFT}. Ignored if a button is provided as the
 										first argument.</p>
 									</div>
 								</li>
@@ -273,34 +258,19 @@
 							<h4 class="tsd-returns-title">Returns <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></h4>
 							<p>A self reference.</p>
 						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2355</li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_elementOrButton: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></h4>
-						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
 					<a name="draganddrop" class="tsd-anchor"></a>
 					<h3>drag<wbr>And<wbr>Drop</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">drag<wbr>And<wbr>Drop<span class="tsd-signature-symbol">(</span>element<span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a>, location<span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></li>
-						<li class="tsd-signature tsd-kind-icon">drag<wbr>And<wbr>Drop<span class="tsd-signature-symbol">(</span>element<span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a>, location<span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_globals_selenium_webdriver_index_d_.webdriver.ilocation.html" class="tsd-signature-type">ILocation</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></li>
+						<li class="tsd-signature tsd-kind-icon">drag<wbr>And<wbr>Drop<span class="tsd-signature-symbol">(</span>element<span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a>, location<span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_typings_globals_selenium_webdriver_index_d_.webdriver.ilocation.html" class="tsd-signature-type">ILocation</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2313</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3265</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -319,28 +289,11 @@
 									</div>
 								</li>
 								<li>
-									<h5>location: <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a></h5>
+									<h5>location: <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_typings_globals_selenium_webdriver_index_d_.webdriver.ilocation.html" class="tsd-signature-type">ILocation</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></h4>
 							<p>A self reference.</p>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2314</li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>element: <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a></h5>
-								</li>
-								<li>
-									<h5>location: <a href="../interfaces/_typings_globals_selenium_webdriver_index_d_.webdriver.ilocation.html" class="tsd-signature-type">ILocation</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -348,13 +301,13 @@
 					<a name="keydown" class="tsd-anchor"></a>
 					<h3>key<wbr>Down</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">key<wbr>Down<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></li>
+						<li class="tsd-signature tsd-kind-icon">key<wbr>Down<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><a href="../enums/_typings_globals_selenium_webdriver_index_d_.webdriver.key.html" class="tsd-signature-type">Key</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2366</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3317</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -372,7 +325,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>key: <span class="tsd-signature-type">string</span></h5>
+									<h5>key: <a href="../enums/_typings_globals_selenium_webdriver_index_d_.webdriver.key.html" class="tsd-signature-type">Key</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The modifier key to push. Must be one of
 										{ALT, CONTROL, SHIFT, COMMAND, META}.</p>
@@ -388,13 +341,13 @@
 					<a name="keyup" class="tsd-anchor"></a>
 					<h3>key<wbr>Up</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">key<wbr>Up<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></li>
+						<li class="tsd-signature tsd-kind-icon">key<wbr>Up<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><a href="../enums/_typings_globals_selenium_webdriver_index_d_.webdriver.key.html" class="tsd-signature-type">Key</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2376</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3327</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -411,7 +364,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>key: <span class="tsd-signature-type">string</span></h5>
+									<h5>key: <a href="../enums/_typings_globals_selenium_webdriver_index_d_.webdriver.key.html" class="tsd-signature-type">Key</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The modifier key to release. Must be one of
 										{ALT, CONTROL, SHIFT, COMMAND, META}.</p>
@@ -427,14 +380,13 @@
 					<a name="mousedown" class="tsd-anchor"></a>
 					<h3>mouse<wbr>Down</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">mouse<wbr>Down<span class="tsd-signature-symbol">(</span>opt_elementOrButton<span class="tsd-signature-symbol">?: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a>, opt_button<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></li>
-						<li class="tsd-signature tsd-kind-icon">mouse<wbr>Down<span class="tsd-signature-symbol">(</span>opt_elementOrButton<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></li>
+						<li class="tsd-signature tsd-kind-icon">mouse<wbr>Down<span class="tsd-signature-symbol">(</span>opt_elementOrButton<span class="tsd-signature-symbol">?: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a><span class="tsd-signature-symbol"> | </span><a href="../enums/_typings_globals_selenium_webdriver_index_d_.webdriver.button.html" class="tsd-signature-type">Button</a>, opt_button<span class="tsd-signature-symbol">?: </span><a href="../enums/_typings_globals_selenium_webdriver_index_d_.webdriver.button.html" class="tsd-signature-type">Button</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2278</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3229</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -444,28 +396,28 @@
 										sequence or another. The behavior for out-of-order events (e.g. mouseDown,
 									click) is undefined.</p>
 								</div>
-								<p><p>If an element is provided, the mouse will first be moved to the center
-									of that element. This is equivalent to:</p>
-									<pre><code>sequence.mouseMove(element).mouseDown()</code></pre>
-									<p><p>Warning: this method currently only supports the left mouse button. See
-										<a href="http://code.google.com/p/selenium/issues/detail?id=4047">http://code.google.com/p/selenium/issues/detail?id=4047</a></p>
+								<p>If an element is provided, the mouse will first be moved to the center
+								of that element. This is equivalent to:</p>
+								<pre><code>sequence.<span class="hljs-built_in">mouseMove</span>(element).<span class="hljs-built_in">mouseDown</span>()
+</code></pre><p>Warning: this method currently only supports the left mouse button. See
+								<a href="http://code.google.com/p/selenium/issues/detail?id=4047">issue 4047</a>.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_elementOrButton: <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_elementOrButton: <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a><span class="tsd-signature-symbol"> | </span><a href="../enums/_typings_globals_selenium_webdriver_index_d_.webdriver.button.html" class="tsd-signature-type">Button</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>Either
 											the element to interact with or the button to click with.
-											Defaults to {@link webdriver.Button.LEFT} if neither an element nor
+											Defaults to {@link input.Button.LEFT} if neither an element nor
 										button is specified.</p>
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_button: <span class="tsd-signature-type">number</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_button: <a href="../enums/_typings_globals_selenium_webdriver_index_d_.webdriver.button.html" class="tsd-signature-type">Button</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The button to use. Defaults to
-											{@link webdriver.Button.LEFT}. Ignored if a button is provided as the
+											{@link input.Button.LEFT}. Ignored if a button is provided as the
 										first argument.</p>
 									</div>
 								</li>
@@ -473,34 +425,19 @@
 							<h4 class="tsd-returns-title">Returns <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></h4>
 							<p>A self reference.</p>
 						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2279</li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_elementOrButton: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></h4>
-						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
 					<a name="mousemove" class="tsd-anchor"></a>
 					<h3>mouse<wbr>Move</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">mouse<wbr>Move<span class="tsd-signature-symbol">(</span>location<span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a>, opt_offset<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_typings_globals_selenium_webdriver_index_d_.webdriver.ilocation.html" class="tsd-signature-type">ILocation</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></li>
-						<li class="tsd-signature tsd-kind-icon">mouse<wbr>Move<span class="tsd-signature-symbol">(</span>location<span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_globals_selenium_webdriver_index_d_.webdriver.ilocation.html" class="tsd-signature-type">ILocation</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></li>
+						<li class="tsd-signature tsd-kind-icon">mouse<wbr>Move<span class="tsd-signature-symbol">(</span>location<span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_typings_globals_selenium_webdriver_index_d_.webdriver.ilocation.html" class="tsd-signature-type">ILocation</a>, opt_offset<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_typings_globals_selenium_webdriver_index_d_.webdriver.ilocation.html" class="tsd-signature-type">ILocation</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2253</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3204</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -513,7 +450,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>location: <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a></h5>
+									<h5>location: <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_typings_globals_selenium_webdriver_index_d_.webdriver.ilocation.html" class="tsd-signature-type">ILocation</a></h5>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_offset: <a href="../interfaces/_typings_globals_selenium_webdriver_index_d_.webdriver.ilocation.html" class="tsd-signature-type">ILocation</a></h5>
@@ -522,34 +459,19 @@
 							<h4 class="tsd-returns-title">Returns <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></h4>
 							<p>A self reference.</p>
 						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2254</li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>location: <a href="../interfaces/_typings_globals_selenium_webdriver_index_d_.webdriver.ilocation.html" class="tsd-signature-type">ILocation</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></h4>
-						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
 					<a name="mouseup" class="tsd-anchor"></a>
 					<h3>mouse<wbr>Up</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">mouse<wbr>Up<span class="tsd-signature-symbol">(</span>opt_elementOrButton<span class="tsd-signature-symbol">?: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a>, opt_button<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></li>
-						<li class="tsd-signature tsd-kind-icon">mouse<wbr>Up<span class="tsd-signature-symbol">(</span>opt_elementOrButton<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></li>
+						<li class="tsd-signature tsd-kind-icon">mouse<wbr>Up<span class="tsd-signature-symbol">(</span>opt_elementOrButton<span class="tsd-signature-symbol">?: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a><span class="tsd-signature-symbol"> | </span><a href="../enums/_typings_globals_selenium_webdriver_index_d_.webdriver.button.html" class="tsd-signature-type">Button</a>, opt_button<span class="tsd-signature-symbol">?: </span><a href="../enums/_typings_globals_selenium_webdriver_index_d_.webdriver.button.html" class="tsd-signature-type">Button</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2301</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3252</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -557,48 +479,34 @@
 									<p>Releases a mouse button. Behavior is undefined for calling this function
 									without a previous call to {@link #mouseDown}.</p>
 								</div>
-								<p><p>If an element is provided, the mouse will first be moved to the center
-									of that element. This is equivalent to:</p>
-									<pre><code>sequence.mouseMove(element).mouseUp()</code></pre>
-									<p><p>Warning: this method currently only supports the left mouse button. See
-										<a href="http://code.google.com/p/selenium/issues/detail?id=4047">http://code.google.com/p/selenium/issues/detail?id=4047</a></p>
+								<p>If an element is provided, the mouse will first be moved to the center
+								of that element. This is equivalent to:</p>
+								<pre><code>sequence.<span class="hljs-built_in">mouseMove</span>(element).<span class="hljs-built_in">mouseUp</span>()
+</code></pre><p>Warning: this method currently only supports the left mouse button. See
+								<a href="http://code.google.com/p/selenium/issues/detail?id=4047">issue 4047</a>.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_elementOrButton: <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_elementOrButton: <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.webelement.html" class="tsd-signature-type">WebElement</a><span class="tsd-signature-symbol"> | </span><a href="../enums/_typings_globals_selenium_webdriver_index_d_.webdriver.button.html" class="tsd-signature-type">Button</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>Either
 											the element to interact with or the button to click with.
-											Defaults to {@link webdriver.Button.LEFT} if neither an element nor
+											Defaults to {@link input.Button.LEFT} if neither an element nor
 										button is specified.</p>
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_button: <span class="tsd-signature-type">number</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_button: <a href="../enums/_typings_globals_selenium_webdriver_index_d_.webdriver.button.html" class="tsd-signature-type">Button</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The button to use. Defaults to
-											{@link webdriver.Button.LEFT}. Ignored if a button is provided as the
+											{@link input.Button.LEFT}. Ignored if a button is provided as the
 										first argument.</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></h4>
 							<p>A self reference.</p>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2302</li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_elementOrButton: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -612,7 +520,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2241</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3187</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -630,13 +538,13 @@
 					<a name="sendkeys" class="tsd-anchor"></a>
 					<h3>send<wbr>Keys</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">send<wbr>Keys<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>var_args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></li>
+						<li class="tsd-signature tsd-kind-icon">send<wbr>Keys<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>var_args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="../enums/_typings_globals_selenium_webdriver_index_d_.webdriver.key.html" class="tsd-signature-type">Key</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.actionsequence.html" class="tsd-signature-type">ActionSequence</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2387</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3338</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -654,7 +562,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>var_args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>var_args: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="../enums/_typings_globals_selenium_webdriver_index_d_.webdriver.key.html" class="tsd-signature-type">Key</a><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<pre><code>The keys <span class="hljs-keyword">to</span> <span class="hljs-class"><span class="hljs-keyword">type</span>.</span>
 </code></pre>
@@ -687,19 +595,34 @@
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_._selenium_webdriver_executors_.html">"selenium-<wbr>webdriver/executors"</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
-								<a href="../modules/_typings_globals_selenium_webdriver_index_d_._selenium_webdriver_firefox_.html">"selenium-<wbr>webdriver/firefox"</a>
-							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_._selenium_webdriver_testing_.html">"selenium-<wbr>webdriver/testing"</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.chrome.html">chrome</a>
 							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.edge.html">edge</a>
+							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.executors.html">executors</a>
 							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.firefox.html">firefox</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.http.html">http</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.ie.html">ie</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.opera.html">opera</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.remote.html">remote</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.safari.html">safari</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.testing.html">testing</a>
@@ -708,9 +631,6 @@
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.html">webdriver</a>
 								<ul>
 									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
-										<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.by.html">By</a>
-									</li>
-									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
 										<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.error.html">error</a>
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
@@ -718,9 +638,6 @@
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
 										<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.promise.html">promise</a>
-									</li>
-									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
-										<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.stacktrace.html">stacktrace</a>
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
 										<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.until.html">until</a>

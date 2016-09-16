@@ -89,14 +89,13 @@
 					<a name="createexecutor" class="tsd-anchor"></a>
 					<h3>create<wbr>Executor</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Executor<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_globals_selenium_webdriver_index_d_.webdriver.commandexecutor.html" class="tsd-signature-type">CommandExecutor</a></li>
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Executor<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_typings_globals_selenium_webdriver_index_d_.webdriver.commandexecutor.html" class="tsd-signature-type">CommandExecutor</a></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Executor<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span>, opt_agent<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, opt_proxy<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.executor.html" class="tsd-signature-type">Executor</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:628</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:551</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -107,28 +106,25 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>url: <span class="tsd-signature-type">string</span></h5>
+									<h5>url: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The server&#39;s URL, or a promise that will resolve to that URL.</p>
+										<p>The server&#39;s URL,
+										or a promise that will resolve to that URL.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_agent: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_proxy: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>(optional) The URL of the HTTP proxy for the
+										client to use.</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_typings_globals_selenium_webdriver_index_d_.webdriver.commandexecutor.html" class="tsd-signature-type">CommandExecutor</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.executor.html" class="tsd-signature-type">Executor</a></h4>
 							<p>The new command executor.</p>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:629</li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>url: <a href="../classes/_typings_globals_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_typings_globals_selenium_webdriver_index_d_.webdriver.commandexecutor.html" class="tsd-signature-type">CommandExecutor</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -153,19 +149,34 @@
 								<a href="_typings_globals_selenium_webdriver_index_d_._selenium_webdriver_executors_.html">"selenium-<wbr>webdriver/executors"</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
-								<a href="_typings_globals_selenium_webdriver_index_d_._selenium_webdriver_firefox_.html">"selenium-<wbr>webdriver/firefox"</a>
-							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
 								<a href="_typings_globals_selenium_webdriver_index_d_._selenium_webdriver_testing_.html">"selenium-<wbr>webdriver/testing"</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
 								<a href="_typings_globals_selenium_webdriver_index_d_.chrome.html">chrome</a>
 							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="_typings_globals_selenium_webdriver_index_d_.edge.html">edge</a>
+							</li>
 							<li class="current tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
 								<a href="_typings_globals_selenium_webdriver_index_d_.executors.html">executors</a>
 							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
 								<a href="_typings_globals_selenium_webdriver_index_d_.firefox.html">firefox</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="_typings_globals_selenium_webdriver_index_d_.http.html">http</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="_typings_globals_selenium_webdriver_index_d_.ie.html">ie</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="_typings_globals_selenium_webdriver_index_d_.opera.html">opera</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="_typings_globals_selenium_webdriver_index_d_.remote.html">remote</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="_typings_globals_selenium_webdriver_index_d_.safari.html">safari</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
 								<a href="_typings_globals_selenium_webdriver_index_d_.testing.html">testing</a>

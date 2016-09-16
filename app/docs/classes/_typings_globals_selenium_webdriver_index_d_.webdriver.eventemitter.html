@@ -108,7 +108,7 @@
 						<section class="tsd-index-section tsd-is-external">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.eventemitter.html#addlistener" class="tsd-kind-icon">add<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.eventemitter.html#addlistener" class="tsd-kind-icon">add<wbr>Listener</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.eventemitter.html#emit" class="tsd-kind-icon">emit</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.eventemitter.html#listeners" class="tsd-kind-icon">listeners</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.eventemitter.html#on" class="tsd-kind-icon">on</a></li>
@@ -132,7 +132,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3261</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:4500</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -148,17 +148,17 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external">
 					<a name="addlistener" class="tsd-anchor"></a>
-					<h3>add<wbr>Listener</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, listenerFn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span>, opt_scope<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.eventemitter.html" class="tsd-signature-type">EventEmitter</a></li>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> add<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, fn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span>, opt_scope<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span>, opt_oneshot<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.eventemitter.html" class="tsd-signature-type">EventEmitter</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3296</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:4537</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -175,15 +175,19 @@
 									</div>
 								</li>
 								<li>
-									<h5>listenerFn: <span class="tsd-signature-type">Function</span></h5>
+									<h5>fn: <span class="tsd-signature-type">Function</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The function to invoke when the event is fired.</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_scope: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_oneshot: <span class="tsd-signature-type">boolean</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The object in whose scope to invoke the listener.</p>
+										<p>Whether the listener should b (e removed after
+										the first event is fired.</p>
 									</div>
 								</li>
 							</ul>
@@ -202,7 +206,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3278</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:4517</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -233,13 +237,13 @@
 					<a name="listeners" class="tsd-anchor"></a>
 					<h3>listeners</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">listeners<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">listeners<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3287</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:4525</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -256,10 +260,9 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>{!Array.&lt;{fn: !Function, oneshot: boolean,
-								scope: (Object|undefined)}&gt;} The registered listeners for
-							the given event type.</p>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<p>The registered listeners for the given event
+							type.</p>
 						</li>
 					</ul>
 				</section>
@@ -267,13 +270,13 @@
 					<a name="on" class="tsd-anchor"></a>
 					<h3>on</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, listenerFn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span>, opt_scope<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.eventemitter.html" class="tsd-signature-type">EventEmitter</a></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, fn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span>, opt_scope<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.eventemitter.html" class="tsd-signature-type">EventEmitter</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3315</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:4557</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -290,7 +293,7 @@
 									</div>
 								</li>
 								<li>
-									<h5>listenerFn: <span class="tsd-signature-type">Function</span></h5>
+									<h5>fn: <span class="tsd-signature-type">Function</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The function to invoke when the event is fired.</p>
 									</div>
@@ -311,13 +314,13 @@
 					<a name="once" class="tsd-anchor"></a>
 					<h3>once</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">once<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, listenerFn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, opt_scope<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.eventemitter.html" class="tsd-signature-type">EventEmitter</a></li>
+						<li class="tsd-signature tsd-kind-icon">once<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, fn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, opt_scope<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.eventemitter.html" class="tsd-signature-type">EventEmitter</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3306</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:4548</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -335,7 +338,7 @@
 									</div>
 								</li>
 								<li>
-									<h5>listenerFn: <span class="tsd-signature-type">any</span></h5>
+									<h5>fn: <span class="tsd-signature-type">any</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The function to invoke when the event is fired.</p>
 									</div>
@@ -362,7 +365,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3331</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:4573</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -395,7 +398,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3323</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:4565</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -444,19 +447,34 @@
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_._selenium_webdriver_executors_.html">"selenium-<wbr>webdriver/executors"</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
-								<a href="../modules/_typings_globals_selenium_webdriver_index_d_._selenium_webdriver_firefox_.html">"selenium-<wbr>webdriver/firefox"</a>
-							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_._selenium_webdriver_testing_.html">"selenium-<wbr>webdriver/testing"</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.chrome.html">chrome</a>
 							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.edge.html">edge</a>
+							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.executors.html">executors</a>
 							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.firefox.html">firefox</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.http.html">http</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.ie.html">ie</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.opera.html">opera</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.remote.html">remote</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.safari.html">safari</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.testing.html">testing</a>
@@ -465,9 +483,6 @@
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.html">webdriver</a>
 								<ul>
 									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
-										<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.by.html">By</a>
-									</li>
-									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
 										<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.error.html">error</a>
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
@@ -475,9 +490,6 @@
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
 										<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.promise.html">promise</a>
-									</li>
-									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
-										<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.stacktrace.html">stacktrace</a>
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
 										<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.until.html">until</a>
@@ -498,7 +510,7 @@
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-external">
 								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.eventemitter.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-external">
 								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.eventemitter.html#addlistener" class="tsd-kind-icon">add<wbr>Listener</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">

@@ -121,10 +121,10 @@
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.thenable.html#cancel" class="tsd-kind-icon">cancel</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.thenable.html#catch" class="tsd-kind-icon">catch</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.thenable.html#finally" class="tsd-kind-icon">finally</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.thenable.html#ispending" class="tsd-kind-icon">is<wbr>Pending</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.thenable.html#then" class="tsd-kind-icon">then</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.thenable.html#thencatch" class="tsd-kind-icon">then<wbr>Catch</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.thenable.html#thenfinally" class="tsd-kind-icon">then<wbr>Finally</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.thenable.html#addimplementation" class="tsd-kind-icon">add<wbr>Implementation</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.thenable.html#isimplementation" class="tsd-kind-icon">is<wbr>Implementation</a></li>
 							</ul>
@@ -138,32 +138,164 @@
 					<a name="cancel" class="tsd-anchor"></a>
 					<h3>cancel</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">cancel<span class="tsd-signature-symbol">(</span>opt_reason<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">cancel<span class="tsd-signature-symbol">(</span>opt_reason<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/_typings_globals_selenium_webdriver_index_d_.webdriver.promise.ithenable.html">IThenable</a>.<a href="../interfaces/_typings_globals_selenium_webdriver_index_d_.webdriver.promise.ithenable.html#cancel">cancel</a></p>
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:1282</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2361</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Cancels the computation of this promise&#39;s value, rejecting the promise in the
-									process. This method is a no-op if the promise has alreayd been resolved.</p>
+									<p>Cancels the computation of this promise&#39;s value, rejecting the promise in
+										the process. This method is a no-op if the promise has already been
+									resolved.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_reason: <span class="tsd-signature-type">string</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_reason: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Error</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The reason this promise is being cancelled.</p>
+										<p>The reason this promise is being
+										cancelled. This value will be wrapped in a <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.cancellationerror.html">CancellationError</a>.</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external">
+					<a name="catch" class="tsd-anchor"></a>
+					<h3>catch</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">catch&lt;R&gt;<span class="tsd-signature-symbol">(</span>errback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_typings_globals_selenium_webdriver_index_d_.webdriver.promise.ithenable.html">IThenable</a>.<a href="../interfaces/_typings_globals_selenium_webdriver_index_d_.webdriver.promise.ithenable.html#catch">catch</a></p>
+								<ul>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2404</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Registers a listener for when this promise is rejected. This is synonymous
+									with the {@code catch} clause in a synchronous API:</p>
+								</div>
+								<pre><code><span class="hljs-comment">// Synchronous API:</span>
+<span class="hljs-keyword">try</span> {
+  doSynchronousWork();
+} <span class="hljs-keyword">catch</span> (ex) {
+  console.<span class="hljs-built_in">error</span>(ex);
+}
+
+<span class="hljs-comment">// Asynchronous promise API:</span>
+doAsynchronousWork().<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(ex)</span> {</span>
+  console.<span class="hljs-built_in">error</span>(ex);
+});
+</code></pre>
+								<dl class="tsd-comment-tags">
+									<dt>template</dt>
+									<dd><p>R</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>R</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>errback: <span class="tsd-signature-type">Function</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The
+											function to call if this promise is rejected. The function should
+										expect a single argument: the rejection reason.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>A new promise which will be
+							resolved with the result of the invoked callback.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external">
+					<a name="finally" class="tsd-anchor"></a>
+					<h3>finally</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">finally&lt;R&gt;<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2442</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Registers a listener to invoke when this promise is resolved, regardless
+										of whether the promise&#39;s value was successfully computed. This function
+									is synonymous with the {@code finally} clause in a synchronous API:</p>
+								</div>
+								<pre><code><span class="hljs-comment">// Synchronous API:</span>
+<span class="hljs-keyword">try</span> {
+  doSynchronousWork();
+} <span class="hljs-keyword">finally</span> {
+  cleanUp();
+}
+
+<span class="hljs-comment">// Asynchronous promise API:</span>
+doAsynchronousWork().<span class="hljs-keyword">finally</span>(cleanUp);
+</code></pre><p><strong>Note:</strong> similar to the {@code finally} clause, if the registered
+									callback returns a rejected promise or throws an error, it will silently
+								replace the rejection error (if any) from this promise:</p>
+								<pre><code><span class="hljs-keyword">try</span> {
+  <span class="hljs-keyword">throw</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'one'</span>);
+} <span class="hljs-keyword">finally</span> {
+  <span class="hljs-keyword">throw</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'two'</span>);  <span class="hljs-comment">// Hides Error: one</span>
+}
+
+promise.rejected(<span class="hljs-built_in">Error</span>(<span class="hljs-string">'one'</span>))
+    .finally(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">throw</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'two'</span>);  <span class="hljs-comment">// Hides Error: one</span>
+    });
+</code></pre>
+								<dl class="tsd-comment-tags">
+									<dt>template</dt>
+									<dd><p>R</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>R</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>callback: <span class="tsd-signature-type">Function</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The function to call when
+										this promise is resolved.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>A promise that will be fulfilled
+							with the callback result.</p>
 						</li>
 					</ul>
 				</section>
@@ -178,7 +310,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/_typings_globals_selenium_webdriver_index_d_.webdriver.promise.ithenable.html">IThenable</a>.<a href="../interfaces/_typings_globals_selenium_webdriver_index_d_.webdriver.promise.ithenable.html#ispending">isPending</a></p>
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:1286</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2364</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -193,19 +325,23 @@
 					<h3>then</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external">
 						<li class="tsd-signature tsd-kind-icon">then&lt;R&gt;<span class="tsd-signature-symbol">(</span>opt_callback<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">function</span>, opt_errback<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></li>
-						<li class="tsd-signature tsd-kind-icon">then&lt;R&gt;<span class="tsd-signature-symbol">(</span>opt_callback<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">function</span>, opt_errback<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:1301</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2379</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Registers listeners for when this instance is resolved.</p>
 								</div>
+								<dl class="tsd-comment-tags">
+									<dt>template</dt>
+									<dd><p>R</p>
+									</dd>
+								</dl>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -225,7 +361,7 @@
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_typings_globals_selenium_webdriver_index_d_.webdriver.promise.ithenable.html" class="tsd-signature-type">IThenable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
@@ -235,7 +371,10 @@
 															<h5>value: <span class="tsd-signature-type">T</span></h5>
 														</li>
 													</ul>
-													<h4 class="tsd-returns-title">Returns <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></h4>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">R</span>
+														<span class="tsd-signature-symbol"> | </span>
+														<a href="../interfaces/_typings_globals_selenium_webdriver_index_d_.webdriver.promise.ithenable.html" class="tsd-signature-type">IThenable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span>
+													</h4>
 												</li>
 											</ul>
 										</li>
@@ -244,272 +383,36 @@
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_errback: <span class="tsd-signature-type">function</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The
-											function to call if this promise is rejected. The function should expect
-										a single argument: the rejection reason.</p>
-									</div>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>error<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
-											</ul>
-											<ul class="tsd-descriptions">
-												<li class="tsd-description">
-													<h4 class="tsd-parameters-title">Parameters</h4>
-													<ul class="tsd-parameters">
-														<li>
-															<h5>error: <span class="tsd-signature-type">any</span></h5>
-														</li>
-													</ul>
-													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
-												</li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A new promise which will be
-							resolved with the result of the invoked callback.</p>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:1315</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Registers listeners for when this instance is resolved.</p>
-								</div>
-							</div>
-							<h4 class="tsd-type-parameters-title">Type parameters</h4>
-							<ul class="tsd-type-parameters">
-								<li>
-									<h4>R</h4>
-								</li>
-							</ul>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_callback: <span class="tsd-signature-type">function</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The
-											function to call if this promise is successfully resolved. The function
-										should expect a single argument: the promise&#39;s resolved value.</p>
-									</div>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">R</span></li>
-											</ul>
-											<ul class="tsd-descriptions">
-												<li class="tsd-description">
-													<h4 class="tsd-parameters-title">Parameters</h4>
-													<ul class="tsd-parameters">
-														<li>
-															<h5>value: <span class="tsd-signature-type">T</span></h5>
-														</li>
-													</ul>
-													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">R</span></h4>
-												</li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opt_errback: <span class="tsd-signature-type">function</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The
-											function to call if this promise is rejected. The function should expect
-										a single argument: the rejection reason.</p>
-									</div>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>error<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
-											</ul>
-											<ul class="tsd-descriptions">
-												<li class="tsd-description">
-													<h4 class="tsd-parameters-title">Parameters</h4>
-													<ul class="tsd-parameters">
-														<li>
-															<h5>error: <span class="tsd-signature-type">any</span></h5>
-														</li>
-													</ul>
-													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
-												</li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A new promise which will be
-							resolved with the result of the invoked callback.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external">
-					<a name="thencatch" class="tsd-anchor"></a>
-					<h3>then<wbr>Catch</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">then<wbr>Catch&lt;R&gt;<span class="tsd-signature-symbol">(</span>errback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:1342</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Registers a listener for when this promise is rejected. This is synonymous
-									with the {@code catch} clause in a synchronous API:</p>
-									<p><pre><code>
-  // Synchronous API:
-  try {
-    doSynchronousWork();
-  } catch (ex) {
-    console.error(ex);
-  }</p>
-
-                </div>
-                <p>  // Asynchronous promise API:
-  doAsynchronousWork().thenCatch(function(ex) {
-    console.error(ex);
-  });
-</code></pre></p>
-									<dl class="tsd-comment-tags">
-										<dt>template</dt>
-										<dd><p>R</p>
-										</dd>
-									</dl>
-								</div>
-								<h4 class="tsd-type-parameters-title">Type parameters</h4>
-								<ul class="tsd-type-parameters">
-									<li>
-										<h4>R</h4>
-									</li>
-								</ul>
-								<h4 class="tsd-parameters-title">Parameters</h4>
-								<ul class="tsd-parameters">
-									<li>
-										<h5>errback: <span class="tsd-signature-type">function</span></h5>
-										<div class="tsd-comment tsd-typography">
-											<p>The function
-												to call if this promise is rejected. The function should expect a single
-											argument: the rejection reason.</p>
-										</div>
-										<ul class="tsd-parameters">
-											<li class="tsd-parameter-siganture">
-												<ul class="tsd-signatures tsd-kind-type-literal">
-													<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>error<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
-												</ul>
-												<ul class="tsd-descriptions">
-													<li class="tsd-description">
-														<h4 class="tsd-parameters-title">Parameters</h4>
-														<ul class="tsd-parameters">
-															<li>
-																<h5>error: <span class="tsd-signature-type">any</span></h5>
-															</li>
-														</ul>
-														<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
-													</li>
-												</ul>
-											</li>
-										</ul>
-									</li>
-								</ul>
-								<h4 class="tsd-returns-title">Returns <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></h4>
-								<p>A new promise which will be
-								resolved with the result of the invoked callback.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external">
-					<a name="thenfinally" class="tsd-anchor"></a>
-					<h3>then<wbr>Finally</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">then<wbr>Finally&lt;R&gt;<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:1384</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Registers a listener to invoke when this promise is resolved, regardless
-										of whether the promise&#39;s value was successfully computed. This function
-									is synonymous with the {@code finally} clause in a synchronous API:</p>
-									<p><pre><code>
-  // Synchronous API:
-  try {
-    doSynchronousWork();
-  } finally {
-    cleanUp();
-  }</p>
-
-                </div>
-                <p>  // Asynchronous promise API:
-  doAsynchronousWork().thenFinally(cleanUp);
-</code></pre></p>
-									<p><b>Note:</b> similar to the {@code finally} clause, if the registered
-										callback returns a rejected promise or throws an error, it will silently
-									replace the rejection error (if any) from this promise:</p>
-									<pre><code>
-  try {
-    throw Error('one');
-  } finally {
-    throw Error('two');  // Hides Error: one
-  }
-
-  webdriver.promise.rejected(Error('one'))
-      .thenFinally(function() {
-        throw Error('two');  // Hides Error: one
-      });
+										<pre><code>The <span class="hljs-keyword">function</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">call</span> <span class="hljs-keyword">if</span> this promise <span class="hljs-keyword">is</span> rejected. The <span class="hljs-keyword">function</span> should
+expect a <span class="hljs-built_in">single</span> argument: the rejection reason.
 </code></pre>
-									<dl class="tsd-comment-tags">
-										<dt>template</dt>
-										<dd><p>R</p>
-										</dd>
-									</dl>
-								</div>
-								<h4 class="tsd-type-parameters-title">Type parameters</h4>
-								<ul class="tsd-type-parameters">
-									<li>
-										<h4>R</h4>
-									</li>
-								</ul>
-								<h4 class="tsd-parameters-title">Parameters</h4>
-								<ul class="tsd-parameters">
-									<li>
-										<h5>callback: <span class="tsd-signature-type">function</span></h5>
-										<div class="tsd-comment tsd-typography">
-											<p>The function
-											to call when this promise is resolved.</p>
-										</div>
-										<ul class="tsd-parameters">
-											<li class="tsd-parameter-siganture">
-												<ul class="tsd-signatures tsd-kind-type-literal">
-													<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
-												</ul>
-												<ul class="tsd-descriptions">
-													<li class="tsd-description">
-														<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
-													</li>
-												</ul>
-											</li>
-										</ul>
-									</li>
-								</ul>
-								<h4 class="tsd-returns-title">Returns <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></h4>
-								<p>A promise that will be fulfilled
-								with the callback result.</p>
+									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>error<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_typings_globals_selenium_webdriver_index_d_.webdriver.promise.ithenable.html" class="tsd-signature-type">IThenable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>error: <span class="tsd-signature-type">any</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">R</span>
+														<span class="tsd-signature-symbol"> | </span>
+														<a href="../interfaces/_typings_globals_selenium_webdriver_index_d_.webdriver.promise.ithenable.html" class="tsd-signature-type">IThenable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span>
+													</h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>A new promise which will be
+							resolved with the result of the invoked callback.</p>
 						</li>
 					</ul>
 				</section>
@@ -523,15 +426,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:1394</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2452</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Adds a property to a class prototype to allow runtime checks of whether
-										instances of that class implement the Thenable interface. This function will
-										also ensure the prototype&#39;s {@code then} function is exported from compiled
-									code.</p>
+										instances of that class implement the Thenable interface. This function
+										will also ensure the prototype&#39;s {@code then} function is exported from
+									compiled code.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -558,13 +461,13 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:1404</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2461</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Checks if an object has been tagged for implementing the Thenable interface
-									as defined by <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.thenable.html#addimplementation">webdriver.promise.Thenable.addImplementation</a>.</p>
+									<p>Checks if an object has been tagged for implementing the Thenable
+									interface as defined by <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.thenable.html#addimplementation">Thenable.addImplementation</a>.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -603,19 +506,34 @@
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_._selenium_webdriver_executors_.html">"selenium-<wbr>webdriver/executors"</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
-								<a href="../modules/_typings_globals_selenium_webdriver_index_d_._selenium_webdriver_firefox_.html">"selenium-<wbr>webdriver/firefox"</a>
-							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_._selenium_webdriver_testing_.html">"selenium-<wbr>webdriver/testing"</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.chrome.html">chrome</a>
 							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.edge.html">edge</a>
+							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.executors.html">executors</a>
 							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.firefox.html">firefox</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.http.html">http</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.ie.html">ie</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.opera.html">opera</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.remote.html">remote</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.safari.html">safari</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.testing.html">testing</a>
@@ -624,9 +542,6 @@
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.html">webdriver</a>
 								<ul>
 									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
-										<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.by.html">By</a>
-									</li>
-									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
 										<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.error.html">error</a>
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
@@ -634,9 +549,6 @@
 									</li>
 									<li class="current tsd-kind-module tsd-parent-kind-module tsd-is-external">
 										<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.promise.html">promise</a>
-									</li>
-									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
-										<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.stacktrace.html">stacktrace</a>
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
 										<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.until.html">until</a>
@@ -669,17 +581,17 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
 								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.thenable.html#cancel" class="tsd-kind-icon">cancel</a>
 							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external">
+								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.thenable.html#catch" class="tsd-kind-icon">catch</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external">
+								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.thenable.html#finally" class="tsd-kind-icon">finally</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
 								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.thenable.html#ispending" class="tsd-kind-icon">is<wbr>Pending</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external">
 								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.thenable.html#then" class="tsd-kind-icon">then</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external">
-								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.thenable.html#thencatch" class="tsd-kind-icon">then<wbr>Catch</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external">
-								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.thenable.html#thenfinally" class="tsd-kind-icon">then<wbr>Finally</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
 								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.thenable.html#addimplementation" class="tsd-kind-icon">add<wbr>Implementation</a>
@@ -703,7 +615,7 @@
 					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter tsd-is-external">
 						<a href="../interfaces/_typings_globals_selenium_webdriver_index_d_.webdriver.promise.ithenable.html" class="tsd-kind-icon">IThenable</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-external">
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter tsd-is-external">
 						<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.promise.html#all" class="tsd-kind-icon">all</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-external">
@@ -745,7 +657,7 @@
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter tsd-is-external">
 						<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.promise.html#map" class="tsd-kind-icon">map</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-external">
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter tsd-is-external">
 						<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.promise.html#rejected" class="tsd-kind-icon">rejected</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-external">

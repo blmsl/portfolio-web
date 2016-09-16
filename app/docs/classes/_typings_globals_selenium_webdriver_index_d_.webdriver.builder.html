@@ -73,6 +73,46 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Creates new <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.webdriver.html">WebDriver</a> instances. The environment
+							variables listed below may be used to override a builder&#39;s configuration,
+						allowing quick runtime changes.</p>
+					</div>
+					<ul>
+						<li><p>{@code SELENIUM_BROWSER}: defines the target browser in the form
+							{@code browser[:version][:platform]}.</p>
+						</li>
+						<li><p>{@code SELENIUM_REMOTE_URL}: defines the remote URL for all builder
+								instances. This environment variable should be set to a fully qualified
+								URL for a WebDriver server (e.g. <a href="http://localhost:4444/wd/hub">http://localhost:4444/wd/hub</a>). This
+							option always takes precedence over {@code SELENIUM_SERVER_JAR}.</p>
+						</li>
+						<li><p>{@code SELENIUM_SERVER_JAR}: defines the path to the
+								<a href="http://selenium-release.storage.googleapis.com/index.html">
+								standalone Selenium server</a> jar to use. The server will be started the
+							first time a WebDriver instance and be killed when the process exits.</p>
+						</li>
+					</ul>
+					<p>Suppose you had mytest.js that created WebDriver with</p>
+					<pre><code><span class="hljs-keyword">var</span> driver = <span class="hljs-function"><span class="hljs-keyword">new</span> <span class="hljs-title">webdriver</span>.<span class="hljs-title">Builder</span>()
+    .<span class="hljs-title">forBrowser</span>('chrome')
+    .<span class="hljs-title">build</span>();</span>
+</code></pre><p>This test could be made to use Firefox on the local machine by running with
+						<code>SELENIUM_BROWSER=firefox node mytest.js</code>. Rather than change the code to
+						target Google Chrome on a remote machine, you can simply set the
+					<code>SELENIUM_BROWSER</code> and <code>SELENIUM_REMOTE_URL</code> environment variables:</p>
+					<pre><code><span class="hljs-attr">SELENIUM_BROWSER=</span>chrome:<span class="hljs-number">36</span>:LINUX \
+<span class="hljs-attr">SELENIUM_REMOTE_URL=</span>http://www.example.com:<span class="hljs-number">4444</span>/wd/hub \
+<span class="hljs-keyword">node</span> <span class="hljs-title">mytest</span>.js
+</code></pre><p>You could also use a local copy of the standalone Selenium server:</p>
+					<pre><code><span class="hljs-attr">SELENIUM_BROWSER=</span>chrome:<span class="hljs-number">36</span>:LINUX \
+<span class="hljs-attr">SELENIUM_SERVER_JAR=</span>/path/to/selenium-server-standalone.jar \
+<span class="hljs-keyword">node</span> <span class="hljs-title">mytest</span>.js
+</code></pre>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -95,18 +135,26 @@
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#build" class="tsd-kind-icon">build</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#buildasync" class="tsd-kind-icon">build<wbr>Async</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#disableenvironmentoverrides" class="tsd-kind-icon">disable<wbr>Environment<wbr>Overrides</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#forbrowser" class="tsd-kind-icon">for<wbr>Browser</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#getcapabilities" class="tsd-kind-icon">get<wbr>Capabilities</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#getserverurl" class="tsd-kind-icon">get<wbr>Server<wbr>Url</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#getwebdriverproxy" class="tsd-kind-icon">get<wbr>Web<wbr>Driver<wbr>Proxy</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#setalertbehavior" class="tsd-kind-icon">set<wbr>Alert<wbr>Behavior</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#setchromeoptions" class="tsd-kind-icon">set<wbr>Chrome<wbr>Options</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#setcontrolflow" class="tsd-kind-icon">set<wbr>Control<wbr>Flow</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#setedgeoptions" class="tsd-kind-icon">set<wbr>Edge<wbr>Options</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#setenablenativeevents" class="tsd-kind-icon">set<wbr>Enable<wbr>Native<wbr>Events</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#setfirefoxoptions" class="tsd-kind-icon">set<wbr>Firefox<wbr>Options</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#setieoptions" class="tsd-kind-icon">set<wbr>IeOptions</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#setloggingprefs" class="tsd-kind-icon">set<wbr>Logging<wbr>Prefs</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#setoperaoptions" class="tsd-kind-icon">set<wbr>Opera<wbr>Options</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#setproxy" class="tsd-kind-icon">set<wbr>Proxy</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#setsafari" class="tsd-kind-icon">set<wbr>Safari</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#setscrollbehavior" class="tsd-kind-icon">set<wbr>Scroll<wbr>Behavior</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#usingserver" class="tsd-kind-icon">using<wbr>Server</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#usingwebdriverproxy" class="tsd-kind-icon">using<wbr>Web<wbr>Driver<wbr>Proxy</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#withcapabilities" class="tsd-kind-icon">with<wbr>Capabilities</a></li>
 							</ul>
 						</section>
@@ -125,7 +173,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2651</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3635</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -151,7 +199,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2671</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3670</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -159,14 +207,80 @@
 									<p>Creates a new WebDriver client based on this builder&#39;s current
 									configuration.</p>
 								</div>
+								<p>While this method will immediately return a new WebDriver instance, any
+									commands issued against it will be deferred until the associated browser
+									has been fully initialized. Users may call {@link #buildAsync()} to obtain
+									a promise that will not be fulfilled until the browser has been created
+								(the difference is purely in style).</p>
 								<dl class="tsd-comment-tags">
 									<dt>throws</dt>
 									<dd><p>{Error} If the current configuration is invalid.</p>
+									</dd>
+									<dt>see</dt>
+									<dd><p>#buildAsync()</p>
 									</dd>
 								</dl>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.webdriver.html" class="tsd-signature-type">WebDriver</a></h4>
 							<p>A new WebDriver instance.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="buildasync" class="tsd-anchor"></a>
+					<h3>build<wbr>Async</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">build<wbr>Async<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.webdriver.html" class="tsd-signature-type">WebDriver</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3685</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Creates a new WebDriver client based on this builder&#39;s current
+										configuration. This method returns a promise that will not be fulfilled
+									until the new browser session has been fully initialized.</p>
+								</div>
+								<p><strong>Note:</strong> this method is purely a convenience wrapper around
+								{@link #build()}.</p>
+								<dl class="tsd-comment-tags">
+									<dt>see</dt>
+									<dd><p>#build()</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.promise.promise.html" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.webdriver.html" class="tsd-signature-type">WebDriver</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>A promise that will be
+								fulfilled with the newly created WebDriver instance once the browser
+							has been fully initialized.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="disableenvironmentoverrides" class="tsd-anchor"></a>
+					<h3>disable<wbr>Environment<wbr>Overrides</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">disable<wbr>Environment<wbr>Overrides<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html" class="tsd-signature-type">Builder</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3654</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Configures this builder to ignore any environment variable overrides and to
+									only use the configuration specified through this instance&#39;s API.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html" class="tsd-signature-type">Builder</a></h4>
+							<p>A self reference.</p>
 						</li>
 					</ul>
 				</section>
@@ -180,7 +294,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2690</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3704</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -232,7 +346,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2697</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3711</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -256,7 +370,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2703</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3717</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -264,6 +378,27 @@
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 							<p>The URL of the WebDriver server this instance is configured
 							to use.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="getwebdriverproxy" class="tsd-anchor"></a>
+					<h3>get<wbr>Web<wbr>Driver<wbr>Proxy</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Web<wbr>Driver<wbr>Proxy<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3723</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<p>The URL of the proxy server to use for the WebDriver&#39;s
+							HTTP connections, or <code>null</code> if not set.</p>
 						</li>
 					</ul>
 				</section>
@@ -277,7 +412,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2712</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3732</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -307,7 +442,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2723</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3743</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -342,7 +477,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2733</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3753</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -368,6 +503,41 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="setedgeoptions" class="tsd-anchor"></a>
+					<h3>set<wbr>Edge<wbr>Options</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Edge<wbr>Options<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.edge.options.html" class="tsd-signature-type">Options</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html" class="tsd-signature-type">Builder</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3764</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set <a href="_typings_globals_selenium_webdriver_index_d_.edge.options.html">options</a> specific to Microsoft&#39;s Edge browser
+										for drivers created by this builder. Any proxy settings defined on the
+										given options will take precedence over those set through
+									{@link #setProxy}.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <a href="_typings_globals_selenium_webdriver_index_d_.edge.options.html" class="tsd-signature-type">Options</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The MicrosoftEdgeDriver options to use.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html" class="tsd-signature-type">Builder</a></h4>
+							<p>A self reference.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
 					<a name="setenablenativeevents" class="tsd-anchor"></a>
 					<h3>set<wbr>Enable<wbr>Native<wbr>Events</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
@@ -377,7 +547,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2740</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3771</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -409,7 +579,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2751</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3782</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -435,17 +605,50 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
-					<a name="setloggingprefs" class="tsd-anchor"></a>
-					<h3>set<wbr>Logging<wbr>Prefs</h3>
+					<a name="setieoptions" class="tsd-anchor"></a>
+					<h3>set<wbr>IeOptions</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Logging<wbr>Prefs<span class="tsd-signature-symbol">(</span>prefs<span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.logging.preferences.html" class="tsd-signature-type">Preferences</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html" class="tsd-signature-type">Builder</a></li>
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Logging<wbr>Prefs<span class="tsd-signature-symbol">(</span>prefs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html" class="tsd-signature-type">Builder</a></li>
+						<li class="tsd-signature tsd-kind-icon">set<wbr>IeOptions<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.ie.options.html" class="tsd-signature-type">Options</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html" class="tsd-signature-type">Builder</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2760</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3792</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set Internet Explorer specific <a href="_typings_globals_selenium_webdriver_index_d_.ie.options.html">options</a> for drivers
+										created by this builder. Any proxy settings defined on the given options
+									will take precedence over those set through {@link #setProxy}.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <a href="_typings_globals_selenium_webdriver_index_d_.ie.options.html" class="tsd-signature-type">Options</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The IEDriver options to use.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html" class="tsd-signature-type">Builder</a></h4>
+							<p>A self reference.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="setloggingprefs" class="tsd-anchor"></a>
+					<h3>set<wbr>Logging<wbr>Prefs</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Logging<wbr>Prefs<span class="tsd-signature-symbol">(</span>prefs<span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.logging.preferences.html" class="tsd-signature-type">Preferences</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html" class="tsd-signature-type">Builder</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3801</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -457,7 +660,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>prefs: <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.logging.preferences.html" class="tsd-signature-type">Preferences</a></h5>
+									<h5>prefs: <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.logging.preferences.html" class="tsd-signature-type">Preferences</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Object</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The
 										desired logging preferences.</p>
@@ -467,24 +670,40 @@
 							<h4 class="tsd-returns-title">Returns <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html" class="tsd-signature-type">Builder</a></h4>
 							<p>A self reference.</p>
 						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="setoperaoptions" class="tsd-anchor"></a>
+					<h3>set<wbr>Opera<wbr>Options</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Opera<wbr>Options<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.opera.options.html" class="tsd-signature-type">Options</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html" class="tsd-signature-type">Builder</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2761</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3812</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets Opera specific <a href="_typings_globals_selenium_webdriver_index_d_.opera.options.html">options</a> for drivers created
+										by this builder. Any logging or proxy settings defined on the given options
+										will take precedence over those set through {@link #setLoggingPrefs} and
+									{@link #setProxy}, respectively.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>prefs: <span class="tsd-signature-type">object</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter-index-signature">
-											<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">string</span></h5>
-										</li>
-									</ul>
+									<h5>options: <a href="_typings_globals_selenium_webdriver_index_d_.opera.options.html" class="tsd-signature-type">Options</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The OperaDriver options to use.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html" class="tsd-signature-type">Builder</a></h4>
+							<p>A self reference.</p>
 						</li>
 					</ul>
 				</section>
@@ -498,7 +717,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2770</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3821</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -523,6 +742,40 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="setsafari" class="tsd-anchor"></a>
+					<h3>set<wbr>Safari</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Safari<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.safari.options.html" class="tsd-signature-type">Options</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html" class="tsd-signature-type">Builder</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3831</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets Safari specific <a href="_typings_globals_selenium_webdriver_index_d_.safari.options.html">options</a> for drivers
+										created by this builder. Any logging settings defined on the given options
+									will take precedence over those set through {@link #setLoggingPrefs}.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <a href="_typings_globals_selenium_webdriver_index_d_.safari.options.html" class="tsd-signature-type">Options</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The Safari options to use.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html" class="tsd-signature-type">Builder</a></h4>
+							<p>A self reference.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
 					<a name="setscrollbehavior" class="tsd-anchor"></a>
 					<h3>set<wbr>Scroll<wbr>Behavior</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
@@ -532,7 +785,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2778</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3839</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -565,7 +818,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2791</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3852</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -592,17 +845,50 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
-					<a name="withcapabilities" class="tsd-anchor"></a>
-					<h3>with<wbr>Capabilities</h3>
+					<a name="usingwebdriverproxy" class="tsd-anchor"></a>
+					<h3>using<wbr>Web<wbr>Driver<wbr>Proxy</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">with<wbr>Capabilities<span class="tsd-signature-symbol">(</span>capabilities<span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.capabilities.html" class="tsd-signature-type">Capabilities</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html" class="tsd-signature-type">Builder</a></li>
-						<li class="tsd-signature tsd-kind-icon">with<wbr>Capabilities<span class="tsd-signature-symbol">(</span>capabilities<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html" class="tsd-signature-type">Builder</a></li>
+						<li class="tsd-signature tsd-kind-icon">using<wbr>Web<wbr>Driver<wbr>Proxy<span class="tsd-signature-symbol">(</span>proxy<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html" class="tsd-signature-type">Builder</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2800</li>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3862</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets the URL of the proxy to use for the WebDriver&#39;s HTTP connections.
+										If this method is never called, the Builder will create a connection
+									without a proxy.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>proxy: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The URL of a proxy to use.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html" class="tsd-signature-type">Builder</a></h4>
+							<p>A self reference.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
+					<a name="withcapabilities" class="tsd-anchor"></a>
+					<h3>with<wbr>Capabilities</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">with<wbr>Capabilities<span class="tsd-signature-symbol">(</span>capabilities<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol"> | </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.capabilities.html" class="tsd-signature-type">Capabilities</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html" class="tsd-signature-type">Builder</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:3871</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -614,7 +900,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>capabilities: <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.capabilities.html" class="tsd-signature-type">Capabilities</a></h5>
+									<h5>capabilities: <span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol"> | </span><a href="_typings_globals_selenium_webdriver_index_d_.webdriver.capabilities.html" class="tsd-signature-type">Capabilities</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The desired
 										capabilities for a new session.</p>
@@ -623,20 +909,6 @@
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html" class="tsd-signature-type">Builder</a></h4>
 							<p>A self reference.</p>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in typings/globals/selenium-webdriver/index.d.ts:2801</li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>capabilities: <span class="tsd-signature-type">any</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html" class="tsd-signature-type">Builder</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -661,19 +933,34 @@
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_._selenium_webdriver_executors_.html">"selenium-<wbr>webdriver/executors"</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
-								<a href="../modules/_typings_globals_selenium_webdriver_index_d_._selenium_webdriver_firefox_.html">"selenium-<wbr>webdriver/firefox"</a>
-							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_._selenium_webdriver_testing_.html">"selenium-<wbr>webdriver/testing"</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.chrome.html">chrome</a>
 							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.edge.html">edge</a>
+							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.executors.html">executors</a>
 							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.firefox.html">firefox</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.http.html">http</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.ie.html">ie</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.opera.html">opera</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.remote.html">remote</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external tsd-is-not-exported">
+								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.safari.html">safari</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-external-module tsd-is-external">
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.testing.html">testing</a>
@@ -682,9 +969,6 @@
 								<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.html">webdriver</a>
 								<ul>
 									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
-										<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.by.html">By</a>
-									</li>
-									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
 										<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.error.html">error</a>
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
@@ -692,9 +976,6 @@
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
 										<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.promise.html">promise</a>
-									</li>
-									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
-										<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.stacktrace.html">stacktrace</a>
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-external">
 										<a href="../modules/_typings_globals_selenium_webdriver_index_d_.webdriver.until.html">until</a>
@@ -719,6 +1000,12 @@
 								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#build" class="tsd-kind-icon">build</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#buildasync" class="tsd-kind-icon">build<wbr>Async</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#disableenvironmentoverrides" class="tsd-kind-icon">disable<wbr>Environment<wbr>Overrides</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
 								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#forbrowser" class="tsd-kind-icon">for<wbr>Browser</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
@@ -726,6 +1013,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
 								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#getserverurl" class="tsd-kind-icon">get<wbr>Server<wbr>Url</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#getwebdriverproxy" class="tsd-kind-icon">get<wbr>Web<wbr>Driver<wbr>Proxy</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
 								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#setalertbehavior" class="tsd-kind-icon">set<wbr>Alert<wbr>Behavior</a>
@@ -737,22 +1027,37 @@
 								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#setcontrolflow" class="tsd-kind-icon">set<wbr>Control<wbr>Flow</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#setedgeoptions" class="tsd-kind-icon">set<wbr>Edge<wbr>Options</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
 								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#setenablenativeevents" class="tsd-kind-icon">set<wbr>Enable<wbr>Native<wbr>Events</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
 								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#setfirefoxoptions" class="tsd-kind-icon">set<wbr>Firefox<wbr>Options</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#setieoptions" class="tsd-kind-icon">set<wbr>IeOptions</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
 								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#setloggingprefs" class="tsd-kind-icon">set<wbr>Logging<wbr>Prefs</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#setoperaoptions" class="tsd-kind-icon">set<wbr>Opera<wbr>Options</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
 								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#setproxy" class="tsd-kind-icon">set<wbr>Proxy</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#setsafari" class="tsd-kind-icon">set<wbr>Safari</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
 								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#setscrollbehavior" class="tsd-kind-icon">set<wbr>Scroll<wbr>Behavior</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
 								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#usingserver" class="tsd-kind-icon">using<wbr>Server</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
+								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#usingwebdriverproxy" class="tsd-kind-icon">using<wbr>Web<wbr>Driver<wbr>Proxy</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
 								<a href="_typings_globals_selenium_webdriver_index_d_.webdriver.builder.html#withcapabilities" class="tsd-kind-icon">with<wbr>Capabilities</a>
