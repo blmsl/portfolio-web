@@ -1,4 +1,3 @@
-/// <reference path="../manual_typings/merge-stream.d.ts" />
 'use strict';
 import * as merge from 'merge-stream';
 import {join} from 'path';
@@ -17,23 +16,27 @@ const HTML_MIN_OPTS = {
   ]
 };
 
-export = function buildJSDev(gulp, plugins) {
-  return function () {
-
-    return merge(minifyHtml(), minifyCss());
-
-    function minifyHtml() {
-      return gulp.src(join(APP_SRC, '**/*.html'))
+let buildJSDev = (gulp, plugins) => {
+  return () => {
+    let minifyHtml = () => {
+      return gulp.src([
+          join(APP_SRC, '**/*.html'),
+          '!' + join(APP_SRC, 'index.html')
+        ])
         .pipe(plugins.htmlmin(HTML_MIN_OPTS))
         .pipe(gulp.dest(TMP_DIR));
-    }
+    };
 
-    function minifyCss() {
+    let minifyCss = () => {
       return gulp.src(join(APP_SRC, '**/*.css'))
         .pipe(plugins.sourcemaps.init())
         .pipe(plugins.cssnano())
         .pipe(plugins.sourcemaps.write('.'))
         .pipe(gulp.dest(TMP_DIR));
-    }
+    };
+
+    return merge(minifyHtml(), minifyCss());
   };
 };
+
+export = buildJSDev;

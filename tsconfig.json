@@ -3,16 +3,27 @@
     "target": "es5",
     "module": "commonjs",
     "declaration": false,
-    "noImplicitAny": false,
     "removeComments": true,
     "noLib": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "pretty": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "noImplicitAny": false,
+    "noImplicitReturns": true,
+    "noImplicitUseStrict": true,
+    "noFallthroughCasesInSwitch": true
   },
   "files": [
-    "typings/main.d.ts",
-    "src/main.ts"
+    "typings/index.d.ts",
+    "tools/manual_typings/index.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "typings/browser.d.ts",
+    "typings/browser/**/*"
   ],
   "compileOnSave": true
 }

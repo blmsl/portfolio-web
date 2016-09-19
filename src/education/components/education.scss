@@ -1,8 +1,8 @@
-@import '../../assets/css/common.scss';
+@import '../../assets/css/common';
 
-/*
- * Education
- * ========================================================================== */
+//
+// Education
+// ========================================================================== //
 
 .education {
   background: $whisper;
@@ -39,9 +39,19 @@
     .content {
       color: $manatee;
       line-height: 21px;
+
+      .row {
+        padding-top: 20px;
+        .cs-badge {
+          min-height: 117px;
+          p {
+            text-align: center;
+          }
+        }
+      }
     }
 
-    @media screen and (max-width: $screen-sm-min) {
+    @include respond-to {
       margin-left: 0px;
     }
   }
@@ -51,7 +61,7 @@
       border-left: solid 1px $whisper-dark;
       padding-bottom: 47px;
 
-      @media screen and (max-width: $screen-sm-min) {
+      @include respond-to {
         border-left: none;
       }
     }
@@ -59,7 +69,6 @@
       padding-bottom: 0px;
     }
   }
-
 
   .education-year {
     font-size: 17px;
@@ -71,13 +80,13 @@
     padding: 40px 0 40px 0;
     @include border-radius(50%);
 
-    @media screen and (min-width: $screen-lg-min) {
+    @include respond-to($val: min-width, $query: $screen-lg-min) {
       width: 140px;
       height: 140px;
-      padding-top: 58px;
+      padding-top: 50px;
     }
 
-    @media screen and (max-width: $screen-sm-min) {
+    @include respond-to {
       margin: 0 auto;
     }
   }
@@ -86,13 +95,13 @@
     float: left;
     width: 15px;
     height: 50px;
-    background: url(assets/images/arrow-left-light.png) no-repeat 0 23px;
+    @include bg-image($image: 'arrow-left-light.png', $y-pos: 23px);
 
-    @media screen and (max-width: $screen-sm-min) {
+    @include respond-to {
       float: none;
       width: 100%;
       height: 40px;
-      background: url(assets/images/arrow-top-light.png) no-repeat 50% 100%;
+      @include bg-image($image: 'arrow-top-light.png', $x-pos: 50%, $y-pos: 100%);
     }
   }
 }

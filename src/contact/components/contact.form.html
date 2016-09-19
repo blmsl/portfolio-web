@@ -3,23 +3,23 @@
   <h4>Send a message</h4>
   <div *ngIf="sentSuccessfully" class="success-message">
     <h3>Email Sent Successfully.</h3>
-    <p>Thank you <strong>{{message.name | trim}}</strong>, your message has been sent.</p>
+    <p>Thank you <strong>{{name.value | trim}}</strong>, your message has been sent.</p>
   </div>
-  <form *ngIf="!sentSuccessfully" (ngSubmit)="onSubmit()" #contactForm="ngForm" name="cform" id="cform">
+  <form *ngIf="!sentSuccessfully" (ngSubmit)="onSubmit()" [formGroup]="form">
     <div id="result">
       <div *ngIf="errorConfig" [hidden]="!submitClicked || sentSuccessfully" class="error-message">
         <span [hidden]="name.valid">{{errorConfig.e_name_required.message}}<br></span>
         <span [hidden]="email.valid">{{errorConfig.e_email_required.message}}<br></span>
-        <span [hidden]="text.valid">{{errorConfig.e_message_required.message}}</span>
+        <span [hidden]="message.valid">{{errorConfig.e_message_required.message}}</span>
         <span *ngIf="serverErrors" class="error-message" [innerHtml]="serverErrors"></span>
       </div>
     </div>
-    <input [(ngModel)]="message.name" ngControl="name" #name="ngForm" required type="text" class="col-xs-12 col-sm-6 col-md-6 col-lg-6" placeholder="Your name...">
-    <input [(ngModel)]="message.email" ngControl="email" #email="ngForm" autocapitalize="off" required type="email" class="col-xs-12 col-sm-6 col-md-6 col-lg-6 no-margin" placeholder="Your email...">
-    <textarea [(ngModel)]="message.text" ngControl="text" #text="ngForm" required cols="1" rows="1" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" placeholder="Your message..."></textarea>
-    <input [(ngModel)]="message.heuning" ngControl="heuning" type="hidden">
+    <input formControlName="name" required type="text" class="col-xs-12 col-sm-6 col-md-6 col-lg-6" placeholder="Your name...">
+    <input formControlName="email" autocapitalize="off" required type="email" class="col-xs-12 col-sm-6 col-md-6 col-lg-6 no-margin" placeholder="Your email...">
+    <textarea formControlName="message" required cols="1" rows="1" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" placeholder="Your message..."></textarea>
+    <input formControlName="heuning" type="hidden">
     <img *ngIf="submitting" src="assets/images/loading.gif" class="contact-loader" />
-    <input [disabled]="(!contactForm.form.valid && submitClicked) || submitting" (click)="onClick()" type="submit" name="send" class="btn-submit" value="{{submitBtnText}}">
+    <input [disabled]="(!form.valid && submitClicked) || submitting" (click)="onClick()" type="submit" name="send" class="btn-submit" value="{{submitBtnText}}">
   </form>
 </div>
 <!--contact form end-->

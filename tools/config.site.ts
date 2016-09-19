@@ -4,7 +4,7 @@
 const GOOGLE_ANALYTICS_ID:string = process.env.GOOGLE_ANALYTICS_ID;
 const GOOGLE_MAPS_API_KEY:string = process.env.GOOGLE_MAPS_API_KEY;
 const NAME = 'Louw Swart';
-const TITLE = `${NAME} | Personal Portfolio`;
+const TITLE = `${NAME} // Portfolio`;
 const DESCRIPTION = 'On-line Portfolio and CV for Louw Swart - Analyst JavaScript Programmer based in Wellington, New Zealand';
 const URL = 'https://portfolio.ouq77.kiwi/';
 
@@ -43,6 +43,7 @@ export const META_TAGS = {
     'article:modified_time': new Date().toISOString()
   }
 };
+
 export const APPLE_ICON_SIZES = [
   '57x57',
   '60x60',
@@ -54,6 +55,7 @@ export const APPLE_ICON_SIZES = [
   '152x152',
   '180x180'
 ];
+
 export const GOOGLE_ACCOUNT = {
   analytics: GOOGLE_ANALYTICS_ID,
   maps_key: GOOGLE_MAPS_API_KEY

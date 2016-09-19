@@ -1,12 +1,12 @@
-@import './common.scss';
+@import 'common';
 
-/*
- * Base styles
- * ========================================================================== */
+//
+// Base styles
+// ========================================================================== //
 
-/*
- * CSS Reset
- * ========================================================================== */
+//
+// CSS Reset
+// ========================================================================== //
 
 * {
   padding: 0;
@@ -24,7 +24,7 @@ body {
   overflow: scroll;
   overflow-x: hidden;
 
-  @media screen and (max-width: $screen-m1-min) {
+  @include respond-to($query: $screen-m1-min) {
     min-height: 700px;
   }
 }
@@ -140,9 +140,22 @@ h6 {
 
   a {
     color: $iris-blue;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.map-info-window {
+  h3 {
+    color:  $bitter-sweet;
+    font-size: 18px;
+    padding: 0;
   }
 
-  a:hover {
-    text-decoration: underline;
+  p {
+    color: $manatee;
+    font-size: 13px;
+    padding: 0;
   }
 }

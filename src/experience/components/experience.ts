@@ -1,20 +1,19 @@
 'use strict';
-import {Component, View, OnInit}  from 'angular2/core';
-import {ExperienceService}        from '../../shared/services/experience.service';
-import {Job}                      from '../../shared/models/experience/definitions/job';
+import {Component, OnInit} from '@angular/core';
+import {ExperienceService} from '../services/experience';
+import {Job} from '../definitions/job';
 
 @Component({
   selector: 'experience',
-  providers: [ExperienceService]
-})
-@View({
   templateUrl: './experience/components/experience.html',
   styleUrls: ['./experience/components/experience.css']
 })
 export class ExperienceComponent implements OnInit {
-  public jobs:Array<Job>;
+  public jobs: Array<Job>;
+  private _experienceService: ExperienceService;
 
-  constructor(private _experienceService:ExperienceService) {
+  constructor(experienceService: ExperienceService) {
+    this._experienceService = experienceService;
   }
 
   ngOnInit() {

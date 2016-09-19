@@ -5,7 +5,7 @@
       <h2>Work Experience</h2>
       <p>what I've done so far</p>
     </div>
-    <div *ngFor="#job of jobs"
+    <div *ngFor="let job of jobs"
          class="row work-details">
       <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
         <div class="work-year">{{job.year.from}} <i class="fa fa-chevron-circle-right"></i><br>{{job.year.to}}</div>
@@ -24,7 +24,7 @@
           <h6 *ngIf="job.accomplishments">Accomplishments</h6>
           <section *ngIf="job.accomplishments" [innerHtml]="job.accomplishments" class="content"></section>
           <div *ngIf="job.video" class="vid-container">
-            <iframe class="youtube-frame" width="0" height="0" src="//www.youtube.com/embed/{{job.video}}"></iframe>
+            <iframe class="youtube-frame" width="1280" height="720" [src]="job.video | videoUrl" frameborder="0" allowfullscreen></iframe>
           </div>
         </div>
       </div>

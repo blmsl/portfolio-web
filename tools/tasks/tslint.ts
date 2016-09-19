@@ -1,9 +1,9 @@
 'use strict';
 import {join} from 'path';
-import {APP_SRC, TOOLS_DIR} from '../config';
+import {APP_SRC, TOOLS_DIR, NG2LINT_RULES} from '../config';
 
-export = function tslint(gulp, plugins) {
-  return function () {
+let tslint = (gulp, plugins) => {
+  return () => {
     let src = [
       join(APP_SRC, '**/*.ts'),
       '!' + join(APP_SRC, '**/*.d.ts'),
@@ -12,11 +12,15 @@ export = function tslint(gulp, plugins) {
     ];
 
     return gulp.src(src)
-      .pipe(plugins.tslint())
+      .pipe(plugins.tslint({
+        rulesDirectory: NG2LINT_RULES
+      }))
       .pipe(plugins.tslint.report(plugins.tslintStylish, {
-        emitError: false,
+        emitError: true,
         sort: true,
         bell: true
       }));
   };
 };
+
+export = tslint;

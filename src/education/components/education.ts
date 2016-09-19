@@ -1,29 +1,37 @@
 'use strict';
-import {Component, View, OnInit}  from 'angular2/core';
-import {EducationService}         from '../../shared/services/education.service';
-import {School}                   from '../../shared/models/education/definitions/school';
+import {Component, OnInit} from '@angular/core';
+import {EducationService} from '../services/education';
+import {School} from '../definitions/school';
+import {CodeSchool} from '../definitions/code.school';
 
 @Component({
   selector: 'education',
-  providers: [EducationService]
-})
-@View({
   templateUrl: './education/components/education.html',
   styleUrls: ['./education/components/education.css']
 })
 export class EducationComponent implements OnInit {
-  public schools:Array<School>;
+  public schools: Array<School>;
+  public codeSchool: CodeSchool;
+  private _educationService: EducationService;
 
-  constructor(private _educationService:EducationService) {
+  constructor(educationService: EducationService) {
+    this._educationService = educationService;
   }
 
   ngOnInit() {
     this.getSchools();
+    this.getCodeSchool();
   }
 
   getSchools() {
     this._educationService.getSchools().then(
-      schools =>
-        this.schools = schools);
+      schools => this.schools = schools
+    );
+  }
+
+  getCodeSchool() {
+    this._educationService.getCodeSchool().subscribe(
+      codeSchool => this.codeSchool = <CodeSchool>codeSchool
+    );
   }
 }

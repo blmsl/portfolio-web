@@ -1,38 +1,20 @@
 'use strict';
-import {Component, View, OnInit}  from 'angular2/core';
-import {HeaderComponent}          from '../../header/components/header';
-import {AboutMeComponent}         from '../../aboutme/components/aboutme';
-import {SkillsComponent}          from '../../skills/components/skills';
-import {ExperienceComponent}      from '../../experience/components/experience';
-import {EducationComponent}       from '../../education/components/education';
-import {ContactComponent}         from '../../contact/components/contact';
-import {FooterComponent}          from '../../footer/components/footer';
-import {AppService}               from '../../shared/services/app.service';
-import {elementInViewport}        from '../../shared/common/common';
-
-declare var jQuery:JQuery, _:UnderscoreStatic;
+import {Component, OnInit} from '@angular/core';
+import {AppService} from '../services/app';
+import {cancelableDelay} from '../../shared/common/delay';
+import {elementInViewport} from '../../shared/common/element.in.viewport';
 
 @Component({
   selector: 'container',
-  providers: [AppService]
-})
-@View({
-  directives: [
-    HeaderComponent,
-    AboutMeComponent,
-    SkillsComponent,
-    ExperienceComponent,
-    EducationComponent,
-    ContactComponent,
-    FooterComponent
-  ],
   templateUrl: './app/components/app.html',
   styleUrls: ['./app/components/app.css']
 })
 export class AppComponent implements OnInit {
-  private _timeoutMenuAnimate:any;
+  private _appService: AppService;
+  private _timeoutMenuAnimate: any;
 
-  constructor(private _appService:AppService) {
+  constructor(appService: AppService) {
+    this._appService = appService;
   }
 
   ngOnInit() {
@@ -41,30 +23,28 @@ export class AppComponent implements OnInit {
   }
 
   initSmoothPageScroll() {
-    (($) => {
-      $('a[href*="#"]:not([href="#"])').click(
-        function () {
-          if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-            if (target.length) {
-              $('html,body').animate({
-                scrollTop: target.offset().top - 60
-              }, 500);
-              return false;
-            }
+    (($: JQueryStatic) => {
+      $('a[href*="#"]:not([href="#"])').click(function (e: JQueryEventObject) {
+        e.preventDefault();
+        if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
+          let target: JQuery = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+          if (target.length) {
+            $('html,body').animate({
+              scrollTop: target.offset().top - 60
+            }, 500);
           }
         }
-      );
+      });
 
-      $('#js_menu_button').click(_.bind((e) => {
+      $('#js_menu_button').click((e: JQueryEventObject) => {
         e.preventDefault();
 
         if (this._timeoutMenuAnimate) {
           clearTimeout(this._timeoutMenuAnimate);
         }
         // wait half a second for menu collapse/expand to finish
-        this._timeoutMenuAnimate = _.delay(function () {
+        this._timeoutMenuAnimate = cancelableDelay(500, () => {
           if ($('#js_navbar').hasClass('in')) {
             if (!elementInViewport($, $('#js_links_li'))) {
               $('html,body').animate({
@@ -72,8 +52,8 @@ export class AppComponent implements OnInit {
               }, 1000);
             }
           }
-        }, 500);
-      }, this));
+        });
+      });
     })(jQuery);
   }
 }

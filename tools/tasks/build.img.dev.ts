@@ -2,8 +2,8 @@
 import {join} from 'path';
 import {APP_SRC, APP_DEST} from '../config';
 
-export = function buildImagesDev(gulp) {
-  return function () {
+let buildImagesDev = (gulp) => {
+  return () => {
     return gulp.src([
         join(APP_SRC, '**/*.gif'),
         join(APP_SRC, '**/*.jpg'),
@@ -12,4 +12,6 @@ export = function buildImagesDev(gulp) {
       ])
       .pipe(gulp.dest(APP_DEST));
   };
-}
+};
+
+export = buildImagesDev;

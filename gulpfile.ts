@@ -4,20 +4,29 @@ import {runSequence, task} from './tools/utils';
 
 // --------------
 // Clean (override).
-gulp.task('clean', task('clean', 'all'));
-gulp.task('clean.dist', task('clean', 'dist'));
-gulp.task('clean.test', task('clean', 'test'));
-gulp.task('clean.tmp', task('clean', 'tmp'));
-gulp.task('clean.heroku', task('clean', 'heroku'));
+gulp.task('clean', done => task('clean', 'all')(done));
+gulp.task('clean.dist', done => task('clean', 'dist')(done));
+gulp.task('clean.test', done => task('clean', 'test')(done));
+gulp.task('clean.tmp', done => task('clean', 'tmp')(done));
+gulp.task('clean.heroku', done => task('clean', 'heroku')(done));
+gulp.task('clean.docs', done => task('clean', 'docs')(done));
+gulp.task('clean.heroku.docs', done => task('clean', 'heroku.docs')(done));
 
-gulp.task('check.versions', task('check.versions'));
+// Bump (override)
+gulp.task('bump.tag', () => task('bump.tag', 'patch')());
+gulp.task('bump.tag.patch', () => task('bump.tag', 'patch')());
+gulp.task('bump.tag.minor', () => task('bump.tag', 'minor')());
+gulp.task('bump.tag.major', () => task('bump.tag', 'major')());
 
-// --------------
-// Postinstall.
-gulp.task('postinstall', done =>
-  runSequence('clean',
-    'npm',
-    done));
+// Bump Heroku (override)
+gulp.task('bump.tag.heroku', () => task('bump.tag', 'heroku.patch')());
+gulp.task('bump.tag.heroku.patch', () => task('bump.tag', 'heroku.patch')());
+gulp.task('bump.tag.heroku.minor', () => task('bump.tag', 'heroku.minor')());
+gulp.task('bump.tag.heroku.major', () => task('bump.tag', 'heroku.major')());
+
+// Docs
+gulp.task('build.docs', () => task('build.docs')());
+gulp.task('serve.docs', () => task('serve.docs')());
 
 // --------------
 // Build dev.
@@ -53,7 +62,7 @@ gulp.task('build.prod', done =>
     done));
 
 // --------------
-// Build prod.
+// Build heroku.
 gulp.task('build.heroku', done =>
   runSequence(
     'clean.heroku',
@@ -62,37 +71,18 @@ gulp.task('build.heroku', done =>
     'build.heroku.update',
     done));
 
-// --------------
-// Watch.
-gulp.task('build.dev.watch', done =>
+gulp.task('build.heroku.docs', done =>
   runSequence(
-    'build.dev',
-    'watch.dev',
+    'clean.docs',
+    'clean.heroku.docs',
+    'build.docs',
+    'build.heroku.copy.docs',
     done));
 
-gulp.task('build.test.watch', done =>
+gulp.task('build.heroku.all', done =>
   runSequence(
-    'build.test',
-    'watch.test',
-    done));
-
-// --------------
-// Test.
-gulp.task('test', done =>
-  runSequence(
-    'clean.test',
-    'tslint',
-    'build.test',
-    'karma.start',
-    done));
-
-// --------------
-// Serve.
-gulp.task('serve', done =>
-  runSequence(
-    'build.dev',
-    'server.start',
-    'watch.serve',
+    'build.heroku',
+    'build.heroku.docs',
     done));
 
 // --------------
@@ -101,4 +91,22 @@ gulp.task('docs', done =>
   runSequence(
     'build.docs',
     'serve.docs',
+    done));
+
+// --------------
+// Serve dev
+gulp.task('serve.dev', done =>
+  runSequence(
+    'build.dev',
+    'server.start',
+    'watch.serve',
+    done));
+
+// --------------
+// Serve prod
+gulp.task('serve.prod', done =>
+  runSequence(
+    'build.prod',
+    'server.start',
+    'watch.serve',
     done));

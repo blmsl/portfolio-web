@@ -1,30 +1,26 @@
-@import '../../assets/css/common.scss';
+@import '../../assets/css/common';
 
-/*
- * Google maps
- * ========================================================================== */
+//
+// Google maps
+// ========================================================================== //
 
 .map-area {
-  background: url(assets/images/map-bro.png) repeat-x 0 0;
+  @include bg-image($image: 'map-bro.png', $repeat: repeat-x);
   padding-top: 4px;
   height: 500px;
   overflow: hidden;
   width: 100%;
   margin: 0;
 
-  @media screen and (max-width: $screen-m1-min) {
-    height: 250px;
+  @include respond-to($query: $screen-lg-min) {
+    height: 450px;
   }
 
-  @media screen and (max-width: $screen-m2-min) {
-    height: 200px;
+  @include respond-to($query: $screen-m2-min) {
+    height: 350px;
   }
 
-  @media screen and (max-width: $screen-sm-min) {
-    height: 160px;
-  }
-
-  @media screen and (max-width: $screen-x2-min) {
+  @include respond-to {
     height: 200px;
   }
 }

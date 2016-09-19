@@ -1,11 +1,11 @@
 <!--banner start-->
-<div class="banner row" id="banner">
+<div class="banner row" id="home">
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
     <!--slider start-->
     <div id="ri-grid" class="ri-grid-loading ri-grid ri-grid-size-2">
       <img class="ri-loading-image" src="assets/images/loading.gif" alt="Loading..." />
       <ul id="js_cb_slideshow" class="cb-slideshow">
-        <li *ngFor="#imageId of imageIds">
+        <li *ngFor="let imageId of imageIds">
           <a href="#"><img src="//instagram.com/p/{{imageId}}/media/?size=m" alt="© Louw Swart"></a>
         </li>
       </ul>
@@ -34,7 +34,7 @@
             <div id="js_navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li class="menu-item active"><a href="#home" class="js_track_link_click">Home</a></li>
-                <li class="menu-item"><a href="#aboutme" class="js_track_link_click">About</a></li>
+                <li class="menu-item"><a href="#about" class="js_track_link_click">About</a></li>
                 <li class="menu-item"><a href="#skills" class="js_track_link_click">Skills</a></li>
                 <li class="menu-item"><a href="#experience" class="js_track_link_click">Experience</a></li>
                 <li class="menu-item"><a href="#education" class="js_track_link_click">Education</a></li>

@@ -8,7 +8,7 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="manifest" href="/manifest.json">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=0, width=device-width, height=device-height">
-    <meta name="theme-color" content="#262b37">
+    <meta name="theme-color" content="#0ba5a2">
     <meta name="apple-mobile-web-app-title" content="<%= META_TAGS.title %>">
     <meta content="yes" name="apple-mobile-web-app-capable"><% for (key in APPLE_ICON_SIZES) { %>
     <link rel="apple-touch-icon" sizes="<%- APPLE_ICON_SIZES[key] %>" href="assets/images/touchicons/apple-touch-icon-<%- APPLE_ICON_SIZES[key] %>.png"><% } %>
@@ -21,23 +21,42 @@
     <!-- Open Graph data --><% for(key in META_TAGS.facebook) { %>
     <meta property="<%- key %>" content="<%- META_TAGS.facebook[key] %>"><% } %>
     <!-- Google Analytics -->
-    <script>var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', '<%= GOOGLE_ACCOUNT.analytics %>']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-      var ga = document.createElement('script');
-      ga.type = 'text/javascript';
-      ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(ga, s)
-    })();</script>
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', '<%= GOOGLE_ACCOUNT.analytics %>']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s)
+      })();
+    </script>
     <!-- Google Font Style -->
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300' rel='stylesheet' type='text/css'>
     <!-- inject:css -->
     <!-- endinject -->
   </head>
   <body>
+    <script>
+      // function.name (all IE)
+      // Remove once https://github.com/angular/angular/issues/6501 is fixed.
+      /*! @source http://stackoverflow.com/questions/6903762/function-name-not-supported-in-ie*/
+      if (!Object.hasOwnProperty('name')) {
+        Object.defineProperty(Function.prototype, 'name', {
+          get: function() {
+            var matches = this.toString().match(/^\s*function\s*((?![0-9])[a-zA-Z0-9_$]*)\s*\(/);
+            var name = matches && matches.length > 1 ? matches[1] : "";
+            // For better performance only parse once, and then cache the
+            // result through a new accessor for repeated access.
+            Object.defineProperty(this, 'name', {value: name});
+            return name;
+          }
+        });
+      }
+    </script>
     <!--google maps api-->
     <script src="https://maps.googleapis.com/maps/api/js?key=<%= GOOGLE_ACCOUNT.maps_key %>&amp;libraries=geometry"></script>
     <!--[if lt IE 10]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->

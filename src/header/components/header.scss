@@ -1,13 +1,13 @@
-@import '../../assets/css/common.scss';
+@import '../../assets/css/common';
 
-/*
- * Header Part
- * ========================================================================== */
+//
+// Header Part
+// ========================================================================== //
 
 header {
   position: relative;
 
-  @media screen and (max-width: $screen-m2-min) {
+  @include respond-to($query: $screen-m2-min) {
     font-size: 38px;
     span {
       font-size: 16px;
@@ -19,7 +19,7 @@ header {
   overflow: hidden;
   margin: 0 auto !important;
   background: $midnight-express;
-  height: 2000px;
+  height: 3000px;
 
   .no-padding {
     padding: 0px !important;
@@ -34,8 +34,9 @@ header {
   padding: 30px 0 30px;
   max-width: 835px;
   border: 1px solid $white;
-  background: $black-trans-point-3;
+  background: $black-trans-point-5;
   zoom: 1;
+
   h1 {
     text-transform: uppercase;
   }
@@ -44,7 +45,7 @@ header {
     text-transform: none;
   }
 
-  @media screen and (max-width: $screen-m1-min) {
+  @include respond-to($query: $screen-m1-min) {
     padding-left: 25px;
     padding-right: 25px;
     h1 {
@@ -56,7 +57,7 @@ header {
     }
   }
 
-  @media screen and (max-width: $screen-x1-min) {
+  @include respond-to($query: $screen-x1-min) {
     padding-top: 15px;
     padding-bottom: 15px;
     h1 {
@@ -70,20 +71,20 @@ header {
   }
 }
 
-/*
- * Slide show background control
- * ========================================================================== */
+//
+// Slide show background control
+// ========================================================================== //
 
 .cb-slideshow {
   background: $black-russian;
   li {
-    opacity: 0.5;
+    opacity: 0.7;
   }
 }
 
-/*
- * Background slider
- * ========================================================================== */
+//
+// Background slider
+// ========================================================================== //
 
 .ri-grid {
   margin: 0px auto;
@@ -132,9 +133,9 @@ header {
   }
 }
 
-/*
- * Grid wrapper
- * ========================================================================== */
+//
+// Grid wrapper
+// ========================================================================== //
 
 .ri-grid-size-1 {
   width: 55%;
@@ -149,9 +150,9 @@ header {
   margin-top: 0px;
 }
 
-/*
- * Shadow
- * ========================================================================== */
+//
+// Shadow
+// ========================================================================== //
 
 .ri-shadow {
   &:after, &:before {
@@ -193,9 +194,9 @@ header {
   display: block;
 }
 
-/*
- * Menu
- * ========================================================================== */
+//
+// Menu
+// ========================================================================== //
 
 .is-stuck {
   left: 0px;
@@ -213,7 +214,7 @@ header {
   padding: 0;
   width: auto;
 
-  @media screen and (max-width: $screen-sm-min) {
+  @include respond-to {
     padding-right: 15px;
     padding-left: 15px;
   }
@@ -222,7 +223,7 @@ header {
 .navbar-header {
   display: none;
 
-  @media screen and (max-width: $screen-sm-min) {
+  @include respond-to {
     display: block;
   }
 }
@@ -246,7 +247,7 @@ header {
   margin-top: 14px;
 }
 
-/* Special class on .container surrounding .navbar, used for positioning it into place. */
+// Special class on .container surrounding .navbar, used for positioning it into place. //
 .navbar-wrapper {
   margin-top: 0px;
   position: relative;
@@ -257,7 +258,7 @@ header {
 .navbar-wrapper .container {
   padding: 0px;
 
-  @media screen and (max-width: $screen-sm-min) {
+  @include respond-to {
     padding-right: 15px;
     padding-left: 15px;
   }
@@ -272,67 +273,70 @@ header {
 }
 
 .navbar.navbar-inverse.navbar-static-top {
-  margin: 0px auto;
+  margin: 2px auto;
   background: $midnight-express;
   color: $link-water;
   border: none;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   text-transform: uppercase;
+
+  a {
+    padding: 22px 25px;
+    line-height: 18px;
+    text-align: center;
+    @include transition(all 0.2s ease);
+
+    &:hover {
+      color: $white;
+    }
+
+    @include respond-to($query: $screen-m1-min) {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+
+    @include respond-to($query: $screen-m2-min) {
+      padding-left: 17px;
+    }
+
+    @include respond-to($query: $screen-x2-min) {
+      line-height: 17px;
+      padding-top: 20px;
+      padding-bottom: 11px;
+    }
+  }
 }
 
-.navbar.navbar-inverse.navbar-static-top a {
-  color: $link-water;
-  padding: 22px 25px;
-  line-height: 18px;
-  text-align: center;
-
-  @media screen and (max-width: $screen-m1-min) {
-    padding-left: 18px;
-    padding-right: 18px;
-  }
-
-  @media screen and (max-width: $screen-m2-min) {
-    padding-left: 17px;
-  }
-
-  @media screen and (max-width: $screen-x2-min) {
-    line-height: 17px;
-    padding-top: 20px;
-    padding-bottom: 11px;
-  }
-}
-
-.navbar.navbar-inverse.navbar-static-top a:hover {
-  color: $white;
-}
-
-.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus {
+.navbar-inverse .navbar-nav > .active > a {
   background: $black-forest;
   color: $link-water;
+
+  &:focus {
+    color: $link-water;
+  }
+
+  &:hover {
+    color: $white;
+  }
 }
 
-@media screen and (max-width: $screen-sm-min) {
+@include respond-to {
   ul.navbar-nav li a {
     display: block;
   }
-}
-
-.navbar-inverse .navbar-nav > .active > a:hover {
-  background: $black-forest;
-  color: $white;
 }
 
 .hide-class {
   display: none;
 }
 
-/* Since positioning the image, we need to help out the caption */
+// Since positioning the image, we need to help out the caption //
 .carousel-caption {
   z-index: 10;
 }
 
-/* Declare heights because of positioning of img element */
+// Declare heights because of positioning of img element //
 .carousel .item {
   height: 600px;
   background-color: $cerulean;

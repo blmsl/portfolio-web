@@ -1,11 +1,7 @@
-'use strict';
-import {provide, enableProdMode}                                  from 'angular2/core';
-import {bootstrap}                                                from 'angular2/platform/browser';
-import {ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from 'angular2/router';
-import {AppComponent}                                             from './app/components/app';
+import {enableProdMode} from '@angular/core';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {AppModule} from './app.module';
 
 enableProdMode();
-bootstrap(AppComponent, [
-  ROUTER_PROVIDERS,
-  provide(LocationStrategy, {useClass: HashLocationStrategy})
-]);
+
+platformBrowserDynamic().bootstrapModule(AppModule);

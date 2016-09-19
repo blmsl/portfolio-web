@@ -2,8 +2,10 @@
 import {join} from 'path';
 import {APP_SRC} from '../config';
 
-export = function watchDev(gulp, plugins) {
-  return function () {
+let watchDev = (gulp, plugins) => {
+  return () => {
     plugins.watch(join(APP_SRC, '**/*'), () => gulp.start('build.dev'));
   };
 };
+
+export = watchDev;

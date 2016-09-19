@@ -1,40 +1,42 @@
 'use strict';
-import {Component, View, OnInit}          from 'angular2/core';
-import {Pipe, PipeTransform}              from 'angular2/core';
-import {FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/common';
-import {Http, HTTP_PROVIDERS, Response}   from 'angular2/http';
-import {ContactService}                   from '../../shared/services/contact.service';
-import {ContactMessage}                   from '../../shared/models/contact/definitions/contact.message';
+import {Component, OnInit} from '@angular/core';
+import {FormGroup, FormControl, Validators, FormBuilder} from '@angular/forms';
+import {ContactService} from '../services/contact';
+import {ErrorConfig} from '../definitions/error.config';
+import {ContactMessage} from '../definitions/contact.message';
+import {WrappedError} from '../../shared/definitions/wrapped.error';
 
-declare var _:UnderscoreStatic;
-
-@Pipe({name: 'trim'})
-export class TrimPipe implements PipeTransform {
-  transform(value:any):any {
-    return value.trim();
-  }
-}
 @Component({
   selector: 'contact-form',
-  providers: [Http, HTTP_PROVIDERS, ContactService]
-})
-@View({
-  pipes: [TrimPipe],
   templateUrl: './contact/components/contact.form.html',
-  styleUrls: ['./contact/components/contact.form.css'],
-  directives: [FORM_DIRECTIVES, CORE_DIRECTIVES]
+  styleUrls: ['./contact/components/contact.form.css']
 })
 export class ContactFormComponent implements OnInit {
-  public message:ContactMessage;
-  public submitClicked:boolean;
-  public submitting:boolean;
-  public sentSuccessfully:boolean;
-  public submitBtnText:string;
-  public serverErrors:string;
-  public errorConfig:JSON;
+  public name: FormControl;
+  public email: FormControl;
+  public message: FormControl;
+  public heuning: FormControl;
+  public form: FormGroup;
+  public submitClicked: boolean;
+  public submitting: boolean;
+  public sentSuccessfully: boolean;
+  public submitBtnText: string;
+  public serverErrors: string;
+  public errorConfig: ErrorConfig;
+  private _contactService: ContactService;
 
-  constructor(private _contactService:ContactService) {
-    this.message = new ContactMessage();
+  constructor(contactService: ContactService, fb: FormBuilder) {
+    this._contactService = contactService;
+    this.name = new FormControl('', Validators.required);
+    this.email = new FormControl('', Validators.required);
+    this.message = new FormControl('', Validators.required);
+    this.heuning = new FormControl('');
+    this.form = fb.group({
+      name: this.name,
+      email: this.email,
+      message: this.message,
+      heuning: this.heuning
+    });
     this.submitClicked = false;
     this.submitting = false;
     this.sentSuccessfully = false;
@@ -47,10 +49,8 @@ export class ContactFormComponent implements OnInit {
 
   getErrorConfig() {
     this._contactService.getErrorConfig().subscribe(
-      (res:Response) =>
-        this.errorConfig = (res.json()).errorMessages,
-      (err:Response) =>
-        console.log(err.json)
+      res => this.errorConfig = (<ErrorConfig>res).errorConfig,
+      err => console.warn('errorConfig not returned')
     );
   }
 
@@ -62,16 +62,16 @@ export class ContactFormComponent implements OnInit {
     this.toggleSubmitting();
     this.serverErrors = '';
 
-    let submission = new ContactMessage(
-      this.message.name.trim(),
-      this.message.email.trim(),
-      this.message.text.trim(),
-      this.message.heuning);
+    let submission: ContactMessage = new ContactMessage(
+      this.name.value.trim(),
+      this.email.value.trim(),
+      this.message.value.trim(),
+      this.heuning.value
+    );
+
     this._contactService.send(submission).subscribe(
-      () =>
-        this.handleSuccess(),
-      (err:Response) =>
-        this.handleErrors(err)
+      resp => this.handleSuccess(),
+      err => this.handleErrors(err)
     );
   }
 
@@ -80,26 +80,22 @@ export class ContactFormComponent implements OnInit {
     this.sentSuccessfully = true;
   }
 
-  handleErrors(err:Response) {
+  handleErrors(err: WrappedError) {
     this.toggleSubmitting();
     switch (err.status) {
       case 400:
-        _.each(err.json().errors, _.bind((error) => {
+        err.content.errors.forEach((error: string) => {
           this.appendError(this.errorConfig[error].message);
-        }, this));
+        });
         break;
       case 500:
-        _.each(err.json().errors, _.bind((error) => {
-          this.appendError(this.errorConfig[error].message);
-        }, this));
-        break;
       default:
         this.appendError(this.errorConfig['e_generic'].message);
         break;
     }
   }
 
-  appendError(error:String) {
+  appendError(error: String) {
     if (this.serverErrors) {
       this.serverErrors += '<br>';
     }

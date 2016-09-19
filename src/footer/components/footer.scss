@@ -1,8 +1,8 @@
-@import '../../assets/css/common.scss';
+@import '../../assets/css/common';
 
-/*
- * Footer
- * ========================================================================== */
+//
+// Footer
+// ========================================================================== //
 
 .footer {
   background: $iris-blue;
@@ -22,6 +22,8 @@
       width: 42px !important;
       height: 42px !important;
       @include border-radius(50%);
+      @include transition(all 0.2s ease-in-out);
+
       &:hover {
         background: $persian-green;
         a {
@@ -38,21 +40,24 @@
       }
     }
   }
+
+  .footer-info {
+    text-align: center;
+    padding-top: 15px;
+    p {
+      padding-bottom: 5px;
+    }
+
+    .js-standard-style {
+      height: 22px;
+    }
+  }
+
+  .last-modified {
+    text-align: right;
+    p {
+      padding-bottom: 5px;
+      padding-right: 20px;
+    }
+  }
 }
-
-.footer-info {
-  text-align: center;
-  padding-top: 15px;
-  p {
-    padding-bottom: 5px;
-  }
-
-  .js-standard-style {
-    height: 22px;
-  }
-
-  .float-right p {
-    float: right;
-  }
-}
-

@@ -1,8 +1,10 @@
 'use strict';
 import {serveDocs} from '../utils';
 
-export = function serverStart() {
-  return function () {
+let serverStart = () => {
+  return () => {
     serveDocs();
   };
 };
+
+export = serverStart;

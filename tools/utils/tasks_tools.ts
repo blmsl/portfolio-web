@@ -15,41 +15,22 @@ const TASKS_PATH = join(TOOLS_DIR, 'tasks');
 //   scanDir(TASKS_PATH, (taskname) => registerTask(taskname));
 // }
 
-export function task(taskname:string, option?:string) {
+let task = (taskname:string, option?:string) => {
   util.log('Loading task', chalk.yellow(taskname, option || ''));
   return require(join('..', 'tasks', taskname))(gulp, gulpLoadPlugins(), option);
-}
-
-export function runSequence(...sequence:any[]) {
-  let tasks = [];
-  let _sequence = sequence.slice(0);
-  sequence.pop();
-
-  scanDir(TASKS_PATH, taskname => tasks.push(taskname));
-
-  sequence.forEach(task => {
-    if (tasks.indexOf(task) > -1) {
-      registerTask(task);
-    }
-  });
-
-  return _runSequence(..._sequence);
-}
+};
 
 // ----------
 // Private.
-
-function registerTask(taskname:string, filename?:string, option:string = ''):void {
+let registerTask = (taskname:string, filename?:string, option:string = ''):void => {
   gulp.task(taskname, task(filename || taskname, option));
-}
+};
 
 // TODO: add recursive lookup ? or enforce pattern file + folder (ie ./tools/utils & ./tools/utils.ts )
-function scanDir(root:string, cb:(taskname:string) => void) {
+let scanDir = (root:string, cb:(taskname:string) => void) => {
   if (!existsSync(root)) return;
 
-  walk(root);
-
-  function walk(path) {
+  let walk = (path) => {
     let files = readdirSync(path);
     for (let i = 0; i < files.length; i += 1) {
       let file = files[i];
@@ -63,5 +44,27 @@ function scanDir(root:string, cb:(taskname:string) => void) {
         cb(taskname);
       }
     }
-  }
-}
+  };
+
+  walk(root);
+};
+
+// ----------
+
+let runSequence = (...sequence:any[]) => {
+  let tasks = [];
+  let _sequence = sequence.slice(0);
+  sequence.pop();
+
+  scanDir(TASKS_PATH, taskname => tasks.push(taskname));
+
+  sequence.forEach(task => {
+    if (tasks.indexOf(task) > -1) {
+      registerTask(task);
+    }
+  });
+
+  return _runSequence(..._sequence);
+};
+
+export {task, runSequence};

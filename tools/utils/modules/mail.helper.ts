@@ -1,9 +1,9 @@
 'use strict';
 import {Submission} from './../definitions/submission';
-import {Message}    from './../definitions/message';
+import {Message} from './../definitions/message';
 
 const
-  ERROR_MESSAGES = require('./../config/error.props.json'),
+  ERROR_MESSAGES = require('./../config/error.props.json').errorConfig,
   DISALLOWED_CHARS = /[<>^|%()&+]/,
   URL_REGEX = /(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?/,
   EMAIL_REGEX = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
@@ -21,6 +21,31 @@ const
     '<p style="font-family:\'Open Sans\',sans-serif;color:#474d5d">Here is a copy of what you sent:</p><br>' +
     '<p style="font-family:\'Open Sans\',sans-serif;color:#474d5d">{1}</p>';
 
+let containsDisallowedChars = (value:string):boolean => {
+  return DISALLOWED_CHARS.test(value);
+};
+
+let containsUrl = (value:string):boolean => {
+  return URL_REGEX.test(value);
+};
+
+let isValidEmail = (email:string):boolean => {
+  return EMAIL_REGEX.test(email);
+};
+
+/**
+ * Formats a value with the args passed in
+ * @param {string} value
+ * @param {Array} args
+ * @returns {string} formatted value
+ */
+let formatValue = (value:string, args:Array<string>):string => {
+  return value.replace(/{(\d+)}/g, function (match, number) {
+    return typeof args[number] !== 'undefined' ?
+      args[number] : match;
+  });
+};
+
 /**
  * Accepts a submission and validates the content
  * @param {Object} submission
@@ -31,7 +56,7 @@ const
  *
  * @return {Array} one or more errors, or empty array if none
  */
-export function validate(submission:Submission):Array<string> {
+let validate = (submission:Submission):Array<string> => {
   let response = [],
     isUrl = false;
 
@@ -65,7 +90,7 @@ export function validate(submission:Submission):Array<string> {
   }
 
   return response;
-}
+};
 
 /**
  * Accepts a submission and builds a message for sending
@@ -80,7 +105,7 @@ export function validate(submission:Submission):Array<string> {
  * {string} message.subject
  * {string} message.html
  */
-export function buildMessage(submission:Submission):Message {
+let buildMessage = (submission:Submission):Message => {
   let message:Message = {
     replyTo: submission.name + ' <' + submission.email + '>', // sender address
     to: GMAIL_SENDER_EMAIL, // list of receivers
@@ -92,7 +117,7 @@ export function buildMessage(submission:Submission):Message {
   message.html = formatValue(message.html, [submission.name, submission.email, submission.text]);
 
   return message;
-}
+};
 
 /**
  * Accepts a submission and builds a copy for sending to the sender
@@ -106,7 +131,7 @@ export function buildMessage(submission:Submission):Message {
  * {string} message.subject
  * {string} message.html
  */
-export function buildMessageCopy(submission:Submission):Message {
+let buildMessageCopy = (submission:Submission):Message => {
   let message:Message = {
     to: submission.name + ' <' + submission.email + '>', // list of receivers
     subject: '' + SUBJECT_COPY, // Subject line
@@ -116,29 +141,6 @@ export function buildMessageCopy(submission:Submission):Message {
   message.html = formatValue(message.html, [submission.name, submission.text]);
 
   return message;
-}
+};
 
-function containsDisallowedChars(value:string):boolean {
-  return DISALLOWED_CHARS.test(value);
-}
-
-function containsUrl(value:string):boolean {
-  return URL_REGEX.test(value);
-}
-
-function isValidEmail(email:string):boolean {
-  return EMAIL_REGEX.test(email);
-}
-
-/**
- * Formats a value with the args passed in
- * @param {string} value
- * @param {Array} args
- * @returns {string} formatted value
- */
-function formatValue(value:string, args:Array<string>):string {
-  return value.replace(/{(\d+)}/g, function (match, number) {
-    return typeof args[number] !== 'undefined' ?
-      args[number] : match;
-  });
-}
+export {validate, buildMessage, buildMessageCopy};
