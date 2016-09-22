@@ -211,7 +211,7 @@
 										scheduled for execution until {@link actions.ActionSequence#perform} is
 									called. Example:</p>
 								</div>
-								<pre><code>driver<span class="hljs-selector-class">.actions</span>().
+								<pre><code><span class="hljs-selector-tag">driver</span><span class="hljs-selector-class">.actions</span>().
     <span class="hljs-selector-tag">mouseDown</span>(element1).
     <span class="hljs-selector-tag">mouseMove</span>(element2).
     <span class="hljs-selector-tag">mouseUp</span>().
@@ -864,7 +864,7 @@ button.click();
 							<dd><p>This method will be removed in Selenium 3.0 for consistency
 									with the other Selenium language bindings. This method is equivalent
 								to</p>
-								<pre><code> driver<span class="hljs-selector-class">.findElements</span>(locator)<span class="hljs-selector-class">.then</span>(e =&gt; !!e.length);
+								<pre><code> driver.findElements(locator).<span class="hljs-keyword">then</span>(e =&gt; !!e.length);
 </code></pre></dd>
 						</dl>
 					</div>
@@ -1144,7 +1144,7 @@ button.click();
 								scheduled for execution until {@link actions.TouchSequence#perform} is
 							called. Example:</p>
 						</div>
-						<pre><code>driver<span class="hljs-selector-class">.touchActions</span>().
+						<pre><code><span class="hljs-selector-tag">driver</span><span class="hljs-selector-class">.touchActions</span>().
     <span class="hljs-selector-tag">tap</span>(element1).
     <span class="hljs-selector-tag">doubleTap</span>(element2).
     <span class="hljs-selector-tag">perform</span>();

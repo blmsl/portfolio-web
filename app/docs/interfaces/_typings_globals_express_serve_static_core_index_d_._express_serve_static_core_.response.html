@@ -192,7 +192,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2671</li>
+									<li>Defined in typings/globals/node/index.d.ts:2911</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -254,10 +254,10 @@
 							<p>Send JSON response.</p>
 						</div>
 						<p>Examples:</p>
-						<pre><code>res<span class="hljs-selector-class">.json</span>(null);
+						<pre><code><span class="hljs-selector-tag">res</span><span class="hljs-selector-class">.json</span>(null);
 <span class="hljs-selector-tag">res</span><span class="hljs-selector-class">.json</span>({ <span class="hljs-attribute">user</span>: <span class="hljs-string">'tj'</span> });
-res<span class="hljs-selector-class">.json</span>(<span class="hljs-number">500</span>, <span class="hljs-string">'oh noes!'</span>);
-res<span class="hljs-selector-class">.json</span>(<span class="hljs-number">404</span>, <span class="hljs-string">'I dont have that'</span>);
+<span class="hljs-selector-tag">res</span><span class="hljs-selector-class">.json</span>(<span class="hljs-number">500</span>, <span class="hljs-string">'oh noes!'</span>);
+<span class="hljs-selector-tag">res</span><span class="hljs-selector-class">.json</span>(<span class="hljs-number">404</span>, <span class="hljs-string">'I dont have that'</span>);
 </code></pre>
 					</div>
 				</section>
@@ -275,10 +275,10 @@ res<span class="hljs-selector-class">.json</span>(<span class="hljs-number">404<
 							<p>Send JSON response with JSONP callback support.</p>
 						</div>
 						<p>Examples:</p>
-						<pre><code>res<span class="hljs-selector-class">.jsonp</span>(null);
+						<pre><code><span class="hljs-selector-tag">res</span><span class="hljs-selector-class">.jsonp</span>(null);
 <span class="hljs-selector-tag">res</span><span class="hljs-selector-class">.jsonp</span>({ <span class="hljs-attribute">user</span>: <span class="hljs-string">'tj'</span> });
-res<span class="hljs-selector-class">.jsonp</span>(<span class="hljs-number">500</span>, <span class="hljs-string">'oh noes!'</span>);
-res<span class="hljs-selector-class">.jsonp</span>(<span class="hljs-number">404</span>, <span class="hljs-string">'I dont have that'</span>);
+<span class="hljs-selector-tag">res</span><span class="hljs-selector-class">.jsonp</span>(<span class="hljs-number">500</span>, <span class="hljs-string">'oh noes!'</span>);
+<span class="hljs-selector-tag">res</span><span class="hljs-selector-class">.jsonp</span>(<span class="hljs-number">404</span>, <span class="hljs-string">'I dont have that'</span>);
 </code></pre>
 					</div>
 				</section>
@@ -306,11 +306,11 @@ res<span class="hljs-selector-class">.jsonp</span>(<span class="hljs-number">404
 							<p>Send a response.</p>
 						</div>
 						<p>Examples:</p>
-						<pre><code>res<span class="hljs-selector-class">.send</span>(new Buffer(<span class="hljs-string">'wahoo'</span>));
-<span class="hljs-selector-tag">res</span><span class="hljs-selector-class">.send</span>({ <span class="hljs-attribute">some</span>: <span class="hljs-string">'json'</span> });
-res<span class="hljs-selector-class">.send</span>(<span class="hljs-string">'&lt;p&gt;some html&lt;/p&gt;'</span>);
-res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404</span>, <span class="hljs-string">'Sorry, cant find that'</span>);
-res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404</span>);
+						<pre><code>res.<span class="hljs-built_in">send</span>(new Buffer(<span class="hljs-string">'wahoo'</span>))<span class="hljs-comment">;</span>
+res.<span class="hljs-built_in">send</span>({ some: <span class="hljs-string">'json'</span> })<span class="hljs-comment">;</span>
+res.<span class="hljs-built_in">send</span>(<span class="hljs-string">'&lt;p&gt;some html&lt;/p&gt;'</span>)<span class="hljs-comment">;</span>
+res.<span class="hljs-built_in">send</span>(<span class="hljs-number">404</span>, <span class="hljs-string">'Sorry, cant find that'</span>)<span class="hljs-comment">;</span>
+res.<span class="hljs-built_in">send</span>(<span class="hljs-number">404</span>)<span class="hljs-comment">;</span>
 </code></pre>
 					</div>
 				</section>
@@ -354,7 +354,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#writable">writable</a></p>
 						<ul>
-							<li>Defined in typings/globals/node/index.d.ts:2671</li>
+							<li>Defined in typings/globals/node/index.d.ts:2911</li>
 						</ul>
 					</aside>
 				</section>
@@ -394,7 +394,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#_write">_write</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2673</li>
+									<li>Defined in typings/globals/node/index.d.ts:2913</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -431,7 +431,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#addlistener">addListener</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#addlistener">addListener</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2690</li>
+									<li>Defined in typings/globals/node/index.d.ts:2930</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -463,7 +463,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#addlistener">addListener</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#addlistener">addListener</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2691</li>
+									<li>Defined in typings/globals/node/index.d.ts:2931</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -493,7 +493,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#addlistener">addListener</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#addlistener">addListener</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2692</li>
+									<li>Defined in typings/globals/node/index.d.ts:2932</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -523,7 +523,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#addlistener">addListener</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#addlistener">addListener</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2693</li>
+									<li>Defined in typings/globals/node/index.d.ts:2933</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -559,7 +559,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#addlistener">addListener</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#addlistener">addListener</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2694</li>
+									<li>Defined in typings/globals/node/index.d.ts:2934</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -589,7 +589,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#addlistener">addListener</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#addlistener">addListener</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2695</li>
+									<li>Defined in typings/globals/node/index.d.ts:2935</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -625,7 +625,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#addlistener">addListener</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#addlistener">addListener</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2696</li>
+									<li>Defined in typings/globals/node/index.d.ts:2936</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -975,7 +975,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#emit">emit</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#emit">emit</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2698</li>
+									<li>Defined in typings/globals/node/index.d.ts:2938</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -994,7 +994,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#emit">emit</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#emit">emit</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2699</li>
+									<li>Defined in typings/globals/node/index.d.ts:2939</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1010,7 +1010,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#emit">emit</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#emit">emit</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2700</li>
+									<li>Defined in typings/globals/node/index.d.ts:2940</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1029,7 +1029,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#emit">emit</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#emit">emit</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2701</li>
+									<li>Defined in typings/globals/node/index.d.ts:2941</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1048,7 +1048,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#emit">emit</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#emit">emit</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2702</li>
+									<li>Defined in typings/globals/node/index.d.ts:2942</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1064,7 +1064,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#emit">emit</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#emit">emit</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2703</li>
+									<li>Defined in typings/globals/node/index.d.ts:2943</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1083,7 +1083,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#emit">emit</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#emit">emit</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2704</li>
+									<li>Defined in typings/globals/node/index.d.ts:2944</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1205,7 +1205,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 					<a name="eventnames" class="tsd-anchor"></a>
 					<h3>event<wbr>Names</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited tsd-is-external tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">event<wbr>Names<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">event<wbr>Names<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -1216,7 +1216,10 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 									<li>Defined in typings/globals/node/index.d.ts:557</li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span>
+								<span class="tsd-signature-symbol"> | </span>
+								<span class="tsd-signature-type">symbol</span>
+							</h4>
 						</li>
 					</ul>
 				</section>
@@ -1444,7 +1447,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 					<a name="listenercount" class="tsd-anchor"></a>
 					<h3>listener<wbr>Count</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited tsd-is-external tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">listener<wbr>Count<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon">listener<wbr>Count<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -1458,7 +1461,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>type: <span class="tsd-signature-type">string</span></h5>
+									<h5>type: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -1469,7 +1472,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 					<a name="listeners" class="tsd-anchor"></a>
 					<h3>listeners</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited tsd-is-external tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">listeners<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">listeners<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -1483,7 +1486,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>event: <span class="tsd-signature-type">string</span></h5>
+									<h5>event: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">[]</span></h4>
@@ -1519,9 +1522,9 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 									is given a path that does <em>not</em> lead with &quot;/&quot; it becomes
 									relative to the mount-point. For example if the application
 								is mounted at &quot;/blog&quot;, the following would become &quot;/blog/login&quot;.</p>
-								<pre><code> res<span class="hljs-selector-class">.location</span>(<span class="hljs-string">'login'</span>);
+								<pre><code> <span class="hljs-selector-tag">res</span><span class="hljs-selector-class">.location</span>(<span class="hljs-string">'login'</span>);
 </code></pre><p>  While the leading slash would result in a location of &quot;/login&quot;:</p>
-								<pre><code> res<span class="hljs-selector-class">.location</span>(<span class="hljs-string">'/login'</span>);
+								<pre><code> <span class="hljs-selector-tag">res</span><span class="hljs-selector-class">.location</span>(<span class="hljs-string">'/login'</span>);
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1554,7 +1557,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#on">on</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#on">on</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2706</li>
+									<li>Defined in typings/globals/node/index.d.ts:2946</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1572,7 +1575,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#on">on</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#on">on</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2707</li>
+									<li>Defined in typings/globals/node/index.d.ts:2947</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1602,7 +1605,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#on">on</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#on">on</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2708</li>
+									<li>Defined in typings/globals/node/index.d.ts:2948</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1632,7 +1635,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#on">on</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#on">on</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2709</li>
+									<li>Defined in typings/globals/node/index.d.ts:2949</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1668,7 +1671,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#on">on</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#on">on</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2710</li>
+									<li>Defined in typings/globals/node/index.d.ts:2950</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1698,7 +1701,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#on">on</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#on">on</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2711</li>
+									<li>Defined in typings/globals/node/index.d.ts:2951</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1734,7 +1737,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#on">on</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#on">on</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2712</li>
+									<li>Defined in typings/globals/node/index.d.ts:2952</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1785,7 +1788,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#once">once</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#once">once</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2714</li>
+									<li>Defined in typings/globals/node/index.d.ts:2954</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1803,7 +1806,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#once">once</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#once">once</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2715</li>
+									<li>Defined in typings/globals/node/index.d.ts:2955</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1833,7 +1836,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#once">once</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#once">once</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2716</li>
+									<li>Defined in typings/globals/node/index.d.ts:2956</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1863,7 +1866,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#once">once</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#once">once</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2717</li>
+									<li>Defined in typings/globals/node/index.d.ts:2957</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1899,7 +1902,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#once">once</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#once">once</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2718</li>
+									<li>Defined in typings/globals/node/index.d.ts:2958</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1929,7 +1932,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#once">once</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#once">once</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2719</li>
+									<li>Defined in typings/globals/node/index.d.ts:2959</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1965,7 +1968,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#once">once</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#once">once</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2720</li>
+									<li>Defined in typings/globals/node/index.d.ts:2960</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2016,7 +2019,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#prependlistener">prependListener</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#prependlistener">prependListener</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2722</li>
+									<li>Defined in typings/globals/node/index.d.ts:2962</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2034,7 +2037,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#prependlistener">prependListener</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#prependlistener">prependListener</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2723</li>
+									<li>Defined in typings/globals/node/index.d.ts:2963</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2064,7 +2067,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#prependlistener">prependListener</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#prependlistener">prependListener</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2724</li>
+									<li>Defined in typings/globals/node/index.d.ts:2964</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2094,7 +2097,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#prependlistener">prependListener</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#prependlistener">prependListener</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2725</li>
+									<li>Defined in typings/globals/node/index.d.ts:2965</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2130,7 +2133,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#prependlistener">prependListener</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#prependlistener">prependListener</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2726</li>
+									<li>Defined in typings/globals/node/index.d.ts:2966</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2160,7 +2163,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#prependlistener">prependListener</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#prependlistener">prependListener</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2727</li>
+									<li>Defined in typings/globals/node/index.d.ts:2967</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2196,7 +2199,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#prependlistener">prependListener</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#prependlistener">prependListener</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2728</li>
+									<li>Defined in typings/globals/node/index.d.ts:2968</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2247,7 +2250,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#prependoncelistener">prependOnceListener</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#prependoncelistener">prependOnceListener</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2730</li>
+									<li>Defined in typings/globals/node/index.d.ts:2970</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2265,7 +2268,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#prependoncelistener">prependOnceListener</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#prependoncelistener">prependOnceListener</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2731</li>
+									<li>Defined in typings/globals/node/index.d.ts:2971</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2295,7 +2298,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#prependoncelistener">prependOnceListener</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#prependoncelistener">prependOnceListener</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2732</li>
+									<li>Defined in typings/globals/node/index.d.ts:2972</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2325,7 +2328,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#prependoncelistener">prependOnceListener</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#prependoncelistener">prependOnceListener</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2733</li>
+									<li>Defined in typings/globals/node/index.d.ts:2973</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2361,7 +2364,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#prependoncelistener">prependOnceListener</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#prependoncelistener">prependOnceListener</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2734</li>
+									<li>Defined in typings/globals/node/index.d.ts:2974</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2391,7 +2394,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#prependoncelistener">prependOnceListener</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#prependoncelistener">prependOnceListener</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2735</li>
+									<li>Defined in typings/globals/node/index.d.ts:2975</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2427,7 +2430,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#prependoncelistener">prependOnceListener</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#prependoncelistener">prependOnceListener</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2736</li>
+									<li>Defined in typings/globals/node/index.d.ts:2976</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2538,7 +2541,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 					<a name="removealllisteners" class="tsd-anchor"></a>
 					<h3>remove<wbr>All<wbr>Listeners</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited tsd-is-external tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">remove<wbr>All<wbr>Listeners<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span></li>
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>All<wbr>Listeners<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol">)</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -2552,7 +2555,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> event: <span class="tsd-signature-type">string</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> event: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span></h5>
 								</li>
 							</ul>
 						</li>
@@ -2600,7 +2603,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#removelistener">removeListener</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#removelistener">removeListener</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2738</li>
+									<li>Defined in typings/globals/node/index.d.ts:2978</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2618,7 +2621,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#removelistener">removeListener</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#removelistener">removeListener</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2739</li>
+									<li>Defined in typings/globals/node/index.d.ts:2979</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2648,7 +2651,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#removelistener">removeListener</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#removelistener">removeListener</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2740</li>
+									<li>Defined in typings/globals/node/index.d.ts:2980</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2678,7 +2681,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#removelistener">removeListener</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#removelistener">removeListener</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2741</li>
+									<li>Defined in typings/globals/node/index.d.ts:2981</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2714,7 +2717,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#removelistener">removeListener</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#removelistener">removeListener</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2742</li>
+									<li>Defined in typings/globals/node/index.d.ts:2982</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2744,7 +2747,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#removelistener">removeListener</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#removelistener">removeListener</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2743</li>
+									<li>Defined in typings/globals/node/index.d.ts:2983</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2780,7 +2783,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 								<p>Inherited from <a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html">Writable</a>.<a href="../classes/_typings_globals_node_index_d_._stream_.internal.writable.html#removelistener">removeListener</a></p>
 								<p>Overwrites <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html">EventEmitter</a>.<a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html#removelistener">removeListener</a></p>
 								<ul>
-									<li>Defined in typings/globals/node/index.d.ts:2744</li>
+									<li>Defined in typings/globals/node/index.d.ts:2984</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3399,7 +3402,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 									<p>Adds the field to the Vary response header, if it is not there already.
 									Examples:</p>
 								</div>
-								<pre><code>res<span class="hljs-selector-class">.vary</span>(<span class="hljs-string">'User-Agent'</span>)<span class="hljs-selector-class">.render</span>(<span class="hljs-string">'docs'</span>);
+								<pre><code><span class="hljs-selector-tag">res</span><span class="hljs-selector-class">.vary</span>(<span class="hljs-string">'User-Agent'</span>)<span class="hljs-selector-class">.render</span>(<span class="hljs-string">'docs'</span>);
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3614,7 +3617,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 					<a name="listenercount-1" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> listener<wbr>Count</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-static tsd-is-external tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">listener<wbr>Count<span class="tsd-signature-symbol">(</span>emitter<span class="tsd-signature-symbol">: </span><a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html" class="tsd-signature-type">EventEmitter</a>, event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon">listener<wbr>Count<span class="tsd-signature-symbol">(</span>emitter<span class="tsd-signature-symbol">: </span><a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html" class="tsd-signature-type">EventEmitter</a>, event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -3630,7 +3633,7 @@ res<span class="hljs-selector-class">.send</span>(<span class="hljs-number">404<
 									<h5>emitter: <a href="../classes/_typings_globals_node_index_d_._events_.eventemitter.html" class="tsd-signature-type">EventEmitter</a></h5>
 								</li>
 								<li>
-									<h5>event: <span class="tsd-signature-type">string</span></h5>
+									<h5>event: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>

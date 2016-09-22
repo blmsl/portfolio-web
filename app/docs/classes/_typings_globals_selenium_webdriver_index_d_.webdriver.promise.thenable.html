@@ -249,14 +249,14 @@ doAsynchronousWork().<span class="hljs-keyword">catch</span>(<span class="hljs-f
 									is synonymous with the {@code finally} clause in a synchronous API:</p>
 								</div>
 								<pre><code><span class="hljs-comment">// Synchronous API:</span>
-<span class="hljs-keyword">try</span> {
-  doSynchronousWork();
-} <span class="hljs-keyword">finally</span> {
-  cleanUp();
+<span class="hljs-selector-tag">try</span> {
+  <span class="hljs-selector-tag">doSynchronousWork</span>();
+} <span class="hljs-selector-tag">finally</span> {
+  <span class="hljs-selector-tag">cleanUp</span>();
 }
 
 <span class="hljs-comment">// Asynchronous promise API:</span>
-doAsynchronousWork().<span class="hljs-keyword">finally</span>(cleanUp);
+<span class="hljs-selector-tag">doAsynchronousWork</span>()<span class="hljs-selector-class">.finally</span>(cleanUp);
 </code></pre><p><strong>Note:</strong> similar to the {@code finally} clause, if the registered
 									callback returns a rejected promise or throws an error, it will silently
 								replace the rejection error (if any) from this promise:</p>

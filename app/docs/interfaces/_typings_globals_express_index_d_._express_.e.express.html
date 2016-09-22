@@ -858,12 +858,12 @@
 								<p>By default will <code>require()</code> the engine based on the
 									file extension. For example if you try to render
 								a &quot;foo.jade&quot; file Express will invoke the following internally:</p>
-								<pre><code>app<span class="hljs-selector-class">.engine</span>(<span class="hljs-string">'jade'</span>, require(<span class="hljs-string">'jade'</span>).__express);
+								<pre><code>app.engine(<span class="hljs-string">'jade'</span>, <span class="hljs-built_in">require</span>(<span class="hljs-string">'jade'</span>).__express);
 </code></pre><p>For engines that do not provide <code>.__express</code> out of the box,
 									or if you wish to &quot;map&quot; a different extension to the template engine
 									you may use this method. For example mapping the EJS template engine to
 								&quot;.html&quot; files:</p>
-								<pre><code>app<span class="hljs-selector-class">.engine</span>(<span class="hljs-string">'html'</span>, require(<span class="hljs-string">'ejs'</span>).renderFile);
+								<pre><code>app.engine(<span class="hljs-string">'html'</span>, <span class="hljs-built_in">require</span>(<span class="hljs-string">'ejs'</span>).renderFile);
 </code></pre><p>In this case EJS provides a <code>.renderFile()</code> method with
 									the same signature that Express expects: <code>(path, options, callback)</code>,
 									though note that it aliases this method as <code>ejs.__express</code> internally
