@@ -144,8 +144,7 @@ npmDependenciesDev = npmDependenciesDev
   .concat(NPM_FONTS);
 
 let npmDependenciesProd:Array<Dependency> = normalizeDependencies([
-  {src: 'reflect-metadata/Reflect.js', inject: 'shims'},
-  {src: 'systemjs/dist/system-polyfills.js', inject: 'shims'},
+  {src: 'core-js/client/shim.min.js', inject: 'shims'},
   {src: 'zone.js/dist/zone.min.js', inject: 'libs'}
 ]);
 
