@@ -83,9 +83,6 @@ export const JS_PROD_BUNDLE:string = 'common.min.js';
 export const JS_PROD_SHIMS_BUNDLE:string = 'shims.min.js';
 export const JS_PROD_APP_BUNDLE:string = 'app.min.js';
 
-export const VERSION_NPM:string = '3.3.12';
-export const VERSION_NODE:string = '5.3.0';
-
 export const NG2LINT_RULES = join('node_modules', 'ng2lint', 'dist', 'src');
 
 interface Dependency {
@@ -148,8 +145,8 @@ npmDependenciesDev = npmDependenciesDev
 
 let npmDependenciesProd:Array<Dependency> = normalizeDependencies([
   {src: 'reflect-metadata/Reflect.js', inject: 'shims'},
-  {src: 'systemjs/dist/system.src.js', inject: 'shims'},
-  {src: 'zone.js/dist/zone.js', inject: 'libs'}
+  {src: 'systemjs/dist/system-polyfills.js', inject: 'shims'},
+  {src: 'zone.js/dist/zone.min.js', inject: 'libs'}
 ]);
 
 npmDependenciesProd = npmDependenciesProd.concat(NPM_FONTS);

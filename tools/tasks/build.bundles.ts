@@ -18,7 +18,6 @@ let bundles = (gulp, plugins) => {
 
     let bundleShims = () => {
       return gulp.src(getShims())
-        // Strip comments and sourcemaps
         .pipe(plugins.uglify({
           mangle: true,
           compress: true,
@@ -33,7 +32,6 @@ let bundles = (gulp, plugins) => {
         .bundle()
         .pipe(vinylSourceStream(JS_PROD_APP_BUNDLE))
         .pipe(vinylBuffer())
-        // Strip comments and sourcemaps
         .pipe(plugins.uglify({
           mangle: true,
           compress: true,
