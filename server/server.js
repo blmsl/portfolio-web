@@ -1,5 +1,6 @@
 'use strict'
 let express = require('express')
+let cache = require('express-cache-headers')
 let middleware = require('./middleware')
 let routes = require('./routes')
 let expressStaticMappings = require('./config/express.props.json').static
@@ -23,13 +24,13 @@ expressRedirectMappings.forEach((mapping) => {
   })
 })
 
-app.get('/imageids', routes.imageids)
-app.get('/lastmodified', routes.lastmodified)
-app.get('/errorconfig', routes.errorconfig)
-app.post('/send', routes.send)
-app.get('/exclude', routes.exclude)
-app.get('/', routes.html)
-app.get('/*', routes.fourohfour)
+app.get('/imageids', cache({nocache: true}), routes.imageids)
+app.get('/lastmodified', cache({nocache: true}), routes.lastmodified)
+app.get('/errorconfig', cache({ttl: 5184000}), routes.errorconfig)
+app.post('/send', cache({nocache: true}), routes.send)
+app.get('/exclude', cache({ttl: 5184000}), routes.exclude)
+app.get('/', cache({nocache: true}), routes.html)
+app.get('/*', cache({ttl: 5184000}), routes.fourohfour)
 
 app.listen(port, () => {
   console.info(`Listening on port ${port}`)

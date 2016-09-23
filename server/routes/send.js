@@ -14,8 +14,6 @@ module.exports = (req, res) => {
   let submission = req.body
   let errors = mailHelper.validate(submission)
 
-  res.setHeader('Cache-Control', 'no-cache')
-
   if (errors.length > 0) {
     res.status(400).json({errors: errors})
   } else {
