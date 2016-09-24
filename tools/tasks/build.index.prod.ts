@@ -1,7 +1,7 @@
 'use strict';
 import {join, sep} from 'path';
 import {templateLocals} from '../utils';
-import {APP_SRC, APP_DEST, CSS_DEST, JS_DEST, CSS_PROD_BUNDLE, JS_PROD_BUNDLE, JS_PROD_APP_BUNDLE, JS_PROD_SHIMS_BUNDLE} from '../config';
+import {APP_SRC, APP_DEST, CSS_DEST, JS_DEST, CSS_PROD_COMMON, JS_PROD_BUNDLE} from '../config';
 
 let buildIndexProd = (gulp, plugins) => {
   let inject = (...files) => {
@@ -18,15 +18,11 @@ let buildIndexProd = (gulp, plugins) => {
   };
 
   let injectJs = () => {
-    return inject(
-      join(JS_DEST, JS_PROD_BUNDLE),
-      join(JS_DEST, JS_PROD_SHIMS_BUNDLE),
-      join(JS_DEST, JS_PROD_APP_BUNDLE)
-    );
+    return inject(join(JS_DEST, JS_PROD_BUNDLE));
   };
 
   let injectCss = () => {
-    return inject(join(CSS_DEST, CSS_PROD_BUNDLE));
+    return inject(join(CSS_DEST, CSS_PROD_COMMON));
   };
 
   return () => {

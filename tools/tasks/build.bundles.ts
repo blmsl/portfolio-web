@@ -4,7 +4,7 @@ import {join} from 'path';
 import * as browserify from 'browserify';
 import vinylSourceStream = require('vinyl-source-stream');
 import * as vinylBuffer from 'vinyl-buffer';
-import {DEPENDENCIES, JS_PROD_SHIMS_BUNDLE, JS_PROD_APP_BUNDLE, JS_DEST, TMP_DIR} from '../config';
+import {DEPENDENCIES, JS_CONCAT_DEPENDENCIES_PROD, JS_PROD_COMMON, JS_PROD_SHIMS, JS_PROD_APP, TMP_DIR} from '../config';
 
 let bundles = (gulp, plugins) => {
   return () => {
@@ -16,6 +16,18 @@ let bundles = (gulp, plugins) => {
         .map(l => l.src);
     };
 
+    let bundleCommon = () => {
+      return gulp.src(JS_CONCAT_DEPENDENCIES_PROD.map(d => d.src))
+        // Strip comments and sourcemaps
+        .pipe(plugins.uglify({
+          mangle: true,
+          compress: true,
+          preserveComments: 'license'
+        }))
+        .pipe(plugins.concat(JS_PROD_COMMON))
+        .pipe(gulp.dest(join(TMP_DIR)));
+    };
+
     let bundleShims = () => {
       return gulp.src(getShims())
         .pipe(plugins.uglify({
@@ -23,24 +35,24 @@ let bundles = (gulp, plugins) => {
           compress: true,
           preserveComments: 'license'
         }))
-        .pipe(plugins.concat(JS_PROD_SHIMS_BUNDLE))
-        .pipe(gulp.dest(JS_DEST));
+        .pipe(plugins.concat(JS_PROD_SHIMS))
+        .pipe(gulp.dest(TMP_DIR));
     };
 
     let bundleApp = () => {
       return browserify(join(TMP_DIR, 'main'))
         .bundle()
-        .pipe(vinylSourceStream(JS_PROD_APP_BUNDLE))
+        .pipe(vinylSourceStream(JS_PROD_APP))
         .pipe(vinylBuffer())
         .pipe(plugins.uglify({
           mangle: true,
           compress: true,
           preserveComments: 'license'
         }))
-        .pipe(gulp.dest(JS_DEST));
+        .pipe(gulp.dest(TMP_DIR));
     };
 
-    return merge(bundleShims(), bundleApp());
+    return merge(bundleCommon(), bundleShims(), bundleApp());
   };
 };
 

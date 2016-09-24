@@ -78,10 +78,11 @@ export const HEROKU_CLEAN_CONFIG:Array<string> = [
 export const APP_ROOT:string = ENV === 'dev' ? `${APP_BASE}${APP_DEST}/` : `${APP_BASE}`;
 export const VERSION = appVersion();
 
-export const CSS_PROD_BUNDLE:string = 'common.min.css';
-export const JS_PROD_BUNDLE:string = 'common.min.js';
-export const JS_PROD_SHIMS_BUNDLE:string = 'shims.min.js';
-export const JS_PROD_APP_BUNDLE:string = 'app.min.js';
+export const CSS_PROD_COMMON:string = 'common.min.css';
+export const JS_PROD_COMMON:string = 'common.min.js';
+export const JS_PROD_SHIMS:string = 'shims.min.js';
+export const JS_PROD_APP:string = 'app.min.js';
+export const JS_PROD_BUNDLE:string = 'bundle.min.js';
 
 export const NG2LINT_RULES = join('node_modules', 'ng2lint', 'dist', 'src');
 

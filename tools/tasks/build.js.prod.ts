@@ -16,7 +16,7 @@ let buildJSDev = (gulp, plugins) => {
     let result = gulp.src(src)
       .pipe(plugins.plumber())
       .pipe(plugins.inlineNg2Template({base: TMP_DIR}))
-      .pipe(plugins.typescript(tsProject));
+      .pipe(tsProject());
 
     return result.js
       .pipe(plugins.template(templateLocals()))
