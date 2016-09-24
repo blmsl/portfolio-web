@@ -94,7 +94,7 @@
 			<section class="tsd-panel">
 				<h3 class="tsd-before-signature">Callable</h3>
 				<ul class="tsd-signatures tsd-kind-interface tsd-parent-kind-module tsd-is-external">
-					<li class="tsd-signature tsd-kind-icon">__call<span class="tsd-signature-symbol">(</span>req<span class="tsd-signature-symbol">: </span><a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.request.html" class="tsd-signature-type">Request</a>, res<span class="tsd-signature-symbol">: </span><a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.response.html" class="tsd-signature-type">Response</a>, next<span class="tsd-signature-symbol">?: </span><a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.nextfunction.html" class="tsd-signature-type">NextFunction</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					<li class="tsd-signature tsd-kind-icon">__call<span class="tsd-signature-symbol">(</span>req<span class="tsd-signature-symbol">: </span><a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.request.html" class="tsd-signature-type">Request</a>, res<span class="tsd-signature-symbol">: </span><a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.response.html" class="tsd-signature-type">Response</a>, next<span class="tsd-signature-symbol">: </span><a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.nextfunction.html" class="tsd-signature-type">NextFunction</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
@@ -112,7 +112,7 @@
 								<h5>res: <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.response.html" class="tsd-signature-type">Response</a></h5>
 							</li>
 							<li>
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> next: <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.nextfunction.html" class="tsd-signature-type">NextFunction</a></h5>
+								<h5>next: <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.nextfunction.html" class="tsd-signature-type">NextFunction</a></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -134,6 +134,7 @@
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.router.html#patch" class="tsd-kind-icon">patch</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.router.html#post" class="tsd-kind-icon">post</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.router.html#put" class="tsd-kind-icon">put</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.router.html#stack" class="tsd-kind-icon">stack</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.router.html#use" class="tsd-kind-icon">use</a></li>
 							</ul>
 						</section>
@@ -248,6 +249,22 @@
 							<li>Defined in typings/globals/express-serve-static-core/index.d.ts:86</li>
 						</ul>
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a name="stack" class="tsd-anchor"></a>
+					<h3>stack</h3>
+					<div class="tsd-signature tsd-kind-icon">stack<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.irouter.html">IRouter</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.irouter.html#stack">stack</a></p>
+						<ul>
+							<li>Defined in typings/globals/express-serve-static-core/index.d.ts:98</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Stack of configured routes</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
 					<a name="use" class="tsd-anchor"></a>
@@ -474,6 +491,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
 								<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.router.html#put" class="tsd-kind-icon">put</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+								<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.router.html#stack" class="tsd-kind-icon">stack</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
 								<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.router.html#use" class="tsd-kind-icon">use</a>

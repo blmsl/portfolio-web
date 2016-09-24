@@ -1,6 +1,4 @@
 {
   "css/common.min.css": "css/common-c4b6a26b4a.min.css",
-  "js/app.min.js": "js/app-7a4d0c2c76.min.js",
-  "js/common.min.js": "js/common-743e15fdee.min.js",
-  "js/shims.min.js": "js/shims-8d0f8b6471.min.js"
+  "js/bundle.min.js": "js/bundle-731a1b212f.min.js"
 }

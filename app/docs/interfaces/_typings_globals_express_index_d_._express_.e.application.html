@@ -92,9 +92,33 @@
 			<section class="tsd-panel">
 				<h3 class="tsd-before-signature">Callable</h3>
 				<ul class="tsd-signatures tsd-kind-interface tsd-parent-kind-module tsd-is-external">
-					<li class="tsd-signature tsd-kind-icon">__call<span class="tsd-signature-symbol">(</span>req<span class="tsd-signature-symbol">: </span><a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.request.html" class="tsd-signature-type">Request</a>, res<span class="tsd-signature-symbol">: </span><a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.response.html" class="tsd-signature-type">Response</a>, next<span class="tsd-signature-symbol">?: </span><a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.nextfunction.html" class="tsd-signature-type">NextFunction</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					<li class="tsd-signature tsd-kind-icon">__call<span class="tsd-signature-symbol">(</span>req<span class="tsd-signature-symbol">: </span><a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.request.html" class="tsd-signature-type">Request</a>, res<span class="tsd-signature-symbol">: </span><a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.response.html" class="tsd-signature-type">Response</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					<li class="tsd-signature tsd-kind-icon">__call<span class="tsd-signature-symbol">(</span>req<span class="tsd-signature-symbol">: </span><a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.request.html" class="tsd-signature-type">Request</a>, res<span class="tsd-signature-symbol">: </span><a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.response.html" class="tsd-signature-type">Response</a>, next<span class="tsd-signature-symbol">: </span><a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.nextfunction.html" class="tsd-signature-type">NextFunction</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in typings/globals/express-serve-static-core/index.d.ts:819</li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Express instance itself is a request handler, which could be invoked without
+								third argument.</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>req: <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.request.html" class="tsd-signature-type">Request</a></h5>
+							</li>
+							<li>
+								<h5>res: <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.response.html" class="tsd-signature-type">Response</a></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
@@ -110,7 +134,7 @@
 								<h5>res: <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.response.html" class="tsd-signature-type">Response</a></h5>
 							</li>
 							<li>
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> next: <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.nextfunction.html" class="tsd-signature-type">NextFunction</a></h5>
+								<h5>next: <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.nextfunction.html" class="tsd-signature-type">NextFunction</a></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -139,6 +163,7 @@
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="_typings_globals_express_index_d_._express_.e.application.html#router" class="tsd-kind-icon">router</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="_typings_globals_express_index_d_._express_.e.application.html#routes" class="tsd-kind-icon">routes</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="_typings_globals_express_index_d_._express_.e.application.html#settings" class="tsd-kind-icon">settings</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="_typings_globals_express_index_d_._express_.e.application.html#stack" class="tsd-kind-icon">stack</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="_typings_globals_express_index_d_._express_.e.application.html#use" class="tsd-kind-icon">use</a></li>
 							</ul>
 						</section>
@@ -173,12 +198,12 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html">Application</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html#_router">_router</a></p>
 						<ul>
-							<li>Defined in typings/globals/express-serve-static-core/index.d.ts:1048</li>
+							<li>Defined in typings/globals/express-serve-static-core/index.d.ts:1058</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Using to all registered routes in Express Application</p>
+							<p>Used to get all registered routes in Express Application</p>
 						</div>
 					</div>
 				</section>
@@ -224,7 +249,7 @@
 						<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html">Application</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html#get">get</a></p>
 						<p>Overwrites <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.irouter.html">IRouter</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.irouter.html#get">get</a></p>
 						<ul>
-							<li>Defined in typings/globals/express-serve-static-core/index.d.ts:876</li>
+							<li>Defined in typings/globals/express-serve-static-core/index.d.ts:886</li>
 						</ul>
 					</aside>
 				</section>
@@ -246,7 +271,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html">Application</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html#locals">locals</a></p>
 						<ul>
-							<li>Defined in typings/globals/express-serve-static-core/index.d.ts:1033</li>
+							<li>Defined in typings/globals/express-serve-static-core/index.d.ts:1043</li>
 						</ul>
 					</aside>
 				</section>
@@ -257,7 +282,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html">Application</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html#map">map</a></p>
 						<ul>
-							<li>Defined in typings/globals/express-serve-static-core/index.d.ts:1031</li>
+							<li>Defined in typings/globals/express-serve-static-core/index.d.ts:1041</li>
 						</ul>
 					</aside>
 				</section>
@@ -312,7 +337,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html">Application</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html#resource">resource</a></p>
 						<ul>
-							<li>Defined in typings/globals/express-serve-static-core/index.d.ts:1029</li>
+							<li>Defined in typings/globals/express-serve-static-core/index.d.ts:1039</li>
 						</ul>
 					</aside>
 				</section>
@@ -323,7 +348,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html">Application</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html#router">router</a></p>
 						<ul>
-							<li>Defined in typings/globals/express-serve-static-core/index.d.ts:1025</li>
+							<li>Defined in typings/globals/express-serve-static-core/index.d.ts:1035</li>
 						</ul>
 					</aside>
 				</section>
@@ -334,7 +359,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html">Application</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html#routes">routes</a></p>
 						<ul>
-							<li>Defined in typings/globals/express-serve-static-core/index.d.ts:1043</li>
+							<li>Defined in typings/globals/express-serve-static-core/index.d.ts:1053</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -355,9 +380,25 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html">Application</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html#settings">settings</a></p>
 						<ul>
-							<li>Defined in typings/globals/express-serve-static-core/index.d.ts:1027</li>
+							<li>Defined in typings/globals/express-serve-static-core/index.d.ts:1037</li>
 						</ul>
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a name="stack" class="tsd-anchor"></a>
+					<h3>stack</h3>
+					<div class="tsd-signature tsd-kind-icon">stack<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.irouter.html">IRouter</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.irouter.html#stack">stack</a></p>
+						<ul>
+							<li>Defined in typings/globals/express-serve-static-core/index.d.ts:98</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Stack of configured routes</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
 					<a name="use" class="tsd-anchor"></a>
@@ -389,7 +430,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html">Application</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html#configure">configure</a></p>
 								<ul>
-									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:976</li>
+									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:986</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -441,7 +482,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html">Application</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html#configure">configure</a></p>
 								<ul>
-									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:977</li>
+									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:987</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -459,7 +500,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html">Application</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html#configure">configure</a></p>
 								<ul>
-									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:978</li>
+									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:988</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -480,7 +521,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html">Application</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html#configure">configure</a></p>
 								<ul>
-									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:979</li>
+									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:989</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -504,7 +545,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html">Application</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html#configure">configure</a></p>
 								<ul>
-									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:980</li>
+									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:990</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -531,7 +572,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html">Application</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html#configure">configure</a></p>
 								<ul>
-									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:981</li>
+									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:991</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -570,7 +611,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html">Application</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html#defaultconfiguration">defaultConfiguration</a></p>
 								<ul>
-									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:828</li>
+									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:838</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -593,7 +634,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html">Application</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html#disable">disable</a></p>
 								<ul>
-									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:932</li>
+									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:942</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -624,7 +665,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html">Application</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html#disabled">disabled</a></p>
 								<ul>
-									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:918</li>
+									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:928</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -660,7 +701,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html">Application</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html#enable">enable</a></p>
 								<ul>
-									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:925</li>
+									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:935</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -691,7 +732,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html">Application</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html#enabled">enabled</a></p>
 								<ul>
-									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:904</li>
+									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:914</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -725,7 +766,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html">Application</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html#engine">engine</a></p>
 								<ul>
-									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:858</li>
+									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:868</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -776,7 +817,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html">Application</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html#init">init</a></p>
 								<ul>
-									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:823</li>
+									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:833</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -808,7 +849,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html">Application</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html#listen">listen</a></p>
 								<ul>
-									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:1019</li>
+									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:1029</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -848,7 +889,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html">Application</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html#listen">listen</a></p>
 								<ul>
-									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:1020</li>
+									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:1030</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -869,7 +910,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html">Application</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html#listen">listen</a></p>
 								<ul>
-									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:1021</li>
+									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:1031</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -887,7 +928,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html">Application</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html#listen">listen</a></p>
 								<ul>
-									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:1022</li>
+									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:1032</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -905,7 +946,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html">Application</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html#listen">listen</a></p>
 								<ul>
-									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:1023</li>
+									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:1033</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -934,7 +975,7 @@
 								<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html">Application</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html#param">param</a></p>
 								<p>Overwrites <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.irouter.html">IRouter</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.irouter.html#param">param</a></p>
 								<ul>
-									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:878</li>
+									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:888</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -952,7 +993,7 @@
 								<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html">Application</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html#param">param</a></p>
 								<p>Overwrites <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.irouter.html">IRouter</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.irouter.html#param">param</a></p>
 								<ul>
-									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:880</li>
+									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:890</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -996,7 +1037,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html">Application</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html#path">path</a></p>
 								<ul>
-									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:892</li>
+									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:902</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1026,7 +1067,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html">Application</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html#render">render</a></p>
 								<ul>
-									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:998</li>
+									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:1008</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1082,7 +1123,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html">Application</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html#render">render</a></p>
 								<ul>
-									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:999</li>
+									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:1009</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1154,7 +1195,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html">Application</a>.<a href="_typings_globals_express_serve_static_core_index_d_._express_serve_static_core_.application.html#set">set</a></p>
 								<ul>
-									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:875</li>
+									<li>Defined in typings/globals/express-serve-static-core/index.d.ts:885</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1258,6 +1299,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
 								<a href="_typings_globals_express_index_d_._express_.e.application.html#settings" class="tsd-kind-icon">settings</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+								<a href="_typings_globals_express_index_d_._express_.e.application.html#stack" class="tsd-kind-icon">stack</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
 								<a href="_typings_globals_express_index_d_._express_.e.application.html#use" class="tsd-kind-icon">use</a>
