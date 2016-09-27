@@ -38,7 +38,7 @@
     "selenium-webdriver": "registry:dt/selenium-webdriver#2.53.1+20160914235635",
     "serve-static": "registry:dt/serve-static#0.0.0+20160606155157",
     "systemjs": "registry:dt/systemjs#0.19.29+20160702105636",
-    "through2": "registry:dt/through2#2.0.0+20160317120654",
+    "through2": "registry:dt/through2#2.0.0+20160926145203",
     "vinyl": "registry:dt/vinyl#1.2.0+20160924121322",
     "vinyl-buffer": "registry:dt/vinyl-buffer#0.0.0+20160316155526",
     "vinyl-source-stream": "registry:dt/vinyl-source-stream#0.0.0+20160316155526",
