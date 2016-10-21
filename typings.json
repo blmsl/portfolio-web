@@ -18,7 +18,7 @@
     "express-serve-static-core": "registry:dt/express-serve-static-core#4.0.0+20161012061536",
     "glob": "registry:dt/glob#5.0.10+20160317120654",
     "google-maps": "registry:dt/google-maps#3.1.0+20151203174025",
-    "google.maps": "registry:dt/google.maps#3.25.0+20161004171413",
+    "google.maps": "registry:dt/google.maps#3.25.0+20161019131407",
     "gulp": "registry:dt/gulp#3.8.0+20160907112908",
     "gulp-load-plugins": "registry:dt/gulp-load-plugins#0.0.0+20160316155526",
     "gulp-shell": "registry:dt/gulp-shell#0.0.0+20160316155526",
