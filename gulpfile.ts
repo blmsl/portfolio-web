@@ -6,7 +6,6 @@ import {runSequence, task} from './tools/utils';
 // Clean (override).
 gulp.task('clean', done => task('clean', 'all')(done));
 gulp.task('clean.dist', done => task('clean', 'dist')(done));
-gulp.task('clean.test', done => task('clean', 'test')(done));
 gulp.task('clean.tmp', done => task('clean', 'tmp')(done));
 gulp.task('clean.heroku', done => task('clean', 'heroku')(done));
 gulp.task('clean.docs', done => task('clean', 'docs')(done));
@@ -29,35 +28,22 @@ gulp.task('build.docs', () => task('build.docs')());
 gulp.task('serve.docs', () => task('serve.docs')());
 
 // --------------
-// Build dev.
-gulp.task('build.dev', done =>
-  runSequence(
-    'clean.dist',
-    'tslint',
-    'build.sass.dev',
-    'build.img.dev',
-    'build.assets.dev',
-    'build.js.dev',
-    'build.index.dev',
-    done));
-
-// --------------
 // Build prod.
 gulp.task('build.prod', done =>
   runSequence(
     'clean.dist',
     'clean.tmp',
     'tslint',
-    'build.sass.dev',
-    'build.img.dev',
-    'build.html_css.prod',
-    'build.assets.prod',
-    'build.js.prod',
+    'build.sass',
+    'build.images',
+    'build.html.css.min',
+    'build.assets',
+    'build.js',
     'build.bundles',
-    'build.concat.prod',
-    'build.index.prod',
-    'build.rev.prod',
-    'build.rev.replace.prod',
+    'build.concat',
+    'build.index.inject',
+    'build.revision',
+    'build.revision.replace',
     'build.index.min',
     done));
 
@@ -68,7 +54,6 @@ gulp.task('build.heroku', done =>
     'clean.heroku',
     'build.prod',
     'build.heroku.copy',
-    'build.heroku.update',
     done));
 
 gulp.task('build.heroku.docs', done =>
@@ -83,30 +68,4 @@ gulp.task('build.heroku.all', done =>
   runSequence(
     'build.heroku',
     'build.heroku.docs',
-    done));
-
-// --------------
-// Docs
-gulp.task('docs', done =>
-  runSequence(
-    'build.docs',
-    'serve.docs',
-    done));
-
-// --------------
-// Serve dev
-gulp.task('serve.dev', done =>
-  runSequence(
-    'build.dev',
-    'server.start',
-    'watch.serve',
-    done));
-
-// --------------
-// Serve prod
-gulp.task('serve.prod', done =>
-  runSequence(
-    'build.prod',
-    'server.start',
-    'watch.serve',
     done));

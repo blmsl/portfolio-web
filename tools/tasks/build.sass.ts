@@ -2,7 +2,7 @@
 import {join} from 'path';
 import {APP_SRC} from '../config';
 
-let buildSassDev = (gulp, plugins) => {
+let sass = (gulp, plugins) => {
   return () => {
     return gulp.src(join(APP_SRC, '**', '*.scss'))
       .pipe(plugins.sass().on('error', plugins.sass.logError))
@@ -10,4 +10,4 @@ let buildSassDev = (gulp, plugins) => {
   };
 };
 
-export = buildSassDev;
+export = sass;

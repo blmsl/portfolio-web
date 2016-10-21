@@ -2,7 +2,7 @@
 import {join} from 'path';
 import {APP_DEST} from '../config';
 
-let revReplace = (gulp, plugins) => {
+let revisionReplace = (gulp, plugins) => {
   return () => {
     return gulp.src(join(APP_DEST, 'index.html'))
       .pipe(plugins.revReplace({manifest: gulp.src(join(APP_DEST, 'rev-manifest.json'))}))
@@ -11,4 +11,4 @@ let revReplace = (gulp, plugins) => {
   };
 };
 
-export = revReplace;
+export = revisionReplace;

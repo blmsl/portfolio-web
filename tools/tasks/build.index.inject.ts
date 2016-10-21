@@ -3,7 +3,7 @@ import {join, sep} from 'path';
 import {templateLocals} from '../utils';
 import {APP_SRC, APP_DEST, CSS_DEST, JS_DEST, CSS_PROD_COMMON, JS_PROD_BUNDLE} from '../config';
 
-let buildIndexProd = (gulp, plugins) => {
+let indexInject = (gulp, plugins) => {
   let inject = (...files) => {
     return plugins.inject(
       gulp.src(files, {
@@ -34,4 +34,4 @@ let buildIndexProd = (gulp, plugins) => {
   };
 };
 
-export = buildIndexProd;
+export = indexInject;

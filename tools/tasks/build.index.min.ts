@@ -10,7 +10,7 @@ const HTML_MIN_OPTS = {
   minifyCSS: true
 };
 
-let htmlMin = (gulp, plugins) => {
+let indexMin = (gulp, plugins) => {
   return () => {
     return gulp.src([join(APP_DEST, '**/*.html')], {base: APP_DEST})
       .pipe(plugins.htmlmin(HTML_MIN_OPTS))
@@ -18,4 +18,4 @@ let htmlMin = (gulp, plugins) => {
   };
 };
 
-export = htmlMin;
+export = indexMin;

@@ -3,7 +3,7 @@ import {join} from 'path';
 import {APP_SRC, DOCS_DEST} from '../config';
 import {META_TAGS} from '../config.site';
 
-let buildDocs = (gulp, plugins) => {
+let docs = (gulp, plugins) => {
   return () => {
     let src = [
       'typings/index.d.ts',
@@ -30,4 +30,4 @@ let buildDocs = (gulp, plugins) => {
   };
 };
 
-export = buildDocs;
+export = docs;

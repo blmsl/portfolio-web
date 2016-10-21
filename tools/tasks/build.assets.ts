@@ -2,7 +2,7 @@
 import * as merge from 'merge-stream';
 import {DEPENDENCIES} from '../config';
 
-let buildAssetsProd = (gulp) => {
+let assets = (gulp) => {
   return () => {
     let addStream = (dep) => {
       let stream = gulp.src(dep.src);
@@ -22,4 +22,4 @@ let buildAssetsProd = (gulp) => {
   };
 };
 
-export = buildAssetsProd;
+export = assets;

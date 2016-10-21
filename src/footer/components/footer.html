@@ -23,9 +23,8 @@
       <p><a href="https://david-dm.org/ouq77/portfolio-web/portfolio-web-ng2?type=dev" target="_blank" title="devDependencies status"><img src="https://david-dm.org/ouq77/portfolio-web/portfolio-web-ng2/dev-status.svg"/></a></p>
     </div>
   </div>
-  <div *ngIf="lastModified"
-       class="last-modified">
-    <p><sup>Last updated: {{lastModified.last_modified}}</sup></p>
+  <div class="last-modified">
+    <p><sup>Last updated: <%= LAST_MODIFIED %></sup></p>
   </div>
 </section>
 <!--footer end-->

@@ -1,11 +1,11 @@
 'use strict';
 import {join} from 'path';
-import {APP_SRC, APP_DEST} from '../config';
+import {APP_SRC, TMP_DIR} from '../config';
 import {templateLocals, tsProjectFn} from '../utils';
 
-let buildJSDev = (gulp, plugins) => {
-  let tsProject = tsProjectFn(plugins);
+let js = (gulp, plugins) => {
   return () => {
+    let tsProject = tsProjectFn(plugins);
     let src = [
       'typings/index.d.ts',
       'tools/manual_typings/index.d.ts',
@@ -16,16 +16,13 @@ let buildJSDev = (gulp, plugins) => {
 
     let result = gulp.src(src)
       .pipe(plugins.plumber())
-      // Won't be required for non-production build after the change
-      .pipe(plugins.inlineNg2Template({base: APP_SRC}))
-      .pipe(plugins.sourcemaps.init())
-      .pipe(plugins.typescript(tsProject));
+      .pipe(plugins.inlineNg2Template({base: TMP_DIR}))
+      .pipe(tsProject());
 
     return result.js
-      .pipe(plugins.sourcemaps.write())
       .pipe(plugins.template(templateLocals()))
-      .pipe(gulp.dest(APP_DEST));
+      .pipe(gulp.dest(TMP_DIR));
   };
 };
 
-export = buildJSDev;
+export = js;

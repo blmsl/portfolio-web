@@ -12,11 +12,12 @@ const HTML_MIN_OPTS = {
     /\s+#\w+=".*"/,
     /\s+\(\w+\)=".*"/,
     /\s+\[\(\w+\)]=".*"/,
-    /\s+\[\w+\.?\w+\-?\w+]=".*"/
+    /\s+\[\w+\.?\w+\-?\w+]=".*"/,
+    /<%=\s?\w+\s?%>/,
   ]
 };
 
-let buildJSDev = (gulp, plugins) => {
+let htmlCssMin = (gulp, plugins) => {
   return () => {
     let minifyHtml = () => {
       return gulp.src([
@@ -39,4 +40,4 @@ let buildJSDev = (gulp, plugins) => {
   };
 };
 
-export = buildJSDev;
+export = htmlCssMin;

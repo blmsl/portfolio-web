@@ -1,4 +1,6 @@
 'use strict';
+import * as dateFormat from 'dateformat';
+
 // --------------
 // Environment vars.
 const GOOGLE_ANALYTICS_ID:string = process.env.GOOGLE_ANALYTICS_ID;
@@ -60,3 +62,5 @@ export const GOOGLE_ACCOUNT = {
   analytics: GOOGLE_ANALYTICS_ID,
   maps_key: GOOGLE_MAPS_API_KEY
 };
+
+export const LAST_MODIFIED = dateFormat(new Date(), 'dd/mm/yyyy');

@@ -2,7 +2,7 @@
 import {join} from 'path';
 import {APP_SRC, APP_DEST} from '../config';
 
-let buildImagesDev = (gulp) => {
+let images = (gulp) => {
   return () => {
     return gulp.src([
         join(APP_SRC, '**/*.gif'),
@@ -14,4 +14,4 @@ let buildImagesDev = (gulp) => {
   };
 };
 
-export = buildImagesDev;
+export = images;
