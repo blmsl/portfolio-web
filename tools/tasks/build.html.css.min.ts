@@ -4,9 +4,8 @@ import {join} from 'path';
 import {APP_SRC, TMP_DIR} from '../config';
 
 const HTML_MIN_OPTS = {
-  collapseWhitespace: true,
-  removeComments: true,
   caseSensitive: true,
+  collapseWhitespace: true,
   ignoreCustomFragments: [
     /\s+\*\w+=".*"/,
     /\s+#\w+=".*"/,
@@ -14,7 +13,8 @@ const HTML_MIN_OPTS = {
     /\s+\[\(\w+\)]=".*"/,
     /\s+\[\w+\.?\w+\-?\w+]=".*"/,
     /<%=\s?\w+\s?%>/,
-  ]
+  ],
+  removeComments: true,
 };
 
 let htmlCssMin = (gulp, plugins) => {
@@ -22,7 +22,7 @@ let htmlCssMin = (gulp, plugins) => {
     let minifyHtml = () => {
       return gulp.src([
           join(APP_SRC, '**/*.html'),
-          '!' + join(APP_SRC, 'index.html')
+          '!' + join(APP_SRC, 'index.html'),
         ])
         .pipe(plugins.htmlmin(HTML_MIN_OPTS))
         .pipe(gulp.dest(TMP_DIR));

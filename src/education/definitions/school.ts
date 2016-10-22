@@ -4,6 +4,31 @@
  */
 export interface School {
   /**
+   * Blurb about school
+   */
+  content: string;
+  /**
+   * School details
+   */
+  institution: {
+    /**
+     * School location
+     */
+    location: string;
+    /**
+     * School name
+     */
+    name: string;
+    /**
+     * Optional School web address
+     */
+    url?: string;
+  };
+  /**
+   * Highest qualification
+   */
+  qualification: string;
+  /**
    * Years attended
    */
   year: {
@@ -16,29 +41,4 @@ export interface School {
      */
     to: number;
   };
-  /**
-   * School details
-   */
-  institution: {
-    /**
-     * School name
-     */
-    name: string;
-    /**
-     * Optional School web address
-     */
-    url?: string;
-    /**
-     * School location
-     */
-    location: string;
-  };
-  /**
-   * Highest qualification
-   */
-  qualification: string;
-  /**
-   * Blurb about school
-   */
-  content: string;
 }

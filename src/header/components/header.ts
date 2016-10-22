@@ -7,10 +7,10 @@ import {delay} from '../../shared/common/delay';
 
 @Component({
   selector: 'header',
-  templateUrl: './header/components/header.html',
   styleUrls: [
     './header/components/header.css',
   ],
+  templateUrl: './header/components/header.html',
 })
 export class HeaderComponent implements OnInit {
   public imageIds: Array<string>;
@@ -89,7 +89,7 @@ export class HeaderComponent implements OnInit {
       if (widthChanged || heightChanged) {
         $('.banner').css({
           'width': windowWidth,
-          'height': windowHeight - 60
+          'height': windowHeight - 60,
         });
         this.setDynamicCssValues();
         this._previousWidth = windowWidth;

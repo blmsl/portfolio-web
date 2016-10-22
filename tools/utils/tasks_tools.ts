@@ -15,20 +15,22 @@ const TASKS_PATH = join(TOOLS_DIR, 'tasks');
 //   scanDir(TASKS_PATH, (taskname) => registerTask(taskname));
 // }
 
-let task = (taskname:string, option?:string) => {
+let task = (taskname: string, option?: string) => {
   util.log('Loading task', chalk.yellow(taskname, option || ''));
   return require(join('..', 'tasks', taskname))(gulp, gulpLoadPlugins(), option);
 };
 
 // ----------
 // Private.
-let registerTask = (taskname:string, filename?:string, option:string = ''):void => {
+let registerTask = (taskname: string, filename?: string, option: string = ''): void => {
   gulp.task(taskname, task(filename || taskname, option));
 };
 
 // TODO: add recursive lookup ? or enforce pattern file + folder (ie ./tools/utils & ./tools/utils.ts )
-let scanDir = (root:string, cb:(taskname:string) => void) => {
-  if (!existsSync(root)) return;
+let scanDir = (root: string, cb: (taskname: string) => void) => {
+  if (!existsSync(root)) {
+    return;
+  }
 
   let walk = (path) => {
     let files = readdirSync(path);
@@ -51,7 +53,7 @@ let scanDir = (root:string, cb:(taskname:string) => void) => {
 
 // ----------
 
-let runSequence = (...sequence:any[]) => {
+let runSequence = (...sequence: any[]) => {
   let tasks = [];
   let _sequence = sequence.slice(0);
   sequence.pop();

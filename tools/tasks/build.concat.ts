@@ -10,7 +10,7 @@ let concat = (gulp, plugins) => {
       return gulp.src([
           join(TMP_DIR, JS_PROD_COMMON),
           join(TMP_DIR, JS_PROD_SHIMS),
-          join(TMP_DIR, JS_PROD_APP)
+          join(TMP_DIR, JS_PROD_APP),
         ])
         .pipe(plugins.concat(JS_PROD_BUNDLE))
         .pipe(gulp.dest(join(JS_DEST)));

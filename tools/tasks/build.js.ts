@@ -11,7 +11,7 @@ let js = (gulp, plugins) => {
       'tools/manual_typings/index.d.ts',
       join(APP_SRC, '**/*.ts'),
       '!' + join(APP_SRC, '**/*.e2e.ts'),
-      '!' + join(APP_SRC, '**/*_spec.ts')
+      '!' + join(APP_SRC, '**/*_spec.ts'),
     ];
 
     let result = gulp.src(src)

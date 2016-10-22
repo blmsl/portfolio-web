@@ -6,18 +6,6 @@ import {Point}  from './point';
  */
 export interface Airport {
   /**
-   * Location coordinates of the airport
-   */
-  loc: Point;
-  /**
-   * Airport IATA code
-   */
-  iataCode: string;
-  /**
-   * Airport name
-   */
-  name: string;
-  /**
    * Airport city
    */
   city: string;
@@ -25,4 +13,16 @@ export interface Airport {
    * Airport country
    */
   country: string;
+  /**
+   * Airport IATA code
+   */
+  iataCode: string;
+  /**
+   * Location coordinates of the airport
+   */
+  loc: Point;
+  /**
+   * Airport name
+   */
+  name: string;
 }

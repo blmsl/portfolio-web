@@ -7,14 +7,6 @@ import {Icon} from './icon';
  */
 export interface City {
   /**
-   * Location name
-   */
-  name: string;
-  /**
-   * Location of the city
-   */
-  loc: Point;
-  /**
    * Location title
    */
   description: string;
@@ -22,4 +14,12 @@ export interface City {
    * Location icon
    */
   icon: Icon;
+  /**
+   * Location of the city
+   */
+  loc: Point;
+  /**
+   * Location name
+   */
+  name: string;
 }

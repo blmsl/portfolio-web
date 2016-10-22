@@ -13,7 +13,7 @@ export class BadgeUrlPipe implements PipeTransform {
 
   transform(badge: string): string {
     let badgeId = badge.match(/(\/\d{2,3}\/)/);
-    return 'https://www.codeschool.com/users/ouq77/badges' + (badgeId && badgeId[0] || '');
+    return `https://www.codeschool.com/users/ouq77/badges${badgeId && badgeId[0] || ''}`;
   }
 }
 @Pipe({name: 'memberDate'})

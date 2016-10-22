@@ -48,7 +48,7 @@ let cleanAll = (done) => {
     cleanTmp,
     cleanHeroku,
     cleanDocs,
-    cleanHerokuDocs
+    cleanHerokuDocs,
   ], done);
 };
 

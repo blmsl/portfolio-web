@@ -8,41 +8,41 @@ import {WrappedError} from '../../shared/definitions/wrapped.error';
 
 @Component({
   selector: 'contact-form',
-  templateUrl: './contact/components/contact.form.html',
   styleUrls: [
     './contact/components/contact.form.css',
   ],
+  templateUrl: './contact/components/contact.form.html',
 })
 export class ContactFormComponent implements OnInit {
-  public name: FormControl;
   public email: FormControl;
-  public message: FormControl;
-  public heuning: FormControl;
+  public errorMessages: Array<ErrorMessage>;
   public form: FormGroup;
+  public heuning: FormControl;
+  public message: FormControl;
+  public name: FormControl;
+  public sentSuccessfully: boolean;
+  public serverErrors: string;
+  public submitBtnText: string;
   public submitClicked: boolean;
   public submitting: boolean;
-  public sentSuccessfully: boolean;
-  public submitBtnText: string;
-  public serverErrors: string;
-  public errorMessages: Array<ErrorMessage>;
   private _contactService: ContactService;
 
   constructor(contactService: ContactService, fb: FormBuilder) {
-    this._contactService = contactService;
-    this.name = new FormControl('', Validators.required);
     this.email = new FormControl('', Validators.required);
-    this.message = new FormControl('', Validators.required);
     this.heuning = new FormControl('');
+    this.message = new FormControl('', Validators.required);
+    this.name = new FormControl('', Validators.required);
     this.form = fb.group({
-      name: this.name,
       email: this.email,
-      message: this.message,
       heuning: this.heuning,
+      message: this.message,
+      name: this.name,
     });
-    this.submitClicked = false;
-    this.submitting = false;
     this.sentSuccessfully = false;
     this.submitBtnText = 'Send message';
+    this.submitClicked = false;
+    this.submitting = false;
+    this._contactService = contactService;
   }
 
   ngOnInit() {

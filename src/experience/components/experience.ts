@@ -5,10 +5,10 @@ import {Job} from '../definitions/job';
 
 @Component({
   selector: 'experience',
-  templateUrl: './experience/components/experience.html',
   styleUrls: [
     './experience/components/experience.css',
   ],
+  templateUrl: './experience/components/experience.html',
 })
 export class ExperienceComponent implements OnInit {
   public jobs: Array<Job>;

@@ -7,13 +7,13 @@ let indexInject = (gulp, plugins) => {
   let inject = (...files) => {
     return plugins.inject(
       gulp.src(files, {
-        read: false
+        read: false,
       }), {
-        transform: function (filepath) {
+        transform: function (filepath) { // tslint:disable-line
           let path = filepath.split(sep);
           arguments[0] = path.slice(path.length - 2, path.length).join(sep);
           return plugins.inject.transform.apply(plugins.inject.transform, arguments);
-        }
+        },
       });
   };
 

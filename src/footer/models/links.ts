@@ -7,28 +7,28 @@ import {Link} from '../definitions/link';
  */
 export const LINKS: Array<Link> = [
   {
-    url: 'https://nz.linkedin.com/in/louwswart/',
-    title: 'See my LinkedIn here',
     icon: 'linkedin',
+    title: 'See my LinkedIn here',
+    url: 'https://nz.linkedin.com/in/louwswart/',
   }, {
-    url: 'https://github.com/ouq77',
-    title: 'See examples of my code here',
     icon: 'github',
+    title: 'See examples of my code here',
+    url: 'https://github.com/ouq77',
   }, {
-    url: 'https://plus.google.com/u/0/+LouwSwart/about?rel=author',
-    title: 'See my Google+ here',
     icon: 'google-plus',
+    title: 'See my Google+ here',
+    url: 'https://plus.google.com/u/0/+LouwSwart/about?rel=author',
   }, {
-    url: 'https://instagram.com/ouq77',
-    title: 'See my Instagram here',
     icon: 'instagram',
+    title: 'See my Instagram here',
+    url: 'https://instagram.com/ouq77',
   }, {
-    url: 'https://www.facebook.com/ouq77',
-    title: 'See my Facebook here',
     icon: 'facebook',
+    title: 'See my Facebook here',
+    url: 'https://www.facebook.com/ouq77',
   }, {
-    url: 'https://www.codeschool.com/users/819219',
-    title: 'See my Code School progress here',
     icon: 'code',
+    title: 'See my Code School progress here',
+    url: 'https://www.codeschool.com/users/819219',
   },
 ];

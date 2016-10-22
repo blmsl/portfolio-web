@@ -2,15 +2,18 @@
 'use strict';
 import * as slash from 'slash';
 import {join} from 'path';
-import {APP_BASE, APP_DEST, ENV} from '../config';
+import {
+  APP_BASE,
+  APP_DEST,
+} from '../config';
 
-let injectables:string[] = [];
+let injectables: string[] = [];
 
 let injectableAssetsRef = () => {
   return injectables;
 };
 
-let registerInjectableAssetsRef = (paths:string[], target:string = '') => {
+let registerInjectableAssetsRef = (paths: string[], target: string = '') => {
   injectables = injectables.concat(
     paths
       .filter(path => !/(\.map)$/.test(path))
@@ -18,9 +21,9 @@ let registerInjectableAssetsRef = (paths:string[], target:string = '') => {
   );
 };
 
-let transformPath = (plugins, env) => {
+let transformPath = (plugins) => {
   return function (filepath) {
-    filepath = ENV === 'prod' ? filepath.replace(`/${APP_DEST}`, '') : filepath;
+    filepath = filepath.replace(`/${APP_DEST}`, '');
     arguments[0] = join(APP_BASE, filepath);
     return slash(plugins.inject.transform.apply(plugins.inject.transform, arguments));
   };

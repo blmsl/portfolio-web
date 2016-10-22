@@ -7,10 +7,10 @@ import {elementInViewport} from '../../shared/common/element.in.viewport';
 
 @Component({
   selector: 'skills',
-  templateUrl: './skills/components/skills.html',
   styleUrls: [
     './skills/components/skills.css',
   ],
+  templateUrl: './skills/components/skills.html',
 })
 export class SkillsComponent implements OnInit {
   public skills: Array<Skill>;
@@ -63,9 +63,9 @@ export class SkillsComponent implements OnInit {
         if (!this._skillChartDrawn && elementInViewport($, $(val))) {
           this._skillChartDrawn = true;
           $('.chart').easyPieChart({
-            onStep: function (from: number, to: number, percent: number) {
+            onStep: function (from: number, to: number, percent: number) { // tslint:disable-line
               $(this.el).find('.percent').text(Math.round(percent));
-            }
+            },
           });
         }
       });

@@ -4,7 +4,7 @@ import {HEROKU_DIR} from '../config';
 
 let bumpTagPackage = (gulp, plugins, type = 'patch') => {
   return gulp.src(join('./', 'package.json'))
-    .pipe(plugins.bump({type: type}))
+    .pipe(plugins.bump({type}))
     .pipe(gulp.dest(join('./')))
     .pipe(plugins.git.commit('Bumped package version'))
     .pipe(plugins.tagVersion());
@@ -12,7 +12,7 @@ let bumpTagPackage = (gulp, plugins, type = 'patch') => {
 
 let bumpHerokuPackage = (gulp, plugins, type = 'patch') => {
   return gulp.src(join('./', HEROKU_DIR, 'package.json'))
-    .pipe(plugins.bump({type: type}))
+    .pipe(plugins.bump({type}))
     .pipe(gulp.dest(join('./', HEROKU_DIR)));
 };
 

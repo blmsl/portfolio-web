@@ -45,20 +45,9 @@
       <div class="ng-loading">
         <img class="ng-loading-image" src="assets/images/loading.gif" alt="Loading..."/>
       </div>
-    </container><% if (ENV === 'dev') { %>
-    <!-- shims:js -->
-    <!-- endinject -->
-    <!-- libs:js -->
-    <!-- endinject --><% } %>
+    </container>
     <!-- inject:js -->
-    <!-- endinject --><% if (ENV === 'dev') { %>
-    <script>
-      System.config(<%= JSON.stringify(SYSTEM_CONFIG) %>);
-      System.import('main')
-        .catch(function (e) {
-          console.error(e, 'Report this error at https://github.com/ouq77/portfolio-web/issues');
-        });
-    </script><% } %>
+    <!-- endinject -->
     <script>
       function trackEvent(type, value) {
         if(_gaq) {

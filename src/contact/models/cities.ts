@@ -4,62 +4,68 @@ import {City} from '../definitions/city';
 import * as points from './points';
 
 let lived: string = 'I\'ve lived here...';
-let prevIcon: Icon = {url: 'assets/images/markerprev.png', size: points.MARKER_SIZE};
-let curIcon: Icon = {url: 'assets/images/markercur.png', size: points.MARKER_SIZE};
+let prevIcon: Icon = {
+  size: points.MARKER_SIZE,
+  url: 'assets/images/markerprev.png',
+};
+let curIcon: Icon = {
+  size: points.MARKER_SIZE,
+  url: 'assets/images/markercur.png',
+};
 
 const HARTSWATER: City = {
-  name: 'Hartswater, South Africa',
-  loc: points.HARTSWATER,
   description: 'I was born here...',
   icon: prevIcon,
+  loc: points.HARTSWATER,
+  name: 'Hartswater, South Africa',
 };
 const HEIDELBERG: City = {
-  name: 'Heidelberg, South Africa',
-  loc: points.HEIDELBERG,
   description: 'I grew up here...',
   icon: prevIcon,
+  loc: points.HEIDELBERG,
+  name: 'Heidelberg, South Africa',
 };
 const VRYBURG: City = {
-  name: 'Vryburg, South Africa',
-  loc: points.VRYBURG,
   description: 'I went to High School here...',
   icon: prevIcon,
+  loc: points.VRYBURG,
+  name: 'Vryburg, South Africa',
 };
 const LONDON: City = {
-  name: 'London, United Kingdom',
-  loc: points.LONDON,
   description: lived,
   icon: prevIcon,
+  loc: points.LONDON,
+  name: 'London, United Kingdom',
 };
 const JOHANNESBURG: City = {
-  name: 'Johannesburg, South Africa',
-  loc: points.BENONI,
   description: lived,
   icon: prevIcon,
+  loc: points.BENONI,
+  name: 'Johannesburg, South Africa',
 };
 const CAPE_TOWN: City = {
-  name: 'Cape Town, South Africa',
-  loc: points.CAPE_TOWN,
   description: 'I moved to NZ from here...',
   icon: prevIcon,
+  loc: points.CAPE_TOWN,
+  name: 'Cape Town, South Africa',
 };
 const HAMILTON: City = {
-  name: 'Hamilton, New Zealand',
-  loc: points.HAMILTON,
   description: lived,
   icon: prevIcon,
+  loc: points.HAMILTON,
+  name: 'Hamilton, New Zealand',
 };
 const AUCKLAND: City = {
-  name: 'Auckland, New Zealand',
-  loc: points.AUCKLAND,
   description: lived,
   icon: prevIcon,
+  loc: points.AUCKLAND,
+  name: 'Auckland, New Zealand',
 };
 const MT_COOK: City = {
-  name: 'Mt Cook, Wellington, New Zealand',
-  loc: points.MT_COOK,
   description: 'I currently live in this area...',
   icon: curIcon,
+  loc: points.MT_COOK,
+  name: 'Mt Cook, Wellington, New Zealand',
 };
 
 export const CURRENT_LOCATION = MT_COOK;

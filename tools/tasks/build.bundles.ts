@@ -20,9 +20,9 @@ let bundles = (gulp, plugins) => {
       return gulp.src(JS_CONCAT_DEPENDENCIES_PROD.map(d => d.src))
         // Strip comments and sourcemaps
         .pipe(plugins.uglify({
-          mangle: true,
           compress: true,
-          preserveComments: 'license'
+          mangle: true,
+          preserveComments: 'license',
         }))
         .pipe(plugins.concat(JS_PROD_COMMON))
         .pipe(gulp.dest(join(TMP_DIR)));
@@ -31,9 +31,9 @@ let bundles = (gulp, plugins) => {
     let bundleShims = () => {
       return gulp.src(getShims())
         .pipe(plugins.uglify({
-          mangle: true,
           compress: true,
-          preserveComments: 'license'
+          mangle: true,
+          preserveComments: 'license',
         }))
         .pipe(plugins.concat(JS_PROD_SHIMS))
         .pipe(gulp.dest(TMP_DIR));
@@ -45,9 +45,9 @@ let bundles = (gulp, plugins) => {
         .pipe(vinylSourceStream(JS_PROD_APP))
         .pipe(vinylBuffer())
         .pipe(plugins.uglify({
-          mangle: true,
           compress: true,
-          preserveComments: 'license'
+          mangle: true,
+          preserveComments: 'license',
         }))
         .pipe(gulp.dest(TMP_DIR));
     };

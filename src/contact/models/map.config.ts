@@ -7,62 +7,61 @@ import {START_POINT} from './points';
  * @type {MapOptions}
  */
 export const MAP_OPTIONS: MapOptions = {
-  scrollwheel: false,
   center: START_POINT,
-  zoom: 2,
   minZoom: 2,
+  scrollwheel: false,
   styles: [
     {
-      featureType: 'water',
       elementType: 'geometry',
+      featureType: 'water',
       stylers: [
         {
           color: '#00bdbd',
         },
       ],
     }, {
-      featureType: 'landscape.man_made',
       elementType: 'geometry',
+      featureType: 'landscape.man_made',
       stylers: [
         {
           color: '#f7f1df',
         },
       ],
     }, {
-      featureType: 'landscape.natural',
       elementType: 'geometry',
+      featureType: 'landscape.natural',
       stylers: [
         {
           color: '#bde6ab',
         },
       ],
     }, {
-      featureType: 'landscape.natural.terrain',
       elementType: 'geometry',
+      featureType: 'landscape.natural.terrain',
       stylers: [
         {
           visibility: 'off',
         },
       ],
     }, {
-      featureType: 'poi.park',
       elementType: 'geometry',
+      featureType: 'poi.park',
       stylers: [
         {
           color: '#abce83',
         },
       ],
     }, {
-      featureType: 'poi',
       elementType: 'labels',
+      featureType: 'poi',
       stylers: [
         {
           visibility: 'off',
         },
       ],
     }, {
-      featureType: 'poi.medical',
       elementType: 'geometry',
+      featureType: 'poi.medical',
       stylers: [
         {
           color: '#fbd3da',
@@ -76,72 +75,72 @@ export const MAP_OPTIONS: MapOptions = {
         },
       ],
     }, {
-      featureType: 'road',
       elementType: 'geometry.stroke',
+      featureType: 'road',
       stylers: [
         {
           visibility: 'off',
         },
       ],
     }, {
-      featureType: 'road',
       elementType: 'labels',
+      featureType: 'road',
       stylers: [
         {
           visibility: 'off',
         },
       ],
     }, {
-      featureType: 'road.highway',
       elementType: 'geometry.fill',
+      featureType: 'road.highway',
       stylers: [
         {
           color: '#f5534b',
         },
       ],
     }, {
-      featureType: 'road.highway',
       elementType: 'geometry.stroke',
+      featureType: 'road.highway',
       stylers: [
         {
           color: '#f5534b',
         },
       ],
     }, {
-      featureType: 'road.arterial',
       elementType: 'geometry.fill',
+      featureType: 'road.arterial',
       stylers: [
         {
           color: '#ff675f',
         },
       ],
     }, {
-      featureType: 'road.local',
       elementType: 'geometry.fill',
+      featureType: 'road.local',
       stylers: [
         {
           color: 'black',
         },
       ],
     }, {
-      featureType: 'transit.station.airport',
       elementType: 'geometry.fill',
+      featureType: 'transit.station.airport',
       stylers: [
         {
           color: '#cfb2db',
         },
       ],
     }, {
-      featureType: 'transit.line',
       elementType: 'geometry.fill',
+      featureType: 'transit.line',
       stylers: [
         {
           color: '#474d5d',
         },
       ],
     }, {
-      featureType: 'transit.line',
       elementType: 'geometry.stroke',
+      featureType: 'transit.line',
       stylers: [
         {
           color: '#474d5d',
@@ -149,4 +148,5 @@ export const MAP_OPTIONS: MapOptions = {
       ],
     },
   ],
+  zoom: 2,
 };

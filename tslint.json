@@ -1,10 +1,10 @@
 {
   "rules": {
     "class-name": true,
-    "curly": false,
+    "curly": true,
     "eofline": true,
+    "forin": true,
     "indent": "spaces",
-    "max-line-length": [true, 140],
     "member-ordering": [true,
       "public-before-private",
       "static-before-instance",
@@ -21,6 +21,8 @@
     "no-unused-variable": true,
     "no-unreachable": true,
     "no-use-before-declare": true,
+    "object-literal-shorthand": true,
+    "object-literal-sort-keys": true,
     "one-line": [true,
       "check-open-brace",
       "check-catch",
@@ -28,7 +30,12 @@
       "check-whitespace"
     ],
     "quotemark": [true, "single"],
+    "radix": true,
     "semicolon": true,
+    "trailing-comma": [true, {
+      "multiline": "always",
+      "singleline": "never"
+    }],
     "triple-equals": true,
     "variable-name": false
   }

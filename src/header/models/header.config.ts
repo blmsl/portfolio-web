@@ -3,16 +3,18 @@
  * Menu configuration
  * @type {
  *    {
+ *      itemClass: string,
+ *      itemHover: string,
  *      parts: {
  *        0: string, 1: string, 2: string, 3: string, 4: string, 5: string, 6: string
  *      },
- *      itemClass: string,
- *      itemHover: string,
  *      topMargin: string
  *    }
  * }
  */
 export const MENU_CONFIG:any = {
+  itemClass: 'menu-item',
+  itemHover: 'active',
   parts: {
     0: 'home',
     1: 'about',
@@ -22,8 +24,6 @@ export const MENU_CONFIG:any = {
     5: 'contact',
     6: 'links',
   },
-  itemClass: 'menu-item',
-  itemHover: 'active',
   topMargin: 'auto',
 };
 
@@ -55,24 +55,24 @@ export const MENU_CONFIG:any = {
  * }
  */
 export const GRID_ROTATOR_CONFIG: any = {
-  container: '#home',
-  columns: 8,
-  animType: 'rotateBottom',
   animSpeed: 300,
-  step: 'random',
+  animType: 'rotateBottom',
+  columns: 8,
+  container: '#home',
   maxStep: 3,
-  preventClick: true,
   onhover: true,
+  preventClick: true,
+  step: 'random',
   w1024: {
-    columns: 6
-  },
-  w768: {
-    columns: 4
-  },
-  w480: {
-    columns: 3
+    columns: 6,
   },
   w320: {
-    columns: 2
-  }
+    columns: 2,
+  },
+  w480: {
+    columns: 3,
+  },
+  w768: {
+    columns: 4,
+  },
 };

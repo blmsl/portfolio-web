@@ -8,13 +8,13 @@ export function wrapError(err: Response): Observable<WrappedError> {
 
   try {
     wrappedError = {
+      content: err.json(),
       status: err.status,
-      content: err.json()
     };
   } catch (jsonError) {
     wrappedError = {
+      content: err.text() || jsonError.message,
       status: err.status,
-      content: err.text() || jsonError.message
     };
   }
   console.warn(`${wrappedError.status}: ${(wrappedError.content && JSON.stringify(wrappedError.content) || '-')}`);

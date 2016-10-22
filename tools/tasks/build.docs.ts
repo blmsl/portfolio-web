@@ -10,22 +10,20 @@ let docs = (gulp, plugins) => {
       'tools/manual_typings/jquery.plugins.d.ts',
       join(APP_SRC, '**/*.ts'),
       '!' + join(APP_SRC, '**/*_spec.ts'),
-      '!' + join(APP_SRC, '**/*.e2e.ts')
+      '!' + join(APP_SRC, '**/*.e2e.ts'),
     ];
 
     return gulp.src(src)
       .pipe(plugins.typedoc({
-        // TypeScript options (see typescript docs)
-        module: 'commonjs',
-        target: 'es5',
-        includeDeclarations: true,
-        // Output options (see typedoc docs)
-        out: DOCS_DEST,
-        json: join(DOCS_DEST, 'data/docs.json'),
-        name: META_TAGS.title,
-        ignoreCompilerErrors: false,
         experimentalDecorators: true,
-        version: true
+        ignoreCompilerErrors: false,
+        includeDeclarations: true,
+        json: join(DOCS_DEST, 'data/docs.json'),
+        module: 'commonjs',
+        name: META_TAGS.title,
+        out: DOCS_DEST,
+        target: 'es5',
+        version: true,
       }));
   };
 };

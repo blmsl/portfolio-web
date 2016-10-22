@@ -20,38 +20,38 @@ import {elementInViewport} from '../../shared/common/element.in.viewport';
 
 @Component({
   selector: 'googlemap',
-  templateUrl: './contact/components/contact.gmap.html',
   styleUrls: [
     './contact/components/contact.gmap.css',
   ],
+  templateUrl: './contact/components/contact.gmap.html',
 })
 export class ContactMapComponent implements OnInit {
   public map: Map;
-  private _timeoutScroll: any;
-  private _timeoutMarkerBounce: any;
-  private _tilesLoadedEvent: any;
-  private _tilesLoaded: boolean;
-  private _mapMarkersDrawn: boolean;
-  private _infoWindow: InfoWindow;
-  private _markerBounce: Marker;
-  private _journeyLines: Array<Polyline>;
-  private _upcomingJourneyLines: Array<Polyline>;
-  private _cityMarkers: Array<Marker>;
-  private _airportMarkerDropWait: number;
-  private _journeyLineDrawWait: number;
   private _additionalMarkerWait: number;
+  private _airportMarkerDropWait: number;
+  private _cityMarkers: Array<Marker>;
+  private _infoWindow: InfoWindow;
+  private _journeyLines: Array<Polyline>;
+  private _journeyLineDrawWait: number;
+  private _mapMarkersDrawn: boolean;
+  private _markerBounce: Marker;
   private _markerWait: number;
+  private _tilesLoaded: boolean;
+  private _tilesLoadedEvent: any;
+  private _timeoutMarkerBounce: any;
+  private _timeoutScroll: any;
+  private _upcomingJourneyLines: Array<Polyline>;
 
   constructor() {
-    this._tilesLoaded = false;
-    this._mapMarkersDrawn = false;
+    this._additionalMarkerWait = 0;
+    this._airportMarkerDropWait = 0;
+    this._cityMarkers = [];
     this._infoWindow = new InfoWindow();
     this._journeyLines = [];
-    this._upcomingJourneyLines = [];
-    this._cityMarkers = [];
-    this._airportMarkerDropWait = 0;
     this._journeyLineDrawWait = 0;
-    this._additionalMarkerWait = 0;
+    this._mapMarkersDrawn = false;
+    this._tilesLoaded = false;
+    this._upcomingJourneyLines = [];
   }
 
   ngOnInit() {
@@ -77,16 +77,16 @@ export class ContactMapComponent implements OnInit {
           this.map = new Map(document.getElementById('map-canvas'), mapOptions);
           JOURNEYS.forEach((journey: Array<Airport>, index: number) => {
             this._journeyLines[index] = new Polyline({
-              strokeOpacity: 0.5,
-              strokeColor: '#1b1f29',
-              strokeWeight: 2,
               geodesic: true,
               map: this.map,
+              strokeColor: '#1b1f29',
+              strokeOpacity: 0.5,
+              strokeWeight: 2,
             });
           });
           UPCOMING_JOURNEYS.forEach((upcomingJourney: Array<Airport>, index: number) => {
             this._upcomingJourneyLines[index] = new Polyline({
-              strokeOpacity: 0,
+              geodesic: true,
               icons: [{
                 icon: {
                   path: 'M 0, -1 0,1',
@@ -96,8 +96,8 @@ export class ContactMapComponent implements OnInit {
                 offset: '0',
                 repeat: '12px',
               }],
-              geodesic: true,
               map: this.map,
+              strokeOpacity: 0,
             });
           });
           this._tilesLoadedEvent = event.addListener(this.map, 'tilesloaded', () => {
@@ -153,19 +153,23 @@ export class ContactMapComponent implements OnInit {
                   delay(this._airportMarkerDropWait * 135)
                     .then(() => {
                       let marker = new Marker({
-                        position: new LatLng(airport.loc.lat, airport.loc.lng),
-                        map: this.map,
-                        draggable: false,
                         animation: Animation.DROP,
-                        zIndex: 100,
-                        title: airport.iataCode + ' // ' + airport.name,
+                        draggable: false,
                         icon: {
-                          url: 'assets/images/markerairport.png',
                           size: points.AIRPORT_SIZE,
+                          url: 'assets/images/markerairport.png',
                         },
+                        map: this.map,
+                        position: new LatLng(airport.loc.lat, airport.loc.lng),
+                        title: `${airport.iataCode} // ${airport.name}`,
+                        zIndex: 100,
                       });
                       event.addListener(marker, 'click', () => {
-                        this.toggleBounce(marker, airport.iataCode, airport.name + '<br>' + airport.city + ', ' + airport.country);
+                        this.toggleBounce(
+                          marker,
+                          airport.iataCode,
+                          `${airport.name}<br>${airport.city}, ${airport.country}`
+                        );
                       });
                     });
                 });
@@ -214,13 +218,13 @@ export class ContactMapComponent implements OnInit {
 
   addMarker(city: City) {
     let cityMarker: Marker = new Marker({
-      position: new LatLng(city.loc.lat, city.loc.lng),
-      map: this.map,
-      title: city.name,
-      draggable: false,
       animation: Animation.DROP,
-      zIndex: 200,
+      draggable: false,
       icon: city.icon,
+      map: this.map,
+      position: new LatLng(city.loc.lat, city.loc.lng),
+      title: city.name,
+      zIndex: 200,
     });
     this._cityMarkers.push(cityMarker);
     event.addListener(cityMarker, 'click', () => {

@@ -3,11 +3,11 @@ import {join} from 'path';
 import {APP_DEST} from '../config';
 
 const HTML_MIN_OPTS = {
-  collapseWhitespace: true,
-  removeComments: true,
   caseSensitive: true,
+  collapseWhitespace: true,
+  minifyCSS: true,
   minifyJS: true,
-  minifyCSS: true
+  removeComments: true,
 };
 
 let indexMin = (gulp, plugins) => {

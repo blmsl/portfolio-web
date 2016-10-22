@@ -4,15 +4,15 @@
  */
 export interface Skill {
   /**
-   * Name of the skill
+   * More about the skill
    */
-  name: string;
+  content: string;
   /**
    * Level of confidence as a percentage
    */
   level: number;
   /**
-   * More about the skill
+   * Name of the skill
    */
-  content: string;
+  name: string;
 }

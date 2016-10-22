@@ -8,17 +8,17 @@ let tslint = (gulp, plugins) => {
       join(APP_SRC, '**/*.ts'),
       '!' + join(APP_SRC, '**/*.d.ts'),
       join(TOOLS_DIR, '**/*.ts'),
-      '!' + join(TOOLS_DIR, '**/*.d.ts')
+      '!' + join(TOOLS_DIR, '**/*.d.ts'),
     ];
 
     return gulp.src(src)
       .pipe(plugins.tslint({
-        rulesDirectory: NG2LINT_RULES
+        rulesDirectory: NG2LINT_RULES,
       }))
       .pipe(plugins.tslint.report(plugins.tslintStylish, {
+        bell: true,
         emitError: true,
         sort: true,
-        bell: true
       }));
   };
 };
