@@ -20,11 +20,11 @@ export const MENU_CONFIG:any = {
     3: 'experience',
     4: 'education',
     5: 'contact',
-    6: 'links'
+    6: 'links',
   },
   itemClass: 'menu-item',
   itemHover: 'active',
-  topMargin: 'auto'
+  topMargin: 'auto',
 };
 
 /**

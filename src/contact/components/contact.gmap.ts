@@ -21,7 +21,9 @@ import {elementInViewport} from '../../shared/common/element.in.viewport';
 @Component({
   selector: 'googlemap',
   templateUrl: './contact/components/contact.gmap.html',
-  styleUrls: ['./contact/components/contact.gmap.css']
+  styleUrls: [
+    './contact/components/contact.gmap.css',
+  ],
 })
 export class ContactMapComponent implements OnInit {
   public map: Map;
@@ -79,7 +81,7 @@ export class ContactMapComponent implements OnInit {
               strokeColor: '#1b1f29',
               strokeWeight: 2,
               geodesic: true,
-              map: this.map
+              map: this.map,
             });
           });
           UPCOMING_JOURNEYS.forEach((upcomingJourney: Array<Airport>, index: number) => {
@@ -89,13 +91,13 @@ export class ContactMapComponent implements OnInit {
                 icon: {
                   path: 'M 0, -1 0,1',
                   strokeOpacity: 0.5,
-                  strokeWeight: 2
+                  strokeWeight: 2,
                 },
                 offset: '0',
-                repeat: '12px'
+                repeat: '12px',
               }],
               geodesic: true,
-              map: this.map
+              map: this.map,
             });
           });
           this._tilesLoadedEvent = event.addListener(this.map, 'tilesloaded', () => {
@@ -159,8 +161,8 @@ export class ContactMapComponent implements OnInit {
                         title: airport.iataCode + ' // ' + airport.name,
                         icon: {
                           url: 'assets/images/markerairport.png',
-                          size: points.AIRPORT_SIZE
-                        }
+                          size: points.AIRPORT_SIZE,
+                        },
                       });
                       event.addListener(marker, 'click', () => {
                         this.toggleBounce(marker, airport.iataCode, airport.name + '<br>' + airport.city + ', ' + airport.country);
@@ -218,7 +220,7 @@ export class ContactMapComponent implements OnInit {
       draggable: false,
       animation: Animation.DROP,
       zIndex: 200,
-      icon: city.icon
+      icon: city.icon,
     });
     this._cityMarkers.push(cityMarker);
     event.addListener(cityMarker, 'click', () => {
@@ -238,7 +240,7 @@ export class ContactMapComponent implements OnInit {
         });
     } else {
       this.map.setOptions({
-        scrollwheel: true
+        scrollwheel: true,
       });
     }
   }

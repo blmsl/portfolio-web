@@ -5,6 +5,7 @@ import {Skill} from '../definitions/skill';
 
 @Injectable()
 export class SkillService {
+
   getSkills(): Promise<Array<Skill>> {
     return Promise.resolve(SKILLS);
   }

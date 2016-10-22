@@ -3,7 +3,8 @@ import {Injectable} from '@angular/core';
 import {Http, Headers, RequestOptions} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/Rx';
-import {ErrorConfig} from '../definitions/error.config';
+import {ERROR_MESSAGES} from './../models/error.messages';
+import {ErrorMessage} from '../definitions/error.message';
 import {ContactMessage} from '../definitions/contact.message';
 import {WrappedError} from '../../shared/definitions/wrapped.error';
 import {wrapError} from '../../shared/common/wrap.error';
@@ -16,10 +17,8 @@ export class ContactService {
     this._http = http;
   }
 
-  getErrorConfig(): Observable<ErrorConfig|WrappedError> {
-    return this._http.get('/errorconfig')
-      .map(resp => resp.json())
-      .catch(err => wrapError(err));
+  getErrorMessages(): Promise<Array<ErrorMessage>> {
+    return Promise.resolve(ERROR_MESSAGES);
   }
 
   send(message: ContactMessage): Observable<JSON|WrappedError> {

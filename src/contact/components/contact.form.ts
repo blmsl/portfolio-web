@@ -2,14 +2,16 @@
 import {Component, OnInit} from '@angular/core';
 import {FormGroup, FormControl, Validators, FormBuilder} from '@angular/forms';
 import {ContactService} from '../services/contact';
-import {ErrorConfig} from '../definitions/error.config';
+import {ErrorMessage} from '../definitions/error.message';
 import {ContactMessage} from '../definitions/contact.message';
 import {WrappedError} from '../../shared/definitions/wrapped.error';
 
 @Component({
   selector: 'contact-form',
   templateUrl: './contact/components/contact.form.html',
-  styleUrls: ['./contact/components/contact.form.css']
+  styleUrls: [
+    './contact/components/contact.form.css',
+  ],
 })
 export class ContactFormComponent implements OnInit {
   public name: FormControl;
@@ -22,7 +24,7 @@ export class ContactFormComponent implements OnInit {
   public sentSuccessfully: boolean;
   public submitBtnText: string;
   public serverErrors: string;
-  public errorConfig: ErrorConfig;
+  public errorMessages: Array<ErrorMessage>;
   private _contactService: ContactService;
 
   constructor(contactService: ContactService, fb: FormBuilder) {
@@ -35,7 +37,7 @@ export class ContactFormComponent implements OnInit {
       name: this.name,
       email: this.email,
       message: this.message,
-      heuning: this.heuning
+      heuning: this.heuning,
     });
     this.submitClicked = false;
     this.submitting = false;
@@ -44,13 +46,14 @@ export class ContactFormComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getErrorConfig();
+    this.getErrorMessages();
   }
 
-  getErrorConfig() {
-    this._contactService.getErrorConfig().subscribe(
-      res => this.errorConfig = (<ErrorConfig>res).errorConfig,
-      err => console.warn('errorConfig not returned')
+  getErrorMessages() {
+    this._contactService.getErrorMessages().then(
+      (errorMessages) => {
+        this.errorMessages = errorMessages;
+      }
     );
   }
 
@@ -85,21 +88,29 @@ export class ContactFormComponent implements OnInit {
     switch (err.status) {
       case 400:
         err.content.errors.forEach((error: string) => {
-          this.appendError(this.errorConfig[error].message);
+          this.appendError(this.errorFromCode(error));
         });
         break;
       case 500:
       default:
-        this.appendError(this.errorConfig['e_generic'].message);
+        this.appendError(this.errorFromCode('e_generic'));
         break;
     }
   }
 
-  appendError(error: String) {
-    if (this.serverErrors) {
-      this.serverErrors += '<br>';
+  errorFromCode(code: string): string {
+    return this.errorMessages.find((message: ErrorMessage) => {
+      return message.code === code;
+    }).message;
+  }
+
+  appendError(error: string) {
+    if (error) {
+      if (this.serverErrors) {
+        this.serverErrors += '<br>';
+      }
+      this.serverErrors += error;
     }
-    this.serverErrors += error;
   }
 
   toggleSubmitting() {

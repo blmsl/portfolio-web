@@ -8,10 +8,12 @@ import {delay} from '../../shared/common/delay';
 @Component({
   selector: 'header',
   templateUrl: './header/components/header.html',
-  styleUrls: ['./header/components/header.css']
+  styleUrls: [
+    './header/components/header.css',
+  ],
 })
 export class HeaderComponent implements OnInit {
-  public imageIds: Array<String>;
+  public imageIds: Array<string>;
   private _headerService: HeaderService;
   private _previousWidth: number;
   private _previousHeight: number;
@@ -40,7 +42,7 @@ export class HeaderComponent implements OnInit {
     })(jQuery);
   }
 
-  initGridRotator(imageIds: Array<String>) {
+  initGridRotator(imageIds: Array<string>) {
     this.imageIds = imageIds;
     (($) => {
       // Delay 250ms for images to be rendered in template

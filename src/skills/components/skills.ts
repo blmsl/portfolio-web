@@ -8,7 +8,9 @@ import {elementInViewport} from '../../shared/common/element.in.viewport';
 @Component({
   selector: 'skills',
   templateUrl: './skills/components/skills.html',
-  styleUrls: ['./skills/components/skills.css']
+  styleUrls: [
+    './skills/components/skills.css',
+  ],
 })
 export class SkillsComponent implements OnInit {
   public skills: Array<Skill>;

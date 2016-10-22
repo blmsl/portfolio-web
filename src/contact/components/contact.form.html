@@ -7,10 +7,10 @@
   </div>
   <form *ngIf="!sentSuccessfully" (ngSubmit)="onSubmit()" [formGroup]="form">
     <div id="result">
-      <div *ngIf="errorConfig" [hidden]="!submitClicked || sentSuccessfully" class="error-message">
-        <span [hidden]="name.valid">{{errorConfig.e_name_required.message}}<br></span>
-        <span [hidden]="email.valid">{{errorConfig.e_email_required.message}}<br></span>
-        <span [hidden]="message.valid">{{errorConfig.e_message_required.message}}</span>
+      <div *ngIf="errorMessages" [hidden]="!submitClicked || sentSuccessfully" class="error-message">
+        <span [hidden]="name.valid">{{errorFromCode('e_name_required')}}<br></span>
+        <span [hidden]="email.valid">{{errorFromCode('e_email_required')}}<br></span>
+        <span [hidden]="message.valid">{{errorFromCode('e_message_required')}}</span>
         <span *ngIf="serverErrors" class="error-message" [innerHtml]="serverErrors"></span>
       </div>
     </div>

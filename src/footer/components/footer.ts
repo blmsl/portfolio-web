@@ -6,7 +6,9 @@ import {Link} from '../definitions/link';
 @Component({
   selector: 'footer',
   templateUrl: './footer/components/footer.html',
-  styleUrls: ['./footer/components/footer.css']
+  styleUrls: [
+    './footer/components/footer.css',
+  ],
 })
 export class FooterComponent implements OnInit {
   public links: Array<Link>;

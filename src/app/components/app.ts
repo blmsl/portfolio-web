@@ -7,7 +7,9 @@ import {elementInViewport} from '../../shared/common/element.in.viewport';
 @Component({
   selector: 'container',
   templateUrl: './app/components/app.html',
-  styleUrls: ['./app/components/app.css']
+  styleUrls: [
+    './app/components/app.css',
+  ],
 })
 export class AppComponent implements OnInit {
   private _appService: AppService;

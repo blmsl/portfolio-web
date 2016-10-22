@@ -6,7 +6,9 @@ import {Job} from '../definitions/job';
 @Component({
   selector: 'experience',
   templateUrl: './experience/components/experience.html',
-  styleUrls: ['./experience/components/experience.css']
+  styleUrls: [
+    './experience/components/experience.css',
+  ],
 })
 export class ExperienceComponent implements OnInit {
   public jobs: Array<Job>;

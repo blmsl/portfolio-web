@@ -48,7 +48,7 @@ import {SkillService} from './skills/services/skills';
     MemberDatePipe,
     ScorePipe,
     TrimPipe,
-    VideoUrlPipe
+    VideoUrlPipe,
   ],
   exports: [
   ],
@@ -58,12 +58,12 @@ import {SkillService} from './skills/services/skills';
     FormsModule,
     HttpModule,
     JsonpModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [
     {
       provide: APP_BASE_HREF,
-      useValue: '<%= APP_BASE %>'
+      useValue: '<%= APP_BASE %>',
     },
     FormBuilder,
     AppService,
@@ -73,7 +73,7 @@ import {SkillService} from './skills/services/skills';
     FooterService,
     HeaderService,
     SkillService,
-  ]
+  ],
 })
 
 export class AppModule {
