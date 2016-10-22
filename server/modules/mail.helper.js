@@ -26,8 +26,6 @@ let formatValue = (value, args) => {
   })
 }
 
-let error
-
 let containsDisallowedChars = (value) => {
   return DISALLOWED_CHARS.test(value)
 }
