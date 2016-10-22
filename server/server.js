@@ -25,8 +25,6 @@ expressRedirectMappings.forEach((mapping) => {
 })
 
 app.get('/imageids', cache({nocache: true}), routes.imageids)
-app.get('/lastmodified', cache({nocache: true}), routes.lastmodified)
-app.get('/errorconfig', cache({ttl: 5184000}), routes.errorconfig)
 app.post('/send', cache({nocache: true}), routes.send)
 app.get('/exclude', cache({ttl: 5184000}), routes.exclude)
 app.get('/', cache({nocache: true}), routes.html)

@@ -2,7 +2,6 @@
 let fs = require('fs')
 let path = require('path')
 
-const ERROR_MESSAGES = require('./../config/error.props.json').errorConfig
 const DISALLOWED_CHARS = /[<>^|%()&+]/
 const URL_REGEX = /\(?(?:(http|https|ftp):\/\/)(?:((?:[^\W\s]|\.|-|[:]{1})+)@{1})?((?:www.)?(?:[^\W\s]|\.|-)+[\.][^\W\s]{2,4}|localhost(?=\/)|\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})(?::(\d*))?([\/]?[^\s\?]*[\/]{1})*(?:\/?([^\s\n\?\[\]\{\}#]*(?:(?=\.)){1}|[^\s\n\?\[\]\{\}\.#]*)?([\.]{1}[^\s\?#]*)?)?(?:\?{1}([^\s\n#\[\]]*))?([#][^\s\n]*)?\)?/
 const EMAIL_REGEX = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
@@ -26,6 +25,8 @@ let formatValue = (value, args) => {
       ? args[number] : match
   })
 }
+
+let error
 
 let containsDisallowedChars = (value) => {
   return DISALLOWED_CHARS.test(value)
@@ -54,32 +55,32 @@ let validate = (submission) => {
   let isUrl = false
 
   if (submission.heuning) {
-    response.push(ERROR_MESSAGES.e_spam.code)
+    response.push('e_spam')
     return response
   }
 
   if (!submission.name) {
-    response.push(ERROR_MESSAGES.e_name_required.code)
+    response.push('e_name_required')
   } else if (containsDisallowedChars(submission.name)) {
-    response.push(ERROR_MESSAGES.e_name_disallowed_chars.code)
+    response.push('e_name_disallowed_chars')
   } else if (containsUrl(submission.name)) {
     isUrl = true
   }
   if (!submission.email) {
-    response.push(ERROR_MESSAGES.e_email_required.code)
+    response.push('e_email_required')
   } else if (!isValidEmail(submission.email)) {
-    response.push(ERROR_MESSAGES.e_email_invalid.code)
+    response.push('e_email_invalid')
   }
   if (!submission.text) {
-    response.push(ERROR_MESSAGES.e_message_required.code)
+    response.push('e_message_required')
   } else if (containsDisallowedChars(submission.text)) {
-    response.push(ERROR_MESSAGES.e_message_disallowed_chars.code)
+    response.push('e_message_disallowed_chars')
   } else if (containsUrl(submission.text)) {
     isUrl = true
   }
 
   if (isUrl) {
-    response.push(ERROR_MESSAGES.e_contains_url.code)
+    response.push('e_contains_url')
   }
 
   return response
