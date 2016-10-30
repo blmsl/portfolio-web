@@ -16,7 +16,10 @@ let js = (gulp, plugins) => {
 
     let result = gulp.src(src)
       .pipe(plugins.plumber())
-      .pipe(plugins.inlineNg2Template({base: TMP_DIR}))
+      .pipe(plugins.inlineNg2Template({
+        base: TMP_DIR,
+        removeLineBreaks: true,
+      }))
       .pipe(tsProject());
 
     return result.js

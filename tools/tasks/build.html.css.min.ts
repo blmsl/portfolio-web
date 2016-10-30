@@ -6,14 +6,6 @@ import {APP_SRC, TMP_DIR} from '../config';
 const HTML_MIN_OPTS = {
   caseSensitive: true,
   collapseWhitespace: true,
-  ignoreCustomFragments: [
-    /\s+\*\w+=".*"/,
-    /\s+#\w+=".*"/,
-    /\s+\(\w+\)=".*"/,
-    /\s+\[\(\w+\)]=".*"/,
-    /\s+\[\w+\.?\w+\-?\w+]=".*"/,
-    /<%=\s?\w+\s?%>/,
-  ],
   removeComments: true,
 };
 

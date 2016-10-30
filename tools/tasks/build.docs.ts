@@ -8,6 +8,7 @@ let docs = (gulp, plugins) => {
     let src = [
       'typings/index.d.ts',
       'tools/manual_typings/jquery.plugins.d.ts',
+      'node_modules/@types/**/*.ts',
       join(APP_SRC, '**/*.ts'),
       '!' + join(APP_SRC, '**/*_spec.ts'),
       '!' + join(APP_SRC, '**/*.e2e.ts'),
