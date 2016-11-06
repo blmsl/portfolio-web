@@ -6,10 +6,12 @@ let routes = require('./routes')
 let expressStaticMappings = require('./config/express.props.json').static
 let expressRedirectMappings = require('./config/express.props.json').redirects
 let port = process.env.PORT || 9000
+let preRenderToken = process.env.PRE_RENDER_TOKEN
 let app = express()
 
 app.use(require('compression')())
 app.use(require('body-parser').json())
+app.use(require('prerender-node').set('prerenderToken', preRenderToken))
 app.use(middleware.heroku.exclude)
 
 expressStaticMappings.forEach((mapping) => {
