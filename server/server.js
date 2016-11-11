@@ -9,6 +9,7 @@ let port = process.env.PORT || 9000
 let preRenderToken = process.env.PRE_RENDER_TOKEN
 let app = express()
 
+app.use(require('helmet')())
 app.use(require('compression')())
 app.use(require('body-parser').json())
 app.use(require('prerender-node').set('prerenderToken', preRenderToken))
