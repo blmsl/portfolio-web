@@ -17,13 +17,10 @@
     "noFallthroughCasesInSwitch": true
   },
   "files": [
-    "typings/index.d.ts",
     "tools/manual_typings/index.d.ts"
   ],
   "exclude": [
-    "node_modules",
-    "typings/browser.d.ts",
-    "typings/browser/**/*"
+    "node_modules"
   ],
   "compileOnSave": true
 }

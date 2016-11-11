@@ -6,7 +6,6 @@ import {META_TAGS} from '../config.site';
 let docs = (gulp, plugins) => {
   return () => {
     let src = [
-      'typings/index.d.ts',
       'tools/manual_typings/jquery.plugins.d.ts',
       'node_modules/@types/**/*.ts',
       join(APP_SRC, '**/*.ts'),

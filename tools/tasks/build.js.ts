@@ -7,8 +7,8 @@ let js = (gulp, plugins) => {
   return () => {
     let tsProject = tsProjectFn(plugins);
     let src = [
-      'typings/index.d.ts',
       'tools/manual_typings/index.d.ts',
+      'node_modules/@types/**/*.ts',
       join(APP_SRC, '**/*.ts'),
       '!' + join(APP_SRC, '**/*.e2e.ts'),
       '!' + join(APP_SRC, '**/*_spec.ts'),
