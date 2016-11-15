@@ -13,6 +13,7 @@
       <video:title>Quirk Tracker</video:title>
     </video:video>
     <changefreq>monthly</changefreq>
+    <lastmod><%= LAST_MOD_SITEMAP %></lastmod>
   </url>
 
 </urlset>

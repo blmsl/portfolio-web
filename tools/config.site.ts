@@ -10,6 +10,8 @@ const NAME = 'Louw Swart';
 const TITLE = `${NAME} // Portfolio`;
 const URL = 'https://portfolio.ouq77.kiwi/';
 
+const now = new Date();
+
 export const META_TAGS = {
   facebook: {
     'og:title': TITLE,
@@ -18,8 +20,7 @@ export const META_TAGS = {
     'og:image': `${URL}assets/images/icon.png`,
     'og:description': DESCRIPTION,
     'og:site_name': 'portfolio.ouq77.kiwi',
-    'article:published_time': '2014-05-17T00:00:00+1200',
-    'article:modified_time': new Date().toISOString(),
+    'og:updated_time': dateFormat(now, 'isoDateTime'),
   },
   google: {
     name: NAME,
@@ -63,4 +64,5 @@ export const GOOGLE_ACCOUNT = {
   maps_key: GOOGLE_MAPS_API_KEY,
 };
 
-export const LAST_MODIFIED = dateFormat(new Date(), 'dd/mm/yyyy');
+export const LAST_MOD_SITE = dateFormat(now, 'dd/mm/yyyy');
+export const LAST_MOD_SITEMAP = dateFormat(now, 'yyyy-mm-dd');
