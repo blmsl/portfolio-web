@@ -26,7 +26,14 @@ export const META_TAGS = {
     name: NAME,
     url: URL,
   },
-  link_tags: {
+  linkPreconnectTags: [
+    '//fonts.gstatic.com',
+    '//www.google-analytics.com',
+    '//maps.googleapis.com',
+    '//instagram.com',
+    '//www.youtube.com',
+  ],
+  linkTags: {
     author: 'https://plus.google.com/u/0/+LouwSwart/posts',
     canonical: URL,
     publisher: 'https://plus.google.com/u/0/+LouwSwart',
