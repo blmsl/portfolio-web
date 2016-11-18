@@ -13,7 +13,7 @@
       <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 right-area">
         <div class="arrow-part"></div>
         <div class="education-container">
-          <h4>Code School <a href="https://www.codeschool.com/users/ouq77" target="_blank" class="link js_track_link_click"><i class="fa fa-link"></i></a></h4>
+          <h4>Code School <a href="https://www.codeschool.com/users/ouq77" target="_blank" rel="noopener noreferrer" class="link js_track_link_click"><i class="fa fa-link"></i></a></h4>
           <h5>Learn by doing</h5>
           <h5 class="sub-heading"><i>Interactive programming courses and coding challenges</i></h5>
           <section class="content">
@@ -26,7 +26,7 @@
           <section class="content">
             <div class="row">
               <div class="cs-badge col-md-2" *ngFor="let course of codeSchool.courses.completed">
-                <p><a href="{{course.badge | badgeUrl}}" title="{{course.title}}" target="_blank" class="js_track_link_click"><img src="{{course.badge}}" alt="{{course.title}}" width="95px"></a></p>
+                <p><a href="{{course.badge | badgeUrl}}" title="{{course.title}}" target="_blank" rel="noopener noreferrer" class="js_track_link_click"><img src="{{course.badge}}" alt="{{course.title}}" width="95px"></a></p>
               </div>
             </div>
           </section>
@@ -35,7 +35,7 @@
                    class="content">
             <div class="row">
               <div class="cs-badge col-md-2" *ngFor="let course of codeSchool.courses.in_progress">
-                <p><a href="{{course.url}}" title="{{course.title}}" target="_blank" class="js_track_link_click"><img src="{{course.badge}}" alt="{{course.title}}" width="95px"></a></p>
+                <p><a href="{{course.url}}" title="{{course.title}}" target="_blank" rel="noopener noreferrer" class="js_track_link_click"><img src="{{course.badge}}" alt="{{course.title}}" width="95px"></a></p>
               </div>
             </div>
           </section>
@@ -50,7 +50,7 @@
       <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 right-area">
         <div class="arrow-part"></div>
         <div class="education-container">
-          <h4>{{school.institution.name}}  <a href="{{school.institution.url}}" target="_blank" class="link js_track_link_click"><i class="fa fa-link"></i></a></h4>
+          <h4>{{school.institution.name}}  <a href="{{school.institution.url}}" target="_blank" rel="noopener noreferrer" class="link js_track_link_click"><i class="fa fa-link"></i></a></h4>
           <h5>{{school.qualification}}</h5>
           <h5 class="sub-heading"><i>{{school.institution.location}}</i></h5>
           <section [innerHTML]="school.content" class="content"></section>
