@@ -14,13 +14,13 @@ const now = new Date();
 
 export const META_TAGS = {
   facebook: {
+    'og:description': DESCRIPTION,
+    'og:image': `${URL}assets/images/icon.png`,
+    'og:site_name': 'portfolio.ouq77.kiwi',
     'og:title': TITLE,
     'og:type': 'website',
-    'og:url': URL,
-    'og:image': `${URL}assets/images/icon.png`,
-    'og:description': DESCRIPTION,
-    'og:site_name': 'portfolio.ouq77.kiwi',
     'og:updated_time': dateFormat(now, 'isoDateTime'),
+    'og:url': URL,
   },
   google: {
     name: NAME,
@@ -40,17 +40,17 @@ export const META_TAGS = {
   },
   site: {
     description: DESCRIPTION,
-    keywords: 'louw swart portfolio cv javascript ui developer analyst programmer java',
     'google-site-verification': '2QAoEd01NPLcv_b1tM-XJ7AT_xHmfqNkR2uHUcO2d5g',
+    keywords: 'louw swart portfolio cv javascript ui developer analyst programmer java',
   },
   title: TITLE,
   twitter: {
     'twitter:card': 'summary',
+    'twitter:creator': '@ouq77',
+    'twitter:description': DESCRIPTION,
+    'twitter:image': `${URL}assets/images/icon.png`,
     'twitter:site': '@ouq77',
     'twitter:title': TITLE,
-    'twitter:description': DESCRIPTION,
-    'twitter:creator': '@ouq77',
-    'twitter:image': `${URL}assets/images/icon.png`,
   },
 };
 

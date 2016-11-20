@@ -17,7 +17,7 @@ let registerInjectableAssetsRef = (paths: string[], target: string = '') => {
   injectables = injectables.concat(
     paths
       .filter(path => !/(\.map)$/.test(path))
-      .map(path => join(target, slash(path).split('/').pop()))
+      .map(path => join(target, slash(path).split('/').pop())),
   );
 };
 

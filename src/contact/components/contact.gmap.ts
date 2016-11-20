@@ -168,7 +168,7 @@ export class ContactMapComponent implements OnInit {
                         this.toggleBounce(
                           marker,
                           airport.iataCode,
-                          `${airport.name}<br>${airport.city}, ${airport.country}`
+                          `${airport.name}<br>${airport.city}, ${airport.country}`,
                         );
                       });
                     });
@@ -180,7 +180,7 @@ export class ContactMapComponent implements OnInit {
                     delay(this._journeyLineDrawWait * 65)
                       .then(() => {
                         journeyLine.getPath().push(
-                          new LatLng(leg.loc.lat, leg.loc.lng)
+                          new LatLng(leg.loc.lat, leg.loc.lng),
                         );
                       });
                   });
@@ -192,7 +192,7 @@ export class ContactMapComponent implements OnInit {
                     delay(this._journeyLineDrawWait * 65)
                       .then(() => {
                         upcomingJourneyLine.getPath().push(
-                          new LatLng(leg.loc.lat, leg.loc.lng)
+                          new LatLng(leg.loc.lat, leg.loc.lng),
                         );
                       });
                   });

@@ -33,7 +33,7 @@ export class SkillsComponent implements OnInit {
       (skills) => {
         this.skills = skills;
         this.drawChart();
-      }
+      },
     );
   }
 

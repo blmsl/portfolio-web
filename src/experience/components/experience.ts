@@ -25,7 +25,7 @@ export class ExperienceComponent implements OnInit {
   getJobs() {
     this._experienceService.getJobs().then(
       jobs =>
-        this.jobs = jobs
+        this.jobs = jobs,
     );
   }
 }

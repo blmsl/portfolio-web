@@ -26,7 +26,7 @@ export class FooterComponent implements OnInit {
 
   getLinks() {
     this._footerService.getLinks().then(
-      links => this.links = <Array<Link>>links
+      links => this.links = <Array<Link>>links,
     );
   }
 }

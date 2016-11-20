@@ -27,13 +27,13 @@ export class EducationComponent implements OnInit {
 
   getSchools() {
     this._educationService.getSchools().then(
-      schools => this.schools = schools
+      schools => this.schools = schools,
     );
   }
 
   getCodeSchool() {
     this._educationService.getCodeSchool().subscribe(
-      codeSchool => this.codeSchool = <CodeSchool>codeSchool
+      codeSchool => this.codeSchool = <CodeSchool>codeSchool,
     );
   }
 }

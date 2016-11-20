@@ -30,7 +30,7 @@ export class HeaderComponent implements OnInit {
   initImageIds() {
     this._headerService.getImageIds().subscribe(
       resp => this.initGridRotator((<ImageIds>resp).imageIds),
-      err => console.warn('imageIds not returned')
+      err => console.warn('imageIds not returned'),
     );
   }
 
@@ -62,12 +62,12 @@ export class HeaderComponent implements OnInit {
 
         $('.navbar.navbar-inverse.navbar-static-top a').click(
           () =>
-            $('.navbar-collapse').addClass('hide-class').addClass('collapse').removeClass('in')
+            $('.navbar-collapse').addClass('hide-class').addClass('collapse').removeClass('in'),
         );
 
         $('.navbar-toggle').click(
           () =>
-            $('.navbar-collapse').removeClass('hide-class')
+            $('.navbar-collapse').removeClass('hide-class'),
         );
       });
     })(jQuery);
@@ -88,8 +88,8 @@ export class HeaderComponent implements OnInit {
       }
       if (widthChanged || heightChanged) {
         $('.banner').css({
-          'width': windowWidth,
           'height': windowHeight - 60,
+          'width': windowWidth,
         });
         this.setDynamicCssValues();
         this._previousWidth = windowWidth;

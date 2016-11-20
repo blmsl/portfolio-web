@@ -53,7 +53,7 @@ export class ContactFormComponent implements OnInit {
     this._contactService.getErrorMessages().then(
       (errorMessages) => {
         this.errorMessages = errorMessages;
-      }
+      },
     );
   }
 
@@ -69,12 +69,12 @@ export class ContactFormComponent implements OnInit {
       this.name.value.trim(),
       this.email.value.trim(),
       this.message.value.trim(),
-      this.heuning.value
+      this.heuning.value,
     );
 
     this._contactService.send(submission).subscribe(
       resp => this.handleSuccess(),
-      err => this.handleErrors(err)
+      err => this.handleErrors(err),
     );
   }
 
