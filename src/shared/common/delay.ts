@@ -1,5 +1,3 @@
-'use strict';
-
 export const delay = (duration: number) =>
   new Promise((resolve) => {
     return setTimeout(resolve, duration);

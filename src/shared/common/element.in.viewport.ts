@@ -1,5 +1,3 @@
-'use strict';
-
 export const elementInViewport = ($: JQueryStatic, el: JQuery) => {
   let viewportWidth = $(window).width();
   let viewportHeight = $(window).height();

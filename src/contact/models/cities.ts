@@ -1,4 +1,3 @@
-'use strict';
 import {Icon} from '../definitions/icon';
 import {City} from '../definitions/city';
 import * as points from './points';

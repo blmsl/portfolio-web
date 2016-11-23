@@ -1,4 +1,3 @@
-'use strict';
 import {Component, OnInit} from '@angular/core';
 import {SkillService} from '../services/skills';
 import {Skill} from '../definitions/skill';
@@ -29,7 +28,7 @@ export class SkillsComponent implements OnInit {
   }
 
   getSkills() {
-    this._skillService.getSkills().then(
+    SkillService.getSkills().then(
       (skills) => {
         this.skills = skills;
         this.drawChart();

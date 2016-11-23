@@ -1,4 +1,3 @@
-'use strict';
 import {Component, OnInit} from '@angular/core';
 import {FooterService} from '../services/footer';
 import {Link} from '../definitions/link';
@@ -25,7 +24,7 @@ export class FooterComponent implements OnInit {
   }
 
   getLinks() {
-    this._footerService.getLinks().then(
+    FooterService.getLinks().then(
       links => this.links = <Array<Link>>links,
     );
   }

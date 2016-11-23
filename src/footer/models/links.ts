@@ -1,4 +1,3 @@
-'use strict';
 import {Link} from '../definitions/link';
 
 /**

@@ -1,4 +1,3 @@
-'use strict';
 /**
  * Interface for the Contact Message object
  */

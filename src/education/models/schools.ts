@@ -1,4 +1,3 @@
-'use strict';
 import {School} from '../definitions/school';
 
 /**

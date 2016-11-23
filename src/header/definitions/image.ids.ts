@@ -1,4 +1,3 @@
-'use strict';
 /**
  * Interface for Image Ids object
  */

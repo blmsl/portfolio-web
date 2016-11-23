@@ -139,16 +139,7 @@ const NPM_VENDOR_CSS:Array<Dependency> = normalizeDependencies([
 ]);
 
 // Declare NPM dependencies (Note that globs should not be injected).
-export const NPM_DEPENDENCIES:Array<Dependency> = normalizeDependencies([
-  {
-    inject: 'shims',
-    src: 'core-js/client/shim.min.js',
-  },
-  {
-    inject: 'libs',
-    src: 'zone.js/dist/zone.min.js',
-  },
-]).concat(NPM_FONTS);
+export const NPM_DEPENDENCIES:Array<Dependency> = [].concat(NPM_FONTS);
 
 let jsConcatDependenciesProd:Array<Dependency> = [
   {src: `${JS_SRC}/modernizr.custom.js`},

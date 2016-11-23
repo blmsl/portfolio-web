@@ -1,4 +1,3 @@
-'use strict';
 import {Injectable} from '@angular/core';
 import {Http, Headers, RequestOptions} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
@@ -13,12 +12,12 @@ import {wrapError} from '../../shared/common/wrap.error';
 export class ContactService {
   private _http: Http;
 
-  constructor(http: Http) {
-    this._http = http;
+  static getErrorMessages(): Promise<Array<ErrorMessage>> {
+    return Promise.resolve(ERROR_MESSAGES);
   }
 
-  getErrorMessages(): Promise<Array<ErrorMessage>> {
-    return Promise.resolve(ERROR_MESSAGES);
+  constructor(http: Http) {
+    this._http = http;
   }
 
   send(message: ContactMessage): Observable<JSON|WrappedError> {

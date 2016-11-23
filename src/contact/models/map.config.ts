@@ -1,4 +1,3 @@
-'use strict';
 import {MapOptions} from '../definitions/map.options';
 import {START_POINT} from './points';
 

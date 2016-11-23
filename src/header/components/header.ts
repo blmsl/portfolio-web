@@ -1,4 +1,3 @@
-'use strict';
 import {Component, OnInit} from '@angular/core';
 import {HeaderService} from '../services/header';
 import {MENU_CONFIG, GRID_ROTATOR_CONFIG} from '../models/header.config';

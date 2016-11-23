@@ -1,4 +1,3 @@
-'use strict';
 import {Component, OnInit} from '@angular/core';
 import {AppService} from '../services/app';
 import {cancelableDelay} from '../../shared/common/delay';
@@ -20,8 +19,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.initSmoothPageScroll();
     this._appService.consoleMessage();
+    this.initSmoothPageScroll();
   }
 
   initSmoothPageScroll() {

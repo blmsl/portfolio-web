@@ -1,4 +1,3 @@
-'use strict';
 import Animation = google.maps.Animation;
 import event = google.maps.event;
 import InfoWindow = google.maps.InfoWindow;

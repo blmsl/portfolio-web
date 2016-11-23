@@ -1,4 +1,3 @@
-'use strict';
 import {Component, OnInit} from '@angular/core';
 import {ExperienceService} from '../services/experience';
 import {Job} from '../definitions/job';
@@ -23,7 +22,7 @@ export class ExperienceComponent implements OnInit {
   }
 
   getJobs() {
-    this._experienceService.getJobs().then(
+    ExperienceService.getJobs().then(
       jobs =>
         this.jobs = jobs,
     );

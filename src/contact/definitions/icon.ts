@@ -1,4 +1,3 @@
-'use strict';
 import Size = google.maps.Size;
 
 /**

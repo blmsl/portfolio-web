@@ -1,4 +1,3 @@
-'use strict';
 import {Airport} from '../definitions/airport';
 import * as airports from './airports';
 

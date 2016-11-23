@@ -1,4 +1,3 @@
-'use strict';
 /**
  * Menu configuration
  * @type {

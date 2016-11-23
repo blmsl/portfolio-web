@@ -1,4 +1,3 @@
-'use strict';
 import {Point} from './point';
 import {Icon} from './icon';
 

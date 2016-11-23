@@ -1,4 +1,3 @@
-'use strict';
 import {Airport} from '../definitions/airport';
 
 const SOUTH_AFRICA: string = 'South Africa';

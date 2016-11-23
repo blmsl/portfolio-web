@@ -1,4 +1,3 @@
-'use strict';
 import {Injectable} from '@angular/core';
 import {Jsonp} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
@@ -12,12 +11,12 @@ import {wrapError} from '../../shared/common/wrap.error';
 export class EducationService {
   private _jsonp: Jsonp;
 
-  constructor(jsonp: Jsonp) {
-    this._jsonp = jsonp;
+  static getSchools(): Promise<Array<School>> {
+    return Promise.resolve(SCHOOLS);
   }
 
-  getSchools(): Promise<Array<School>> {
-    return Promise.resolve(SCHOOLS);
+  constructor(jsonp: Jsonp) {
+    this._jsonp = jsonp;
   }
 
   getCodeSchool(): Observable<CodeSchool|WrappedError> {

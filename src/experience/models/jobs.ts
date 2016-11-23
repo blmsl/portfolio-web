@@ -1,4 +1,3 @@
-'use strict';
 import {Job} from '../definitions/job';
 
 /**

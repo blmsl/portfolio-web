@@ -1,4 +1,3 @@
-'use strict';
 import {Skill} from '../definitions/skill';
 
 /**

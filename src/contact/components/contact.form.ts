@@ -1,4 +1,3 @@
-'use strict';
 import {Component, OnInit} from '@angular/core';
 import {FormGroup, FormControl, Validators, FormBuilder} from '@angular/forms';
 import {ContactService} from '../services/contact';
@@ -50,7 +49,7 @@ export class ContactFormComponent implements OnInit {
   }
 
   getErrorMessages() {
-    this._contactService.getErrorMessages().then(
+    ContactService.getErrorMessages().then(
       (errorMessages) => {
         this.errorMessages = errorMessages;
       },

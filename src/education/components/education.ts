@@ -1,4 +1,3 @@
-'use strict';
 import {Component, OnInit} from '@angular/core';
 import {EducationService} from '../services/education';
 import {School} from '../definitions/school';
@@ -26,7 +25,7 @@ export class EducationComponent implements OnInit {
   }
 
   getSchools() {
-    this._educationService.getSchools().then(
+    EducationService.getSchools().then(
       schools => this.schools = schools,
     );
   }
