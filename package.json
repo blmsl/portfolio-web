@@ -34,7 +34,7 @@
     "require-directory": "2.1.1"
   },
   "devDependencies": {
-    "standard": "8.5.0"
+    "standard": "8.6.0"
   },
   "engines": {
     "node": ">=7.0",
