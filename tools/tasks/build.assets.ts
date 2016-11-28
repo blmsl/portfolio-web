@@ -7,7 +7,7 @@ let assets = (gulp, plugins) => {
   return () => {
     let addStream = (dep) => {
       let stream = gulp.src(dep.src);
-      if (dep.src.endsWith('sitemap.xml')) {
+      if (dep.src.endsWith('sitemap.xml') || dep.src.endsWith('exclude.html')) {
         stream.pipe(plugins.template(templateLocals()));
       }
       stream.pipe(gulp.dest(dep.dest));
