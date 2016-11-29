@@ -13,7 +13,7 @@ let normalizeDependencies = (deps:Array<Dependency>) => {
 };
 
 let appVersion = ():number|string => {
-  var pkg = JSON.parse(readFileSync('package.json').toString());
+  var pkg = JSON.parse(readFileSync('package.json', 'UTF-8').toString());
   return pkg.version;
 };
 

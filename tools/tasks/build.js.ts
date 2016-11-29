@@ -3,6 +3,10 @@ import {join} from 'path';
 import {APP_SRC, TMP_DIR} from '../config';
 import {templateLocals, tsProjectFn} from '../utils';
 
+const tmpFilePath = (ext, file) => {
+  return file.replace(APP_SRC, TMP_DIR);
+};
+
 let js = (gulp, plugins) => {
   return () => {
     let tsProject = tsProjectFn(plugins);
@@ -18,7 +22,9 @@ let js = (gulp, plugins) => {
       .pipe(plugins.plumber())
       .pipe(plugins.inlineNg2Template({
         base: TMP_DIR,
+        customFilePath: tmpFilePath,
         removeLineBreaks: true,
+        useRelativePaths: true,
       }))
       .pipe(tsProject());
 
