@@ -7,18 +7,16 @@ import {elementInViewport} from '../../shared/common/element.in.viewport';
 @Component({
   selector: 'skills',
   styleUrls: [
-    './skills/components/skills.css',
+    './skills.css',
   ],
-  templateUrl: './skills/components/skills.html',
+  templateUrl: './skills.html',
 })
 export class SkillsComponent implements OnInit {
   public skills: Array<Skill>;
-  private _skillService: SkillService;
   private _timeoutScroll: any;
   private _skillChartDrawn: boolean;
 
-  constructor(skillService: SkillService) {
-    this._skillService = skillService;
+  constructor() {
     this._skillChartDrawn = false;
   }
 

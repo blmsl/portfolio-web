@@ -38,7 +38,7 @@ let bundles = (gulp, plugins) => {
     };
 
     let bundleApp = () => {
-      return browserify(join(TMP_DIR, 'app', 'main'))
+      return browserify(join(TMP_DIR, 'main'))
         .bundle()
         .pipe(vinylSourceStream(JS_PROD_APP))
         .pipe(vinylBuffer())

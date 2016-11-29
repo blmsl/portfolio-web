@@ -5,17 +5,15 @@ import {Link} from '../definitions/link';
 @Component({
   selector: 'footer',
   styleUrls: [
-    './footer/components/footer.css',
+    './footer.css',
   ],
-  templateUrl: './footer/components/footer.html',
+  templateUrl: './footer.html',
 })
 export class FooterComponent implements OnInit {
   public links: Array<Link>;
   public currentDate: Date;
-  private _footerService: FooterService;
 
-  constructor(footerService: FooterService) {
-    this._footerService = footerService;
+  constructor() {
     this.currentDate = new Date();
   }
 

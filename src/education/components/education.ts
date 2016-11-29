@@ -6,9 +6,9 @@ import {CodeSchool} from '../definitions/code.school';
 @Component({
   selector: 'education',
   styleUrls: [
-    './education/components/education.css',
+    './education.css',
   ],
-  templateUrl: './education/components/education.html',
+  templateUrl: './education.html',
 })
 export class EducationComponent implements OnInit {
   public schools: Array<School>;

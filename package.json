@@ -68,7 +68,7 @@
     "@types/vinyl": "1.2.30",
     "@types/vinyl-buffer": "0.0.28",
     "@types/vinyl-source-stream": "0.0.28",
-    "@types/yargs": "6.3.2",
+    "@types/yargs": "6.3.3",
     "@types/zone.js": "0.0.27",
     "async": "2.1.4",
     "bootstrap": "3.3.7",

@@ -7,9 +7,9 @@ import {delay} from '../../shared/common/delay';
 @Component({
   selector: 'header',
   styleUrls: [
-    './header/components/header.css',
+    './header.css',
   ],
-  templateUrl: './header/components/header.html',
+  templateUrl: './header.html',
 })
 export class HeaderComponent implements OnInit {
   public imageIds: Array<string>;

@@ -3,9 +3,9 @@ import {Component} from '@angular/core';
 @Component({
   selector: 'contact',
   styleUrls: [
-    './contact/components/contact.css',
+    './contact.css',
   ],
-  templateUrl: './contact/components/contact.html',
+  templateUrl: './contact.html',
 })
 export class ContactComponent {
 }

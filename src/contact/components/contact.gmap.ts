@@ -20,9 +20,9 @@ import {elementInViewport} from '../../shared/common/element.in.viewport';
 @Component({
   selector: 'googlemap',
   styleUrls: [
-    './contact/components/contact.gmap.css',
+    './contact.gmap.css',
   ],
-  templateUrl: './contact/components/contact.gmap.html',
+  templateUrl: './contact.gmap.html',
 })
 export class ContactMapComponent implements OnInit {
   public map: Map;

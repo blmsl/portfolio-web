@@ -6,20 +6,15 @@ import {elementInViewport} from '../../shared/common/element.in.viewport';
 @Component({
   selector: 'container',
   styleUrls: [
-    './app/components/app.css',
+    './app.css',
   ],
-  templateUrl: './app/components/app.html',
+  templateUrl: './app.html',
 })
 export class AppComponent implements OnInit {
-  private _appService: AppService;
   private _timeoutMenuAnimate: any;
 
-  constructor(appService: AppService) {
-    this._appService = appService;
-  }
-
   ngOnInit() {
-    this._appService.consoleMessage();
+    AppService.consoleMessage();
     this.initSmoothPageScroll();
   }
 

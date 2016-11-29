@@ -8,9 +8,9 @@ import {WrappedError} from '../../shared/definitions/wrapped.error';
 @Component({
   selector: 'contact-form',
   styleUrls: [
-    './contact/components/contact.form.css',
+    './contact.form.css',
   ],
-  templateUrl: './contact/components/contact.form.html',
+  templateUrl: './contact.form.html',
 })
 export class ContactFormComponent implements OnInit {
   public email: FormControl;
