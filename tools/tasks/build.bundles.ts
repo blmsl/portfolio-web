@@ -4,11 +4,25 @@ import {join} from 'path';
 import * as browserify from 'browserify';
 import vinylSourceStream = require('vinyl-source-stream');
 import * as vinylBuffer from 'vinyl-buffer';
-import {DEPENDENCIES, JS_CONCAT_DEPENDENCIES_PROD, JS_PROD_COMMON, JS_PROD_SHIMS, JS_PROD_APP, TMP_DIR} from '../config';
+import {
+  DEPENDENCIES,
+  JS_CONCAT_DEPENDENCIES_PROD,
+  JS_PROD_COMMON,
+  JS_PROD_SHIMS,
+  JS_PROD_APP,
+  TMP_DIR,
+} from '../config';
 
 const uglifyOpts = {
-  compress: true,
-  mangle: true,
+  compress: {
+    unsafe: true,
+  },
+  mangle: {
+    eval: true,
+    'screw_ie8': true,
+    sort: true,
+    toplevel: true,
+  },
   preserveComments: 'license',
 };
 
@@ -24,7 +38,7 @@ let bundles = (gulp, plugins) => {
 
     let bundleCommon = () => {
       return gulp.src(JS_CONCAT_DEPENDENCIES_PROD.map(d => d.src))
-        // Strip comments and sourcemaps
+      // Strip comments and sourcemaps
         .pipe(plugins.uglify(uglifyOpts))
         .pipe(plugins.concat(JS_PROD_COMMON))
         .pipe(gulp.dest(join(TMP_DIR)));
