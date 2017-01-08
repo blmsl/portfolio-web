@@ -1,6 +1,6 @@
 {
   "name": "ouq77-portfolio",
-  "version": "2.14.17",
+  "version": "2.14.18",
   "description": "On-line portfolio of Louw Swart, based on 'angular2-seed'",
   "repository": {
     "url": "https://github.com/ouq77/portfolio-web"
@@ -30,7 +30,7 @@
     "helmet": "3.3.0",
     "nodemailer": "2.7.0",
     "ord": "0.1.1",
-    "prerender-node": "2.6.0",
+    "prerender-node": "2.7.0",
     "require-directory": "2.1.1"
   },
   "devDependencies": {
