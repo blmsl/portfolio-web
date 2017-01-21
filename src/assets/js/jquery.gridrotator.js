@@ -349,6 +349,7 @@
       if (this.showTotal < this.itemsTotal && this.options.slideshow) {
         this._showNext();
       }
+      window.prerenderReady = true;
     },
     // get which type of animation
     _getAnimType: function() {
