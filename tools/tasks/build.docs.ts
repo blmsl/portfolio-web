@@ -6,7 +6,7 @@ import {META_TAGS} from '../config.site';
 let docs = (gulp, plugins) => {
   return () => {
     let src = [
-      'tools/manual_typings/jquery.plugins.d.ts',
+      'tools/manual_typings/index.d.ts',
       'node_modules/@types/**/*.ts',
       join(APP_SRC, '**/*.ts'),
       '!' + join(APP_SRC, '**/*_spec.ts'),
@@ -17,7 +17,7 @@ let docs = (gulp, plugins) => {
       .pipe(plugins.typedoc({
         experimentalDecorators: true,
         ignoreCompilerErrors: false,
-        includeDeclarations: true,
+        includeDeclarations: false,
         json: join(DOCS_DEST, 'data/docs.json'),
         module: 'commonjs',
         name: META_TAGS.title,
