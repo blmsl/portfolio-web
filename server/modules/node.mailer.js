@@ -1,5 +1,4 @@
-'use strict'
-let nodeMailer = require('nodemailer')
+const nodeMailer = require('nodemailer')
 
 const GMAIL_SENDER_EMAIL = process.env.GMAIL_SENDER_EMAIL
 const GMAIL_APP_EMAIL = process.env.GMAIL_APP_EMAIL
@@ -13,8 +12,8 @@ const GMAIL_APP_PASSWORD = process.env.GMAIL_APP_PASSWORD
  * {string} message.html
  * {Function} [callback] optional callback returns true for a successful send, else false
  */
-let send = (message, callback) => {
-  let transporter = nodeMailer.createTransport({
+const send = (message, callback) => {
+  const transporter = nodeMailer.createTransport({
     service: 'gmail',
     auth: {
       user: GMAIL_APP_EMAIL,

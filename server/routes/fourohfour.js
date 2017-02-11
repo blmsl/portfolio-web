@@ -1,5 +1,4 @@
-'use strict'
-let path = require('path')
+const path = require('path')
 
 module.exports = (req, res) => {
   console.error('No resource matches: ' + req.url)

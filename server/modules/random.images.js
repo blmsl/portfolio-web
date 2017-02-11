@@ -1,9 +1,8 @@
-'use strict'
-let imageIds = (process.env.INSTAGRAM_IMAGE_IDS || '').split(',')
+const imageIds = (process.env.INSTAGRAM_IMAGE_IDS || '').split(',')
 
-let getIds = () => {
-  let reducedImageIds = []
-  let imageIdsCopy = imageIds.slice(0)
+const getIds = () => {
+  const reducedImageIds = []
+  const imageIdsCopy = imageIds.slice(0)
 
   if (imageIds.length > 200) {
     while (reducedImageIds.length < 200) {

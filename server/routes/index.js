@@ -1,6 +1,5 @@
-'use strict'
-let requireDirectory = require('require-directory')
-let camelCase = require('camelcase')
+const requireDirectory = require('require-directory')
+const camelCase = require('camelcase')
 
 module.exports = requireDirectory(module, {
   rename: function (n) {

@@ -1,7 +1,6 @@
-'use strict'
-let forever = require('forever-monitor')
-let ord = require('ord')
-let child = new (forever.Monitor)('server/server.js')
+const forever = require('forever-monitor')
+const ord = require('ord')
+const child = new (forever.Monitor)('server/server.js')
 
 child.on('watch:restart', (info) => console.error(`Restarting script because ${info.file} changed`))
 

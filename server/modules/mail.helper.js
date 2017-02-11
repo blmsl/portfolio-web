@@ -1,6 +1,4 @@
-'use strict'
-let fs = require('fs')
-let path = require('path')
+const fs = require('fs')
 
 const DISALLOWED_CHARS = /[<>^|%()&+]/
 const URL_REGEX = /\(?(?:(http|https|ftp):\/\/)(?:((?:[^\W\s]|\.|-|[:]{1})+)@{1})?((?:www.)?(?:[^\W\s]|\.|-)+[\.][^\W\s]{2,4}|localhost(?=\/)|\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})(?::(\d*))?([\/]?[^\s\?]*[\/]{1})*(?:\/?([^\s\n\?\[\]\{\}#]*(?:(?=\.)){1}|[^\s\n\?\[\]\{\}\.#]*)?([\.]{1}[^\s\?#]*)?)?(?:\?{1}([^\s\n#\[\]]*))?([#][^\s\n]*)?\)?/ // eslint-disable-line no-useless-escape
@@ -10,8 +8,8 @@ const GMAIL_SENDER_EMAIL = process.env.GMAIL_SENDER_EMAIL
 const CUSTOM_APP_DOMAIN = process.env.CUSTOM_APP_DOMAIN
 const SUBJECT = 'Message from {0} | ' + CUSTOM_APP_DOMAIN
 const SUBJECT_COPY = 'Thanks for getting in touch'
-const CONTENT = fs.readFileSync(path.join(__dirname, '/../config/email-template.html'))
-const CONTENT_COPY = fs.readFileSync(path.join(__dirname, '/../config/email-copy-template.html'))
+const CONTENT = fs.readFileSync('./server/config/email-template.html')
+const CONTENT_COPY = fs.readFileSync('./server/config/email-copy-template.html')
 
 /**
  * Formats a value with the args passed in
@@ -19,22 +17,22 @@ const CONTENT_COPY = fs.readFileSync(path.join(__dirname, '/../config/email-copy
  * @param {Array} args
  * @returns {string} formatted value
  */
-let formatValue = (value, args) => {
+const formatValue = (value, args) => {
   return value.replace(/{(\d+)}/g, function (match, number) {
     return typeof args[number] !== 'undefined'
       ? args[number] : match
   })
 }
 
-let containsDisallowedChars = (value) => {
+const containsDisallowedChars = (value) => {
   return DISALLOWED_CHARS.test(value)
 }
 
-let containsUrl = (value) => {
+const containsUrl = (value) => {
   return URL_REGEX.test(value)
 }
 
-let isValidEmail = (email) => {
+const isValidEmail = (email) => {
   return EMAIL_REGEX.test(email)
 }
 
@@ -48,8 +46,8 @@ let isValidEmail = (email) => {
  *
  * @return {Array} one or more errors, or empty array if none
  */
-let validate = (submission) => {
-  let response = []
+const validate = (submission) => {
+  const response = []
   let isUrl = false
 
   if (submission.heuning) {
@@ -97,8 +95,8 @@ let validate = (submission) => {
  * {string} message.subject
  * {string} message.html
  */
-let buildMessage = (submission) => {
-  let message = {
+const buildMessage = (submission) => {
+  const message = {
     replyTo: submission.name + ' <' + submission.email + '>', // sender address
     to: GMAIL_SENDER_EMAIL, // list of receivers
     subject: '' + SUBJECT, // Subject line
@@ -123,8 +121,8 @@ let buildMessage = (submission) => {
  * {string} message.subject
  * {string} message.html
  */
-let buildMessageCopy = (submission) => {
-  let message = {
+const buildMessageCopy = (submission) => {
+  const message = {
     to: submission.name + ' <' + submission.email + '>', // list of receivers
     subject: '' + SUBJECT_COPY, // Subject line
     html: '' + CONTENT_COPY // html body

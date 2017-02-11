@@ -1,6 +1,4 @@
-'use strict'
-
-let exclude = (req, res, next) => {
+const exclude = (req, res, next) => {
   if (req.hostname.indexOf('.herokuapp.com') > -1) {
     res.header('X-Robots-Tag', 'noindex, nofollow')
   }

@@ -1,13 +1,12 @@
-'use strict'
-let express = require('express')
-let cache = require('express-cache-headers')
-let middleware = require('./middleware')
-let routes = require('./routes')
-let expressStaticMappings = require('./config/express.props.json').static
-let expressRedirectMappings = require('./config/express.props.json').redirects
-let port = process.env.PORT || 9000
-let preRenderToken = process.env.PRE_RENDER_TOKEN
-let app = express()
+const express = require('express')
+const cache = require('express-cache-headers')
+const middleware = require('./middleware')
+const routes = require('./routes')
+const expressStaticMappings = require('./config/express.props.json').static
+const expressRedirectMappings = require('./config/express.props.json').redirects
+const port = process.env.PORT || 9000
+const preRenderToken = process.env.PRE_RENDER_TOKEN
+const app = express()
 
 app.use(require('helmet')())
 app.use(require('compression')())
