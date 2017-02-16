@@ -39,7 +39,7 @@
     "reflect-metadata": "0.1.9",
     "rxjs": "5.1.1",
     "systemjs": "0.20.7",
-    "zone.js": "0.7.6"
+    "zone.js": "0.7.7"
   },
   "devDependencies": {
     "@types/async": "2.0.38",
@@ -81,7 +81,7 @@
     "gulp-bump": "2.6.1",
     "gulp-concat": "2.6.1",
     "gulp-cssnano": "2.1.2",
-    "gulp-git": "1.14.0",
+    "gulp-git": "2.0.0",
     "gulp-htmlmin": "3.0.0",
     "gulp-if": "2.0.2",
     "gulp-inject": "4.2.0",
@@ -114,7 +114,7 @@
     "traceur": "0.0.111",
     "ts-node": "2.1.0",
     "tslint": "4.4.2",
-    "typedoc": "0.5.5",
+    "typedoc": "0.5.6",
     "typescript": "2.1.6",
     "vinyl-buffer": "1.0.0",
     "vinyl-source-stream": "1.1.0",
