@@ -6,4 +6,3 @@ module.exports = requireDirectory(module, {
     return camelCase(n)
   }
 })
-
