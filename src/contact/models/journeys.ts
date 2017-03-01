@@ -35,4 +35,5 @@ export const JOURNEYS: Array<Array<Airport>> = [
  * Array of Upcoming Journeys for the Contact section
  * @type {Airport[][]}
  */
-export const UPCOMING_JOURNEYS: Array<Array<Airport>> = [];
+export const UPCOMING_JOURNEYS: Array<Array<Airport>> = [[airports.BKKN, airports.KBV],
+  [airports.HKT, airports.SIN, airports.MEL, airports.WLG]];

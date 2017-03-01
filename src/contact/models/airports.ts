@@ -741,6 +741,36 @@ export const NPL: Airport = {
   },
   name: 'New Plymouth Airport',
 };
+export const KBV: Airport = {
+  city: 'Krabi',
+  country: THAILAND,
+  iataCode: 'KBV',
+  loc: {
+    lat: 8.0992802,
+    lng: 98.9810008,
+  },
+  name: 'Krabi Airport',
+};
+export const HKT: Airport = {
+  city: 'Phuket',
+  country: THAILAND,
+  iataCode: 'HKT',
+  loc: {
+    lat: 8.1103541,
+    lng: 98.3081319,
+  },
+  name: 'Phuket International Airport',
+};
+export const MEL: Airport = {
+  city: 'Melbourne',
+  country: AUSTRALIA,
+  iataCode: 'MEL',
+  loc: {
+    lat: -37.6662769,
+    lng: 144.8354746,
+  },
+  name: 'Melbourne Airport (Tullamarine)',
+};
 
 /**
  * Array of all airports for the Contact section
@@ -753,5 +783,5 @@ export const AIRPORTS: Array<Airport> = [
   MRU, HKG, PER, SYD, EZE, GRU, YVR, FRA, ZRH, CDG, CPH,
   BOM, BKK, KIX, BKKN, USM, HKGN, DPS, DRW, ADL, HLZ, CHC,
   ZQN, AKL, WLG, NSN, TRG, ROT, RAR, NRT, SIN, ARN, BGO,
-  TRD, BOO, SJV, TOS, TIU, CBR, NPL,
+  TRD, BOO, SJV, TOS, TIU, CBR, NPL, KBV, HKT, MEL,
 ];
