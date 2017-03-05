@@ -1,4 +1,3 @@
-'use strict';
 import * as merge from 'merge-stream';
 import {templateLocals} from '../utils';
 import {DEPENDENCIES} from '../config';

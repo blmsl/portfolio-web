@@ -1,4 +1,3 @@
-'use strict';
 import * as merge from 'merge-stream';
 import {join} from 'path';
 import * as browserify from 'browserify';

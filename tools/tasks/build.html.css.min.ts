@@ -1,4 +1,3 @@
-'use strict';
 import * as merge from 'merge-stream';
 import {join} from 'path';
 import {APP_SRC, TMP_DIR} from '../config';

@@ -1,4 +1,3 @@
-'use strict';
 import {readFileSync} from 'fs';
 import {argv} from 'yargs';
 import {join} from 'path';

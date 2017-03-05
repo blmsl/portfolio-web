@@ -1,4 +1,3 @@
-'use strict';
 import * as dateFormat from 'dateformat';
 
 // --------------

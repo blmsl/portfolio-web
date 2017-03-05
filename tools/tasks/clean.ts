@@ -1,4 +1,3 @@
-'use strict';
 import * as async from 'async';
 import * as util from 'gulp-util';
 import * as chalk from 'chalk';

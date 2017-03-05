@@ -1,5 +1,4 @@
 /// <reference path="../manual_typings/slash.d.ts" />
-'use strict';
 import * as slash from 'slash';
 import {join} from 'path';
 import {

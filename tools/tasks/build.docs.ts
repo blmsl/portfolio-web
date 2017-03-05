@@ -1,4 +1,3 @@
-'use strict';
 import {join} from 'path';
 import {APP_SRC, DOCS_DEST} from '../config';
 import {META_TAGS} from '../config.site';

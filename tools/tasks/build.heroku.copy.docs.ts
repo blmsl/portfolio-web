@@ -1,4 +1,3 @@
-'use strict';
 import {join} from 'path';
 import {DOCS_DEST, HEROKU_DOCS_DIR} from '../config';
 
