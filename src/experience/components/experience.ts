@@ -7,7 +7,7 @@ import {Job} from '../definitions/job';
   styleUrls: [
     './experience.css',
   ],
-  templateUrl: './experience.html',
+  templateUrl: 'experience.htm',
 })
 export class ExperienceComponent implements OnInit {
   public jobs: Array<Job>;

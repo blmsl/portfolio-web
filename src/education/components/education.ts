@@ -8,7 +8,7 @@ import {CodeSchool} from '../definitions/code.school';
   styleUrls: [
     './education.css',
   ],
-  templateUrl: './education.html',
+  templateUrl: 'education.htm',
 })
 export class EducationComponent implements OnInit {
   public schools: Array<School>;

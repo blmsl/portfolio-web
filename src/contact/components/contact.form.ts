@@ -10,7 +10,7 @@ import {WrappedError} from '../../shared/definitions/wrapped.error';
   styleUrls: [
     './contact.form.css',
   ],
-  templateUrl: './contact.form.html',
+  templateUrl: 'contact.form.htm',
 })
 export class ContactFormComponent implements OnInit {
   public email: FormControl;

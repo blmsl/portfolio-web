@@ -1,17 +1,39 @@
-import * as dateFormat from 'dateformat';
+const convict = require('convict');
+const dateFormat = require('dateformat');
+
+const config = convict({
+  GOOGLE_ANALYTICS_ID: {
+    doc: 'The application\'s Google Analytics Id.',
+    format: String,
+    env: 'GOOGLE_ANALYTICS_ID',
+  },
+  GOOGLE_MAPS_API_KEY: {
+    doc: 'The application\'s Google Maps API Key',
+    format: String,
+    env: 'GOOGLE_MAPS_API_KEY',
+  },
+  GOOGLE_SITE_VERIFICATION: {
+    doc: 'The application\'s Google Site Verification',
+    format: String,
+    env: 'GOOGLE_SITE_VERIFICATION',
+  },
+});
+
+config.loadFile(['./config/local.json']);
 
 // --------------
 // Environment vars.
 const DESCRIPTION = 'On-line Portfolio and CV for Louw Swart - Analyst JavaScript Programmer based in Wellington, New Zealand';
-const GOOGLE_ANALYTICS_ID:string = process.env.GOOGLE_ANALYTICS_ID;
-const GOOGLE_MAPS_API_KEY:string = process.env.GOOGLE_MAPS_API_KEY;
+const GOOGLE_ANALYTICS_ID = config.get('GOOGLE_ANALYTICS_ID');
+const GOOGLE_MAPS_API_KEY = config.get('GOOGLE_MAPS_API_KEY');
+const GOOGLE_SITE_VERIFICATION = config.get('GOOGLE_SITE_VERIFICATION');
 const NAME = 'Louw Swart';
 const TITLE = `${NAME} // Portfolio`;
 const URL = 'https://portfolio.ouq77.kiwi/';
 
 const now = new Date();
 
-export const META_TAGS = {
+const META_TAGS = {
   facebook: {
     'og:description': DESCRIPTION,
     'og:image': `${URL}assets/images/icon.png`,
@@ -39,7 +61,7 @@ export const META_TAGS = {
   },
   site: {
     description: DESCRIPTION,
-    'google-site-verification': '2QAoEd01NPLcv_b1tM-XJ7AT_xHmfqNkR2uHUcO2d5g',
+    'google-site-verification': GOOGLE_SITE_VERIFICATION,
     keywords: 'louw swart portfolio cv javascript ui developer analyst programmer java',
   },
   title: TITLE,
@@ -53,7 +75,7 @@ export const META_TAGS = {
   },
 };
 
-export const APPLE_ICON_SIZES = [
+const APPLE_ICON_SIZES = [
   '57x57',
   '60x60',
   '72x72',
@@ -65,10 +87,18 @@ export const APPLE_ICON_SIZES = [
   '180x180',
 ];
 
-export const GOOGLE_ACCOUNT = {
+const GOOGLE_ACCOUNT = {
   analytics: GOOGLE_ANALYTICS_ID,
   maps_key: GOOGLE_MAPS_API_KEY,
 };
 
-export const LAST_MOD_SITE = dateFormat(now, 'dd/mm/yyyy');
-export const LAST_MOD_SITEMAP = dateFormat(now, 'yyyy-mm-dd');
+const LAST_MOD_SITE = dateFormat(now, 'dd/mm/yyyy');
+const LAST_MOD_SITEMAP = dateFormat(now, 'yyyy-mm-dd');
+
+module.exports = {
+  META_TAGS,
+  APPLE_ICON_SIZES,
+  GOOGLE_ACCOUNT,
+  LAST_MOD_SITE,
+  LAST_MOD_SITEMAP,
+}

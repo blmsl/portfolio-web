@@ -41,9 +41,9 @@ export const WELLINGTON: Point = {
   lat: -41.284938,
   lng: 174.762324,
 };
-export const MT_COOK: Point = {
-  lat: -41.2985754,
-  lng: 174.7707331,
+export const BROOKLYN: Point = {
+  lat: -41.3081336,
+  lng: 174.7661233,
 };
 
 export const MARKER_SIZE: Size = new google.maps.Size(20, 32);

@@ -37,12 +37,18 @@ typings/
 gulpfile.js*
 src/**/*.css*
 src/**/*.js
+config/*.json
+src/**/*.ngsummary.json
+src/**/*.metadata.json
+src/**/*.ngfactory.ts
+src/**/*.ngstyle.ts
 src/**/*.js.map
 tools/**/*.js
 tools/**/*.js.map
 !src/assets/js/**
 
 # Generated folders
+compiled/
 dist/
 dev/
 docs/

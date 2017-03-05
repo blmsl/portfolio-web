@@ -60,19 +60,19 @@ const AUCKLAND: City = {
   loc: points.AUCKLAND,
   name: 'Auckland, New Zealand',
 };
-const MT_COOK: City = {
+const BROOKLYN: City = {
   description: 'I currently live in this area...',
   icon: curIcon,
-  loc: points.MT_COOK,
-  name: 'Mt Cook, Wellington, New Zealand',
+  loc: points.BROOKLYN,
+  name: 'Brooklyn, Wellington, New Zealand',
 };
 
-export const CURRENT_LOCATION = MT_COOK;
+export const CURRENT_LOCATION = BROOKLYN;
 
 /**
  * Array of Cities for the Contact section
  * @type {City[]}
  */
 export const CITIES: Array<City> = [
-  HARTSWATER, HEIDELBERG, VRYBURG, LONDON, JOHANNESBURG, CAPE_TOWN, HAMILTON, AUCKLAND, MT_COOK,
+  HARTSWATER, HEIDELBERG, VRYBURG, LONDON, JOHANNESBURG, CAPE_TOWN, HAMILTON, AUCKLAND, BROOKLYN,
 ];

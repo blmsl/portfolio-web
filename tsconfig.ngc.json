@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2015",
     "module": "es2015",
     "moduleResolution": "node",
     "declaration": false,
@@ -8,6 +8,7 @@
     "noLib": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "lib": ["es6", "es2015", "dom"],
     "sourceMap": true,
     "pretty": true,
     "allowUnreachableCode": false,
@@ -16,6 +17,7 @@
     "noImplicitReturns": true,
     "noImplicitUseStrict": true,
     "noFallthroughCasesInSwitch": true,
+    "outDir": "tmp",
     "typeRoots": [
       "node_modules/@types",
       "node_modules",
@@ -27,12 +29,13 @@
     ]
   },
   "files": [
-    "src/",
+    "tmp/main.ts",
     "tools/manual_typings/jquery.plugins.d.ts"
   ],
   "exclude": [
     "node_modules",
-    "*-prod.ts"
+    "dist",
+    "src"
   ],
   "compileOnSave": false
 }
