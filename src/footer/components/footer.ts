@@ -7,7 +7,7 @@ import {Link} from '../definitions/link';
   styleUrls: [
     './footer.css',
   ],
-  templateUrl: './footer.html',
+  templateUrl: 'footer.htm',
 })
 export class FooterComponent implements OnInit {
   public links: Array<Link>;

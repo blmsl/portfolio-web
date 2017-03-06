@@ -5,7 +5,7 @@ import {Component} from '@angular/core';
   styleUrls: [
     './contact.css',
   ],
-  templateUrl: './contact.html',
+  templateUrl: 'contact.htm',
 })
 export class ContactComponent {
 }

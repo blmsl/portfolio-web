@@ -9,7 +9,7 @@ import {elementInViewport} from '../../shared/common/element.in.viewport';
   styleUrls: [
     './skills.css',
   ],
-  templateUrl: './skills.html',
+  templateUrl: 'skills.htm',
 })
 export class SkillsComponent implements OnInit {
   public skills: Array<Skill>;

@@ -22,7 +22,7 @@ import {elementInViewport} from '../../shared/common/element.in.viewport';
   styleUrls: [
     './contact.gmap.css',
   ],
-  templateUrl: './contact.gmap.html',
+  templateUrl: 'contact.gmap.htm',
 })
 export class ContactMapComponent implements OnInit {
   public map: Map;

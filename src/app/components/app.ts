@@ -8,7 +8,7 @@ import {elementInViewport} from '../../shared/common/element.in.viewport';
   styleUrls: [
     './app.css',
   ],
-  templateUrl: './app.html',
+  templateUrl: 'app.htm',
 })
 export class AppComponent implements OnInit {
   private _timeoutMenuAnimate: any;

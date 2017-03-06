@@ -63,7 +63,7 @@ import {SkillService} from './skills/services/skills';
   providers: [
     {
       provide: APP_BASE_HREF,
-      useValue: '<%= APP_BASE %>',
+      useValue: '/',
     },
     FormBuilder,
     AppService,

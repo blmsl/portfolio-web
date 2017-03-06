@@ -9,7 +9,7 @@ import {delay} from '../../shared/common/delay';
   styleUrls: [
     './header.css',
   ],
-  templateUrl: './header.html',
+  templateUrl: 'header.htm',
 })
 export class HeaderComponent implements OnInit {
   public imageIds: Array<string>;

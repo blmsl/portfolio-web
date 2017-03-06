@@ -1,6 +1,5 @@
 /*! stick.up (Custom Build) !*/
 (function($) {
-  'use strict';
   var contentTop = [],
     content = [],
     lastScrollTop = 0,

@@ -4,7 +4,6 @@
  * latest version and complete README available on Github: https://github.com/louisremi/jquery-smartresize/blob/master/jquery.debouncedresize.js
  * Copyright 2011 @louis_remi Licensed under the MIT license. !*/
 (function($, window, undefined) {
-  'use strict';
   var $event = $.event, $special, resizeTimeout;
 
   $special = $event.special.debouncedresize = {
