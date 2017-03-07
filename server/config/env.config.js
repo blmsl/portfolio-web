@@ -36,7 +36,8 @@ const envConfig = convict({
   INSTAGRAM_IMAGE_IDS: {
     doc: 'The application\'s Instagram Image Ids',
     format: String,
-    env: 'INSTAGRAM_IMAGE_IDS'
+    env: 'INSTAGRAM_IMAGE_IDS',
+    default: ''
   }
 })
 

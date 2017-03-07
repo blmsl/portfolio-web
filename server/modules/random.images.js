@@ -1,6 +1,6 @@
 const envConfig = require('./../config/env.config')
 
-const imageIds = (envConfig.get('INSTAGRAM_IMAGE_IDS') || '').split(',')
+const imageIds = envConfig.get('INSTAGRAM_IMAGE_IDS').split(',')
 
 const getIds = () => {
   const reducedImageIds = []

@@ -1,4 +1,11 @@
+#IDE configuration files
 .idea
+
+# Dependency directory
 node_modules/
+
+# Logs
 *.log
+
+# Users Environment Variables
 server/config/env.local.json
