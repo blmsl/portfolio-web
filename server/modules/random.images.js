@@ -1,4 +1,6 @@
-const imageIds = (process.env.INSTAGRAM_IMAGE_IDS || '').split(',')
+const envConfig = require('./../config/env.config')
+
+const imageIds = (envConfig.get('INSTAGRAM_IMAGE_IDS') || '').split(',')
 
 const getIds = () => {
   const reducedImageIds = []
