@@ -1,3 +1,4 @@
+const fs = require('fs');
 const convict = require('convict');
 const dateFormat = require('dateformat');
 
@@ -19,7 +20,11 @@ const config = convict({
   },
 });
 
-config.loadFile(['./config/local.json']);
+const localSiteConfig = './config/local.site.json';
+
+if (fs.existsSync(localSiteConfig)) {
+  config.loadFile([localSiteConfig]);
+}
 
 // --------------
 // Environment vars.
