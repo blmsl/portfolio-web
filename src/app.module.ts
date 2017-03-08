@@ -2,7 +2,7 @@ import {APP_BASE_HREF} from '@angular/common';
 import {BrowserModule} from '@angular/platform-browser';
 import {CommonModule} from '@angular/common';
 import {FormBuilder, FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HttpModule, JsonpModule} from '@angular/http';
+import {HttpModule} from '@angular/http';
 import {NgModule} from '@angular/core';
 
 // Components / Pipes
@@ -57,7 +57,6 @@ import {SkillService} from './skills/services/skills';
     CommonModule,
     FormsModule,
     HttpModule,
-    JsonpModule,
     ReactiveFormsModule,
   ],
   providers: [
