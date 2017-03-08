@@ -1,6 +1,6 @@
 {
   "name": "ouq77-portfolio",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "On-line portfolio of Louw Swart, based on 'angular2-seed'",
   "engines": {
     "node": "7.x.x",
