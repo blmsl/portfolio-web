@@ -86,14 +86,14 @@
 								"name": "NgModule"
 							},
 							"arguments": {
-								"obj": "{\n  bootstrap: [AppComponent],\n  declarations: [\n    // Components\n    AboutComponent,\n    AppComponent,\n    ContactComponent,\n    ContactFormComponent,\n    ContactMapComponent,\n    EducationComponent,\n    ExperienceComponent,\n    FooterComponent,\n    HeaderComponent,\n    SkillsComponent,\n    // Pipes\n    BadgeUrlPipe,\n    MemberDatePipe,\n    ScorePipe,\n    TrimPipe,\n    VideoUrlPipe,\n  ],\n  exports: [\n  ],\n  imports: [\n    BrowserModule,\n    CommonModule,\n    FormsModule,\n    HttpModule,\n    JsonpModule,\n    ReactiveFormsModule,\n  ],\n  providers: [\n    {\n      provide: APP_BASE_HREF,\n      useValue: '/',\n    },\n    FormBuilder,\n    AppService,\n    ContactService,\n    EducationService,\n    ExperienceService,\n    FooterService,\n    HeaderService,\n    SkillService,\n  ],\n}"
+								"obj": "{\n  bootstrap: [AppComponent],\n  declarations: [\n    // Components\n    AboutComponent,\n    AppComponent,\n    ContactComponent,\n    ContactFormComponent,\n    ContactMapComponent,\n    EducationComponent,\n    ExperienceComponent,\n    FooterComponent,\n    HeaderComponent,\n    SkillsComponent,\n    // Pipes\n    BadgeUrlPipe,\n    MemberDatePipe,\n    ScorePipe,\n    TrimPipe,\n    VideoUrlPipe,\n  ],\n  exports: [\n  ],\n  imports: [\n    BrowserModule,\n    CommonModule,\n    FormsModule,\n    HttpModule,\n    ReactiveFormsModule,\n  ],\n  providers: [\n    {\n      provide: APP_BASE_HREF,\n      useValue: '/',\n    },\n    FormBuilder,\n    AppService,\n    ContactService,\n    EducationService,\n    ExperienceService,\n    FooterService,\n    HeaderService,\n    SkillService,\n  ],\n}"
 							}
 						}
 					],
 					"sources": [
 						{
 							"fileName": "src/app.module.ts",
-							"line": 79,
+							"line": 78,
 							"character": 22
 						}
 					]
@@ -22986,13 +22986,13 @@
 									"parameters": [
 										{
 											"id": 965,
-											"name": "jsonp",
+											"name": "http",
 											"kind": 32768,
 											"kindString": "Parameter",
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"name": "Jsonp"
+												"name": "Http"
 											}
 										}
 									],
@@ -23013,7 +23013,7 @@
 						},
 						{
 							"id": 960,
-							"name": "_jsonp",
+							"name": "_http",
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
@@ -23024,12 +23024,12 @@
 								{
 									"fileName": "src/education/services/education.ts",
 									"line": 12,
-									"character": 16
+									"character": 15
 								}
 							],
 							"type": {
 								"type": "reference",
-								"name": "Jsonp"
+								"name": "Http"
 							}
 						},
 						{

@@ -31,6 +31,7 @@ app.get('/imageids', cache({nocache: true}), routes.imageids)
 app.post('/send', cache({nocache: true}), routes.send)
 app.get('/exclude', cache({ttl: 5184000}), routes.exclude)
 app.get('/p/*', cache({ttl: 31536000}), routes.heroku)
+app.get('/codeschool', cache({nocache: true}), routes.codeschool)
 app.get('/', cache({nocache: true}), routes.html)
 app.get('/*', cache({ttl: 5184000}), routes.fourohfour)
 
