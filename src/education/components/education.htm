@@ -26,7 +26,18 @@
           <section class="content">
             <div class="row">
               <div class="cs-badge col-md-2" *ngFor="let course of codeSchool.courses.completed">
-                <p><a href="{{course.badge | badgeUrl}}" title="{{course.title}}" target="_blank" rel="noopener noreferrer" class="js_track_link_click"><img src="{{course.badge}}" alt="{{course.title}}" width="95px"></a></p>
+                <p>
+                  <a href="{{course.badge | badgeUrl}}"
+                     title="{{course.title}}"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     class="js_track_link_click">
+                    <img src="{{course.badge}}"
+                         alt="{{course.title}}"
+                         width="95px"
+                         srcset="{{course.badge2x}} 2x">
+                  </a>
+                </p>
               </div>
             </div>
           </section>
