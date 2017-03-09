@@ -12,9 +12,6 @@ const instagramImageIds = envConfig.get('INSTAGRAM_IMAGE_IDS').split(',')
 const app = express()
 
 app.use(require('helmet')())
-if (!envConfig.get('DEV')) {
-  app.use(require('netjet')({scripts: false, styles: false}))
-}
 app.use(require('compression')())
 app.use(require('body-parser').json())
 app.use(require('prerender-node').set('prerenderToken', preRenderToken))
