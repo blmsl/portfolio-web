@@ -1,30 +1,43 @@
 const path = require('path')
-const imageResizeHelper = require('./image.resize.helper')
-const imagePathHelper = require('./image.path.helper')
+const {persist, resize, getImageName, getResizedImageName, getAbsoluteImageOriginalPath, getRelativeImageResizedPath, isResizedImageExists} = require('./../helpers')
 
 const relativeImagePath = 'assets/images/codeschool'
 const imageBasePath = path.resolve(__dirname, `../../app/${relativeImagePath}`)
 
-const processBadge = (course, imagePromises) => {
-  const imageName = imagePathHelper.getImageName(course.badge)
-  const absoluteImageResizedPath = imagePathHelper.getAbsoluteImageResizedPath(imageBasePath, imageName)
-  if (!imagePathHelper.isResizedImageExists(absoluteImageResizedPath)) {
-    imagePromises.push(imageResizeHelper.resize(course.badge, imageBasePath))
+const fetchBadge = (course, imageFetchPromises) => {
+  const imageName = getImageName(course.badge)
+  const absoluteImageOriginalPath = getAbsoluteImageOriginalPath(imageBasePath, imageName)
+  if (!isResizedImageExists(absoluteImageOriginalPath)) {
+    imageFetchPromises.push(persist(course.badge, absoluteImageOriginalPath))
   }
-  course.badge = imagePathHelper.getRelativeImageResizedPath(relativeImagePath, imageName)
+}
+
+const processBadge = (course, imagePromises) => {
+  const imageName = getImageName(course.badge)
+  imagePromises.push(resize(course.badge, imageBasePath))
+  imagePromises.push(resize(course.badge, imageBasePath, 190, 190))
+  course.badge = getRelativeImageResizedPath(relativeImagePath, getResizedImageName(imageName))
+  course.badge2x = getRelativeImageResizedPath(relativeImagePath, getResizedImageName(imageName, 190, 190))
 }
 
 const resizeReplace = jsonResponse => {
-  const imagePromises = []
-  jsonResponse.courses.completed.forEach(course => {
-    processBadge(course, imagePromises)
-  })
-  jsonResponse.courses.in_progress.forEach(course => {
-    processBadge(course, imagePromises)
+  const imageFetchPromises = []
+  const courses = [].concat(jsonResponse.courses.completed)
+    .concat(jsonResponse.courses.in_progress)
+  courses.forEach(course => {
+    fetchBadge(course, imageFetchPromises)
   })
 
-  return Promise.all(imagePromises)
-    .then(() => jsonResponse)
+  return Promise.all(imageFetchPromises)
+    .then(() => {
+      const imageResizePromises = []
+      courses.forEach(course => {
+        processBadge(course, imageResizePromises)
+      })
+
+      return Promise.all(imageResizePromises)
+        .then(() => jsonResponse)
+    })
     .catch(e => e)
 }
 

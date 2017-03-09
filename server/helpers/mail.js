@@ -1,5 +1,5 @@
 const fs = require('fs')
-const envConfig = require('./../config/env.config')
+const envConfig = require('./../config/env.config.js')
 
 const DISALLOWED_CHARS = /[<>^|%()&+]/
 const URL_REGEX = /\(?(?:(http|https|ftp):\/\/)(?:((?:[^\W\s]|\.|-|[:]{1})+)@{1})?((?:www.)?(?:[^\W\s]|\.|-)+[\.][^\W\s]{2,4}|localhost(?=\/)|\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})(?::(\d*))?([\/]?[^\s\?]*[\/]{1})*(?:\/?([^\s\n\?\[\]\{\}#]*(?:(?=\.)){1}|[^\s\n\?\[\]\{\}\.#]*)?([\.]{1}[^\s\?#]*)?)?(?:\?{1}([^\s\n#\[\]]*))?([#][^\s\n]*)?\)?/ // eslint-disable-line no-useless-escape
@@ -134,6 +134,8 @@ const buildMessageCopy = (submission) => {
   return message
 }
 
-module.exports.validate = validate
-module.exports.buildMessage = buildMessage
-module.exports.buildMessageCopy = buildMessageCopy
+module.exports = {
+  validate,
+  buildMessage,
+  buildMessageCopy
+}

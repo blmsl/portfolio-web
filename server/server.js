@@ -3,13 +3,18 @@ const cache = require('express-cache-headers')
 const middleware = require('./middleware')
 const routes = require('./routes')
 const envConfig = require('./config/env.config')
+const instagramImages = require('./modules/instagram.images')
 const expressStaticMappings = require('./config/express.props.json').static
 const expressRedirectMappings = require('./config/express.props.json').redirects
 const port = envConfig.get('PORT')
 const preRenderToken = envConfig.get('PRE_RENDER_TOKEN')
+const instagramImageIds = envConfig.get('INSTAGRAM_IMAGE_IDS').split(',')
 const app = express()
 
 app.use(require('helmet')())
+if (!envConfig.get('DEV')) {
+  app.use(require('netjet')({scripts: false, styles: false}))
+}
 app.use(require('compression')())
 app.use(require('body-parser').json())
 app.use(require('prerender-node').set('prerenderToken', preRenderToken))
@@ -30,11 +35,20 @@ expressRedirectMappings.forEach((mapping) => {
 app.get('/imageids', cache({nocache: true}), routes.imageids)
 app.post('/send', cache({nocache: true}), routes.send)
 app.get('/exclude', cache({ttl: 5184000}), routes.exclude)
-app.get('/p/*', cache({ttl: 31536000}), routes.heroku)
 app.get('/codeschool', cache({nocache: true}), routes.codeschool)
 app.get('/', cache({nocache: true}), routes.html)
 app.get('/*', cache({ttl: 5184000}), routes.fourohfour)
 
-app.listen(port, () => {
-  console.info(`Listening on port ${port}`)
-})
+instagramImages.fetchInstaImages(instagramImageIds)
+  .then((result) => {
+    console.log(result)
+    app.listen(port, () => {
+      console.info(`listening on port ${port}`)
+    })
+  })
+  .catch(err => {
+    console.error(err)
+    app.listen(port, () => {
+      console.info(`listening on port ${port}`)
+    })
+  })
