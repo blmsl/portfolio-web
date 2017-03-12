@@ -20,11 +20,13 @@ export class AppComponent implements OnInit {
 
   initSmoothPageScroll() {
     (($: JQueryStatic) => {
-      $('a[href*="#"]:not([href="#"])').click(function (e: JQueryEventObject) {
+      $('a[href*="#"]:not([href="#"])').click((e: Event) => {
         e.preventDefault();
-        if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
-          let target: JQuery = $(this.hash);
-          target = target.length ? target : $(`[name=${this.hash.slice(1)}]`);
+        const targetEl: HTMLAnchorElement = <HTMLAnchorElement>e.target;
+        if (location.pathname.replace(/^\//, '') === targetEl.pathname.replace(/^\//, '')
+            && location.hostname === targetEl.hostname) {
+          let target: JQuery = $(targetEl.hash);
+          target = target.length ? target : $(`[name=${targetEl.hash.slice(1)}]`);
           if (target.length) {
             $('html,body').animate({
               scrollTop: target.offset().top - 60,
