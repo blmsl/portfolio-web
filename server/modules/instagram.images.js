@@ -14,7 +14,7 @@ const fetchInstaImages = (imageIds) => {
     const imageUrl = `https://www.instagram.com/p/${imageId}/media/?size=m`
     const absoluteImagePath = getAbsoluteImagePath(imageBasePath, imageName)
     if (!isResizedImageExists(absoluteImagePath)) {
-      console.log(`fetching (${index}) ${imageUrl}`)
+      console.log(`fetching (${index + 1}) ${imageUrl}`)
       instagramPromises.push(persist(imageUrl, absoluteImagePath))
     }
   })
