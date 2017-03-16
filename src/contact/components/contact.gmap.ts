@@ -141,8 +141,8 @@ export class ContactMapComponent implements OnInit {
   dropMarkers(wait: number = 1500) {
     this._markerWait = wait;
     (($: JQueryStatic) => {
-      $('.js_trigger_map_marker').each((index: number, val: Element) => {
-        if (!this._mapMarkersDrawn && elementInViewport($, $(val))) {
+      $('.js_trigger_map_marker').each((index: number, triggerEl: Element) => {
+        if (!this._mapMarkersDrawn && elementInViewport($, $(triggerEl))) {
           if (this._tilesLoaded) {
             this._mapMarkersDrawn = true;
             delay(this._markerWait)
