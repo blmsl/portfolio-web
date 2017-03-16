@@ -28,7 +28,7 @@ const send = (message, callback) => {
       console.error(`Message not sent: ${error}`)
       callback(false)
     }
-    console.error(`Message sent: ${info.response}`)
+    console.error(`Message sent: ${JSON.stringify(info)}`)
     callback(true)
   })
 }
