@@ -19,7 +19,7 @@ const CONTENT_COPY = fs.readFileSync('./server/config/email-copy-template.html')
  * @returns {string} formatted value
  */
 const formatValue = (value, args) => {
-  return value.replace(/{(\d+)}/g, function (match, number) {
+  return value.replace(/{(\d+)}/g, (match, number) => {
     return typeof args[number] !== 'undefined'
       ? args[number] : match
   })

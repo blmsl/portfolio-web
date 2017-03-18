@@ -2,12 +2,6 @@ const fs = require('fs')
 const convict = require('convict')
 
 const envConfig = convict({
-  DEV: {
-    doc: 'Only present in dev environment',
-    format: Boolean,
-    default: false,
-    env: 'DEV'
-  },
   PORT: {
     doc: 'The port to bind',
     format: 'port',
