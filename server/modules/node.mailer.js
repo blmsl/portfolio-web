@@ -6,14 +6,14 @@ const GMAIL_APP_EMAIL = envConfig.get('GMAIL_APP_EMAIL')
 const GMAIL_APP_PASSWORD = envConfig.get('GMAIL_APP_PASSWORD')
 
 /**
- * {Object} message
- * {string} message.from
- * {string} message.to
- * {string} message.subject
- * {string} message.html
- * {Function} [callback] optional callback returns true for a successful send, else false
+ * @param {Object} message
+ * @param {string} message.from
+ * @param {string} message.to
+ * @param {string} message.subject
+ * @param {string} message.html
+ * @returns {Promise}
  */
-const send = (message, callback) => {
+const send = (message) => new Promise((resolve, reject) => {
   const transporter = nodeMailer.createTransport({
     service: 'gmail',
     auth: {
@@ -26,11 +26,11 @@ const send = (message, callback) => {
   transporter.sendMail(message, (error, info) => {
     if (error) {
       console.error(`Message not sent: ${error}`)
-      callback(false)
+      reject(error)
     }
     console.error(`Message sent: ${JSON.stringify(info)}`)
-    callback(true)
+    resolve()
   })
-}
+})
 
 module.exports.send = send

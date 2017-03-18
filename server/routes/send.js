@@ -19,18 +19,15 @@ module.exports = (req, res) => {
     const message = buildMessage(submission)
     const messageCopy = buildMessageCopy(submission)
 
-    nodeMailer.send(message, (success) => {
-      if (success) {
-        nodeMailer.send(messageCopy, (success) => {
-          if (success) {
+    nodeMailer.send(message)
+      .then(() => {
+        nodeMailer.send(messageCopy)
+          .then(() => {
             res.status(200).json('Sent successfully')
-          } else {
-            res.sendStatus(500)
-          }
-        })
-      } else {
-        res.sendStatus(500)
-      }
-    })
+          })
+      })
+      .catch(e =>
+        res.status(500).send(e.message)
+      )
   }
 }
