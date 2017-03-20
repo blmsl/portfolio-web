@@ -30,7 +30,7 @@
   },
   "files": [
     "tmp/main.ts",
-    "tools/manual_typings/jquery.plugins.d.ts"
+    "tools/manual_typings/index.d.ts"
   ],
   "exclude": [
     "node_modules",
