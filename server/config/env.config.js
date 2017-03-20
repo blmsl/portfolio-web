@@ -3,41 +3,46 @@ const convict = require('convict')
 
 const envConfig = convict({
   PORT: {
-    doc: 'The port to bind',
-    format: 'port',
     default: 9000,
-    env: 'PORT'
+    doc: 'The port to bind',
+    env: 'PORT',
+    format: 'port'
   },
   PRE_RENDER_TOKEN: {
+    default: '',
     doc: 'The application\'s Pre-render token',
-    format: String,
-    env: 'PRE_RENDER_TOKEN'
+    env: 'PRE_RENDER_TOKEN',
+    format: String
   },
   GMAIL_SENDER_EMAIL: {
+    default: '',
     doc: 'The application\'s Sender Email, incl. name',
-    format: String,
-    env: 'GMAIL_SENDER_EMAIL'
+    env: 'GMAIL_SENDER_EMAIL',
+    format: String
   },
   GMAIL_APP_EMAIL: {
+    default: '',
     doc: 'The application\'s Gmail Email account',
-    format: 'email',
-    env: 'GMAIL_APP_EMAIL'
+    env: 'GMAIL_APP_EMAIL',
+    format: 'email'
   },
   GMAIL_APP_PASSWORD: {
+    default: '',
     doc: 'The application\'s Gmail Email password',
-    format: String,
-    env: 'GMAIL_APP_PASSWORD'
+    env: 'GMAIL_APP_PASSWORD',
+    format: String
   },
   CUSTOM_APP_DOMAIN: {
+    default: '',
     doc: 'The application\'s Custom App domain',
-    format: 'url',
-    env: 'CUSTOM_APP_DOMAIN'
+    env: 'CUSTOM_APP_DOMAIN',
+    format: 'url'
   },
   INSTAGRAM_IMAGE_IDS: {
+    default: '',
     doc: 'The application\'s Instagram Image Ids',
-    format: String,
     env: 'INSTAGRAM_IMAGE_IDS',
-    default: ''
+    format: String
   }
 })
 

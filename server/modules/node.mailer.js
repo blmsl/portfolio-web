@@ -14,6 +14,7 @@ const GMAIL_APP_PASSWORD = envConfig.get('GMAIL_APP_PASSWORD')
  * @returns {Promise}
  */
 const send = (message) => new Promise((resolve, reject) => {
+  console.log(`${JSON.stringify(GMAIL_APP_EMAIL)} ${JSON.stringify(GMAIL_SENDER_EMAIL)}`)
   const transporter = nodeMailer.createTransport({
     service: 'gmail',
     auth: {
