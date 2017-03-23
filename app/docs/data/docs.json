@@ -26000,14 +26000,8 @@
 								}
 							],
 							"type": {
-								"type": "reference",
-								"name": "Promise",
-								"typeArguments": [
-									{
-										"type": "instrinct",
-										"name": "Object"
-									}
-								]
+								"type": "instrinct",
+								"name": "any"
 							}
 						}
 					],
