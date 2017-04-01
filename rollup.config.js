@@ -1,25 +1,20 @@
 import nodeResolve from 'rollup-plugin-node-resolve';
-
-class RollupNG2 {
-  resolveId(id) {
-    if (id.startsWith('rxjs/')) {
-      return `${__dirname}/node_modules/rxjs-es/${id.replace('rxjs/', '')}.js`;
-    }
-    return undefined;
-  }
-}
-
-const rollupNG2 = () => new RollupNG2();
+import commonjs from 'rollup-plugin-commonjs'
 
 export default {
-  entry: 'compiled/tmp/main-prod.js',
+  entry: 'compiled/main-prod.js',
   sourceMap: true,
   treeshake: true,
   moduleName: 'main',
   plugins: [
-    rollupNG2(),
+    // rollupNG2(),
     nodeResolve({
-      jsnext: true, main: true, module: true
+      jsnext: true,
+      main: true,
+      module: true,
+    }),
+    commonjs({
+      include: 'node_modules/rxjs/**'
     })
   ]
 };
