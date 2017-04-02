@@ -1,9 +1,9 @@
 import nodeResolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs'
+import commonjs from 'rollup-plugin-commonjs';
 
 export default {
   entry: 'compiled/main-prod.js',
-  sourceMap: true,
+  sourceMap: false,
   treeshake: true,
   moduleName: 'main',
   plugins: [
@@ -14,9 +14,7 @@ export default {
       module: true,
     }),
     commonjs({
-      include: 'node_modules/rxjs/**'
-    })
-  ]
+      include: 'node_modules/rxjs/**',
+    }),
+  ],
 };
-
-
