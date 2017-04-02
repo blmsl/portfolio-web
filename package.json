@@ -36,7 +36,7 @@
     "ord": "0.1.1",
     "prerender-node": "2.7.0",
     "require-directory": "2.1.1",
-    "sharp": "0.17.2"
+    "sharp": "0.17.3"
   },
   "devDependencies": {
     "standard": "9.0.2"
