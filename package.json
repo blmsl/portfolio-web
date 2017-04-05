@@ -82,7 +82,7 @@
     "core-js": "2.4.1",
     "es6-shim": "0.35.3",
     "reflect-metadata": "0.1.10",
-    "rxjs": "5.2.1-smooth",
+    "rxjs": "5.3.0",
     "systemjs": "0.20.11",
     "zone.js": "0.8.5"
   },
@@ -93,7 +93,7 @@
     "@types/googlemaps": "3.26.8",
     "@types/jquery": "2.0.41",
     "bootstrap": "3.3.7",
-    "browserify": "14.1.0",
+    "browserify": "14.3.0",
     "concat-cli": "4.0.0",
     "convict": "3.0.0",
     "cpy-cli": "1.0.1",
@@ -115,7 +115,7 @@
     "rollup-plugin-commonjs": "8.0.2",
     "rollup-plugin-node-resolve": "3.0.0",
     "tslint": "5.0.0",
-    "typedoc": "0.5.9",
+    "typedoc": "0.5.10",
     "typescript": "2.2.2",
     "uglifyjs": "2.4.10"
   }
