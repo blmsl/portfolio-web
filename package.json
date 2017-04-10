@@ -99,7 +99,7 @@
     "cpy-cli": "1.0.1",
     "dateformat": "2.0.0",
     "font-awesome": "4.7.0",
-    "html-minifier": "3.4.2",
+    "html-minifier": "3.4.3",
     "jquery": "3.2.1",
     "jsonfile": "2.4.0",
     "mkdirp": "0.5.1",
