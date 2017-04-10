@@ -29,11 +29,12 @@ export const JOURNEYS: Array<Array<Airport>> = [
   [airports.LHR, airports.ARN], [airports.BGO, airports.TRD], [airports.BOO, airports.SJV], [airports.TOS, airports.ARN],
   [airports.LHR, airports.SIN, airports.SYD, airports.WLG], [airports.WLG, airports.TIU], [airports.WLG, airports.NSN],
   [airports.WLG, airports.NPL], [airports.WLG, airports.CBR, airports.SIN, airports.JNB], [airports.WLG, airports.ZQN],
+  [airports.BKKN, airports.KBV],
 ];
 
 /**
  * Array of Upcoming Journeys for the Contact section
  * @type {Airport[][]}
  */
-export const UPCOMING_JOURNEYS: Array<Array<Airport>> = [[airports.BKKN, airports.KBV],
+export const UPCOMING_JOURNEYS: Array<Array<Airport>> = [
   [airports.HKT, airports.SIN, airports.MEL, airports.WLG]];
