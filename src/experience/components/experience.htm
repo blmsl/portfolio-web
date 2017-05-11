@@ -8,14 +8,14 @@
     <div *ngFor="let job of jobs"
          class="row work-details">
       <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-        <div class="work-year">{{job.year.from}} <i class="fa fa-chevron-circle-right"></i><br>{{job.year.to}}</div>
+        <div class="work-year">{{job.year.from}} <i class="icon-angle-circled-right"></i><br>{{job.year.to}}</div>
       </div>
       <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 right-area">
         <div class="arrow-part"></div>
         <div class="experience-container">
           <h4>{{job.institution.name}}
             <a *ngIf="job.institution.url" href="{{job.institution.url}}" target="_blank" rel="noopener noreferrer" class="link js_track_link_click">
-              <i class="fa fa-link"></i>
+              &nbsp;<i class="icon-link-ext"></i>
             </a>
           </h4>
           <h5>{{job.title}}</h5>

@@ -10,11 +10,11 @@ export const LINKS: Array<Link> = [
     title: 'See my LinkedIn here',
     url: 'https://nz.linkedin.com/in/louwswart/',
   }, {
-    icon: 'github',
+    icon: 'github-circled',
     title: 'See examples of my code here',
     url: 'https://github.com/ouq77',
   }, {
-    icon: 'google-plus',
+    icon: 'gplus',
     title: 'See my Google+ here',
     url: 'https://plus.google.com/u/0/+LouwSwart/about?rel=author',
   }, {

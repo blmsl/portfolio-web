@@ -1,0 +1,124 @@
+@font-face {
+  font-family: 'fontello';
+  src: url('../fonts/fontello.eot?52416809');
+  src: url('../fonts/fontello.eot?52416809#iefix') format('embedded-opentype'),
+  url('../fonts/fontello.woff2?52416809') format('woff2'),
+  url('../fonts/fontello.woff?52416809') format('woff'),
+  url('../fonts/fontello.ttf?52416809') format('truetype'),
+  url('../fonts/fontello.svg?52416809#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+}
+
+.icon-camera-alt:before {
+  content: '\e800'; /* '' */
+}
+
+.icon-road:before {
+  content: '\e801'; /* '' */
+}
+
+.icon-flight:before {
+  content: '\e802'; /* '' */
+}
+
+.icon-globe:before {
+  content: '\e803'; /* '' */
+}
+
+.icon-plus:before {
+  content: '\e804'; /* '' */
+}
+
+.icon-location:before {
+  content: '\e805'; /* '' */
+}
+
+.icon-link:before {
+  content: '\e806'; /* '' */
+}
+
+.icon-link-ext:before {
+  content: '\f08e'; /* '' */
+}
+
+.icon-facebook:before {
+  content: '\f09a'; /* '' */
+}
+
+.icon-github-circled:before {
+  content: '\f09b'; /* '' */
+}
+
+.icon-gplus:before {
+  content: '\f0d5'; /* '' */
+}
+
+.icon-linkedin:before {
+  content: '\f0e1'; /* '' */
+}
+
+.icon-mobile:before {
+  content: '\f10b'; /* '' */
+}
+
+.icon-code:before {
+  content: '\f121'; /* '' */
+}
+
+.icon-angle-circled-right:before {
+  content: '\f138'; /* '' */
+}
+
+.icon-instagram:before {
+  content: '\f16d'; /* '' */
+}
+
+.icon-android:before {
+  content: '\f17b'; /* '' */
+}
+
+.icon-file-code:before {
+  content: '\f1c9'; /* '' */
+}
+
+.icon-git:before {
+  content: '\f1d3'; /* '' */
+}
+
+.icon-copyright:before {
+  content: '\f1f9'; /* '' */
+}
+
+.icon-lg {
+  font-size: 1.33333333em;
+  line-height: .75em;
+  vertical-align: -15%;
+  margin-left: -.1em;
+}
+
+.icon-2x {
+  font-size: 1.8em;
+  margin-left: 0.2em;
+}

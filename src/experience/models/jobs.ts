@@ -21,7 +21,7 @@ export const JOBS: Array<Job> = [
     content: `<p>Worked as a <b>UI Developer</b> at Westpac NZ, where I was involved in a number of projects, including <b><i>Direct from Account&trade;</i></b>, <b><i>Westpac Exchange&trade;</i></b> and <b><i>Westpac One&reg;</i></b>.</p><p>The server-side development environment was <b>Java</b>, while the client-side was built using a variety of <b>JavaScript technologies</b> and <b>frameworks</b>, most notably <b>RequireJS</b>, <b>Backbone</b>, Marionette, <b>Underscore</b>, <b>AngularJS</b>, SCSS, and, during development, <b>Node.js</b>.</p><p>Build and Testing tools included <b>Grunt</b>, Maven, Jenkins, JUnit, Cucumber, <b>Jasmine</b> and <b>Karma</b>.</p>`,
     institution: {
       location: 'Wellington, New Zealand',
-      name: 'Westpac New Zealand Ltd',
+      name: 'Westpac NZ Ltd',
       url: 'https://www.westpac.co.nz',
     },
     title: 'Analyst Programmer (UI)',
@@ -81,7 +81,7 @@ export const JOBS: Array<Job> = [
       to: 'Oct 2008',
     },
   }, {
-    content: `<p><br><i class="fa fa-globe fa-2x"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-plane fa-2x"></i></p>`,
+    content: `<p><br><i class="icon-globe icon-2x"></i><i class="icon-plus"></i><i class="icon-flight icon-2x"></i></p>`,
     institution: {
       location: 'Cape Town & Johannesburg, South Africa',
       name: 'South African Airways',
