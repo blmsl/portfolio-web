@@ -29,6 +29,9 @@ app.use(require('helmet-csp')({
 app.use(require('hsts')({
   maxAge: 5184000 // sixty days in seconds
 }))
+app.use(require('referrer-policy')({
+  policy: 'no-referrer-when-downgrade'
+}))
 app.use(require('body-parser').json())
 app.use(require('prerender-node').set('prerenderToken', preRenderToken))
 app.use(middleware.heroku.exclude)
