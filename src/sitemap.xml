@@ -4,9 +4,9 @@
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 
   <url>
-    <loc>http://portfolio.ouq77.kiwi/</loc>
+    <loc>https://portfolio.ouq77.kiwi/</loc>
     <image:image>
-      <image:loc>http://portfolio.ouq77.kiwi/assets/images/icon.png</image:loc>
+      <image:loc>https://portfolio.ouq77.kiwi/assets/images/icon.png</image:loc>
     </image:image>
     <video:video>
       <video:content_loc>https://www.youtube.com/watch?v=34Tb79-2ekc</video:content_loc>
