@@ -19844,361 +19844,349 @@
 								}
 							],
 							"type": {
-								"type": "reference",
-								"name": "Array",
-								"typeArguments": [
-									{
-										"type": "union",
-										"types": [
-											{
-												"type": "reflection",
-												"declaration": {
-													"id": 164,
-													"name": "__type",
-													"kind": 65536,
-													"kindString": "Type literal",
-													"flags": {},
-													"children": [
-														{
-															"id": 165,
-															"name": "elementType",
-															"kind": 32,
-															"kindString": "Variable",
-															"flags": {},
-															"sources": [
-																{
-																	"fileName": "src/contact/models/map.config.ts",
-																	"line": 14,
-																	"character": 17
-																}
-															],
-															"type": {
-																"type": "intrinsic",
-																"name": "string"
-															},
-															"defaultValue": "\"geometry\""
+								"type": "array",
+								"elementType": {
+									"type": "union",
+									"types": [
+										{
+											"type": "reflection",
+											"declaration": {
+												"id": 164,
+												"name": "__type",
+												"kind": 65536,
+												"kindString": "Type literal",
+												"flags": {},
+												"children": [
+													{
+														"id": 165,
+														"name": "elementType",
+														"kind": 32,
+														"kindString": "Variable",
+														"flags": {},
+														"sources": [
+															{
+																"fileName": "src/contact/models/map.config.ts",
+																"line": 14,
+																"character": 17
+															}
+														],
+														"type": {
+															"type": "intrinsic",
+															"name": "string"
 														},
-														{
-															"id": 166,
-															"name": "featureType",
-															"kind": 32,
-															"kindString": "Variable",
-															"flags": {},
-															"sources": [
-																{
-																	"fileName": "src/contact/models/map.config.ts",
-																	"line": 15,
-																	"character": 17
-																}
-															],
-															"type": {
-																"type": "intrinsic",
-																"name": "string"
-															},
-															"defaultValue": "\"water\""
+														"defaultValue": "\"geometry\""
+													},
+													{
+														"id": 166,
+														"name": "featureType",
+														"kind": 32,
+														"kindString": "Variable",
+														"flags": {},
+														"sources": [
+															{
+																"fileName": "src/contact/models/map.config.ts",
+																"line": 15,
+																"character": 17
+															}
+														],
+														"type": {
+															"type": "intrinsic",
+															"name": "string"
 														},
-														{
-															"id": 167,
-															"name": "stylers",
-															"kind": 32,
-															"kindString": "Variable",
-															"flags": {},
-															"sources": [
-																{
-																	"fileName": "src/contact/models/map.config.ts",
-																	"line": 16,
-																	"character": 13
-																}
-															],
-															"type": {
-																"type": "reference",
-																"name": "Array",
-																"typeArguments": [
-																	{
-																		"type": "reflection",
-																		"declaration": {
-																			"id": 168,
-																			"name": "__type",
-																			"kind": 65536,
-																			"kindString": "Type literal",
+														"defaultValue": "\"water\""
+													},
+													{
+														"id": 167,
+														"name": "stylers",
+														"kind": 32,
+														"kindString": "Variable",
+														"flags": {},
+														"sources": [
+															{
+																"fileName": "src/contact/models/map.config.ts",
+																"line": 16,
+																"character": 13
+															}
+														],
+														"type": {
+															"type": "array",
+															"elementType": {
+																"type": "reflection",
+																"declaration": {
+																	"id": 168,
+																	"name": "__type",
+																	"kind": 65536,
+																	"kindString": "Type literal",
+																	"flags": {},
+																	"children": [
+																		{
+																			"id": 169,
+																			"name": "color",
+																			"kind": 32,
+																			"kindString": "Variable",
 																			"flags": {},
-																			"children": [
+																			"sources": [
 																				{
-																					"id": 169,
-																					"name": "color",
-																					"kind": 32,
-																					"kindString": "Variable",
-																					"flags": {},
-																					"sources": [
-																						{
-																							"fileName": "src/contact/models/map.config.ts",
-																							"line": 18,
-																							"character": 15
-																						}
-																					],
-																					"type": {
-																						"type": "intrinsic",
-																						"name": "string"
-																					},
-																					"defaultValue": "\"#00bdbd\""
+																					"fileName": "src/contact/models/map.config.ts",
+																					"line": 18,
+																					"character": 15
 																				}
 																			],
-																			"groups": [
-																				{
-																					"title": "Variables",
-																					"kind": 32,
-																					"children": [
-																						169
-																					]
-																				}
-																			]
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "string"
+																			},
+																			"defaultValue": "\"#00bdbd\""
 																		}
-																	}
-																]
-															},
-															"defaultValue": " [\n        {\n          color: '#00bdbd',\n        },\n      ]"
-														}
-													],
-													"groups": [
-														{
-															"title": "Variables",
-															"kind": 32,
-															"children": [
-																165,
-																166,
-																167
-															]
-														}
-													]
-												}
-											},
-											{
-												"type": "reflection",
-												"declaration": {
-													"id": 170,
-													"name": "__type",
-													"kind": 65536,
-													"kindString": "Type literal",
-													"flags": {},
-													"children": [
-														{
-															"id": 171,
-															"name": "elementType",
-															"kind": 32,
-															"kindString": "Variable",
-															"flags": {},
-															"sources": [
-																{
-																	"fileName": "src/contact/models/map.config.ts",
-																	"line": 38,
-																	"character": 17
-																}
-															],
-															"type": {
-																"type": "intrinsic",
-																"name": "string"
-															},
-															"defaultValue": "\"geometry\""
-														},
-														{
-															"id": 172,
-															"name": "featureType",
-															"kind": 32,
-															"kindString": "Variable",
-															"flags": {},
-															"sources": [
-																{
-																	"fileName": "src/contact/models/map.config.ts",
-																	"line": 39,
-																	"character": 17
-																}
-															],
-															"type": {
-																"type": "intrinsic",
-																"name": "string"
-															},
-															"defaultValue": "\"landscape.natural.terrain\""
-														},
-														{
-															"id": 173,
-															"name": "stylers",
-															"kind": 32,
-															"kindString": "Variable",
-															"flags": {},
-															"sources": [
-																{
-																	"fileName": "src/contact/models/map.config.ts",
-																	"line": 40,
-																	"character": 13
-																}
-															],
-															"type": {
-																"type": "reference",
-																"name": "Array",
-																"typeArguments": [
-																	{
-																		"type": "reflection",
-																		"declaration": {
-																			"id": 174,
-																			"name": "__type",
-																			"kind": 65536,
-																			"kindString": "Type literal",
-																			"flags": {},
+																	],
+																	"groups": [
+																		{
+																			"title": "Variables",
+																			"kind": 32,
 																			"children": [
-																				{
-																					"id": 175,
-																					"name": "visibility",
-																					"kind": 32,
-																					"kindString": "Variable",
-																					"flags": {},
-																					"sources": [
-																						{
-																							"fileName": "src/contact/models/map.config.ts",
-																							"line": 42,
-																							"character": 20
-																						}
-																					],
-																					"type": {
-																						"type": "intrinsic",
-																						"name": "string"
-																					},
-																					"defaultValue": "\"off\""
-																				}
-																			],
-																			"groups": [
-																				{
-																					"title": "Variables",
-																					"kind": 32,
-																					"children": [
-																						175
-																					]
-																				}
+																				169
 																			]
 																		}
-																	}
-																]
-															},
-															"defaultValue": " [\n        {\n          visibility: 'off',\n        },\n      ]"
-														}
-													],
-													"groups": [
-														{
-															"title": "Variables",
-															"kind": 32,
-															"children": [
-																171,
-																172,
-																173
-															]
-														}
-													]
-												}
-											},
-											{
-												"type": "reflection",
-												"declaration": {
-													"id": 176,
-													"name": "__type",
-													"kind": 65536,
-													"kindString": "Type literal",
-													"flags": {},
-													"children": [
-														{
-															"id": 177,
-															"name": "featureType",
-															"kind": 32,
-															"kindString": "Variable",
-															"flags": {},
-															"sources": [
-																{
-																	"fileName": "src/contact/models/map.config.ts",
-																	"line": 70,
-																	"character": 17
+																	]
 																}
-															],
-															"type": {
-																"type": "intrinsic",
-																"name": "string"
-															},
-															"defaultValue": "\"poi.business\""
+															}
 														},
-														{
-															"id": 178,
-															"name": "stylers",
-															"kind": 32,
-															"kindString": "Variable",
-															"flags": {},
-															"sources": [
-																{
-																	"fileName": "src/contact/models/map.config.ts",
-																	"line": 71,
-																	"character": 13
-																}
-															],
-															"type": {
-																"type": "reference",
-																"name": "Array",
-																"typeArguments": [
-																	{
-																		"type": "reflection",
-																		"declaration": {
-																			"id": 179,
-																			"name": "__type",
-																			"kind": 65536,
-																			"kindString": "Type literal",
-																			"flags": {},
-																			"children": [
-																				{
-																					"id": 180,
-																					"name": "visibility",
-																					"kind": 32,
-																					"kindString": "Variable",
-																					"flags": {},
-																					"sources": [
-																						{
-																							"fileName": "src/contact/models/map.config.ts",
-																							"line": 73,
-																							"character": 20
-																						}
-																					],
-																					"type": {
-																						"type": "intrinsic",
-																						"name": "string"
-																					},
-																					"defaultValue": "\"off\""
-																				}
-																			],
-																			"groups": [
-																				{
-																					"title": "Variables",
-																					"kind": 32,
-																					"children": [
-																						180
-																					]
-																				}
-																			]
-																		}
-																	}
-																]
-															},
-															"defaultValue": " [\n        {\n          visibility: 'off',\n        },\n      ]"
-														}
-													],
-													"groups": [
-														{
-															"title": "Variables",
-															"kind": 32,
-															"children": [
-																177,
-																178
-															]
-														}
-													]
-												}
+														"defaultValue": " [\n        {\n          color: '#00bdbd',\n        },\n      ]"
+													}
+												],
+												"groups": [
+													{
+														"title": "Variables",
+														"kind": 32,
+														"children": [
+															165,
+															166,
+															167
+														]
+													}
+												]
 											}
-										]
-									}
-								]
+										},
+										{
+											"type": "reflection",
+											"declaration": {
+												"id": 170,
+												"name": "__type",
+												"kind": 65536,
+												"kindString": "Type literal",
+												"flags": {},
+												"children": [
+													{
+														"id": 171,
+														"name": "elementType",
+														"kind": 32,
+														"kindString": "Variable",
+														"flags": {},
+														"sources": [
+															{
+																"fileName": "src/contact/models/map.config.ts",
+																"line": 38,
+																"character": 17
+															}
+														],
+														"type": {
+															"type": "intrinsic",
+															"name": "string"
+														},
+														"defaultValue": "\"geometry\""
+													},
+													{
+														"id": 172,
+														"name": "featureType",
+														"kind": 32,
+														"kindString": "Variable",
+														"flags": {},
+														"sources": [
+															{
+																"fileName": "src/contact/models/map.config.ts",
+																"line": 39,
+																"character": 17
+															}
+														],
+														"type": {
+															"type": "intrinsic",
+															"name": "string"
+														},
+														"defaultValue": "\"landscape.natural.terrain\""
+													},
+													{
+														"id": 173,
+														"name": "stylers",
+														"kind": 32,
+														"kindString": "Variable",
+														"flags": {},
+														"sources": [
+															{
+																"fileName": "src/contact/models/map.config.ts",
+																"line": 40,
+																"character": 13
+															}
+														],
+														"type": {
+															"type": "array",
+															"elementType": {
+																"type": "reflection",
+																"declaration": {
+																	"id": 174,
+																	"name": "__type",
+																	"kind": 65536,
+																	"kindString": "Type literal",
+																	"flags": {},
+																	"children": [
+																		{
+																			"id": 175,
+																			"name": "visibility",
+																			"kind": 32,
+																			"kindString": "Variable",
+																			"flags": {},
+																			"sources": [
+																				{
+																					"fileName": "src/contact/models/map.config.ts",
+																					"line": 42,
+																					"character": 20
+																				}
+																			],
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "string"
+																			},
+																			"defaultValue": "\"off\""
+																		}
+																	],
+																	"groups": [
+																		{
+																			"title": "Variables",
+																			"kind": 32,
+																			"children": [
+																				175
+																			]
+																		}
+																	]
+																}
+															}
+														},
+														"defaultValue": " [\n        {\n          visibility: 'off',\n        },\n      ]"
+													}
+												],
+												"groups": [
+													{
+														"title": "Variables",
+														"kind": 32,
+														"children": [
+															171,
+															172,
+															173
+														]
+													}
+												]
+											}
+										},
+										{
+											"type": "reflection",
+											"declaration": {
+												"id": 176,
+												"name": "__type",
+												"kind": 65536,
+												"kindString": "Type literal",
+												"flags": {},
+												"children": [
+													{
+														"id": 177,
+														"name": "featureType",
+														"kind": 32,
+														"kindString": "Variable",
+														"flags": {},
+														"sources": [
+															{
+																"fileName": "src/contact/models/map.config.ts",
+																"line": 70,
+																"character": 17
+															}
+														],
+														"type": {
+															"type": "intrinsic",
+															"name": "string"
+														},
+														"defaultValue": "\"poi.business\""
+													},
+													{
+														"id": 178,
+														"name": "stylers",
+														"kind": 32,
+														"kindString": "Variable",
+														"flags": {},
+														"sources": [
+															{
+																"fileName": "src/contact/models/map.config.ts",
+																"line": 71,
+																"character": 13
+															}
+														],
+														"type": {
+															"type": "array",
+															"elementType": {
+																"type": "reflection",
+																"declaration": {
+																	"id": 179,
+																	"name": "__type",
+																	"kind": 65536,
+																	"kindString": "Type literal",
+																	"flags": {},
+																	"children": [
+																		{
+																			"id": 180,
+																			"name": "visibility",
+																			"kind": 32,
+																			"kindString": "Variable",
+																			"flags": {},
+																			"sources": [
+																				{
+																					"fileName": "src/contact/models/map.config.ts",
+																					"line": 73,
+																					"character": 20
+																				}
+																			],
+																			"type": {
+																				"type": "intrinsic",
+																				"name": "string"
+																			},
+																			"defaultValue": "\"off\""
+																		}
+																	],
+																	"groups": [
+																		{
+																			"title": "Variables",
+																			"kind": 32,
+																			"children": [
+																				180
+																			]
+																		}
+																	]
+																}
+															}
+														},
+														"defaultValue": " [\n        {\n          visibility: 'off',\n        },\n      ]"
+													}
+												],
+												"groups": [
+													{
+														"title": "Variables",
+														"kind": 32,
+														"children": [
+															177,
+															178
+														]
+													}
+												]
+											}
+										}
+									]
+								}
 							},
 							"defaultValue": " [\n    {\n      elementType: 'geometry',\n      featureType: 'water',\n      stylers: [\n        {\n          color: '#00bdbd',\n        },\n      ],\n    }, {\n      elementType: 'geometry',\n      featureType: 'landscape.man_made',\n      stylers: [\n        {\n          color: '#f7f1df',\n        },\n      ],\n    }, {\n      elementType: 'geometry',\n      featureType: 'landscape.natural',\n      stylers: [\n        {\n          color: '#bde6ab',\n        },\n      ],\n    }, {\n      elementType: 'geometry',\n      featureType: 'landscape.natural.terrain',\n      stylers: [\n        {\n          visibility: 'off',\n        },\n      ],\n    }, {\n      elementType: 'geometry',\n      featureType: 'poi.park',\n      stylers: [\n        {\n          color: '#abce83',\n        },\n      ],\n    }, {\n      elementType: 'labels',\n      featureType: 'poi',\n      stylers: [\n        {\n          visibility: 'off',\n        },\n      ],\n    }, {\n      elementType: 'geometry',\n      featureType: 'poi.medical',\n      stylers: [\n        {\n          color: '#fbd3da',\n        },\n      ],\n    }, {\n      featureType: 'poi.business',\n      stylers: [\n        {\n          visibility: 'off',\n        },\n      ],\n    }, {\n      elementType: 'geometry.stroke',\n      featureType: 'road',\n      stylers: [\n        {\n          visibility: 'off',\n        },\n      ],\n    }, {\n      elementType: 'labels',\n      featureType: 'road',\n      stylers: [\n        {\n          visibility: 'off',\n        },\n      ],\n    }, {\n      elementType: 'geometry.fill',\n      featureType: 'road.highway',\n      stylers: [\n        {\n          color: '#f5534b',\n        },\n      ],\n    }, {\n      elementType: 'geometry.stroke',\n      featureType: 'road.highway',\n      stylers: [\n        {\n          color: '#f5534b',\n        },\n      ],\n    }, {\n      elementType: 'geometry.fill',\n      featureType: 'road.arterial',\n      stylers: [\n        {\n          color: '#ff675f',\n        },\n      ],\n    }, {\n      elementType: 'geometry.fill',\n      featureType: 'road.local',\n      stylers: [\n        {\n          color: 'black',\n        },\n      ],\n    }, {\n      elementType: 'geometry.fill',\n      featureType: 'transit.station.airport',\n      stylers: [\n        {\n          color: '#cfb2db',\n        },\n      ],\n    }, {\n      elementType: 'geometry.fill',\n      featureType: 'transit.line',\n      stylers: [\n        {\n          color: '#474d5d',\n        },\n      ],\n    }, {\n      elementType: 'geometry.stroke',\n      featureType: 'transit.line',\n      stylers: [\n        {\n          color: '#474d5d',\n        },\n      ],\n    },\n  ]"
 						},

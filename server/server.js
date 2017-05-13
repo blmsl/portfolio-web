@@ -14,6 +14,20 @@ const app = express()
 app.use(require('compression')())
 app.use(require('netjet')({cache: {max: 100}}))
 app.use(require('helmet')())
+app.use(require('helmet-csp')({
+  directives: {
+    defaultSrc: ['\'self\''],
+    frameSrc: ['\'self\'', '*.youtube.com'],
+    fontSrc: ['\'self\'', '*.googleapis.com', '*.gstatic.com', 'data:'],
+    imgSrc: ['\'self\'', '*.googleapis.com', '*.gstatic.com', '*.google-analytics.com', 'david-dm.org', 'cdn.rawgit.com', 'data:'],
+    scriptSrc: ['\'self\'', '\'unsafe-inline\'', '*.googleapis.com', '*.google-analytics.com'],
+    styleSrc: ['\'self\'', '\'unsafe-inline\'', '*.googleapis.com']
+  },
+  browserSniff: false
+}))
+app.use(require('hsts')({
+  maxAge: 5184000 // sixty days in seconds
+}))
 app.use(require('body-parser').json())
 app.use(require('prerender-node').set('prerenderToken', preRenderToken))
 app.use(middleware.heroku.exclude)
