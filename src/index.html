@@ -22,14 +22,6 @@
     <meta name="<%- key %>" content="<%- META_TAGS.twitter[key] %>"><% } %>
     <!-- Open Graph data --><% for(key in META_TAGS.facebook) { %>
     <meta property="<%- key %>" content="<%- META_TAGS.facebook[key] %>"><% } %>
-    <!-- Google Analytics -->
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', '<%= GOOGLE_ACCOUNT.analytics %>', 'auto');
-      ga('send', 'pageview');
-    </script>
-    <script>window.prerenderReady = false;</script>
     <!-- inject:css -->
     <!-- endinject -->
   </head>
@@ -44,18 +36,6 @@
     </container>
     <!-- inject:js -->
     <!-- endinject -->
-    <script>
-      function trackEvent(eventCategory, eventAction) {
-        ga('send', 'event', eventCategory, eventAction);
-      }
-      $(document).ready(function(){
-        $('.js_track_link_click').click(function() {
-          trackEvent('link_click', $(this).attr('href'));
-        });
-        $('.btn-submit').click(function(){
-          trackEvent('button_click', $(this).attr('value'));
-        });
-      });
-    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
   </body>
 </html>
