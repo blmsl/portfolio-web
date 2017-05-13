@@ -17,11 +17,12 @@ app.use(require('helmet')())
 app.use(require('helmet-csp')({
   directives: {
     defaultSrc: ['\'self\''],
-    frameSrc: ['\'self\'', '*.youtube.com'],
-    fontSrc: ['\'self\'', '*.googleapis.com', '*.gstatic.com', 'data:'],
-    imgSrc: ['\'self\'', '*.googleapis.com', '*.gstatic.com', '*.google-analytics.com', 'david-dm.org', 'cdn.rawgit.com', 'data:'],
-    scriptSrc: ['\'self\'', '\'unsafe-inline\'', '*.googleapis.com', '*.google-analytics.com'],
-    styleSrc: ['\'self\'', '\'unsafe-inline\'', '*.googleapis.com']
+    frameSrc: ['\'self\'', 'https://www.youtube.com'],
+    fontSrc: ['\'self\'', 'data:', 'https://fonts.gstatic.com', 'https://maxcdn.bootstrapcdn.com'],
+    imgSrc: ['\'self\'', 'data:', 'https://maps.googleapis.com', 'https://csi.gstatic.com', 'https://maps.gstatic.com', 'https://www.google-analytics.com', 'https://david-dm.org', 'https://cdn.rawgit.com'],
+    objectSrc: ['\'none\''],
+    scriptSrc: ['\'self\'', '\'unsafe-inline\'', 'https://maps.googleapis.com', 'https://www.google-analytics.com'],
+    styleSrc: ['\'self\'', '\'unsafe-inline\'', 'https://fonts.googleapis.com', 'https://maxcdn.bootstrapcdn.com']
   },
   browserSniff: false
 }))
