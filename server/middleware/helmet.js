@@ -33,7 +33,6 @@ module.exports = () => {
       includeSubdomains: true,
       maxAge: 5184000, // sixty days in seconds
       reportUri: '/report-violation',
-      setIf: (req) => req.secure,
       sha256s: ['53qvf5kek7sy/znpspnwh9xlfnvfmfucgiqwkvhj6dy=', '53qvf5kek7sy/znpspnwh9xlfnvfmfucgiqwkvhj6dy=']
     }))
   } else {
