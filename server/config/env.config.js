@@ -43,6 +43,12 @@ const envConfig = convict({
     doc: 'The application\'s Instagram Image Ids',
     env: 'INSTAGRAM_IMAGE_IDS',
     format: String
+  },
+  USE_HPKP: {
+    default: false,
+    doc: 'Whether to use HTTP Public Key Pinning or not',
+    env: 'USE_HPKP',
+    format: Boolean
   }
 })
 

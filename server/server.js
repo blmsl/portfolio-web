@@ -13,48 +13,10 @@ const app = express()
 
 app.use(require('compression')())
 app.use(require('netjet')({cache: {max: 100}}))
-app.use(require('helmet')())
-app.use(require('helmet-csp')({
-  directives: {
-    defaultSrc: ['\'self\''],
-    frameSrc: ['\'self\'', 'https://www.youtube.com'],
-    fontSrc: ['\'self\'', 'data:', 'https://fonts.gstatic.com', 'https://maxcdn.bootstrapcdn.com'],
-    imgSrc: ['\'self\'', 'data:', 'https://maps.googleapis.com', 'https://csi.gstatic.com', 'https://maps.gstatic.com', 'https://www.google-analytics.com', 'https://david-dm.org', 'https://cdn.rawgit.com'],
-    objectSrc: ['\'none\''],
-    scriptSrc: ['\'self\'', 'https://maps.googleapis.com', 'https://www.google-analytics.com'],
-    styleSrc: ['\'self\'', '\'unsafe-inline\'', 'https://fonts.googleapis.com', 'https://maxcdn.bootstrapcdn.com']
-  },
-  browserSniff: false
-}))
-app.use(require('hsts')({
-  maxAge: 5184000 // sixty days in seconds
-}))
-app.use(require('referrer-policy')({
-  policy: 'no-referrer-when-downgrade'
-}))
-app.use(require('hpkp')({
-  maxAge: 5184000, // sixty days in seconds
-  sha256s: ['53qvf5kek7sy/znpspnwh9xlfnvfmfucgiqwkvhj6dy=', '53qvf5kek7sy/znpspnwh9xlfnvfmfucgiqwkvhj6dy='],
-  includeSubdomains: true,
-  reportUri: '/report-violation',
-  reportOnly: true,
-  setIf: (req) => req.secure
-}))
-app.use(require('body-parser').json({
-  type: ['json', 'application/csp-report']
-}))
+app.use(middleware.helmet())
 app.use(require('prerender-node').set('prerenderToken', preRenderToken))
-app.use(middleware.heroku.exclude)
-
-app.post('/report-violation', (req, res) => {
-  if (req.body) {
-    console.log('CSP Violation: ', req.body)
-  } else {
-    console.log('CSP Violation: No data received!')
-  }
-
-  res.status(204).end()
-})
+app.use(require('body-parser').json({type: ['json', 'application/csp-report']}))
+app.use(middleware.heroku)
 
 expressStaticMappings.forEach((mapping) => {
   console.info(`mapping resource "${mapping.uri}" to static location "${mapping.location}" with cache "${mapping.cache}"`)
@@ -68,6 +30,7 @@ expressRedirectMappings.forEach((mapping) => {
   })
 })
 
+app.post('/report-violation', cache({nocache: true}), routes.reportviolation)
 app.get('/imageids', cache({nocache: true}), routes.imageids)
 app.post('/send', cache({nocache: true}), routes.send)
 app.get('/exclude', cache({ttl: 5184000}), routes.exclude)
