@@ -13,7 +13,7 @@ module.exports = () => {
         defaultSrc: ['\'self\''],
         frameSrc: ['\'self\'', 'https://www.youtube.com'],
         fontSrc: ['\'self\'', 'data:', 'https://fonts.gstatic.com', 'https://maxcdn.bootstrapcdn.com'],
-        imgSrc: ['\'self\'', 'data:', 'https://maps.googleapis.com', 'https://csi.gstatic.com', 'https://maps.gstatic.com', 'https://www.google-analytics.com', 'https://david-dm.org', 'https://cdn.rawgit.com'],
+        imgSrc: ['\'self\'', 'data:', 'https://maps.googleapis.com', 'https://khms1.googleapis.com', 'https://csi.gstatic.com', 'https://maps.gstatic.com', 'https://www.google-analytics.com', 'https://david-dm.org', 'https://cdn.rawgit.com'],
         objectSrc: ['\'none\''],
         scriptSrc: ['\'self\'', 'https://maps.googleapis.com', 'https://www.google-analytics.com'],
         styleSrc: ['\'self\'', '\'unsafe-inline\'', 'https://fonts.googleapis.com', 'https://maxcdn.bootstrapcdn.com']
