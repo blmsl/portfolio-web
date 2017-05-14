@@ -41,7 +41,7 @@ export class SkillsComponent implements OnInit {
         if (this._timeoutScroll) {
           clearTimeout(this._timeoutScroll);
         }
-        this._timeoutScroll = cancelableDelay(500, () => {
+        this._timeoutScroll = cancelableDelay(250, () => {
           if (!this._skillChartDrawn) {
             this.drawChart();
           }

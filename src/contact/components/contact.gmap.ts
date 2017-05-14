@@ -115,9 +115,9 @@ export class ContactMapComponent implements OnInit {
         if (this._timeoutScroll) {
           clearTimeout(this._timeoutScroll);
         }
-        this._timeoutScroll = cancelableDelay(500, () => {
+        this._timeoutScroll = cancelableDelay(250, () => {
           if (!this._mapMarkersDrawn) {
-            this.dropMarkers(750);
+            this.dropMarkers(500);
           }
         });
       });
@@ -138,7 +138,7 @@ export class ContactMapComponent implements OnInit {
     })(jQuery);
   }
 
-  dropMarkers(wait: number = 1500) {
+  dropMarkers(wait: number = 750) {
     this._markerWait = wait;
     (($: JQueryStatic) => {
       $('.js_trigger_map_marker').each((index: number, triggerEl: Element) => {
