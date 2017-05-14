@@ -32,9 +32,29 @@ app.use(require('hsts')({
 app.use(require('referrer-policy')({
   policy: 'no-referrer-when-downgrade'
 }))
-app.use(require('body-parser').json())
+app.use(require('hpkp')({
+  maxAge: 5184000, // sixty days in seconds
+  sha256s: ['53qvf5kek7sy/znpspnwh9xlfnvfmfucgiqwkvhj6dy=', '53qvf5kek7sy/znpspnwh9xlfnvfmfucgiqwkvhj6dy='],
+  includeSubdomains: true,
+  reportUri: '/report-violation',
+  reportOnly: true,
+  setIf: (req) => req.secure
+}))
+app.use(require('body-parser').json({
+  type: ['json', 'application/csp-report']
+}))
 app.use(require('prerender-node').set('prerenderToken', preRenderToken))
 app.use(middleware.heroku.exclude)
+
+app.post('/report-violation', (req, res) => {
+  if (req.body) {
+    console.log('CSP Violation: ', req.body)
+  } else {
+    console.log('CSP Violation: No data received!')
+  }
+
+  res.status(204).end()
+})
 
 expressStaticMappings.forEach((mapping) => {
   console.info(`mapping resource "${mapping.uri}" to static location "${mapping.location}" with cache "${mapping.cache}"`)
