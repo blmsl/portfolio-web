@@ -11,12 +11,12 @@ module.exports = () => {
     csp({
       directives: {
         defaultSrc: ['\'self\''],
-        frameSrc: ['\'self\'', 'https://www.youtube.com'],
-        fontSrc: ['\'self\'', 'data:', 'https://fonts.gstatic.com', 'https://maxcdn.bootstrapcdn.com'],
+        frameSrc: ['\'self\'', 'https://*.youtube.com'],
+        fontSrc: ['\'self\'', 'data:', 'https://*.gstatic.com', 'https://maxcdn.bootstrapcdn.com'],
         imgSrc: ['\'self\'', 'data:', 'https://*.googleapis.com', 'https://*.gstatic.com', 'https://*.google-analytics.com', 'https://david-dm.org', 'https://cdn.rawgit.com'],
         objectSrc: ['\'none\''],
         scriptSrc: ['\'self\'', 'https://*.googleapis.com', 'https://*.google-analytics.com'],
-        styleSrc: ['\'self\'', '\'unsafe-inline\'', 'https://*.googleapis.com', 'https://maxcdn.bootstrapcdn.com']
+        styleSrc: ['\'self\'', '\'unsafe-inline\'', 'https://*.googleapis.com', 'https://*.bootstrapcdn.com']
       },
       browserSniff: false
     }),
@@ -33,7 +33,7 @@ module.exports = () => {
       includeSubdomains: true,
       maxAge: 5184000, // sixty days in seconds
       reportUri: '/report-violation',
-      sha256s: ['53qvf5kek7sy/znpspnwh9xlfnvfmfucgiqwkvhj6dy=', '53qvf5kek7sy/znpspnwh9xlfnvfmfucgiqwkvhj6dy=']
+      sha256s: ['53qvf5kek7sy/znpspnwh9xlfnvfmfucgiqwkvhj6dy=', 'Y9mvm0exBk1JoQ57f9Vm28jKo5lFm/woKcVxrYxu80o=']
     }))
   } else {
     console.log('HPKP disabled')
