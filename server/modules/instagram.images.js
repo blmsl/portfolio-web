@@ -7,7 +7,7 @@ const imageBasePath = path.resolve(__dirname, `../../app/${relativeImagePath}`)
 const fetchInstaImages = (imageIds) => {
   const instagramPromises = []
 
-  console.log(`potentially fetching ${imageIds.length} instagram images`)
+  console.log(`ensuring ${imageIds.length} instagram images are cached`)
 
   imageIds.forEach((imageId, index) => {
     const imageName = `${imageId}.jpg`
@@ -19,7 +19,9 @@ const fetchInstaImages = (imageIds) => {
     }
   })
 
-  console.log('waiting for fetches to complete')
+  if (instagramPromises.length > 0) {
+    console.log('waiting for fetches to complete')
+  }
 
   return Promise.all(instagramPromises)
     .then(() => {
