@@ -10,9 +10,9 @@ export const JOBS: Array<Job> = [
     institution: {
       location: 'Wellington, New Zealand',
       name: 'Fairfax Media',
-      url: 'http://www.fairfaxmedia.co.nz/',
+      url: 'https://www.fairfaxmedia.co.nz/',
     },
-    title: 'Front-end Developer (Contract)',
+    title: 'JavaScript Developer (Contract)',
     year: {
       from: 'Apr 2016',
       to: 'Present',
