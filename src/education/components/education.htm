@@ -29,7 +29,7 @@
           <h6>Courses completed</h6>
           <section class="content">
             <div class="row">
-              <div class="cs-badge col-md-2" *ngFor="let course of codeSchool.courses.completed">
+              <div class="cs-badge col-xs-6 col-sm-4 col-md-2" *ngFor="let course of codeSchool.courses.completed">
                 <p>
                   <a href="{{course.badge | badgeUrl}}"
                      title="{{course.title}}"
@@ -49,8 +49,16 @@
           <section *ngIf="codeSchool.courses.in_progress"
                    class="content">
             <div class="row">
-              <div class="cs-badge col-md-2" *ngFor="let course of codeSchool.courses.in_progress">
-                <p><a href="{{course.url}}" title="{{course.title}}" target="_blank" rel="noopener noreferrer" class="js_track_link_click"><img src="{{course.badge}}" alt="{{course.title}}" width="95px"></a></p>
+              <div class="cs-badge col-xs-6 col-sm-4 col-md-2" *ngFor="let course of codeSchool.courses.in_progress">
+                <p>
+                  <a href="{{course.url}}"
+                     title="{{course.title}}"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     class="js_track_link_click">
+                    <img src="{{course.badge}}" alt="{{course.title}}" width="95px">
+                  </a>
+                </p>
               </div>
             </div>
           </section>

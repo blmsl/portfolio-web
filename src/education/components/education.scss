@@ -44,6 +44,21 @@
         padding-top: 20px;
         .cs-badge {
           min-height: 117px;
+
+          @include respond-to($val: max-width, $query: $screen-x2-min) {
+            img {
+              width: 85px;
+              height: 85px;
+            }
+          }
+
+          @include respond-to($val: max-width, $query: $screen-x3-min) {
+            img {
+              width: 75px;
+              height: 75px;
+            }
+          }
+
           p {
             text-align: center;
           }

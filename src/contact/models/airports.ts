@@ -771,6 +771,16 @@ export const MEL: Airport = {
   },
   name: 'Melbourne Airport (Tullamarine)',
 };
+export const GIS: Airport = {
+  city: 'Gisborne',
+  country: NEW_ZEALAND,
+  iataCode: 'GIS',
+  loc: {
+    lat: -38.6628665,
+    lng: 177.9806031,
+  },
+  name: 'Gisborne Airport',
+};
 
 /**
  * Array of all airports for the Contact section
@@ -783,5 +793,5 @@ export const AIRPORTS: Array<Airport> = [
   MRU, HKG, PER, SYD, EZE, GRU, YVR, FRA, ZRH, CDG, CPH,
   BOM, BKK, KIX, BKKN, USM, HKGN, DPS, DRW, ADL, HLZ, CHC,
   ZQN, AKL, WLG, NSN, TRG, ROT, RAR, NRT, SIN, ARN, BGO,
-  TRD, BOO, SJV, TOS, TIU, CBR, NPL, KBV, HKT, MEL,
+  TRD, BOO, SJV, TOS, TIU, CBR, NPL, KBV, HKT, MEL, GIS,
 ];
