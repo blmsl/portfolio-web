@@ -61,7 +61,7 @@
 			]
 		},
 		{
-			"id": 1123,
+			"id": 1131,
 			"name": "\"src/app.module\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -71,7 +71,7 @@
 			"originalName": "/home/louw/workspace/heroku/portfolio-web/src/app.module.ts",
 			"children": [
 				{
-					"id": 1124,
+					"id": 1132,
 					"name": "AppModule",
 					"kind": 128,
 					"kindString": "Class",
@@ -104,7 +104,7 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						1124
+						1132
 					]
 				}
 			],
@@ -1089,7 +1089,7 @@
 			]
 		},
 		{
-			"id": 877,
+			"id": 885,
 			"name": "\"src/contact/components/contact.gmap\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -1099,7 +1099,7 @@
 			"originalName": "/home/louw/workspace/heroku/portfolio-web/src/contact/components/contact.gmap.ts",
 			"children": [
 				{
-					"id": 878,
+					"id": 886,
 					"name": "ContactMapComponent",
 					"kind": 128,
 					"kindString": "Class",
@@ -1120,7 +1120,7 @@
 					],
 					"children": [
 						{
-							"id": 880,
+							"id": 888,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -1129,7 +1129,7 @@
 							},
 							"signatures": [
 								{
-									"id": 881,
+									"id": 889,
 									"name": "new ContactMapComponent",
 									"kind": 16384,
 									"kindString": "Constructor signature",
@@ -1137,7 +1137,7 @@
 									"type": {
 										"type": "reference",
 										"name": "ContactMapComponent",
-										"id": 878
+										"id": 886
 									}
 								}
 							],
@@ -1150,7 +1150,7 @@
 							]
 						},
 						{
-							"id": 879,
+							"id": 887,
 							"name": "map",
 							"kind": 1024,
 							"kindString": "Property",
@@ -1171,7 +1171,7 @@
 							}
 						},
 						{
-							"id": 893,
+							"id": 901,
 							"name": "addMarker",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1180,14 +1180,14 @@
 							},
 							"signatures": [
 								{
-									"id": 894,
+									"id": 902,
 									"name": "addMarker",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 895,
+											"id": 903,
 											"name": "city",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1214,7 +1214,7 @@
 							]
 						},
 						{
-							"id": 890,
+							"id": 898,
 							"name": "dropMarkers",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1223,14 +1223,14 @@
 							},
 							"signatures": [
 								{
-									"id": 891,
+									"id": 899,
 									"name": "dropMarkers",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 892,
+											"id": 900,
 											"name": "wait",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1257,7 +1257,7 @@
 							]
 						},
 						{
-							"id": 888,
+							"id": 896,
 							"name": "initClickListener",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1266,7 +1266,7 @@
 							},
 							"signatures": [
 								{
-									"id": 889,
+									"id": 897,
 									"name": "initClickListener",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1286,7 +1286,7 @@
 							]
 						},
 						{
-							"id": 886,
+							"id": 894,
 							"name": "initScrollListener",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1295,7 +1295,7 @@
 							},
 							"signatures": [
 								{
-									"id": 887,
+									"id": 895,
 									"name": "initScrollListener",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1315,7 +1315,7 @@
 							]
 						},
 						{
-							"id": 884,
+							"id": 892,
 							"name": "initializeMap",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1324,7 +1324,7 @@
 							},
 							"signatures": [
 								{
-									"id": 885,
+									"id": 893,
 									"name": "initializeMap",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1344,7 +1344,7 @@
 							]
 						},
 						{
-							"id": 882,
+							"id": 890,
 							"name": "ngOnInit",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1353,7 +1353,7 @@
 							},
 							"signatures": [
 								{
-									"id": 883,
+									"id": 891,
 									"name": "ngOnInit",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1373,7 +1373,7 @@
 							]
 						},
 						{
-							"id": 900,
+							"id": 908,
 							"name": "toggleBounce",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1382,14 +1382,14 @@
 							},
 							"signatures": [
 								{
-									"id": 901,
+									"id": 909,
 									"name": "toggleBounce",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 902,
+											"id": 910,
 											"name": "marker",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1400,7 +1400,7 @@
 											}
 										},
 										{
-											"id": 903,
+											"id": 911,
 											"name": "infoTitle",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1411,7 +1411,7 @@
 											}
 										},
 										{
-											"id": 904,
+											"id": 912,
 											"name": "infoContent",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1437,7 +1437,7 @@
 							]
 						},
 						{
-							"id": 896,
+							"id": 904,
 							"name": "zoomMap",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1446,14 +1446,14 @@
 							},
 							"signatures": [
 								{
-									"id": 897,
+									"id": 905,
 									"name": "zoomMap",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 898,
+											"id": 906,
 											"name": "nextZoomLevel",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1465,7 +1465,7 @@
 											"defaultValue": "0"
 										},
 										{
-											"id": 899,
+											"id": 907,
 											"name": "maxZoom",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1497,28 +1497,28 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								880
+								888
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								879
+								887
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								893,
+								901,
+								898,
+								896,
+								894,
+								892,
 								890,
-								888,
-								886,
-								884,
-								882,
-								900,
-								896
+								908,
+								904
 							]
 						}
 					],
@@ -1542,7 +1542,7 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						878
+						886
 					]
 				}
 			],
@@ -2845,7 +2845,7 @@
 			"originalName": "/home/louw/workspace/heroku/portfolio-web/src/contact/models/airports.ts",
 			"children": [
 				{
-					"id": 873,
+					"id": 881,
 					"name": "AIRPORTS",
 					"kind": 32,
 					"kindString": "Variable",
@@ -2864,7 +2864,7 @@
 					"sources": [
 						{
 							"fileName": "src/contact/models/airports.ts",
-							"line": 779,
+							"line": 789,
 							"character": 21
 						}
 					],
@@ -2879,7 +2879,7 @@
 							}
 						]
 					},
-					"defaultValue": " [\n  KIM, PLZ, ELS, JNB, AMS, LHR, NBO, CPT, MBD, DUR, BFN,\n  GRJ, MPM, GBE, WDH, BUQ, HRE, LVI, LUN, LAD, DAR, EBB,\n  FIH, LOS, ABJ, ACC, DKR, SID, MIA, ATL, IAD, JFK, LGA,\n  MRU, HKG, PER, SYD, EZE, GRU, YVR, FRA, ZRH, CDG, CPH,\n  BOM, BKK, KIX, BKKN, USM, HKGN, DPS, DRW, ADL, HLZ, CHC,\n  ZQN, AKL, WLG, NSN, TRG, ROT, RAR, NRT, SIN, ARN, BGO,\n  TRD, BOO, SJV, TOS, TIU, CBR, NPL, KBV, HKT, MEL,\n]"
+					"defaultValue": " [\n  KIM, PLZ, ELS, JNB, AMS, LHR, NBO, CPT, MBD, DUR, BFN,\n  GRJ, MPM, GBE, WDH, BUQ, HRE, LVI, LUN, LAD, DAR, EBB,\n  FIH, LOS, ABJ, ACC, DKR, SID, MIA, ATL, IAD, JFK, LGA,\n  MRU, HKG, PER, SYD, EZE, GRU, YVR, FRA, ZRH, CDG, CPH,\n  BOM, BKK, KIX, BKKN, USM, HKGN, DPS, DRW, ADL, HLZ, CHC,\n  ZQN, AKL, WLG, NSN, TRG, ROT, RAR, NRT, SIN, ARN, BGO,\n  TRD, BOO, SJV, TOS, TIU, CBR, NPL, KBV, HKT, MEL, GIS,\n]"
 				},
 				{
 					"id": 259,
@@ -9033,6 +9033,205 @@
 						{
 							"fileName": "src/contact/models/airports.ts",
 							"line": 114,
+							"character": 16
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "object"
+					}
+				},
+				{
+					"id": 873,
+					"name": "GIS",
+					"kind": 2097152,
+					"kindString": "Object literal",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 874,
+							"name": "city",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/contact/models/airports.ts",
+									"line": 775,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"Gisborne\""
+						},
+						{
+							"id": 875,
+							"name": "country",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/contact/models/airports.ts",
+									"line": 776,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": " NEW_ZEALAND"
+						},
+						{
+							"id": 876,
+							"name": "iataCode",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/contact/models/airports.ts",
+									"line": 777,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"GIS\""
+						},
+						{
+							"id": 880,
+							"name": "name",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/contact/models/airports.ts",
+									"line": 782,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"Gisborne Airport\""
+						},
+						{
+							"id": 877,
+							"name": "loc",
+							"kind": 2097152,
+							"kindString": "Object literal",
+							"flags": {
+								"isExported": true
+							},
+							"children": [
+								{
+									"id": 878,
+									"name": "lat",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {
+										"isExported": true
+									},
+									"sources": [
+										{
+											"fileName": "src/contact/models/airports.ts",
+											"line": 779,
+											"character": 7
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									},
+									"defaultValue": " -38.6628665"
+								},
+								{
+									"id": 879,
+									"name": "lng",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {
+										"isExported": true
+									},
+									"sources": [
+										{
+											"fileName": "src/contact/models/airports.ts",
+											"line": 780,
+											"character": 7
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									},
+									"defaultValue": "177.9806031"
+								}
+							],
+							"groups": [
+								{
+									"title": "Variables",
+									"kind": 32,
+									"children": [
+										878,
+										879
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/contact/models/airports.ts",
+									"line": 778,
+									"character": 5
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "object"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Variables",
+							"kind": 32,
+							"children": [
+								874,
+								875,
+								876,
+								880
+							]
+						},
+						{
+							"title": "Object literals",
+							"kind": 2097152,
+							"children": [
+								877
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/contact/models/airports.ts",
+							"line": 774,
 							"character": 16
 						}
 					],
@@ -18201,7 +18400,7 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						873,
+						881,
 						259,
 						260,
 						258,
@@ -18248,6 +18447,7 @@
 						425,
 						553,
 						345,
+						873,
 						329,
 						481,
 						633,
@@ -19622,7 +19822,7 @@
 			]
 		},
 		{
-			"id": 874,
+			"id": 882,
 			"name": "\"src/contact/models/journeys\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -19632,7 +19832,7 @@
 			"originalName": "/home/louw/workspace/heroku/portfolio-web/src/contact/models/journeys.ts",
 			"children": [
 				{
-					"id": 875,
+					"id": 883,
 					"name": "JOURNEYS",
 					"kind": 32,
 					"kindString": "Variable",
@@ -19675,7 +19875,7 @@
 					"defaultValue": " [\n  [airports.KIM, airports.PLZ, airports.ELS], [airports.KIM, airports.JNB], [airports.JNB, airports.AMS, airports.LHR],\n  [airports.JNB, airports.NBO, airports.LHR], [airports.JNB, airports.CPT], [airports.JNB, airports.MBD],\n  [airports.JNB, airports.DUR], [airports.JNB, airports.BFN], [airports.JNB, airports.PLZ], [airports.JNB, airports.ELS],\n  [airports.JNB, airports.GRJ], [airports.JNB, airports.MPM], [airports.JNB, airports.GBE], [airports.JNB, airports.WDH],\n  [airports.JNB, airports.BUQ], [airports.JNB, airports.HRE], [airports.JNB, airports.LVI], [airports.JNB, airports.LUN],\n  [airports.JNB, airports.LAD], [airports.JNB, airports.DAR], [airports.JNB, airports.EBB], [airports.JNB, airports.FIH],\n  [airports.JNB, airports.LOS], [airports.JNB, airports.ABJ, airports.ACC, airports.JNB], [airports.JNB, airports.DKR],\n  [airports.JNB, airports.SID, airports.JFK, airports.JNB], [airports.SID, airports.MIA, airports.CPT],\n  [airports.SID, airports.ATL, airports.IAD, airports.LGA, airports.ATL, airports.JNB], [airports.JNB, airports.MRU],\n  [airports.JNB, airports.HKG], [airports.JNB, airports.PER, airports.SYD], [airports.JNB, airports.EZE],\n  [airports.JNB, airports.GRU, airports.EZE, airports.CPT], [airports.LHR, airports.YVR],\n  [airports.JNB, airports.FRA, airports.AMS], [airports.JNB, airports.ZRH, airports.CPH], [airports.ZRH, airports.CDG],\n  [airports.JNB, airports.BOM], [airports.JNB, airports.BKK, airports.KIX], [airports.JNB, airports.HKGN],\n  [airports.BKK, airports.HKGN], [airports.BKK, airports.USM], [airports.JNB, airports.BKKN, airports.USM],\n  [airports.JNB, airports.SYD], [airports.PER, airports.DPS, airports.DRW, airports.ADL, airports.SYD],\n  [airports.CPT, airports.BFN], [airports.CPT, airports.KIM], [airports.CPT, airports.LHR], [airports.CPT, airports.FRA],\n  [airports.CPT, airports.PLZ, airports.DUR], [airports.HKGN, airports.AKL], [airports.AKL, airports.SYD, airports.BKKN],\n  [airports.AKL, airports.WLG], [airports.AKL, airports.CHC], [airports.HLZ, airports.WLG], [airports.HLZ, airports.CHC],\n  [airports.AKL, airports.ZQN], [airports.AKL, airports.NSN], [airports.WLG, airports.TRG], [airports.WLG, airports.ROT],\n  [airports.WLG, airports.CHC], [airports.AKL, airports.RAR], [airports.AKL, airports.NRT, airports.LHR],\n  [airports.LHR, airports.ARN], [airports.BGO, airports.TRD], [airports.BOO, airports.SJV], [airports.TOS, airports.ARN],\n  [airports.LHR, airports.SIN, airports.SYD, airports.WLG], [airports.WLG, airports.TIU], [airports.WLG, airports.NSN],\n  [airports.WLG, airports.NPL], [airports.WLG, airports.CBR, airports.SIN, airports.JNB], [airports.WLG, airports.ZQN],\n  [airports.BKKN, airports.KBV], [airports.HKT, airports.SIN, airports.MEL, airports.WLG],\n]"
 				},
 				{
-					"id": 876,
+					"id": 884,
 					"name": "UPCOMING_JOURNEYS",
 					"kind": 32,
 					"kindString": "Variable",
@@ -19715,7 +19915,7 @@
 							}
 						]
 					},
-					"defaultValue": " []"
+					"defaultValue": " [\n  [airports.WLG, airports.GIS],\n]"
 				}
 			],
 			"groups": [
@@ -19723,8 +19923,8 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						875,
-						876
+						883,
+						884
 					]
 				}
 			],
@@ -21376,7 +21576,7 @@
 			]
 		},
 		{
-			"id": 950,
+			"id": 958,
 			"name": "\"src/education/components/education\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -21386,7 +21586,7 @@
 			"originalName": "/home/louw/workspace/heroku/portfolio-web/src/education/components/education.ts",
 			"children": [
 				{
-					"id": 951,
+					"id": 959,
 					"name": "EducationComponent",
 					"kind": 128,
 					"kindString": "Class",
@@ -21407,7 +21607,7 @@
 					],
 					"children": [
 						{
-							"id": 954,
+							"id": 962,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -21416,14 +21616,14 @@
 							},
 							"signatures": [
 								{
-									"id": 955,
+									"id": 963,
 									"name": "new EducationComponent",
 									"kind": 16384,
 									"kindString": "Constructor signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 956,
+											"id": 964,
 											"name": "educationService",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -21431,14 +21631,14 @@
 											"type": {
 												"type": "reference",
 												"name": "EducationService",
-												"id": 942
+												"id": 950
 											}
 										}
 									],
 									"type": {
 										"type": "reference",
 										"name": "EducationComponent",
-										"id": 951
+										"id": 959
 									}
 								}
 							],
@@ -21451,7 +21651,7 @@
 							]
 						},
 						{
-							"id": 953,
+							"id": 961,
 							"name": "codeSchool",
 							"kind": 1024,
 							"kindString": "Property",
@@ -21469,11 +21669,11 @@
 							"type": {
 								"type": "reference",
 								"name": "CodeSchool",
-								"id": 934
+								"id": 942
 							}
 						},
 						{
-							"id": 952,
+							"id": 960,
 							"name": "schools",
 							"kind": 1024,
 							"kindString": "Property",
@@ -21495,13 +21695,13 @@
 									{
 										"type": "reference",
 										"name": "School",
-										"id": 906
+										"id": 914
 									}
 								]
 							}
 						},
 						{
-							"id": 961,
+							"id": 969,
 							"name": "getCodeSchool",
 							"kind": 2048,
 							"kindString": "Method",
@@ -21510,7 +21710,7 @@
 							},
 							"signatures": [
 								{
-									"id": 962,
+									"id": 970,
 									"name": "getCodeSchool",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -21530,7 +21730,7 @@
 							]
 						},
 						{
-							"id": 959,
+							"id": 967,
 							"name": "getSchools",
 							"kind": 2048,
 							"kindString": "Method",
@@ -21539,7 +21739,7 @@
 							},
 							"signatures": [
 								{
-									"id": 960,
+									"id": 968,
 									"name": "getSchools",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -21559,7 +21759,7 @@
 							]
 						},
 						{
-							"id": 957,
+							"id": 965,
 							"name": "ngOnInit",
 							"kind": 2048,
 							"kindString": "Method",
@@ -21568,7 +21768,7 @@
 							},
 							"signatures": [
 								{
-									"id": 958,
+									"id": 966,
 									"name": "ngOnInit",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -21593,24 +21793,24 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								954
+								962
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								953,
-								952
+								961,
+								960
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								961,
-								959,
-								957
+								969,
+								967,
+								965
 							]
 						}
 					],
@@ -21634,7 +21834,7 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						951
+						959
 					]
 				}
 			],
@@ -21647,7 +21847,7 @@
 			]
 		},
 		{
-			"id": 920,
+			"id": 928,
 			"name": "\"src/education/definitions/code.school\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -21657,7 +21857,7 @@
 			"originalName": "/home/louw/workspace/heroku/portfolio-web/src/education/definitions/code.school.ts",
 			"children": [
 				{
-					"id": 934,
+					"id": 942,
 					"name": "CodeSchool",
 					"kind": 256,
 					"kindString": "Interface",
@@ -21669,7 +21869,7 @@
 					},
 					"children": [
 						{
-							"id": 940,
+							"id": 948,
 							"name": "badges",
 							"kind": 1024,
 							"kindString": "Property",
@@ -21690,13 +21890,13 @@
 									{
 										"type": "reference",
 										"name": "CodeSchoolBadge",
-										"id": 930
+										"id": 938
 									}
 								]
 							}
 						},
 						{
-							"id": 936,
+							"id": 944,
 							"name": "courses",
 							"kind": 1024,
 							"kindString": "Property",
@@ -21713,14 +21913,14 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 937,
+									"id": 945,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 938,
+											"id": 946,
 											"name": "completed",
 											"kind": 32,
 											"kindString": "Variable",
@@ -21739,13 +21939,13 @@
 													{
 														"type": "reference",
 														"name": "CodeSchoolCourse",
-														"id": 926
+														"id": 934
 													}
 												]
 											}
 										},
 										{
-											"id": 939,
+											"id": 947,
 											"name": "in_progress",
 											"kind": 32,
 											"kindString": "Variable",
@@ -21764,7 +21964,7 @@
 													{
 														"type": "reference",
 														"name": "CodeSchoolCourse",
-														"id": 926
+														"id": 934
 													}
 												]
 											}
@@ -21775,8 +21975,8 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												938,
-												939
+												946,
+												947
 											]
 										}
 									],
@@ -21791,7 +21991,7 @@
 							}
 						},
 						{
-							"id": 935,
+							"id": 943,
 							"name": "user",
 							"kind": 1024,
 							"kindString": "Property",
@@ -21808,7 +22008,7 @@
 							"type": {
 								"type": "reference",
 								"name": "CodeSchoolUser",
-								"id": 921
+								"id": 929
 							}
 						}
 					],
@@ -21817,9 +22017,9 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								940,
-								936,
-								935
+								948,
+								944,
+								943
 							]
 						}
 					],
@@ -21832,7 +22032,7 @@
 					]
 				},
 				{
-					"id": 930,
+					"id": 938,
 					"name": "CodeSchoolBadge",
 					"kind": 256,
 					"kindString": "Interface",
@@ -21842,7 +22042,7 @@
 					},
 					"children": [
 						{
-							"id": 932,
+							"id": 940,
 							"name": "badge",
 							"kind": 1024,
 							"kindString": "Property",
@@ -21860,7 +22060,7 @@
 							}
 						},
 						{
-							"id": 933,
+							"id": 941,
 							"name": "course_url",
 							"kind": 1024,
 							"kindString": "Property",
@@ -21878,7 +22078,7 @@
 							}
 						},
 						{
-							"id": 931,
+							"id": 939,
 							"name": "name",
 							"kind": 1024,
 							"kindString": "Property",
@@ -21901,9 +22101,9 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								932,
-								933,
-								931
+								940,
+								941,
+								939
 							]
 						}
 					],
@@ -21916,7 +22116,7 @@
 					]
 				},
 				{
-					"id": 926,
+					"id": 934,
 					"name": "CodeSchoolCourse",
 					"kind": 256,
 					"kindString": "Interface",
@@ -21926,7 +22126,7 @@
 					},
 					"children": [
 						{
-							"id": 929,
+							"id": 937,
 							"name": "badge",
 							"kind": 1024,
 							"kindString": "Property",
@@ -21944,7 +22144,7 @@
 							}
 						},
 						{
-							"id": 927,
+							"id": 935,
 							"name": "title",
 							"kind": 1024,
 							"kindString": "Property",
@@ -21962,7 +22162,7 @@
 							}
 						},
 						{
-							"id": 928,
+							"id": 936,
 							"name": "url",
 							"kind": 1024,
 							"kindString": "Property",
@@ -21985,9 +22185,9 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								929,
-								927,
-								928
+								937,
+								935,
+								936
 							]
 						}
 					],
@@ -22000,7 +22200,7 @@
 					]
 				},
 				{
-					"id": 921,
+					"id": 929,
 					"name": "CodeSchoolUser",
 					"kind": 256,
 					"kindString": "Interface",
@@ -22010,7 +22210,7 @@
 					},
 					"children": [
 						{
-							"id": 925,
+							"id": 933,
 							"name": "avatar",
 							"kind": 1024,
 							"kindString": "Property",
@@ -22028,7 +22228,7 @@
 							}
 						},
 						{
-							"id": 923,
+							"id": 931,
 							"name": "member_since",
 							"kind": 1024,
 							"kindString": "Property",
@@ -22046,7 +22246,7 @@
 							}
 						},
 						{
-							"id": 924,
+							"id": 932,
 							"name": "total_score",
 							"kind": 1024,
 							"kindString": "Property",
@@ -22064,7 +22264,7 @@
 							}
 						},
 						{
-							"id": 922,
+							"id": 930,
 							"name": "username",
 							"kind": 1024,
 							"kindString": "Property",
@@ -22087,10 +22287,10 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								925,
-								923,
-								924,
-								922
+								933,
+								931,
+								932,
+								930
 							]
 						}
 					],
@@ -22108,10 +22308,10 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
+						942,
+						938,
 						934,
-						930,
-						926,
-						921
+						929
 					]
 				}
 			],
@@ -22124,7 +22324,7 @@
 			]
 		},
 		{
-			"id": 905,
+			"id": 913,
 			"name": "\"src/education/definitions/school\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -22134,7 +22334,7 @@
 			"originalName": "/home/louw/workspace/heroku/portfolio-web/src/education/definitions/school.ts",
 			"children": [
 				{
-					"id": 906,
+					"id": 914,
 					"name": "School",
 					"kind": 256,
 					"kindString": "Interface",
@@ -22146,7 +22346,7 @@
 					},
 					"children": [
 						{
-							"id": 907,
+							"id": 915,
 							"name": "content",
 							"kind": 1024,
 							"kindString": "Property",
@@ -22169,7 +22369,7 @@
 							}
 						},
 						{
-							"id": 908,
+							"id": 916,
 							"name": "institution",
 							"kind": 1024,
 							"kindString": "Property",
@@ -22189,14 +22389,14 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 909,
+									"id": 917,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 910,
+											"id": 918,
 											"name": "location",
 											"kind": 32,
 											"kindString": "Variable",
@@ -22217,7 +22417,7 @@
 											}
 										},
 										{
-											"id": 911,
+											"id": 919,
 											"name": "name",
 											"kind": 32,
 											"kindString": "Variable",
@@ -22238,7 +22438,7 @@
 											}
 										},
 										{
-											"id": 912,
+											"id": 920,
 											"name": "url",
 											"kind": 32,
 											"kindString": "Variable",
@@ -22266,9 +22466,9 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												910,
-												911,
-												912
+												918,
+												919,
+												920
 											]
 										}
 									],
@@ -22283,7 +22483,7 @@
 							}
 						},
 						{
-							"id": 913,
+							"id": 921,
 							"name": "qualification",
 							"kind": 1024,
 							"kindString": "Property",
@@ -22306,7 +22506,7 @@
 							}
 						},
 						{
-							"id": 914,
+							"id": 922,
 							"name": "year",
 							"kind": 1024,
 							"kindString": "Property",
@@ -22326,14 +22526,14 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 915,
+									"id": 923,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 916,
+											"id": 924,
 											"name": "from",
 											"kind": 32,
 											"kindString": "Variable",
@@ -22354,7 +22554,7 @@
 											}
 										},
 										{
-											"id": 917,
+											"id": 925,
 											"name": "to",
 											"kind": 32,
 											"kindString": "Variable",
@@ -22380,8 +22580,8 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												916,
-												917
+												924,
+												925
 											]
 										}
 									],
@@ -22401,10 +22601,10 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								907,
-								908,
-								913,
-								914
+								915,
+								916,
+								921,
+								922
 							]
 						}
 					],
@@ -22422,7 +22622,7 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						906
+						914
 					]
 				}
 			],
@@ -22435,7 +22635,7 @@
 			]
 		},
 		{
-			"id": 918,
+			"id": 926,
 			"name": "\"src/education/models/schools\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -22445,7 +22645,7 @@
 			"originalName": "/home/louw/workspace/heroku/portfolio-web/src/education/models/schools.ts",
 			"children": [
 				{
-					"id": 919,
+					"id": 927,
 					"name": "SCHOOLS",
 					"kind": 32,
 					"kindString": "Variable",
@@ -22475,7 +22675,7 @@
 							{
 								"type": "reference",
 								"name": "School",
-								"id": 906
+								"id": 914
 							}
 						]
 					},
@@ -22487,7 +22687,7 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						919
+						927
 					]
 				}
 			],
@@ -22500,7 +22700,7 @@
 			]
 		},
 		{
-			"id": 941,
+			"id": 949,
 			"name": "\"src/education/services/education\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -22510,7 +22710,7 @@
 			"originalName": "/home/louw/workspace/heroku/portfolio-web/src/education/services/education.ts",
 			"children": [
 				{
-					"id": 942,
+					"id": 950,
 					"name": "EducationService",
 					"kind": 128,
 					"kindString": "Class",
@@ -22529,7 +22729,7 @@
 					],
 					"children": [
 						{
-							"id": 945,
+							"id": 953,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -22538,14 +22738,14 @@
 							},
 							"signatures": [
 								{
-									"id": 946,
+									"id": 954,
 									"name": "new EducationService",
 									"kind": 16384,
 									"kindString": "Constructor signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 947,
+											"id": 955,
 											"name": "http",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -22559,7 +22759,7 @@
 									"type": {
 										"type": "reference",
 										"name": "EducationService",
-										"id": 942
+										"id": 950
 									}
 								}
 							],
@@ -22572,7 +22772,7 @@
 							]
 						},
 						{
-							"id": 948,
+							"id": 956,
 							"name": "getCodeSchool",
 							"kind": 2048,
 							"kindString": "Method",
@@ -22581,7 +22781,7 @@
 							},
 							"signatures": [
 								{
-									"id": 949,
+									"id": 957,
 									"name": "getCodeSchool",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -22596,7 +22796,7 @@
 													{
 														"type": "reference",
 														"name": "CodeSchool",
-														"id": 934
+														"id": 942
 													},
 													{
 														"type": "reference",
@@ -22618,7 +22818,7 @@
 							]
 						},
 						{
-							"id": 943,
+							"id": 951,
 							"name": "getSchools",
 							"kind": 2048,
 							"kindString": "Method",
@@ -22628,7 +22828,7 @@
 							},
 							"signatures": [
 								{
-									"id": 944,
+									"id": 952,
 									"name": "getSchools",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -22644,7 +22844,7 @@
 													{
 														"type": "reference",
 														"name": "School",
-														"id": 906
+														"id": 914
 													}
 												]
 											}
@@ -22666,15 +22866,15 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								945
+								953
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								948,
-								943
+								956,
+								951
 							]
 						}
 					],
@@ -22692,7 +22892,7 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						942
+						950
 					]
 				}
 			],
@@ -22705,7 +22905,7 @@
 			]
 		},
 		{
-			"id": 984,
+			"id": 992,
 			"name": "\"src/experience/components/experience\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -22715,7 +22915,7 @@
 			"originalName": "/home/louw/workspace/heroku/portfolio-web/src/experience/components/experience.ts",
 			"children": [
 				{
-					"id": 985,
+					"id": 993,
 					"name": "ExperienceComponent",
 					"kind": 128,
 					"kindString": "Class",
@@ -22736,7 +22936,7 @@
 					],
 					"children": [
 						{
-							"id": 986,
+							"id": 994,
 							"name": "jobs",
 							"kind": 1024,
 							"kindString": "Property",
@@ -22758,13 +22958,13 @@
 									{
 										"type": "reference",
 										"name": "Job",
-										"id": 964
+										"id": 972
 									}
 								]
 							}
 						},
 						{
-							"id": 989,
+							"id": 997,
 							"name": "getJobs",
 							"kind": 2048,
 							"kindString": "Method",
@@ -22773,7 +22973,7 @@
 							},
 							"signatures": [
 								{
-									"id": 990,
+									"id": 998,
 									"name": "getJobs",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -22793,7 +22993,7 @@
 							]
 						},
 						{
-							"id": 987,
+							"id": 995,
 							"name": "ngOnInit",
 							"kind": 2048,
 							"kindString": "Method",
@@ -22802,7 +23002,7 @@
 							},
 							"signatures": [
 								{
-									"id": 988,
+									"id": 996,
 									"name": "ngOnInit",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -22827,15 +23027,15 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								986
+								994
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								989,
-								987
+								997,
+								995
 							]
 						}
 					],
@@ -22859,7 +23059,7 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						985
+						993
 					]
 				}
 			],
@@ -22872,7 +23072,7 @@
 			]
 		},
 		{
-			"id": 963,
+			"id": 971,
 			"name": "\"src/experience/definitions/job\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -22882,7 +23082,7 @@
 			"originalName": "/home/louw/workspace/heroku/portfolio-web/src/experience/definitions/job.ts",
 			"children": [
 				{
-					"id": 964,
+					"id": 972,
 					"name": "Job",
 					"kind": 256,
 					"kindString": "Interface",
@@ -22894,7 +23094,7 @@
 					},
 					"children": [
 						{
-							"id": 965,
+							"id": 973,
 							"name": "accomplishments",
 							"kind": 1024,
 							"kindString": "Property",
@@ -22918,7 +23118,7 @@
 							}
 						},
 						{
-							"id": 966,
+							"id": 974,
 							"name": "content",
 							"kind": 1024,
 							"kindString": "Property",
@@ -22941,7 +23141,7 @@
 							}
 						},
 						{
-							"id": 967,
+							"id": 975,
 							"name": "institution",
 							"kind": 1024,
 							"kindString": "Property",
@@ -22961,14 +23161,14 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 968,
+									"id": 976,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 969,
+											"id": 977,
 											"name": "location",
 											"kind": 32,
 											"kindString": "Variable",
@@ -22989,7 +23189,7 @@
 											}
 										},
 										{
-											"id": 970,
+											"id": 978,
 											"name": "name",
 											"kind": 32,
 											"kindString": "Variable",
@@ -23010,7 +23210,7 @@
 											}
 										},
 										{
-											"id": 971,
+											"id": 979,
 											"name": "url",
 											"kind": 32,
 											"kindString": "Variable",
@@ -23038,9 +23238,9 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												969,
-												970,
-												971
+												977,
+												978,
+												979
 											]
 										}
 									],
@@ -23055,7 +23255,7 @@
 							}
 						},
 						{
-							"id": 972,
+							"id": 980,
 							"name": "title",
 							"kind": 1024,
 							"kindString": "Property",
@@ -23078,7 +23278,7 @@
 							}
 						},
 						{
-							"id": 973,
+							"id": 981,
 							"name": "video",
 							"kind": 1024,
 							"kindString": "Property",
@@ -23102,7 +23302,7 @@
 							}
 						},
 						{
-							"id": 974,
+							"id": 982,
 							"name": "year",
 							"kind": 1024,
 							"kindString": "Property",
@@ -23122,14 +23322,14 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 975,
+									"id": 983,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 976,
+											"id": 984,
 											"name": "from",
 											"kind": 32,
 											"kindString": "Variable",
@@ -23150,7 +23350,7 @@
 											}
 										},
 										{
-											"id": 977,
+											"id": 985,
 											"name": "to",
 											"kind": 32,
 											"kindString": "Variable",
@@ -23176,8 +23376,8 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												976,
-												977
+												984,
+												985
 											]
 										}
 									],
@@ -23197,12 +23397,12 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								965,
-								966,
-								967,
-								972,
 								973,
-								974
+								974,
+								975,
+								980,
+								981,
+								982
 							]
 						}
 					],
@@ -23220,7 +23420,7 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						964
+						972
 					]
 				}
 			],
@@ -23233,7 +23433,7 @@
 			]
 		},
 		{
-			"id": 978,
+			"id": 986,
 			"name": "\"src/experience/models/jobs\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -23243,7 +23443,7 @@
 			"originalName": "/home/louw/workspace/heroku/portfolio-web/src/experience/models/jobs.ts",
 			"children": [
 				{
-					"id": 979,
+					"id": 987,
 					"name": "JOBS",
 					"kind": 32,
 					"kindString": "Variable",
@@ -23273,7 +23473,7 @@
 							{
 								"type": "reference",
 								"name": "Job",
-								"id": 964
+								"id": 972
 							}
 						]
 					},
@@ -23285,7 +23485,7 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						979
+						987
 					]
 				}
 			],
@@ -23298,7 +23498,7 @@
 			]
 		},
 		{
-			"id": 980,
+			"id": 988,
 			"name": "\"src/experience/services/experience\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -23308,7 +23508,7 @@
 			"originalName": "/home/louw/workspace/heroku/portfolio-web/src/experience/services/experience.ts",
 			"children": [
 				{
-					"id": 981,
+					"id": 989,
 					"name": "ExperienceService",
 					"kind": 128,
 					"kindString": "Class",
@@ -23317,7 +23517,7 @@
 					},
 					"children": [
 						{
-							"id": 982,
+							"id": 990,
 							"name": "getJobs",
 							"kind": 2048,
 							"kindString": "Method",
@@ -23327,7 +23527,7 @@
 							},
 							"signatures": [
 								{
-									"id": 983,
+									"id": 991,
 									"name": "getJobs",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -23343,7 +23543,7 @@
 													{
 														"type": "reference",
 														"name": "Job",
-														"id": 964
+														"id": 972
 													}
 												]
 											}
@@ -23365,7 +23565,7 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								982
+								990
 							]
 						}
 					],
@@ -23383,7 +23583,7 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						981
+						989
 					]
 				}
 			],
@@ -23396,7 +23596,7 @@
 			]
 		},
 		{
-			"id": 1002,
+			"id": 1010,
 			"name": "\"src/footer/components/footer\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -23406,7 +23606,7 @@
 			"originalName": "/home/louw/workspace/heroku/portfolio-web/src/footer/components/footer.ts",
 			"children": [
 				{
-					"id": 1003,
+					"id": 1011,
 					"name": "FooterComponent",
 					"kind": 128,
 					"kindString": "Class",
@@ -23427,7 +23627,7 @@
 					],
 					"children": [
 						{
-							"id": 1006,
+							"id": 1014,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -23436,7 +23636,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1007,
+									"id": 1015,
 									"name": "new FooterComponent",
 									"kind": 16384,
 									"kindString": "Constructor signature",
@@ -23444,7 +23644,7 @@
 									"type": {
 										"type": "reference",
 										"name": "FooterComponent",
-										"id": 1003
+										"id": 1011
 									}
 								}
 							],
@@ -23457,7 +23657,7 @@
 							]
 						},
 						{
-							"id": 1005,
+							"id": 1013,
 							"name": "currentDate",
 							"kind": 1024,
 							"kindString": "Property",
@@ -23478,7 +23678,7 @@
 							}
 						},
 						{
-							"id": 1004,
+							"id": 1012,
 							"name": "links",
 							"kind": 1024,
 							"kindString": "Property",
@@ -23500,13 +23700,13 @@
 									{
 										"type": "reference",
 										"name": "Link",
-										"id": 992
+										"id": 1000
 									}
 								]
 							}
 						},
 						{
-							"id": 1010,
+							"id": 1018,
 							"name": "getLinks",
 							"kind": 2048,
 							"kindString": "Method",
@@ -23515,7 +23715,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1011,
+									"id": 1019,
 									"name": "getLinks",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -23535,7 +23735,7 @@
 							]
 						},
 						{
-							"id": 1008,
+							"id": 1016,
 							"name": "ngOnInit",
 							"kind": 2048,
 							"kindString": "Method",
@@ -23544,7 +23744,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1009,
+									"id": 1017,
 									"name": "ngOnInit",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -23569,23 +23769,23 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								1006
+								1014
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								1005,
-								1004
+								1013,
+								1012
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								1010,
-								1008
+								1018,
+								1016
 							]
 						}
 					],
@@ -23609,7 +23809,7 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						1003
+						1011
 					]
 				}
 			],
@@ -23622,7 +23822,7 @@
 			]
 		},
 		{
-			"id": 991,
+			"id": 999,
 			"name": "\"src/footer/definitions/link\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -23632,7 +23832,7 @@
 			"originalName": "/home/louw/workspace/heroku/portfolio-web/src/footer/definitions/link.ts",
 			"children": [
 				{
-					"id": 992,
+					"id": 1000,
 					"name": "Link",
 					"kind": 256,
 					"kindString": "Interface",
@@ -23644,7 +23844,7 @@
 					},
 					"children": [
 						{
-							"id": 993,
+							"id": 1001,
 							"name": "icon",
 							"kind": 1024,
 							"kindString": "Property",
@@ -23667,7 +23867,7 @@
 							}
 						},
 						{
-							"id": 994,
+							"id": 1002,
 							"name": "title",
 							"kind": 1024,
 							"kindString": "Property",
@@ -23690,7 +23890,7 @@
 							}
 						},
 						{
-							"id": 995,
+							"id": 1003,
 							"name": "url",
 							"kind": 1024,
 							"kindString": "Property",
@@ -23718,9 +23918,9 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								993,
-								994,
-								995
+								1001,
+								1002,
+								1003
 							]
 						}
 					],
@@ -23738,7 +23938,7 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						992
+						1000
 					]
 				}
 			],
@@ -23751,7 +23951,7 @@
 			]
 		},
 		{
-			"id": 996,
+			"id": 1004,
 			"name": "\"src/footer/models/links\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -23761,7 +23961,7 @@
 			"originalName": "/home/louw/workspace/heroku/portfolio-web/src/footer/models/links.ts",
 			"children": [
 				{
-					"id": 997,
+					"id": 1005,
 					"name": "LINKS",
 					"kind": 32,
 					"kindString": "Variable",
@@ -23791,7 +23991,7 @@
 							{
 								"type": "reference",
 								"name": "Link",
-								"id": 992
+								"id": 1000
 							}
 						]
 					},
@@ -23803,7 +24003,7 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						997
+						1005
 					]
 				}
 			],
@@ -23816,7 +24016,7 @@
 			]
 		},
 		{
-			"id": 998,
+			"id": 1006,
 			"name": "\"src/footer/services/footer\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -23826,7 +24026,7 @@
 			"originalName": "/home/louw/workspace/heroku/portfolio-web/src/footer/services/footer.ts",
 			"children": [
 				{
-					"id": 999,
+					"id": 1007,
 					"name": "FooterService",
 					"kind": 128,
 					"kindString": "Class",
@@ -23835,7 +24035,7 @@
 					},
 					"children": [
 						{
-							"id": 1000,
+							"id": 1008,
 							"name": "getLinks",
 							"kind": 2048,
 							"kindString": "Method",
@@ -23845,7 +24045,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1001,
+									"id": 1009,
 									"name": "getLinks",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -23861,7 +24061,7 @@
 													{
 														"type": "reference",
 														"name": "Link",
-														"id": 992
+														"id": 1000
 													}
 												]
 											}
@@ -23883,7 +24083,7 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								1000
+								1008
 							]
 						}
 					],
@@ -23901,7 +24101,7 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						999
+						1007
 					]
 				}
 			],
@@ -23914,7 +24114,7 @@
 			]
 		},
 		{
-			"id": 1052,
+			"id": 1060,
 			"name": "\"src/header/components/header\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -23924,7 +24124,7 @@
 			"originalName": "/home/louw/workspace/heroku/portfolio-web/src/header/components/header.ts",
 			"children": [
 				{
-					"id": 1053,
+					"id": 1061,
 					"name": "HeaderComponent",
 					"kind": 128,
 					"kindString": "Class",
@@ -23945,7 +24145,7 @@
 					],
 					"children": [
 						{
-							"id": 1055,
+							"id": 1063,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -23954,14 +24154,14 @@
 							},
 							"signatures": [
 								{
-									"id": 1056,
+									"id": 1064,
 									"name": "new HeaderComponent",
 									"kind": 16384,
 									"kindString": "Constructor signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 1057,
+											"id": 1065,
 											"name": "_headerService",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -23969,14 +24169,14 @@
 											"type": {
 												"type": "reference",
 												"name": "HeaderService",
-												"id": 1016
+												"id": 1024
 											}
 										}
 									],
 									"type": {
 										"type": "reference",
 										"name": "HeaderComponent",
-										"id": 1053
+										"id": 1061
 									}
 								}
 							],
@@ -23989,7 +24189,7 @@
 							]
 						},
 						{
-							"id": 1054,
+							"id": 1062,
 							"name": "imageIds",
 							"kind": 1024,
 							"kindString": "Property",
@@ -24016,7 +24216,7 @@
 							}
 						},
 						{
-							"id": 1064,
+							"id": 1072,
 							"name": "initGridRotator",
 							"kind": 2048,
 							"kindString": "Method",
@@ -24025,14 +24225,14 @@
 							},
 							"signatures": [
 								{
-									"id": 1065,
+									"id": 1073,
 									"name": "initGridRotator",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 1066,
+											"id": 1074,
 											"name": "imageIds",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24064,7 +24264,7 @@
 							]
 						},
 						{
-							"id": 1060,
+							"id": 1068,
 							"name": "initImageIds",
 							"kind": 2048,
 							"kindString": "Method",
@@ -24073,7 +24273,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1061,
+									"id": 1069,
 									"name": "initImageIds",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -24093,7 +24293,7 @@
 							]
 						},
 						{
-							"id": 1067,
+							"id": 1075,
 							"name": "initNavigation",
 							"kind": 2048,
 							"kindString": "Method",
@@ -24102,7 +24302,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1068,
+									"id": 1076,
 									"name": "initNavigation",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -24122,7 +24322,7 @@
 							]
 						},
 						{
-							"id": 1062,
+							"id": 1070,
 							"name": "initResizeListener",
 							"kind": 2048,
 							"kindString": "Method",
@@ -24131,7 +24331,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1063,
+									"id": 1071,
 									"name": "initResizeListener",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -24151,7 +24351,7 @@
 							]
 						},
 						{
-							"id": 1058,
+							"id": 1066,
 							"name": "ngOnInit",
 							"kind": 2048,
 							"kindString": "Method",
@@ -24160,7 +24360,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1059,
+									"id": 1067,
 									"name": "ngOnInit",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -24180,7 +24380,7 @@
 							]
 						},
 						{
-							"id": 1069,
+							"id": 1077,
 							"name": "setBannerSize",
 							"kind": 2048,
 							"kindString": "Method",
@@ -24189,14 +24389,14 @@
 							},
 							"signatures": [
 								{
-									"id": 1070,
+									"id": 1078,
 									"name": "setBannerSize",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 1071,
+											"id": 1079,
 											"name": "previousWidth",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24208,7 +24408,7 @@
 											"defaultValue": "0"
 										},
 										{
-											"id": 1072,
+											"id": 1080,
 											"name": "previousHeight",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24235,7 +24435,7 @@
 							]
 						},
 						{
-							"id": 1073,
+							"id": 1081,
 							"name": "setDynamicCssValues",
 							"kind": 2048,
 							"kindString": "Method",
@@ -24244,7 +24444,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1074,
+									"id": 1082,
 									"name": "setDynamicCssValues",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -24269,27 +24469,27 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								1055
+								1063
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								1054
+								1062
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								1064,
-								1060,
-								1067,
-								1062,
-								1058,
-								1069,
-								1073
+								1072,
+								1068,
+								1075,
+								1070,
+								1066,
+								1077,
+								1081
 							]
 						}
 					],
@@ -24313,7 +24513,7 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						1053
+						1061
 					]
 				}
 			],
@@ -24326,7 +24526,7 @@
 			]
 		},
 		{
-			"id": 1012,
+			"id": 1020,
 			"name": "\"src/header/definitions/image.ids\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -24336,7 +24536,7 @@
 			"originalName": "/home/louw/workspace/heroku/portfolio-web/src/header/definitions/image.ids.ts",
 			"children": [
 				{
-					"id": 1013,
+					"id": 1021,
 					"name": "ImageIds",
 					"kind": 256,
 					"kindString": "Interface",
@@ -24348,7 +24548,7 @@
 					},
 					"children": [
 						{
-							"id": 1014,
+							"id": 1022,
 							"name": "imageIds",
 							"kind": 1024,
 							"kindString": "Property",
@@ -24379,7 +24579,7 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								1014
+								1022
 							]
 						}
 					],
@@ -24397,7 +24597,7 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						1013
+						1021
 					]
 				}
 			],
@@ -24410,7 +24610,7 @@
 			]
 		},
 		{
-			"id": 1022,
+			"id": 1030,
 			"name": "\"src/header/models/header.config\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -24420,7 +24620,7 @@
 			"originalName": "/home/louw/workspace/heroku/portfolio-web/src/header/models/header.config.ts",
 			"children": [
 				{
-					"id": 1035,
+					"id": 1043,
 					"name": "GRID_ROTATOR_CONFIG",
 					"kind": 2097152,
 					"kindString": "Object literal",
@@ -24438,7 +24638,7 @@
 					},
 					"children": [
 						{
-							"id": 1036,
+							"id": 1044,
 							"name": "animSpeed",
 							"kind": 32,
 							"kindString": "Variable",
@@ -24459,7 +24659,7 @@
 							"defaultValue": "300"
 						},
 						{
-							"id": 1037,
+							"id": 1045,
 							"name": "animType",
 							"kind": 32,
 							"kindString": "Variable",
@@ -24480,7 +24680,7 @@
 							"defaultValue": "\"rotateBottom\""
 						},
 						{
-							"id": 1038,
+							"id": 1046,
 							"name": "columns",
 							"kind": 32,
 							"kindString": "Variable",
@@ -24501,7 +24701,7 @@
 							"defaultValue": "8"
 						},
 						{
-							"id": 1039,
+							"id": 1047,
 							"name": "container",
 							"kind": 32,
 							"kindString": "Variable",
@@ -24522,7 +24722,7 @@
 							"defaultValue": "\"#home\""
 						},
 						{
-							"id": 1040,
+							"id": 1048,
 							"name": "maxStep",
 							"kind": 32,
 							"kindString": "Variable",
@@ -24543,7 +24743,7 @@
 							"defaultValue": "3"
 						},
 						{
-							"id": 1041,
+							"id": 1049,
 							"name": "onhover",
 							"kind": 32,
 							"kindString": "Variable",
@@ -24564,7 +24764,7 @@
 							"defaultValue": "true"
 						},
 						{
-							"id": 1042,
+							"id": 1050,
 							"name": "preventClick",
 							"kind": 32,
 							"kindString": "Variable",
@@ -24585,7 +24785,7 @@
 							"defaultValue": "true"
 						},
 						{
-							"id": 1043,
+							"id": 1051,
 							"name": "step",
 							"kind": 32,
 							"kindString": "Variable",
@@ -24606,7 +24806,7 @@
 							"defaultValue": "\"random\""
 						},
 						{
-							"id": 1044,
+							"id": 1052,
 							"name": "w1024",
 							"kind": 2097152,
 							"kindString": "Object literal",
@@ -24615,7 +24815,7 @@
 							},
 							"children": [
 								{
-									"id": 1045,
+									"id": 1053,
 									"name": "columns",
 									"kind": 32,
 									"kindString": "Variable",
@@ -24641,7 +24841,7 @@
 									"title": "Variables",
 									"kind": 32,
 									"children": [
-										1045
+										1053
 									]
 								}
 							],
@@ -24658,7 +24858,7 @@
 							}
 						},
 						{
-							"id": 1046,
+							"id": 1054,
 							"name": "w320",
 							"kind": 2097152,
 							"kindString": "Object literal",
@@ -24667,7 +24867,7 @@
 							},
 							"children": [
 								{
-									"id": 1047,
+									"id": 1055,
 									"name": "columns",
 									"kind": 32,
 									"kindString": "Variable",
@@ -24693,7 +24893,7 @@
 									"title": "Variables",
 									"kind": 32,
 									"children": [
-										1047
+										1055
 									]
 								}
 							],
@@ -24710,7 +24910,7 @@
 							}
 						},
 						{
-							"id": 1048,
+							"id": 1056,
 							"name": "w480",
 							"kind": 2097152,
 							"kindString": "Object literal",
@@ -24719,7 +24919,7 @@
 							},
 							"children": [
 								{
-									"id": 1049,
+									"id": 1057,
 									"name": "columns",
 									"kind": 32,
 									"kindString": "Variable",
@@ -24745,7 +24945,7 @@
 									"title": "Variables",
 									"kind": 32,
 									"children": [
-										1049
+										1057
 									]
 								}
 							],
@@ -24762,7 +24962,7 @@
 							}
 						},
 						{
-							"id": 1050,
+							"id": 1058,
 							"name": "w768",
 							"kind": 2097152,
 							"kindString": "Object literal",
@@ -24771,7 +24971,7 @@
 							},
 							"children": [
 								{
-									"id": 1051,
+									"id": 1059,
 									"name": "columns",
 									"kind": 32,
 									"kindString": "Variable",
@@ -24797,7 +24997,7 @@
 									"title": "Variables",
 									"kind": 32,
 									"children": [
-										1051
+										1059
 									]
 								}
 							],
@@ -24819,24 +25019,24 @@
 							"title": "Variables",
 							"kind": 32,
 							"children": [
-								1036,
-								1037,
-								1038,
-								1039,
-								1040,
-								1041,
-								1042,
-								1043
+								1044,
+								1045,
+								1046,
+								1047,
+								1048,
+								1049,
+								1050,
+								1051
 							]
 						},
 						{
 							"title": "Object literals",
 							"kind": 2097152,
 							"children": [
-								1044,
-								1046,
-								1048,
-								1050
+								1052,
+								1054,
+								1056,
+								1058
 							]
 						}
 					],
@@ -24853,7 +25053,7 @@
 					}
 				},
 				{
-					"id": 1023,
+					"id": 1031,
 					"name": "MENU_CONFIG",
 					"kind": 2097152,
 					"kindString": "Object literal",
@@ -24871,7 +25071,7 @@
 					},
 					"children": [
 						{
-							"id": 1024,
+							"id": 1032,
 							"name": "itemClass",
 							"kind": 32,
 							"kindString": "Variable",
@@ -24892,7 +25092,7 @@
 							"defaultValue": "\"menu-item\""
 						},
 						{
-							"id": 1025,
+							"id": 1033,
 							"name": "itemHover",
 							"kind": 32,
 							"kindString": "Variable",
@@ -24913,7 +25113,7 @@
 							"defaultValue": "\"active\""
 						},
 						{
-							"id": 1034,
+							"id": 1042,
 							"name": "topMargin",
 							"kind": 32,
 							"kindString": "Variable",
@@ -24934,7 +25134,7 @@
 							"defaultValue": "\"auto\""
 						},
 						{
-							"id": 1026,
+							"id": 1034,
 							"name": "parts",
 							"kind": 2097152,
 							"kindString": "Object literal",
@@ -24943,7 +25143,7 @@
 							},
 							"children": [
 								{
-									"id": 1027,
+									"id": 1035,
 									"name": "0",
 									"kind": 32,
 									"kindString": "Variable",
@@ -24964,7 +25164,7 @@
 									"defaultValue": "\"home\""
 								},
 								{
-									"id": 1028,
+									"id": 1036,
 									"name": "1",
 									"kind": 32,
 									"kindString": "Variable",
@@ -24985,7 +25185,7 @@
 									"defaultValue": "\"about\""
 								},
 								{
-									"id": 1029,
+									"id": 1037,
 									"name": "2",
 									"kind": 32,
 									"kindString": "Variable",
@@ -25006,7 +25206,7 @@
 									"defaultValue": "\"skills\""
 								},
 								{
-									"id": 1030,
+									"id": 1038,
 									"name": "3",
 									"kind": 32,
 									"kindString": "Variable",
@@ -25027,7 +25227,7 @@
 									"defaultValue": "\"experience\""
 								},
 								{
-									"id": 1031,
+									"id": 1039,
 									"name": "4",
 									"kind": 32,
 									"kindString": "Variable",
@@ -25048,7 +25248,7 @@
 									"defaultValue": "\"education\""
 								},
 								{
-									"id": 1032,
+									"id": 1040,
 									"name": "5",
 									"kind": 32,
 									"kindString": "Variable",
@@ -25069,7 +25269,7 @@
 									"defaultValue": "\"contact\""
 								},
 								{
-									"id": 1033,
+									"id": 1041,
 									"name": "6",
 									"kind": 32,
 									"kindString": "Variable",
@@ -25095,13 +25295,13 @@
 									"title": "Variables",
 									"kind": 32,
 									"children": [
-										1027,
-										1028,
-										1029,
-										1030,
-										1031,
-										1032,
-										1033
+										1035,
+										1036,
+										1037,
+										1038,
+										1039,
+										1040,
+										1041
 									]
 								}
 							],
@@ -25123,16 +25323,16 @@
 							"title": "Variables",
 							"kind": 32,
 							"children": [
-								1024,
-								1025,
-								1034
+								1032,
+								1033,
+								1042
 							]
 						},
 						{
 							"title": "Object literals",
 							"kind": 2097152,
 							"children": [
-								1026
+								1034
 							]
 						}
 					],
@@ -25154,8 +25354,8 @@
 					"title": "Object literals",
 					"kind": 2097152,
 					"children": [
-						1035,
-						1023
+						1043,
+						1031
 					]
 				}
 			],
@@ -25168,7 +25368,7 @@
 			]
 		},
 		{
-			"id": 1015,
+			"id": 1023,
 			"name": "\"src/header/services/header\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -25178,7 +25378,7 @@
 			"originalName": "/home/louw/workspace/heroku/portfolio-web/src/header/services/header.ts",
 			"children": [
 				{
-					"id": 1016,
+					"id": 1024,
 					"name": "HeaderService",
 					"kind": 128,
 					"kindString": "Class",
@@ -25197,7 +25397,7 @@
 					],
 					"children": [
 						{
-							"id": 1017,
+							"id": 1025,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -25206,14 +25406,14 @@
 							},
 							"signatures": [
 								{
-									"id": 1018,
+									"id": 1026,
 									"name": "new HeaderService",
 									"kind": 16384,
 									"kindString": "Constructor signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 1019,
+											"id": 1027,
 											"name": "http",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -25227,7 +25427,7 @@
 									"type": {
 										"type": "reference",
 										"name": "HeaderService",
-										"id": 1016
+										"id": 1024
 									}
 								}
 							],
@@ -25240,7 +25440,7 @@
 							]
 						},
 						{
-							"id": 1020,
+							"id": 1028,
 							"name": "getImageIds",
 							"kind": 2048,
 							"kindString": "Method",
@@ -25249,7 +25449,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1021,
+									"id": 1029,
 									"name": "getImageIds",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -25264,7 +25464,7 @@
 													{
 														"type": "reference",
 														"name": "ImageIds",
-														"id": 1013
+														"id": 1021
 													},
 													{
 														"type": "reference",
@@ -25291,14 +25491,14 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								1017
+								1025
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								1020
+								1028
 							]
 						}
 					],
@@ -25316,7 +25516,7 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						1016
+						1024
 					]
 				}
 			],
@@ -25329,7 +25529,7 @@
 			]
 		},
 		{
-			"id": 1125,
+			"id": 1133,
 			"name": "\"src/main\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -25557,7 +25757,7 @@
 			]
 		},
 		{
-			"id": 1099,
+			"id": 1107,
 			"name": "\"src/shared/common/pipes\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -25567,7 +25767,7 @@
 			"originalName": "/home/louw/workspace/heroku/portfolio-web/src/shared/common/pipes.ts",
 			"children": [
 				{
-					"id": 1104,
+					"id": 1112,
 					"name": "BadgeUrlPipe",
 					"kind": 128,
 					"kindString": "Class",
@@ -25588,7 +25788,7 @@
 					],
 					"children": [
 						{
-							"id": 1105,
+							"id": 1113,
 							"name": "transform",
 							"kind": 2048,
 							"kindString": "Method",
@@ -25597,14 +25797,14 @@
 							},
 							"signatures": [
 								{
-									"id": 1106,
+									"id": 1114,
 									"name": "transform",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 1107,
+											"id": 1115,
 											"name": "badge",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -25635,7 +25835,7 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								1105
+								1113
 							]
 						}
 					],
@@ -25654,7 +25854,7 @@
 					]
 				},
 				{
-					"id": 1108,
+					"id": 1116,
 					"name": "MemberDatePipe",
 					"kind": 128,
 					"kindString": "Class",
@@ -25675,7 +25875,7 @@
 					],
 					"children": [
 						{
-							"id": 1109,
+							"id": 1117,
 							"name": "transform",
 							"kind": 2048,
 							"kindString": "Method",
@@ -25684,14 +25884,14 @@
 							},
 							"signatures": [
 								{
-									"id": 1110,
+									"id": 1118,
 									"name": "transform",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 1111,
+											"id": 1119,
 											"name": "memberDate",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -25722,7 +25922,7 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								1109
+								1117
 							]
 						}
 					],
@@ -25741,7 +25941,7 @@
 					]
 				},
 				{
-					"id": 1112,
+					"id": 1120,
 					"name": "ScorePipe",
 					"kind": 128,
 					"kindString": "Class",
@@ -25762,7 +25962,7 @@
 					],
 					"children": [
 						{
-							"id": 1113,
+							"id": 1121,
 							"name": "transform",
 							"kind": 2048,
 							"kindString": "Method",
@@ -25771,14 +25971,14 @@
 							},
 							"signatures": [
 								{
-									"id": 1114,
+									"id": 1122,
 									"name": "transform",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 1115,
+											"id": 1123,
 											"name": "score",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -25809,7 +26009,7 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								1113
+								1121
 							]
 						}
 					],
@@ -25828,7 +26028,7 @@
 					]
 				},
 				{
-					"id": 1100,
+					"id": 1108,
 					"name": "TrimPipe",
 					"kind": 128,
 					"kindString": "Class",
@@ -25849,7 +26049,7 @@
 					],
 					"children": [
 						{
-							"id": 1101,
+							"id": 1109,
 							"name": "transform",
 							"kind": 2048,
 							"kindString": "Method",
@@ -25858,14 +26058,14 @@
 							},
 							"signatures": [
 								{
-									"id": 1102,
+									"id": 1110,
 									"name": "transform",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 1103,
+											"id": 1111,
 											"name": "value",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -25896,7 +26096,7 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								1101
+								1109
 							]
 						}
 					],
@@ -25915,7 +26115,7 @@
 					]
 				},
 				{
-					"id": 1116,
+					"id": 1124,
 					"name": "VideoUrlPipe",
 					"kind": 128,
 					"kindString": "Class",
@@ -25936,7 +26136,7 @@
 					],
 					"children": [
 						{
-							"id": 1117,
+							"id": 1125,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -25945,14 +26145,14 @@
 							},
 							"signatures": [
 								{
-									"id": 1118,
+									"id": 1126,
 									"name": "new VideoUrlPipe",
 									"kind": 16384,
 									"kindString": "Constructor signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 1119,
+											"id": 1127,
 											"name": "sanitationService",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -25966,7 +26166,7 @@
 									"type": {
 										"type": "reference",
 										"name": "VideoUrlPipe",
-										"id": 1116
+										"id": 1124
 									}
 								}
 							],
@@ -25979,7 +26179,7 @@
 							]
 						},
 						{
-							"id": 1120,
+							"id": 1128,
 							"name": "transform",
 							"kind": 2048,
 							"kindString": "Method",
@@ -25988,14 +26188,14 @@
 							},
 							"signatures": [
 								{
-									"id": 1121,
+									"id": 1129,
 									"name": "transform",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 1122,
+											"id": 1130,
 											"name": "videoUrl",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -26026,14 +26226,14 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								1117
+								1125
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								1120
+								1128
 							]
 						}
 					],
@@ -26057,11 +26257,11 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						1104,
-						1108,
 						1112,
-						1100,
-						1116
+						1116,
+						1120,
+						1108,
+						1124
 					]
 				}
 			],
@@ -26250,7 +26450,7 @@
 			]
 		},
 		{
-			"id": 1086,
+			"id": 1094,
 			"name": "\"src/skills/components/skills\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -26260,7 +26460,7 @@
 			"originalName": "/home/louw/workspace/heroku/portfolio-web/src/skills/components/skills.ts",
 			"children": [
 				{
-					"id": 1087,
+					"id": 1095,
 					"name": "SkillsComponent",
 					"kind": 128,
 					"kindString": "Class",
@@ -26281,7 +26481,7 @@
 					],
 					"children": [
 						{
-							"id": 1089,
+							"id": 1097,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -26290,7 +26490,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1090,
+									"id": 1098,
 									"name": "new SkillsComponent",
 									"kind": 16384,
 									"kindString": "Constructor signature",
@@ -26298,7 +26498,7 @@
 									"type": {
 										"type": "reference",
 										"name": "SkillsComponent",
-										"id": 1087
+										"id": 1095
 									}
 								}
 							],
@@ -26311,7 +26511,7 @@
 							]
 						},
 						{
-							"id": 1088,
+							"id": 1096,
 							"name": "skills",
 							"kind": 1024,
 							"kindString": "Property",
@@ -26333,13 +26533,13 @@
 									{
 										"type": "reference",
 										"name": "Skill",
-										"id": 1076
+										"id": 1084
 									}
 								]
 							}
 						},
 						{
-							"id": 1097,
+							"id": 1105,
 							"name": "drawChart",
 							"kind": 2048,
 							"kindString": "Method",
@@ -26348,7 +26548,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1098,
+									"id": 1106,
 									"name": "drawChart",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -26368,7 +26568,7 @@
 							]
 						},
 						{
-							"id": 1093,
+							"id": 1101,
 							"name": "getSkills",
 							"kind": 2048,
 							"kindString": "Method",
@@ -26377,7 +26577,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1094,
+									"id": 1102,
 									"name": "getSkills",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -26397,7 +26597,7 @@
 							]
 						},
 						{
-							"id": 1095,
+							"id": 1103,
 							"name": "initScrollListener",
 							"kind": 2048,
 							"kindString": "Method",
@@ -26406,7 +26606,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1096,
+									"id": 1104,
 									"name": "initScrollListener",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -26426,7 +26626,7 @@
 							]
 						},
 						{
-							"id": 1091,
+							"id": 1099,
 							"name": "ngOnInit",
 							"kind": 2048,
 							"kindString": "Method",
@@ -26435,7 +26635,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1092,
+									"id": 1100,
 									"name": "ngOnInit",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -26460,24 +26660,24 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								1089
+								1097
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								1088
+								1096
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								1097,
-								1093,
-								1095,
-								1091
+								1105,
+								1101,
+								1103,
+								1099
 							]
 						}
 					],
@@ -26501,7 +26701,7 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						1087
+						1095
 					]
 				}
 			],
@@ -26514,7 +26714,7 @@
 			]
 		},
 		{
-			"id": 1075,
+			"id": 1083,
 			"name": "\"src/skills/definitions/skill\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -26524,7 +26724,7 @@
 			"originalName": "/home/louw/workspace/heroku/portfolio-web/src/skills/definitions/skill.ts",
 			"children": [
 				{
-					"id": 1076,
+					"id": 1084,
 					"name": "Skill",
 					"kind": 256,
 					"kindString": "Interface",
@@ -26536,7 +26736,7 @@
 					},
 					"children": [
 						{
-							"id": 1077,
+							"id": 1085,
 							"name": "content",
 							"kind": 1024,
 							"kindString": "Property",
@@ -26559,7 +26759,7 @@
 							}
 						},
 						{
-							"id": 1078,
+							"id": 1086,
 							"name": "level",
 							"kind": 1024,
 							"kindString": "Property",
@@ -26582,7 +26782,7 @@
 							}
 						},
 						{
-							"id": 1079,
+							"id": 1087,
 							"name": "name",
 							"kind": 1024,
 							"kindString": "Property",
@@ -26610,9 +26810,9 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								1077,
-								1078,
-								1079
+								1085,
+								1086,
+								1087
 							]
 						}
 					],
@@ -26630,7 +26830,7 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						1076
+						1084
 					]
 				}
 			],
@@ -26643,7 +26843,7 @@
 			]
 		},
 		{
-			"id": 1080,
+			"id": 1088,
 			"name": "\"src/skills/models/skills\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -26653,7 +26853,7 @@
 			"originalName": "/home/louw/workspace/heroku/portfolio-web/src/skills/models/skills.ts",
 			"children": [
 				{
-					"id": 1081,
+					"id": 1089,
 					"name": "SKILLS",
 					"kind": 32,
 					"kindString": "Variable",
@@ -26683,7 +26883,7 @@
 							{
 								"type": "reference",
 								"name": "Skill",
-								"id": 1076
+								"id": 1084
 							}
 						]
 					},
@@ -26695,7 +26895,7 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						1081
+						1089
 					]
 				}
 			],
@@ -26708,7 +26908,7 @@
 			]
 		},
 		{
-			"id": 1082,
+			"id": 1090,
 			"name": "\"src/skills/services/skills\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -26718,7 +26918,7 @@
 			"originalName": "/home/louw/workspace/heroku/portfolio-web/src/skills/services/skills.ts",
 			"children": [
 				{
-					"id": 1083,
+					"id": 1091,
 					"name": "SkillService",
 					"kind": 128,
 					"kindString": "Class",
@@ -26727,7 +26927,7 @@
 					},
 					"children": [
 						{
-							"id": 1084,
+							"id": 1092,
 							"name": "getSkills",
 							"kind": 2048,
 							"kindString": "Method",
@@ -26737,7 +26937,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1085,
+									"id": 1093,
 									"name": "getSkills",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -26753,7 +26953,7 @@
 													{
 														"type": "reference",
 														"name": "Skill",
-														"id": 1076
+														"id": 1084
 													}
 												]
 											}
@@ -26775,7 +26975,7 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								1084
+								1092
 							]
 						}
 					],
@@ -26793,7 +26993,7 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						1083
+						1091
 					]
 				}
 			],
@@ -26806,7 +27006,7 @@
 			]
 		},
 		{
-			"id": 1126,
+			"id": 1134,
 			"name": "\"tools/manual_typings/jquery.plugins.d\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -26816,28 +27016,28 @@
 			"originalName": "/home/louw/workspace/heroku/portfolio-web/tools/manual_typings/jquery.plugins.d.ts",
 			"children": [
 				{
-					"id": 1127,
+					"id": 1135,
 					"name": "JQuery",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 1128,
+							"id": 1136,
 							"name": "easyPieChart",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 1129,
+									"id": 1137,
 									"name": "easyPieChart",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 1130,
+											"id": 1138,
 											"name": "options",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -26865,21 +27065,21 @@
 							]
 						},
 						{
-							"id": 1131,
+							"id": 1139,
 							"name": "gridrotator",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 1132,
+									"id": 1140,
 									"name": "gridrotator",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 1133,
+											"id": 1141,
 											"name": "options",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -26907,21 +27107,21 @@
 							]
 						},
 						{
-							"id": 1134,
+							"id": 1142,
 							"name": "stickUp",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 1135,
+									"id": 1143,
 									"name": "stickUp",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 1136,
+											"id": 1144,
 											"name": "options",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -26954,9 +27154,9 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								1128,
-								1131,
-								1134
+								1136,
+								1139,
+								1142
 							]
 						}
 					],
@@ -26974,7 +27174,7 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						1127
+						1135
 					]
 				}
 			],
@@ -26993,12 +27193,12 @@
 			"kind": 1,
 			"children": [
 				1,
-				1123,
+				1131,
 				20,
 				3,
 				26,
 				64,
-				877,
+				885,
 				247,
 				186,
 				34,
@@ -27011,38 +27211,38 @@
 				254,
 				192,
 				32,
-				874,
+				882,
 				158,
 				122,
 				54,
-				950,
-				920,
-				905,
-				918,
-				941,
-				984,
-				963,
-				978,
-				980,
-				1002,
-				991,
-				996,
-				998,
-				1052,
-				1012,
-				1022,
-				1015,
-				1125,
+				958,
+				928,
+				913,
+				926,
+				949,
+				992,
+				971,
+				986,
+				988,
+				1010,
+				999,
+				1004,
+				1006,
+				1060,
+				1020,
+				1030,
+				1023,
+				1133,
 				7,
 				15,
-				1099,
+				1107,
 				50,
 				46,
-				1086,
-				1075,
-				1080,
-				1082,
-				1126
+				1094,
+				1083,
+				1088,
+				1090,
+				1134
 			]
 		}
 	]
