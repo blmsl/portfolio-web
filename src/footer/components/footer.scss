@@ -24,6 +24,11 @@
       @include border-radius(50%);
       @include transition(all 0.2s ease-in-out);
 
+      @include respond-to($val: max-width, $query: $screen-x3-min) {
+        width: 35px !important;
+        height: 35px !important;
+      }
+
       &:hover {
         background: $persian-green;
         a {
@@ -34,8 +39,18 @@
         color: $iris-blue;
         width: 42px !important;
         height: 42px !important;
+
+        @include respond-to($val: max-width, $query: $screen-x3-min) {
+          width: 35px !important;
+          height: 35px !important;
+        }
+
         i {
           line-height: 40px !important;
+
+          @include respond-to($val: max-width, $query: $screen-x3-min) {
+            line-height: 33px !important;;
+          }
         }
       }
     }

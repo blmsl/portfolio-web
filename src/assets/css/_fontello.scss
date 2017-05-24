@@ -1,3 +1,5 @@
+@import 'common';
+
 @font-face {
   font-family: 'fontello';
   src: url('../fonts/fontello.eot?52416809');
@@ -121,4 +123,8 @@
 .icon-2x {
   font-size: 1.8em;
   margin-left: 0.2em;
+
+  @include respond-to($val: max-width, $query: $screen-x3-min) {
+    font-size: 1.6em;
+  }
 }
