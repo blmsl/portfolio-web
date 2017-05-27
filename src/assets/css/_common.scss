@@ -4,54 +4,54 @@
 // Colors
 // ========================================================================== //
 
-$white:                 #ffffff;
-$snow:                  #fafafa;
-$white-smoke:           #f3f3f3;
-$whisper:               #eeeeee;
-$whisper-dark:          #e5e4e4;
-$link-water:            #c3c8d6;
-$very-light-grey:       #cccccc;
-$bitter-sweet:          #ff675f;
-$sunset-orange-tint:    #f9918c;
-$sunset-orange:         #f5534b;
-$anakiwa:               #95d9ee;
-$iris-blue:             #00bdbd;
-$summer-sky:            #2bb3dd;
-$curious-blue:          #428bca;
-$cerulean:              #0a64a4;
-$orient:                #15596e;
-$persian-green:         #0a9f9f;
-$mischka:               #a9abb0;
-$nobel:                 #999999;
-$manatee:               #84868d;
-$chambray:              #585f73;
-$blue-zodiac:           #474d5d;
-$cloud-burst:           #373d4c;
-$night-rider:           #333333;
-$midnight-express:      #262B37;
-$black-russian:         #1b1f2b;
-$black-forest:          #1b1f29;
-$black:                 #000000;
-$black-trans-point-5:   rgba($black, 0.5);
-$black-trans-point-7:   rgba($black, 0.7);
+$white: #ffffff;
+$snow: #fafafa;
+$white-smoke: #f3f3f3;
+$whisper: #eeeeee;
+$whisper-dark: #e5e4e4;
+$link-water: #c3c8d6;
+$very-light-grey: #cccccc;
+$bitter-sweet: #ff675f;
+$sunset-orange-tint: #f9918c;
+$sunset-orange: #f5534b;
+$anakiwa: #95d9ee;
+$iris-blue: #00bdbd;
+$summer-sky: #2bb3dd;
+$curious-blue: #428bca;
+$cerulean: #0a64a4;
+$orient: #15596e;
+$persian-green: #0a9f9f;
+$mischka: #a9abb0;
+$nobel: #999999;
+$manatee: #84868d;
+$chambray: #585f73;
+$blue-zodiac: #474d5d;
+$cloud-burst: #373d4c;
+$night-rider: #333333;
+$midnight-express: #262B37;
+$black-russian: #1b1f2b;
+$black-forest: #1b1f29;
+$black: #000000;
+$black-trans-point-7: rgba($black, 0.7);
+$black-forest-trans-point-8: rgba($black-forest, 0.8);
 
 //
 // Typography
 // ========================================================================== //
 
-$font-family-base:      'Open Sans', sans-serif;
+$font-family-base: 'Open Sans', sans-serif;
 
 //
 // Media queries breakpoints
 // ========================================================================== //
 
-$screen-x3-min:         360px;
-$screen-x2-min:         480px;
-$screen-x1-min:         650px;
-$screen-sm-min:         767px;
-$screen-m2-min:         810px;
-$screen-m1-min:         992px;
-$screen-lg-min:         1200px;
+$screen-x3-min: 360px;
+$screen-x2-min: 480px;
+$screen-x1-min: 650px;
+$screen-sm-min: 767px;
+$screen-m2-min: 810px;
+$screen-m1-min: 992px;
+$screen-lg-min: 1200px;
 
 //
 // Container & Heading mixin
