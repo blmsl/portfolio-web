@@ -171,6 +171,12 @@ header {
 }
 
 .ri-grid-loading {
+  overflow: hidden;
+  margin: 0 auto !important;
+  background: $midnight-express;
+  height: 100%;
+  position: fixed;
+
   &:after, &:before {
     display: none;
   }
