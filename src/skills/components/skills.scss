@@ -20,13 +20,13 @@
     color: $bitter-sweet;
   }
   .skills-area {
-    padding: 0px;
+    padding: 0;
   }
   .skills {
     margin: 0 auto 23px;
     text-align: center;
     float: none;
-    padding: 0px;
+    padding: 0;
     width: 200px;
     p {
       color: $manatee;
@@ -67,7 +67,7 @@
   z-index: 2;
   &:after {
     content: '%';
-    margin-left: 0.1em;
+    margin-left: .1em;
     font-size: .8em;
   }
 }

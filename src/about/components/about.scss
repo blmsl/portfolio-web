@@ -20,7 +20,7 @@
   padding: 16px 22px;
   display: inline-block;
   margin-bottom: 15px;
-  @include transition(all 0.2s ease-in-out);
+  @include transition(all .2s ease-in-out);
 
   &:hover {
     color: $white;

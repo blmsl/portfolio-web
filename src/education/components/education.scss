@@ -67,7 +67,7 @@
     }
 
     @include respond-to {
-      margin-left: 0px;
+      margin-left: 0;
     }
   }
 
@@ -81,7 +81,7 @@
       }
     }
     &:last-child .right-area {
-      padding-bottom: 0px;
+      padding-bottom: 0;
     }
   }
 

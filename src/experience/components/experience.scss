@@ -32,7 +32,7 @@
       }
     }
     &:last-child .right-area {
-      padding-bottom: 0px;
+      padding-bottom: 0;
     }
   }
 
@@ -91,7 +91,7 @@
     }
 
     @include respond-to {
-      margin-left: 0px;
+      margin-left: 0;
     }
   }
 
@@ -117,7 +117,7 @@
       height: 100%;
     }
     .youtube-frame {
-      border: 0px;
+      border: 0;
     }
   }
 }

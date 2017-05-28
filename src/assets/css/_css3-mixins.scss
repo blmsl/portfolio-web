@@ -66,7 +66,7 @@
 // @param {Percentage} $endPos [100%] - End position
 
 @mixin background-radial($startColor: #FFFFFF, $startPos: 0%, $endColor: #000000, $endPos:100%) {
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop($startPos,$startColor), color-stop($endPos,$endColor));
+    background: -webkit-gradient(radial, center center, 0, center center, 100%, color-stop($startPos,$startColor), color-stop($endPos,$endColor));
     background: -webkit-radial-gradient(center, ellipse cover, $startColor $startPos,$endColor $endPos);
     background: -o-radial-gradient(center, ellipse cover, $startColor $startPos,$endColor $endPos);
     background: radial-gradient(ellipse at center, $startColor $startPos,$endColor $endPos);
@@ -89,9 +89,9 @@
 
 // Background Color Opacity
 // @param {Color} $color [100%] - Color
-// @param {Double} $opacity [0.85] - Opacity
+// @param {Double} $opacity [.85] - Opacity
 
-@mixin background-opacity($color: #000, $opacity: 0.85) {
+@mixin background-opacity($color: #000, $opacity: .85) {
   background: $color;
   background: rgba($color, $opacity);
 }
@@ -141,10 +141,10 @@
 // @param {Integer} $r [60] - Red
 // @param {Integer} $g [3] - Green
 // @param {Integer} $b [12] - Blue
-// @param {Double} $opacity [0.23] - Opacity
+// @param {Double} $opacity [.23] - Opacity
 // @param {Color} $color [#3C3C3C] - Color
 
-@mixin box-rgba($r: 60, $g: 3, $b: 12, $opacity: 0.23, $color: #3C3C3C) {
+@mixin box-rgba($r: 60, $g: 3, $b: 12, $opacity: .23, $color: #3C3C3C) {
   background-color: transparent;
   background-color: rgba($r, $g, $b, $opacity);
             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$color}',endColorstr='#{$color}');
@@ -241,10 +241,10 @@
 
 
 // Opacity
-// @param {Double} $opacity [0.5] - Opacity
+// @param {Double} $opacity [.5] - Opacity
 // @require {mixin} css3-prefix
 
-@mixin opacity($opacity: 0.5) {
+@mixin opacity($opacity: .5) {
     $opacityMultiplied: ($opacity * 100);
 
     filter:         alpha(opacity=$opacityMultiplied);
@@ -335,7 +335,7 @@
   }
 
   @else {
-    @include css3-prefix('transition',  "all 0.2s ease-in-out 0s");
+    @include css3-prefix('transition',  "all .2s ease-in-out 0s");
   }
 }
 
