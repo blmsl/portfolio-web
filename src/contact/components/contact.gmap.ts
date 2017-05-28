@@ -61,15 +61,11 @@ export class ContactMapComponent implements OnInit {
 
   initializeMap() {
     const MAP_MAX_MOBILE_ZOOM_ZERO: number = 768;
-    const MAP_MAX_TABLET_ZOOM_ONE: number = 1024;
     (($: JQueryStatic) => {
       delay(250)
         .then(() => {
           let mapOptions = Object.assign({}, MAP_OPTIONS);
           if ($(window).width() < MAP_MAX_MOBILE_ZOOM_ZERO) {
-            mapOptions.zoom = 0;
-            mapOptions.minZoom = 0;
-          } else if ($(window).width() < MAP_MAX_TABLET_ZOOM_ONE) {
             mapOptions.zoom = 1;
             mapOptions.minZoom = 1;
           }

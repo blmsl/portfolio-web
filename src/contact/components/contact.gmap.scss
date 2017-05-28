@@ -16,12 +16,12 @@
     height: 450px;
   }
 
-  @include respond-to($query: $screen-m2-min) {
-    height: 350px;
+  @include respond-to($query: $screen-x2-min) {
+    height: 360px;
   }
 
-  @include respond-to {
-    height: 200px;
+  @include respond-to($query: $screen-x4-min) {
+    height: 280px;
   }
 }
 
