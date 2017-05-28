@@ -4,8 +4,8 @@
     <!--slider start-->
     <div id="ri-grid" class="ri-grid-loading ri-grid ri-grid-size-2">
       <img class="ri-loading-image" src="assets/images/loading.gif" alt="Loading..." />
-      <ul id="js_cb_slideshow" class="cb-slideshow">
-        <li *ngFor="let imageId of imageIds">
+      <ul class="cb-slideshow">
+        <li class="js_cb-slideshow-tile" *ngFor="let imageId of imageIds">
           <a href="#"><img src="/assets/images/instagram/{{imageId}}.jpg" alt="© Louw Swart"></a>
         </li>
       </ul>

@@ -11,7 +11,7 @@
  *    }
  * }
  */
-export const MENU_CONFIG:any = {
+export const MENU_CONFIG: any = {
   itemClass: 'menu-item',
   itemHover: 'active',
   parts: {

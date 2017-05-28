@@ -70,6 +70,7 @@ header {
   }
 
   @include respond-to($query: $screen-x3-min) {
+    padding-top: 22px;
     h1 {
       font-size: 38px;
       line-height: 46px;
@@ -78,6 +79,10 @@ header {
       font-size: 15px;
       line-height: 22px;
     }
+  }
+
+  @include respond-to($query: $screen-x4-min) {
+    padding-top: 16px;
   }
 }
 
