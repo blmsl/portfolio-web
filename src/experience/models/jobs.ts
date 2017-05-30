@@ -6,7 +6,7 @@ import {Job} from '../definitions/job';
  */
 export const JOBS: Array<Job> = [
   {
-    content: '&nbsp;',
+    content: '<p>Currently on the 3rd extension of a contract assignment with Fairfax NZ as a <b>JavaScript Developer</b> in one of the Wellington-based development teams.</p><p>The primary objective of my team is to systematically upgrade the story telling elements of the <a href="https://www.stuff.co.nz" target="_blank" rel="noopener noreferrer" class="link js_track_link_click">Stuff.co.nz</a> news site to offer a more consistent reader experience across different devices and form factors. At the same time, we are working towards a faster release process through automation, which, in turn, will enable us to become more responsive to business requirements.</p><p>Closely involved in the implementation of a new frontend using JavaScript frameworks such as <b>React</b> and <b>Express</b>, while <b>GraphQL</b> interfaces with the underlying APIs.</p>',
     institution: {
       location: 'Wellington, New Zealand',
       name: 'Fairfax Media',
@@ -18,7 +18,7 @@ export const JOBS: Array<Job> = [
       to: 'Present',
     },
   }, {
-    content: `<p>Worked as a <b>UI Developer</b> at Westpac NZ, where I was involved in a number of projects, including <b><i>Direct from Account&trade;</i></b>, <b><i>Westpac Exchange&trade;</i></b> and <b><i>Westpac One&reg;</i></b>.</p><p>The server-side development environment was <b>Java</b>, while the client-side was built using a variety of <b>JavaScript technologies</b> and <b>frameworks</b>, most notably <b>RequireJS</b>, <b>Backbone</b>, Marionette, <b>Underscore</b>, <b>AngularJS</b>, SCSS, and, during development, <b>Node.js</b>.</p><p>Build and Testing tools included <b>Grunt</b>, Maven, Jenkins, JUnit, Cucumber, <b>Jasmine</b> and <b>Karma</b>.</p>`,
+    content: `<p>Worked as a <b>UI Developer</b> at Westpac NZ, where I was involved in various projects, including <b><i>Direct from Account&trade;</i></b>, <b><i>Westpac Exchange&trade;</i></b> and <b><i>Westpac One&reg;</i></b>.</p><p>The server-side development environment was <b>Java</b>, while the client-side was built using a variety of <b>JavaScript technologies</b> and <b>frameworks</b>, most notably <b>RequireJS</b>, <b>Backbone</b>, Marionette, <b>Underscore</b>, <b>AngularJS</b>, SCSS, and, during development, <b>Node.js</b>.</p><p>Build and Testing tools included <b>Grunt</b>, Maven, Jenkins, JUnit, Cucumber, <b>Jasmine</b> and <b>Karma</b>.</p>`,
     institution: {
       location: 'Wellington, New Zealand',
       name: 'Westpac NZ Ltd',
@@ -30,8 +30,8 @@ export const JOBS: Array<Job> = [
       to: 'Mar 2016',
     },
   }, {
-    accomplishments: `<p>Worked alongside the Hardware team on the implementation of a <b>RESTful JSON</b> communication protocol over HTTP for the 2nd Generation On-board Units.</p>`,
-    content: `<p>Employed as a Java Developer at EROAD, New Zealand\'s leading transport technology and services company. Worked in an <b>agile environment</b> developing and unit testing existing and new enhancements, which involved user <b>interface</b>, <b>web-services</b> and <b>back-end integration</b> for EROAD\'s <b>Cloud Based SaaS application</b>.</p><p>The development environment was <b>Java</b>, and frameworks and technologies included <b>Spring MVC</b>, <b>JSP</b>, <b>JQuery</b>, <b>RESTful</b> web-services over <b>HTTP</b>, <b>JAX-WS/JAXB</b> web-services over <b>SOAP</b>, <b>Hibernate</b> and <b>PostgreSQL</b>.</p><p>Mainly functioned within the Tax and Localisation team, which included the <b>GIS</b> and mapping layer.</p>`,
+    accomplishments: `<p>Worked alongside members of the Hardware team on the implementation of a <b>RESTful JSON</b> communication protocol over HTTP for the 2nd Generation On-board Units.</p>`,
+    content: `<p>Employed as a Java Developer at EROAD, New Zealand\'s leading transport technology and services company. Worked in an <b>Agile environment</b> developing and unit testing enhancements, which involved user <b>interface</b>, <b>web services</b> and <b>back-end integration</b> for EROAD\'s <b>Cloud Based SaaS application</b>.</p><p>The development environment was <b>Java</b>, and frameworks and technologies included <b>Spring MVC</b>, <b>JSP</b>, <b>JQuery</b>, <b>RESTful</b> web services over <b>HTTP</b>, <b>JAX-WS/JAXB</b> web services over <b>SOAP</b>, <b>Hibernate</b> and <b>PostgreSQL</b>.</p><p>Mainly functioned within the Tax and Localisation team, which included the <b>GIS</b> and mapping layer.</p>`,
     institution: {
       location: 'Auckland, New Zealand',
       name: 'EROAD',
@@ -43,8 +43,8 @@ export const JOBS: Array<Job> = [
       to: 'Apr 2014',
     },
   }, {
-    accomplishments: `<p>Was involved in a major overhaul of the UI for the PPM System, which, amongst other tasks, involved the implementation of a <b>WYSIWYG editor</b> inside GWT. Worked with my team in New Zealand alongside teams in the US and China to re-build the data collection component.</p>`,
-    content: `<p>Worked as a Software Developer at the New Zealand campus of Rockwell Automation. Functioned within an <b>agile team</b> developing <b>user interface</b> elements as well as <b>web-services</b> and <b>back-end integration</b> for a performance management platform used in a variety of industries worldwide. This <b>multi-tier application</b> was deployed in a web environment (<b>Tomcat</b> &amp; <b>JBoss</b>), on the <b>Java EE technology stack</b>.</p><p>The development environment was <b>Java</b>, utilizing third-party technologies such as <b>GWT</b>, to deliver a rich user experience.</p>`,
+    accomplishments: `<p>Was involved in a major overhaul of the UI for the PPM System, which, amongst other tasks, included the implementation of a <b>WYSIWYG editor</b> inside GWT. Worked with my team in New Zealand alongside teams in the US and China to re-build the data collection component.</p>`,
+    content: `<p>Worked as a Software Developer at the New Zealand campus of Rockwell Automation. Functioned within an <b>agile team</b> developing <b>user interface</b> elements as well as <b>web services</b> and <b>back-end integration</b> for a performance management platform used in a variety of industries worldwide. The deployment of this <b>multi-tier application</b> consisted of a web environment (<b>Tomcat</b> &amp; <b>JBoss</b>), on the <b>Java EE technology stack</b>.</p><p>The development environment was <b>Java</b>, utilising third-party technologies such as <b>GWT</b>, to deliver a rich user experience.</p>`,
     institution: {
       location: 'Hamilton, New Zealand',
       name: 'Rockwell',
@@ -57,7 +57,7 @@ export const JOBS: Array<Job> = [
     },
   }, {
     accomplishments: `<p>Integrated an open source <b>mobile framework</b> (WURFL) into the Quirk software stack enabling development of mobile client solutions. Converted <b>Google\'s server-side JSP tracking</b> code to fit into the Quirk stack and WebWork framework.</p><p>Developed a <b>live tracking solution</b> of a  colleague\'s mountain bike race via <b>GPS</b>, Vodacom API and <b>Google Maps API</b>.</p>`,
-    content: `<p>Worked as a Software Engineer at the Cape Town office of Quirk developing <b>Java</b> (<b>Java EE</b>) <b>web based applications</b> to client specifications within specified deadlines. Projects included <b>SEO optimised websites</b> and <b>mobile websites</b>, <b>custom built CMS</b> solutions, <b>Facebook Applications</b>, integrations with <b>Twitter</b> and other <b>3rd party APIs</b>, <b>RSS Feeds</b> (both generating and parsing). The development environment was <b>Java</b>, utilising the <b>MVC WebWork</b> framework and <b>Freemarker Template</b> engine, backed by <b>Spring</b>, <b>MySQL</b> and <b>Hibernate</b>.</p><p>Maintained and supported existing applications. Interfaced with clients regularly for presentations and training. Compiled client facing documentation where required. Performed on-call server monitoring duties.</p>`,
+    content: `<p>Worked as a Software Engineer at the Cape Town office of Quirk developing <b>Java</b> (<b>Java EE</b>) <b>web-based applications</b> to client specifications within specified deadlines. Projects included <b>SEO optimised websites</b> and <b>mobile websites</b>, <b>custom built CMS</b> solutions, <b>Facebook Applications</b>, integrations with <b>Twitter</b> and other <b>3rd party APIs</b>, <b>RSS Feeds</b> (both generating and parsing). The development environment was <b>Java</b>, utilising the <b>MVC WebWork</b> framework and <b>Freemarker Template</b> engine, backed by <b>Spring</b>, <b>MySQL</b> and <b>Hibernate</b>.</p><p>Maintained and supported existing applications. Interfaced with clients regularly for presentations and training. Compiled client facing documentation where required. Performed on-call server monitoring duties.</p>`,
     institution: {
       location: 'Cape Town, South Africa',
       name: 'Quirk',

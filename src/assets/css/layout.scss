@@ -41,6 +41,11 @@ a {
   color: $orient;
   text-decoration: none;
   outline: none;
+
+  &:hover{
+    color: $nordic;
+    @include transition(all .2s ease-in);
+  }
 }
 
 p {

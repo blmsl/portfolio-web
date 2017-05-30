@@ -91,7 +91,10 @@ header {
 // ========================================================================== //
 
 .cb-slideshow {
+  opacity: 1;
   background: $black-russian;
+  @include transition(opacity .2s ease-in-out);
+
   li {
     opacity: .5;
 
@@ -175,24 +178,28 @@ header {
   margin: 0 auto !important;
   background: $midnight-express;
   height: 100%;
+  width: 100%;
   position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 25;
 
-  &:after, &:before {
-    display: none;
+  .cb-slideshow {
+    opacity: 0;
+  }
+
+  .ri-loading-image {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    top: calc(50% - 20px);
+    left: calc(50% - 20px);
+    display: block;
   }
 }
 
 .ri-loading-image {
   display: none;
-}
-
-.ri-grid-loading .ri-loading-image {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  top: calc(50% - 20px);
-  left: calc(50% - 20px);
-  display: block;
 }
 
 //
