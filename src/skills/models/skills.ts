@@ -6,8 +6,8 @@ import {Skill} from '../definitions/skill';
  */
 export const SKILLS: Array<Skill> = [
   {
-    content: 'AngularJS; Backbone; Node.js;',
-    level: 90,
+    content: 'AngularJS; Node.js; JavaScript;',
+    level: 95,
     name: 'Scripting',
   }, {
     content: 'HTML5; CSS3; SCSS;',
@@ -15,7 +15,7 @@ export const SKILLS: Array<Skill> = [
     name: 'Web Markup',
   }, {
     content: 'Java EE; Java SE 6/7; Java ME;',
-    level: 90,
+    level: 85,
     name: 'Java',
   }, {
     content: 'JAX-WS; JAXB; RESTful Web Services;',
