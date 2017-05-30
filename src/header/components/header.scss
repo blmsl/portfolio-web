@@ -93,7 +93,7 @@ header {
 .cb-slideshow {
   opacity: 1;
   background: $black-russian;
-  @include transition(opacity .2s ease-in-out);
+  @include transition(opacity .5s ease-in);
 
   li {
     opacity: .5;
