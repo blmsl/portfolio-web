@@ -5,17 +5,19 @@
       <h2>Education</h2>
       <p>what I've studied</p>
     </div>
-    <div *ngIf="codeSchool && codeSchool.courses"
-         class="row education-details">
+    <div *ngIf="codeSchool && codeSchool.courses" class="row education-details">
       <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
         <div class="education-year">Continuous<br>improvement</div>
       </div>
       <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 right-area">
         <div class="arrow-part"></div>
         <div class="education-container">
-          <h4>Code School
-            <a href="https://www.codeschool.com/users/ouq77" target="_blank" rel="noopener noreferrer" class="link js_track_link_click">
-              &nbsp;<i class="icon-link-ext"></i>
+          <h4>Code School&nbsp;
+            <a href="https://www.codeschool.com/users/ouq77"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="link js_track_link_click">
+              <i class="icon-link-ext"></i>
             </a>
           </h4>
           <h5>Learn by doing</h5>
@@ -29,7 +31,7 @@
           <h6>Courses completed</h6>
           <section class="content">
             <div class="row">
-              <div class="cs-badge col-xs-6 col-sm-4 col-md-2" *ngFor="let course of codeSchool.courses.completed">
+              <div *ngFor="let course of codeSchool.courses.completed" class="cs-badge col-xs-6 col-sm-4 col-md-2">
                 <p>
                   <a href="{{course.badge | badgeUrl}}"
                      title="{{course.title}}"
@@ -46,10 +48,9 @@
             </div>
           </section>
           <h6 *ngIf="codeSchool.courses.in_progress">Courses in progress</h6>
-          <section *ngIf="codeSchool.courses.in_progress"
-                   class="content">
+          <section *ngIf="codeSchool.courses.in_progress" class="content">
             <div class="row">
-              <div class="cs-badge col-xs-6 col-sm-4 col-md-2" *ngFor="let course of codeSchool.courses.in_progress">
+              <div *ngFor="let course of codeSchool.courses.in_progress" class="cs-badge col-xs-6 col-sm-4 col-md-2">
                 <p>
                   <a href="{{course.url}}"
                      title="{{course.title}}"
@@ -65,17 +66,20 @@
         </div>
       </div>
     </div>
-    <div *ngFor="let school of schools"
-         class="row education-details">
+    <div *ngFor="let school of schools" class="row education-details">
       <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
         <div class="education-year">{{school.year.from}} <i class="icon-angle-circled-right"></i><br>{{school.year.to}}</div>
       </div>
       <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 right-area">
         <div class="arrow-part"></div>
         <div class="education-container">
-          <h4>{{school.institution.name}}
-            <a href="{{school.institution.url}}" target="_blank" rel="noopener noreferrer" class="link js_track_link_click">
-              &nbsp;<i class="icon-link-ext"></i>
+          <h4>{{school.institution.name}}&nbsp;
+            <a *ngIf="school.institution.url"
+               href="{{school.institution.url}}"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="link js_track_link_click">
+              <i class="icon-link-ext"></i>
             </a>
           </h4>
           <h5>{{school.qualification}}</h5>

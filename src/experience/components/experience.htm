@@ -5,8 +5,7 @@
       <h2>Work Experience</h2>
       <p>what I've done so far</p>
     </div>
-    <div *ngFor="let job of jobs"
-         class="row work-details">
+    <div *ngFor="let job of jobs" class="row work-details">
       <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
         <div class="work-year">{{job.year.from}} <i class="icon-angle-circled-right"></i><br>{{job.year.to}}</div>
       </div>
@@ -14,7 +13,11 @@
         <div class="arrow-part"></div>
         <div class="experience-container">
           <h4>{{job.institution.name}}&nbsp;
-            <a *ngIf="job.institution.url" href="{{job.institution.url}}" target="_blank" rel="noopener noreferrer" class="link js_track_link_click">
+            <a *ngIf="job.institution.url"
+               href="{{job.institution.url}}"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="link js_track_link_click">
               <i class="icon-link-ext"></i>
             </a>
           </h4>

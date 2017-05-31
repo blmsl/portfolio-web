@@ -7,9 +7,15 @@
   "ascent": 850,
   "glyphs": [
     {
+      "uid": "9f7e588c66cfd6891f6f507cf6f6596b",
+      "css": "phone",
+      "code": 59392,
+      "src": "fontawesome"
+    },
+    {
       "uid": "9d3d9d6ce1ec63eaa26281e6162853c9",
       "css": "camera-alt",
-      "code": 59392,
+      "code": 59393,
       "src": "fontawesome"
     },
     {
@@ -21,13 +27,13 @@
     {
       "uid": "ecede48deb16179e5ef9a3f8ffae62f4",
       "css": "road",
-      "code": 59393,
+      "code": 59394,
       "src": "fontawesome"
     },
     {
       "uid": "297fe6c2ef08198b03d706ba52f51b7f",
       "css": "flight",
-      "code": 59394,
+      "code": 59395,
       "src": "fontawesome"
     },
     {
@@ -45,25 +51,19 @@
     {
       "uid": "197375a3cea8cb90b02d06e4ddf1433d",
       "css": "globe",
-      "code": 59395,
+      "code": 59396,
       "src": "fontawesome"
     },
     {
       "uid": "44e04715aecbca7f266a17d5a7863c68",
       "css": "plus",
-      "code": 59396,
+      "code": 59397,
       "src": "fontawesome"
     },
     {
       "uid": "0d08dbb1dd648a43bdea81b7e6c9e036",
       "css": "location",
-      "code": 59397,
-      "src": "fontawesome"
-    },
-    {
-      "uid": "0357f7abbc0babf43509669f332e41e6",
-      "css": "mobile",
-      "code": 61707,
+      "code": 59398,
       "src": "fontawesome"
     },
     {
@@ -123,7 +123,7 @@
     {
       "uid": "0ddd3e8201ccc7d41f7b7c9d27eca6c1",
       "css": "link",
-      "code": 59398,
+      "code": 59399,
       "src": "fontawesome"
     }
   ]
