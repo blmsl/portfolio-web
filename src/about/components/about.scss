@@ -28,10 +28,13 @@
     text-decoration: none;
   }
 
+  @include respond-to($query: $screen-m1-min) {
+    margin-bottom: 50px;
+  }
+
   @include respond-to($query: $screen-x2-min) {
     font-size: 13px;
     padding: 16px 14px;
-    margin-bottom: 50px;
   }
 }
 
