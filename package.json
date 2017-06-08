@@ -25,7 +25,7 @@
     "reflect-metadata": "0.1.10",
     "rxjs": "5.4.0",
     "systemjs": "0.20.13",
-    "zone.js": "0.8.11"
+    "zone.js": "0.8.12"
   },
   "devDependencies": {
     "@angular/compiler-cli": "4.2.0-rc.2",
@@ -54,7 +54,7 @@
     "rollup": "0.42.0",
     "rollup-plugin-commonjs": "8.0.2",
     "rollup-plugin-node-resolve": "3.0.0",
-    "tslint": "5.4.2",
+    "tslint": "5.4.3",
     "typedoc": "0.7.1",
     "typescript": "2.3.4",
     "uglifyjs": "2.4.11"

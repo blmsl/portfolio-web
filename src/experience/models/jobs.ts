@@ -6,7 +6,7 @@ import {Job} from '../definitions/job';
  */
 export const JOBS: Array<Job> = [
   {
-    content: '<p>Currently on the 3rd extension of a contract assignment with Fairfax NZ as a <b>JavaScript Developer</b> in one of the Wellington-based development teams.</p><p>The primary objective of my team is to systematically upgrade the story telling elements of the <a href="https://www.stuff.co.nz" target="_blank" rel="noopener noreferrer" class="link js_track_link_click">Stuff.co.nz</a> news site to offer a more consistent reader experience across different devices and form factors. At the same time, we are working towards a faster release process through automation, which, in turn, will enable us to become more responsive to business requirements.</p><p>Closely involved in the implementation of a new front-end using JavaScript frameworks such as <b>React</b> and <b>Express</b>, while <b>GraphQL</b> interfaces with the underlying APIs.</p>',
+    content: '<p>Currently on the 3rd extension of a contract assignment with Fairfax NZ as a <b>JavaScript Developer</b> in one of the Wellington-based development teams.</p><p>Closely involved in the implementation of a new <b>React</b> based front-end for the <a href="https://www.stuff.co.nz" target="_blank" rel="noopener noreferrer" class="link js_track_link_click">Stuff.co.nz</a> news site. The application, including the back-end interfaces like <b>GraphQL</b>, is served via <b>Express</b> in a <b>Node.js</b> runtime.</p><p>Other projects have included the implementation of an implicit flow client-side <b>OpenID Connect</b> login, as well as the integration of the <b>Nativform (FFX Native platform)</b> advertising SDK.</p>',
     institution: {
       location: 'Wellington, New Zealand',
       name: 'Fairfax Media',
