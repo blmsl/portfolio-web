@@ -1,4 +1,4 @@
-const envConfig = require('./../config/env.config')
+const envConfig = require('./../config/env.config').get()
 const helmet = require('helmet')
 const csp = require('helmet-csp')
 const hsts = require('hsts')
@@ -28,7 +28,7 @@ module.exports = () => {
     })
   ]
 
-  if (envConfig.get('USE_HPKP')) {
+  if (envConfig.USE_HPKP) {
     helmetMiddleware.push(hpkp({
       includeSubdomains: true,
       maxAge: 5184000, // sixty days in seconds

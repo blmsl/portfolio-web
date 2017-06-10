@@ -1,9 +1,9 @@
 const nodeMailer = require('nodemailer')
-const envConfig = require('./../config/env.config')
+const envConfig = require('./../config/env.config').get()
 
-const GMAIL_SENDER_EMAIL = envConfig.get('GMAIL_SENDER_EMAIL')
-const GMAIL_APP_EMAIL = envConfig.get('GMAIL_APP_EMAIL')
-const GMAIL_APP_PASSWORD = envConfig.get('GMAIL_APP_PASSWORD')
+const GMAIL_SENDER_EMAIL = envConfig.GMAIL_SENDER_EMAIL
+const GMAIL_APP_EMAIL = envConfig.GMAIL_APP_EMAIL
+const GMAIL_APP_PASSWORD = envConfig.GMAIL_APP_PASSWORD
 
 /**
  * @param {Object} message

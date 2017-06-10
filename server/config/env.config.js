@@ -49,6 +49,12 @@ const envConfig = convict({
     doc: 'Whether to use HTTP Public Key Pinning or not',
     env: 'USE_HPKP',
     format: Boolean
+  },
+  BLOCKED_UA: {
+    default: '',
+    doc: 'User Agents to be blocked from accessing any resources',
+    env: 'BLOCKED_UA',
+    format: String
   }
 })
 
