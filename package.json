@@ -16,7 +16,7 @@
       "/app/"
     ]
   },
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "1.17.2",
     "cache-manager": "2.4.0",
