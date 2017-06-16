@@ -1,6 +1,6 @@
 {
   "asi": true,
-  "esversion": 6,
+  "esversion": 5,
   "bitwise": true,
   "immed": true,
   "newcap": true,
@@ -20,6 +20,7 @@
   "unused": true,
   "node": true,
   "validthis": true,
+  "strict": false,
   "globals": {
     "window": true,
     "document": true,

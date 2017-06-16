@@ -1,3 +1,4 @@
+import Event = JQuery.Event;
 import {Component, OnInit} from '@angular/core';
 import {AppService} from '../services/app';
 import {cancelableDelay} from '../../shared/common/delay';
@@ -22,11 +23,11 @@ export class AppComponent implements OnInit {
     (($: JQueryStatic) => {
       $('a[href*="#"]:not([href="#"])').click((e: Event) => {
         e.preventDefault();
-        const targetEl: HTMLAnchorElement = <HTMLAnchorElement>e.target;
+        const targetEl: HTMLAnchorElement = <HTMLAnchorElement><any>e.target;
         if (location.pathname.replace(/^\//, '') === targetEl.pathname.replace(/^\//, '')
             && location.hostname === targetEl.hostname) {
-          let target: JQuery = $(targetEl.hash);
-          target = target.length ? target : $(`[name=${targetEl.hash.slice(1)}]`);
+          let target: JQuery = <JQuery>$(targetEl.hash);
+          target = target.length ? target : <JQuery>$(`[name=${targetEl.hash.slice(1)}]`);
           if (target.length) {
             $('html,body').animate({
               scrollTop: target.offset().top - 60,
@@ -44,7 +45,7 @@ export class AppComponent implements OnInit {
         // wait half a second for menu collapse/expand to finish
         this._timeoutMenuAnimate = cancelableDelay(500, () => {
           if ($('#js_navbar').hasClass('in')) {
-            if (!elementInViewport($, $('#js_links_li'))) {
+            if (!elementInViewport($, <JQuery>$('#js_links_li'))) {
               $('html,body').animate({
                 scrollTop: $('#js_menu_button').offset().top,
               }, 1000);
