@@ -103,9 +103,9 @@ export class HeaderComponent implements OnInit {
 
   setDynamicCssValues() {
     (($: JQueryStatic) => {
-      const bannerText: JQuery = $('.banner-text');
+      const bannerText: JQuery = <JQuery>$('.banner-text');
       if ($(window).width() <= 480) {
-        const tile: JQuery = $('.js_cb-slideshow-tile');
+        const tile: JQuery = <JQuery>$('.js_cb-slideshow-tile');
         bannerText.css({
           'height': tile.height(),
           'top': tile.height() * 2,

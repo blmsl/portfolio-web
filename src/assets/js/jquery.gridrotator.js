@@ -1,8 +1,17 @@
-/*! jquery.gridrotator.js v1.1.0 http://www.codrops.com Copyright 2012, Codrops http://www.codrops.com *
- * Licensed under the MIT license http://www.opensource.org/licenses/mit-license.php
- * debouncedresize: special jQuery event that happens once after a window resize
- * latest version and complete README available on Github: https://github.com/louisremi/jquery-smartresize/blob/master/jquery.debouncedresize.js
- * Copyright 2011 @louis_remi Licensed under the MIT license. !*/
+/**!
+ * jquery.gridrotator.js
+ * jQuery plugin for creating a responsive image grid that will switch images using different animations and timings
+ * https://github.com/codrops/AnimatedResponsiveImageGrid
+ * @license MIT license
+ * @version 1.1.0
+ * @author @codrops
+ *
+ * Contains: jquery.debouncedresize.js
+ * special jQuery event that happens once after a window resize
+ * https://github.com/louisremi/jquery-smartresize/blob/master/jquery.debouncedresize.js
+ * @license MIT license
+ * @author @louis_remi
+ **/
 (function($, window, undefined) {
   var $event = $.event, $special, resizeTimeout;
 

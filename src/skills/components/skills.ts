@@ -57,7 +57,7 @@ export class SkillsComponent implements OnInit {
   drawChart() {
     (($) => {
       $('.js_trigger_skills').each((index: number, triggerEl: Element) => {
-        if (!this._skillChartDrawn && elementInViewport($, $(triggerEl))) {
+        if (!this._skillChartDrawn && elementInViewport($, <JQuery>$(triggerEl))) {
           this._skillChartDrawn = true;
           $('.chart').each((index: number, chartEl: Element) => {
               $(chartEl).easyPieChart({
