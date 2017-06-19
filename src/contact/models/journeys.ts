@@ -37,5 +37,5 @@ export const JOURNEYS: Array<Array<Airport>> = [
  * @type {Airport[][]}
  */
 export const UPCOMING_JOURNEYS: Array<Array<Airport>> = [
-  [airports.WLG, airports.GIS],
+  [airports.WLG, airports.GIS], [airports.AKL, airports.YVR],
 ];

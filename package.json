@@ -57,7 +57,7 @@
     "tslint": "5.4.3",
     "typedoc": "0.7.1",
     "typescript": "2.3.4",
-    "uglify-js": "3.0.17"
+    "uglify-js": "3.0.18"
   },
   "scripts": {
     "postinstall": "npm prune",
