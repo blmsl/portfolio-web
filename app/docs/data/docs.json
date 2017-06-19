@@ -19915,7 +19915,7 @@
 							}
 						]
 					},
-					"defaultValue": " [\n  [airports.WLG, airports.GIS],\n]"
+					"defaultValue": " [\n  [airports.WLG, airports.GIS], [airports.AKL, airports.YVR],\n]"
 				}
 			],
 			"groups": [
